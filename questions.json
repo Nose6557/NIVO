@@ -1,0 +1,392 @@
+{
+  "version": 1,
+  "level": "B1-B2",
+  "questions": [
+    {
+      "id": "art-01", "category": "articles", "item": "the + unique things", "type": "mcq",
+      "prompt": "She works as ___ UX designer at ___ bank downtown.",
+      "options": ["a / the", "an / a", "an / the", "the / a"],
+      "answer": "a / the",
+      "explain": "«UX» починається зі звуку [ju], тому «a UX designer», а не «an». Банк конкретний (downtown) — «the bank»."
+    },
+    {
+      "id": "art-02", "category": "articles", "item": "zero article with abstract nouns", "type": "mcq",
+      "prompt": "___ trust is the hardest thing to rebuild after a data breach.",
+      "options": ["A", "The", "—", "An"],
+      "answer": "—",
+      "explain": "Абстрактні неозначувані іменники в загальному значенні йдуть без артикля: trust, honesty, patience."
+    },
+    {
+      "id": "art-03", "category": "articles", "item": "the + superlative", "type": "mcq",
+      "prompt": "This is ___ most confusing screen in the whole flow.",
+      "options": ["a", "the", "—", "one"],
+      "answer": "the",
+      "explain": "Найвищий ступінь порівняння завжди з «the»: the best, the most confusing."
+    },
+    {
+      "id": "art-04", "category": "articles", "item": "a/an first mention", "type": "mcq",
+      "prompt": "I got ___ email from a recruiter. ___ email was surprisingly personal.",
+      "options": ["an / An", "an / The", "the / The", "a / The"],
+      "answer": "an / The",
+      "explain": "Перша згадка — «an», далі про той самий предмет — «the»."
+    },
+    {
+      "id": "art-05", "category": "articles", "item": "zero article with plurals", "type": "mcq",
+      "prompt": "___ users rarely read onboarding text.",
+      "options": ["The", "—", "A", "An"],
+      "answer": "—",
+      "explain": "Множина в загальному значенні («користувачі взагалі») — без артикля."
+    },
+
+    {
+      "id": "ten-01", "category": "tenses", "item": "present perfect vs past simple", "type": "mcq",
+      "prompt": "I ___ this bug three times already, and it keeps coming back.",
+      "options": ["fixed", "have fixed", "was fixing", "had fixed"],
+      "answer": "have fixed",
+      "explain": "«already» і зв'язок із теперішнім («keeps coming back») вимагають Present Perfect."
+    },
+    {
+      "id": "ten-02", "category": "tenses", "item": "past simple with finished time", "type": "mcq",
+      "prompt": "We ___ the redesign last quarter.",
+      "options": ["have shipped", "shipped", "have been shipping", "ship"],
+      "answer": "shipped",
+      "explain": "«last quarter» — завершений період у минулому, тому Past Simple."
+    },
+    {
+      "id": "ten-03", "category": "tenses", "item": "present perfect continuous", "type": "mcq",
+      "prompt": "She ___ on this prototype since Monday and looks exhausted.",
+      "options": ["works", "worked", "has been working", "is working"],
+      "answer": "has been working",
+      "explain": "«since Monday» + акцент на тривалості процесу до зараз — Present Perfect Continuous."
+    },
+    {
+      "id": "ten-04", "category": "tenses", "item": "past perfect", "type": "mcq",
+      "prompt": "By the time the client called, we ___ the file.",
+      "options": ["already sent", "had already sent", "have already sent", "were already sending"],
+      "answer": "had already sent",
+      "explain": "Дія відбулася раніше за іншу дію в минулому — Past Perfect."
+    },
+    {
+      "id": "ten-05", "category": "tenses", "item": "future arrangements", "type": "mcq",
+      "prompt": "I can't join at four — I ___ the stakeholders then.",
+      "options": ["will meet", "am meeting", "meet", "would meet"],
+      "answer": "am meeting",
+      "explain": "Заплановані домовленості з конкретним часом — Present Continuous, не «will»."
+    },
+    {
+      "id": "ten-06", "category": "tenses", "item": "used to", "type": "mcq",
+      "prompt": "We ___ run usability tests every sprint, but we stopped last year.",
+      "options": ["use to", "used to", "are used to", "would used to"],
+      "answer": "used to",
+      "explain": "«used to» — регулярна дія в минулому, якої більше немає."
+    },
+    {
+      "id": "ten-07", "category": "tenses", "item": "future perfect", "type": "mcq",
+      "prompt": "By December we ___ the migration.",
+      "options": ["will finish", "will have finished", "finish", "are finishing"],
+      "answer": "will have finished",
+      "explain": "«By + момент у майбутньому» + завершеність — Future Perfect."
+    },
+
+    {
+      "id": "prep-01", "category": "prepositions", "item": "depend on", "type": "mcq",
+      "prompt": "The launch date depends ___ the security review.",
+      "options": ["of", "from", "on", "at"],
+      "answer": "on",
+      "explain": "Depend завжди з «on». «Depend from» — типова калька, помилка."
+    },
+    {
+      "id": "prep-02", "category": "prepositions", "item": "responsible for", "type": "mcq",
+      "prompt": "Who is responsible ___ the onboarding flow?",
+      "options": ["of", "for", "about", "on"],
+      "answer": "for",
+      "explain": "Responsible for something — сталий вираз."
+    },
+    {
+      "id": "prep-03", "category": "prepositions", "item": "interested in", "type": "mcq",
+      "prompt": "They're interested ___ hearing our approach.",
+      "options": ["to", "for", "in", "about"],
+      "answer": "in",
+      "explain": "Interested in + герундій (hearing, doing, learning)."
+    },
+    {
+      "id": "prep-04", "category": "prepositions", "item": "in time vs on time", "type": "mcq",
+      "prompt": "The build finished ___ time, exactly at noon as promised.",
+      "options": ["in", "on", "at", "by"],
+      "answer": "on",
+      "explain": "«On time» — вчасно, за розкладом. «In time» — встигнути до чогось, з запасом."
+    },
+    {
+      "id": "prep-05", "category": "prepositions", "item": "agree with/to/on", "type": "mcq",
+      "prompt": "I agree ___ you about the pricing model.",
+      "options": ["to", "with", "on", "for"],
+      "answer": "with",
+      "explain": "Agree with a person, agree to a proposal, agree on a decision."
+    },
+    {
+      "id": "prep-06", "category": "prepositions", "item": "consist of", "type": "mcq",
+      "prompt": "The team consists ___ four designers and one researcher.",
+      "options": ["from", "of", "in", "with"],
+      "answer": "of",
+      "explain": "Consist of — незмінна конструкція."
+    },
+
+    {
+      "id": "phr-01", "category": "phrasal verbs", "item": "come up with", "type": "mcq",
+      "prompt": "We need to ___ a better name before Friday.",
+      "options": ["come up with", "come across", "come round", "come into"],
+      "answer": "come up with",
+      "explain": "Come up with — придумати, згенерувати ідею."
+    },
+    {
+      "id": "phr-02", "category": "phrasal verbs", "item": "put off", "type": "mcq",
+      "prompt": "They ___ the release until the legal team signs off.",
+      "options": ["put out", "put off", "put up", "put down"],
+      "answer": "put off",
+      "explain": "Put off — відкласти на пізніше."
+    },
+    {
+      "id": "phr-03", "category": "phrasal verbs", "item": "look into", "type": "mcq",
+      "prompt": "Can you ___ why the conversion dropped?",
+      "options": ["look after", "look up", "look into", "look over"],
+      "answer": "look into",
+      "explain": "Look into — розібратися, дослідити причину."
+    },
+    {
+      "id": "phr-04", "category": "phrasal verbs", "item": "run out of", "type": "mcq",
+      "prompt": "We've ___ budget for user interviews.",
+      "options": ["run out of", "run into", "run over", "run through"],
+      "answer": "run out of",
+      "explain": "Run out of — вичерпати запас чогось."
+    },
+    {
+      "id": "phr-05", "category": "phrasal verbs", "item": "figure out", "type": "mcq",
+      "prompt": "It took us a week to ___ what users actually meant.",
+      "options": ["figure on", "figure out", "figure up", "figure in"],
+      "answer": "figure out",
+      "explain": "Figure out — зрозуміти, докопатися до суті."
+    },
+    {
+      "id": "phr-06", "category": "phrasal verbs", "item": "bring up", "type": "mcq",
+      "prompt": "She ___ a good point about accessibility during the review.",
+      "options": ["brought on", "brought up", "brought about", "brought in"],
+      "answer": "brought up",
+      "explain": "Bring up — підняти тему, згадати питання."
+    },
+
+    {
+      "id": "cond-01", "category": "conditionals", "item": "second conditional", "type": "mcq",
+      "prompt": "If we ___ more time, we would test three variants.",
+      "options": ["have", "had", "would have", "will have"],
+      "answer": "had",
+      "explain": "Другий тип умовного (нереальна ситуація): If + Past Simple, would + інфінітив."
+    },
+    {
+      "id": "cond-02", "category": "conditionals", "item": "third conditional", "type": "mcq",
+      "prompt": "If they ___ us earlier, we could have fixed it before launch.",
+      "options": ["told", "have told", "had told", "would tell"],
+      "answer": "had told",
+      "explain": "Третій тип: нереальне минуле. If + Past Perfect, would/could have + past participle."
+    },
+    {
+      "id": "cond-03", "category": "conditionals", "item": "first conditional", "type": "mcq",
+      "prompt": "If the API ___, the whole checkout breaks.",
+      "options": ["will fail", "fails", "would fail", "failed"],
+      "answer": "fails",
+      "explain": "Після «if» майбутнє не вживається — використовуємо Present Simple."
+    },
+    {
+      "id": "cond-04", "category": "conditionals", "item": "unless", "type": "mcq",
+      "prompt": "___ we get approval today, the timeline slips.",
+      "options": ["Unless", "If not", "Without", "Except"],
+      "answer": "Unless",
+      "explain": "Unless = if not. «If not we get» — граматично неправильно."
+    },
+    {
+      "id": "cond-05", "category": "conditionals", "item": "wish + past", "type": "mcq",
+      "prompt": "I wish I ___ more confident in meetings.",
+      "options": ["am", "was being", "were", "would be"],
+      "answer": "were",
+      "explain": "Wish про теперішнє — Past Simple; для «be» у формальній англійській — «were» для всіх осіб."
+    },
+
+    {
+      "id": "voc-01", "category": "vocabulary", "item": "achieve vs reach", "type": "mcq",
+      "prompt": "It took two years to ___ profitability.",
+      "options": ["arrive", "achieve", "gain", "win"],
+      "answer": "achieve",
+      "explain": "Achieve — досягти мети чи результату завдяки зусиллям."
+    },
+    {
+      "id": "voc-02", "category": "vocabulary", "item": "make vs do", "type": "mcq",
+      "prompt": "Let's ___ some research before we commit.",
+      "options": ["make", "do", "take", "have"],
+      "answer": "do",
+      "explain": "Do research, do a test, do work — але make a decision, make a mistake."
+    },
+    {
+      "id": "voc-03", "category": "vocabulary", "item": "borrow vs lend", "type": "mcq",
+      "prompt": "Could you ___ me your charger for ten minutes?",
+      "options": ["borrow", "lend", "loan out", "rent"],
+      "answer": "lend",
+      "explain": "Lend — давати комусь. Borrow — брати в когось."
+    },
+    {
+      "id": "voc-04", "category": "vocabulary", "item": "affect vs effect", "type": "mcq",
+      "prompt": "The change didn't ___ retention at all.",
+      "options": ["effect", "affect", "afflict", "effort"],
+      "answer": "affect",
+      "explain": "Affect — дієслово (впливати). Effect — іменник (ефект)."
+    },
+    {
+      "id": "voc-05", "category": "vocabulary", "item": "convince vs persuade", "type": "mcq",
+      "prompt": "The data ___ me that we were wrong.",
+      "options": ["persuaded to", "convinced", "assured", "insisted"],
+      "answer": "convinced",
+      "explain": "Convince — переконати в чомусь (думка). Persuade — умовити щось зробити (дія)."
+    },
+    {
+      "id": "voc-06", "category": "vocabulary", "item": "raise vs rise", "type": "mcq",
+      "prompt": "Costs ___ sharply after the policy changed.",
+      "options": ["raised", "rose", "arose", "raised up"],
+      "answer": "rose",
+      "explain": "Rise — зростати самостійно (без додатка). Raise — піднімати щось."
+    },
+    {
+      "id": "voc-07", "category": "vocabulary", "item": "advice uncountable", "type": "mcq",
+      "prompt": "She gave me a very useful ___ about negotiating.",
+      "options": ["advice", "advices", "piece of advice", "advise"],
+      "answer": "piece of advice",
+      "explain": "Advice незлічуване: «an advice» неможливе, кажемо «a piece of advice»."
+    },
+    {
+      "id": "voc-08", "category": "vocabulary", "item": "although vs despite", "type": "mcq",
+      "prompt": "___ the tight deadline, the quality stayed high.",
+      "options": ["Although", "Despite", "However", "Even"],
+      "answer": "Despite",
+      "explain": "Despite + іменник. Although + ціле речення з підметом і присудком."
+    },
+
+    {
+      "id": "idm-01", "category": "idioms", "item": "on the same page", "type": "mcq",
+      "prompt": "Before we start, let's make sure everyone is ___.",
+      "options": ["on the same page", "in the same book", "at one page", "on one line"],
+      "answer": "on the same page",
+      "explain": "Be on the same page — мати спільне розуміння ситуації."
+    },
+    {
+      "id": "idm-02", "category": "idioms", "item": "cut corners", "type": "mcq",
+      "prompt": "We can't ___ on accessibility just to ship faster.",
+      "options": ["cut corners", "cut edges", "cut sides", "cut ends"],
+      "answer": "cut corners",
+      "explain": "Cut corners — робити абияк, економлячи час чи гроші."
+    },
+    {
+      "id": "idm-03", "category": "idioms", "item": "back to the drawing board", "type": "mcq",
+      "prompt": "The concept failed testing, so it's ___.",
+      "options": ["back to the drawing board", "back to the paper", "back to the start line", "back on the board"],
+      "answer": "back to the drawing board",
+      "explain": "Повертатися до самого початку після невдачі."
+    },
+    {
+      "id": "idm-04", "category": "idioms", "item": "in the loop", "type": "mcq",
+      "prompt": "Keep me ___ if anything changes.",
+      "options": ["in the loop", "on the loop", "at the loop", "into the loop"],
+      "answer": "in the loop",
+      "explain": "Keep someone in the loop — тримати в курсі."
+    },
+    {
+      "id": "idm-05", "category": "idioms", "item": "touch base", "type": "mcq",
+      "prompt": "Let's ___ next week to review progress.",
+      "options": ["touch base", "touch ground", "touch point", "touch base up"],
+      "answer": "touch base",
+      "explain": "Touch base — коротко зв'язатися, звіритися."
+    },
+    {
+      "id": "idm-06", "category": "idioms", "item": "bite the bullet", "type": "mcq",
+      "prompt": "We had to ___ and rewrite the whole component.",
+      "options": ["bite the bullet", "eat the bullet", "take the bullet", "bite the dust"],
+      "answer": "bite the bullet",
+      "explain": "Bite the bullet — зважитися на щось неприємне, але потрібне."
+    },
+
+    {
+      "id": "ord-01", "category": "word order", "item": "indirect questions", "type": "order",
+      "prompt": "Складіть коректне непряме питання:",
+      "tokens": ["Could", "you", "tell", "me", "where", "the", "settings", "are"],
+      "answer": "Could you tell me where the settings are",
+      "explain": "У непрямих питаннях порядок прямий: «where the settings are», а не «where are the settings»."
+    },
+    {
+      "id": "ord-02", "category": "word order", "item": "adjective order", "type": "order",
+      "prompt": "Розставте прикметники в правильному порядку:",
+      "tokens": ["a", "beautiful", "small", "wooden", "table"],
+      "answer": "a beautiful small wooden table",
+      "explain": "Порядок прикметників: оцінка → розмір → матеріал. Opinion, size, material."
+    },
+    {
+      "id": "ord-03", "category": "word order", "item": "adverb placement", "type": "order",
+      "prompt": "Складіть речення:",
+      "tokens": ["She", "has", "never", "worked", "remotely", "before"],
+      "answer": "She has never worked remotely before",
+      "explain": "Прислівник частоти «never» стоїть між допоміжним і смисловим дієсловом."
+    },
+    {
+      "id": "ord-04", "category": "word order", "item": "reported speech", "type": "order",
+      "prompt": "Складіть речення в непрямій мові:",
+      "tokens": ["He", "said", "he", "would", "send", "the", "file", "later"],
+      "answer": "He said he would send the file later",
+      "explain": "У непрямій мові «will» зсувається у «would»."
+    },
+    {
+      "id": "ord-05", "category": "word order", "item": "passive voice", "type": "order",
+      "prompt": "Складіть речення в пасивному стані:",
+      "tokens": ["The", "report", "was", "reviewed", "by", "two", "managers"],
+      "answer": "The report was reviewed by two managers",
+      "explain": "Пасив: be + past participle, виконавець після «by»."
+    },
+
+    {
+      "id": "fil-01", "category": "vocabulary", "item": "collocation: meet a deadline", "type": "fill",
+      "prompt": "We managed to ___ the deadline despite the delays.",
+      "answer": "meet",
+      "accept": ["meet"],
+      "explain": "Стала сполука: meet a deadline. Не «reach» і не «catch»."
+    },
+    {
+      "id": "fil-02", "category": "vocabulary", "item": "collocation: take responsibility", "type": "fill",
+      "prompt": "He was willing to ___ responsibility for the mistake.",
+      "answer": "take",
+      "accept": ["take", "accept"],
+      "explain": "Take responsibility — стандартна сполука; «accept responsibility» теж коректно."
+    },
+    {
+      "id": "fil-03", "category": "tenses", "item": "for/since", "type": "fill",
+      "prompt": "I've been learning English ___ six years.",
+      "answer": "for",
+      "accept": ["for"],
+      "explain": "«For» + тривалість (six years). «Since» + точка початку (2019)."
+    },
+    {
+      "id": "fil-04", "category": "prepositions", "item": "good at", "type": "fill",
+      "prompt": "She's really good ___ explaining complex ideas.",
+      "answer": "at",
+      "accept": ["at"],
+      "explain": "Good at + герундій — сталий вираз."
+    },
+    {
+      "id": "fil-05", "category": "vocabulary", "item": "make a decision", "type": "fill",
+      "prompt": "We need to ___ a decision by Thursday.",
+      "answer": "make",
+      "accept": ["make"],
+      "explain": "Make a decision, але take a chance. Українська калька «take a decision» звучить неприродно в US English."
+    },
+    {
+      "id": "fil-06", "category": "conditionals", "item": "would in main clause", "type": "fill",
+      "prompt": "If I were you, I ___ ask for a raise.",
+      "answer": "would",
+      "accept": ["would", "'d"],
+      "explain": "Другий тип умовного: головна частина завжди з «would»."
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+/* Wordforge — палітра взята з кольорів гартування сталі */
+:root{
+  --iron:        #14161b;
+  --iron-2:      #1c1f26;
+  --iron-3:      #262a33;
+  --ash:         #8d93a1;
+  --chalk:       #eceae4;
+
+  --straw:       #d9a441;   /* початок */
+  --bronze:      #b4632c;
+  --violet:      #6f5a9e;
+  --blue:        #3f7fb5;   /* майстерність */
+
+  --ok:          #5fa87c;
+  --no:          #c25a5a;
+
+  --r: 3px;
+  --shell: 1080px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  background:var(--iron);
+  color:var(--chalk);
+  font-family:'IBM Plex Sans',system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ледь помітна текстура окалини */
+.grain{
+  position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(217,164,65,.06), transparent 55%),
+    radial-gradient(ellipse at 85% 100%, rgba(63,127,181,.07), transparent 55%);
+}
+
+.screen{display:none; position:relative; z-index:1}
+.screen.active{display:block}
+
+.shell{max-width:var(--shell); margin:0 auto; padding:32px 24px 64px}
+.shell.narrow{max-width:660px}
+
+/* ——— типографіка ——— */
+h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.02em; line-height:1.1}
+.mono{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase}
+.eyebrow{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--straw); margin-bottom:14px}
+.note{font-size:13px; color:var(--ash); margin-top:10px}
+.note.dim{font-size:12px; opacity:.72}
+
+/* ——— логотип ——— */
+.mark{text-align:center; padding:56px 0 36px}
+.mark-glyph{color:var(--straw); font-size:14px}
+.wordmark{font-size:clamp(34px,7vw,54px); font-weight:900; margin:8px 0}
+.tagline{color:var(--ash); font-size:14px}
+
+/* ——— панелі ——— */
+.panel{
+  background:var(--iron-2);
+  border:1px solid var(--iron-3);
+  border-radius:var(--r);
+  padding:28px;
+}
+
+.tabs{display:flex; gap:4px; margin-bottom:22px; border-bottom:1px solid var(--iron-3)}
+.tab{
+  background:none; border:0; color:var(--ash); cursor:pointer;
+  font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.1em;
+  text-transform:uppercase; padding:8px 12px; border-bottom:2px solid transparent;
+}
+.tab.active{color:var(--chalk); border-bottom-color:var(--straw)}
+
+.field{display:block; margin-bottom:16px}
+.field span{display:block; font-size:12px; color:var(--ash); margin-bottom:6px}
+.field input{
+  width:100%; background:var(--iron); border:1px solid var(--iron-3);
+  border-radius:var(--r); color:var(--chalk); padding:11px 13px;
+  font-family:inherit; font-size:15px;
+}
+.field input:focus{outline:2px solid var(--straw); outline-offset:1px; border-color:transparent}
+
+/* ——— кнопки ——— */
+.btn{
+  display:inline-block; cursor:pointer; border-radius:var(--r);
+  font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:15px;
+  padding:12px 22px; border:1px solid transparent; transition:.15s;
+}
+.btn:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
+.btn.primary{background:var(--straw); color:#1a1408; width:100%; margin-top:6px}
+.btn.primary:hover{background:#e8b352}
+.btn.primary.big{font-size:16px; padding:15px 26px; width:auto}
+.btn.ghost{background:none; border-color:var(--iron-3); color:var(--ash); width:100%; margin-top:10px}
+.btn.ghost:hover{color:var(--chalk); border-color:var(--ash)}
+.btn.small{width:auto; padding:7px 14px; font-size:13px; margin:0}
+
+/* ——— верхня панель ——— */
+.topbar{display:flex; justify-content:space-between; align-items:center; padding-bottom:28px; border-bottom:1px solid var(--iron-3)}
+.brand-sm{font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px}
+.brand-sm .mark-glyph{margin-right:6px}
+.topbar-right{display:flex; align-items:center; gap:14px}
+.who{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ash)}
+
+/* ——— герой ——— */
+.hero{display:grid; grid-template-columns:1.3fr 1fr; gap:48px; padding:56px 0}
+.hero-title{font-size:clamp(28px,4.4vw,44px); margin-bottom:18px}
+.hero-text{color:var(--ash); font-size:15px; max-width:44ch; margin-bottom:26px}
+.hero-left .btn.ghost{width:auto; margin-left:10px}
+
+.stat-block{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--iron-3); border:1px solid var(--iron-3); border-radius:var(--r)}
+.stat{background:var(--iron-2); padding:20px 16px; display:flex; flex-direction:column; gap:4px}
+.stat-num{font-family:'Unbounded',sans-serif; font-size:26px; font-weight:700}
+.stat-lab{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--ash)}
+
+/* ——— шкала гарту (сигнатурний елемент) ——— */
+.temper{padding:20px 0 40px; border-top:1px solid var(--iron-3)}
+.temper-head{margin:28px 0 22px}
+.temper-head h3{font-size:19px; margin-bottom:8px}
+.temper-bars{display:flex; flex-direction:column; gap:14px}
+
+.tbar{display:grid; grid-template-columns:150px 1fr 54px; align-items:center; gap:16px}
+.tbar-name{font-size:13px; color:var(--chalk)}
+.tbar-rail{height:8px; background:var(--iron-3); border-radius:99px; overflow:hidden; position:relative}
+.tbar-fill{height:100%; border-radius:99px; transition:width .5s ease}
+.tbar-val{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ash); text-align:right}
+
+/* ——— гра ——— */
+.play-top{padding:24px 0 20px}
+.progress-rail{height:3px; background:var(--iron-3); border-radius:99px; overflow:hidden}
+.progress-fill{height:100%; width:0; background:var(--straw); transition:width .35s ease}
+.play-meta{display:flex; justify-content:space-between; align-items:center; margin-top:14px; color:var(--ash)}
+.streak{color:var(--straw)}
+
+.card{background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r); padding:30px}
+.cat-tag{color:var(--ash); margin-bottom:16px}
+.q-prompt{font-size:19px; line-height:1.5; margin-bottom:24px}
+
+.opt{
+  display:block; width:100%; text-align:left; cursor:pointer;
+  background:var(--iron); border:1px solid var(--iron-3); border-radius:var(--r);
+  color:var(--chalk); padding:13px 16px; margin-bottom:9px;
+  font-family:inherit; font-size:15px; transition:.13s;
+}
+.opt:hover:not(:disabled){border-color:var(--ash)}
+.opt:focus-visible{outline:2px solid var(--straw); outline-offset:1px}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok); background:rgba(95,168,124,.1)}
+.opt.wrong{border-color:var(--no); background:rgba(194,90,90,.1)}
+
+.fill-input{
+  width:100%; background:var(--iron); border:1px solid var(--iron-3); border-radius:var(--r);
+  color:var(--chalk); padding:13px 16px; font-family:inherit; font-size:15px;
+}
+.fill-input:focus{outline:2px solid var(--straw); outline-offset:1px}
+
+.tokens{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px}
+.token{
+  background:var(--iron); border:1px solid var(--iron-3); border-radius:var(--r);
+  color:var(--chalk); padding:8px 13px; cursor:pointer; font-family:inherit; font-size:15px;
+}
+.token:hover{border-color:var(--ash)}
+.token.used{opacity:.3; cursor:default}
+.slot-rail{min-height:48px; background:var(--iron); border:1px dashed var(--iron-3); border-radius:var(--r); padding:9px; display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px}
+
+.feedback{margin-top:20px; padding-top:18px; border-top:1px solid var(--iron-3)}
+.verdict{font-family:'Unbounded',sans-serif; font-weight:700; font-size:15px; margin-bottom:8px}
+.verdict.ok{color:var(--ok)}
+.verdict.no{color:var(--no)}
+.explain{font-size:14px; color:var(--ash); line-height:1.6}
+
+/* ——— підсумок ——— */
+.result{text-align:center; margin-top:64px}
+.result-score{font-size:52px; margin-bottom:10px}
+.result-line{color:var(--ash); font-size:15px; margin-bottom:26px}
+.res-breakdown{text-align:left; margin-bottom:26px; display:flex; flex-direction:column; gap:9px}
+.res-row{display:flex; justify-content:space-between; font-size:14px; padding:9px 0; border-bottom:1px solid var(--iron-3)}
+.res-row span:last-child{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ash)}
+
+.export-row{padding-top:8px}
+.export-box{width:100%; height:190px; margin-top:14px; background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r); color:var(--ash); font-family:'IBM Plex Mono',monospace; font-size:12px; padding:14px; resize:vertical}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr; gap:34px; padding:36px 0}
+  .hero-left .btn.ghost{margin-left:0; width:100%}
+  .btn.primary.big{width:100%}
+  .tbar{grid-template-columns:110px 1fr 46px; gap:10px}
+  .tbar-name{font-size:12px}
+  .shell{padding:20px 16px 48px}
+  .card{padding:22px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important; animation:none !important}
+}

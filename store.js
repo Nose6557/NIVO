@@ -1,0 +1,164 @@
+/* store.js — єдиний шар доступу до даних.
+   Працює у двох режимах: Supabase (з акаунтом) або localStorage (гість).
+   Уся решта коду знає лише про цей інтерфейс — тому бекенд можна замінити,
+   не чіпаючи логіку гри. */
+
+(function () {
+  const cfg = window.WF_CONFIG || {};
+  let sb = null;
+  let mode = "local";           // "supabase" | "local"
+  let user = null;
+  const LS = "wordforge_local_v1";
+
+  if (window.supabase && cfg.SUPABASE_URL && cfg.SUPABASE_KEY) {
+    sb = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_KEY);
+  }
+
+  /* ---------- локальне сховище ---------- */
+  function readLocal() {
+    try {
+      return JSON.parse(localStorage.getItem(LS)) || blank();
+    } catch { return blank(); }
+  }
+  function blank() {
+    return { sessions: [], answers: [], weak: {} };
+  }
+  function writeLocal(d) {
+    try { localStorage.setItem(LS, JSON.stringify(d)); } catch {}
+  }
+
+  /* ---------- авторизація ---------- */
+  const Store = {
+    get mode() { return mode; },
+    get user() { return user; },
+
+    async init() {
+      if (!sb) return null;
+      const { data } = await sb.auth.getSession();
+      if (data && data.session) {
+        user = data.session.user;
+        mode = "supabase";
+      }
+      return user;
+    },
+
+    async signUp(email, password) {
+      if (!sb) throw new Error("Supabase недоступний");
+      const { data, error } = await sb.auth.signUp({ email, password });
+      if (error) throw error;
+      if (data.session) { user = data.user; mode = "supabase"; }
+      return data;
+    },
+
+    async signIn(email, password) {
+      if (!sb) throw new Error("Supabase недоступний");
+      const { data, error } = await sb.auth.signInWithPassword({ email, password });
+      if (error) throw error;
+      user = data.user;
+      mode = "supabase";
+      return data;
+    },
+
+    async signOut() {
+      if (sb && mode === "supabase") await sb.auth.signOut();
+      user = null;
+      mode = "local";
+    },
+
+    useGuest() { mode = "local"; user = null; },
+
+    /* ---------- запис сесії ---------- */
+    async saveSession(session, answers) {
+      if (mode === "supabase" && sb && user) {
+        const { data, error } = await sb.from("sessions").insert({
+          user_id: user.id,
+          started_at: session.started_at,
+          finished_at: new Date().toISOString(),
+          total_questions: session.total,
+          correct_count: session.correct,
+          best_streak: session.bestStreak
+        }).select().single();
+        if (error) { console.warn("session insert", error); return; }
+
+        const rows = answers.map(a => ({
+          user_id: user.id,
+          session_id: data.id,
+          question_id: a.question_id,
+          category: a.category,
+          is_correct: a.is_correct,
+          response_ms: a.response_ms
+        }));
+        const r2 = await sb.from("answers").insert(rows);
+        if (r2.error) console.warn("answers insert", r2.error);
+
+        await this._bumpWeak(answers);
+      } else {
+        const d = readLocal();
+        d.sessions.push({
+          started_at: session.started_at,
+          finished_at: new Date().toISOString(),
+          total_questions: session.total,
+          correct_count: session.correct,
+          best_streak: session.bestStreak
+        });
+        answers.forEach(a => {
+          d.answers.push({ ...a, answered_at: new Date().toISOString() });
+          const k = a.item_key;
+          if (!d.weak[k]) d.weak[k] = { item_key: k, category: a.category, attempts: 0, errors: 0 };
+          d.weak[k].attempts++;
+          if (!a.is_correct) d.weak[k].errors++;
+        });
+        writeLocal(d);
+      }
+    },
+
+    async _bumpWeak(answers) {
+      // читаємо наявні записи, оновлюємо лічильники, пишемо назад
+      const keys = [...new Set(answers.map(a => a.item_key))];
+      const { data: existing } = await sb.from("weak_items")
+        .select("*").eq("user_id", user.id).in("item_key", keys);
+      const map = {};
+      (existing || []).forEach(r => { map[r.item_key] = r; });
+
+      const rows = keys.map(k => {
+        const mine = answers.filter(a => a.item_key === k);
+        const prev = map[k] || { attempts: 0, errors: 0 };
+        return {
+          user_id: user.id,
+          item_key: k,
+          category: mine[0].category,
+          attempts: prev.attempts + mine.length,
+          errors: prev.errors + mine.filter(a => !a.is_correct).length,
+          last_seen: new Date().toISOString()
+        };
+      });
+      const { error } = await sb.from("weak_items")
+        .upsert(rows, { onConflict: "user_id,item_key" });
+      if (error) console.warn("weak upsert", error);
+    },
+
+    /* ---------- читання статистики ---------- */
+    async getStats() {
+      if (mode === "supabase" && sb && user) {
+        const [s, a, w] = await Promise.all([
+          sb.from("sessions").select("*").eq("user_id", user.id),
+          sb.from("answers").select("category,is_correct,response_ms,answered_at").eq("user_id", user.id),
+          sb.from("weak_items").select("*").eq("user_id", user.id)
+        ]);
+        return {
+          sessions: s.data || [],
+          answers: a.data || [],
+          weak: w.data || []
+        };
+      }
+      const d = readLocal();
+      return {
+        sessions: d.sessions,
+        answers: d.answers,
+        weak: Object.values(d.weak)
+      };
+    }
+  };
+
+  window.Store = Store;
+})();
