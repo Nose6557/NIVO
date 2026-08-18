@@ -84,14 +84,15 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 
 /* ——— кнопки ——— */
 .btn{
-  display:inline-block; cursor:pointer; border-radius:var(--r);
+  display:inline-flex; align-items:center; justify-content:center;
+  cursor:pointer; border-radius:var(--r);
   font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:15px;
-  padding:12px 22px; border:1px solid transparent; transition:.15s;
+  padding:12px 22px; line-height:1.2; border:1px solid transparent; transition:.15s;
 }
 .btn:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
-.btn.primary{background:var(--straw); color:#1a1408; width:100%; margin-top:6px}
+.btn.primary{background:var(--straw); color:#1a1408; width:100%; margin-top:10px}
 .btn.primary:hover{background:#e8b352}
-.btn.primary.big{font-size:16px; padding:15px 26px; width:auto}
+.btn.primary.big{width:auto}
 .btn.ghost{background:none; border-color:var(--iron-3); color:var(--ash); width:100%; margin-top:10px}
 .btn.ghost:hover{color:var(--chalk); border-color:var(--ash)}
 .btn.small{width:auto; padding:7px 14px; font-size:13px; margin:0}
