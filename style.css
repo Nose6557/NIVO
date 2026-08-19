@@ -46,7 +46,7 @@ body{
 .screen{display:none; position:relative; z-index:1}
 .screen.active{display:block}
 
-.shell{max-width:var(--shell); margin:0 auto; padding:24px 24px 24px}
+.shell{max-width:var(--shell); margin:0 auto; padding:24px 24px 24px 24px}
 .shell.narrow{max-width:660px}
 
 /* ——— типографіка ——— */
