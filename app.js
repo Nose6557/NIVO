@@ -308,9 +308,9 @@ async function renderHome() {
     bars.appendChild(row);
   });
 
-  $("who").textContent = Store.mode === "supabase" && Store.user
-    ? Store.user.email
-    : "гостьовий режим";
+  const email = Store.mode === "supabase" && Store.user ? Store.user.email : null;
+  $("who").textContent = email || "гостьовий режим";
+  $("avatar-initial").textContent = email ? email[0].toUpperCase() : "?";
 }
 
 /* ---------- експорт для аналізу ---------- */
@@ -433,6 +433,27 @@ $("btn-signout").onclick = async () => {
   $("auth-msg").textContent = "";
   show("auth");
 };
+
+function closeAvatarMenu() {
+  $("avatar-dropdown").hidden = true;
+  $("avatar-btn").setAttribute("aria-expanded", "false");
+}
+
+$("avatar-btn").onclick = (e) => {
+  e.stopPropagation();
+  const dd = $("avatar-dropdown");
+  const willOpen = dd.hidden;
+  dd.hidden = !willOpen;
+  $("avatar-btn").setAttribute("aria-expanded", String(willOpen));
+};
+
+document.addEventListener("click", (e) => {
+  if (!$("avatar-dropdown").hidden && !e.target.closest(".avatar-menu")) closeAvatarMenu();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !$("avatar-dropdown").hidden) closeAvatarMenu();
+});
 
 $("btn-start").onclick = () => startSession(false);
 $("btn-weak").onclick = () => startSession(true);

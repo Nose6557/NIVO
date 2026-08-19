@@ -86,8 +86,15 @@
   <header class="topbar">
       <div class="brand-sm"><span class="mark-glyph">◆</span> Wordforge</div>
       <div class="topbar-right">
-        <span class="who" id="who"></span>
-        <button class="btn ghost small" id="btn-signout">Вийти</button>
+        <div class="avatar-menu">
+          <button class="avatar-btn" id="avatar-btn" aria-haspopup="true" aria-expanded="false">
+            <span id="avatar-initial"></span>
+          </button>
+          <div class="avatar-dropdown" id="avatar-dropdown" hidden>
+            <p class="who" id="who"></p>
+            <button class="btn ghost small" id="btn-signout">Вийти</button>
+          </div>
+        </div>
       </div>
     </header>
   <div class="shell">
