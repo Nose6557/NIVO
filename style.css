@@ -152,7 +152,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .stat-lab{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--ash)}
 
 /* ——— шкала гарту (сигнатурний елемент) ——— */
-.temper{padding:20px 0 40px; border-top:1px solid var(--iron-3); text-align:center}
+.temper{padding:20px 0 40px; text-align:center}
 .temper-head{margin:28px auto 22px; max-width:640px}
 .temper-head h3{font-size:19px; margin-bottom:8px}
 .temper-bars{display:flex; flex-direction:column; gap:14px; max-width:640px; margin:0 auto; text-align:left}
