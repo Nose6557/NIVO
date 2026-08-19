@@ -455,12 +455,26 @@ $("btn-quit").onclick = async () => {
 $("btn-again").onclick = () => startSession(false);
 $("btn-home").onclick = async () => { await renderHome(); show("home"); };
 
+function closeExportModal() {
+  $("export-modal").hidden = true;
+}
+
 $("btn-export").onclick = async () => {
   const box = $("export-box");
   box.value = await buildExport();
-  box.hidden = false;
+  $("export-modal").hidden = false;
   box.select();
 };
+
+$("btn-export-close").onclick = closeExportModal;
+
+$("export-modal").addEventListener("click", (e) => {
+  if (e.target.id === "export-modal") closeExportModal();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !$("export-modal").hidden) closeExportModal();
+});
 
 /* ---------- старт ---------- */
 Store.onPasswordRecovery(() => {

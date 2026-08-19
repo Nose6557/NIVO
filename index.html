@@ -119,10 +119,20 @@
 
     <div class="export-row">
       <button class="btn ghost small" id="btn-export">Експорт прогресу для аналізу</button>
-      <textarea id="export-box" class="export-box" readonly hidden></textarea>
     </div>
   </div>
 </section>
+
+<!-- МОДАЛКА: експорт -->
+<div class="modal-overlay" id="export-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="export-modal-title">
+    <div class="modal-head">
+      <h3 id="export-modal-title">Експорт прогресу</h3>
+      <button class="modal-close" id="btn-export-close" aria-label="Закрити">&times;</button>
+    </div>
+    <textarea id="export-box" class="export-box" readonly></textarea>
+  </div>
+</div>
 
 <!-- ЕКРАН: гра -->
 <section id="screen-play" class="screen">
