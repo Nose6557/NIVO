@@ -215,7 +215,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .res-row{display:flex; justify-content:space-between; font-size:14px; padding:9px 0; border-bottom:1px solid var(--iron-3)}
 .res-row span:last-child{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ash)}
 
-.export-row{padding-top:8px; text-align:center}
+.export-row{text-align:center}
 .export-row .btn{width:auto}
 .export-box{
   width:100%; height:190px; margin-top:14px; resize:vertical;
