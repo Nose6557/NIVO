@@ -468,6 +468,20 @@ $("btn-export").onclick = async () => {
 
 $("btn-export-close").onclick = closeExportModal;
 
+$("btn-export-copy").onclick = async () => {
+  const box = $("export-box");
+  const btn = $("btn-export-copy");
+  try {
+    await navigator.clipboard.writeText(box.value);
+  } catch {
+    box.select();
+    document.execCommand("copy");
+  }
+  const original = btn.textContent;
+  btn.textContent = "Скопійовано";
+  setTimeout(() => { btn.textContent = original; }, 1500);
+};
+
 $("export-modal").addEventListener("click", (e) => {
   if (e.target.id === "export-modal") closeExportModal();
 });

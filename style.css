@@ -199,7 +199,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 }
 .modal-overlay[hidden]{display:none}
 .modal{
-  width:100%; max-width:640px;
+  width:100%; max-width:920px;
   background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r);
   padding:24px; max-height:calc(100vh - 48px); overflow:auto;
 }
@@ -209,7 +209,9 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   color:var(--ash); font-size:22px; line-height:1; padding:4px 8px; cursor:pointer; border-radius:var(--r);
 }
 .modal-close:hover{color:var(--chalk); background:var(--iron-3)}
-.modal .export-box{margin-top:14px; height:220px}
+.modal .export-box{margin-top:14px; height:min(60vh,520px)}
+.modal-actions{display:flex; justify-content:flex-end; margin-top:14px}
+.modal-actions .btn{margin:0}
 
 @media (max-width:760px){
   .hero{grid-template-columns:1fr; gap:34px; padding:36px 0}
