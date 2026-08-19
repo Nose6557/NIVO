@@ -20,6 +20,11 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
+button{
+  appearance:none; -webkit-appearance:none;
+  font:inherit; color:inherit; background:none; border:0;
+}
+
 body{
   background:var(--iron);
   color:var(--chalk);
@@ -99,8 +104,8 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 
 .link-btn{
   display:block; width:100%; text-align:center; margin-top:12px;
-  background:none; border:0; cursor:pointer; padding:0;
-  font-family:inherit; font-size:13px; color:var(--ash); text-decoration:underline;
+  cursor:pointer; padding:0;
+  font-size:13px; color:var(--ash); text-decoration:underline;
 }
 .link-btn:hover{color:var(--chalk)}
 
