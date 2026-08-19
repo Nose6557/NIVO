@@ -36,9 +36,49 @@
         <input type="password" id="auth-pass" autocomplete="current-password" placeholder="мінімум 6 символів">
       </label>
       <button class="btn primary" id="auth-submit">Увійти</button>
+      <button class="link-btn" id="auth-forgot">Забули пароль?</button>
       <p class="note" id="auth-msg"></p>
       <button class="btn ghost small" id="auth-skip">Спробувати без акаунта</button>
       <p class="note dim">Без акаунта прогрес зберігається лише в цьому браузері.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ЕКРАН: відновлення пароля -->
+<section id="screen-forgot" class="screen">
+  <div class="shell narrow">
+    <div class="mark">
+      <span class="mark-glyph">◆</span>
+      <h1 class="wordmark">Wordforge</h1>
+    </div>
+    <div class="panel">
+      <p class="note dim">Введіть email — надішлемо посилання для скидання пароля.</p>
+      <label class="field">
+        <span>Email</span>
+        <input type="email" id="forgot-email" autocomplete="email" placeholder="you@example.com">
+      </label>
+      <button class="btn primary" id="forgot-submit">Надіслати посилання</button>
+      <p class="note" id="forgot-msg"></p>
+      <button class="btn ghost small" id="forgot-back">Назад до входу</button>
+    </div>
+  </div>
+</section>
+
+<!-- ЕКРАН: новий пароль -->
+<section id="screen-newpass" class="screen">
+  <div class="shell narrow">
+    <div class="mark">
+      <span class="mark-glyph">◆</span>
+      <h1 class="wordmark">Wordforge</h1>
+    </div>
+    <div class="panel">
+      <p class="note dim">Встановіть новий пароль для акаунта.</p>
+      <label class="field">
+        <span>Новий пароль</span>
+        <input type="password" id="newpass-pass" autocomplete="new-password" placeholder="мінімум 6 символів">
+      </label>
+      <button class="btn primary" id="newpass-submit">Зберегти новий пароль</button>
+      <p class="note" id="newpass-msg"></p>
     </div>
   </div>
 </section>

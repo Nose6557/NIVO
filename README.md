@@ -24,6 +24,10 @@ python3 -m http.server 8000
 
 В Authentication → Providers → Email на час тестування зручно вимкнути «Confirm email».
 
+Для роботи «Забули пароль?» додай адресу сайту (наприклад `https://nose6557.github.io/wordforge/`,
+для локального запуску — ще й `http://localhost:8000`) в Authentication → URL Configuration →
+Redirect URLs. Без цього посилання зі скидання пароля поверне користувача не туди.
+
 ## Структура
 
 | Файл | Призначення |

@@ -383,6 +383,45 @@ $("auth-submit").onclick = async () => {
   }
 };
 
+$("auth-forgot").onclick = () => {
+  $("forgot-email").value = $("auth-email").value.trim();
+  $("forgot-msg").textContent = "";
+  show("forgot");
+};
+
+$("forgot-back").onclick = () => {
+  $("auth-msg").textContent = "";
+  show("auth");
+};
+
+$("forgot-submit").onclick = async () => {
+  const email = $("forgot-email").value.trim();
+  const msg = $("forgot-msg");
+  if (!email) { msg.textContent = "Вкажіть email."; return; }
+  msg.textContent = "Хвилинку…";
+  try {
+    await Store.resetPasswordForEmail(email);
+    msg.textContent = "Перевірте пошту — надіслали посилання для скидання пароля.";
+  } catch (e) {
+    msg.textContent = "Не вийшло: " + (e.message || "спробуйте пізніше");
+  }
+};
+
+$("newpass-submit").onclick = async () => {
+  const pass = $("newpass-pass").value;
+  const msg = $("newpass-msg");
+  if (!pass || pass.length < 6) { msg.textContent = "Мінімум 6 символів."; return; }
+  msg.textContent = "Хвилинку…";
+  try {
+    await Store.updatePassword(pass);
+    msg.textContent = "Пароль оновлено.";
+    await renderHome();
+    show("home");
+  } catch (e) {
+    msg.textContent = "Не вийшло: " + (e.message || "спробуйте ще раз");
+  }
+};
+
 $("auth-skip").onclick = async () => {
   Store.useGuest();
   await renderHome();
@@ -424,6 +463,12 @@ $("btn-export").onclick = async () => {
 };
 
 /* ---------- старт ---------- */
+Store.onPasswordRecovery(() => {
+  $("newpass-msg").textContent = "";
+  $("newpass-pass").value = "";
+  show("newpass");
+});
+
 (async function () {
   await loadBank();
   const u = await Store.init();

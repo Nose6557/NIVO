@@ -97,6 +97,13 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .btn.ghost:hover{color:var(--chalk); border-color:var(--ash)}
 .btn.small{width:auto; padding:7px 14px; font-size:13px; margin:0}
 
+.link-btn{
+  display:block; width:100%; text-align:center; margin-top:12px;
+  background:none; border:0; cursor:pointer; padding:0;
+  font-family:inherit; font-size:13px; color:var(--ash); text-decoration:underline;
+}
+.link-btn:hover{color:var(--chalk)}
+
 /* ——— верхня панель ——— */
 .topbar{display:flex; justify-content:space-between; align-items:center; padding-bottom:28px; border-bottom:1px solid var(--iron-3)}
 .brand-sm{font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px}
