@@ -99,7 +99,7 @@ function renderQuestion() {
 
   $("prog").style.width = (idx / queue.length * 100) + "%";
   $("qcount").textContent = (idx + 1) + " / " + queue.length;
-  $("streak-live").textContent = "серія " + streak;
+  $("streak-live").textContent = streak + " правильних поспіль";
   $("qcat").textContent = CAT_UA[q.category] || q.category;
   $("qprompt").textContent = q.prompt;
   $("feedback").hidden = true;
