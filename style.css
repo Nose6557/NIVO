@@ -216,6 +216,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .res-row span:last-child{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ash)}
 
 .export-row{padding-top:8px; text-align:center}
+.export-row .btn{width:auto}
 .export-box{
   width:100%; height:190px; margin-top:14px; resize:vertical;
   background:var(--iron); border:1px solid var(--iron-3);
@@ -250,6 +251,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 @media (max-width:760px){
   .hero{padding:36px 0}
   .hero-actions{flex-direction:column; width:100%}
+  .hero-actions .btn.primary.big,
   .hero-actions .btn{width:100%}
   .stat-block{grid-template-columns:1fr 1fr}
   .tbar{grid-template-columns:110px 1fr 46px; gap:10px}
