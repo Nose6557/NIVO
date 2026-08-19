@@ -140,21 +140,22 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .avatar-dropdown .btn{width:100%}
 
 /* ——— шапка ——— */
-.hero{display:grid; grid-template-columns:1.3fr 1fr; gap:48px; padding:56px 0}
+.hero{display:flex; flex-direction:column; align-items:center; text-align:center; padding:56px 0}
 .hero-title{font-size:clamp(28px,4.4vw,44px); margin-bottom:18px}
-.hero-text{color:var(--ash); font-size:15px; max-width:44ch; margin-bottom:26px}
-.hero-left .btn.ghost{width:auto; margin-left:10px}
+.hero-text{color:var(--ash); font-size:15px; max-width:44ch; margin:0 auto 30px}
+.hero-actions{display:flex; gap:12px; width:100%; max-width:640px; margin-bottom:44px}
+.hero-actions .btn{flex:1; width:auto; margin-top:0}
 
-.stat-block{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--iron-3); border:1px solid var(--iron-3); border-radius:var(--r)}
-.stat{background:var(--iron-2); padding:20px 16px; display:flex; flex-direction:column; gap:4px}
+.stat-block{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--iron-3); border:1px solid var(--iron-3); border-radius:var(--r); width:100%; max-width:640px}
+.stat{background:var(--iron-2); padding:20px 16px; display:flex; flex-direction:column; align-items:center; gap:4px}
 .stat-num{font-family:'Unbounded',sans-serif; font-size:26px; font-weight:700}
 .stat-lab{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--ash)}
 
 /* ——— шкала гарту (сигнатурний елемент) ——— */
-.temper{padding:20px 0 40px; border-top:1px solid var(--iron-3)}
-.temper-head{margin:28px 0 22px}
+.temper{padding:20px 0 40px; border-top:1px solid var(--iron-3); text-align:center}
+.temper-head{margin:28px auto 22px; max-width:640px}
 .temper-head h3{font-size:19px; margin-bottom:8px}
-.temper-bars{display:flex; flex-direction:column; gap:14px}
+.temper-bars{display:flex; flex-direction:column; gap:14px; max-width:640px; margin:0 auto; text-align:left}
 
 .tbar{display:grid; grid-template-columns:150px 1fr 54px; align-items:center; gap:16px}
 .tbar-name{font-size:13px; color:var(--chalk)}
@@ -214,7 +215,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .res-row{display:flex; justify-content:space-between; font-size:14px; padding:9px 0; border-bottom:1px solid var(--iron-3)}
 .res-row span:last-child{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ash)}
 
-.export-row{padding-top:8px}
+.export-row{padding-top:8px; text-align:center}
 .export-box{
   width:100%; height:190px; margin-top:14px; resize:vertical;
   background:var(--iron); border:1px solid var(--iron-3);
@@ -247,9 +248,10 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .modal-actions .btn{margin:0}
 
 @media (max-width:760px){
-  .hero{grid-template-columns:1fr; gap:34px; padding:36px 0}
-  .hero-left .btn.ghost{margin-left:0; width:100%}
-  .btn.primary.big{width:100%}
+  .hero{padding:36px 0}
+  .hero-actions{flex-direction:column; width:100%}
+  .hero-actions .btn{width:100%}
+  .stat-block{grid-template-columns:1fr 1fr}
   .tbar{grid-template-columns:110px 1fr 46px; gap:10px}
   .tbar-name{font-size:12px}
   .shell{padding:20px 16px 48px}
