@@ -35,6 +35,14 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
+/* ——— скролбар ——— */
+*{scrollbar-width:thin; scrollbar-color:var(--iron-3) transparent}
+::-webkit-scrollbar{width:10px; height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--iron-3); border-radius:99px; border:2px solid var(--iron)}
+::-webkit-scrollbar-thumb:hover{background:var(--ash)}
+::-webkit-scrollbar-corner{background:transparent}
+
 .screen{display:none; position:relative; z-index:1}
 .screen.active{display:block}
 
