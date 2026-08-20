@@ -112,7 +112,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 /* ——— верхня панель ——— */
 .topbar{
   display:flex; justify-content:space-between; align-items:center;
-  padding:16px 16px; margin-bottom:12px; border-bottom:1px solid var(--iron-3);
+  padding:16px 16px; border-bottom:1px solid var(--iron-3);
   position:sticky; top:0; z-index:10; background:var(--iron);
 }
 .brand-sm{font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px}
@@ -256,7 +256,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   .stat-block{grid-template-columns:1fr 1fr}
   .tbar{grid-template-columns:110px 1fr 46px; gap:10px}
   .tbar-name{font-size:12px}
-  .shell{padding:20px 16px 48px}
+  .shell{padding:24px 24px 48px}
   .card{padding:22px}
 }
 
