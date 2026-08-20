@@ -67,6 +67,31 @@
 
     useGuest() { mode = "local"; user = null; },
 
+    async resetPasswordForEmail(email) {
+      if (!sb) throw new Error("Supabase недоступний");
+      const { error } = await sb.auth.resetPasswordForEmail(email, {
+        redirectTo: window.location.origin + window.location.pathname
+      });
+      if (error) throw error;
+    },
+
+    async updatePassword(password) {
+      if (!sb) throw new Error("Supabase недоступний");
+      const { data, error } = await sb.auth.updateUser({ password });
+      if (error) throw error;
+      user = data.user;
+      mode = "supabase";
+      return data;
+    },
+
+    // викликається, коли Supabase відкриває посилання зі скидання пароля
+    onPasswordRecovery(cb) {
+      if (!sb) return;
+      sb.auth.onAuthStateChange((event) => {
+        if (event === "PASSWORD_RECOVERY") cb();
+      });
+    },
+
     /* ---------- запис сесії ---------- */
     async saveSession(session, answers) {
       if (mode === "supabase" && sb && user) {

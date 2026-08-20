@@ -99,7 +99,7 @@ function renderQuestion() {
 
   $("prog").style.width = (idx / queue.length * 100) + "%";
   $("qcount").textContent = (idx + 1) + " / " + queue.length;
-  $("streak-live").textContent = "серія " + streak;
+  $("streak-live").textContent = streak + " правильних поспіль";
   $("qcat").textContent = CAT_UA[q.category] || q.category;
   $("qprompt").textContent = q.prompt;
   $("feedback").hidden = true;
@@ -308,9 +308,9 @@ async function renderHome() {
     bars.appendChild(row);
   });
 
-  $("who").textContent = Store.mode === "supabase" && Store.user
-    ? Store.user.email
-    : "гостьовий режим";
+  const email = Store.mode === "supabase" && Store.user ? Store.user.email : null;
+  $("who").textContent = email || "гостьовий режим";
+  $("avatar-initial").textContent = email ? email[0].toUpperCase() : "?";
 }
 
 /* ---------- експорт для аналізу ---------- */
@@ -383,6 +383,45 @@ $("auth-submit").onclick = async () => {
   }
 };
 
+$("auth-forgot").onclick = () => {
+  $("forgot-email").value = $("auth-email").value.trim();
+  $("forgot-msg").textContent = "";
+  show("forgot");
+};
+
+$("forgot-back").onclick = () => {
+  $("auth-msg").textContent = "";
+  show("auth");
+};
+
+$("forgot-submit").onclick = async () => {
+  const email = $("forgot-email").value.trim();
+  const msg = $("forgot-msg");
+  if (!email) { msg.textContent = "Вкажіть email."; return; }
+  msg.textContent = "Хвилинку…";
+  try {
+    await Store.resetPasswordForEmail(email);
+    msg.textContent = "Перевірте пошту — надіслали посилання для скидання пароля.";
+  } catch (e) {
+    msg.textContent = "Не вийшло: " + (e.message || "спробуйте пізніше");
+  }
+};
+
+$("newpass-submit").onclick = async () => {
+  const pass = $("newpass-pass").value;
+  const msg = $("newpass-msg");
+  if (!pass || pass.length < 6) { msg.textContent = "Мінімум 6 символів."; return; }
+  msg.textContent = "Хвилинку…";
+  try {
+    await Store.updatePassword(pass);
+    msg.textContent = "Пароль оновлено.";
+    await renderHome();
+    show("home");
+  } catch (e) {
+    msg.textContent = "Не вийшло: " + (e.message || "спробуйте ще раз");
+  }
+};
+
 $("auth-skip").onclick = async () => {
   Store.useGuest();
   await renderHome();
@@ -394,6 +433,27 @@ $("btn-signout").onclick = async () => {
   $("auth-msg").textContent = "";
   show("auth");
 };
+
+function closeAvatarMenu() {
+  $("avatar-dropdown").hidden = true;
+  $("avatar-btn").setAttribute("aria-expanded", "false");
+}
+
+$("avatar-btn").onclick = (e) => {
+  e.stopPropagation();
+  const dd = $("avatar-dropdown");
+  const willOpen = dd.hidden;
+  dd.hidden = !willOpen;
+  $("avatar-btn").setAttribute("aria-expanded", String(willOpen));
+};
+
+document.addEventListener("click", (e) => {
+  if (!$("avatar-dropdown").hidden && !e.target.closest(".avatar-menu")) closeAvatarMenu();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !$("avatar-dropdown").hidden) closeAvatarMenu();
+});
 
 $("btn-start").onclick = () => startSession(false);
 $("btn-weak").onclick = () => startSession(true);
@@ -416,14 +476,48 @@ $("btn-quit").onclick = async () => {
 $("btn-again").onclick = () => startSession(false);
 $("btn-home").onclick = async () => { await renderHome(); show("home"); };
 
+function closeExportModal() {
+  $("export-modal").hidden = true;
+}
+
 $("btn-export").onclick = async () => {
   const box = $("export-box");
   box.value = await buildExport();
-  box.hidden = false;
+  $("export-modal").hidden = false;
   box.select();
 };
 
+$("btn-export-close").onclick = closeExportModal;
+
+$("btn-export-copy").onclick = async () => {
+  const box = $("export-box");
+  const btn = $("btn-export-copy");
+  try {
+    await navigator.clipboard.writeText(box.value);
+  } catch {
+    box.select();
+    document.execCommand("copy");
+  }
+  const original = btn.textContent;
+  btn.textContent = "Скопійовано";
+  setTimeout(() => { btn.textContent = original; }, 1500);
+};
+
+$("export-modal").addEventListener("click", (e) => {
+  if (e.target.id === "export-modal") closeExportModal();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !$("export-modal").hidden) closeExportModal();
+});
+
 /* ---------- старт ---------- */
+Store.onPasswordRecovery(() => {
+  $("newpass-msg").textContent = "";
+  $("newpass-pass").value = "";
+  show("newpass");
+});
+
 (async function () {
   await loadBank();
   const u = await Store.init();
