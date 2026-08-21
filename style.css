@@ -202,7 +202,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .token.used{opacity:.3; cursor:default}
 .slot-rail{min-height:48px; background:var(--iron); border:1px dashed var(--iron-3); border-radius:var(--r); padding:8px; display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px}
 
-.feedback{margin-top:20px; padding-top:20px; border-top:1px solid var(--iron-3)}
+.feedback{margin-top:20px; padding-top:20px}
 .verdict{font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px; margin-bottom:8px}
 .verdict.ok{color:var(--ok)}
 .verdict.no{color:var(--no)}
