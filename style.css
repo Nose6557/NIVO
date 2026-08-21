@@ -59,7 +59,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 /* ——— логотип ——— */
 .mark{text-align:center; padding:56px 0 36px}
 .mark-glyph{color:var(--straw); font-size:16px}
-.wordmark{font-size:clamp(40px,7vw,56px); font-weight:900; margin:8px 0}
+.wordmark{font-size:clamp(36px,7vw,56px); font-weight:900; margin:8px 0}
 .tagline{color:var(--ash); font-size:16px}
 
 /* ——— панелі ——— */
@@ -141,7 +141,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 
 /* ——— шапка ——— */
 .hero{display:flex; flex-direction:column; align-items:center; text-align:center;}
-.hero-title{font-size:clamp(32px,4.4vw,44px); margin-bottom:20px}
+.hero-title{font-size:clamp(28px,4.4vw,44px); margin-bottom:20px}
 .hero-text{color:var(--ash); font-size:16px; max-width:44ch; margin:0 auto 32px}
 .hero-actions{display:flex; gap:12px; width:100%; max-width:640px; margin-bottom:44px}
 .hero-actions .btn{flex:1; width:auto; margin-top:0}
@@ -206,7 +206,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .verdict{font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px; margin-bottom:8px}
 .verdict.ok{color:var(--ok)}
 .verdict.no{color:var(--no)}
-.explain{font-size:16px; color:var(--ash); line-height:1.6}
+.explain{font-size:16px; color:var(--ash); line-height:1.6; white-space:pre-line}
 
 /* ——— підсумок ——— */
 .result{text-align:center; margin-top:64px}

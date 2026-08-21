@@ -1,15 +1,14 @@
 /* app.js — логіка гри Wordforge */
 
-const CAT_UA = {
-  "articles": "Артиклі",
-  "tenses": "Часи",
-  "prepositions": "Прийменники",
-  "phrasal verbs": "Фразові дієслова",
-  "conditionals": "Умовні речення",
-  "vocabulary": "Лексика",
-  "idioms": "Ідіоми",
-  "word order": "Порядок слів"
-};
+/* Категорії, рівні й теми більше не живуть у коді — вони приходять
+   з banks/index.json і файлів паків. Щоб додати категорію, рівень
+   чи тему, правити app.js не потрібно: досить даних у banks/. */
+let CAT_UA = {};      // slug категорії -> українська назва
+let TOPICS = {};      // slug теми     -> { category, label }
+
+/* Змінюй, коли оновлюєш banks/ — інакше браузер може віддавати
+   стару версію з кешу GitHub Pages. */
+const BANK_VERSION = "2026-08-21";
 
 const SESSION_LEN = 15;
 
@@ -31,10 +30,85 @@ function show(name) {
 }
 
 /* ---------- завантаження питань ---------- */
+/* Питання, яке не можна пройти, краще пропустити, ніж показати гравцеві.
+   Ці перевірки дублюють фатальні правила з check.html. */
+function isPlayable(q, topic) {
+  if (!q || !q.id || !topic || !topic.category) return false;
+  if (!q.prompt || !q.prompt.trim()) return false;
+  if (!q.explain || !q.explain.trim()) return false;
+
+  if (q.type === "mcq") {
+    return Array.isArray(q.options)
+        && q.options.length >= 2
+        && new Set(q.options).size === q.options.length
+        && q.options.includes(q.answer);
+  }
+  if (q.type === "fill") {
+    return typeof q.answer === "string" && q.answer.trim().length > 0;
+  }
+  if (q.type === "order") {
+    if (!Array.isArray(q.tokens) || q.tokens.length < 2 || !q.answer) return false;
+    const words = String(q.answer).split(/\s+/).filter(Boolean);
+    return [...q.tokens].sort().join("\u0001") === [...words].sort().join("\u0001");
+  }
+  return false;
+}
+
 async function loadBank() {
-  const res = await fetch("questions.json");
-  const json = await res.json();
-  BANK = json.questions;
+  const bust = url => url + "?v=" + BANK_VERSION;
+
+  const index = await (await fetch(bust("banks/index.json"))).json();
+
+  CAT_UA = {};
+  Object.entries(index.categories || {}).forEach(([slug, c]) => {
+    CAT_UA[slug] = c.label || slug;
+  });
+
+  const loaded = await Promise.all(
+    (index.packs || []).map(meta =>
+      fetch(bust("banks/" + meta.file))
+        .then(r => r.json())
+        .then(pack => ({ meta, pack }))
+        .catch(e => {
+          console.error("Пак не завантажився:", meta.file, e);
+          return null;   // один битий пак не має класти всю гру
+        })
+    )
+  );
+
+  // Прохід 1 — зібрати теми з усіх паків (питання може посилатися на «чужу» тему).
+  TOPICS = {};
+  for (const entry of loaded) {
+    if (!entry) continue;
+    Object.entries(entry.pack.topics || {}).forEach(([slug, t]) => {
+      if (!TOPICS[slug]) TOPICS[slug] = t;
+    });
+  }
+
+  // Прохід 2 — розгорнути питання, підставивши категорію, назву теми й рівень.
+  BANK = [];
+  let skipped = 0;
+  for (const entry of loaded) {
+    if (!entry) continue;
+    const { meta, pack } = entry;
+    for (const q of (pack.questions || [])) {
+      const topic = TOPICS[q.topic];
+      if (!isPlayable(q, topic)) {
+        skipped++;
+        console.warn("Пропущено зламане питання:", q && q.id, "у", meta.file);
+        continue;
+      }
+      BANK.push({
+        ...q,
+        category: topic.category,
+        item: topic.label,
+        level: q.level || pack.level || meta.level || null
+      });
+    }
+  }
+
+  if (skipped) console.warn(`Пропущено зламаних питань: ${skipped}. Деталі — у check.html`);
+  if (!BANK.length) throw new Error("Банк питань порожній");
 }
 
 /* ---------- вибір питань ---------- */
@@ -55,7 +129,7 @@ function buildQueue(weak) {
   });
   const scored = BANK.map(q => ({
     q,
-    weight: (errRate[q.item] !== undefined ? errRate[q.item] : 0.35) + Math.random() * 0.5
+    weight: (errRate[q.topic] !== undefined ? errRate[q.topic] : 0.35) + Math.random() * 0.5
   }));
   scored.sort((a, b) => b.weight - a.weight);
   return scored.slice(0, SESSION_LEN).map(s => s.q);
@@ -65,7 +139,7 @@ function buildWeakQueue(weak) {
   const problem = (weak || [])
     .filter(w => w.attempts >= 2 && w.errors / w.attempts > 0.3)
     .map(w => w.item_key);
-  const pool = BANK.filter(q => problem.includes(q.item));
+  const pool = BANK.filter(q => problem.includes(q.topic));
   if (pool.length < 5) return null;
   return shuffle(pool).slice(0, SESSION_LEN);
 }
@@ -209,7 +283,7 @@ function grade(q, correct) {
   answersLog.push({
     question_id: q.id,
     category: q.category,
-    item_key: q.item,
+    item_key: q.topic,
     is_correct: correct,
     response_ms: ms
   });
@@ -334,7 +408,7 @@ async function buildExport() {
     byCat[a.category].ms += a.response_ms || 0;
   });
   Object.entries(byCat).forEach(([c, d]) => {
-    lines.push(`- ${c}: ${d.ok}/${d.n} (${Math.round(d.ok / d.n * 100)}%), сер. час ${Math.round(d.ms / d.n / 100) / 10}с`);
+    lines.push(`- ${CAT_UA[c] || c}: ${d.ok}/${d.n} (${Math.round(d.ok / d.n * 100)}%), сер. час ${Math.round(d.ms / d.n / 100) / 10}с`);
   });
 
   lines.push("");
@@ -343,7 +417,11 @@ async function buildExport() {
     .filter(w => w.errors > 0)
     .sort((a, b) => (b.errors / b.attempts) - (a.errors / a.attempts))
     .slice(0, 15)
-    .forEach(w => lines.push(`- ${w.item_key} [${w.category}]: ${w.errors}/${w.attempts}`));
+    .forEach(w => {
+      const t = TOPICS[w.item_key];
+      const name = t ? t.label : w.item_key;   // slug лишається запасним варіантом
+      lines.push(`- ${name} [${CAT_UA[w.category] || w.category}]: ${w.errors}/${w.attempts}`);
+    });
 
   return lines.join("\n");
 }
@@ -519,7 +597,17 @@ Store.onPasswordRecovery(() => {
 });
 
 (async function () {
-  await loadBank();
+  try {
+    await loadBank();
+  } catch (e) {
+    console.error(e);
+    document.body.innerHTML =
+      '<div style="max-width:520px;margin:80px auto;padding:0 20px;text-align:center">' +
+      '<h1 style="font-size:22px;margin-bottom:10px">Банк питань не завантажився</h1>' +
+      '<p style="color:#8d93a1;font-size:15px;line-height:1.6">Перевір файли в <code>banks/</code> — ' +
+      'сторінка <a href="check.html" style="color:#3f7fb5">check.html</a> покаже, що саме не так.</p></div>';
+    return;
+  }
   const u = await Store.init();
   if (u) {
     await renderHome();

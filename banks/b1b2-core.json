@@ -1,0 +1,972 @@
+{
+  "schema": 2,
+  "pack": "b1b2-core",
+  "title": "Базовий банк B1–B2",
+  "level": "B1-B2",
+  "topics": {
+    "art-a-an-sound": {
+      "category": "articles",
+      "label": "a/an за звуком"
+    },
+    "art-first-mention": {
+      "category": "articles",
+      "label": "Перша vs повторна згадка"
+    },
+    "art-the-superlative": {
+      "category": "articles",
+      "label": "the з найвищим ступенем"
+    },
+    "art-zero-abstract": {
+      "category": "articles",
+      "label": "Нульовий артикль з абстрактними"
+    },
+    "art-zero-plural": {
+      "category": "articles",
+      "label": "Нульовий артикль з множиною"
+    },
+    "cond-first": {
+      "category": "conditionals",
+      "label": "Перший тип умовного"
+    },
+    "cond-second": {
+      "category": "conditionals",
+      "label": "Другий тип умовного"
+    },
+    "cond-third": {
+      "category": "conditionals",
+      "label": "Третій тип умовного"
+    },
+    "cond-unless": {
+      "category": "conditionals",
+      "label": "unless"
+    },
+    "cond-wish": {
+      "category": "conditionals",
+      "label": "wish + Past Simple"
+    },
+    "idm-bite-the-bullet": {
+      "category": "idioms",
+      "label": "bite the bullet"
+    },
+    "idm-cut-corners": {
+      "category": "idioms",
+      "label": "cut corners"
+    },
+    "idm-drawing-board": {
+      "category": "idioms",
+      "label": "back to the drawing board"
+    },
+    "idm-in-the-loop": {
+      "category": "idioms",
+      "label": "in the loop"
+    },
+    "idm-same-page": {
+      "category": "idioms",
+      "label": "on the same page"
+    },
+    "idm-touch-base": {
+      "category": "idioms",
+      "label": "touch base"
+    },
+    "ord-adjective-order": {
+      "category": "word order",
+      "label": "Порядок прикметників"
+    },
+    "ord-adverb-placement": {
+      "category": "word order",
+      "label": "Місце прислівника"
+    },
+    "ord-indirect-questions": {
+      "category": "word order",
+      "label": "Непрямі питання"
+    },
+    "ord-passive": {
+      "category": "word order",
+      "label": "Пасивний стан"
+    },
+    "ord-reported-speech": {
+      "category": "word order",
+      "label": "Непряма мова"
+    },
+    "phr-bring-up": {
+      "category": "phrasal verbs",
+      "label": "bring up"
+    },
+    "phr-come-up-with": {
+      "category": "phrasal verbs",
+      "label": "come up with"
+    },
+    "phr-figure-out": {
+      "category": "phrasal verbs",
+      "label": "figure out"
+    },
+    "phr-look-into": {
+      "category": "phrasal verbs",
+      "label": "look into"
+    },
+    "phr-put-off": {
+      "category": "phrasal verbs",
+      "label": "put off"
+    },
+    "phr-run-out-of": {
+      "category": "phrasal verbs",
+      "label": "run out of"
+    },
+    "prep-agree": {
+      "category": "prepositions",
+      "label": "agree with / to / on"
+    },
+    "prep-consist-of": {
+      "category": "prepositions",
+      "label": "consist of"
+    },
+    "prep-depend-on": {
+      "category": "prepositions",
+      "label": "depend on"
+    },
+    "prep-good-at": {
+      "category": "prepositions",
+      "label": "good at"
+    },
+    "prep-in-on-time": {
+      "category": "prepositions",
+      "label": "in time / on time"
+    },
+    "prep-interested-in": {
+      "category": "prepositions",
+      "label": "interested in"
+    },
+    "prep-responsible-for": {
+      "category": "prepositions",
+      "label": "responsible for"
+    },
+    "ten-for-since": {
+      "category": "tenses",
+      "label": "for / since"
+    },
+    "ten-future-arrangements": {
+      "category": "tenses",
+      "label": "Плани в майбутньому"
+    },
+    "ten-future-perfect": {
+      "category": "tenses",
+      "label": "Future Perfect"
+    },
+    "ten-past-perfect": {
+      "category": "tenses",
+      "label": "Past Perfect"
+    },
+    "ten-past-simple": {
+      "category": "tenses",
+      "label": "Past Simple"
+    },
+    "ten-present-perfect": {
+      "category": "tenses",
+      "label": "Present Perfect"
+    },
+    "ten-present-perfect-cont": {
+      "category": "tenses",
+      "label": "Present Perfect Continuous"
+    },
+    "ten-used-to": {
+      "category": "tenses",
+      "label": "used to"
+    },
+    "voc-achieve": {
+      "category": "vocabulary",
+      "label": "achieve / reach / gain"
+    },
+    "voc-advice-uncountable": {
+      "category": "vocabulary",
+      "label": "advice — незлічуване"
+    },
+    "voc-affect-effect": {
+      "category": "vocabulary",
+      "label": "affect / effect"
+    },
+    "voc-although-despite": {
+      "category": "vocabulary",
+      "label": "although / despite"
+    },
+    "voc-borrow-lend": {
+      "category": "vocabulary",
+      "label": "borrow / lend"
+    },
+    "voc-coll-deadline": {
+      "category": "vocabulary",
+      "label": "meet a deadline"
+    },
+    "voc-coll-responsibility": {
+      "category": "vocabulary",
+      "label": "take responsibility"
+    },
+    "voc-convince-persuade": {
+      "category": "vocabulary",
+      "label": "convince / persuade"
+    },
+    "voc-make-do": {
+      "category": "vocabulary",
+      "label": "make / do"
+    },
+    "voc-raise-rise": {
+      "category": "vocabulary",
+      "label": "raise / rise"
+    }
+  },
+  "questions": [
+    {
+      "id": "art-a-an-sound-01",
+      "topic": "art-a-an-sound",
+      "type": "mcq",
+      "prompt": "She works as ___ UX designer at ___ bank downtown.",
+      "options": [
+        "a / the",
+        "an / a",
+        "an / the",
+        "the / a"
+      ],
+      "answer": "a / the",
+      "explain": "Артикль обирається за ЗВУКОМ, а не за буквою. «UX» читається [ju-eks] — починається з приголосного звуку [j], тому «a UX designer» (так само: a university, a user).\n✗ «an / …» — перед звуком [j] «an» не ставиться.\n✗ «the / a» — «works as the UX designer» означало б «той самий єдиний дизайнер».\nДругий пропуск: «downtown» уточнює, який саме банк → the bank."
+    },
+    {
+      "id": "art-zero-abstract-01",
+      "topic": "art-zero-abstract",
+      "type": "mcq",
+      "prompt": "___ trust is the hardest thing to rebuild after a data breach.",
+      "options": [
+        "A",
+        "The",
+        "—",
+        "An"
+      ],
+      "answer": "—",
+      "explain": "Абстрактні незлічувані іменники (trust, honesty, patience, advice) у загальному значенні йдуть БЕЗ артикля.\n✗ a / an — не поєднуються з незлічуваними взагалі.\n✗ the — вказувало б на конкретну довіру: «the trust between the two teams»."
+    },
+    {
+      "id": "art-the-superlative-01",
+      "topic": "art-the-superlative",
+      "type": "mcq",
+      "prompt": "This is ___ most confusing screen in the whole flow.",
+      "options": [
+        "a",
+        "the",
+        "—",
+        "one"
+      ],
+      "answer": "the",
+      "explain": "Найвищий ступінь порівняння завжди з «the»: the best, the most confusing, the least useful.\n✗ a — з superlative не вживається.\n✗ без артикля — неможливо, «the» тут обов'язкове.\n✗ one — «one most confusing» не існує; «one of the most confusing» — так."
+    },
+    {
+      "id": "art-first-mention-01",
+      "topic": "art-first-mention",
+      "type": "mcq",
+      "prompt": "I got ___ email from a recruiter. ___ email was surprisingly personal.",
+      "options": [
+        "an / An",
+        "an / The",
+        "the / The",
+        "a / The"
+      ],
+      "answer": "an / The",
+      "explain": "Перша згадка предмета → a/an; повторна згадка того самого предмета → the.\n✗ «an / An» — друга згадка вже конкретна, потрібне «the».\n✗ «the / The» — на першій згадці читач ще не знає, про який email мова.\n✗ «a / The» — «email» починається з голосного звуку, тому «an email»."
+    },
+    {
+      "id": "art-zero-plural-01",
+      "topic": "art-zero-plural",
+      "type": "mcq",
+      "prompt": "___ users rarely read onboarding text.",
+      "options": [
+        "The",
+        "—",
+        "A",
+        "An"
+      ],
+      "answer": "—",
+      "explain": "Множина в загальному значенні («користувачі взагалі») — без артикля.\n✗ The users — це вже конкретна група: «the users we interviewed».\n✗ A / An — з множиною не вживаються ніколи."
+    },
+    {
+      "id": "ten-present-perfect-01",
+      "topic": "ten-present-perfect",
+      "type": "mcq",
+      "prompt": "I ___ this bug three times already, and it keeps coming back.",
+      "options": [
+        "fixed",
+        "have fixed",
+        "was fixing",
+        "had fixed"
+      ],
+      "answer": "have fixed",
+      "explain": "Present Perfect: дія в минулому з результатом, актуальним ЗАРАЗ. Маркери тут — «already» і «keeps coming back».\n✗ fixed — Past Simple потребує завершеного моменту в минулому (yesterday, last week).\n✗ was fixing — процес у минулому, без результату.\n✗ had fixed — Past Perfect потрібен лише тоді, коли є ще одна, пізніша дія в минулому."
+    },
+    {
+      "id": "ten-past-simple-01",
+      "topic": "ten-past-simple",
+      "type": "mcq",
+      "prompt": "We ___ the redesign last quarter.",
+      "options": [
+        "have shipped",
+        "shipped",
+        "have been shipping",
+        "ship"
+      ],
+      "answer": "shipped",
+      "explain": "«last quarter» — завершений період у минулому, тому Past Simple.\n✗ have shipped — Present Perfect НЕ вживається з маркерами закінченого часу (last week, in 2020, yesterday).\n✗ have been shipping — тривалість аж до тепер.\n✗ ship — Present Simple = регулярна дія («we ship every quarter»)."
+    },
+    {
+      "id": "ten-present-perfect-cont-01",
+      "topic": "ten-present-perfect-cont",
+      "type": "mcq",
+      "prompt": "She ___ on this prototype since Monday and looks exhausted.",
+      "options": [
+        "works",
+        "worked",
+        "has been working",
+        "is working"
+      ],
+      "answer": "has been working",
+      "explain": "Present Perfect Continuous: дія почалася в минулому, триває досі, і нас цікавить ПРОЦЕС (звідси «looks exhausted»). Маркер — «since Monday».\n✗ works — регулярна дія взагалі.\n✗ worked — Past Simple означав би, що вона вже не працює.\n✗ is working — Present Continuous не показує, що дія триває з минулого; зі «since» потрібен перфект."
+    },
+    {
+      "id": "ten-past-perfect-01",
+      "topic": "ten-past-perfect",
+      "type": "mcq",
+      "prompt": "By the time the client called, we ___ the file.",
+      "options": [
+        "already sent",
+        "had already sent",
+        "have already sent",
+        "were already sending"
+      ],
+      "answer": "had already sent",
+      "explain": "Past Perfect (had + V3): дія, що відбулася РАНІШЕ за іншу дію в минулому. «By the time…» майже завжди тягне за собою Past Perfect.\n✗ already sent — Past Simple не показує послідовності «раніше/пізніше».\n✗ have already sent — Present Perfect не поєднується з минулим контекстом.\n✗ were already sending — процес, а тут потрібна завершеність."
+    },
+    {
+      "id": "ten-future-arrangements-01",
+      "topic": "ten-future-arrangements",
+      "type": "mcq",
+      "prompt": "I can't join at four — I ___ the stakeholders then.",
+      "options": [
+        "will meet",
+        "am meeting",
+        "meet",
+        "would meet"
+      ],
+      "answer": "am meeting",
+      "explain": "Заплановані домовленості з конкретним часом і людьми — Present Continuous. Це вже узгоджено, у календарі.\n✗ will meet — «will» для спонтанних рішень і прогнозів, не для планів.\n✗ meet — Present Simple лише для розкладів (потяги, заняття): «The train leaves at four».\n✗ would meet — умовний/минулий час."
+    },
+    {
+      "id": "ten-used-to-01",
+      "topic": "ten-used-to",
+      "type": "mcq",
+      "prompt": "We ___ run usability tests every sprint, but we stopped last year.",
+      "options": [
+        "use to",
+        "used to",
+        "are used to",
+        "would used to"
+      ],
+      "answer": "used to",
+      "explain": "used to + інфінітив — регулярна дія в минулому, якої більше немає.\n✗ use to — без -d у стверджувальному реченні неправильно (але: «Did you use to…?»).\n✗ are used to — це «звикли до» + іменник або -ing: «I'm used to working late». Інше значення!\n✗ would used to — такої форми не існує."
+    },
+    {
+      "id": "ten-future-perfect-01",
+      "topic": "ten-future-perfect",
+      "type": "mcq",
+      "prompt": "By December we ___ the migration.",
+      "options": [
+        "will finish",
+        "will have finished",
+        "finish",
+        "are finishing"
+      ],
+      "answer": "will have finished",
+      "explain": "Future Perfect: «by + момент у майбутньому» + дія буде вже ЗАВЕРШЕНА до того моменту.\n✗ will finish — просто дія в майбутньому, без «до грудня».\n✗ finish — Present Simple.\n✗ are finishing — план або процес, а не результат."
+    },
+    {
+      "id": "prep-depend-on-01",
+      "topic": "prep-depend-on",
+      "type": "mcq",
+      "prompt": "The launch date depends ___ the security review.",
+      "options": [
+        "of",
+        "from",
+        "on",
+        "at"
+      ],
+      "answer": "on",
+      "explain": "depend ON — прийменник фіксований: «It depends on the weather», «depending on the results».\n✗ from — пряма калька з «залежати ВІД». Найчастіша помилка українців.\n✗ of, at — з depend не вживаються."
+    },
+    {
+      "id": "prep-responsible-for-01",
+      "topic": "prep-responsible-for",
+      "type": "mcq",
+      "prompt": "Who is responsible ___ the onboarding flow?",
+      "options": [
+        "of",
+        "for",
+        "about",
+        "on"
+      ],
+      "answer": "for",
+      "explain": "responsible FOR + іменник або -ing: responsible for the budget, responsible for hiring.\n✗ of — плутанина з «in charge OF», де прийменник справді «of».\n✗ about, on — з responsible не вживаються."
+    },
+    {
+      "id": "prep-interested-in-01",
+      "topic": "prep-interested-in",
+      "type": "mcq",
+      "prompt": "They're interested ___ hearing our approach.",
+      "options": [
+        "to",
+        "for",
+        "in",
+        "about"
+      ],
+      "answer": "in",
+      "explain": "interested IN + герундій або іменник: interested in hearing, interested in design.\n✗ for, about — не поєднуються з interested.\n✗ to — «interested to hear» справді трапляється («цікаво почути»), але це вужчий випадок; стандарт для B1–B2 — interested in + -ing."
+    },
+    {
+      "id": "prep-in-on-time-01",
+      "topic": "prep-in-on-time",
+      "type": "mcq",
+      "prompt": "The build finished ___ time, exactly at noon as promised.",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "by"
+      ],
+      "answer": "on",
+      "explain": "ON time = точно за розкладом. Підказка в реченні: «exactly at noon as promised».\n✗ in — «in time» = встигнути ДО чогось, із запасом: «We got there just in time».\n✗ at — вживається з точкою часу (at noon), не з «time» у цьому значенні.\n✗ by — «by noon» = не пізніше полудня."
+    },
+    {
+      "id": "prep-agree-01",
+      "topic": "prep-agree",
+      "type": "mcq",
+      "prompt": "I agree ___ you about the pricing model.",
+      "options": [
+        "to",
+        "with",
+        "on",
+        "for"
+      ],
+      "answer": "with",
+      "explain": "Прийменник залежить від того, з ЧИМ погоджуєшся:\n• agree WITH a person / an opinion — тут саме цей випадок (agree with you).\n✗ to — agree TO a proposal = погодитися на пропозицію.\n✗ on — agree ON a decision = спільно домовитися про щось.\n✗ for — з agree не вживається."
+    },
+    {
+      "id": "prep-consist-of-01",
+      "topic": "prep-consist-of",
+      "type": "mcq",
+      "prompt": "The team consists ___ four designers and one researcher.",
+      "options": [
+        "from",
+        "of",
+        "in",
+        "with"
+      ],
+      "answer": "of",
+      "explain": "consist OF — незмінна конструкція: «The course consists of six modules».\n✗ from — калька зі «складатися З». Порівняй: be made FROM (матеріал) — інша конструкція.\n✗ in — «consist in» існує, але означає «полягати в» (формально, рідко).\n✗ with — не вживається."
+    },
+    {
+      "id": "phr-come-up-with-01",
+      "topic": "phr-come-up-with",
+      "type": "mcq",
+      "prompt": "We need to ___ a better name before Friday.",
+      "options": [
+        "come up with",
+        "come across",
+        "come round",
+        "come into"
+      ],
+      "answer": "come up with",
+      "explain": "come up with = придумати, згенерувати ідею чи рішення.\n✗ come across — випадково натрапити на щось: «I came across an old file».\n✗ come round — зайти в гості; отямитися.\n✗ come into — успадкувати: «come into money»."
+    },
+    {
+      "id": "phr-put-off-01",
+      "topic": "phr-put-off",
+      "type": "mcq",
+      "prompt": "They ___ the release until the legal team signs off.",
+      "options": [
+        "put out",
+        "put off",
+        "put up",
+        "put down"
+      ],
+      "answer": "put off",
+      "explain": "put off = відкласти на пізніше (= postpone).\n✗ put out — загасити (вогонь) або випустити (реліз, заяву).\n✗ put up — повісити, розмістити; а «put up with» = терпіти.\n✗ put down — покласти; або принизити когось."
+    },
+    {
+      "id": "phr-look-into-01",
+      "topic": "phr-look-into",
+      "type": "mcq",
+      "prompt": "Can you ___ why the conversion dropped?",
+      "options": [
+        "look after",
+        "look up",
+        "look into",
+        "look over"
+      ],
+      "answer": "look into",
+      "explain": "look into = дослідити, розібратися в причині проблеми (= investigate).\n✗ look after — доглядати, піклуватися.\n✗ look up — подивитися в словнику чи довіднику.\n✗ look over — швидко переглянути, пробігти очима."
+    },
+    {
+      "id": "phr-run-out-of-01",
+      "topic": "phr-run-out-of",
+      "type": "mcq",
+      "prompt": "We've ___ budget for user interviews.",
+      "options": [
+        "run out of",
+        "run into",
+        "run over",
+        "run through"
+      ],
+      "answer": "run out of",
+      "explain": "run out of = вичерпати запас чогось: run out of time, money, ideas.\n✗ run into — випадково зустріти когось; або зіткнутися з проблемою.\n✗ run over — переїхати (машиною); або швидко повторити.\n✗ run through — швидко пройтися по списку чи плану."
+    },
+    {
+      "id": "phr-figure-out-01",
+      "topic": "phr-figure-out",
+      "type": "mcq",
+      "prompt": "It took us a week to ___ what users actually meant.",
+      "options": [
+        "figure on",
+        "figure out",
+        "figure up",
+        "figure in"
+      ],
+      "answer": "figure out",
+      "explain": "figure out = зрозуміти, докопатися до суті після зусиль.\n✗ figure in — враховувати щось у розрахунках.\n✗ figure on — розраховувати на щось (рідко, американський розмовний).\n✗ figure up — такої сполуки немає."
+    },
+    {
+      "id": "phr-bring-up-01",
+      "topic": "phr-bring-up",
+      "type": "mcq",
+      "prompt": "She ___ a good point about accessibility during the review.",
+      "options": [
+        "brought on",
+        "brought up",
+        "brought about",
+        "brought in"
+      ],
+      "answer": "brought up",
+      "explain": "bring up = підняти тему, згадати питання в розмові.\n✗ bring on — спричинити щось неприємне: «The stress brought on a headache».\n✗ bring about — призвести до змін (про масштабні наслідки).\n✗ bring in — залучити людину або дохід: «bring in a consultant»."
+    },
+    {
+      "id": "cond-second-01",
+      "topic": "cond-second",
+      "type": "mcq",
+      "prompt": "If we ___ more time, we would test three variants.",
+      "options": [
+        "have",
+        "had",
+        "would have",
+        "will have"
+      ],
+      "answer": "had",
+      "explain": "Другий тип (нереальна або малоймовірна ситуація в теперішньому): If + Past Simple, would + інфінітив. Підказка — «would test» у головній частині.\n✗ have — це був би перший тип: «If we have time, we will test».\n✗ would have — «would» ніколи не ставиться в частині з «if».\n✗ will have — після «if» майбутній час не вживається."
+    },
+    {
+      "id": "cond-third-01",
+      "topic": "cond-third",
+      "type": "mcq",
+      "prompt": "If they ___ us earlier, we could have fixed it before launch.",
+      "options": [
+        "told",
+        "have told",
+        "had told",
+        "would tell"
+      ],
+      "answer": "had told",
+      "explain": "Третій тип (нереальне МИНУЛЕ): If + Past Perfect, would/could have + V3. Підказка — «could have fixed».\n✗ told — це другий тип, про теперішнє.\n✗ have told — Present Perfect в умовних реченнях не вживається.\n✗ would tell — «would» не ставиться після «if»."
+    },
+    {
+      "id": "cond-first-01",
+      "topic": "cond-first",
+      "type": "mcq",
+      "prompt": "If the API ___, the whole checkout breaks.",
+      "options": [
+        "will fail",
+        "fails",
+        "would fail",
+        "failed"
+      ],
+      "answer": "fails",
+      "explain": "Після «if» майбутній час не вживається — потрібен Present Simple. Тут це навіть нульовий тип: обидві частини в Present Simple, бо йдеться про загальну закономірність (щоразу, коли API падає).\n✗ will fail — найпоширеніша помилка: «if» + will неможливо.\n✗ would fail, failed — це другий тип, про нереальну ситуацію."
+    },
+    {
+      "id": "cond-unless-01",
+      "topic": "cond-unless",
+      "type": "mcq",
+      "prompt": "___ we get approval today, the timeline slips.",
+      "options": [
+        "Unless",
+        "If not",
+        "Without",
+        "Except"
+      ],
+      "answer": "Unless",
+      "explain": "unless = if not. Вводить ціле підрядне речення з підметом і присудком.\n✗ If not — «If not we get» — неправильний порядок слів; можна лише «If we don't get approval».\n✗ Without — потребує іменника, а не речення: «Without approval, the timeline slips».\n✗ Except — умову не вводить взагалі (except for = крім)."
+    },
+    {
+      "id": "cond-wish-01",
+      "topic": "cond-wish",
+      "type": "mcq",
+      "prompt": "I wish I ___ more confident in meetings.",
+      "options": [
+        "am",
+        "was being",
+        "were",
+        "would be"
+      ],
+      "answer": "were",
+      "explain": "wish про НЕреальне теперішнє → Past Simple; для дієслова «be» у книжній нормі — «were» для всіх осіб (I were, he were).\n✗ am — після wish теперішній час не вживається.\n✗ was being — «поводився», тимчасова поведінка, а не стан.\n✗ would be — «wish + would» вживається, коли скаржимось на чужу поведінку («I wish he would stop»), а не про себе."
+    },
+    {
+      "id": "voc-achieve-01",
+      "topic": "voc-achieve",
+      "type": "mcq",
+      "prompt": "It took two years to ___ profitability.",
+      "options": [
+        "arrive",
+        "achieve",
+        "gain",
+        "win"
+      ],
+      "answer": "achieve",
+      "explain": "achieve = досягти мети чи результату завдяки зусиллям: achieve profitability, achieve a goal.\n✗ arrive — прибути в МІСЦЕ, до того ж потребує at/in: «arrive at the office».\n✗ gain — набувати поступово: gain experience, gain weight.\n✗ win — вигравати змагання, приз, вибори."
+    },
+    {
+      "id": "voc-make-do-01",
+      "topic": "voc-make-do",
+      "type": "mcq",
+      "prompt": "Let's ___ some research before we commit.",
+      "options": [
+        "make",
+        "do",
+        "take",
+        "have"
+      ],
+      "answer": "do",
+      "explain": "do research — стала сполука. Орієнтир: DO — про процес і роботу (do research, do a test, do the dishes); MAKE — про створення результату (make a decision, make a mistake, make a plan).\n✗ make research — типова помилка, в англійській не існує.\n✗ take, have — із «research» не поєднуються (але: take a test, have a look)."
+    },
+    {
+      "id": "voc-borrow-lend-01",
+      "topic": "voc-borrow-lend",
+      "type": "mcq",
+      "prompt": "Could you ___ me your charger for ten minutes?",
+      "options": [
+        "borrow",
+        "lend",
+        "loan out",
+        "rent"
+      ],
+      "answer": "lend",
+      "explain": "lend = дати комусь своє. borrow = взяти чуже. Тут «Could you ___ ME» — дію виконує співрозмовник, отже lend.\n✗ borrow — правильно було б: «Could I borrow your charger?»\n✗ loan out — фінансовий/формальний відтінок, не про дрібниці.\n✗ rent — орендувати за гроші."
+    },
+    {
+      "id": "voc-affect-effect-01",
+      "topic": "voc-affect-effect",
+      "type": "mcq",
+      "prompt": "The change didn't ___ retention at all.",
+      "options": [
+        "effect",
+        "affect",
+        "afflict",
+        "effort"
+      ],
+      "answer": "affect",
+      "explain": "affect — ДІЄСЛОВО (впливати). effect — ІМЕННИК (наслідок, ефект). Після «didn't» може стояти лише дієслово.\n✗ effect — «the effect on retention» був би іменник. (Effect як дієслово існує — «effect change» = здійснити зміни — але це рідкісний формальний вжиток.)\n✗ afflict — вражати хворобою чи лихом.\n✗ effort — іменник «зусилля»."
+    },
+    {
+      "id": "voc-convince-persuade-01",
+      "topic": "voc-convince-persuade",
+      "type": "mcq",
+      "prompt": "The data ___ me that we were wrong.",
+      "options": [
+        "persuaded to",
+        "convinced",
+        "assured",
+        "insisted"
+      ],
+      "answer": "convinced",
+      "explain": "convince somebody THAT… = переконати в думці. Тут далі йде «that we were wrong» — саме думка.\n✗ persuaded to — persuade someone TO DO something; після «to» мало б стояти дієслово, а не «that».\n✗ assured — запевнити, заспокоїти; так зазвичай робить людина, а не дані.\n✗ insisted — наполягав; не приймає прямий додаток «me» (insist ON / THAT)."
+    },
+    {
+      "id": "voc-raise-rise-01",
+      "topic": "voc-raise-rise",
+      "type": "mcq",
+      "prompt": "Costs ___ sharply after the policy changed.",
+      "options": [
+        "raised",
+        "rose",
+        "arose",
+        "raised up"
+      ],
+      "answer": "rose",
+      "explain": "rise – rose – risen: зростати САМО, без додатка (costs rise, the sun rises).\nraise – raised – raised: піднімати ЩОСЬ, завжди з додатком (they raised prices).\n✗ raised — потребує об'єкта: «The company raised costs».\n✗ arose — arise = виникати (про проблеми, питання), не про числа.\n✗ raised up — надлишкове, так не кажуть."
+    },
+    {
+      "id": "voc-advice-uncountable-01",
+      "topic": "voc-advice-uncountable",
+      "type": "mcq",
+      "prompt": "She gave me a very useful ___ about negotiating.",
+      "options": [
+        "advice",
+        "advices",
+        "piece of advice",
+        "advise"
+      ],
+      "answer": "piece of advice",
+      "explain": "advice — НЕзлічуване: не має множини і не вживається з a/an. У реченні вже стоїть «a very useful ___», тому потрібне слово-місток: a piece of advice.\n✗ advice — форма правильна, але «a … advice» неможливе через артикль «a».\n✗ advices — множини не існує.\n✗ advise — це дієслово («радити»), а тут потрібен іменник.\nТак само: a piece of information / news / furniture."
+    },
+    {
+      "id": "voc-although-despite-01",
+      "topic": "voc-although-despite",
+      "type": "mcq",
+      "prompt": "___ the tight deadline, the quality stayed high.",
+      "options": [
+        "Although",
+        "Despite",
+        "However",
+        "Even"
+      ],
+      "answer": "Despite",
+      "explain": "despite + ІМЕННИК або -ing: despite the deadline, despite being late.\nalthough + ЦІЛЕ РЕЧЕННЯ (підмет + присудок): «Although the deadline was tight…».\n✗ Although — після нього тут немає дієслова.\n✗ However — вставне слово, потребує крапки з комою: «…; however, the quality stayed high».\n✗ Even — саме по собі поступку не вводить; потрібно «even though»."
+    },
+    {
+      "id": "idm-same-page-01",
+      "topic": "idm-same-page",
+      "type": "mcq",
+      "prompt": "Before we start, let's make sure everyone is ___.",
+      "options": [
+        "on the same page",
+        "in the same book",
+        "at one page",
+        "on one line"
+      ],
+      "answer": "on the same page",
+      "explain": "be on the same page = мати спільне розуміння ситуації.\n✗ Решта варіантів — дослівні переробки, яких в англійській не існує. Ідіоми не можна змінювати навіть на одне слово."
+    },
+    {
+      "id": "idm-cut-corners-01",
+      "topic": "idm-cut-corners",
+      "type": "mcq",
+      "prompt": "We can't ___ on accessibility just to ship faster.",
+      "options": [
+        "cut corners",
+        "cut edges",
+        "cut sides",
+        "cut ends"
+      ],
+      "answer": "cut corners",
+      "explain": "cut corners = робити абияк, зрізаючи кути заради швидкості чи економії.\n✗ cut edges, cut sides, cut ends — таких виразів немає.\nНе плутай із «cutting-edge» — це прикметник «передовий, найсучасніший»."
+    },
+    {
+      "id": "idm-drawing-board-01",
+      "topic": "idm-drawing-board",
+      "type": "mcq",
+      "prompt": "The concept failed testing, so it's ___.",
+      "options": [
+        "back to the drawing board",
+        "back to the paper",
+        "back to the start line",
+        "back on the board"
+      ],
+      "answer": "back to the drawing board",
+      "explain": "back to the drawing board = повертатися до самого початку після невдачі (drawing board — креслярська дошка).\n✗ Інші варіанти — кальки, яких в англійській немає.\nБлизьке за змістом: start from scratch."
+    },
+    {
+      "id": "idm-in-the-loop-01",
+      "topic": "idm-in-the-loop",
+      "type": "mcq",
+      "prompt": "Keep me ___ if anything changes.",
+      "options": [
+        "in the loop",
+        "on the loop",
+        "at the loop",
+        "into the loop"
+      ],
+      "answer": "in the loop",
+      "explain": "keep somebody in the loop = тримати в курсі. Прийменник тут фіксований — тільки «in».\n✗ on / at / into the loop — не вживаються.\nПротилежне: be out of the loop = бути не в курсі."
+    },
+    {
+      "id": "idm-touch-base-01",
+      "topic": "idm-touch-base",
+      "type": "mcq",
+      "prompt": "Let's ___ next week to review progress.",
+      "options": [
+        "touch base",
+        "touch ground",
+        "touch point",
+        "touch base up"
+      ],
+      "answer": "touch base",
+      "explain": "touch base (with somebody) = коротко зв'язатися, звіритися. Вираз із бейсболу, тому «base» без артикля і без -s.\n✗ touch ground, touch point, touch base up — таких сполук немає.\nЗверни увагу: «touchpoint» існує як іменник у дизайні, але не як дієслово."
+    },
+    {
+      "id": "idm-bite-the-bullet-01",
+      "topic": "idm-bite-the-bullet",
+      "type": "mcq",
+      "prompt": "We had to ___ and rewrite the whole component.",
+      "options": [
+        "bite the bullet",
+        "eat the bullet",
+        "take the bullet",
+        "bite the dust"
+      ],
+      "answer": "bite the bullet",
+      "explain": "bite the bullet = зважитися на щось неприємне, але необхідне.\n✗ bite the dust — вираз існує, але означає «загинути, зазнати краху».\n✗ take the bullet — прийняти удар на себе замість іншого.\n✗ eat the bullet — такої ідіоми немає."
+    },
+    {
+      "id": "ord-indirect-questions-01",
+      "topic": "ord-indirect-questions",
+      "type": "order",
+      "prompt": "Складіть коректне непряме питання:",
+      "tokens": [
+        "Could",
+        "you",
+        "tell",
+        "me",
+        "where",
+        "the",
+        "settings",
+        "are"
+      ],
+      "answer": "Could you tell me where the settings are",
+      "explain": "У непрямому питанні порядок слів ПРЯМИЙ, як у розповідному реченні: підмет → дієслово. Інверсії та do/does немає.\nПорівняй: «Where ARE THE SETTINGS?» (пряме) → «Could you tell me WHERE THE SETTINGS ARE» (непряме).\n✗ «…where are the settings» — типова помилка."
+    },
+    {
+      "id": "ord-adjective-order-01",
+      "topic": "ord-adjective-order",
+      "type": "order",
+      "prompt": "Розставте прикметники в правильному порядку:",
+      "tokens": [
+        "a",
+        "beautiful",
+        "small",
+        "wooden",
+        "table"
+      ],
+      "answer": "a beautiful small wooden table",
+      "explain": "Порядок прикметників: оцінка → розмір → вік → колір → походження → матеріал → призначення.\nТут: beautiful (оцінка) → small (розмір) → wooden (матеріал).\n✗ «a small beautiful table» — граматично зрозуміло, але носіям звучить неприродно. Оцінка завжди йде першою."
+    },
+    {
+      "id": "ord-adverb-placement-01",
+      "topic": "ord-adverb-placement",
+      "type": "order",
+      "prompt": "Складіть речення:",
+      "tokens": [
+        "She",
+        "has",
+        "never",
+        "worked",
+        "remotely",
+        "before"
+      ],
+      "answer": "She has never worked remotely before",
+      "explain": "Прислівник частоти (never, always, often) стоїть МІЖ допоміжним і смисловим дієсловом: has NEVER worked.\nДалі — спосіб дії (remotely), і аж наприкінці — «before».\n✗ «She never has worked» — так не кажуть у нейтральному стилі."
+    },
+    {
+      "id": "ord-reported-speech-01",
+      "topic": "ord-reported-speech",
+      "type": "order",
+      "prompt": "Складіть речення в непрямій мові:",
+      "tokens": [
+        "He",
+        "said",
+        "he",
+        "would",
+        "send",
+        "the",
+        "file",
+        "later"
+      ],
+      "answer": "He said he would send the file later",
+      "explain": "У непрямій мові часи зсуваються на крок назад: will → would, present → past.\nПряма мова: «I will send the file later» → He said he WOULD send the file later.\nПорядок слів залишається прямим — питальної інверсії тут немає."
+    },
+    {
+      "id": "ord-passive-01",
+      "topic": "ord-passive",
+      "type": "order",
+      "prompt": "Складіть речення в пасивному стані:",
+      "tokens": [
+        "The",
+        "report",
+        "was",
+        "reviewed",
+        "by",
+        "two",
+        "managers"
+      ],
+      "answer": "The report was reviewed by two managers",
+      "explain": "Пасивний стан: об'єкт → be (у потрібному часі) → past participle (V3) → by + виконавець.\nАктивна форма: «Two managers reviewed the report» → пасивна: «The report WAS REVIEWED BY two managers».\nВиконавець із «by» ставиться в кінці й часто взагалі опускається."
+    },
+    {
+      "id": "voc-coll-deadline-01",
+      "topic": "voc-coll-deadline",
+      "type": "fill",
+      "prompt": "We managed to ___ the deadline despite the delays.",
+      "answer": "meet",
+      "accept": [
+        "meet"
+      ],
+      "explain": "Стала сполука: meet a deadline (= встигнути до терміну).\n✗ reach — «reach a deadline» не вживається (але: reach an agreement, reach a conclusion).\n✗ catch — catch a train, catch a bus.\nПротилежне: miss a deadline."
+    },
+    {
+      "id": "voc-coll-responsibility-01",
+      "topic": "voc-coll-responsibility",
+      "type": "fill",
+      "prompt": "He was willing to ___ responsibility for the mistake.",
+      "answer": "take",
+      "accept": [
+        "take",
+        "accept"
+      ],
+      "explain": "take responsibility for something = взяти на себе відповідальність. «accept responsibility» теж коректне і трохи формальніше — обидва варіанти зараховуються.\n✗ make / do responsibility — таких сполук немає.\nБлизьке: take the blame."
+    },
+    {
+      "id": "ten-for-since-01",
+      "topic": "ten-for-since",
+      "type": "fill",
+      "prompt": "I've been learning English ___ six years.",
+      "answer": "for",
+      "accept": [
+        "for"
+      ],
+      "explain": "for + ТРИВАЛІСТЬ: for six years, for two weeks, for a while.\nsince + ТОЧКА ВІДЛІКУ: since 2019, since Monday, since I moved here.\nПеревірка: якщо після пропуску відповідь на «як довго?» — for; якщо на «з якого моменту?» — since."
+    },
+    {
+      "id": "prep-good-at-01",
+      "topic": "prep-good-at",
+      "type": "fill",
+      "prompt": "She's really good ___ explaining complex ideas.",
+      "answer": "at",
+      "accept": [
+        "at"
+      ],
+      "explain": "good at + герундій або іменник: good at explaining, good at maths.\n✗ good in — калька з української «добрий В чомусь»; в англійській не вживається в цьому значенні.\n✗ good for — це «корисний для»: «Exercise is good for you». Інше значення."
+    },
+    {
+      "id": "voc-make-do-02",
+      "topic": "voc-make-do",
+      "type": "fill",
+      "prompt": "We need to ___ a decision by Thursday.",
+      "answer": "make",
+      "accept": [
+        "make"
+      ],
+      "explain": "make a decision — стандартна сполука.\n✗ take a decision — трапляється в британському офіційному стилі, але для B1–B2 безпечний і природний варіант завжди «make».\n✗ do a decision — не існує.\nПорівняй: make a choice, make a plan, але take a chance, take a risk."
+    },
+    {
+      "id": "cond-second-02",
+      "topic": "cond-second",
+      "type": "fill",
+      "prompt": "If I were you, I ___ ask for a raise.",
+      "answer": "would",
+      "accept": [
+        "would",
+        "'d"
+      ],
+      "explain": "Другий тип умовного: у головній частині — would / could / might + інфінітив без «to».\n✗ will — це перший тип: «If I have time, I will ask».\n«If I were you, I would…» — стала формула для поради."
+    }
+  ]
+}

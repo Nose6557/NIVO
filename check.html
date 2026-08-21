@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wordforge — перевірка банку</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .chk{max-width:900px; margin:0 auto; padding:24px 18px 80px}
+  .chk h1{font-size:26px; margin-bottom:4px}
+  .chk .sub{color:var(--ash); font-size:14px; margin-bottom:24px}
+  .verdict-box{border:1px solid var(--iron-3); border-radius:var(--r); padding:18px; margin-bottom:24px}
+  .verdict-box.pass{border-color:var(--ok)}
+  .verdict-box.fail{border-color:var(--no)}
+  .verdict-box h2{font-size:20px; margin-bottom:6px}
+  .verdict-box.pass h2{color:var(--ok)}
+  .verdict-box.fail h2{color:var(--no)}
+  .verdict-box p{color:var(--ash); font-size:15px}
+  .sec{margin-bottom:28px}
+  .sec h3{font-size:13px; letter-spacing:.08em; text-transform:uppercase;
+          color:var(--ash); margin-bottom:10px; font-weight:600}
+  .row{display:flex; justify-content:space-between; gap:12px;
+       padding:7px 0; border-bottom:1px solid var(--iron-3); font-size:15px}
+  .row span:last-child{color:var(--ash); font-variant-numeric:tabular-nums}
+  .msg{border-left:2px solid var(--no); background:var(--iron-2);
+       padding:10px 14px; margin-bottom:8px; border-radius:0 var(--r) var(--r) 0;
+       font-size:14px; line-height:1.5}
+  .msg.warn{border-left-color:var(--straw)}
+  .msg code{font-family:'IBM Plex Mono',ui-monospace,monospace;
+            font-size:13px; color:var(--chalk); background:var(--iron-3);
+            padding:1px 5px; border-radius:3px}
+  .msg .where{display:block; color:var(--ash); font-size:12px; margin-top:3px}
+  .pill{display:inline-block; font-size:12px; padding:2px 8px; border-radius:20px;
+        background:var(--iron-3); color:var(--ash); margin-left:8px}
+</style>
+</head>
+<body>
+<div class="chk">
+  <h1>Перевірка банку питань</h1>
+  <div class="sub">Відкрий цю сторінку після кожної зміни в <code>banks/</code>.</div>
+  <div id="out">Завантаження…</div>
+</div>
+
+<script>
+const E = [];   // помилки — ламають гру
+const W = [];   // попередження — не ламають, але варто глянути
+
+function err(text, where)  { E.push({text, where}); }
+function warn(text, where) { W.push({text, where}); }
+
+const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const norm = s => String(s).trim().toLowerCase();
+
+async function grab(url) {
+  const r = await fetch(url + "?t=" + Date.now());
+  if (!r.ok) throw new Error(url + " → HTTP " + r.status);
+  try { return await r.json(); }
+  catch (e) { throw new Error(url + " → зламаний JSON: " + e.message); }
+}
+
+async function run() {
+  let index;
+  try { index = await grab("banks/index.json"); }
+  catch (e) { return render(null, e.message); }
+
+  const cats   = index.categories || {};
+  const levels = new Set((index.levels || []).map(l => l.id));
+  const packs  = index.packs || [];
+  if (!packs.length) err("У <code>index.json</code> немає жодного пака.");
+
+  const topics = {};      // slug -> {category, label, pack}
+  const seenId = {};      // id -> pack
+  const all = [];
+
+  for (const p of packs) {
+    let pack;
+    try { pack = await grab("banks/" + p.file); }
+    catch (e) { err(esc(e.message)); continue; }
+
+    if (p.level && !levels.has(p.level))
+      err(`Пак <code>${esc(p.file)}</code> має рівень <code>${esc(p.level)}</code>, якого немає в списку levels.`);
+
+    // теми пака
+    for (const [slug, t] of Object.entries(pack.topics || {})) {
+      if (!t.category)            err(`Тема <code>${esc(slug)}</code> без категорії.`, p.file);
+      else if (!cats[t.category]) err(`Тема <code>${esc(slug)}</code> посилається на невідому категорію <code>${esc(t.category)}</code>.`, p.file);
+      if (!t.label) err(`Тема <code>${esc(slug)}</code> без назви (label).`, p.file);
+
+      if (topics[slug]) {
+        const o = topics[slug];
+        if (o.category !== t.category || o.label !== t.label)
+          err(`Тема <code>${esc(slug)}</code> оголошена двічі з різними даними — у <code>${esc(o.pack)}</code> та <code>${esc(p.file)}</code>.`);
+      } else {
+        topics[slug] = { ...t, pack: p.file, count: 0 };
+      }
+    }
+
+    // питання
+    for (const q of (pack.questions || [])) {
+      const at = `${p.file} → ${q.id || "питання без id"}`;
+
+      if (!q.id) { err("Питання без <code>id</code>.", p.file); continue; }
+      if (seenId[q.id]) err(`Дубль id <code>${esc(q.id)}</code> — уже є в <code>${esc(seenId[q.id])}</code>.`, p.file);
+      seenId[q.id] = p.file;
+
+      if (!q.topic)             err("Немає поля <code>topic</code>.", at);
+      else if (!topics[q.topic]) err(`Тема <code>${esc(q.topic)}</code> не оголошена в жодному паку.`, at);
+      else topics[q.topic].count++;
+
+      if (!q.prompt || !q.prompt.trim()) err("Порожній <code>prompt</code>.", at);
+      if (!q.explain || !q.explain.trim()) err("Порожній <code>explain</code>.", at);
+      else if (q.explain.trim().length < 40) warn("Дуже коротке пояснення.", at);
+
+      if (!["mcq","fill","order"].includes(q.type)) {
+        err(`Невідомий тип <code>${esc(q.type)}</code>. Дозволені: mcq, fill, order.`, at);
+      } else if (q.type === "mcq") {
+        const o = q.options || [];
+        if (o.length < 2) err("У mcq менше двох варіантів.", at);
+        const dup = o.filter((x,i) => o.indexOf(x) !== i);
+        if (dup.length) err(`Однакові варіанти: <code>${esc(dup.join(", "))}</code>. Підсвітка правильної відповіді зламається.`, at);
+        if (!o.includes(q.answer)) {
+          const near = o.find(x => norm(x) === norm(q.answer));
+          err(near
+            ? `Відповідь <code>${esc(q.answer)}</code> не збігається з варіантом <code>${esc(near)}</code> точно (регістр або пробіли). Питання буде неможливо пройти.`
+            : `Відповіді <code>${esc(q.answer)}</code> немає серед варіантів. Питання буде неможливо пройти.`, at);
+        }
+      } else if (q.type === "fill") {
+        if (!q.answer || !q.answer.trim()) err("Порожня <code>answer</code>.", at);
+        const acc = q.accept || [q.answer];
+        if (!acc.some(a => norm(a) === norm(q.answer)))
+          err("<code>accept</code> не містить самої <code>answer</code>.", at);
+        if (!/_{2,}/.test(q.prompt || "")) warn("У прompt немає пропуску <code>___</code>.", at);
+      } else if (q.type === "order") {
+        const tk = q.tokens || [];
+        if (tk.length < 2) err("У order менше двох токенів.", at);
+        const a = String(q.answer || "").split(/\s+/).filter(Boolean);
+        const s1 = [...tk].sort().join("\u0001");
+        const s2 = [...a].sort().join("\u0001");
+        if (s1 !== s2)
+          err(`<code>tokens</code> не складаються в <code>answer</code>. Питання буде неможливо пройти.<span class="where">tokens: ${esc(tk.join(" "))}<br>answer: ${esc(q.answer)}</span>`, at);
+      }
+
+      all.push({ ...q, _pack: p.file, _level: q.level || p.level });
+    }
+  }
+
+  for (const [slug, t] of Object.entries(topics))
+    if (!t.count) warn(`Тема <code>${esc(slug)}</code> оголошена, але жодне питання її не використовує.`);
+
+  render({ all, topics, cats, packs });
+}
+
+function render(data, fatal) {
+  const out = document.getElementById("out");
+  if (fatal) {
+    out.innerHTML = `<div class="verdict-box fail"><h2>Не вдалося прочитати банк</h2><p>${esc(fatal)}</p></div>`;
+    return;
+  }
+
+  const ok = E.length === 0;
+  let h = `<div class="verdict-box ${ok ? "pass" : "fail"}">
+    <h2>${ok ? "Усе гаразд" : `Помилок: ${E.length}`}</h2>
+    <p>${ok
+      ? `${data.all.length} питань у ${data.packs.length} паку(ах), ${Object.keys(data.topics).length} тем. Можна публікувати.`
+      : `Ці питання зламані — гравець не зможе відповісти правильно. Виправ перед публікацією.`}
+      ${W.length ? `<span class="pill">попереджень: ${W.length}</span>` : ""}</p></div>`;
+
+  if (E.length) h += `<div class="sec"><h3>Помилки</h3>` + E.map(m =>
+    `<div class="msg">${m.text}${m.where ? `<span class="where">${esc(m.where)}</span>` : ""}</div>`).join("") + `</div>`;
+
+  if (W.length) h += `<div class="sec"><h3>Попередження</h3>` + W.map(m =>
+    `<div class="msg warn">${m.text}${m.where ? `<span class="where">${esc(m.where)}</span>` : ""}</div>`).join("") + `</div>`;
+
+  const by = (arr, f) => arr.reduce((a,x) => (a[f(x)] = (a[f(x)]||0)+1, a), {});
+  const rows = o => Object.entries(o).sort((a,b) => b[1]-a[1])
+    .map(([k,v]) => `<div class="row"><span>${esc(k)}</span><span>${v}</span></div>`).join("");
+
+  const catCount = by(data.all, q => (data.topics[q.topic]||{}).category || "?");
+  h += `<div class="sec"><h3>За категоріями</h3>${
+    rows(Object.fromEntries(Object.entries(catCount).map(([k,v]) =>
+      [(data.cats[k]||{}).label || k, v])))}</div>`;
+  h += `<div class="sec"><h3>За типом</h3>${rows(by(data.all, q => q.type))}</div>`;
+  h += `<div class="sec"><h3>За рівнем</h3>${rows(by(data.all, q => q._level || "?"))}</div>`;
+
+  const thin = Object.entries(data.topics).filter(([,t]) => t.count === 1).length;
+  h += `<div class="sec"><h3>Теми</h3>
+    <div class="row"><span>Усього тем</span><span>${Object.keys(data.topics).length}</span></div>
+    <div class="row"><span>З одним питанням</span><span>${thin}</span></div>
+    <div class="row"><span>Питань на тему в середньому</span><span>${
+      (data.all.length / Object.keys(data.topics).length).toFixed(1)}</span></div></div>`;
+
+  out.innerHTML = h;
+}
+
+run().catch(e => render(null, e.message));
+</script>
+</body>
+</html>
