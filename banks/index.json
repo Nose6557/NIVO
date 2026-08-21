@@ -31,6 +31,21 @@
     },
     "word order": {
       "label": "Порядок слів"
+    },
+    "spelling": {
+      "label": "Орфографія і регістр"
+    },
+    "syntax": {
+      "label": "Будова речення"
+    },
+    "word formation": {
+      "label": "Словотвір"
+    },
+    "agreement": {
+      "label": "Узгодження"
+    },
+    "register": {
+      "label": "Діловий стиль"
     }
   },
   "packs": [
@@ -38,6 +53,11 @@
       "file": "b1b2-core.json",
       "level": "B1-B2",
       "title": "Базовий банк B1–B2"
+    },
+    {
+      "file": "b1b2-errors-01.json",
+      "level": "B1-B2",
+      "title": "Персональні помилки — партія 1"
     }
   ]
 }

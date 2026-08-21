@@ -1,0 +1,1389 @@
+{
+  "schema": 2,
+  "pack": "b1b2-errors-01",
+  "title": "Персональні помилки — партія 1",
+  "level": "B1-B2",
+  "topics": {
+    "agr-plural-roles": {
+      "category": "agreement",
+      "label": "Множина назв ролей"
+    },
+    "agr-third-person": {
+      "category": "agreement",
+      "label": "-s у третій особі"
+    },
+    "art-a-one": {
+      "category": "articles",
+      "label": "a one — неможлива комбінація"
+    },
+    "art-definite-known": {
+      "category": "articles",
+      "label": "the перед відомим предметом"
+    },
+    "art-zero-proper-names": {
+      "category": "articles",
+      "label": "Без артикля перед назвами"
+    },
+    "ord-also-placement": {
+      "category": "word order",
+      "label": "Місце also"
+    },
+    "ord-neither-nor": {
+      "category": "word order",
+      "label": "Neither … nor"
+    },
+    "ord-noun-modifier": {
+      "category": "word order",
+      "label": "Означення перед іменником"
+    },
+    "ord-only-placement": {
+      "category": "word order",
+      "label": "Місце only"
+    },
+    "phr-point-out": {
+      "category": "phrasal verbs",
+      "label": "point out"
+    },
+    "prep-access-to": {
+      "category": "prepositions",
+      "label": "access to"
+    },
+    "prep-available-to": {
+      "category": "prepositions",
+      "label": "available to"
+    },
+    "prep-by-doing": {
+      "category": "prepositions",
+      "label": "by + -ing — спосіб дії"
+    },
+    "prep-from-to-dates": {
+      "category": "prepositions",
+      "label": "from … to … — діапазон"
+    },
+    "prep-on-surface": {
+      "category": "prepositions",
+      "label": "on — про поверхню й екрани"
+    },
+    "prep-set-to": {
+      "category": "prepositions",
+      "label": "set something to"
+    },
+    "reg-abbreviations": {
+      "category": "register",
+      "label": "Скорочення в переписці"
+    },
+    "reg-acknowledgement": {
+      "category": "register",
+      "label": "Підтвердження отриманого"
+    },
+    "reg-style-conventions": {
+      "category": "register",
+      "label": "Умовності оформлення"
+    },
+    "sp-apostrophe": {
+      "category": "spelling",
+      "label": "Апостроф у скороченнях"
+    },
+    "sp-capitalization": {
+      "category": "spelling",
+      "label": "Великі літери в назвах"
+    },
+    "sp-double-letters": {
+      "category": "spelling",
+      "label": "Подвоєні літери"
+    },
+    "syn-because-of": {
+      "category": "syntax",
+      "label": "because / because of"
+    },
+    "syn-comma-splice": {
+      "category": "syntax",
+      "label": "Кома між реченнями"
+    },
+    "syn-in-case": {
+      "category": "syntax",
+      "label": "in case of"
+    },
+    "syn-missing-subject": {
+      "category": "syntax",
+      "label": "Пропущений підмет"
+    },
+    "syn-parenthetical": {
+      "category": "syntax",
+      "label": "Коми навколо вставних"
+    },
+    "ten-aux-mixing": {
+      "category": "tenses",
+      "label": "Змішування допоміжних дієслів"
+    },
+    "ten-irregular-past": {
+      "category": "tenses",
+      "label": "Неправильні дієслова"
+    },
+    "ten-passive-perfect": {
+      "category": "tenses",
+      "label": "Present Perfect Passive"
+    },
+    "voc-enable-unable": {
+      "category": "vocabulary",
+      "label": "enable / unable"
+    },
+    "voc-have-session": {
+      "category": "vocabulary",
+      "label": "have a meeting / session"
+    },
+    "voc-missing-missed": {
+      "category": "vocabulary",
+      "label": "missing / missed"
+    },
+    "voc-object-pronouns": {
+      "category": "vocabulary",
+      "label": "Об'єктні займенники"
+    },
+    "voc-source-of-truth": {
+      "category": "vocabulary",
+      "label": "source of truth"
+    },
+    "wf-adverb-adjective": {
+      "category": "word formation",
+      "label": "Прислівник замість прикметника"
+    },
+    "wf-ed-vs-ing": {
+      "category": "word formation",
+      "label": "-ed чи -ing у прикметниках"
+    }
+  },
+  "questions": [
+    {
+      "id": "art-definite-known-01",
+      "topic": "art-definite-known",
+      "type": "mcq",
+      "prompt": "Could you check ___ dates on the invoice? They look wrong.",
+      "options": [
+        "the",
+        "a",
+        "—  (без артикля)",
+        "an"
+      ],
+      "answer": "the",
+      "explain": "Це не «якісь дати взагалі», а конкретні — ті, що на рахунку. Співрозмовник розуміє, про які саме, тому the.\n✗ a / an — вживаються з незнайомим предметом в однині; тут множина й предмет відомий.\n✗ без артикля — множина без артикля означала б «дати як явище».\nНайчастіша помилка українців: артикля немає в рідній мові, тож він просто випадає."
+    },
+    {
+      "id": "art-definite-known-02",
+      "topic": "art-definite-known",
+      "type": "mcq",
+      "prompt": "All that information is in ___ specs I sent you yesterday.",
+      "options": [
+        "the",
+        "a",
+        "—  (без артикля)",
+        "those a"
+      ],
+      "answer": "the",
+      "explain": "Означення «I sent you yesterday» звужує предмет до одного конкретного — це і є сигнал для the.\n✗ без артикля — так вийшло б «у специфікаціях узагалі».\nПравило-орієнтир: якщо після іменника йде уточнення (який саме, чий, де), майже завжди потрібен the."
+    },
+    {
+      "id": "art-definite-known-03",
+      "topic": "art-definite-known",
+      "type": "fill",
+      "prompt": "We could keep ___ same strings for both screens.",
+      "answer": "the",
+      "accept": [
+        "the",
+        "The"
+      ],
+      "explain": "Слово «same» практично завжди йде з the: the same, at the same time.\nЛогіка: «той самий» означає «саме той, про який ідеться» — а це визначеність."
+    },
+    {
+      "id": "art-definite-known-04",
+      "topic": "art-definite-known",
+      "type": "mcq",
+      "prompt": "I only copied ___ necessary frames into the new file.",
+      "options": [
+        "the",
+        "a",
+        "—  (без артикля)",
+        "an"
+      ],
+      "answer": "the",
+      "explain": "«Necessary» виділяє з усіх кадрів конкретну підмножину — потрібні саме для цієї задачі. Виділення = the.\n✗ без артикля — «necessary frames» звучало б як «потрібні кадри взагалі».\nТак само працюють: the relevant parts, the remaining items, the right people."
+    },
+    {
+      "id": "art-zero-proper-names-01",
+      "topic": "art-zero-proper-names",
+      "type": "mcq",
+      "prompt": "These two pages already exist in ___ Account Settings.",
+      "options": [
+        "—  (без артикля)",
+        "the",
+        "a",
+        "an"
+      ],
+      "answer": "—  (без артикля)",
+      "explain": "Account Settings — власна назва розділу інтерфейсу, а власні назви йдуть без артикля: in Settings, on Dashboard, in Reports.\n✗ the — потрібне лише для загальних іменників: «the settings page», але «Account Settings».\nОрієнтир: якщо назва пишеться з великої літери, артикль зазвичай зайвий."
+    },
+    {
+      "id": "art-zero-proper-names-02",
+      "topic": "art-zero-proper-names",
+      "type": "mcq",
+      "prompt": "We have a separate file with ___ charts for ___ V2.",
+      "options": [
+        "the / —",
+        "the / the",
+        "— / the",
+        "a / the"
+      ],
+      "answer": "the / —",
+      "explain": "Два різні випадки в одному реченні. Charts — звичайний іменник, уточнений контекстом → the charts.\nV2 — назва версії, тобто власна назва → без артикля.\n✗ «the V2» — так само хибно, як «the Windows» чи «the Figma»."
+    },
+    {
+      "id": "art-zero-proper-names-03",
+      "topic": "art-zero-proper-names",
+      "type": "mcq",
+      "prompt": "I've just finished ___ Statement Settings.",
+      "options": [
+        "—  (без артикля)",
+        "the",
+        "a",
+        "an"
+      ],
+      "answer": "—  (без артикля)",
+      "explain": "Назва конкретного екрана — власна назва, артикль не потрібен.\nПорівняй: «I've finished the settings page» (загальний опис) проти «I've finished Statement Settings» (назва).\nПрактичне правило: пишеш з великої — не став артикль."
+    },
+    {
+      "id": "art-a-one-01",
+      "topic": "art-a-one",
+      "type": "mcq",
+      "prompt": "We have ___ file for the whole project.",
+      "options": [
+        "just one",
+        "a one",
+        "one a",
+        "a one of"
+      ],
+      "answer": "just one",
+      "explain": "«a» і «one» разом не вживаються — обидва слова виражають однину, виходить подвоєння.\n✗ a one — граматично неможливо в цій позиції.\nЯкщо треба підкреслити «лише один», кажи just one або only one."
+    },
+    {
+      "id": "art-a-one-02",
+      "topic": "art-a-one",
+      "type": "fill",
+      "prompt": "There's only ___ file for the whole project, not two.",
+      "answer": "one",
+      "accept": [
+        "one",
+        "a single"
+      ],
+      "explain": "Тут наголос саме на кількості, тому потрібне one, а не артикль a.\nРізниця: «a file» = якийсь файл; «one file» = рівно один."
+    },
+    {
+      "id": "art-first-mention-02",
+      "topic": "art-first-mention",
+      "type": "mcq",
+      "prompt": "I created ___ page in Confluence. ___ page describes the whole flow.",
+      "options": [
+        "a / The",
+        "the / The",
+        "a / A",
+        "the / A"
+      ],
+      "answer": "a / The",
+      "explain": "Перша згадка вводить предмет — a page. Друга вже посилається на нього — The page.\n✗ «the / The» — на першому кроці читач ще не знає, про яку сторінку йдеться.\n✗ «a / A» — друга згадка не може лишитися невизначеною."
+    },
+    {
+      "id": "prep-available-to-01",
+      "topic": "prep-available-to",
+      "type": "mcq",
+      "prompt": "This page will be available ___ managers only.",
+      "options": [
+        "to",
+        "for",
+        "at",
+        "with"
+      ],
+      "answer": "to",
+      "explain": "available TO somebody — доступний комусь (про людей, які мають доступ).\n✗ for — «available for» вживається про призначення чи період: available for testing, available for two weeks.\nПорівняй: The report is available to the team (кому) / available for review (для чого)."
+    },
+    {
+      "id": "prep-available-to-02",
+      "topic": "prep-available-to",
+      "type": "fill",
+      "prompt": "The dashboard is available ___ everyone on the team.",
+      "answer": "to",
+      "accept": [
+        "to"
+      ],
+      "explain": "Коли після available стоїть людина або група — прийменник завжди to.\nПам'ятка: «доступний КОМУ» → to somebody."
+    },
+    {
+      "id": "prep-access-to-01",
+      "topic": "prep-access-to",
+      "type": "mcq",
+      "prompt": "I don't have ___ this document.",
+      "options": [
+        "access to",
+        "access for",
+        "access on",
+        "an access to"
+      ],
+      "answer": "access to",
+      "explain": "access TO something — стала сполука.\n✗ access for — не вживається в цьому значенні.\n✗ an access — access незлічуване, артикль a/an неможливий."
+    },
+    {
+      "id": "prep-access-to-02",
+      "topic": "prep-access-to",
+      "type": "mcq",
+      "prompt": "I don't have ___ access to this file, only view.",
+      "options": [
+        "edit",
+        "editing",
+        "to edit",
+        "edited"
+      ],
+      "answer": "edit",
+      "explain": "Перед іменником «access» означення стоїть у формі простого дієслова-іменника: edit access, view access, admin access.\n✗ editing access — так не кажуть, хоч це й здається логічним.\nТі самі моделі: read access, write access, full access."
+    },
+    {
+      "id": "prep-on-surface-01",
+      "topic": "prep-on-surface",
+      "type": "mcq",
+      "prompt": "All the features are listed ___ these cards.",
+      "options": [
+        "on",
+        "at",
+        "in",
+        "by"
+      ],
+      "answer": "on",
+      "explain": "Картка, сторінка, екран сприймаються як поверхня → on: on the card, on the page, on the screen.\n✗ at — вживається з точкою в просторі: at the office, at the bus stop.\n✗ in — про внутрішній простір: in the file, in the folder."
+    },
+    {
+      "id": "prep-on-surface-02",
+      "topic": "prep-on-surface",
+      "type": "fill",
+      "prompt": "There's a short note ___ the first page of the doc.",
+      "answer": "on",
+      "accept": [
+        "on"
+      ],
+      "explain": "Сторінка = поверхня, тому on the page.\nВиняток, який варто запам'ятати: «in the document» — документ сприймається як вмістилище, а сторінка — як поверхня."
+    },
+    {
+      "id": "prep-by-doing-01",
+      "topic": "prep-by-doing",
+      "type": "mcq",
+      "prompt": "I improved the flow ___ a clear call to action.",
+      "options": [
+        "by adding",
+        "adding",
+        "with adding",
+        "for adding"
+      ],
+      "answer": "by adding",
+      "explain": "Спосіб дії («як саме?») передається через by + -ing.\n✗ adding — без прийменника вийде обірвана конструкція.\n✗ with adding — with поєднується з іменником: with a new CTA.\nПорівняй: We cut errors by simplifying the form."
+    },
+    {
+      "id": "prep-by-doing-02",
+      "topic": "prep-by-doing",
+      "type": "fill",
+      "prompt": "We reduced the number of errors by ___ (simplify) the form.",
+      "answer": "simplifying",
+      "accept": [
+        "simplifying"
+      ],
+      "explain": "Після by завжди -ing форма, ніколи не інфінітив.\n✗ by simplify / by to simplify — обидва неправильні."
+    },
+    {
+      "id": "prep-set-to-01",
+      "topic": "prep-set-to",
+      "type": "mcq",
+      "prompt": "Could you help me set my ticket ___ Resolved?",
+      "options": [
+        "to",
+        "as",
+        "on",
+        "at"
+      ],
+      "answer": "to",
+      "explain": "set something TO a value — перевести в певний стан: set the status to Done, set the filter to Active.\n✗ as — «set as» означає «призначити чимось»: set as default.\nЩе один момент: перед назвою статусу артикль не потрібен — «to Resolved», не «to a Resolved»."
+    },
+    {
+      "id": "prep-set-to-02",
+      "topic": "prep-set-to",
+      "type": "fill",
+      "prompt": "Please set the priority ___ High before the meeting.",
+      "answer": "to",
+      "accept": [
+        "to"
+      ],
+      "explain": "Та сама модель: змінюємо значення поля → set … to ….\nПам'ятка: to вказує на кінцевий стан, куди щось переводять."
+    },
+    {
+      "id": "prep-from-to-dates-01",
+      "topic": "prep-from-to-dates",
+      "type": "mcq",
+      "prompt": "I'd like to take a vacation ___ 20 July ___ 31 July.",
+      "options": [
+        "from / to",
+        "since / to",
+        "from / till of",
+        "at / to"
+      ],
+      "answer": "from / to",
+      "explain": "У складі речення діапазон дат оформлюється як from … to …\n✗ since — вживається лише про точку відліку в минулому, що триває досі.\nТире (20/07 – 31/07) годиться для таблиці чи нотатки, але не всередині речення."
+    },
+    {
+      "id": "prep-depend-on-02",
+      "topic": "prep-depend-on",
+      "type": "mcq",
+      "prompt": "What each user can see depends ___ their permissions.",
+      "options": [
+        "on",
+        "of",
+        "from",
+        "at"
+      ],
+      "answer": "on",
+      "explain": "depend ON — прийменник незмінний.\n✗ of — плутанина з «depends of», якої в англійській немає.\n✗ from — пряма калька з «залежати ВІД»."
+    },
+    {
+      "id": "prep-depend-on-03",
+      "topic": "prep-depend-on",
+      "type": "fill",
+      "prompt": "The final layout depends ___ the screen size.",
+      "answer": "on",
+      "accept": [
+        "on",
+        "upon"
+      ],
+      "explain": "Завжди depend on (у формальному стилі трапляється depend upon).\nУ формі дієприкметника так само: depending on the results."
+    },
+    {
+      "id": "ten-aux-mixing-01",
+      "topic": "ten-aux-mixing",
+      "type": "mcq",
+      "prompt": "This is the page where the wizard ___ triggered.",
+      "options": [
+        "was",
+        "was been",
+        "is been",
+        "has being"
+      ],
+      "answer": "was",
+      "explain": "Пасив у минулому = was/were + V3. Одного допоміжного досить.\n✗ was been — подвоєння: was уже несе значення минулого, been тут зайве.\nФорма «has been triggered» існує, але це вже Present Perfect Passive — інший час."
+    },
+    {
+      "id": "ten-aux-mixing-02",
+      "topic": "ten-aux-mixing",
+      "type": "fill",
+      "prompt": "Sorry, I ___ chatting with a colleague.",
+      "answer": "was",
+      "accept": [
+        "was"
+      ],
+      "explain": "Past Continuous = was/were + -ing. Ніякого been.\n✗ was been chatting — трьох допоміжних поспіль в англійській не буває.\nЦя помилка з'являється, коли пишеш поспіхом: мозок бере шаблон «was been» як щось цілісне."
+    },
+    {
+      "id": "ten-aux-mixing-03",
+      "topic": "ten-aux-mixing",
+      "type": "mcq",
+      "prompt": "These two pages already ___ in the current version.",
+      "options": [
+        "exist",
+        "are exist",
+        "are existing",
+        "is exist"
+      ],
+      "answer": "exist",
+      "explain": "Exist — повноцінне дієслово, воно не потребує «are».\n✗ are exist — два присудки поспіль; так само хибно, як «are work» чи «are go».\n✗ are existing — exist майже не вживається в тривалій формі, бо позначає стан."
+    },
+    {
+      "id": "ten-irregular-past-01",
+      "topic": "ten-irregular-past",
+      "type": "mcq",
+      "prompt": "In version three we ___ this page into two.",
+      "options": [
+        "split",
+        "splitted",
+        "splited",
+        "have splitted"
+      ],
+      "answer": "split",
+      "explain": "Split — неправильне дієслово з однаковими формами: split – split – split. Закінчення -ed воно не приймає ніколи.\n✗ splitted — форми не існує, хоч вона й здається логічною.\nТак само поводяться: cut – cut – cut, put – put – put, set – set – set."
+    },
+    {
+      "id": "ten-irregular-past-02",
+      "topic": "ten-irregular-past",
+      "type": "mcq",
+      "prompt": "They ___ the budget in half last quarter.",
+      "options": [
+        "cut",
+        "cutted",
+        "cutted down",
+        "have cut it"
+      ],
+      "answer": "cut",
+      "explain": "Cut – cut – cut, без -ed.\nПідказка: майже всі дієслова, що закінчуються на -t і позначають різку дію (cut, put, set, hit, let), не змінюються."
+    },
+    {
+      "id": "ten-passive-perfect-01",
+      "topic": "ten-passive-perfect",
+      "type": "mcq",
+      "prompt": "I requested access last week, but it ___ yet.",
+      "options": [
+        "hasn't been granted",
+        "still haven't granted",
+        "hasn't granted",
+        "isn't granted"
+      ],
+      "answer": "hasn't been granted",
+      "explain": "Доступ не діє сам — його надають. Отже потрібен пасив: has/have + been + V3.\n✗ still haven't granted — виходить, що доступу не надав ти сам.\n✗ hasn't granted — активна форма: «він нікому не надав».\nМаркер «yet» додатково вказує на перфект."
+    },
+    {
+      "id": "ten-passive-perfect-02",
+      "topic": "ten-passive-perfect",
+      "type": "mcq",
+      "prompt": "The ticket ___ to another team, so I can't close it.",
+      "options": [
+        "has been reassigned",
+        "has reassigned",
+        "is reassigned by",
+        "was been reassigned"
+      ],
+      "answer": "has been reassigned",
+      "explain": "Дія сталася в минулому, а наслідок відчутний зараз → Present Perfect. Тікет не переносить себе сам → пасив.\n✗ has reassigned — активна форма змінює зміст на «тікет комусь щось переніс»."
+    },
+    {
+      "id": "ten-present-perfect-02",
+      "topic": "ten-present-perfect",
+      "type": "mcq",
+      "prompt": "___ a diagram to the page — take a look when you have a minute.",
+      "options": [
+        "I've added",
+        "I added",
+        "I was adding",
+        "I had added"
+      ],
+      "answer": "I've added",
+      "explain": "Дія щойно завершена, а результат актуальний зараз («подивись») → Present Perfect.\n✗ I added — Past Simple доречний з указівкою на минулий момент: I added it yesterday.\nУ робочому листуванні це найчастіший випадок: повідомляєш про щойно зроблене → have + V3."
+    },
+    {
+      "id": "ten-present-perfect-03",
+      "topic": "ten-present-perfect",
+      "type": "fill",
+      "prompt": "I ___ just finished the settings screen.",
+      "answer": "have",
+      "accept": [
+        "have",
+        "'ve"
+      ],
+      "explain": "Маркер «just» майже завжди тягне за собою Present Perfect: have just finished.\nТак само працюють already, yet, so far, recently."
+    },
+    {
+      "id": "sp-double-letters-01",
+      "topic": "sp-double-letters",
+      "type": "mcq",
+      "prompt": "The banner stays visible ___ the user closes it.",
+      "options": [
+        "until",
+        "untill",
+        "untils",
+        "untile"
+      ],
+      "answer": "until",
+      "explain": "Until пишеться з однією літерою l — на відміну від till, де їх дві.\n✗ untill — найпоширеніша описка саме через плутанину з till.\nЗапам'ятай пару: until (одна l) / till (дві l). Значення однакове."
+    },
+    {
+      "id": "sp-double-letters-02",
+      "topic": "sp-double-letters",
+      "type": "fill",
+      "prompt": "We compressed the images without ___ quality.",
+      "answer": "losing",
+      "accept": [
+        "losing"
+      ],
+      "explain": "Lose (втрачати) → losing, одна o. Loose — інше слово, прикметник «вільний, нещільний».\n✗ loosing — це форма від loose, тобто «послаблюючи».\nПам'ятка: у lose один звук [u:] — і одна o."
+    },
+    {
+      "id": "sp-double-letters-03",
+      "topic": "sp-double-letters",
+      "type": "mcq",
+      "prompt": "___ selected — three of five items.",
+      "options": [
+        "Partially",
+        "Partialy",
+        "Partialy-",
+        "Partialli"
+      ],
+      "answer": "Partially",
+      "explain": "Основа partial + суфікс -ly дає подвоєну l: partially.\nТе саме правило: full → fully, real → really, usual → usually.\nЛогіка проста: l основи плюс l суфікса."
+    },
+    {
+      "id": "sp-apostrophe-01",
+      "topic": "sp-apostrophe",
+      "type": "mcq",
+      "prompt": "For some reason I ___ set my ticket as resolved.",
+      "options": [
+        "can't",
+        "cant",
+        "can not't",
+        "cann't"
+      ],
+      "answer": "can't",
+      "explain": "Апостроф позначає пропущену літеру: cannot → can't.\n✗ cant — існує як окреме рідкісне слово (лицемірні балачки), тож перевірка правопису помилки не покаже.\nЦе небезпечна описка саме тим, що виглядає невинно."
+    },
+    {
+      "id": "sp-apostrophe-02",
+      "topic": "sp-apostrophe",
+      "type": "mcq",
+      "prompt": "Okay, ___ fix the statement screen first.",
+      "options": [
+        "let's",
+        "lets",
+        "let us's",
+        "lets'"
+      ],
+      "answer": "let's",
+      "explain": "Let's = let us. Апостроф заміняє пропущене u.\n✗ lets — форма третьої особи: «he lets me in».\nПеревірка: якщо можна розгорнути в «let us», потрібен апостроф."
+    },
+    {
+      "id": "sp-apostrophe-03",
+      "topic": "sp-apostrophe",
+      "type": "mcq",
+      "prompt": "___ in different time zones, so let's find a slot.",
+      "options": [
+        "We live",
+        "We're live",
+        "Were live",
+        "We are live"
+      ],
+      "answer": "We live",
+      "explain": "Тут потрібне звичайне Present Simple: we live.\n✗ We're live — це «ми в прямому ефірі»: we + are + live (прикметник).\nПастка в тому, що «we're» автоматично проситься під пальці. Перевірка: розгорни скорочення й прочитай уголос."
+    },
+    {
+      "id": "sp-capitalization-01",
+      "topic": "sp-capitalization",
+      "type": "mcq",
+      "prompt": "We have just one ___ file for the whole project.",
+      "options": [
+        "Figma",
+        "figma",
+        "FIGMA",
+        "figMa"
+      ],
+      "answer": "Figma",
+      "explain": "Назви продуктів і компаній завжди з великої літери: Figma, Slack, Jira, Confluence.\nУ робочому листуванні це помітно: маленька літера читається як недбалість."
+    },
+    {
+      "id": "sp-capitalization-02",
+      "topic": "sp-capitalization",
+      "type": "mcq",
+      "prompt": "I moved those settings to the profile page in ___.",
+      "options": [
+        "V2",
+        "v2",
+        "the V2",
+        "Version-2"
+      ],
+      "answer": "V2",
+      "explain": "Головне тут — послідовність: обери V2 або v2 і тримайся одного варіанту в усьому тексті.\n✗ the V2 — перед назвою версії артикль не ставиться.\nУ документації частіше пишуть з великої: V2, V3."
+    },
+    {
+      "id": "syn-comma-splice-01",
+      "topic": "syn-comma-splice",
+      "type": "mcq",
+      "prompt": "Оберіть правильно з'єднане речення:",
+      "options": [
+        "I investigated the settings and created a page for them.",
+        "I investigated the settings, I created a page for them.",
+        "I investigated the settings, created a page for them, it's ready.",
+        "I investigated the settings I created a page for them."
+      ],
+      "answer": "I investigated the settings and created a page for them.",
+      "explain": "Два самостійні речення не можна з'єднати самою комою — це помилка, яку називають comma splice.\nЄ три виходи: сполучник (and, but, so), крапка або тире.\n✗ Варіант із комою й без сполучника — саме той випадок.\n✗ Варіант без розділових знаків узагалі — зрощення двох речень."
+    },
+    {
+      "id": "syn-comma-splice-02",
+      "topic": "syn-comma-splice",
+      "type": "mcq",
+      "prompt": "They can also create another account, ___ a separate page for that.",
+      "options": [
+        "— there's",
+        "there's",
+        "and there's a",
+        "there is,"
+      ],
+      "answer": "— there's",
+      "explain": "Друга частина — самостійне речення, тож потрібне тире, крапка або сполучник.\nТире в діловому листуванні звучить природно й жваво.\n✗ проста кома перед «there's» дала б той самий comma splice."
+    },
+    {
+      "id": "syn-comma-splice-03",
+      "topic": "syn-comma-splice",
+      "type": "order",
+      "prompt": "Складіть речення з двох частин:",
+      "tokens": [
+        "the",
+        "error",
+        "the",
+        "and",
+        "I",
+        "logs",
+        "checked",
+        "found"
+      ],
+      "answer": "I checked the logs and found the error",
+      "explain": "Дві дії одного підмета з'єднуються сполучником and — підмет у другій частині не повторюється.\nПорівняй: «I checked the logs, I found the error» — помилка; «I checked the logs and found the error» — правильно."
+    },
+    {
+      "id": "syn-missing-subject-01",
+      "topic": "syn-missing-subject",
+      "type": "mcq",
+      "prompt": "Sorry, ___ chatting with a colleague.",
+      "options": [
+        "I was",
+        "was",
+        "was been",
+        "been"
+      ],
+      "answer": "I was",
+      "explain": "В англійському реченні підмет обов'язковий — навіть у короткому повідомленні в чаті.\nВ українській «розмовляв» уже містить особу, в англійській — ні.\n✗ «was chatting» без I звучить як обірвана фраза."
+    },
+    {
+      "id": "syn-missing-subject-02",
+      "topic": "syn-missing-subject",
+      "type": "mcq",
+      "prompt": "___ you meant the toolbar, not the sidebar.",
+      "options": [
+        "I think",
+        "Probably",
+        "Think",
+        "Maybe that"
+      ],
+      "answer": "I think",
+      "explain": "«Probably you meant» граматично можливо, але звучить різкувато — ніби ти виправляєш співрозмовника.\n«I think you meant…» м'якше й природніше в робочій переписці.\n✗ Think you meant — знову бракує підмета."
+    },
+    {
+      "id": "syn-because-of-01",
+      "topic": "syn-because-of",
+      "type": "mcq",
+      "prompt": "___ there's some context here, I'll add a link to the thread.",
+      "options": [
+        "Because",
+        "Because of",
+        "Cause of",
+        "Due"
+      ],
+      "answer": "Because",
+      "explain": "because + ціле речення (підмет + присудок).\nbecause of + іменник: because of the delay.\n✗ Because of there's — після because of не може стояти дієслово.\n✗ Due — саме по собі не вживається, потрібно due to + іменник."
+    },
+    {
+      "id": "syn-because-of-02",
+      "topic": "syn-because-of",
+      "type": "fill",
+      "prompt": "We postponed the release ___ the missing data.",
+      "answer": "because of",
+      "accept": [
+        "because of"
+      ],
+      "explain": "Тут далі йде іменникова група («the missing data»), а не речення → because of.\nПеревірка на пальцях: є дієслово після пропуску — because; немає — because of."
+    },
+    {
+      "id": "syn-in-case-01",
+      "topic": "syn-in-case",
+      "type": "mcq",
+      "prompt": "___ any problems, just ping me.",
+      "options": [
+        "In case of",
+        "In case",
+        "Case of",
+        "In cases"
+      ],
+      "answer": "In case of",
+      "explain": "in case OF + іменник: in case of any problems, in case of fire.\n✗ In case any problems — бракує прийменника; «in case» вимагає далі цілого речення: in case any problems come up.\nПростіша й природніша альтернатива: «If you run into any problems, just ping me»."
+    },
+    {
+      "id": "syn-in-case-02",
+      "topic": "syn-in-case",
+      "type": "mcq",
+      "prompt": "Take the charger with you ___ the battery dies.",
+      "options": [
+        "in case",
+        "in case of",
+        "in the case",
+        "case"
+      ],
+      "answer": "in case",
+      "explain": "Тут після пропуску йде повне речення («the battery dies») → in case без of.\nПара для запам'ятовування: in case of + іменник / in case + речення."
+    },
+    {
+      "id": "syn-parenthetical-01",
+      "topic": "syn-parenthetical",
+      "type": "mcq",
+      "prompt": "Оберіть правильне оформлення:",
+      "options": [
+        "Only admins (managers, to be precise) can see this page.",
+        "Only admins (managers to be precise) can see this page.",
+        "Only admins, (managers to be precise) can see this page.",
+        "Only admins (managers, to be precise, ) can see this page."
+      ],
+      "answer": "Only admins (managers, to be precise) can see this page.",
+      "explain": "Вставна конструкція «to be precise» виділяється комою всередині дужок.\nКома перед відкритою дужкою не ставиться ніколи.\nПробіл перед закритою дужкою теж зайвий."
+    },
+    {
+      "id": "syn-parenthetical-02",
+      "topic": "syn-parenthetical",
+      "type": "mcq",
+      "prompt": "___ I can't set my ticket as resolved.",
+      "options": [
+        "For some reason,",
+        "For some reason",
+        "For some reason -",
+        "For, some reason"
+      ],
+      "answer": "For some reason,",
+      "explain": "Вступна обставина на початку речення відокремлюється комою: For some reason, / In my opinion, / As a result,\nЦе не жорстке правило для дуже коротких вставок, але з трислівною обставиною кома потрібна."
+    },
+    {
+      "id": "wf-adverb-adjective-01",
+      "topic": "wf-adverb-adjective",
+      "type": "mcq",
+      "prompt": "This screen ___ matches the current design.",
+      "options": [
+        "partially",
+        "particular",
+        "partial",
+        "particularly"
+      ],
+      "answer": "partially",
+      "explain": "Дію характеризує прислівник: matches HOW? → partially.\n✗ partial — прикметник, він означує іменник: a partial match.\n✗ particular / particularly — інше слово («особливий / особливо»), схоже лише за звучанням.\nНе переплутай: partial = частковий, particular = конкретний."
+    },
+    {
+      "id": "wf-adverb-adjective-02",
+      "topic": "wf-adverb-adjective",
+      "type": "mcq",
+      "prompt": "He's ___ the person who can answer this question.",
+      "options": [
+        "exactly",
+        "exact",
+        "exacting",
+        "exactness"
+      ],
+      "answer": "exactly",
+      "explain": "Перед іменниковою групою в значенні «саме той» потрібен прислівник exactly.\n✗ exact — прикметник: the exact number.\n✗ exacting — «вимогливий», зовсім інше значення."
+    },
+    {
+      "id": "wf-adverb-adjective-03",
+      "topic": "wf-adverb-adjective",
+      "type": "fill",
+      "prompt": "The form works ___ (perfect) now — no errors at all.",
+      "answer": "perfectly",
+      "accept": [
+        "perfectly"
+      ],
+      "explain": "Дієслово works характеризується прислівником: works perfectly.\n✗ works perfect — поширена помилка; perfect тут прикметник і до дієслова не підходить."
+    },
+    {
+      "id": "wf-ed-vs-ing-01",
+      "topic": "wf-ed-vs-ing",
+      "type": "mcq",
+      "prompt": "The team is ___ about the new validation rules.",
+      "options": [
+        "confused",
+        "confusing",
+        "confuse",
+        "confusion"
+      ],
+      "answer": "confused",
+      "explain": "-ed описує того, хто ВІДЧУВАЄ: the team is confused (команда розгублена).\n-ing описує те, що ВИКЛИКАЄ відчуття: the rules are confusing (правила заплутані).\n✗ confusing тут означало б, що команда сама всіх заплутує."
+    },
+    {
+      "id": "wf-ed-vs-ing-02",
+      "topic": "wf-ed-vs-ing",
+      "type": "mcq",
+      "prompt": "The instructions were ___, so nobody understood them.",
+      "options": [
+        "confusing",
+        "confused",
+        "confuse",
+        "confusedly"
+      ],
+      "answer": "confusing",
+      "explain": "Інструкції — джерело плутанини, а не її переживач → -ing.\nПеревірка: предмет не має емоцій, отже -ing.\nТа сама пара: interesting / interested, boring / bored, surprising / surprised."
+    },
+    {
+      "id": "wf-ed-vs-ing-03",
+      "topic": "wf-ed-vs-ing",
+      "type": "fill",
+      "prompt": "I was really ___ by the results of the test.",
+      "answer": "surprised",
+      "accept": [
+        "surprised"
+      ],
+      "explain": "Людина відчуває → -ed: I was surprised.\nРезультати викликають відчуття → -ing: the results were surprising.\nПідказка: після «I was» майже завжди -ed."
+    },
+    {
+      "id": "agr-third-person-01",
+      "topic": "agr-third-person",
+      "type": "mcq",
+      "prompt": "The banner stays visible until the user ___ it.",
+      "options": [
+        "closes",
+        "close",
+        "closing",
+        "will close"
+      ],
+      "answer": "closes",
+      "explain": "Підмет «the user» — однина третьої особи, тому дієслово отримує -s: closes.\n✗ close — форма для множини або для I/you.\n✗ will close — після until майбутній час не вживається, як і після if."
+    },
+    {
+      "id": "agr-third-person-02",
+      "topic": "agr-third-person",
+      "type": "mcq",
+      "prompt": "Each manager ___ their own dashboard.",
+      "options": [
+        "has",
+        "have",
+        "having",
+        "haves"
+      ],
+      "answer": "has",
+      "explain": "Each + іменник завжди сприймається як однина → has.\n✗ have — типова помилка: слово «each» підсвідомо тягне на множину, бо йдеться про багатьох.\nТак само: every user has, each team works."
+    },
+    {
+      "id": "agr-third-person-03",
+      "topic": "agr-third-person",
+      "type": "fill",
+      "prompt": "The system ___ (send) a notification every morning.",
+      "answer": "sends",
+      "accept": [
+        "sends"
+      ],
+      "explain": "The system — однина третьої особи → sends.\nPresent Simple з маркером регулярності (every morning) — саме той час, де -s найчастіше губиться."
+    },
+    {
+      "id": "agr-plural-roles-01",
+      "topic": "agr-plural-roles",
+      "type": "fill",
+      "prompt": "I plan to add these pages for ___ with limited permissions.",
+      "answer": "managers",
+      "accept": [
+        "managers"
+      ],
+      "explain": "Роль у загальному значенні («для менеджерів узагалі») ставиться в множину без артикля.\n✗ manager — однина потребувала б артикля: for a manager.\n✗ manager's — присвійна форма, тут вона не до місця."
+    },
+    {
+      "id": "agr-plural-roles-02",
+      "topic": "agr-plural-roles",
+      "type": "mcq",
+      "prompt": "___ can see the full list of accounts.",
+      "options": [
+        "Admins",
+        "Admin",
+        "The admin's",
+        "An admins"
+      ],
+      "answer": "Admins",
+      "explain": "Коли йдеться про категорію людей загалом, англійська віддає перевагу множині без артикля.\nПорівняй: «Admins can see it» (усі адміни) проти «The admin can see it» (конкретний)."
+    },
+    {
+      "id": "reg-abbreviations-01",
+      "topic": "reg-abbreviations",
+      "type": "mcq",
+      "prompt": "___ what time to suggest — could you pick a slot?",
+      "options": [
+        "I'm not sure",
+        "IDK",
+        "Idk about",
+        "Dunno"
+      ],
+      "answer": "I'm not sure",
+      "explain": "IDK, dunno, gonna доречні в неформальному чаті з друзями, але не в робочому листуванні.\nНейтральні заміни: I'm not sure / I'm not certain / I don't know offhand.\nЦе не граматика, а регістр — але саме він формує враження про рівень мови."
+    },
+    {
+      "id": "reg-abbreviations-02",
+      "topic": "reg-abbreviations",
+      "type": "mcq",
+      "prompt": "___ for the quick update!",
+      "options": [
+        "Thanks",
+        "Thx",
+        "Tnx",
+        "10x"
+      ],
+      "answer": "Thanks",
+      "explain": "Thx і подібні скорочення лишаються для особистих повідомлень.\nУ робочому чаті достатньо Thanks — воно й так неформальне й дружнє."
+    },
+    {
+      "id": "reg-acknowledgement-01",
+      "topic": "reg-acknowledgement",
+      "type": "mcq",
+      "prompt": "___. I'll take care of it today.",
+      "options": [
+        "Sounds good",
+        "Good input",
+        "Good job",
+        "Nice input"
+      ],
+      "answer": "Sounds good",
+      "explain": "Тут треба підтвердити, що завдання прийняте. Для цього: Sounds good / Will do / Got it.\n✗ Good input — це оцінка чужої ідеї, ніби ти рецензуєш пропозицію.\n✗ Good job — похвала за вже виконану роботу, звучить як від керівника.\nНюанс дрібний, але саме такі дрібниці формують тон листування."
+    },
+    {
+      "id": "reg-acknowledgement-02",
+      "topic": "reg-acknowledgement",
+      "type": "mcq",
+      "prompt": "— Could you review the spec by Friday?\n— ___",
+      "options": [
+        "Will do.",
+        "I will do.",
+        "Do it.",
+        "Good input."
+      ],
+      "answer": "Will do.",
+      "explain": "«Will do» — стала коротка формула згоди в робочому чаті.\n✗ I will do — дієслово do потребує додатка: I will do it.\n✗ Do it — звучить як наказ співрозмовникові."
+    },
+    {
+      "id": "reg-style-conventions-01",
+      "topic": "reg-style-conventions",
+      "type": "mcq",
+      "prompt": "In version three we split the page into ___.",
+      "options": [
+        "two",
+        "2",
+        "two (2)",
+        "II"
+      ],
+      "answer": "two",
+      "explain": "Це не граматика, а редакторська умовність: числа до десяти в суцільному тексті прийнято писати словами.\nНаписати «into 2» не є помилкою — вас зрозуміють. Але в документації й листуванні словами виглядає охайніше.\nЦифри доречні в таблицях, номерах версій і там, де важлива точність: 2 of 15."
+    },
+    {
+      "id": "reg-style-conventions-02",
+      "topic": "reg-style-conventions",
+      "type": "mcq",
+      "prompt": "We support several formats ___ CSV, XLSX and JSON.",
+      "options": [
+        "— for example,",
+        "e.g",
+        "eg.",
+        "e.g -"
+      ],
+      "answer": "— for example,",
+      "explain": "Скорочення «e.g.» пишеться з двома крапками й комою після: e.g., CSV.\nОскільки в ньому легко помилитися, у листуванні простіше писати for example або like.\nТак само often плутають: e.g. = наприклад, i.e. = тобто."
+    },
+    {
+      "id": "voc-enable-unable-01",
+      "topic": "voc-enable-unable",
+      "type": "mcq",
+      "prompt": "To ___ export, I have to invite you to the workspace.",
+      "options": [
+        "enable",
+        "unable",
+        "able",
+        "enabling"
+      ],
+      "answer": "enable",
+      "explain": "enable = увімкнути, зробити можливим. Це дієслово.\n✗ unable = «нездатний», прикметник: I was unable to open it.\nСлова схожі на вигляд, але протилежні за змістом — enable дає можливість, unable її заперечує."
+    },
+    {
+      "id": "voc-enable-unable-02",
+      "topic": "voc-enable-unable",
+      "type": "mcq",
+      "prompt": "I was ___ to open the file — the format isn't supported.",
+      "options": [
+        "unable",
+        "enable",
+        "disable",
+        "not able of"
+      ],
+      "answer": "unable",
+      "explain": "be unable to do something — не могти щось зробити.\n✗ enable — дієслово, після «I was» воно дало б пасив із зовсім іншим змістом.\nПростіша альтернатива: I couldn't open the file."
+    },
+    {
+      "id": "voc-have-session-01",
+      "topic": "voc-have-session",
+      "type": "mcq",
+      "prompt": "That's the time we usually ___ our refinement session.",
+      "options": [
+        "have",
+        "do",
+        "make",
+        "hold on"
+      ],
+      "answer": "have",
+      "explain": "Зустрічі, дзвінки й сесії в англійській «мають»: have a meeting, have a call, have a session.\n✗ do — вживається з роботою й завданнями: do the research, do a test.\n✗ make — зі створенням: make a decision, make a plan.\nФормальний варіант — hold a meeting, але без «on»."
+    },
+    {
+      "id": "voc-have-session-02",
+      "topic": "voc-have-session",
+      "type": "mcq",
+      "prompt": "Let's ___ a quick call before the demo.",
+      "options": [
+        "have",
+        "do",
+        "make",
+        "take"
+      ],
+      "answer": "have",
+      "explain": "have a call — стала сполука.\nДрібна деталь: «make a call» теж існує, але означає «зателефонувати комусь», а не «провести дзвінок разом»."
+    },
+    {
+      "id": "voc-missing-missed-01",
+      "topic": "voc-missing-missed",
+      "type": "mcq",
+      "prompt": "Stakeholders pointed out that some settings are ___ in version three.",
+      "options": [
+        "missing",
+        "missed",
+        "missing out",
+        "misses"
+      ],
+      "answer": "missing",
+      "explain": "missing = відсутній, якого бракує. Це стан предмета.\n✗ missed = пропущений кимось: I missed the meeting.\nПеревірка: якщо чогось просто немає на місці — missing."
+    },
+    {
+      "id": "voc-missing-missed-02",
+      "topic": "voc-missing-missed",
+      "type": "mcq",
+      "prompt": "I ___ yesterday's standup — could you share a summary?",
+      "options": [
+        "missed",
+        "missing",
+        "am missing",
+        "was missed"
+      ],
+      "answer": "missed",
+      "explain": "Дію виконав ти: пропустив зустріч → missed.\n✗ was missed — пасив означав би «за тобою скучили»."
+    },
+    {
+      "id": "voc-object-pronouns-01",
+      "topic": "voc-object-pronouns",
+      "type": "mcq",
+      "prompt": "Pinging ___ here so you don't miss the thread.",
+      "options": [
+        "you",
+        "your",
+        "yours",
+        "you're"
+      ],
+      "answer": "you",
+      "explain": "Після дієслова потрібен об'єктний займенник: you, me, him, us.\n✗ your — присвійний, він стоїть перед іменником: your message.\n✗ you're — це скорочення від «you are»."
+    },
+    {
+      "id": "voc-object-pronouns-02",
+      "topic": "voc-object-pronouns",
+      "type": "fill",
+      "prompt": "Could you send ___ the link when you have a moment?",
+      "answer": "me",
+      "accept": [
+        "me"
+      ],
+      "explain": "send somebody something → об'єктний займенник me.\n✗ my — присвійний: my link.\nПара для запам'ятовування: I / me, you / you, he / him, we / us."
+    },
+    {
+      "id": "voc-source-of-truth-01",
+      "topic": "voc-source-of-truth",
+      "type": "mcq",
+      "prompt": "This document is the single source of ___.",
+      "options": [
+        "truth",
+        "through",
+        "thruth",
+        "trust"
+      ],
+      "answer": "truth",
+      "explain": "«Single source of truth» — фіксований вислів про єдине надійне джерело даних.\n✗ through — зовсім інше слово (крізь, через), схоже лише написанням.\nУ сталих виразах жодне слово міняти не можна."
+    },
+    {
+      "id": "phr-point-out-01",
+      "topic": "phr-point-out",
+      "type": "mcq",
+      "prompt": "Stakeholders ___ that two settings were missing.",
+      "options": [
+        "pointed out",
+        "pointed",
+        "pointed on",
+        "point out on"
+      ],
+      "answer": "pointed out",
+      "explain": "point out = звернути увагу, зазначити. Частка out обов'язкова.\n✗ pointed — без out означає «вказав пальцем».\n✗ pointed on — такої сполуки немає; є point at (вказувати на)."
+    },
+    {
+      "id": "phr-point-out-02",
+      "topic": "phr-point-out",
+      "type": "mcq",
+      "prompt": "She ___ a mistake in the spec before we shipped it.",
+      "options": [
+        "pointed out",
+        "point out",
+        "pointed out on",
+        "outpointed"
+      ],
+      "answer": "pointed out",
+      "explain": "Минулий час: pointed out. Додаток може стояти і всередині: pointed it out.\nЗверни увагу: з займенником розрив обов'язковий — «pointed it out», а не «pointed out it»."
+    },
+    {
+      "id": "ord-only-placement-01",
+      "topic": "ord-only-placement",
+      "type": "mcq",
+      "prompt": "An admin can create ___ — nothing else.",
+      "options": [
+        "only a root account",
+        "a root account only",
+        "only create a root account",
+        "a only root account"
+      ],
+      "answer": "only a root account",
+      "explain": "Only ставиться безпосередньо перед тим словом, якого стосується. Обмежуємо об'єкт → only перед ним.\n✗ «a root account only» граматично можливо, але наголос зміщується й звучить як уточнення наприкінці.\nПорівняй: «Only admins can create accounts» (лише адміни) проти «Admins can only create accounts» (лише створювати)."
+    },
+    {
+      "id": "ord-only-placement-02",
+      "topic": "ord-only-placement",
+      "type": "order",
+      "prompt": "Складіть речення: доступ лише для читання",
+      "tokens": [
+        "role",
+        "only",
+        "access",
+        "This",
+        "read",
+        "has"
+      ],
+      "answer": "This role has only read access",
+      "explain": "Only стоїть перед тим, що обмежує — тут перед «read access».\nЯкби only поставили перед has, вийшло б «лише має», що звучить дивно."
+    },
+    {
+      "id": "ord-only-placement-03",
+      "topic": "ord-only-placement",
+      "type": "mcq",
+      "prompt": "___ can edit this page.",
+      "options": [
+        "Only admins",
+        "Admins only can",
+        "Can only admins",
+        "Admins can only"
+      ],
+      "answer": "Only admins",
+      "explain": "Обмежуємо, ХТО саме має право → only перед підметом.\n✗ Admins can only — це вже обмеження дії: «можуть лише редагувати, і більше нічого»."
+    },
+    {
+      "id": "ord-also-placement-01",
+      "topic": "ord-also-placement",
+      "type": "mcq",
+      "prompt": "___ create another account from this screen.",
+      "options": [
+        "They can also",
+        "Also they can",
+        "They also can",
+        "Also can they"
+      ],
+      "answer": "They can also",
+      "explain": "Also ставиться після допоміжного дієслова: can also, will also, has also.\n✗ Also they can — калька з української «також вони можуть»; на початку речення also звучить незграбно.\nЯкщо допоміжного немає, also йде перед смисловим дієсловом: They also work remotely."
+    },
+    {
+      "id": "ord-also-placement-02",
+      "topic": "ord-also-placement",
+      "type": "order",
+      "prompt": "Складіть речення про додаткову можливість:",
+      "tokens": [
+        "also",
+        "the",
+        "can",
+        "export",
+        "report",
+        "You"
+      ],
+      "answer": "You can also export the report",
+      "explain": "Порядок: підмет → can → also → смислове дієслово.\nЦе та сама позиція, що й у прислівників частоти: can always, can never, can also."
+    },
+    {
+      "id": "ord-neither-nor-01",
+      "topic": "ord-neither-nor",
+      "type": "mcq",
+      "prompt": "___ can join the call today.",
+      "options": [
+        "Neither Anna nor I",
+        "Neither I nor Anna",
+        "Neither me nor Anna",
+        "Nor Anna neither I"
+      ],
+      "answer": "Neither Anna nor I",
+      "explain": "В англійській себе прийнято ставити останнім — це питання ввічливості: Anna and I, neither Anna nor I.\n✗ Neither me nor Anna — потрібен підметовий займенник I, а не об'єктний me.\nПорівняй з українським «ні я, ні Анна» — порядок дзеркально протилежний."
+    },
+    {
+      "id": "ord-neither-nor-02",
+      "topic": "ord-neither-nor",
+      "type": "mcq",
+      "prompt": "Neither the API ___ the database was available.",
+      "options": [
+        "nor",
+        "or",
+        "neither",
+        "and"
+      ],
+      "answer": "nor",
+      "explain": "Пара незмінна: neither … nor.\n✗ or поєднується з either: either … or.\nДієслово узгоджується з ближчим підметом — тут «the database», тому was."
+    },
+    {
+      "id": "ord-noun-modifier-01",
+      "topic": "ord-noun-modifier",
+      "type": "mcq",
+      "prompt": "We realized that ___ is missing from the flow.",
+      "options": [
+        "a Card Status page",
+        "a page Card Status",
+        "a page of Card Status",
+        "Card Status a page"
+      ],
+      "answer": "a Card Status page",
+      "explain": "В англійській означення стоїть ПЕРЕД іменником: a Card Status page, a login screen, an error message.\n✗ «a page Card Status» — калька з української «сторінка Card Status».\nЯкщо назва довга, її беруть у лапки: a 'Card Status and Expiry' page."
+    },
+    {
+      "id": "ord-noun-modifier-02",
+      "topic": "ord-noun-modifier",
+      "type": "order",
+      "prompt": "Складіть словосполучення:",
+      "tokens": [
+        "message",
+        "a",
+        "error",
+        "new",
+        "We",
+        "added"
+      ],
+      "answer": "We added a new error message",
+      "explain": "Порядок означень: артикль → оцінка/новизна → іменник-означення → головний іменник.\nІменник у ролі означення (error) не має множини: error messages, а не errors messages."
+    },
+    {
+      "id": "syn-missing-subject-03",
+      "topic": "syn-missing-subject",
+      "type": "order",
+      "prompt": "Складіть відповідь на запитання колеги:",
+      "tokens": [
+        "meant",
+        "toolbar",
+        "you",
+        "I",
+        "the",
+        "think"
+      ],
+      "answer": "I think you meant the toolbar",
+      "explain": "Підмет I обов'язковий — без нього фраза звучить обірвано.\nПорядок: підмет → think → підрядне речення без that (that тут можна опустити)."
+    },
+    {
+      "id": "agr-third-person-04",
+      "topic": "agr-third-person",
+      "type": "order",
+      "prompt": "Складіть речення про регулярну дію системи:",
+      "tokens": [
+        "reminder",
+        "sends",
+        "a",
+        "every",
+        "morning",
+        "system",
+        "The"
+      ],
+      "answer": "The system sends a reminder every morning",
+      "explain": "Підмет в однині третьої особи → дієслово з -s: sends.\nОбставина часу (every morning) стоїть у кінці речення, а не між підметом і присудком."
+    }
+  ]
+}

@@ -72,15 +72,19 @@ async function run() {
   const seenId = {};      // id -> pack
   const all = [];
 
+  // Прохід 1 — завантажити всі паки й зібрати теми.
+  // Пак може посилатися на тему, оголошену в іншому паку, тому теми
+  // мають бути зібрані повністю ДО перевірки питань (так само, як в app.js).
+  const loaded = [];
   for (const p of packs) {
-    let pack;
-    try { pack = await grab("banks/" + p.file); }
-    catch (e) { err(esc(e.message)); continue; }
+    try { loaded.push({ p, pack: await grab("banks/" + p.file) }); }
+    catch (e) { err(esc(e.message)); }
+  }
 
+  for (const { p, pack } of loaded) {
     if (p.level && !levels.has(p.level))
       err(`Пак <code>${esc(p.file)}</code> має рівень <code>${esc(p.level)}</code>, якого немає в списку levels.`);
 
-    // теми пака
     for (const [slug, t] of Object.entries(pack.topics || {})) {
       if (!t.category)            err(`Тема <code>${esc(slug)}</code> без категорії.`, p.file);
       else if (!cats[t.category]) err(`Тема <code>${esc(slug)}</code> посилається на невідому категорію <code>${esc(t.category)}</code>.`, p.file);
@@ -94,8 +98,10 @@ async function run() {
         topics[slug] = { ...t, pack: p.file, count: 0 };
       }
     }
+  }
 
-    // питання
+  // Прохід 2 — перевірити питання, коли всі теми вже відомі.
+  for (const { p, pack } of loaded) {
     for (const q of (pack.questions || [])) {
       const at = `${p.file} → ${q.id || "питання без id"}`;
 
