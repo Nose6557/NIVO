@@ -67,7 +67,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   background:var(--iron-2);
   border:1px solid var(--iron-3);
   border-radius:var(--r);
-  padding:28px;
+  padding:24px;
 }
 
 .tabs{display:flex; gap:4px; margin-bottom:24px; border-bottom:1px solid var(--iron-3)}
@@ -211,7 +211,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .feedback + .btn{margin-top:16px}
 
 /* ——— підсумок ——— */
-.result{text-align:center; margin-top:64px}
+.result{text-align:center; margin-top:32px}
 .result-score{font-size:52px; margin-bottom:12px}
 .result-line{color:var(--ash); font-size:16px; margin-bottom:28px}
 .res-breakdown{text-align:left; margin-bottom:28px; display:flex; flex-direction:column; gap:8px}
