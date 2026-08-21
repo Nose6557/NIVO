@@ -253,7 +253,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .modal-actions .btn{margin:0}
 
 @media (max-width:760px){
-  .hero{padding:36px 0}
+  .hero{padding:24px 0}
   .hero-actions{flex-direction:column; width:100%}
   .hero-actions .btn.primary.big,
   .hero-actions .btn{width:100%}
