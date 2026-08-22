@@ -364,9 +364,10 @@
       "prompt": "There's a short note ___ the first page of the doc.",
       "answer": "on",
       "accept": [
-        "on"
+        "on",
+        "in"
       ],
-      "explain": "Сторінка = поверхня, тому on the page.\nВиняток, який варто запам'ятати: «in the document» — документ сприймається як вмістилище, а сторінка — як поверхня."
+      "explain": "Сторінка сприймається як поверхня → on the page (стандартний вибір).\nФорму «in» гра теж прийме, бо документ можна бачити як вмістилище, але on — природніше й частіше.\nОрієнтир: on the page / on the screen / on the card, але in the document / in the file."
     },
     {
       "id": "prep-by-doing-01",
@@ -964,12 +965,12 @@
       "id": "agr-plural-roles-01",
       "topic": "agr-plural-roles",
       "type": "fill",
-      "prompt": "I plan to add these pages for ___ with limited permissions.",
-      "answer": "managers",
+      "prompt": "This role is for ___ (user) with limited permissions — not admins.",
+      "answer": "users",
       "accept": [
-        "managers"
+        "users"
       ],
-      "explain": "Роль у загальному значенні («для менеджерів узагалі») ставиться в множину без артикля.\n✗ manager — однина потребувала б артикля: for a manager.\n✗ manager's — присвійна форма, тут вона не до місця."
+      "explain": "Роль у загальному значенні («користувачі взагалі») ставиться в множину без артикля.\nОснова задана в дужках — треба лише утворити множину: user → users.\n✗ user — однина без артикля неможлива: for a user.\nСлово «admins» наприкінці підказує, що йдеться про категорії людей загалом."
     },
     {
       "id": "agr-plural-roles-02",
