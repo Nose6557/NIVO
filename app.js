@@ -215,17 +215,17 @@ function renderFill(q, body) {
     if (!val) return;
     const ok = (q.accept || [q.answer]).some(a => a.toLowerCase() === val);
     inp.disabled = true;
+    $("btn-next").onclick = goNext;
     grade(q, ok);
   };
-  inp.addEventListener("keydown", e => { if (e.key === "Enter") check(); });
+  inp.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); check(); } });
   body.appendChild(inp);
   inp.focus();
 
-  const btn = document.createElement("button");
-  btn.className = "btn ghost";
+  const btn = $("btn-next");
+  btn.hidden = false;
   btn.textContent = "Перевірити";
   btn.onclick = check;
-  body.appendChild(btn);
 }
 
 function renderOrder(q, body) {
@@ -536,11 +536,12 @@ document.addEventListener("keydown", (e) => {
 $("btn-start").onclick = () => startSession(false);
 $("btn-weak").onclick = () => startSession(true);
 
-$("btn-next").onclick = () => {
+function goNext() {
   idx++;
   if (idx >= queue.length) finish();
   else renderQuestion();
-};
+}
+$("btn-next").onclick = goNext;
 
 $("btn-quit").onclick = async () => {
   if (answersLog.length) {
