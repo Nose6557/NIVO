@@ -165,7 +165,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .tbar-val{font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:var(--ash); text-align:right}
 
 /* ——— гра ——— */
-.play-top{padding:0px 0 20px}
+.play-top{padding:0px 0 16px}
 .progress-rail{height:4px; background:var(--iron-3); border-radius:99px; overflow:hidden}
 .progress-fill{height:100%; width:0; background:var(--straw); transition:width .35s ease}
 .play-meta{display:flex; justify-content:space-between; align-items:center; margin-top:16px; color:var(--ash)}
