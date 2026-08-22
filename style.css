@@ -169,6 +169,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .progress-rail{height:4px; background:var(--iron-3); border-radius:99px; overflow:hidden}
 .progress-fill{height:100%; width:0; background:var(--straw); transition:width .35s ease}
 .play-meta{display:flex; justify-content:space-between; align-items:center; margin-top:16px; color:var(--ash)}
+#qcount{width:70px}
 .streak{color:var(--straw)}
 
 .card{background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r); padding:32px}
