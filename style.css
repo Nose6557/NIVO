@@ -206,7 +206,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .verdict{font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px; margin-bottom:8px}
 .verdict.ok{color:var(--ok)}
 .verdict.no{color:var(--no)}
-.explain{font-size:16px; color:var(--ash); line-height:1.6; white-space:pre-line}
+.explain{font-size:14px; color:var(--ash); line-height:1.6; white-space:pre-line}
 
 .feedback + .btn{margin-top:16px}
 
