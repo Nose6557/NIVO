@@ -183,7 +183,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .hero-actions{display:flex; gap:12px; width:100%; max-width:640px; margin-bottom:44px}
 .hero-actions .btn{flex:1; width:auto; margin-top:0}
 
-.stat-block{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--iron-3); border:1px solid var(--iron-3); border-radius:var(--r); width:100%; max-width:640px}
+.stat-block{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--iron-3); border:1px solid var(--iron-3); border-radius:var(--r); overflow:hidden; width:100%; max-width:640px}
 .stat{background:var(--iron-2); padding:20px 16px; display:flex; flex-direction:column; align-items:center; gap:4px}
 .stat-num{font-family:'Unbounded',sans-serif; font-size:28px; font-weight:700}
 .stat-lab{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--ash)}
