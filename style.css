@@ -152,15 +152,18 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 }
 .avatar-btn:hover{border-color:var(--ash)}
 .avatar-btn:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
-/* Бейдж рівня на аватарі. Ховається, поки рівень не визначено. */
+/* Бейдж рівня на аватарі. Обгортка шириною з аватар центрує бейдж по горизонталі. */
+.level-badge-wrap{
+  position:absolute; left:0; right:0; bottom:-5px;
+  display:flex; justify-content:center;
+  pointer-events:none;
+}
 .level-badge{
-  position:absolute; right:-5px; bottom:-5px;
-  min-width:22px; height:15px; padding:0 4px; box-sizing:content-box;
+  min-width:16px; height:12px; padding:0 3px; box-sizing:content-box;
   display:flex; align-items:center; justify-content:center;
   border-radius:99px; border:2px solid var(--iron);
-  font-family:'Unbounded',sans-serif; font-weight:700; font-size:9px; letter-spacing:.03em;
+  font-family:'Unbounded',sans-serif; font-weight:700; font-size:8px; letter-spacing:.03em;
   color:var(--iron); background:var(--bronze);
-  pointer-events:none;
 }
 .level-badge[data-level="B2"]{background:var(--blue)}
 .level-badge[hidden]{display:none}
