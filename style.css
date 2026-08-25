@@ -159,7 +159,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   pointer-events:none;
 }
 .level-badge{
-  min-width:16px; height:12px; padding:0 3px; box-sizing:content-box;
+  min-width:16px; height:12px; padding:0 1px; box-sizing:content-box;
   display:flex; align-items:center; justify-content:center;
   border-radius:99px; border:2px solid var(--iron);
   font-family:'Unbounded',sans-serif; font-weight:700; font-size:8px; letter-spacing:.03em;
