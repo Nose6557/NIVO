@@ -261,20 +261,21 @@ function renderOrder(q, body) {
     pool.appendChild(b);
   });
 
-  const btn = document.createElement("button");
-  btn.className = "btn ghost";
-  btn.textContent = "Перевірити";
-  btn.onclick = () => {
+  const check = () => {
     const built = picked.join(" ");
     const ok = built.toLowerCase() === q.answer.toLowerCase();
     rail.style.borderStyle = "solid";
     rail.style.borderColor = ok ? "var(--ok)" : "var(--no)";
     pool.querySelectorAll(".token").forEach(t => t.onclick = null);
     rail.querySelectorAll(".token").forEach(t => t.onclick = null);
-    btn.disabled = true;
+    $("btn-next").onclick = goNext;
     grade(q, ok);
   };
-  body.appendChild(btn);
+
+  const btn = $("btn-next");
+  btn.hidden = false;
+  btn.textContent = "Перевірити";
+  btn.onclick = check;
 }
 
 /* ---------- оцінювання ---------- */
