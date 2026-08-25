@@ -391,7 +391,7 @@ async function renderHome() {
 async function buildExport() {
   const s = await Store.getStats();
   const lines = [];
-  lines.push("WORDFORGE — звіт про прогрес");
+  lines.push("NIVO — звіт про прогрес");
   lines.push("Дата: " + new Date().toISOString().slice(0, 10));
   lines.push("Сесій: " + s.sessions.length + " | Відповідей: " + s.answers.length);
 

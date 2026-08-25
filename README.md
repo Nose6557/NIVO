@@ -5,9 +5,9 @@
 
 ## Як запустити
 
-1. Завантаж усі файли в корінь репозиторію `Nose6557/wordforge`
+1. Завантаж усі файли в корінь репозиторію `Nose6557/nivo`
 2. Settings → Pages → Source: `Deploy from a branch`, гілка `main`, папка `/ (root)`
-3. Через хвилину сайт буде на `https://nose6557.github.io/wordforge/`
+3. Через хвилину сайт буде на `https://nose6557.github.io/nivo/`
 
 **Локально** відкривати через `file://` не вийде — браузер заблокує читання `questions.json`.
 Запусти простий сервер:
@@ -24,7 +24,7 @@ python3 -m http.server 8000
 
 В Authentication → Providers → Email на час тестування зручно вимкнути «Confirm email».
 
-Для роботи «Забули пароль?» додай адресу сайту (наприклад `https://nose6557.github.io/wordforge/`,
+Для роботи «Забули пароль?» додай адресу сайту (наприклад `https://nose6557.github.io/nivo/`,
 для локального запуску — ще й `http://localhost:8000`) в Authentication → URL Configuration →
 Redirect URLs. Без цього посилання зі скидання пароля поверне користувача не туди.
 

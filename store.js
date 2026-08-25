@@ -4,11 +4,12 @@
    не чіпаючи логіку гри. */
 
 (function () {
-  const cfg = window.WF_CONFIG || {};
+  const cfg = window.NIVO_CONFIG || {};
   let sb = null;
   let mode = "local";           // "supabase" | "local"
   let user = null;
-  const LS = "wordforge_local_v1";
+  const LS = "nivo_local_v1";
+  const LS_LEGACY = "wordforge_local_v1"; // старий ключ (Wordforge) — для міграції даних гостей
 
   if (window.supabase && cfg.SUPABASE_URL && cfg.SUPABASE_KEY) {
     sb = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_KEY);
@@ -17,7 +18,15 @@
   /* ---------- локальне сховище ---------- */
   function readLocal() {
     try {
-      return JSON.parse(localStorage.getItem(LS)) || blank();
+      const raw = localStorage.getItem(LS);
+      if (raw) return JSON.parse(raw) || blank();
+      const legacy = localStorage.getItem(LS_LEGACY);
+      if (legacy) {
+        localStorage.setItem(LS, legacy);
+        localStorage.removeItem(LS_LEGACY);
+        return JSON.parse(legacy) || blank();
+      }
+      return blank();
     } catch { return blank(); }
   }
   function blank() {
