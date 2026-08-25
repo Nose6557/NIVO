@@ -226,7 +226,7 @@
       "id": "art-zero-proper-names-02",
       "topic": "art-zero-proper-names",
       "type": "mcq",
-      "prompt": "We have a separate file with ___ charts for ___ V2.",
+      "prompt": "We have a separate file with ___ charts you need for ___ V2.",
       "options": [
         "the / —",
         "the / the",
@@ -234,7 +234,7 @@
         "a / the"
       ],
       "answer": "the / —",
-      "explain": "Два різні випадки в одному реченні. Charts — звичайний іменник, уточнений контекстом → the charts.\nV2 — назва версії, тобто власна назва → без артикля.\n✗ «the V2» — так само хибно, як «the Windows» чи «the Figma»."
+      "explain": "Charts уточнені підрядним «you need» → конкретні → the charts.\nV2 — назва версії, власна назва → без артикля.\n✗ «the V2» — так само хибно, як «the Windows» чи «the Figma»."
     },
     {
       "id": "art-zero-proper-names-03",
