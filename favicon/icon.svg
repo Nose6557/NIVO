@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="112" fill="#14161b"/>
+  <!-- три висхідні рівні: B1 -> B2 -> C1 -->
+  <g>
+    <rect x="99"  y="270" width="86" height="143" rx="18" fill="#d9a441"/>
+    <rect x="213" y="200" width="86" height="213" rx="18" fill="#6f5a9e"/>
+    <rect x="327" y="130" width="86" height="283" rx="18" fill="#3f7fb5"/>
+  </g>
+</svg>

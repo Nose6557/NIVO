@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "Nivo — англійська B1→B2",
+  "short_name": "Nivo",
+  "description": "Гра для вивчення англійської. Сесія — 15 завдань зі змішаних категорій, пояснення українською, помилки повторюються частіше.",
+  "lang": "uk",
+  "dir": "ltr",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#14161b",
+  "theme_color": "#14161b",
+  "categories": ["education"],
+  "icons": [
+    { "src": "favicon/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "favicon/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "favicon/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

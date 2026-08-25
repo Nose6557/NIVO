@@ -3,11 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wordforge — англійська B1→B2</title>
-<link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+<title>Nivo — англійська B1→B2</title>
+<link rel="icon" href="favicon/icon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="favicon/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="favicon/favicon-180.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#14161b">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Nivo">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -21,7 +27,7 @@
   <div class="shell narrow">
     <div class="mark">
       <span class="mark-glyph">◆</span>
-      <h1 class="wordmark">Wordforge</h1>
+      <h1 class="wordmark">Nivo</h1>
       <p class="tagline">Англійська B1&nbsp;→&nbsp;B2. Помилки самі складаються у&nbsp;план навчання.</p>
     </div>
 
@@ -52,7 +58,7 @@
   <div class="shell narrow">
     <div class="mark">
       <span class="mark-glyph">◆</span>
-      <h1 class="wordmark">Wordforge</h1>
+      <h1 class="wordmark">Nivo</h1>
     </div>
     <div class="panel">
       <p class="note dim">Введіть email — надішлемо посилання для скидання пароля.</p>
@@ -72,7 +78,7 @@
   <div class="shell narrow">
     <div class="mark">
       <span class="mark-glyph">◆</span>
-      <h1 class="wordmark">Wordforge</h1>
+      <h1 class="wordmark">Nivo</h1>
     </div>
     <div class="panel">
       <p class="note dim">Встановіть новий пароль для акаунта.</p>
@@ -89,7 +95,7 @@
 <!-- ЕКРАН: головна -->
 <section id="screen-home" class="screen">
   <header class="topbar">
-      <div class="brand-sm"><span class="mark-glyph">◆</span> Wordforge</div>
+      <div class="brand-sm"><span class="mark-glyph">◆</span> Nivo</div>
       <div class="topbar-right">
         <div class="avatar-menu">
           <button class="avatar-btn" id="avatar-btn" aria-haspopup="true" aria-expanded="false">
@@ -104,11 +110,11 @@
     </header>
   <div class="shell">
       <div class="hero">
-        <p class="eyebrow">Wordforge</p>
-        <h1 class="hero-title">Гартуй мову<br>удар за ударом</h1>
+        <p class="eyebrow">Nivo</p>
+        <h1 class="hero-title">Англійська<br>рівень за рівнем</h1>
         <p class="hero-text">Сесія — 15 завдань зі змішаних категорій. Після кожної відповіді пояснення українською. Завдання з&nbsp;помилками повторюються частіше.</p>
         <div class="hero-actions">
-          <button class="btn primary big" id="btn-start">Почати кування</button>
+          <button class="btn primary big" id="btn-start">Почати сесію</button>
           <button class="btn ghost" id="btn-weak">Тренувати слабкі місця</button>
         </div>
         <div class="stat-block">
@@ -121,8 +127,8 @@
 
     <div class="temper">
       <div class="temper-head">
-        <h2>Шкала гарту</h2>
-        <p class="note dim">Колір категорії змінюється так, як змінюється колір сталі під час гартування: солом'яний → бронзовий → фіолетовий → синій. Синій — майстерність.</p>
+        <h2>Шкала рівнів</h2>
+        <p class="note dim">Колір категорії показує, наскільки впевнено ти її тримаєш: солом'яний → бронзовий → фіолетовий → синій. Синій — рівень засвоєно.</p>
       </div>
       <div id="temper-bars" class="temper-bars"></div>
     </div>
@@ -190,5 +196,12 @@
 <script src="config.js"></script>
 <script src="store.js"></script>
 <script src="app.js"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    });
+  }
+</script>
 </body>
 </html>

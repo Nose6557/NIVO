@@ -1,4 +1,4 @@
-/* Wordforge — палітра взята з кольорів гартування сталі */
+/* Nivo — палітра: чотири щаблі впевненості у категорії */
 :root{
   --iron:        #14161b;
   --iron-2:      #1c1f26;
@@ -151,7 +151,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .stat-num{font-family:'Unbounded',sans-serif; font-size:28px; font-weight:700}
 .stat-lab{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--ash)}
 
-/* ——— шкала гарту (сигнатурний елемент) ——— */
+/* ——— шкала рівнів (сигнатурний елемент) ——— */
 .temper{padding:16px 0 16px; text-align:center}
 .temper-head{margin:24px auto 24px; max-width:640px}
 .temper-head h2{font-size:24px; margin-bottom:8px}
