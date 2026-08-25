@@ -14,8 +14,29 @@
   --ok:          #5fa87c;
   --no:          #c25a5a;
 
+  /* насиченіші варіанти для тексту, коли фонового кольору недостатньо для контрасту */
+  --straw-fg:    var(--straw);
+  --ok-fg:       var(--ok);
+  --no-fg:       #d97070;
+
   --r: 4px;
   --shell: 1080px;
+}
+
+html[data-theme="light"]{
+  --iron:        #f3f4f6;
+  --iron-2:      #ffffff;
+  --iron-3:      #e1e3e8;
+  --ash:         #667085;
+  --chalk:       #14161b;
+
+  --straw:       #b8790f;
+  --ok:          #1f9d5c;
+  --no:          #d1403b;
+
+  --straw-fg:    #96650d;
+  --ok-fg:       #1c7a49;
+  --no-fg:       #b8342f;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -52,9 +73,9 @@ body{
 /* ——— типографіка ——— */
 h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.02em; line-height:1.1}
 .mono{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.06em; text-transform:uppercase}
-.eyebrow{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--straw); margin-bottom:16px}
+.eyebrow{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--straw-fg); margin-bottom:16px}
 .note{font-size:12px; color:var(--ash); margin-top:12px}
-.note.dim{font-size:12px; opacity:.72}
+.note.dim{font-size:12px}
 
 /* ——— логотип ——— */
 .mark{text-align:center; padding:56px 0 36px}
@@ -126,7 +147,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   width:36px; height:36px; border-radius:50%; cursor:pointer;
   background:var(--iron-3); border:1px solid var(--iron-3);
   display:flex; align-items:center; justify-content:center;
-  font-family:'Unbounded',sans-serif; font-weight:700; font-size:12px; color:var(--straw);
+  font-family:'Unbounded',sans-serif; font-weight:700; font-size:12px; color:var(--straw-fg);
 }
 .avatar-btn:hover{border-color:var(--ash)}
 .avatar-btn:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
@@ -138,6 +159,22 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .avatar-dropdown[hidden]{display:none}
 .avatar-dropdown .who{display:block; margin-bottom:12px}
 .avatar-dropdown .btn{width:100%}
+
+.theme-row{
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:12px; font-size:14px; color:var(--chalk);
+}
+.theme-switch{
+  position:relative; width:40px; height:22px; border-radius:99px; flex-shrink:0;
+  background:var(--iron-3); border:1px solid var(--iron-3); cursor:pointer;
+}
+.theme-switch::after{
+  content:""; position:absolute; top:2px; left:2px; width:16px; height:16px;
+  border-radius:50%; background:var(--ash); transition:.15s;
+}
+.theme-switch[aria-checked="true"]{background:var(--straw); border-color:var(--straw)}
+.theme-switch[aria-checked="true"]::after{transform:translateX(18px); background:#1a1408}
+.theme-switch:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
 
 /* ——— шапка ——— */
 .hero{display:flex; flex-direction:column; align-items:center; text-align:center;}
@@ -170,7 +207,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .progress-fill{height:100%; width:0; background:var(--straw); transition:width .35s ease}
 .play-meta{display:flex; justify-content:space-between; align-items:center; margin-top:16px; color:var(--ash)}
 #qcount{width:70px}
-.streak{color:var(--straw)}
+.streak{color:var(--straw-fg)}
 
 .card{background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r); padding:32px}
 .cat-tag{color:var(--ash); margin-bottom:16px}
@@ -205,8 +242,8 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 
 .feedback{margin-top:16px; padding-top:0px}
 .verdict{font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px}
-.verdict.ok{color:var(--ok)}
-.verdict.no{color:var(--no)}
+.verdict.ok{color:var(--ok-fg)}
+.verdict.no{color:var(--no-fg)}
 .explain{font-size:14px; color:var(--ash); line-height:1.6; white-space:pre-line}
 
 .feedback + .btn{margin-top:16px}

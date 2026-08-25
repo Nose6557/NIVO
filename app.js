@@ -517,6 +517,29 @@ function closeAvatarMenu() {
   $("avatar-btn").setAttribute("aria-expanded", "false");
 }
 
+/* ---------- тема ---------- */
+const THEME_KEY = "nivo-theme";
+
+function applyTheme(theme) {
+  const isLight = theme === "light";
+  document.documentElement.setAttribute("data-theme", isLight ? "light" : "dark");
+  $("theme-toggle").setAttribute("aria-checked", String(isLight));
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute("content", isLight ? "#f3f4f6" : "#14161b");
+  try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+}
+
+(function initTheme() {
+  let theme = "dark";
+  try { theme = localStorage.getItem(THEME_KEY) || "dark"; } catch (e) {}
+  applyTheme(theme);
+})();
+
+$("theme-toggle").onclick = () => {
+  const isLight = document.documentElement.getAttribute("data-theme") === "light";
+  applyTheme(isLight ? "dark" : "light");
+};
+
 $("avatar-btn").onclick = (e) => {
   e.stopPropagation();
   const dd = $("avatar-dropdown");

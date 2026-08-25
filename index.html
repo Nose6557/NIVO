@@ -2,6 +2,15 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("nivo-theme") === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+  } catch (e) {}
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NIVO — англійська B1→B2</title>
 <link rel="icon" href="favicon/icon.svg" type="image/svg+xml">
@@ -103,6 +112,10 @@
           </button>
           <div class="avatar-dropdown" id="avatar-dropdown" hidden>
             <p class="who" id="who"></p>
+            <div class="theme-row">
+              <span>Світла тема</span>
+              <button class="theme-switch" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Перемкнути світлу тему"></button>
+            </div>
             <button class="btn ghost small" id="btn-signout">Вийти</button>
           </div>
         </div>
