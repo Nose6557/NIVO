@@ -176,7 +176,7 @@
       if (mode === "supabase" && sb && user) {
         const [s, a, w] = await Promise.all([
           sb.from("sessions").select("*").eq("user_id", user.id),
-          sb.from("answers").select("category,is_correct,response_ms,answered_at").eq("user_id", user.id),
+          sb.from("answers").select("question_id,category,is_correct,response_ms,answered_at").eq("user_id", user.id),
           sb.from("weak_items").select("*").eq("user_id", user.id)
         ]);
         return {

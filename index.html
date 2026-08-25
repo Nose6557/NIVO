@@ -109,6 +109,7 @@
         <div class="avatar-menu">
           <button class="avatar-btn" id="avatar-btn" aria-haspopup="true" aria-expanded="false">
             <span id="avatar-initial"></span>
+            <span class="level-badge" id="level-badge" hidden></span>
           </button>
           <div class="avatar-dropdown" id="avatar-dropdown" hidden>
             <p class="who" id="who"></p>
@@ -208,6 +209,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="config.js"></script>
 <script src="store.js"></script>
+<script src="level.js"></script>
 <script src="app.js"></script>
 <script>
   if ("serviceWorker" in navigator) {

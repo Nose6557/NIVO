@@ -13,6 +13,7 @@ const BANK_VERSION = "2026-08-21";
 const SESSION_LEN = 15;
 
 let BANK = [];
+const LEVEL_BY_ID = {};   // id питання -> "B1"|"B2", годує level.js
 let queue = [];
 let idx = 0;
 let session = null;
@@ -98,11 +99,13 @@ async function loadBank() {
         console.warn("Пропущено зламане питання:", q && q.id, "у", meta.file);
         continue;
       }
+      const lvl = q.level || pack.level || meta.level || null;
+      if (lvl) LEVEL_BY_ID[q.id] = lvl;
       BANK.push({
         ...q,
         category: topic.category,
         item: topic.label,
-        level: q.level || pack.level || meta.level || null
+        level: lvl
       });
     }
   }
@@ -386,6 +389,33 @@ async function renderHome() {
   const email = Store.mode === "supabase" && Store.user ? Store.user.email : null;
   $("who").textContent = email || "гостьовий режим";
   $("avatar-initial").textContent = email ? email[0].toUpperCase() : "?";
+
+  renderLevelBadge(stats.answers);
+}
+
+/* ---------- бейдж рівня ---------- */
+function renderLevelBadge(answers) {
+  const el = $("level-badge");
+  const btn = $("avatar-btn");
+  if (!el || !window.Level) return;
+
+  const st = Level.compute(answers, LEVEL_BY_ID);
+
+  // Рівень ще не визначено — бейджа просто немає.
+  if (!st.level) {
+    el.hidden = true;
+    btn.removeAttribute("title");
+    return;
+  }
+
+  el.hidden = false;
+  el.textContent = st.level;
+  el.dataset.level = st.level;
+
+  const pct = Math.round(st.accuracy * 100);
+  btn.title = st.level === Level.CFG.TARGET
+    ? `Рівень ${st.level} — ${pct}% на питаннях ${Level.CFG.TARGET}`
+    : `Рівень ${st.level} — ${pct}% на питаннях ${Level.CFG.TARGET}, до підвищення потрібно ${Math.round(Level.CFG.UP * 100)}%`;
 }
 
 /* ---------- експорт для аналізу ---------- */

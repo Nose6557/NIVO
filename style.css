@@ -144,6 +144,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 /* ——— аватар і дропдаун ——— */
 .avatar-menu{position:relative}
 .avatar-btn{
+  position:relative;
   width:36px; height:36px; border-radius:50%; cursor:pointer;
   background:var(--iron-3); border:1px solid var(--iron-3);
   display:flex; align-items:center; justify-content:center;
@@ -151,6 +152,19 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 }
 .avatar-btn:hover{border-color:var(--ash)}
 .avatar-btn:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
+/* Бейдж рівня на аватарі. Ховається, поки рівень не визначено. */
+.level-badge{
+  position:absolute; right:-5px; bottom:-5px;
+  min-width:22px; height:15px; padding:0 4px; box-sizing:content-box;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:99px; border:2px solid var(--iron);
+  font-family:'Unbounded',sans-serif; font-weight:700; font-size:9px; letter-spacing:.03em;
+  color:var(--iron); background:var(--bronze);
+  pointer-events:none;
+}
+.level-badge[data-level="B2"]{background:var(--blue)}
+.level-badge[hidden]{display:none}
+
 .avatar-dropdown{
   position:absolute; top:calc(100% + 12px); right:0; z-index:20;
   width:220px; background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r);
