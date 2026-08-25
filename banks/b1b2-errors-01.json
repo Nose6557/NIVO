@@ -157,6 +157,7 @@
     {
       "id": "art-definite-known-01",
       "topic": "art-definite-known",
+      "level": "B1",
       "type": "mcq",
       "prompt": "Could you check ___ dates on the invoice? They look wrong.",
       "options": [
@@ -171,6 +172,7 @@
     {
       "id": "art-definite-known-02",
       "topic": "art-definite-known",
+      "level": "B1",
       "type": "mcq",
       "prompt": "All that information is in ___ specs I sent you yesterday.",
       "options": [
@@ -185,6 +187,7 @@
     {
       "id": "art-definite-known-03",
       "topic": "art-definite-known",
+      "level": "B1",
       "type": "fill",
       "prompt": "We could keep ___ same strings for both screens.",
       "answer": "the",
@@ -197,6 +200,7 @@
     {
       "id": "art-definite-known-04",
       "topic": "art-definite-known",
+      "level": "B1",
       "type": "mcq",
       "prompt": "I only copied ___ necessary frames into the new file.",
       "options": [
@@ -211,6 +215,7 @@
     {
       "id": "art-zero-proper-names-01",
       "topic": "art-zero-proper-names",
+      "level": "B1",
       "type": "mcq",
       "prompt": "These two pages already exist in ___ Account Settings.",
       "options": [
@@ -225,6 +230,7 @@
     {
       "id": "art-zero-proper-names-02",
       "topic": "art-zero-proper-names",
+      "level": "B1",
       "type": "mcq",
       "prompt": "We have a separate file with ___ charts you need for ___ V2.",
       "options": [
@@ -239,6 +245,7 @@
     {
       "id": "art-zero-proper-names-03",
       "topic": "art-zero-proper-names",
+      "level": "B1",
       "type": "mcq",
       "prompt": "I've just finished ___ Statement Settings.",
       "options": [
@@ -253,6 +260,7 @@
     {
       "id": "art-a-one-01",
       "topic": "art-a-one",
+      "level": "B1",
       "type": "mcq",
       "prompt": "We have ___ file for the whole project.",
       "options": [
@@ -267,6 +275,7 @@
     {
       "id": "art-a-one-02",
       "topic": "art-a-one",
+      "level": "B1",
       "type": "fill",
       "prompt": "There's only ___ file for the whole project, not two.",
       "answer": "one",
@@ -279,6 +288,7 @@
     {
       "id": "art-first-mention-02",
       "topic": "art-first-mention",
+      "level": "B1",
       "type": "mcq",
       "prompt": "I created ___ page in Confluence. ___ page describes the whole flow.",
       "options": [
@@ -293,6 +303,7 @@
     {
       "id": "prep-available-to-01",
       "topic": "prep-available-to",
+      "level": "B1",
       "type": "mcq",
       "prompt": "This page will be available ___ managers only.",
       "options": [
@@ -307,6 +318,7 @@
     {
       "id": "prep-available-to-02",
       "topic": "prep-available-to",
+      "level": "B1",
       "type": "fill",
       "prompt": "The dashboard is available ___ everyone on the team.",
       "answer": "to",
@@ -318,6 +330,7 @@
     {
       "id": "prep-access-to-01",
       "topic": "prep-access-to",
+      "level": "B1",
       "type": "mcq",
       "prompt": "I don't have ___ this document.",
       "options": [
@@ -332,6 +345,7 @@
     {
       "id": "prep-access-to-02",
       "topic": "prep-access-to",
+      "level": "B1",
       "type": "mcq",
       "prompt": "I don't have ___ access to this file, only view.",
       "options": [
@@ -346,6 +360,7 @@
     {
       "id": "prep-on-surface-01",
       "topic": "prep-on-surface",
+      "level": "B1",
       "type": "mcq",
       "prompt": "All the features are listed ___ these cards.",
       "options": [
@@ -360,6 +375,7 @@
     {
       "id": "prep-on-surface-02",
       "topic": "prep-on-surface",
+      "level": "B1",
       "type": "fill",
       "prompt": "There's a short note ___ the first page of the doc.",
       "answer": "on",
@@ -372,6 +388,7 @@
     {
       "id": "prep-by-doing-01",
       "topic": "prep-by-doing",
+      "level": "B1",
       "type": "mcq",
       "prompt": "I improved the flow ___ a clear call to action.",
       "options": [
@@ -386,6 +403,7 @@
     {
       "id": "prep-by-doing-02",
       "topic": "prep-by-doing",
+      "level": "B1",
       "type": "fill",
       "prompt": "We reduced the number of errors by ___ (simplify) the form.",
       "answer": "simplifying",
@@ -397,6 +415,7 @@
     {
       "id": "prep-set-to-01",
       "topic": "prep-set-to",
+      "level": "B1",
       "type": "mcq",
       "prompt": "Could you help me set my ticket ___ Resolved?",
       "options": [
@@ -411,6 +430,7 @@
     {
       "id": "prep-set-to-02",
       "topic": "prep-set-to",
+      "level": "B1",
       "type": "fill",
       "prompt": "Please set the priority ___ High before the meeting.",
       "answer": "to",
@@ -422,6 +442,7 @@
     {
       "id": "prep-from-to-dates-01",
       "topic": "prep-from-to-dates",
+      "level": "B1",
       "type": "mcq",
       "prompt": "I'd like to take a vacation ___ 20 July ___ 31 July.",
       "options": [
@@ -436,6 +457,7 @@
     {
       "id": "prep-depend-on-02",
       "topic": "prep-depend-on",
+      "level": "B1",
       "type": "mcq",
       "prompt": "What each user can see depends ___ their permissions.",
       "options": [
@@ -450,6 +472,7 @@
     {
       "id": "prep-depend-on-03",
       "topic": "prep-depend-on",
+      "level": "B1",
       "type": "fill",
       "prompt": "The final layout depends ___ the screen size.",
       "answer": "on",
@@ -462,6 +485,7 @@
     {
       "id": "ten-aux-mixing-01",
       "topic": "ten-aux-mixing",
+      "level": "B1",
       "type": "mcq",
       "prompt": "This is the page where the wizard ___ triggered.",
       "options": [
@@ -476,6 +500,7 @@
     {
       "id": "ten-aux-mixing-02",
       "topic": "ten-aux-mixing",
+      "level": "B1",
       "type": "fill",
       "prompt": "Sorry, I ___ chatting with a colleague.",
       "answer": "was",
@@ -487,6 +512,7 @@
     {
       "id": "ten-aux-mixing-03",
       "topic": "ten-aux-mixing",
+      "level": "B1",
       "type": "mcq",
       "prompt": "These two pages already ___ in the current version.",
       "options": [
@@ -501,6 +527,7 @@
     {
       "id": "ten-irregular-past-01",
       "topic": "ten-irregular-past",
+      "level": "B1",
       "type": "mcq",
       "prompt": "In version three we ___ this page into two.",
       "options": [
@@ -515,6 +542,7 @@
     {
       "id": "ten-irregular-past-02",
       "topic": "ten-irregular-past",
+      "level": "B1",
       "type": "mcq",
       "prompt": "They ___ the budget in half last quarter.",
       "options": [
@@ -529,6 +557,7 @@
     {
       "id": "ten-passive-perfect-01",
       "topic": "ten-passive-perfect",
+      "level": "B2",
       "type": "mcq",
       "prompt": "I requested access last week, but it ___ yet.",
       "options": [
@@ -543,6 +572,7 @@
     {
       "id": "ten-passive-perfect-02",
       "topic": "ten-passive-perfect",
+      "level": "B2",
       "type": "mcq",
       "prompt": "The ticket ___ to another team, so I can't close it.",
       "options": [
@@ -557,6 +587,7 @@
     {
       "id": "ten-present-perfect-02",
       "topic": "ten-present-perfect",
+      "level": "B1",
       "type": "mcq",
       "prompt": "___ a diagram to the page — take a look when you have a minute.",
       "options": [
@@ -571,6 +602,7 @@
     {
       "id": "ten-present-perfect-03",
       "topic": "ten-present-perfect",
+      "level": "B1",
       "type": "fill",
       "prompt": "I ___ just finished the settings screen.",
       "answer": "have",
@@ -583,6 +615,7 @@
     {
       "id": "sp-double-letters-01",
       "topic": "sp-double-letters",
+      "level": "B1",
       "type": "mcq",
       "prompt": "The banner stays visible ___ the user closes it.",
       "options": [
@@ -597,6 +630,7 @@
     {
       "id": "sp-double-letters-02",
       "topic": "sp-double-letters",
+      "level": "B1",
       "type": "fill",
       "prompt": "We compressed the images without ___ quality.",
       "answer": "losing",
@@ -608,6 +642,7 @@
     {
       "id": "sp-double-letters-03",
       "topic": "sp-double-letters",
+      "level": "B1",
       "type": "mcq",
       "prompt": "___ selected — three of five items.",
       "options": [
@@ -622,6 +657,7 @@
     {
       "id": "sp-apostrophe-01",
       "topic": "sp-apostrophe",
+      "level": "B1",
       "type": "mcq",
       "prompt": "For some reason I ___ set my ticket as resolved.",
       "options": [
@@ -636,6 +672,7 @@
     {
       "id": "sp-apostrophe-02",
       "topic": "sp-apostrophe",
+      "level": "B1",
       "type": "mcq",
       "prompt": "Okay, ___ fix the statement screen first.",
       "options": [
@@ -650,6 +687,7 @@
     {
       "id": "sp-apostrophe-03",
       "topic": "sp-apostrophe",
+      "level": "B1",
       "type": "mcq",
       "prompt": "___ in different time zones, so let's find a slot.",
       "options": [
@@ -664,6 +702,7 @@
     {
       "id": "sp-capitalization-01",
       "topic": "sp-capitalization",
+      "level": "B1",
       "type": "mcq",
       "prompt": "We have just one ___ file for the whole project.",
       "options": [
@@ -678,6 +717,7 @@
     {
       "id": "sp-capitalization-02",
       "topic": "sp-capitalization",
+      "level": "B1",
       "type": "mcq",
       "prompt": "I moved those settings to the profile page in ___.",
       "options": [
@@ -692,6 +732,7 @@
     {
       "id": "syn-comma-splice-01",
       "topic": "syn-comma-splice",
+      "level": "B2",
       "type": "mcq",
       "prompt": "Оберіть правильно з'єднане речення:",
       "options": [
@@ -706,6 +747,7 @@
     {
       "id": "syn-comma-splice-02",
       "topic": "syn-comma-splice",
+      "level": "B2",
       "type": "mcq",
       "prompt": "They can also create another account, ___ a separate page for that.",
       "options": [
@@ -720,6 +762,7 @@
     {
       "id": "syn-comma-splice-03",
       "topic": "syn-comma-splice",
+      "level": "B2",
       "type": "order",
       "prompt": "Складіть речення з двох частин:",
       "tokens": [
@@ -738,6 +781,7 @@
     {
       "id": "syn-missing-subject-01",
       "topic": "syn-missing-subject",
+      "level": "B1",
       "type": "mcq",
       "prompt": "Sorry, ___ chatting with a colleague.",
       "options": [
@@ -752,6 +796,7 @@
     {
       "id": "syn-missing-subject-02",
       "topic": "syn-missing-subject",
+      "level": "B1",
       "type": "mcq",
       "prompt": "___ you meant the toolbar, not the sidebar.",
       "options": [
@@ -766,6 +811,7 @@
     {
       "id": "syn-because-of-01",
       "topic": "syn-because-of",
+      "level": "B1",
       "type": "mcq",
       "prompt": "___ there's some context here, I'll add a link to the thread.",
       "options": [
@@ -780,6 +826,7 @@
     {
       "id": "syn-because-of-02",
       "topic": "syn-because-of",
+      "level": "B1",
       "type": "fill",
       "prompt": "We postponed the release ___ the missing data.",
       "answer": "because of",
@@ -791,6 +838,7 @@
     {
       "id": "syn-in-case-01",
       "topic": "syn-in-case",
+      "level": "B2",
       "type": "mcq",
       "prompt": "___ any problems, just ping me.",
       "options": [
@@ -805,6 +853,7 @@
     {
       "id": "syn-in-case-02",
       "topic": "syn-in-case",
+      "level": "B2",
       "type": "mcq",
       "prompt": "Take the charger with you ___ the battery dies.",
       "options": [
@@ -819,6 +868,7 @@
     {
       "id": "syn-parenthetical-01",
       "topic": "syn-parenthetical",
+      "level": "B2",
       "type": "mcq",
       "prompt": "Оберіть правильне оформлення:",
       "options": [
@@ -833,6 +883,7 @@
     {
       "id": "syn-parenthetical-02",
       "topic": "syn-parenthetical",
+      "level": "B2",
       "type": "mcq",
       "prompt": "___ I can't set my ticket as resolved.",
       "options": [
@@ -847,6 +898,7 @@
     {
       "id": "wf-adverb-adjective-01",
       "topic": "wf-adverb-adjective",
+      "level": "B1",
       "type": "mcq",
       "prompt": "This screen ___ matches the current design.",
       "options": [
@@ -861,6 +913,7 @@
     {
       "id": "wf-adverb-adjective-02",
       "topic": "wf-adverb-adjective",
+      "level": "B1",
       "type": "mcq",
       "prompt": "He's ___ the person who can answer this question.",
       "options": [
@@ -875,6 +928,7 @@
     {
       "id": "wf-adverb-adjective-03",
       "topic": "wf-adverb-adjective",
+      "level": "B1",
       "type": "fill",
       "prompt": "The form works ___ (perfect) now — no errors at all.",
       "answer": "perfectly",
@@ -886,6 +940,7 @@
     {
       "id": "wf-ed-vs-ing-01",
       "topic": "wf-ed-vs-ing",
+      "level": "B1",
       "type": "mcq",
       "prompt": "The team is ___ about the new validation rules.",
       "options": [
@@ -900,6 +955,7 @@
     {
       "id": "wf-ed-vs-ing-02",
       "topic": "wf-ed-vs-ing",
+      "level": "B1",
       "type": "mcq",
       "prompt": "The instructions were ___, so nobody understood them.",
       "options": [
@@ -914,6 +970,7 @@
     {
       "id": "wf-ed-vs-ing-03",
       "topic": "wf-ed-vs-ing",
+      "level": "B1",
       "type": "fill",
       "prompt": "I was really ___ by the results of the test.",
       "answer": "surprised",
@@ -925,6 +982,7 @@
     {
       "id": "agr-third-person-01",
       "topic": "agr-third-person",
+      "level": "B1",
       "type": "mcq",
       "prompt": "The banner stays visible until the user ___ it.",
       "options": [
@@ -939,6 +997,7 @@
     {
       "id": "agr-third-person-02",
       "topic": "agr-third-person",
+      "level": "B1",
       "type": "mcq",
       "prompt": "Each manager ___ their own dashboard.",
       "options": [
@@ -953,6 +1012,7 @@
     {
       "id": "agr-third-person-03",
       "topic": "agr-third-person",
+      "level": "B1",
       "type": "fill",
       "prompt": "The system ___ (send) a notification every morning.",
       "answer": "sends",
@@ -964,6 +1024,7 @@
     {
       "id": "agr-plural-roles-01",
       "topic": "agr-plural-roles",
+      "level": "B1",
       "type": "fill",
       "prompt": "This role is for ___ (user) with limited permissions — not admins.",
       "answer": "users",
@@ -975,6 +1036,7 @@
     {
       "id": "agr-plural-roles-02",
       "topic": "agr-plural-roles",
+      "level": "B1",
       "type": "mcq",
       "prompt": "___ can see the full list of accounts.",
       "options": [
@@ -989,6 +1051,7 @@
     {
       "id": "reg-abbreviations-01",
       "topic": "reg-abbreviations",
+      "level": "B2",
       "type": "mcq",
       "prompt": "___ what time to suggest — could you pick a slot?",
       "options": [
@@ -1003,6 +1066,7 @@
     {
       "id": "reg-abbreviations-02",
       "topic": "reg-abbreviations",
+      "level": "B2",
       "type": "mcq",
       "prompt": "___ for the quick update!",
       "options": [
@@ -1017,6 +1081,7 @@
     {
       "id": "reg-acknowledgement-01",
       "topic": "reg-acknowledgement",
+      "level": "B2",
       "type": "mcq",
       "prompt": "___. I'll take care of it today.",
       "options": [
@@ -1031,6 +1096,7 @@
     {
       "id": "reg-acknowledgement-02",
       "topic": "reg-acknowledgement",
+      "level": "B2",
       "type": "mcq",
       "prompt": "— Could you review the spec by Friday?\n— ___",
       "options": [
@@ -1045,6 +1111,7 @@
     {
       "id": "reg-style-conventions-01",
       "topic": "reg-style-conventions",
+      "level": "B2",
       "type": "mcq",
       "prompt": "In version three we split the page into ___.",
       "options": [
@@ -1059,6 +1126,7 @@
     {
       "id": "reg-style-conventions-02",
       "topic": "reg-style-conventions",
+      "level": "B2",
       "type": "mcq",
       "prompt": "We support several formats ___ CSV, XLSX and JSON.",
       "options": [
@@ -1073,6 +1141,7 @@
     {
       "id": "voc-enable-unable-01",
       "topic": "voc-enable-unable",
+      "level": "B1",
       "type": "mcq",
       "prompt": "To ___ export, I have to invite you to the workspace.",
       "options": [
@@ -1087,6 +1156,7 @@
     {
       "id": "voc-enable-unable-02",
       "topic": "voc-enable-unable",
+      "level": "B1",
       "type": "mcq",
       "prompt": "I was ___ to open the file — the format isn't supported.",
       "options": [
@@ -1101,6 +1171,7 @@
     {
       "id": "voc-have-session-01",
       "topic": "voc-have-session",
+      "level": "B1",
       "type": "mcq",
       "prompt": "That's the time we usually ___ our refinement session.",
       "options": [
@@ -1115,6 +1186,7 @@
     {
       "id": "voc-have-session-02",
       "topic": "voc-have-session",
+      "level": "B1",
       "type": "mcq",
       "prompt": "Let's ___ a quick call before the demo.",
       "options": [
@@ -1129,6 +1201,7 @@
     {
       "id": "voc-missing-missed-01",
       "topic": "voc-missing-missed",
+      "level": "B2",
       "type": "mcq",
       "prompt": "Stakeholders pointed out that some settings are ___ in version three.",
       "options": [
@@ -1143,6 +1216,7 @@
     {
       "id": "voc-missing-missed-02",
       "topic": "voc-missing-missed",
+      "level": "B2",
       "type": "mcq",
       "prompt": "I ___ yesterday's standup — could you share a summary?",
       "options": [
@@ -1157,6 +1231,7 @@
     {
       "id": "voc-object-pronouns-01",
       "topic": "voc-object-pronouns",
+      "level": "B1",
       "type": "mcq",
       "prompt": "Pinging ___ here so you don't miss the thread.",
       "options": [
@@ -1171,6 +1246,7 @@
     {
       "id": "voc-object-pronouns-02",
       "topic": "voc-object-pronouns",
+      "level": "B1",
       "type": "fill",
       "prompt": "Could you send ___ the link when you have a moment?",
       "answer": "me",
@@ -1182,6 +1258,7 @@
     {
       "id": "voc-source-of-truth-01",
       "topic": "voc-source-of-truth",
+      "level": "B2",
       "type": "mcq",
       "prompt": "This document is the single source of ___.",
       "options": [
@@ -1196,6 +1273,7 @@
     {
       "id": "phr-point-out-01",
       "topic": "phr-point-out",
+      "level": "B1",
       "type": "mcq",
       "prompt": "Stakeholders ___ that two settings were missing.",
       "options": [
@@ -1210,6 +1288,7 @@
     {
       "id": "phr-point-out-02",
       "topic": "phr-point-out",
+      "level": "B1",
       "type": "mcq",
       "prompt": "She ___ a mistake in the spec before we shipped it.",
       "options": [
@@ -1224,6 +1303,7 @@
     {
       "id": "ord-only-placement-01",
       "topic": "ord-only-placement",
+      "level": "B2",
       "type": "mcq",
       "prompt": "An admin can create ___ — nothing else.",
       "options": [
@@ -1238,6 +1318,7 @@
     {
       "id": "ord-only-placement-02",
       "topic": "ord-only-placement",
+      "level": "B2",
       "type": "order",
       "prompt": "Складіть речення: доступ лише для читання",
       "tokens": [
@@ -1254,6 +1335,7 @@
     {
       "id": "ord-only-placement-03",
       "topic": "ord-only-placement",
+      "level": "B2",
       "type": "mcq",
       "prompt": "___ can edit this page.",
       "options": [
@@ -1268,6 +1350,7 @@
     {
       "id": "ord-also-placement-01",
       "topic": "ord-also-placement",
+      "level": "B2",
       "type": "mcq",
       "prompt": "___ create another account from this screen.",
       "options": [
@@ -1282,6 +1365,7 @@
     {
       "id": "ord-also-placement-02",
       "topic": "ord-also-placement",
+      "level": "B2",
       "type": "order",
       "prompt": "Складіть речення про додаткову можливість:",
       "tokens": [
@@ -1298,6 +1382,7 @@
     {
       "id": "ord-neither-nor-01",
       "topic": "ord-neither-nor",
+      "level": "B2",
       "type": "mcq",
       "prompt": "___ can join the call today.",
       "options": [
@@ -1312,6 +1397,7 @@
     {
       "id": "ord-neither-nor-02",
       "topic": "ord-neither-nor",
+      "level": "B2",
       "type": "mcq",
       "prompt": "Neither the API ___ the database was available.",
       "options": [
@@ -1326,6 +1412,7 @@
     {
       "id": "ord-noun-modifier-01",
       "topic": "ord-noun-modifier",
+      "level": "B1",
       "type": "mcq",
       "prompt": "We realized that ___ is missing from the flow.",
       "options": [
@@ -1340,6 +1427,7 @@
     {
       "id": "ord-noun-modifier-02",
       "topic": "ord-noun-modifier",
+      "level": "B1",
       "type": "order",
       "prompt": "Складіть словосполучення:",
       "tokens": [
@@ -1356,6 +1444,7 @@
     {
       "id": "syn-missing-subject-03",
       "topic": "syn-missing-subject",
+      "level": "B1",
       "type": "order",
       "prompt": "Складіть відповідь на запитання колеги:",
       "tokens": [
@@ -1372,6 +1461,7 @@
     {
       "id": "agr-third-person-04",
       "topic": "agr-third-person",
+      "level": "B1",
       "type": "order",
       "prompt": "Складіть речення про регулярну дію системи:",
       "tokens": [

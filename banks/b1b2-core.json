@@ -217,6 +217,7 @@
     {
       "id": "art-a-an-sound-01",
       "topic": "art-a-an-sound",
+      "level": "B1",
       "type": "mcq",
       "prompt": "She works as ___ UX designer at ___ bank downtown.",
       "options": [
@@ -231,6 +232,7 @@
     {
       "id": "art-zero-abstract-01",
       "topic": "art-zero-abstract",
+      "level": "B1",
       "type": "mcq",
       "prompt": "___ trust is the hardest thing to rebuild after a data breach.",
       "options": [
@@ -245,6 +247,7 @@
     {
       "id": "art-the-superlative-01",
       "topic": "art-the-superlative",
+      "level": "B1",
       "type": "mcq",
       "prompt": "This is ___ most confusing screen in the whole flow.",
       "options": [
@@ -259,6 +262,7 @@
     {
       "id": "art-first-mention-01",
       "topic": "art-first-mention",
+      "level": "B1",
       "type": "mcq",
       "prompt": "I got ___ email from a recruiter. ___ email was surprisingly personal.",
       "options": [
@@ -273,6 +277,7 @@
     {
       "id": "art-zero-plural-01",
       "topic": "art-zero-plural",
+      "level": "B1",
       "type": "mcq",
       "prompt": "___ users rarely read onboarding text.",
       "options": [
@@ -287,6 +292,7 @@
     {
       "id": "ten-present-perfect-01",
       "topic": "ten-present-perfect",
+      "level": "B1",
       "type": "mcq",
       "prompt": "I ___ this bug three times already, and it keeps coming back.",
       "options": [
@@ -301,6 +307,7 @@
     {
       "id": "ten-past-simple-01",
       "topic": "ten-past-simple",
+      "level": "B1",
       "type": "mcq",
       "prompt": "We ___ the redesign last quarter.",
       "options": [
@@ -315,6 +322,7 @@
     {
       "id": "ten-present-perfect-cont-01",
       "topic": "ten-present-perfect-cont",
+      "level": "B2",
       "type": "mcq",
       "prompt": "She ___ on this prototype since Monday and looks exhausted.",
       "options": [
@@ -329,6 +337,7 @@
     {
       "id": "ten-past-perfect-01",
       "topic": "ten-past-perfect",
+      "level": "B1",
       "type": "mcq",
       "prompt": "By the time the client called, we ___ the file.",
       "options": [
@@ -343,6 +352,7 @@
     {
       "id": "ten-future-arrangements-01",
       "topic": "ten-future-arrangements",
+      "level": "B1",
       "type": "mcq",
       "prompt": "I can't join at four — I ___ the stakeholders then.",
       "options": [
@@ -357,6 +367,7 @@
     {
       "id": "ten-used-to-01",
       "topic": "ten-used-to",
+      "level": "B1",
       "type": "mcq",
       "prompt": "We ___ run usability tests every sprint, but we stopped last year.",
       "options": [
@@ -371,6 +382,7 @@
     {
       "id": "ten-future-perfect-01",
       "topic": "ten-future-perfect",
+      "level": "B2",
       "type": "mcq",
       "prompt": "By December we ___ the migration.",
       "options": [
@@ -385,6 +397,7 @@
     {
       "id": "prep-depend-on-01",
       "topic": "prep-depend-on",
+      "level": "B1",
       "type": "mcq",
       "prompt": "The launch date depends ___ the security review.",
       "options": [
@@ -399,6 +412,7 @@
     {
       "id": "prep-responsible-for-01",
       "topic": "prep-responsible-for",
+      "level": "B1",
       "type": "mcq",
       "prompt": "Who is responsible ___ the onboarding flow?",
       "options": [
@@ -413,6 +427,7 @@
     {
       "id": "prep-interested-in-01",
       "topic": "prep-interested-in",
+      "level": "B1",
       "type": "mcq",
       "prompt": "They're interested ___ hearing our approach.",
       "options": [
@@ -427,6 +442,7 @@
     {
       "id": "prep-in-on-time-01",
       "topic": "prep-in-on-time",
+      "level": "B2",
       "type": "mcq",
       "prompt": "The build finished ___ time, exactly at noon as promised.",
       "options": [
@@ -441,6 +457,7 @@
     {
       "id": "prep-agree-01",
       "topic": "prep-agree",
+      "level": "B2",
       "type": "mcq",
       "prompt": "I agree ___ you about the pricing model.",
       "options": [
@@ -455,6 +472,7 @@
     {
       "id": "prep-consist-of-01",
       "topic": "prep-consist-of",
+      "level": "B1",
       "type": "mcq",
       "prompt": "The team consists ___ four designers and one researcher.",
       "options": [
@@ -469,6 +487,7 @@
     {
       "id": "phr-come-up-with-01",
       "topic": "phr-come-up-with",
+      "level": "B2",
       "type": "mcq",
       "prompt": "We need to ___ a better name before Friday.",
       "options": [
@@ -483,6 +502,7 @@
     {
       "id": "phr-put-off-01",
       "topic": "phr-put-off",
+      "level": "B1",
       "type": "mcq",
       "prompt": "They ___ the release until the legal team signs off.",
       "options": [
@@ -497,6 +517,7 @@
     {
       "id": "phr-look-into-01",
       "topic": "phr-look-into",
+      "level": "B2",
       "type": "mcq",
       "prompt": "Can you ___ why the conversion dropped?",
       "options": [
@@ -511,6 +532,7 @@
     {
       "id": "phr-run-out-of-01",
       "topic": "phr-run-out-of",
+      "level": "B1",
       "type": "mcq",
       "prompt": "We've ___ budget for user interviews.",
       "options": [
@@ -525,6 +547,7 @@
     {
       "id": "phr-figure-out-01",
       "topic": "phr-figure-out",
+      "level": "B1",
       "type": "mcq",
       "prompt": "It took us a week to ___ what users actually meant.",
       "options": [
@@ -539,6 +562,7 @@
     {
       "id": "phr-bring-up-01",
       "topic": "phr-bring-up",
+      "level": "B2",
       "type": "mcq",
       "prompt": "She ___ a good point about accessibility during the review.",
       "options": [
@@ -553,6 +577,7 @@
     {
       "id": "cond-second-01",
       "topic": "cond-second",
+      "level": "B1",
       "type": "mcq",
       "prompt": "If we ___ more time, we would test three variants.",
       "options": [
@@ -567,6 +592,7 @@
     {
       "id": "cond-third-01",
       "topic": "cond-third",
+      "level": "B2",
       "type": "mcq",
       "prompt": "If they ___ us earlier, we could have fixed it before launch.",
       "options": [
@@ -581,6 +607,7 @@
     {
       "id": "cond-first-01",
       "topic": "cond-first",
+      "level": "B1",
       "type": "mcq",
       "prompt": "If the API ___, the whole checkout breaks.",
       "options": [
@@ -595,6 +622,7 @@
     {
       "id": "cond-unless-01",
       "topic": "cond-unless",
+      "level": "B1",
       "type": "mcq",
       "prompt": "___ we get approval today, the timeline slips.",
       "options": [
@@ -609,6 +637,7 @@
     {
       "id": "cond-wish-01",
       "topic": "cond-wish",
+      "level": "B2",
       "type": "mcq",
       "prompt": "I wish I ___ more confident in meetings.",
       "options": [
@@ -623,6 +652,7 @@
     {
       "id": "voc-achieve-01",
       "topic": "voc-achieve",
+      "level": "B2",
       "type": "mcq",
       "prompt": "It took two years to ___ profitability.",
       "options": [
@@ -637,6 +667,7 @@
     {
       "id": "voc-make-do-01",
       "topic": "voc-make-do",
+      "level": "B1",
       "type": "mcq",
       "prompt": "Let's ___ some research before we commit.",
       "options": [
@@ -651,6 +682,7 @@
     {
       "id": "voc-borrow-lend-01",
       "topic": "voc-borrow-lend",
+      "level": "B1",
       "type": "mcq",
       "prompt": "Could you ___ me your charger for ten minutes?",
       "options": [
@@ -665,6 +697,7 @@
     {
       "id": "voc-affect-effect-01",
       "topic": "voc-affect-effect",
+      "level": "B2",
       "type": "mcq",
       "prompt": "The change didn't ___ retention at all.",
       "options": [
@@ -679,6 +712,7 @@
     {
       "id": "voc-convince-persuade-01",
       "topic": "voc-convince-persuade",
+      "level": "B2",
       "type": "mcq",
       "prompt": "The data ___ me that we were wrong.",
       "options": [
@@ -693,6 +727,7 @@
     {
       "id": "voc-raise-rise-01",
       "topic": "voc-raise-rise",
+      "level": "B2",
       "type": "mcq",
       "prompt": "Costs ___ sharply after the policy changed.",
       "options": [
@@ -707,6 +742,7 @@
     {
       "id": "voc-advice-uncountable-01",
       "topic": "voc-advice-uncountable",
+      "level": "B1",
       "type": "mcq",
       "prompt": "She gave me a very useful ___ about negotiating.",
       "options": [
@@ -721,6 +757,7 @@
     {
       "id": "voc-although-despite-01",
       "topic": "voc-although-despite",
+      "level": "B2",
       "type": "mcq",
       "prompt": "___ the tight deadline, the quality stayed high.",
       "options": [
@@ -735,6 +772,7 @@
     {
       "id": "idm-same-page-01",
       "topic": "idm-same-page",
+      "level": "B2",
       "type": "mcq",
       "prompt": "Before we start, let's make sure everyone is ___.",
       "options": [
@@ -749,6 +787,7 @@
     {
       "id": "idm-cut-corners-01",
       "topic": "idm-cut-corners",
+      "level": "B2",
       "type": "mcq",
       "prompt": "We can't ___ on accessibility just to ship faster.",
       "options": [
@@ -763,6 +802,7 @@
     {
       "id": "idm-drawing-board-01",
       "topic": "idm-drawing-board",
+      "level": "B2",
       "type": "mcq",
       "prompt": "The concept failed testing, so it's ___.",
       "options": [
@@ -777,6 +817,7 @@
     {
       "id": "idm-in-the-loop-01",
       "topic": "idm-in-the-loop",
+      "level": "B2",
       "type": "mcq",
       "prompt": "Keep me ___ if anything changes.",
       "options": [
@@ -791,6 +832,7 @@
     {
       "id": "idm-touch-base-01",
       "topic": "idm-touch-base",
+      "level": "B2",
       "type": "mcq",
       "prompt": "Let's ___ next week to review progress.",
       "options": [
@@ -805,6 +847,7 @@
     {
       "id": "idm-bite-the-bullet-01",
       "topic": "idm-bite-the-bullet",
+      "level": "B2",
       "type": "mcq",
       "prompt": "We had to ___ and rewrite the whole component.",
       "options": [
@@ -819,6 +862,7 @@
     {
       "id": "ord-indirect-questions-01",
       "topic": "ord-indirect-questions",
+      "level": "B1",
       "type": "order",
       "prompt": "Складіть коректне непряме питання:",
       "tokens": [
@@ -837,6 +881,7 @@
     {
       "id": "ord-adjective-order-01",
       "topic": "ord-adjective-order",
+      "level": "B2",
       "type": "order",
       "prompt": "Розставте прикметники в правильному порядку:",
       "tokens": [
@@ -852,6 +897,7 @@
     {
       "id": "ord-adverb-placement-01",
       "topic": "ord-adverb-placement",
+      "level": "B1",
       "type": "order",
       "prompt": "Складіть речення:",
       "tokens": [
@@ -868,6 +914,7 @@
     {
       "id": "ord-reported-speech-01",
       "topic": "ord-reported-speech",
+      "level": "B1",
       "type": "order",
       "prompt": "Складіть речення в непрямій мові:",
       "tokens": [
@@ -886,6 +933,7 @@
     {
       "id": "ord-passive-01",
       "topic": "ord-passive",
+      "level": "B1",
       "type": "order",
       "prompt": "Складіть речення в пасивному стані:",
       "tokens": [
@@ -903,6 +951,7 @@
     {
       "id": "voc-coll-deadline-01",
       "topic": "voc-coll-deadline",
+      "level": "B1",
       "type": "fill",
       "prompt": "We managed to ___ the deadline despite the delays.",
       "answer": "meet",
@@ -914,6 +963,7 @@
     {
       "id": "voc-coll-responsibility-01",
       "topic": "voc-coll-responsibility",
+      "level": "B1",
       "type": "fill",
       "prompt": "He was willing to ___ responsibility for the mistake.",
       "answer": "take",
@@ -926,6 +976,7 @@
     {
       "id": "ten-for-since-01",
       "topic": "ten-for-since",
+      "level": "B1",
       "type": "fill",
       "prompt": "I've been learning English ___ six years.",
       "answer": "for",
@@ -937,6 +988,7 @@
     {
       "id": "prep-good-at-01",
       "topic": "prep-good-at",
+      "level": "B1",
       "type": "fill",
       "prompt": "She's really good ___ explaining complex ideas.",
       "answer": "at",
@@ -948,6 +1000,7 @@
     {
       "id": "voc-make-do-02",
       "topic": "voc-make-do",
+      "level": "B1",
       "type": "fill",
       "prompt": "We need to ___ a decision by Thursday.",
       "answer": "make",
@@ -959,6 +1012,7 @@
     {
       "id": "cond-second-02",
       "topic": "cond-second",
+      "level": "B1",
       "type": "fill",
       "prompt": "If I were you, I ___ ask for a raise.",
       "answer": "would",

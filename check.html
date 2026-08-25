@@ -69,10 +69,15 @@ async function run() {
 
   const cats   = index.categories || {};
   const levels = new Set((index.levels || []).map(l => l.id));
+  const qLevels = index.questionLevels || [];
+  const qLevelSet = new Set(qLevels);
+  if (!qLevels.length)
+    err("В <code>index.json</code> немає <code>questionLevels</code> — рівні питань нічим перевірити.");
   const packs  = index.packs || [];
   if (!packs.length) err("У <code>index.json</code> немає жодного пака.");
 
   const topics = {};      // slug -> {category, label, pack}
+  const levelCount = {};  // "B1" -> скільки питань
   const seenId = {};      // id -> pack
   const all = [];
 
@@ -117,6 +122,11 @@ async function run() {
       else if (!topics[q.topic]) err(`Тема <code>${esc(q.topic)}</code> не оголошена в жодному паку.`, at);
       else topics[q.topic].count++;
 
+      if (!q.level)
+        err("Немає поля <code>level</code>. Питання не потрапить у фільтр рівнів і в тест на визначення рівня.", at);
+      else if (qLevelSet.size && !qLevelSet.has(q.level))
+        err(`Невідомий рівень <code>${esc(q.level)}</code>. Дозволені: <code>${esc(qLevels.join(", "))}</code>.`, at);
+
       if (!q.prompt || !q.prompt.trim()) err("Порожній <code>prompt</code>.", at);
       if (!q.explain || !q.explain.trim()) err("Порожній <code>explain</code>.", at);
       else if (q.explain.trim().length < 40) warn("Дуже коротке пояснення.", at);
@@ -151,7 +161,17 @@ async function run() {
       }
 
       all.push({ ...q, _pack: p.file, _level: q.level || p.level });
+      if (q.level) levelCount[q.level] = (levelCount[q.level] || 0) + 1;
     }
+  }
+
+  const totalLevelled = Object.values(levelCount).reduce((a, b) => a + b, 0);
+  for (const lv of qLevels) {
+    const n = levelCount[lv] || 0;
+    if (n && n < 30)
+      warn(`Рівень <code>${esc(lv)}</code>: лише ${n} питань. Для чесного визначення рівня потрібно щонайменше 30.`);
+    if (n && totalLevelled && n / totalLevelled < 0.2)
+      warn(`Рівень <code>${esc(lv)}</code> — ${Math.round(n / totalLevelled * 100)}% банку. Перекіс: сесії цього рівня швидко почнуть повторюватись.`);
   }
 
   for (const [slug, t] of Object.entries(topics))
