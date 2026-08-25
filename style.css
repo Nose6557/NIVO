@@ -58,7 +58,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 
 /* ——— логотип ——— */
 .mark{text-align:center; padding:56px 0 36px}
-.mark-glyph{color:var(--straw); font-size:16px}
+.mark-glyph{width:64px; height:64px; vertical-align:middle}
 .wordmark{font-size:clamp(36px,7vw,56px); font-weight:900; margin:8px 0}
 .tagline{color:var(--ash); font-size:16px}
 
@@ -115,8 +115,8 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   padding:16px 16px; border-bottom:1px solid var(--iron-3);
   position:sticky; top:0; z-index:10; background:var(--iron);
 }
-.brand-sm{font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px}
-.brand-sm .mark-glyph{margin-right:8px}
+.brand-sm{display:flex; align-items:center; font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px}
+.brand-sm .mark-glyph{width:24px; height:24px; margin-right:8px}
 .topbar-right{display:flex; align-items:center; gap:16px}
 .who{font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:var(--ash); word-break:break-all}
 
