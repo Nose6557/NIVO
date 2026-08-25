@@ -1,6 +1,12 @@
 {
   "schema": 2,
   "updated": "2026-08-21",
+  "questionLevels": [
+    "A2",
+    "B1",
+    "B2",
+    "C1"
+  ],
   "levels": [
     {
       "id": "B1-B2",
