@@ -124,13 +124,36 @@ function shuffle(arr) {
   return a;
 }
 
+/* Пул питань під поточний рівень.
+   Позарівневі питання метрику не псують: level.js рахує точність тільки
+   на питаннях поточного рівня, решту ігнорує. Тому розширення пулу —
+   питання різноманітності, а не коректності вимірювання. */
+function levelPool() {
+  const lv = window.Level ? Level.current().level : null;
+  if (!lv) return BANK;                       // рівень ще не заданий — весь банк
+
+  const at = BANK.filter(q => q.level === lv);
+  // Менше двох сесій у пулі — питання почнуть повторюватись у межах вечора.
+  if (at.length >= SESSION_LEN * 2) return at;
+
+  const i = Level.ORDER.indexOf(lv);
+  const near = BANK.filter(q => Math.abs(Level.ORDER.indexOf(q.level) - i) <= 1);
+  if (near.length >= SESSION_LEN) {
+    console.info(`рівень ${lv}: лише ${at.length} питань, беремо й сусідні рівні`);
+    return near;
+  }
+
+  console.info(`рівень ${lv}: замало питань поруч, беремо весь банк`);
+  return BANK;
+}
+
 function buildQueue(weak) {
   // Пріоритет тим питанням, де частка помилок вища.
   const errRate = {};
   (weak || []).forEach(w => {
     if (w.attempts > 0) errRate[w.item_key] = w.errors / w.attempts;
   });
-  const scored = BANK.map(q => ({
+  const scored = levelPool().map(q => ({
     q,
     weight: (errRate[q.topic] !== undefined ? errRate[q.topic] : 0.35) + Math.random() * 0.5
   }));
@@ -139,6 +162,8 @@ function buildQueue(weak) {
 }
 
 function buildWeakQueue(weak) {
+  // Робота над помилками рівнем не обмежується: помилка лишається помилкою,
+  // навіть якщо тема з рівня, який ти вже переріс.
   const problem = (weak || [])
     .filter(w => w.attempts >= 2 && w.errors / w.attempts > 0.3)
     .map(w => w.item_key);
