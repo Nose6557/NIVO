@@ -1,0 +1,471 @@
+{
+  "schema": 2,
+  "pack": "b2-01",
+  "title": "Пак B2 — розширення",
+  "level": "B2",
+  "topics": {
+    "ten-future-continuous": { "category": "tenses", "label": "Future Continuous" },
+    "ten-past-perfect-cont": { "category": "tenses", "label": "Past Perfect Continuous" },
+    "cond-mixed": { "category": "conditionals", "label": "Змішаний кондиціонал" },
+    "cond-inversion": { "category": "conditionals", "label": "Інверсія замість if" },
+    "art-zero-institutions": { "category": "articles", "label": "Нульовий артикль з установами" },
+    "wf-noun-suffixes": { "category": "word formation", "label": "Абстрактні іменники" },
+    "wf-negative-prefixes": { "category": "word formation", "label": "Заперечні префікси" },
+    "agr-collective-nouns": { "category": "agreement", "label": "Збірні іменники" },
+    "voc-avoid-prevent": { "category": "vocabulary", "label": "avoid / prevent" },
+    "voc-economic-economical": { "category": "vocabulary", "label": "economic / economical" },
+    "prep-blame-accuse": { "category": "prepositions", "label": "blame for / accuse of" },
+    "syn-participle-clause": { "category": "syntax", "label": "Дієприслівникові звороти" },
+    "syn-cleft": { "category": "syntax", "label": "Розщеплені речення" },
+    "ord-inversion-negative": { "category": "word order", "label": "Інверсія після заперечень" },
+    "phr-put-up-with": { "category": "phrasal verbs", "label": "put up with" },
+    "sp-hyphenation": { "category": "spelling", "label": "Дефіс у складених означеннях" }
+  },
+  "questions": [
+    {
+      "id": "ten-future-continuous-01",
+      "topic": "ten-future-continuous",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Don't call me at three — I ___ the results to the client then.",
+      "options": [
+        "will present",
+        "will be presenting",
+        "present",
+        "will have presented"
+      ],
+      "answer": "will be presenting",
+      "explain": "Future Continuous описує дію, яка ТРИВАТИМЕ в конкретний момент майбутнього. Маркер тут — «at three … then».\n✗ will present — просто факт майбутньої дії, без прив'язки до тривання в той момент.\n✗ present — Present Simple про майбутнє вживається лише для розкладів (The train leaves at six).\n✗ will have presented — Future Perfect означав би, що о третій презентація вже ЗАВЕРШЕНА."
+    },
+    {
+      "id": "ten-future-continuous-02",
+      "topic": "ten-future-continuous",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "___ you ___ the office tomorrow? I need someone to pick up a parcel.",
+      "options": [
+        "Will / be visiting",
+        "Do / visit",
+        "Will / visit",
+        "Are / visited"
+      ],
+      "answer": "Will / be visiting",
+      "explain": "Future Continuous у питанні звучить як ввічливий запит про плани: питаємо не про намір, а про те, що й так відбудеться.\n✗ Do / visit — Present Simple про завтра не вживається поза розкладами.\n✗ Will / visit — граматично можливо, але «Will you visit…?» читається як прохання зробити послугу, а не як питання про плани.\n✗ Are / visited — пасив тут безглуздий: офіс не відвідує тебе."
+    },
+    {
+      "id": "ten-past-perfect-cont-01",
+      "topic": "ten-past-perfect-cont",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Her eyes were red — it was obvious she ___ .",
+      "options": [
+        "had been crying",
+        "had cried",
+        "was crying",
+        "cried"
+      ],
+      "answer": "had been crying",
+      "explain": "Past Perfect Continuous показує ТРИВАЛУ дію до моменту в минулому, наслідок якої видно (червоні очі).\n✗ had cried — Past Perfect наголошує на завершеності й кількості, а не на процесі, що лишив слід.\n✗ was crying — Past Continuous означав би, що вона плакала САМЕ ТОДІ, а не до того.\n✗ cried — Past Simple не пов'язує дію з наступним моментом."
+    },
+    {
+      "id": "ten-past-perfect-cont-02",
+      "topic": "ten-past-perfect-cont",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "By the time the funding arrived, the team ___ on the prototype for eight months.",
+      "options": [
+        "had been working",
+        "worked",
+        "has been working",
+        "was working"
+      ],
+      "answer": "had been working",
+      "explain": "«By the time» + тривалість «for eight months» до точки в минулому — це Past Perfect Continuous.\n✗ worked — Past Simple не показує, що дія тривала ДО іншої минулої події.\n✗ has been working — Present Perfect Continuous прив'язує тривання до теперішнього, а тут усе в минулому.\n✗ was working — Past Continuous не передає накопичених восьми місяців."
+    },
+    {
+      "id": "cond-mixed-01",
+      "topic": "cond-mixed",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "If we ___ the bug earlier, the app ___ down right now.",
+      "options": [
+        "had caught / wouldn't be",
+        "had caught / wouldn't have been",
+        "caught / wouldn't be",
+        "would catch / wasn't"
+      ],
+      "answer": "had caught / wouldn't be",
+      "explain": "Змішаний кондиціонал: умова в МИНУЛОМУ (had caught), наслідок у ТЕПЕРІШНЬОМУ (wouldn't be). Маркер наслідку — «right now».\n✗ had caught / wouldn't have been — чистий третій кондиціонал, наслідок був би теж у минулому, що суперечить «right now».\n✗ caught / wouldn't be — це другий кондиціонал, він про нереальне теперішнє, а не про втрачену минулу можливість.\n✗ would catch / wasn't — «would» в частині з if не ставиться."
+    },
+    {
+      "id": "cond-mixed-02",
+      "topic": "cond-mixed",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "If she ___ more organised, she ___ the deadline last week.",
+      "options": [
+        "were / wouldn't have missed",
+        "had been / wouldn't have missed",
+        "were / wouldn't miss",
+        "was / didn't miss"
+      ],
+      "answer": "were / wouldn't have missed",
+      "explain": "Тут навпаки: умова — постійна властивість у ТЕПЕРІШНЬОМУ (were more organised), наслідок — конкретна подія в МИНУЛОМУ (last week).\n✗ had been / wouldn't have missed — це означало б тимчасовий стан саме тоді, а не рису характеру взагалі.\n✗ were / wouldn't miss — наслідок у теперішньому, суперечить «last week».\n✗ was / didn't miss — реальна конструкція, а речення про нереальне."
+    },
+    {
+      "id": "cond-inversion-01",
+      "topic": "cond-inversion",
+      "level": "B2",
+      "type": "order",
+      "prompt": "Складіть речення з інверсією замість «if»:",
+      "tokens": ["Had", "we", "known", "about", "the", "risk", "we", "would", "have", "postponed", "the", "launch"],
+      "answer": "Had we known about the risk we would have postponed the launch",
+      "explain": "У формальному стилі «if» можна прибрати, піднявши допоміжне дієслово перед підмет: If we had known → HAD WE KNOWN.\nТак само: Were I you… / Should you need help…\n✗ «Had if we known» — «if» і інверсія разом не вживаються, треба щось одне."
+    },
+    {
+      "id": "cond-inversion-02",
+      "topic": "cond-inversion",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "___ you require further assistance, please contact our support team.",
+      "options": [
+        "Should",
+        "Would",
+        "Did",
+        "If should"
+      ],
+      "answer": "Should",
+      "explain": "«Should + підмет» — формальна заміна «If you require…». Типова для ділового листування.\n✗ Would — інверсію першого кондиціоналу не утворює; «Would you…» це прохання.\n✗ Did — інверсія з «did» стосується минулого, а речення про теперішнє й майбутнє.\n✗ If should — «if» та інверсія взаємовиключні."
+    },
+    {
+      "id": "art-zero-institutions-01",
+      "topic": "art-zero-institutions",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "He spent two weeks in ___ hospital after the accident, and his wife went to ___ hospital every evening.",
+      "options": [
+        "— / the",
+        "the / the",
+        "— / —",
+        "a / the"
+      ],
+      "answer": "— / the",
+      "explain": "Нульовий артикль, коли людина перебуває в установі ЗА ПРИЗНАЧЕННЯМ (лікується): in hospital. Артикль «the» — коли йдеться про будівлю як місце (дружина туди приходила, але не лікувалася).\nТак само: go to school (вчитися) / go to the school (прийти в будівлю).\n✗ the / the — перше «the hospital» означало б, що він там працював або просто був у приміщенні.\n✗ — / — — дружина не лікувалася, тому потрібен «the»."
+    },
+    {
+      "id": "art-zero-institutions-02",
+      "topic": "art-zero-institutions",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "After ten years in ___ prison, he found it hard to adapt.",
+      "options": [
+        "prison",
+        "the prison",
+        "a prison",
+        "prisons"
+      ],
+      "answer": "prison",
+      "explain": "«In prison» без артикля = відбувати покарання. Це ознака призначення, а не місця.\n✗ the prison — конкретна будівля: «He works in the prison» (наглядач).\n✗ a prison — «якась в'язниця», доречно при першій згадці будівлі: They built a prison.\n✗ prisons — множина зруйнувала б сталу сполуку."
+    },
+    {
+      "id": "wf-noun-suffixes-01",
+      "topic": "wf-noun-suffixes",
+      "level": "B2",
+      "type": "fill",
+      "prompt": "The system's ___ (reliable) has improved since the last release.",
+      "answer": "reliability",
+      "accept": ["reliability"],
+      "explain": "Прикметники на -able/-ible утворюють іменник через -ility: reliable → reliability, responsible → responsibility, flexible → flexibility.\n✗ reliableness — теоретично можливо, але в реальному вжитку не трапляється.\n✗ reliance — існує, але означає інше: залежність від чогось (reliance on data)."
+    },
+    {
+      "id": "wf-noun-suffixes-02",
+      "topic": "wf-noun-suffixes",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Our main concern is the ___ of the current approach.",
+      "options": [
+        "effectiveness",
+        "effectivity",
+        "effection",
+        "effectment"
+      ],
+      "answer": "effectiveness",
+      "explain": "Від прикметника «effective» іменник утворюється суфіксом -ness: effectiveness.\n✗ effectivity — трапляється у вузькій технічній літературі, але в загальній англійській це помилка.\n✗ effection — такого слова немає (є «affection», але це прив'язаність).\n✗ effectment — суфікс -ment додається до дієслів (achieve → achievement), а не до цього прикметника."
+    },
+    {
+      "id": "wf-negative-prefixes-01",
+      "topic": "wf-negative-prefixes",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "The data turned out to be ___ , so we had to redo the analysis.",
+      "options": [
+        "inaccurate",
+        "unaccurate",
+        "disaccurate",
+        "misaccurate"
+      ],
+      "answer": "inaccurate",
+      "explain": "З коренями латинського походження зазвичай вживається in- (та його варіанти im-/il-/ir-): inaccurate, impossible, illegal, irrelevant.\n✗ unaccurate — un- продуктивний, але саме з «accurate» усталився in-.\n✗ disaccurate — dis- заперечує дії та стани (disagree, dislike), не цей прикметник.\n✗ misaccurate — mis- означає «неправильно зроблений» і додається до дієслів: misread, misunderstand."
+    },
+    {
+      "id": "wf-negative-prefixes-02",
+      "topic": "wf-negative-prefixes",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "I think you ___ my message — I never said the project was cancelled.",
+      "options": [
+        "misunderstood",
+        "disunderstood",
+        "ununderstood",
+        "inunderstood"
+      ],
+      "answer": "misunderstood",
+      "explain": "Префікс mis- = зробити щось НЕПРАВИЛЬНО: misunderstand, misread, mislead, miscalculate.\n✗ disunderstood — dis- заперечує сам факт дії, а тут дія була, але хибна.\n✗ ununderstood / inunderstood — таких форм не існує; un-/in- дають прикметники, а не дієслова минулого часу."
+    },
+    {
+      "id": "agr-collective-nouns-01",
+      "topic": "agr-collective-nouns",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "The team ___ divided — half want to ship now, half want to wait.",
+      "options": [
+        "are",
+        "is",
+        "be",
+        "was been"
+      ],
+      "answer": "are",
+      "explain": "Збірний іменник бере МНОЖИНУ, коли йдеться про членів групи як окремих людей з різними думками. Підказка тут — «half … half».\n✗ is — коректно, коли група діє як єдине ціле: The team is meeting at noon.\n✗ be — без допоміжного дієслова форма не змінена за особою.\n✗ was been — такої форми немає."
+    },
+    {
+      "id": "agr-collective-nouns-02",
+      "topic": "agr-collective-nouns",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Each of the new features ___ tested separately before release.",
+      "options": [
+        "is",
+        "are",
+        "were",
+        "have been"
+      ],
+      "answer": "is",
+      "explain": "«Each of + множина» бере ОДНИНУ: підметом є «each», а не «features».\nТак само: every one of, either of, neither of.\n✗ are / were / have been — узгодження зі словом «features», яке стоїть у прийменниковій групі й підметом не є."
+    },
+    {
+      "id": "voc-avoid-prevent-01",
+      "topic": "voc-avoid-prevent",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "The new validation rules ___ users from submitting incomplete forms.",
+      "options": [
+        "prevent",
+        "avoid",
+        "protect",
+        "escape"
+      ],
+      "answer": "prevent",
+      "explain": "Prevent someone FROM doing something = не дати комусь щось зробити. Дія спрямована на іншого.\n✗ avoid — «уникати самому»: avoid doing something. Правила не «уникають» замість користувача.\n✗ protect — protect someone FROM something, але об'єктом є загроза, а не дія самого користувача.\n✗ escape — «втекти від», не поєднується з from + -ing у цьому значенні."
+    },
+    {
+      "id": "voc-avoid-prevent-02",
+      "topic": "voc-avoid-prevent",
+      "level": "B2",
+      "type": "fill",
+      "prompt": "She left early to ___ (avoid) getting stuck in traffic.",
+      "answer": "avoid",
+      "accept": ["avoid"],
+      "explain": "Avoid + -ing = уникати чогось САМОМУ. Після avoid ніколи не буває інфінітива: ✗ avoid to get.\nПорівняй: prevent потребує об'єкта — prevent HER from getting stuck."
+    },
+    {
+      "id": "voc-economic-economical-01",
+      "topic": "voc-economic-economical",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "The report analyses the ___ impact of the new tariffs.",
+      "options": [
+        "economic",
+        "economical",
+        "economy",
+        "economically"
+      ],
+      "answer": "economic",
+      "explain": "Economic = той, що стосується економіки: economic growth, economic policy, economic impact.\n✗ economical = ощадливий, вигідний: an economical car (мало палива).\n✗ economy — іменник; як означення вживається лише у сталих сполуках (economy class).\n✗ economically — прислівник, а тут потрібне означення до іменника."
+    },
+    {
+      "id": "voc-economic-economical-02",
+      "topic": "voc-economic-economical",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Switching to open-source tools proved more ___ than renewing the licences.",
+      "options": [
+        "economical",
+        "economic",
+        "economics",
+        "economised"
+      ],
+      "answer": "economical",
+      "explain": "Economical = дешевший у використанні, ощадливіший. Ідеться про витрати, а не про економіку країни.\n✗ economic — стосувалося б економіки як галузі, а не вигоди для бюджету компанії.\n✗ economics — назва науки або сукупність фінансових показників.\n✗ economised — дієприкметник від «economise» (заощаджувати), не вживається як означення тут."
+    },
+    {
+      "id": "prep-blame-accuse-01",
+      "topic": "prep-blame-accuse",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "They accused the contractor ___ cutting corners and blamed him ___ the delay.",
+      "options": [
+        "of / for",
+        "for / of",
+        "of / of",
+        "in / for"
+      ],
+      "answer": "of / for",
+      "explain": "Два дієслова з різними прийменниками: accuse someone OF something, але blame someone FOR something.\nТретя корисна сполука: be responsible FOR.\n✗ for / of — прийменники переставлені місцями.\n✗ of / of — «blame of» не існує.\n✗ in / for — «accuse in» не вживається."
+    },
+    {
+      "id": "prep-blame-accuse-02",
+      "topic": "prep-blame-accuse",
+      "level": "B2",
+      "type": "fill",
+      "prompt": "Don't blame the designer ___ a decision the client made.",
+      "answer": "for",
+      "accept": ["for"],
+      "explain": "Blame someone FOR something. Альтернативна конструкція міняє місцями учасників: blame something ON someone (They blamed the delay on him).\n✗ «blame someone of» — плутанина з «accuse of»."
+    },
+    {
+      "id": "syn-participle-clause-01",
+      "topic": "syn-participle-clause",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "___ the report, she sent it to the whole department.",
+      "options": [
+        "Having finished",
+        "Finishing",
+        "Having been finished",
+        "After she finish"
+      ],
+      "answer": "Having finished",
+      "explain": "«Having + V3» показує, що перша дія ЗАВЕРШИЛАСЬ до другої. Підмет обох частин має бути один — тут «she».\n✗ Finishing — вказувало б на одночасність, ніби вона надсилала звіт під час його завершення.\n✗ Having been finished — пасив: підметом стала б «she», тобто «її завершили».\n✗ After she finish — бракує -s у Present Simple, до того ж часи не узгоджені."
+    },
+    {
+      "id": "syn-participle-clause-02",
+      "topic": "syn-participle-clause",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Which sentence is correct?",
+      "options": [
+        "Walking into the room, I noticed the lights were off.",
+        "Walking into the room, the lights were off.",
+        "Walking into the room, it was noticed the lights were off.",
+        "Walked into the room, the lights were off."
+      ],
+      "answer": "Walking into the room, I noticed the lights were off.",
+      "explain": "Дієприслівниковий зворот прив'язується до підмета головного речення. Заходив до кімнати саме «I» — тому підмет має бути «I».\n✗ «…the lights were off» — виходить, що до кімнати заходило світло (класична помилка dangling participle).\n✗ варіант з «it was noticed» — підмет «it», знову не той, хто заходив.\n✗ «Walked into the room» — форма V3 дала б пасивне значення «коли мене внесли до кімнати»."
+    },
+    {
+      "id": "syn-cleft-01",
+      "topic": "syn-cleft",
+      "level": "B2",
+      "type": "order",
+      "prompt": "Складіть речення, яке підкреслює саме ПОТРЕБУ:",
+      "tokens": ["What", "we", "need", "is", "a", "clearer", "onboarding", "flow"],
+      "answer": "What we need is a clearer onboarding flow",
+      "explain": "Розщеплене речення «What … is …» виносить головне в кінець і додає ваги: What we need IS a clearer onboarding flow.\nПорівняй нейтральне: We need a clearer onboarding flow.\n✗ «That we need is…» — на початку такої конструкції стоїть «what», а не «that»."
+    },
+    {
+      "id": "syn-cleft-02",
+      "topic": "syn-cleft",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "___ was the pricing page, not the checkout, that confused users.",
+      "options": [
+        "It",
+        "There",
+        "That",
+        "What"
+      ],
+      "answer": "It",
+      "explain": "Конструкція «It is/was X that…» виділяє один елемент і протиставляє його іншому. Тут протиставлення прямо назване: «not the checkout».\n✗ There — «There was…» лише повідомляє про існування, без виділення.\n✗ That — вийшло б звичайне речення без наголосу.\n✗ What — потребує іншої будови: «What confused users was the pricing page»."
+    },
+    {
+      "id": "ord-inversion-negative-01",
+      "topic": "ord-inversion-negative",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Never ___ such a badly written specification.",
+      "options": [
+        "have I seen",
+        "I have seen",
+        "did I saw",
+        "I saw"
+      ],
+      "answer": "have I seen",
+      "explain": "Після заперечного слова на початку речення (never, rarely, seldom, hardly, no sooner, under no circumstances) обов'язкова ІНВЕРСІЯ: допоміжне дієслово перед підметом.\n✗ I have seen — прямий порядок після «never» на початку є помилкою.\n✗ did I saw — після «did» іде базова форма: did I see.\n✗ I saw — знову бракує інверсії."
+    },
+    {
+      "id": "ord-inversion-negative-02",
+      "topic": "ord-inversion-negative",
+      "level": "B2",
+      "type": "order",
+      "prompt": "Складіть речення з інверсією:",
+      "tokens": ["Not", "only", "did", "they", "miss", "the", "deadline", "but", "they", "also", "ignored", "the", "feedback"],
+      "answer": "Not only did they miss the deadline but they also ignored the feedback",
+      "explain": "«Not only» на початку вимагає інверсії з do/does/did: Not only DID THEY miss…\nДруга частина йде з «but … also» у звичайному порядку слів.\n✗ «Not only they missed…» — типова помилка, інверсія пропущена."
+    },
+    {
+      "id": "phr-put-up-with-01",
+      "topic": "phr-put-up-with",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "I don't know how you ___ that noise every day.",
+      "options": [
+        "put up with",
+        "put up",
+        "put off",
+        "put down"
+      ],
+      "answer": "put up with",
+      "explain": "Put up WITH = терпіти, миритися з чимось неприємним. Це трикомпонентне фразове дієслово, «with» відкинути не можна.\n✗ put up — «розмістити» (put someone up for the night) або «повісити» (put up a poster).\n✗ put off — відкладати.\n✗ put down — записати або приспати тварину."
+    },
+    {
+      "id": "phr-put-up-with-02",
+      "topic": "phr-put-up-with",
+      "level": "B2",
+      "type": "fill",
+      "prompt": "The team refuses to put up ___ another round of last-minute changes.",
+      "answer": "with",
+      "accept": ["with"],
+      "explain": "Фразове дієслово «put up with» нерозривне: обидва прийменники обов'язкові.\nОб'єкт завжди йде ПІСЛЯ «with»: put up with it (✗ put it up with)."
+    },
+    {
+      "id": "sp-hyphenation-01",
+      "topic": "sp-hyphenation",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Which is correct?",
+      "options": [
+        "a well-known issue that is well known",
+        "a well known issue that is well-known",
+        "a well-known issue that is well-known",
+        "a well known issue that is well known"
+      ],
+      "answer": "a well-known issue that is well known",
+      "explain": "Складене означення пишеться через дефіс ПЕРЕД іменником, але без дефіса після дієслова: a well-known issue / the issue is well known.\nТак само: a five-year plan / the plan lasts five years.\n✗ решта варіантів або ставлять дефіс там, де він не потрібен, або прибирають там, де потрібен."
+    },
+    {
+      "id": "sp-hyphenation-02",
+      "topic": "sp-hyphenation",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "We ran a ___ usability test with eight participants.",
+      "options": [
+        "two-hour",
+        "two-hours",
+        "two hour",
+        "two hours'"
+      ],
+      "answer": "two-hour",
+      "explain": "У складеному означенні перед іменником іменник стоїть в ОДНИНІ й приєднується дефісом: a two-hour test, a ten-page report, a three-day trip.\n✗ two-hours — множина в означенні не вживається.\n✗ two hour — без дефіса це читається як дві окремі одиниці.\n✗ two hours' — присвійний апостроф можливий (two hours' work), але не з дефісною конструкцією й не перед «usability test»."
+    }
+  ]
+}
