@@ -412,10 +412,20 @@ function renderLevelBadge(answers) {
   el.textContent = st.level;
   el.dataset.level = st.level;
 
-  const pct = Math.round(st.accuracy * 100);
-  btn.title = st.level === Level.CFG.TARGET
-    ? `Рівень ${st.level} — ${pct}% на питаннях ${Level.CFG.TARGET}`
-    : `Рівень ${st.level} — ${pct}% на питаннях ${Level.CFG.TARGET}, до підвищення потрібно ${Math.round(Level.CFG.UP * 100)}%`;
+  btn.title = st.accuracy == null
+    ? `Рівень ${st.level} — ще ${st.needed} питань до першої перевірки`
+    : `Рівень ${st.level} — ${Math.round(st.accuracy * 100)}% на питаннях цього рівня`;
+
+  if (st.changed) {
+    Store.saveLevel(st.level, st.source, false);
+    onLevelChanged(st.changed);
+  }
+}
+
+/* Асиметрія навмисна: підвищення святкуємо, зниження — тихо міняємо складність.
+   Екрани під це підключаються тут; поки що лише лог. */
+function onLevelChanged(changed) {
+  console.info("рівень:", changed.from, "→", changed.to, `(${changed.dir})`);
 }
 
 /* ---------- експорт для аналізу ---------- */
@@ -665,9 +675,23 @@ Store.onPasswordRecovery(() => {
   }
   const u = await Store.init();
   if (u) {
+    await syncLevelFromProfile();
     await renderHome();
     show("home");
   } else {
     show("auth");
   }
 })();
+
+/* Сервер — джерело правди. Якщо в профілі рівня ще немає, а локально він
+   напрацьований (користувачі старої B1/B2-схеми), переносимо його нагору
+   й не показуємо онбординг повторно. */
+async function syncLevelFromProfile() {
+  if (!window.Level || !Store.getProfile) return;
+  const p = await Store.getProfile();
+  if (p && p.level) { Level.hydrate(p); return; }
+  const local = Level.current();
+  if (local && local.level) {
+    await Store.saveLevel(local.level, local.source || "adaptive", local.locked);
+  }
+}

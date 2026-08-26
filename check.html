@@ -166,12 +166,17 @@ async function run() {
   }
 
   const totalLevelled = Object.values(levelCount).reduce((a, b) => a + b, 0);
+  // Поріг перекосу рахуємо від кількості ЗАПОВНЕНИХ рівнів, а не від фіксованих 20%:
+  // при шести рівнях рівномірний банк дає 16.7% на рівень і фіксований поріг
+  // світився б на кожному. Порожні рівні в знаменник не беремо — вони ще попереду.
+  const filledLevels = Object.keys(levelCount).length;
+  const skewAt = filledLevels ? 0.5 / filledLevels : 0;
   for (const lv of qLevels) {
     const n = levelCount[lv] || 0;
     if (n && n < 30)
       warn(`Рівень <code>${esc(lv)}</code>: лише ${n} питань. Для чесного визначення рівня потрібно щонайменше 30.`);
-    if (n && totalLevelled && n / totalLevelled < 0.2)
-      warn(`Рівень <code>${esc(lv)}</code> — ${Math.round(n / totalLevelled * 100)}% банку. Перекіс: сесії цього рівня швидко почнуть повторюватись.`);
+    if (n && totalLevelled && filledLevels > 1 && n / totalLevelled < skewAt)
+      warn(`Рівень <code>${esc(lv)}</code> — ${Math.round(n / totalLevelled * 100)}% банку (рівномірно було б ${Math.round(100 / filledLevels)}%). Перекіс: сесії цього рівня швидко почнуть повторюватись.`);
   }
 
   for (const [slug, t] of Object.entries(topics))

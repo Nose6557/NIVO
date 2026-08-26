@@ -171,6 +171,54 @@
       if (error) console.warn("weak upsert", error);
     },
 
+    /* ---------- профіль і рівень ---------- */
+
+    // true, поки не доведено протилежне. Якщо SQL-міграція ще не виконана,
+    // Supabase поверне помилку про невідому колонку — тоді тихо переходимо
+    // на localStorage і більше не смикаємо сервер. Завдяки цьому файли можна
+    // заливати до міграції, нічого не ламаючи.
+    _levelCols: true,
+
+    _missingCol(error) {
+      const s = ((error && (error.message || error.details || "")) + "").toLowerCase();
+      return error && (error.code === "42703" || s.includes("column") || s.includes("schema cache"));
+    },
+
+    async getProfile() {
+      if (mode !== "supabase" || !sb || !user || !this._levelCols) return null;
+      const { data, error } = await sb.from("profiles")
+        .select("level,level_source,level_locked")
+        .eq("id", user.id).maybeSingle();
+      if (error) {
+        if (this._missingCol(error)) {
+          this._levelCols = false;
+          console.info("profiles: колонок рівня ще немає — рівень тримаємо локально");
+        } else console.warn("profile select", error);
+        return null;
+      }
+      return data || null;
+    },
+
+    async saveLevel(level, source, locked) {
+      if (mode !== "supabase" || !sb || !user || !this._levelCols) return false;
+      const row = {
+        id: user.id,
+        level,
+        level_source: source,
+        level_updated_at: new Date().toISOString()
+      };
+      if (typeof locked === "boolean") row.level_locked = locked;
+      const { error } = await sb.from("profiles").upsert(row, { onConflict: "id" });
+      if (error) {
+        if (this._missingCol(error)) {
+          this._levelCols = false;
+          console.info("profiles: колонок рівня ще немає — рівень тримаємо локально");
+        } else console.warn("level upsert", error);
+        return false;
+      }
+      return true;
+    },
+
     /* ---------- читання статистики ---------- */
     async getStats() {
       if (mode === "supabase" && sb && user) {
