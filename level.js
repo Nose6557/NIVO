@@ -40,7 +40,7 @@
   const trustOf = src => CFG.TRUST[src] || CFG.TRUST.adaptive;
 
   function blank() {
-    return { v: CFG.VERSION, level: null, source: null, up: 0, down: 0, seen: 0, locked: false };
+    return { v: CFG.VERSION, level: null, source: null, up: 0, down: 0, seen: null, locked: false };
   }
 
   function readState() {
@@ -51,14 +51,17 @@
 
       // Міграція зі старої B1/B2-схеми (без поля v): рівень уже напрацьований
       // реальними відповідями, тому джерело — adaptive.
+      // seen НЕ переносимо: стара схема рахувала його по питаннях B2, нова —
+      // по питаннях поточного рівня. Це різні популяції, і перенесене число
+      // дало б миттєву оцінку на першому ж рендері. null = перебазувати.
       if (!s.v) {
         return {
           v: CFG.VERSION,
           level: valid(s.level) ? s.level : null,
           source: valid(s.level) ? "adaptive" : null,
-          up: Number(s.up) || 0,
+          up: 0,
           down: 0,
-          seen: Number(s.seen) || 0,
+          seen: null,
           locked: false
         };
       }
@@ -69,7 +72,7 @@
         source: s.source && CFG.TRUST[s.source] ? s.source : (valid(s.level) ? CFG.DEFAULT_SOURCE : null),
         up: Number(s.up) || 0,
         down: Number(s.down) || 0,
-        seen: Number(s.seen) || 0,
+        seen: s.seen === null ? null : (Number(s.seen) || 0),
         locked: !!s.locked
       };
     } catch (e) { return blank(); }
@@ -91,8 +94,9 @@
       source: CFG.TRUST[profile.level_source] ? profile.level_source : CFG.DEFAULT_SOURCE,
       up: 0,
       down: 0,
-      // seen скидаємо: набір питань "на рівні" змінився, старий лічильник не має сенсу
-      seen: cur.level === profile.level ? cur.seen : 0,
+      // Набір питань "на рівні" змінився — старий лічильник несумісний.
+      // null = перебазувати при першому compute, а не оцінювати одразу.
+      seen: cur.level === profile.level ? cur.seen : null,
       locked: !!profile.level_locked
     };
     writeState(next);
@@ -107,7 +111,9 @@
 
   function seed(lv, source) {
     if (!valid(lv)) return readState();
-    const next = { v: CFG.VERSION, level: lv, source, up: 0, down: 0, seen: 0, locked: readState().locked };
+    // seen: null — у користувача з історією вже можуть бути сотні відповідей
+    // цього рівня; 0 означав би миттєву оцінку одразу після онбордингу.
+    const next = { v: CFG.VERSION, level: lv, source, up: 0, down: 0, seen: null, locked: readState().locked };
     writeState(next);
     return next;
   }
@@ -156,6 +162,14 @@
 
     const win = rows.slice(-t.window);
     const acc = win.filter(a => a.is_correct).length / win.length;
+
+    // Перебазування: рівень щойно заданий ззовні (онбординг, тест, профіль,
+    // міграція). Фіксуємо точку відліку й чекаємо повне свіже вікно —
+    // інакше рівень змінився б від старої історії, без жодної нової сесії.
+    if (prev.seen === null) {
+      writeState({ ...prev, seen: rows.length });
+      return { level: prev.level, source: prev.source, accuracy: acc, counted: rows.length, needed: t.window, changed: null };
+    }
 
     // Вікна для підтверджень мають не перекриватися, інакше "два підтвердження
     // поспіль" — це та сама вибірка двічі, і рівень починає скакати від шуму.
