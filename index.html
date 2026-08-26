@@ -169,6 +169,11 @@
 </div>
 
 <!-- ЕКРАН: гра -->
+<!-- ЕКРАН: онбординг рівня (самооцінка + тест) -->
+<section id="screen-onboard" class="screen">
+  <div class="shell narrow" id="onboard-body"></div>
+</section>
+
 <section id="screen-play" class="screen">
   <div class="shell narrow">
     <div class="play-top">
@@ -207,10 +212,21 @@
   </div>
 </section>
 
+<!-- Підвищення рівня: повноекранно. Зниження: тихий тост. -->
+<div id="level-up" class="level-up" hidden role="dialog" aria-modal="true" aria-labelledby="level-up-title">
+  <div class="level-up-card">
+    <h2 id="level-up-title"></h2>
+    <p class="note" id="level-up-sub"></p>
+    <button class="btn primary big" id="level-up-close">Далі</button>
+  </div>
+</div>
+<div id="level-toast" class="level-toast" hidden role="status" aria-live="polite"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="config.js"></script>
 <script src="store.js"></script>
 <script src="level.js"></script>
+<script src="onboard.js"></script>
 <script src="app.js"></script>
 <script>
   if ("serviceWorker" in navigator) {

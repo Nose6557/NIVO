@@ -13,6 +13,7 @@ const BANK_VERSION = "2026-08-21";
 const SESSION_LEN = 15;
 
 let BANK = [];
+let LAST_WEAK = [];        // слабкі теми з останнього рендера — годують тост зниження
 const LEVEL_BY_ID = {};   // id питання -> "B1"|"B2", годує level.js
 let queue = [];
 let idx = 0;
@@ -415,6 +416,7 @@ async function renderHome() {
   $("who").textContent = email || "гостьовий режим";
   $("avatar-initial").textContent = email ? email[0].toUpperCase() : "?";
 
+  LAST_WEAK = stats.weak || [];
   renderLevelBadge(stats.answers);
 }
 
@@ -447,10 +449,22 @@ function renderLevelBadge(answers) {
   }
 }
 
-/* Асиметрія навмисна: підвищення святкуємо, зниження — тихо міняємо складність.
-   Екрани під це підключаються тут; поки що лише лог. */
+/* Асиметрія навмисна: підвищення святкуємо повноекранно, зниження —
+   тихий тост про зміну складності, без згадки про падіння статусу. */
 function onLevelChanged(changed) {
-  console.info("рівень:", changed.from, "→", changed.to, `(${changed.dir})`);
+  if (!window.Onboard) return;
+  if (changed.dir === "up") Onboard.celebrate(changed);
+  else Onboard.notifyDown(changed, weakestLabel());
+}
+
+/* Найпроблемніша тема — щоб тост говорив про конкретику, а не про рівень. */
+function weakestLabel() {
+  const w = (LAST_WEAK || [])
+    .filter(x => x.attempts >= 3)
+    .sort((a, b) => (b.errors / b.attempts) - (a.errors / a.attempts))[0];
+  if (!w) return null;
+  const q = BANK.find(x => x.topic === w.item_key);
+  return q ? q.item : null;
 }
 
 /* ---------- експорт для аналізу ---------- */
@@ -701,12 +715,20 @@ Store.onPasswordRecovery(() => {
   const u = await Store.init();
   if (u) {
     await syncLevelFromProfile();
-    await renderHome();
-    show("home");
+    if (needsOnboarding()) {
+      Onboard.start(BANK, async () => { await renderHome(); show("home"); });
+    } else {
+      await renderHome();
+      show("home");
+    }
   } else {
     show("auth");
   }
 })();
+
+function needsOnboarding() {
+  return !!window.Onboard && !!window.Level && !Level.current().level;
+}
 
 /* Сервер — джерело правди. Якщо в профілі рівня ще немає, а локально він
    напрацьований (користувачі старої B1/B2-схеми), переносимо його нагору
