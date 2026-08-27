@@ -418,6 +418,7 @@ async function renderHome() {
 
   LAST_WEAK = stats.weak || [];
   renderLevelBadge(stats.answers);
+  renderLevelMenu();
 }
 
 /* ---------- бейдж рівня ---------- */
@@ -585,6 +586,39 @@ $("auth-skip").onclick = async () => {
   await renderHome();
   show("home");
 };
+
+$("btn-retest").onclick = () => {
+  closeAvatarMenu();
+  if (!window.Onboard) return;
+  Onboard.retest(BANK, async () => { await renderHome(); show("home"); });
+};
+
+$("level-lock").onclick = async () => {
+  if (!window.Level) return;
+  const on = !Level.current().locked;
+  const st = Level.setLocked(on);
+  if (st.level) await Store.saveLevel(st.level, st.source, on);
+  renderLevelMenu();
+};
+
+/* Рівень і перемикач фіксації в меню акаунта. */
+function renderLevelMenu() {
+  if (!window.Level) return;
+  const st = Level.current();
+  const lab = $("menu-level");
+  const sw = $("level-lock");
+  const hint = $("lock-hint");
+  if (lab) lab.textContent = st.level || "—";
+  if (sw) {
+    sw.setAttribute("aria-checked", st.locked ? "true" : "false");
+    sw.disabled = !st.level;
+  }
+  if (hint) {
+    hint.textContent = st.locked
+      ? "Рівень зафіксовано — сам не змінюватиметься."
+      : "Коли зафіксовано, рівень не змінюється сам.";
+  }
+}
 
 $("btn-signout").onclick = async () => {
   await Store.signOut();

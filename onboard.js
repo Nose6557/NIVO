@@ -38,8 +38,19 @@
   function start(bankRef, onDone) {
     bank = bankRef || [];
     done = onDone || function () {};
+    fromMenu = false;
     renderSelf();
     showScreen();
+  }
+
+  /** Повторне визначення рівня з налаштувань — одразу тест, без самооцінки:
+      людина вже свідомо його обрала, питати думку вдруге не треба. */
+  function retest(bankRef, onDone) {
+    bank = bankRef || [];
+    done = onDone || function () {};
+    fromMenu = true;
+    showScreen();
+    startTest();
   }
 
   function showScreen() {
@@ -79,6 +90,7 @@
   }
 
   let test = null;
+  let fromMenu = false;      // тест запущено з налаштувань, а не з онбордингу
 
   function startTest() {
     const avail = testableLevels();
@@ -125,7 +137,7 @@
       <div class="ob-list">
         ${shuffle(q.options.slice()).map(o => `<button class="opt ob-answer" data-opt="${esc(o)}">${esc(o)}</button>`).join("")}
       </div>
-      <button class="link-btn" id="ob-skip-test">Пропустити тест</button>`;
+      <button class="link-btn" id="ob-skip-test">${fromMenu ? "Скасувати" : "Пропустити тест"}</button>`;
 
     // Під час тесту правильну відповідь НЕ показуємо: інакше це навчання,
     // а не вимір — людина калібрується по ходу і результат зміщується.
@@ -136,7 +148,7 @@
       };
     });
     const s = $("ob-skip-test");
-    if (s) s.onclick = renderSelf;
+    if (s) s.onclick = () => { if (fromMenu) done(null); else renderSelf(); };
   }
 
   function answerTest(ok) {
@@ -210,5 +222,5 @@
     return a;
   }
 
-  window.Onboard = { start, celebrate, notifyDown, SELF, TEST_LEN };
+  window.Onboard = { start, retest, celebrate, notifyDown, SELF, TEST_LEN };
 })();
