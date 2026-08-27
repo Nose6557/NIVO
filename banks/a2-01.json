@@ -1,0 +1,580 @@
+{
+  "schema": 2,
+  "pack": "a2-01",
+  "title": "Пак A2 — основа",
+  "level": "A2",
+  "topics": {
+    "a2-art-a-an": {
+      "category": "articles",
+      "label": "a / an на початковому рівні"
+    },
+    "a2-art-the-superlative": {
+      "category": "articles",
+      "label": "the з найвищим ступенем"
+    },
+    "a2-ten-present-3rd": {
+      "category": "tenses",
+      "label": "Present Simple: -s у 3-й особі"
+    },
+    "a2-ten-present-cont": {
+      "category": "tenses",
+      "label": "Present Continuous: зараз"
+    },
+    "a2-ten-past-irregular": {
+      "category": "tenses",
+      "label": "Past Simple: неправильні дієслова"
+    },
+    "a2-ten-past-negative": {
+      "category": "tenses",
+      "label": "Past Simple: заперечення"
+    },
+    "a2-ten-past-cont-while": {
+      "category": "tenses",
+      "label": "Past Continuous із while"
+    },
+    "a2-ten-present-perfect-ever": {
+      "category": "tenses",
+      "label": "Present Perfect: ever / never"
+    },
+    "a2-ten-present-perfect-yet": {
+      "category": "tenses",
+      "label": "Present Perfect: yet"
+    },
+    "a2-ten-present-perfect-howlong": {
+      "category": "tenses",
+      "label": "Present Perfect: How long"
+    },
+    "a2-agr-there-is-are": {
+      "category": "agreement",
+      "label": "there is / there are"
+    },
+    "a2-agr-plural-irregular": {
+      "category": "agreement",
+      "label": "Неправильна множина"
+    },
+    "a2-voc-much-many": {
+      "category": "vocabulary",
+      "label": "much / many"
+    },
+    "a2-voc-some-any": {
+      "category": "vocabulary",
+      "label": "some / any"
+    },
+    "a2-voc-some-offer": {
+      "category": "vocabulary",
+      "label": "some з проханням"
+    },
+    "a2-comp-er-than": {
+      "category": "vocabulary",
+      "label": "Вищий ступінь: -er than"
+    },
+    "a2-comp-as-as": {
+      "category": "vocabulary",
+      "label": "as … as"
+    },
+    "a2-comp-too-enough": {
+      "category": "vocabulary",
+      "label": "too / enough"
+    },
+    "a2-syn-modal-bare": {
+      "category": "syntax",
+      "label": "Модальне дієслово + інфінітив без to"
+    },
+    "a2-syn-want-to": {
+      "category": "syntax",
+      "label": "want / need + to"
+    },
+    "a2-syn-enjoy-ing": {
+      "category": "syntax",
+      "label": "enjoy / like + -ing"
+    },
+    "a2-syn-purpose-to": {
+      "category": "syntax",
+      "label": "to + дієслово для мети"
+    },
+    "a2-syn-question-do": {
+      "category": "syntax",
+      "label": "Питання з do / does"
+    },
+    "a2-syn-question-does": {
+      "category": "syntax",
+      "label": "Питання: does + базова форма"
+    },
+    "a2-pre-time-on": {
+      "category": "prepositions",
+      "label": "on з днями"
+    },
+    "a2-pre-time-in": {
+      "category": "prepositions",
+      "label": "in з місяцями"
+    },
+    "a2-pre-time-at": {
+      "category": "prepositions",
+      "label": "at із годиною"
+    },
+    "a2-pre-arrive-at": {
+      "category": "prepositions",
+      "label": "arrive at / in"
+    },
+    "a2-voc-possessive-s": {
+      "category": "vocabulary",
+      "label": "Присвійний відмінок з 's"
+    },
+    "a2-voc-object-pronoun": {
+      "category": "vocabulary",
+      "label": "Об'єктні займенники"
+    }
+  },
+  "questions": [
+    {
+      "id": "a2-art-a-an-01",
+      "topic": "a2-art-a-an",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "My sister is ___ engineer at a car factory.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "—"
+      ],
+      "answer": "an",
+      "explain": "Перед словом, що починається з ГОЛОСНОГО звуку, ставимо an: an engineer.\n✗ a — вживається перед приголосним звуком (a doctor, a teacher).\n✗ the — вказує на конкретну особу, а тут ми лише називаємо професію.\n✗ без артикля — професія в однині англійською завжди з артиклем."
+    },
+    {
+      "id": "a2-art-the-superlative-01",
+      "topic": "a2-art-the-superlative",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "That was ___ best day of my life.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "—"
+      ],
+      "answer": "the",
+      "explain": "Найвищий ступінь завжди вимагає the: the best, the biggest, the most interesting.\nПричина: найкращий день лише один, тому іменник конкретний.\n✗ a / an — неозначені артиклі несумісні з унікальністю.\n✗ без артикля — граматично неможливо перед best."
+    },
+    {
+      "id": "a2-ten-present-3rd-01",
+      "topic": "a2-ten-present-3rd",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "My brother ___ in a bank in Lviv.",
+      "options": [
+        "work",
+        "works",
+        "working",
+        "is work"
+      ],
+      "answer": "works",
+      "explain": "У Present Simple 3-тя особа однини (he, she, it, my brother) додає -s: works.\n✗ work — форма для I, you, we, they.\n✗ working — дієприкметник, сам по собі присудком бути не може.\n✗ is work — після is потрібна форма -ing або прикметник."
+    },
+    {
+      "id": "a2-ten-present-cont-01",
+      "topic": "a2-ten-present-cont",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "Be quiet, please — the baby ___ in the next room.",
+      "options": [
+        "sleeps",
+        "is sleeping",
+        "sleep",
+        "slept"
+      ],
+      "answer": "is sleeping",
+      "explain": "Дія відбувається САМЕ ЗАРАЗ, у момент мовлення — це Present Continuous: is + -ing.\n✗ sleeps — Present Simple описує звичку чи регулярність (The baby sleeps ten hours).\n✗ sleep — не збігається в особі з the baby.\n✗ slept — минулий час, а прохання стосується цієї миті."
+    },
+    {
+      "id": "a2-ten-past-irregular-01",
+      "topic": "a2-ten-past-irregular",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "We ___ to Poland last summer.",
+      "options": [
+        "go",
+        "went",
+        "gone",
+        "goed"
+      ],
+      "answer": "went",
+      "explain": "Маркер last summer вимагає Past Simple. У go друга форма неправильна: went.\n✗ go — теперішня форма.\n✗ gone — третя форма, вживається лише з have / has (have gone).\n✗ goed — такої форми не існує, go не додає -ed."
+    },
+    {
+      "id": "a2-ten-past-negative-01",
+      "topic": "a2-ten-past-negative",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "I ___ see Marta at the party yesterday.",
+      "options": [
+        "didn't",
+        "don't",
+        "wasn't",
+        "haven't"
+      ],
+      "answer": "didn't",
+      "explain": "Заперечення в Past Simple будується через did not + базова форма: didn't see.\n✗ don't — теперішній час, суперечить yesterday.\n✗ wasn't — після was потрібне -ing або прикметник, а не базова форма.\n✗ haven't — вимагає третьої форми (haven't seen) і не вживається з yesterday."
+    },
+    {
+      "id": "a2-ten-past-cont-while-01",
+      "topic": "a2-ten-past-cont-while",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "While I ___ TV, someone knocked on the door.",
+      "options": [
+        "watched",
+        "was watching",
+        "watch",
+        "have watched"
+      ],
+      "answer": "was watching",
+      "explain": "While вводить довшу дію, яку перервала коротка. Довша йде в Past Continuous.\n✗ watched — Past Simple зробив би обидві дії однаково короткими, і зв'язок «перервало» зникає.\n✗ watch — теперішня форма, не узгоджується з knocked.\n✗ have watched — Present Perfect не вживається з конкретним минулим епізодом."
+    },
+    {
+      "id": "a2-ten-present-perfect-ever-01",
+      "topic": "a2-ten-present-perfect-ever",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "Have you ___ been to Barcelona?",
+      "options": [
+        "ever",
+        "never",
+        "already",
+        "yet"
+      ],
+      "answer": "ever",
+      "explain": "У питанні про досвід «колись у житті» вживається ever: Have you ever been…?\n✗ never — саме по собі заперечне, а речення вже питальне (вийде подвійне заперечення).\n✗ already — доречне у стверджувальних реченнях про завершену дію.\n✗ yet — стоїть у кінці речення, а не між have і дієсловом."
+    },
+    {
+      "id": "a2-ten-present-perfect-yet-01",
+      "topic": "a2-ten-present-perfect-yet",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "I haven't finished the report ___.",
+      "options": [
+        "already",
+        "yet",
+        "still",
+        "ever"
+      ],
+      "answer": "yet",
+      "explain": "У заперечних реченнях «ще не» передається через yet, і стоїть воно в кінці.\n✗ already — для стверджень (I have already finished).\n✗ still — вимагає іншого порядку слів: I still haven't finished.\n✗ ever — вживається в питаннях про досвід, не в запереченнях такого типу."
+    },
+    {
+      "id": "a2-ten-present-perfect-howlong-01",
+      "topic": "a2-ten-present-perfect-howlong",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "How long ___ you lived in this city?",
+      "options": [
+        "have",
+        "has",
+        "do",
+        "did"
+      ],
+      "answer": "have",
+      "explain": "How long про період, що триває досі, вимагає Present Perfect: have + lived.\n✗ has — для he / she / it, а тут you.\n✗ do — після do йде базова форма (do you live), а не lived.\n✗ did — питання про завершене минуле, несумісне з «досі живеш»."
+    },
+    {
+      "id": "a2-agr-there-is-are-01",
+      "topic": "a2-agr-there-is-are",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "There ___ two supermarkets near my house.",
+      "options": [
+        "is",
+        "are",
+        "be",
+        "have"
+      ],
+      "answer": "are",
+      "explain": "У звороті there is / there are дієслово узгоджується з тим, що йде ПІСЛЯ нього. Тут two supermarkets — множина, отже are.\n✗ is — для однини (There is one supermarket).\n✗ be — базова форма, присудком без допоміжного слова бути не може.\n✗ have — існування передається через be, а не have."
+    },
+    {
+      "id": "a2-agr-plural-irregular-01",
+      "topic": "a2-agr-plural-irregular",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "Three ___ were playing in the yard.",
+      "options": [
+        "child",
+        "childs",
+        "children",
+        "childrens"
+      ],
+      "answer": "children",
+      "explain": "Child має неправильну множину: children.\n✗ child — однина, суперечить three.\n✗ childs — -s до child не додається.\n✗ childrens — children уже множина, друге закінчення зайве."
+    },
+    {
+      "id": "a2-voc-much-many-01",
+      "topic": "a2-voc-much-many",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "How ___ money do you need for the trip?",
+      "options": [
+        "many",
+        "much",
+        "long",
+        "few"
+      ],
+      "answer": "much",
+      "explain": "Money — незлічуваний іменник, тому вживається much.\n✗ many — лише зі злічуваними (how many euros).\n✗ long — питання про тривалість, не про кількість.\n✗ few — вживається з множиною і не утворює питання how few."
+    },
+    {
+      "id": "a2-voc-some-any-01",
+      "topic": "a2-voc-some-any",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "Sorry, I don't have ___ questions right now.",
+      "options": [
+        "some",
+        "any",
+        "no",
+        "much"
+      ],
+      "answer": "any",
+      "explain": "У заперечних реченнях вживається any: don't have any questions.\n✗ some — типове для стверджень.\n✗ no — дало б подвійне заперечення разом із don't.\n✗ much — questions злічувані, а much іде з незлічуваними."
+    },
+    {
+      "id": "a2-voc-some-offer-01",
+      "topic": "a2-voc-some-offer",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "Would you like ___ tea?",
+      "options": [
+        "a",
+        "an",
+        "some",
+        "many"
+      ],
+      "answer": "some",
+      "explain": "Tea незлічуваний, а речення — пропозиція. У пропозиціях і проханнях some вживається навіть у питанні.\n✗ a / an — неозначені артиклі не ставляться перед незлічуваними.\n✗ many — потребує множини злічуваного іменника."
+    },
+    {
+      "id": "a2-comp-er-than-01",
+      "topic": "a2-comp-er-than",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "This bag is ___ than the one I saw yesterday.",
+      "options": [
+        "cheap",
+        "cheaper",
+        "cheapest",
+        "more cheap"
+      ],
+      "answer": "cheaper",
+      "explain": "Односкладові прикметники утворюють вищий ступінь через -er: cheaper. Слово than цього вимагає.\n✗ cheap — звичайна форма, порівняння не виражає.\n✗ cheapest — найвищий ступінь, із than не вживається.\n✗ more cheap — more додають до довгих прикметників, не до cheap."
+    },
+    {
+      "id": "a2-comp-as-as-01",
+      "topic": "a2-comp-as-as",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "She is as tall ___ her older sister.",
+      "options": [
+        "than",
+        "as",
+        "that",
+        "like"
+      ],
+      "answer": "as",
+      "explain": "Конструкція рівності — as + прикметник + as: as tall as.\n✗ than — потрібне після вищого ступеня (taller than).\n✗ that — не вводить порівняння такого типу.\n✗ like — вживається без as tall (She looks like her sister)."
+    },
+    {
+      "id": "a2-comp-too-enough-01",
+      "topic": "a2-comp-too-enough",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "This coffee is too ___ to drink right now.",
+      "options": [
+        "hot",
+        "hotter",
+        "hottest",
+        "heat"
+      ],
+      "answer": "hot",
+      "explain": "Після too йде звичайна форма прикметника: too hot to drink.\n✗ hotter — вищий ступінь із too не поєднується.\n✗ hottest — найвищий ступінь потребує the і не вживається з too.\n✗ heat — іменник, а потрібен прикметник."
+    },
+    {
+      "id": "a2-syn-modal-bare-01",
+      "topic": "a2-syn-modal-bare",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "You must ___ here until the doctor calls you.",
+      "options": [
+        "to stay",
+        "stay",
+        "staying",
+        "stays"
+      ],
+      "answer": "stay",
+      "explain": "Після модальних (must, can, should, will) іде інфінітив БЕЗ to.\n✗ to stay — to після модального дієслова зайве.\n✗ staying — -ing після модальних не вживається.\n✗ stays — модальні не змінюються за особами і не тягнуть -s."
+    },
+    {
+      "id": "a2-syn-want-to-01",
+      "topic": "a2-syn-want-to",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "I want ___ home early today.",
+      "options": [
+        "go",
+        "to go",
+        "going",
+        "goes"
+      ],
+      "answer": "to go",
+      "explain": "Дієслово want завжди вимагає інфінітива з to: want to go.\n✗ go — без to граматично неможливо після want.\n✗ going — want не поєднується з -ing.\n✗ goes — особова форма після want неможлива."
+    },
+    {
+      "id": "a2-syn-enjoy-ing-01",
+      "topic": "a2-syn-enjoy-ing",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "My father enjoys ___ in the mountains.",
+      "options": [
+        "to walk",
+        "walk",
+        "walking",
+        "walks"
+      ],
+      "answer": "walking",
+      "explain": "Enjoy завжди вимагає форми -ing: enjoy walking.\n✗ to walk — enjoy з інфінітивом не вживається (на відміну від want, need).\n✗ walk — базова форма після enjoy неможлива.\n✗ walks — особова форма тут недоречна."
+    },
+    {
+      "id": "a2-syn-purpose-to-01",
+      "topic": "a2-syn-purpose-to",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "I went to the shop ___ some milk.",
+      "options": [
+        "for buy",
+        "to buy",
+        "for buying",
+        "buy"
+      ],
+      "answer": "to buy",
+      "explain": "Мета дії передається інфінітивом з to: went to the shop to buy milk.\n✗ for buy — після for ніколи не йде базова форма дієслова.\n✗ for buying — можливе лише про призначення предмета, не про мету пересування.\n✗ buy — два присудки поспіль без сполучника неможливі."
+    },
+    {
+      "id": "a2-syn-question-do-01",
+      "topic": "a2-syn-question-do",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "___ you like strong coffee?",
+      "options": [
+        "Do",
+        "Are",
+        "Does",
+        "Is"
+      ],
+      "answer": "Do",
+      "explain": "Питання в Present Simple з you будується через Do: Do you like…?\n✗ Are — після are потрібне -ing або прикметник, а не like.\n✗ Does — для he / she / it.\n✗ Is — не узгоджується з you."
+    },
+    {
+      "id": "a2-syn-question-does-01",
+      "topic": "a2-syn-question-does",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "Where ___ your brother work?",
+      "options": [
+        "do",
+        "does",
+        "is",
+        "works"
+      ],
+      "answer": "does",
+      "explain": "Your brother — 3-тя особа однини, тому допоміжне does, а основне дієслово лишається базовим: does … work.\n✗ do — для I, you, we, they.\n✗ is — після is потрібне working.\n✗ works — у питанні -s переходить на допоміжне does, тому двічі його не ставлять."
+    },
+    {
+      "id": "a2-pre-time-on-01",
+      "topic": "a2-pre-time-on",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "The meeting is ___ Monday morning.",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "to"
+      ],
+      "answer": "on",
+      "explain": "З днями тижня і датами вживається on: on Monday, on 5 May.\n✗ in — з місяцями, роками, порами року (in May, in 2026).\n✗ at — з годинами й святами (at six, at Christmas).\n✗ to — напрямок, не час."
+    },
+    {
+      "id": "a2-pre-time-in-01",
+      "topic": "a2-pre-time-in",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "My birthday is ___ July.",
+      "options": [
+        "on",
+        "in",
+        "at",
+        "of"
+      ],
+      "answer": "in",
+      "explain": "З місяцями, роками й порами року вживається in: in July, in winter.\n✗ on — потрібне для конкретного дня (on 3 July).\n✗ at — для годин і свят.\n✗ of — часових відношень не виражає."
+    },
+    {
+      "id": "a2-pre-time-at-01",
+      "topic": "a2-pre-time-at",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "The train leaves ___ six o'clock.",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "by"
+      ],
+      "answer": "at",
+      "explain": "З точним часом доби вживається at: at six, at midnight.\n✗ in — для довших періодів (in the morning, in June).\n✗ on — для днів і дат.\n✗ by — означає «не пізніше ніж», а тут просто час відправлення."
+    },
+    {
+      "id": "a2-pre-arrive-at-01",
+      "topic": "a2-pre-arrive-at",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "We arrived ___ the airport two hours early.",
+      "options": [
+        "to",
+        "at",
+        "in",
+        "on"
+      ],
+      "answer": "at",
+      "explain": "Дієслово arrive не вживається з to. З місцями-точками (вокзал, аеропорт, готель) іде at.\n✗ to — поширена помилка: arrive to неможливе (пор. go to).\n✗ in — лише з великими територіями: arrive in Kyiv, arrive in Spain.\n✗ on — з arrive не поєднується."
+    },
+    {
+      "id": "a2-voc-possessive-s-01",
+      "topic": "a2-voc-possessive-s",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "This is my ___ car — he bought it last week.",
+      "options": [
+        "brother",
+        "brother's",
+        "brothers",
+        "brothers'"
+      ],
+      "answer": "brother's",
+      "explain": "Належність однієї особи передається через 's: my brother's car.\n✗ brother — без 's виходить, що машина і є брат.\n✗ brothers — множина, а he вказує на одного.\n✗ brothers' — присвійна форма множини, суперечить he."
+    },
+    {
+      "id": "a2-voc-object-pronoun-01",
+      "topic": "a2-voc-object-pronoun",
+      "level": "A2",
+      "type": "mcq",
+      "prompt": "Can you give the keys to ___, please?",
+      "options": [
+        "I",
+        "me",
+        "my",
+        "mine"
+      ],
+      "answer": "me",
+      "explain": "Після прийменника to потрібен об'єктний займенник: to me.\n✗ I — форма підмета (I gave the keys).\n✗ my — присвійний, вимагає іменника після себе (my keys).\n✗ mine — присвійний займенник без іменника, після to не вживається."
+    }
+  ]
+}

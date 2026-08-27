@@ -1,0 +1,580 @@
+{
+  "schema": 2,
+  "pack": "c1-01",
+  "title": "Пак C1 — розширення",
+  "level": "C1",
+  "topics": {
+    "c1-syn-inversion-notonly": {
+      "category": "syntax",
+      "label": "Інверсія після Not only"
+    },
+    "c1-syn-inversion-never": {
+      "category": "syntax",
+      "label": "Інверсія після Never before"
+    },
+    "c1-syn-inversion-only": {
+      "category": "syntax",
+      "label": "Інверсія після Only after"
+    },
+    "c1-syn-inversion-littledid": {
+      "category": "syntax",
+      "label": "Інверсія після Little"
+    },
+    "c1-syn-inversion-nosooner": {
+      "category": "syntax",
+      "label": "No sooner … than"
+    },
+    "c1-syn-inversion-conditional": {
+      "category": "syntax",
+      "label": "Безсполучникова умова: Had / Were"
+    },
+    "c1-syn-cleft-what": {
+      "category": "syntax",
+      "label": "Розщеплене речення з What"
+    },
+    "c1-syn-cleft-itwas": {
+      "category": "syntax",
+      "label": "Розщеплене речення з It was"
+    },
+    "c1-syn-participle-having": {
+      "category": "syntax",
+      "label": "Дієприслівниковий зворот Having done"
+    },
+    "c1-syn-participle-reduced": {
+      "category": "syntax",
+      "label": "Скорочене означальне речення"
+    },
+    "c1-syn-such-was": {
+      "category": "syntax",
+      "label": "Such was … that"
+    },
+    "c1-syn-the-more": {
+      "category": "syntax",
+      "label": "The more … the more"
+    },
+    "c1-ten-subjunctive-insist": {
+      "category": "syntax",
+      "label": "Умовний спосіб після insist"
+    },
+    "c1-ten-subjunctive-essential": {
+      "category": "syntax",
+      "label": "Умовний спосіб після it is essential"
+    },
+    "c1-ten-would-rather": {
+      "category": "tenses",
+      "label": "would rather + минулий час"
+    },
+    "c1-ten-high-time": {
+      "category": "tenses",
+      "label": "It's high time + минулий час"
+    },
+    "c1-con-mixed-past-present": {
+      "category": "conditionals",
+      "label": "Змішана умова: минуле → тепер"
+    },
+    "c1-con-mixed-present-past": {
+      "category": "conditionals",
+      "label": "Змішана умова: тепер → минуле"
+    },
+    "c1-con-but-for": {
+      "category": "conditionals",
+      "label": "But for як умова"
+    },
+    "c1-mod-deduction-cant": {
+      "category": "tenses",
+      "label": "can't have для заперечного висновку"
+    },
+    "c1-mod-deduction-must": {
+      "category": "tenses",
+      "label": "must have для впевненого висновку"
+    },
+    "c1-mod-needntvsdidnt": {
+      "category": "tenses",
+      "label": "needn't have vs didn't need to"
+    },
+    "c1-voc-coll-distinction": {
+      "category": "vocabulary",
+      "label": "Сполука draw a distinction"
+    },
+    "c1-voc-coll-threat": {
+      "category": "vocabulary",
+      "label": "Сполука pose a threat"
+    },
+    "c1-voc-coll-brunt": {
+      "category": "vocabulary",
+      "label": "Сполука bear the brunt"
+    },
+    "c1-voc-coll-precedent": {
+      "category": "vocabulary",
+      "label": "Сполука set a precedent"
+    },
+    "c1-reg-hedging": {
+      "category": "register",
+      "label": "Пом'якшення тверджень"
+    },
+    "c1-reg-nominalisation": {
+      "category": "register",
+      "label": "Номіналізація в діловому стилі"
+    },
+    "c1-wf-noun-suffix": {
+      "category": "word formation",
+      "label": "Абстрактні іменники на -ance / -ence"
+    },
+    "c1-wf-negative-prefix": {
+      "category": "word formation",
+      "label": "Заперечні префікси"
+    }
+  },
+  "questions": [
+    {
+      "id": "c1-syn-inversion-notonly-01",
+      "topic": "c1-syn-inversion-notonly",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Not only ___ the deadline, but he also lost the client's trust.",
+      "options": [
+        "he missed",
+        "did he miss",
+        "he did miss",
+        "missed he"
+      ],
+      "answer": "did he miss",
+      "explain": "Not only на початку речення вимагає інверсії: допоміжне дієслово стає перед підметом — did he miss.\n✗ he missed — прямий порядок після винесеного заперечного прислівника неможливий.\n✗ he did miss — did тут емфатичне, але підмет усе одно попереду, інверсії немає.\n✗ missed he — інвертується допоміжне дієслово, а не смислове."
+    },
+    {
+      "id": "c1-syn-inversion-never-01",
+      "topic": "c1-syn-inversion-never",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Never before ___ such a poorly prepared proposal.",
+      "options": [
+        "I had seen",
+        "had I seen",
+        "I have seen",
+        "saw I"
+      ],
+      "answer": "had I seen",
+      "explain": "Заперечний прислівник Never before на початку тягне інверсію: had I seen.\n✗ I had seen — прямий порядок після винесеного never неприпустимий.\n✗ I have seen — і порядок прямий, і час не узгоджений із before.\n✗ saw I — інверсія стосується допоміжного дієслова, а не смислового."
+    },
+    {
+      "id": "c1-syn-inversion-only-01",
+      "topic": "c1-syn-inversion-only",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Only after the audit ___ how serious the problem was.",
+      "options": [
+        "we realised",
+        "did we realise",
+        "we did realise",
+        "realised we"
+      ],
+      "answer": "did we realise",
+      "explain": "Зворот Only after + обставина вимагає інверсії в ГОЛОВНІЙ частині: did we realise.\n✗ we realised — прямий порядок скасовує обов'язкову інверсію.\n✗ we did realise — did емфатичне, але підмет попереду.\n✗ realised we — інвертується допоміжне, а не смислове дієслово."
+    },
+    {
+      "id": "c1-syn-inversion-littledid-01",
+      "topic": "c1-syn-inversion-littledid",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Little ___ that the contract had already been signed.",
+      "options": [
+        "she knew",
+        "did she know",
+        "she did know",
+        "knew she"
+      ],
+      "answer": "did she know",
+      "explain": "Little у значенні «зовсім не» — заперечний прислівник, тому інверсія обов'язкова: did she know.\n✗ she knew — прямий порядок після Little у цьому значенні неможливий.\n✗ she did know — підмет попереду, інверсії немає.\n✗ knew she — інверсія допоміжного, не смислового дієслова."
+    },
+    {
+      "id": "c1-syn-inversion-nosooner-01",
+      "topic": "c1-syn-inversion-nosooner",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "No sooner had the meeting started ___ the power went out.",
+      "options": [
+        "when",
+        "than",
+        "that",
+        "then"
+      ],
+      "answer": "than",
+      "explain": "Конструкція фіксована: No sooner … than. Друга частина вводиться лише через than.\n✗ when — вживається з hardly / scarcely (Hardly had we begun when…).\n✗ that — у цій конструкції не використовується.\n✗ then — прислівник, підрядного речення не вводить."
+    },
+    {
+      "id": "c1-syn-inversion-conditional-01",
+      "topic": "c1-syn-inversion-conditional",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "___ we known about the delay, we would have rescheduled the launch.",
+      "options": [
+        "If",
+        "Had",
+        "Have",
+        "Should"
+      ],
+      "answer": "Had",
+      "explain": "Безсполучникова умова: if опускають, а had виносять уперед — Had we known.\n✗ If — граматично можливе, але тоді потрібне if we had known, а не if we known.\n✗ Have — не узгоджується з would have rescheduled у головній частині.\n✗ Should — уводить умову про майбутнє (Should you need help), а не про минуле."
+    },
+    {
+      "id": "c1-syn-cleft-what-01",
+      "topic": "c1-syn-cleft-what",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "What the department needs most ___ a clear set of priorities.",
+      "options": [
+        "are",
+        "is",
+        "be",
+        "were"
+      ],
+      "answer": "is",
+      "explain": "У розщепленому реченні з What присудок узгоджується з формальним підметом What, який завжди однина: is.\n✗ are — множина тут неможлива, попри злічуваність set.\n✗ be — базова форма присудком без допоміжного бути не може.\n✗ were — і число, і час не узгоджуються з needs."
+    },
+    {
+      "id": "c1-syn-cleft-itwas-01",
+      "topic": "c1-syn-cleft-itwas",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "It was the supplier, not the courier, ___ caused the delay.",
+      "options": [
+        "what",
+        "which",
+        "that",
+        "whom"
+      ],
+      "answer": "that",
+      "explain": "У розщепленому реченні з It was підрядне вводиться через that — незалежно від того, істота це чи ні.\n✗ what — у цій конструкції не вживається взагалі.\n✗ which — для неістот можливе в означальних реченнях, але не в емфатичному звороті з It was.\n✗ whom — форма додатка, а тут потрібен підмет підрядного."
+    },
+    {
+      "id": "c1-syn-participle-having-01",
+      "topic": "c1-syn-participle-having",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "___ the report twice, she still found two errors.",
+      "options": [
+        "Having proofread",
+        "After proofread",
+        "Proofread",
+        "Having been proofread"
+      ],
+      "answer": "Having proofread",
+      "explain": "Дія відбулася РАНІШЕ за головну, підмет спільний — потрібен зворот Having + третя форма.\n✗ After proofread — після прийменника потрібна форма -ing (after proofreading).\n✗ Proofread — не показує передування і читається як наказ.\n✗ Having been proofread — пасив, але вичитувала саме вона, а не її."
+    },
+    {
+      "id": "c1-syn-participle-reduced-01",
+      "topic": "c1-syn-participle-reduced",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "The documents ___ yesterday must be signed before Friday.",
+      "options": [
+        "were sent",
+        "sent",
+        "sending",
+        "which sent"
+      ],
+      "answer": "sent",
+      "explain": "Скорочене означальне речення: which were sent → sent. Пасивне значення передає третя форма.\n✗ were sent — дало б два присудки (were sent і must be signed) без сполучника.\n✗ sending — активне значення, вийшло б, що документи щось відсилають.\n✗ which sent — теж активне значення і суперечить змісту."
+    },
+    {
+      "id": "c1-syn-such-was-01",
+      "topic": "c1-syn-such-was",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Such ___ the demand that the servers crashed within minutes.",
+      "options": [
+        "was",
+        "were",
+        "is",
+        "had"
+      ],
+      "answer": "was",
+      "explain": "У звороті Such + be + підмет дієслово узгоджується з the demand — незлічуваним іменником в однині: was.\n✗ were — множина не узгоджується з demand.\n✗ is — теперішній час суперечить crashed.\n✗ had — конструкція будується саме на дієслові be."
+    },
+    {
+      "id": "c1-syn-the-more-01",
+      "topic": "c1-syn-the-more",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "The more data we collect, ___ our forecasts become.",
+      "options": [
+        "the accurate",
+        "the more accurate",
+        "more accurate",
+        "accurate"
+      ],
+      "answer": "the more accurate",
+      "explain": "Подвійна порівняльна конструкція вимагає the в ОБОХ частинах: The more…, the more accurate…\n✗ the accurate — звичайна форма прикметника в цій конструкції неможлива.\n✗ more accurate — без the симетрія конструкції руйнується.\n✗ accurate — немає ні the, ні вищого ступеня."
+    },
+    {
+      "id": "c1-ten-subjunctive-insist-01",
+      "topic": "c1-ten-subjunctive-insist",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "The board insisted that the report ___ rewritten before publication.",
+      "options": [
+        "was",
+        "be",
+        "is",
+        "will be"
+      ],
+      "answer": "be",
+      "explain": "Після insist / demand / require вживається умовний спосіб: базова форма дієслова незалежно від особи й часу — be rewritten.\n✗ was — звичайний минулий час скасовує спонукальне значення.\n✗ is — теперішній час у підрядному після insisted неможливий.\n✗ will be — майбутній час в умовному способі не вживається."
+    },
+    {
+      "id": "c1-ten-subjunctive-essential-01",
+      "topic": "c1-ten-subjunctive-essential",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "It is essential that every applicant ___ a valid certificate.",
+      "options": [
+        "has",
+        "have",
+        "will have",
+        "had"
+      ],
+      "answer": "have",
+      "explain": "Після it is essential / vital / crucial іде умовний спосіб — базова форма без -s: have.\n✗ has — звичайне узгодження з 3-ю особою тут не діє.\n✗ will have — майбутній час в умовному способі неможливий.\n✗ had — минулий час суперечить теперішній вимозі."
+    },
+    {
+      "id": "c1-ten-would-rather-01",
+      "topic": "c1-ten-would-rather",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "I'd rather you ___ that to the client yet.",
+      "options": [
+        "don't say",
+        "didn't say",
+        "not say",
+        "won't say"
+      ],
+      "answer": "didn't say",
+      "explain": "Would rather + ІНШИЙ підмет вимагає минулого часу, хоч ідеться про теперішнє чи майбутнє: I'd rather you didn't say.\n✗ don't say — теперішній час після would rather з іншим підметом неможливий.\n✗ not say — базова форма годиться лише за спільного підмета (I'd rather not say).\n✗ won't say — майбутній час у цій конструкції не вживається."
+    },
+    {
+      "id": "c1-ten-high-time-01",
+      "topic": "c1-ten-high-time",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "It's high time we ___ this issue seriously.",
+      "options": [
+        "take",
+        "took",
+        "will take",
+        "taking"
+      ],
+      "answer": "took",
+      "explain": "Зворот It's high time вимагає минулого часу з теперішнім значенням: it's high time we took.\n✗ take — базова форма в цій конструкції неможлива.\n✗ will take — майбутній час не вживається після high time.\n✗ taking — форма -ing присудком тут бути не може."
+    },
+    {
+      "id": "c1-con-mixed-past-present-01",
+      "topic": "c1-con-mixed-past-present",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "If we had hired a second developer, the product ___ ready by now.",
+      "options": [
+        "would be",
+        "would have been",
+        "will be",
+        "had been"
+      ],
+      "answer": "would be",
+      "explain": "Змішана умова: причина в минулому (had hired), наслідок у ТЕПЕРІШНЬОМУ — маркер by now. Отже would + базова форма.\n✗ would have been — переносить наслідок у минуле й суперечить by now.\n✗ will be — реальне майбутнє, несумісне з нереальною умовою.\n✗ had been — форма для умовної частини, не для головної."
+    },
+    {
+      "id": "c1-con-mixed-present-past-01",
+      "topic": "c1-con-mixed-present-past",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "If she weren't so cautious, she ___ that offer last month.",
+      "options": [
+        "would accept",
+        "would have accepted",
+        "will accept",
+        "accepted"
+      ],
+      "answer": "would have accepted",
+      "explain": "Змішана умова навпаки: постійна властивість у теперішньому (weren't so cautious), наслідок у минулому — маркер last month.\n✗ would accept — переносить наслідок у теперішнє, суперечить last month.\n✗ will accept — реальне майбутнє при нереальній умові неможливе.\n✗ accepted — простий минулий скасовує нереальність."
+    },
+    {
+      "id": "c1-con-but-for-01",
+      "topic": "c1-con-but-for",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "___ the delay in funding, the project would have finished on schedule.",
+      "options": [
+        "But for",
+        "Except",
+        "Apart",
+        "Without that"
+      ],
+      "answer": "But for",
+      "explain": "Зворот But for означає «якби не» і вводить умову іменником: But for the delay = If it hadn't been for the delay.\n✗ Except — виражає виняток із переліку, не умову.\n✗ Apart — потребує for і теж означає виняток, а не умову.\n✗ Without that — that ні на що не вказує, зв'язності немає."
+    },
+    {
+      "id": "c1-mod-deduction-cant-01",
+      "topic": "c1-mod-deduction-cant",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "He ___ left the office — his coat is still on the chair.",
+      "options": [
+        "can't have",
+        "mustn't have",
+        "shouldn't have",
+        "wouldn't have"
+      ],
+      "answer": "can't have",
+      "explain": "Впевнений заперечний висновок про минуле передається через can't have + третя форма.\n✗ mustn't have — mustn't означає заборону, а не висновок.\n✗ shouldn't have — докір за вчинок, а не судження про факт.\n✗ wouldn't have — гіпотетична ситуація, а не висновок із доказу."
+    },
+    {
+      "id": "c1-mod-deduction-must-01",
+      "topic": "c1-mod-deduction-must",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "The lights are off and the door is locked — everyone ___ home already.",
+      "options": [
+        "must go",
+        "must have gone",
+        "had to go",
+        "must be going"
+      ],
+      "answer": "must have gone",
+      "explain": "Впевнений висновок про ЗАВЕРШЕНУ минулу дію: must have + третя форма.\n✗ must go — обов'язок у теперішньому, а не висновок.\n✗ had to go — констатує реальну необхідність, а не припущення.\n✗ must be going — висновок про дію, що триває зараз, суперечить already."
+    },
+    {
+      "id": "c1-mod-needntvsdidnt-01",
+      "topic": "c1-mod-needntvsdidnt",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "We ___ booked the hall — in the end only six people came.",
+      "options": [
+        "didn't need to",
+        "needn't have",
+        "mustn't have",
+        "shouldn't need"
+      ],
+      "answer": "needn't have",
+      "explain": "Needn't have + третя форма означає: дію ВИКОНАЛИ, хоч потреби не було. Зал забронювали дарма.\n✗ didn't need to — означало б, що потреби не було і дію не виконали, а зал уже заброньовано.\n✗ mustn't have — заборона, а не зайва дія.\n✗ shouldn't need — теперішній час, суперечить came."
+    },
+    {
+      "id": "c1-voc-coll-distinction-01",
+      "topic": "c1-voc-coll-distinction",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "The author is careful to ___ a distinction between correlation and causation.",
+      "options": [
+        "do",
+        "make",
+        "draw",
+        "put"
+      ],
+      "answer": "draw",
+      "explain": "Усталена сполука академічного стилю: draw a distinction.\n✗ do — з distinction не вживається взагалі.\n✗ make — можливе в розмовному стилі, але для формального тексту нормою є draw.\n✗ put — сполучається з emphasis (put emphasis on), не з distinction."
+    },
+    {
+      "id": "c1-voc-coll-threat-01",
+      "topic": "c1-voc-coll-threat",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Unregulated data collection may ___ a serious threat to user privacy.",
+      "options": [
+        "make",
+        "pose",
+        "give",
+        "bring"
+      ],
+      "answer": "pose",
+      "explain": "Загроза «створюється» через pose: pose a threat / pose a risk / pose a challenge.\n✗ make — з threat не сполучається (make a promise, make a decision).\n✗ give — вживається у give rise to, але не з threat напряму.\n✗ bring — сполучається з bring benefits, bring changes."
+    },
+    {
+      "id": "c1-voc-coll-brunt-01",
+      "topic": "c1-voc-coll-brunt",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Small retailers ___ the brunt of the new import tariffs.",
+      "options": [
+        "carried",
+        "bore",
+        "held",
+        "took over"
+      ],
+      "answer": "bore",
+      "explain": "Фіксований вираз: bear the brunt of — прийняти на себе основний удар. Друга форма bear — bore.\n✗ carried — з brunt не вживається.\n✗ held — теж не входить у цю сполуку.\n✗ took over — означає «перебрати керівництво», зовсім інше значення."
+    },
+    {
+      "id": "c1-voc-coll-precedent-01",
+      "topic": "c1-voc-coll-precedent",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Approving this exception would ___ a dangerous precedent.",
+      "options": [
+        "do",
+        "set",
+        "make",
+        "put"
+      ],
+      "answer": "set",
+      "explain": "Усталена сполука: set a precedent.\n✗ do — з precedent не вживається.\n✗ make — поширена помилка, але нормою є саме set.\n✗ put — сполучається з put pressure, put emphasis."
+    },
+    {
+      "id": "c1-reg-hedging-01",
+      "topic": "c1-reg-hedging",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "The data ___ that engagement declines after the third week.",
+      "options": [
+        "proves",
+        "suggests",
+        "shows definitely",
+        "says"
+      ],
+      "answer": "suggests",
+      "explain": "В академічному стилі висновки пом'якшують: suggests, indicates, appears to show.\n✗ proves — категорична заява, яку одні дані рідко виправдовують.\n✗ shows definitely — definitely в науковому тексті недоречне, це розмовний посилювач.\n✗ says — про дані не вживається, це слово для людей і документів."
+    },
+    {
+      "id": "c1-reg-nominalisation-01",
+      "topic": "c1-reg-nominalisation",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "The report calls for a thorough ___ of current procedures.",
+      "options": [
+        "review",
+        "reviewing",
+        "reviewed",
+        "to review"
+      ],
+      "answer": "review",
+      "explain": "Після прикметника thorough і артикля a потрібен ІМЕННИК: a thorough review. Номіналізація типова для ділового стилю.\n✗ reviewing — герундій із артиклем і прикметником у цій позиції не вживається.\n✗ reviewed — дієприкметник, іменником бути не може.\n✗ to review — інфінітив після a thorough неможливий."
+    },
+    {
+      "id": "c1-wf-noun-suffix-01",
+      "topic": "c1-wf-noun-suffix",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "The committee questioned the ___ of the evidence presented.",
+      "options": [
+        "relevant",
+        "relevance",
+        "relevantly",
+        "relevancy"
+      ],
+      "answer": "relevance",
+      "explain": "Після the потрібен іменник. Від relevant він утворюється суфіксом -ance: relevance.\n✗ relevant — прикметник, після the з подальшим of не вживається.\n✗ relevantly — прислівник, у цій позиції неможливий.\n✗ relevancy — форма існує, але в британському академічному вжитку нормою є relevance."
+    },
+    {
+      "id": "c1-wf-negative-prefix-01",
+      "topic": "c1-wf-negative-prefix",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "His account of events turned out to be entirely ___ with the witness statements.",
+      "options": [
+        "unconsistent",
+        "inconsistent",
+        "disconsistent",
+        "misconsistent"
+      ],
+      "answer": "inconsistent",
+      "explain": "Consistent утворює заперечення префіксом in-: inconsistent.\n✗ unconsistent — un- із цим коренем не вживається, хоч і продуктивний загалом.\n✗ disconsistent — такого слова немає.\n✗ misconsistent — mis- означає «неправильно», а не заперечення."
+    }
+  ]
+}

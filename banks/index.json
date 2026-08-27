@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "questionLevels": [
     "A1",
     "A2",
@@ -17,6 +17,14 @@
     {
       "id": "B2",
       "label": "B2"
+    },
+    {
+      "id": "A2",
+      "label": "A2"
+    },
+    {
+      "id": "C1",
+      "label": "C1"
     }
   ],
   "categories": {
@@ -75,6 +83,16 @@
       "file": "b2-01.json",
       "level": "B2",
       "title": "Пак B2 — розширення"
+    },
+    {
+      "file": "a2-01.json",
+      "level": "A2",
+      "title": "Пак A2 — основа"
+    },
+    {
+      "file": "c1-01.json",
+      "level": "C1",
+      "title": "Пак C1 — розширення"
     }
   ]
 }
