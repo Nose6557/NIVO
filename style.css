@@ -331,6 +331,10 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 }
 
 /* ---------- онбординг рівня ---------- */
+/* Контент онбордингу короткий — центруємо по вертикалі у вікні.
+   margin:auto на flex-елементі центрує, але не обрізає верх, якщо контент вищий. */
+#screen-onboard.active{display:flex; flex-direction:column; min-height:100vh}
+#screen-onboard .shell{margin:auto}
 .ob-head{margin-bottom:28px; text-align:center}
 .ob-head h1{font-size:24px; margin-bottom:10px}
 .ob-list{display:flex; flex-direction:column; gap:10px; margin-bottom:20px}
