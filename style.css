@@ -355,14 +355,35 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   background:rgba(20,22,27,.88); padding:24px
 }
 .level-up[hidden]{display:none}
+.level-up-fx{
+  position:absolute; inset:0; width:100%; height:100%;
+  pointer-events:none; z-index:1
+}
 .level-up-card{
+  position:relative; z-index:2;
   background:var(--iron-2); border:1px solid var(--straw); border-radius:var(--r);
-  padding:40px 32px; text-align:center; max-width:380px; width:100%
+  padding:40px 32px; text-align:center; max-width:380px; width:100%;
+  display:flex; flex-direction:column; gap:16px;
+  animation:level-up-pop .5s cubic-bezier(.17,.89,.32,1.28) both
 }
 .level-up-card h2{
-  font-size:34px; color:var(--straw); margin-bottom:12px
+  font-size:34px; color:var(--straw);
+  animation:level-up-glow 1.8s ease-in-out .3s infinite alternate
 }
-.level-up-card .note{margin-bottom:24px}
+.level-up-card .note{font-size:14px; margin:0}
+.level-up-card .btn{width:100%; font-size:14px; margin-top:8px}
+@keyframes level-up-pop{
+  from{opacity:0; transform:scale(.82) translateY(14px)}
+  to{opacity:1; transform:none}
+}
+@keyframes level-up-glow{
+  from{text-shadow:0 0 0 rgba(217,164,65,0)}
+  to{text-shadow:0 0 26px rgba(217,164,65,.6)}
+}
+@media (prefers-reduced-motion:reduce){
+  .level-up-fx{display:none}
+  .level-up-card,.level-up-card h2{animation:none}
+}
 
 /* ---------- зниження рівня: тихо ---------- */
 .level-toast{

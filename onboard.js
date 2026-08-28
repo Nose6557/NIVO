@@ -196,10 +196,101 @@
     const t = $("level-up-title");
     const s = $("level-up-sub");
     if (t) t.textContent = `Рівень ${changed.to}`;
-    if (s) s.textContent = `Ти впевнено тягнеш ${changed.from}. Далі буде складніше — і цікавіше.`;
+    if (s) s.textContent = `Ти впевнено тягнеш ${changed.from}. Далі буде складніше — і цікавіше.`;
     el.hidden = false;
+    fireworks($("level-up-fx"));
     const btn = $("level-up-close");
-    if (btn) { btn.onclick = () => { el.hidden = true; }; btn.focus(); }
+    if (btn) { btn.onclick = () => { el.hidden = true; stopFireworks(); }; btn.focus(); }
+  }
+
+  /* ---------- салют на підвищенні рівня ---------- */
+
+  let fxRAF = 0;
+  let fxCleanup = null;
+
+  function stopFireworks() {
+    if (fxRAF) cancelAnimationFrame(fxRAF);
+    fxRAF = 0;
+    if (fxCleanup) { fxCleanup(); fxCleanup = null; }
+  }
+
+  function fireworks(canvas) {
+    stopFireworks();
+    if (!canvas || !canvas.getContext) return;
+    const mq = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq && mq.matches) return;
+
+    const ctx = canvas.getContext("2d");
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let W = 0, H = 0;
+    function resize() {
+      W = canvas.clientWidth; H = canvas.clientHeight;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+    window.addEventListener("resize", resize);
+    fxCleanup = () => window.removeEventListener("resize", resize);
+
+    const COLORS = ["#d9a441", "#b4632c", "#6f5a9e", "#3f7fb5", "#5fa87c", "#eceae4"];
+    const DURATION = 2800;   // скільки часу запускаються нові залпи
+    const GRAVITY = 0.045;
+    const parts = [];
+
+    function burst(x, y) {
+      const n = 44 + (Math.random() * 26 | 0);
+      const color = COLORS[Math.random() * COLORS.length | 0];
+      const speed = 2.2 + Math.random() * 2.4;
+      for (let i = 0; i < n; i++) {
+        const a = (Math.PI * 2 * i) / n + Math.random() * 0.25;
+        const v = speed * (0.55 + Math.random() * 0.7);
+        parts.push({
+          x, y,
+          vx: Math.cos(a) * v,
+          vy: Math.sin(a) * v,
+          life: 1,
+          decay: 0.008 + Math.random() * 0.013,
+          color,
+          size: 1.5 + Math.random() * 1.9
+        });
+      }
+    }
+
+    const start = performance.now();
+    let nextBurst = 0;
+
+    function frame(now) {
+      const elapsed = now - start;
+      ctx.clearRect(0, 0, W, H);
+
+      if (elapsed < DURATION && now >= nextBurst) {
+        burst(W * (0.18 + Math.random() * 0.64), H * (0.16 + Math.random() * 0.4));
+        nextBurst = now + 240 + Math.random() * 260;
+      }
+
+      for (let i = parts.length - 1; i >= 0; i--) {
+        const p = parts[i];
+        p.vx *= 0.99;
+        p.vy = p.vy * 0.99 + GRAVITY;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life -= p.decay;
+        if (p.life <= 0) { parts.splice(i, 1); continue; }
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+
+      if (parts.length || elapsed < DURATION) {
+        fxRAF = requestAnimationFrame(frame);
+      } else {
+        stopFireworks();
+      }
+    }
+    fxRAF = requestAnimationFrame(frame);
   }
 
   /** Зниження — тихе перекалібрування. Говоримо про контент, не про статус. */
