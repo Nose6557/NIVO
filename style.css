@@ -75,7 +75,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .mono{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.06em; text-transform:uppercase}
 .eyebrow{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--straw-fg); margin-bottom:16px}
 .note{font-size:12px; color:var(--ash); margin-bottom:8px}
-.note.dim{font-size:12px}
+.note.dim{font-size:14px}
 
 /* ——— логотип ——— */
 .mark{text-align:center; padding:56px 0 36px}
