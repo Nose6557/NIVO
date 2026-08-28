@@ -197,13 +197,19 @@
     const s = $("level-up-sub");
     if (t) t.textContent = `Рівень ${changed.to}`;
     if (s) s.textContent = `Ти впевнено тягнеш ${changed.from}. Далі буде складніше — і цікавіше.`;
+    el.dataset.level = changed.to;   // колір обводки/сяйва підбирає CSS за рівнем
     el.hidden = false;
-    fireworks($("level-up-fx"));
+    fireworks($("level-up-fx"), LEVEL_HUE[changed.to]);
     const btn = $("level-up-close");
     if (btn) { btn.onclick = () => { el.hidden = true; stopFireworks(); }; btn.focus(); }
   }
 
   /* ---------- салют на підвищенні рівня ---------- */
+
+  // Колір щабля: A1–A2 солома, B1 бронза, B2 фіолет, C1–C2 синь (майстерність).
+  const LEVEL_HUE = {
+    A2: "#d9a441", B1: "#b4632c", B2: "#6f5a9e", C1: "#3f7fb5", C2: "#3f7fb5"
+  };
 
   let fxRAF = 0;
   let fxCleanup = null;
@@ -214,7 +220,7 @@
     if (fxCleanup) { fxCleanup(); fxCleanup = null; }
   }
 
-  function fireworks(canvas) {
+  function fireworks(canvas, accent) {
     stopFireworks();
     if (!canvas || !canvas.getContext) return;
     const mq = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -232,7 +238,9 @@
     window.addEventListener("resize", resize);
     fxCleanup = () => window.removeEventListener("resize", resize);
 
-    const COLORS = ["#d9a441", "#b4632c", "#6f5a9e", "#3f7fb5", "#5fa87c", "#eceae4"];
+    // Колір щабля переважає в палітрі залпів, решта — акценти.
+    const base = ["#d9a441", "#b4632c", "#6f5a9e", "#3f7fb5", "#5fa87c", "#eceae4"];
+    const COLORS = accent ? [accent, accent, accent, "#eceae4", ...base] : base;
     const DURATION = 2800;   // скільки часу запускаються нові залпи
     const GRAVITY = 0.045;
     const parts = [];

@@ -361,13 +361,21 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 }
 .level-up-card{
   position:relative; z-index:2;
-  background:var(--iron-2); border:1px solid var(--straw); border-radius:var(--r);
+  /* колір щабля: обводка й сяйво заголовка залежать від досягнутого рівня.
+     --edge — колір рамки/тексту, --glow — той самий колір у RGB для text-shadow. */
+  --edge:var(--straw);
+  --glow:217,164,65;
+  background:var(--iron-2); border:1px solid var(--edge); border-radius:var(--r);
   padding:40px 32px; text-align:center; max-width:380px; width:100%;
   display:flex; flex-direction:column; gap:16px;
   animation:level-up-pop .5s cubic-bezier(.17,.89,.32,1.28) both
 }
+#level-up[data-level="B1"] .level-up-card{ --edge:var(--bronze); --glow:180,99,44 }
+#level-up[data-level="B2"] .level-up-card{ --edge:var(--violet); --glow:111,90,158 }
+#level-up[data-level="C1"] .level-up-card{ --edge:var(--blue);   --glow:63,127,181 }
+#level-up[data-level="C2"] .level-up-card{ --edge:var(--blue);   --glow:63,127,181 }
 .level-up-card h2{
-  font-size:34px; color:var(--straw);
+  font-size:34px; color:var(--edge);
   animation:level-up-glow 1.8s ease-in-out .3s infinite alternate
 }
 .level-up-card .note{font-size:14px; margin:0}
@@ -377,8 +385,8 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   to{opacity:1; transform:none}
 }
 @keyframes level-up-glow{
-  from{text-shadow:0 0 0 rgba(217,164,65,0)}
-  to{text-shadow:0 0 26px rgba(217,164,65,.6)}
+  from{text-shadow:0 0 0 rgba(var(--glow),0)}
+  to{text-shadow:0 0 26px rgba(var(--glow),.6)}
 }
 @media (prefers-reduced-motion:reduce){
   .level-up-fx{display:none}
