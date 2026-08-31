@@ -425,3 +425,11 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .lock-switch[aria-checked="true"]::after{transform:translateX(18px); background:#1a1408}
 .lock-switch:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
 .menu-hint{font-size:12px; line-height:1.4}
+
+/* переклад речення у фідбеку */
+.ua-wrap   { margin-top: 8px; }
+.ua-toggle { background: none; border: 0; padding: 0; cursor: pointer;
+             font: inherit; font-size: .85em; opacity: .7;
+             text-decoration: underline; color: inherit; }
+.ua-toggle:hover { opacity: 1; }
+.ua-text   { margin: 0; font-size: .9em; opacity: .75; }

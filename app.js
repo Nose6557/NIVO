@@ -8,7 +8,11 @@ let TOPICS = {};      // slug теми     -> { category, label }
 
 /* Змінюй, коли оновлюєш banks/ — інакше браузер може віддавати
    стару версію з кешу GitHub Pages. */
-const BANK_VERSION = "2026-08-21";
+const BANK_VERSION = "2026-08-31";
+
+/* переклад речення під поясненням */
+const UA_OPEN = new Set(["A1", "A2", "B1"]);   // на цих рівнях показуємо одразу
+let UA_REVEALED = false;                        // розкрив один раз — далі вся сесія відкрита
 
 const SESSION_LEN = 15;
 
@@ -185,6 +189,7 @@ async function startSession(weakOnly) {
   idx = 0;
   streak = 0;
   answersLog = [];
+  UA_REVEALED = false;
   session = {
     started_at: new Date().toISOString(),
     total: queue.length,
@@ -330,11 +335,28 @@ function grade(q, correct) {
   v.textContent = correct ? "Правильно" : "Правильна відповідь: " + q.answer;
   v.className = "verdict " + (correct ? "ok" : "no");
   $("explain").textContent = q.explain;
+  renderUa(q);
   $("feedback").hidden = false;
   $("btn-next").hidden = false;
   $("btn-next").textContent = (idx + 1 >= queue.length) ? "Завершити" : "Далі";
   $("btn-next").focus();
 }
+
+function renderUa(q) {
+  const wrap = $("ua-wrap");
+  if (!q.ua) { wrap.hidden = true; return; }
+  const open = UA_OPEN.has(q.level) || UA_REVEALED;
+  $("ua-text").textContent = q.ua;
+  $("ua-text").hidden = !open;
+  $("ua-toggle").hidden = open;
+  wrap.hidden = false;
+}
+
+$("ua-toggle").addEventListener("click", () => {
+  UA_REVEALED = true;
+  $("ua-toggle").hidden = true;
+  $("ua-text").hidden = false;
+});
 
 /* ---------- кінець сесії ---------- */
 async function finish() {
