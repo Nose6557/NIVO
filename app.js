@@ -665,6 +665,7 @@ function applyTheme(theme) {
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta) meta.setAttribute("content", isLight ? "#f3f4f6" : "#14161b");
   try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+  try { window.Store && Store.saveTheme && Store.saveTheme(theme); } catch (e) {}
 }
 
 (function initTheme() {
@@ -772,6 +773,7 @@ Store.onPasswordRecovery(() => {
   }
   const u = await Store.init();
   if (u) {
+    try { Store.saveTheme && Store.saveTheme(localStorage.getItem(THEME_KEY) || "dark"); } catch (e) {}
     await syncLevelFromProfile();
     if (needsOnboarding()) {
       Onboard.start(BANK, async () => { await renderHome(); show("home"); });

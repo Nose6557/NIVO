@@ -219,6 +219,23 @@
       return true;
     },
 
+    // так само тихо вимикається, якщо колонки profiles.theme ще немає
+    _themeCol: true,
+
+    async saveTheme(theme) {
+      if (mode !== "supabase" || !sb || !user || !this._themeCol) return false;
+      const { error } = await sb.from("profiles")
+        .upsert({ id: user.id, theme }, { onConflict: "id" });
+      if (error) {
+        if (this._missingCol(error)) {
+          this._themeCol = false;
+          console.info("profiles: колонки theme ще немає — тему тримаємо локально");
+        } else console.warn("theme upsert", error);
+        return false;
+      }
+      return true;
+    },
+
     /* ---------- читання статистики ---------- */
     async getStats() {
       if (mode === "supabase" && sb && user) {
