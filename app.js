@@ -11,8 +11,8 @@ let TOPICS = {};      // slug теми     -> { category, label }
 const BANK_VERSION = "2026-08-31";
 
 /* переклад речення під поясненням */
-const UA_OPEN = new Set(["A1", "A2", "B1"]);   // на цих рівнях показуємо одразу
-let UA_REVEALED = false;                        // розкрив один раз — далі вся сесія відкрита
+const UA_OPEN = new Set(["A1", "A2", "B1"]);   // на цих рівнях відкрито за замовчуванням
+let UA_PREF = null;                             // null — дефолт рівня; true/false — вибір користувача
 
 const SESSION_LEN = 15;
 
@@ -189,7 +189,7 @@ async function startSession(weakOnly) {
   idx = 0;
   streak = 0;
   answersLog = [];
-  UA_REVEALED = false;
+  UA_PREF = null;
   session = {
     started_at: new Date().toISOString(),
     total: queue.length,
@@ -345,17 +345,19 @@ function grade(q, correct) {
 function renderUa(q) {
   const wrap = $("ua-wrap");
   if (!q.ua) { wrap.hidden = true; return; }
-  const open = UA_OPEN.has(q.level) || UA_REVEALED;
+  const open = (UA_PREF === null) ? UA_OPEN.has(q.level) : UA_PREF;
   $("ua-text").textContent = q.ua;
   $("ua-text").hidden = !open;
-  $("ua-toggle").hidden = open;
+  $("ua-toggle").textContent = open ? "Сховати переклад" : "Переклад";
+  $("ua-toggle").setAttribute("aria-expanded", String(open));
   wrap.hidden = false;
 }
 
 $("ua-toggle").addEventListener("click", () => {
-  UA_REVEALED = true;
-  $("ua-toggle").hidden = true;
-  $("ua-text").hidden = false;
+  UA_PREF = $("ua-text").hidden;   // згорнуто → розгортаємо, і навпаки
+  $("ua-text").hidden = !UA_PREF;
+  $("ua-toggle").textContent = UA_PREF ? "Сховати переклад" : "Переклад";
+  $("ua-toggle").setAttribute("aria-expanded", String(UA_PREF));
 });
 
 /* ---------- кінець сесії ---------- */
