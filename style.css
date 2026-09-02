@@ -273,11 +273,11 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .feedback + .btn{margin-top:16px}
 
 /* ——— підсумок ——— */
-.result{text-align:center; margin-top:32px}
-.result-score{font-size:52px; margin-bottom:12px}
-.result-line{color:var(--ash); font-size:16px; margin-bottom:28px}
-.res-breakdown{text-align:left; margin-bottom:28px; display:flex; flex-direction:column; gap:8px}
-.result .btn + .btn{margin-top:12px}
+.result{text-align:center}
+.result > *{margin:0}                 /* рівний вертикальний ритм дає gap панелі — 16px */
+.result-score{font-size:52px}
+.result-line{color:var(--ash); font-size:16px}
+.res-breakdown{text-align:left; display:flex; flex-direction:column; gap:8px}
 .res-row{display:flex; justify-content:space-between; font-size:16px; padding:8px 0; border-bottom:1px solid var(--iron-3)}
 .res-row span:last-child{font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:var(--ash)}
 
