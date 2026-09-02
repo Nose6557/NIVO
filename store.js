@@ -36,10 +36,29 @@
     try { localStorage.setItem(LS, JSON.stringify(d)); } catch {}
   }
 
+  /* Наскрізна серія «правильних поспіль». Живе окремим ключем і на пристрої:
+     це лічильник точності, а не межа сесії, тому не обнуляється між сесіями
+     і не впирається в SESSION_LEN. Найкраще значення дублюється тут, щоб
+     пережити кинуту на середині сесію (answers пишуться лише у finish()). */
+  const LS_STREAK = "nivo_streak_v1";
+  function readStreak() {
+    try {
+      const d = JSON.parse(localStorage.getItem(LS_STREAK) || "null");
+      return { current: (d && d.current) || 0, best: (d && d.best) || 0 };
+    } catch { return { current: 0, best: 0 }; }
+  }
+  function writeStreak(current, best) {
+    try { localStorage.setItem(LS_STREAK, JSON.stringify({ current, best })); } catch {}
+  }
+
   /* ---------- авторизація ---------- */
   const Store = {
     get mode() { return mode; },
     get user() { return user; },
+
+    /* серія правильних поспіль */
+    getStreak() { return readStreak(); },
+    setStreak(current, best) { writeStreak(current, best); },
 
     async init() {
       if (!sb) return null;
@@ -241,7 +260,7 @@
       if (mode === "supabase" && sb && user) {
         const [s, a, w] = await Promise.all([
           sb.from("sessions").select("*").eq("user_id", user.id),
-          sb.from("answers").select("question_id,category,is_correct,response_ms,answered_at").eq("user_id", user.id),
+          sb.from("answers").select("question_id,category,is_correct,response_ms,answered_at").eq("user_id", user.id).order("answered_at", { ascending: true }),
           sb.from("weak_items").select("*").eq("user_id", user.id)
         ]);
         return {

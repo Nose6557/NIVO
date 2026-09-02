@@ -187,14 +187,14 @@ async function startSession(weakOnly) {
   }
   queue = q;
   idx = 0;
-  streak = 0;
+  streak = Store.getStreak().current;   // серія тягнеться між сесіями
   answersLog = [];
   UA_PREF = null;
   session = {
     started_at: new Date().toISOString(),
     total: queue.length,
     correct: 0,
-    bestStreak: 0
+    bestStreak: streak
   };
   show("play");
   renderQuestion();
@@ -330,6 +330,8 @@ function grade(q, correct) {
   } else {
     streak = 0;
   }
+  const st = Store.getStreak();
+  Store.setStreak(streak, Math.max(st.best, streak));
 
   const v = $("verdict");
   v.textContent = correct ? "Правильно" : "Правильна відповідь: " + q.answer;
@@ -394,6 +396,16 @@ async function finish() {
 }
 
 /* ---------- головний екран ---------- */
+// найдовший ланцюг is_correct поспіль у хронологічному масиві відповідей
+function longestCorrectRun(answers) {
+  let best = 0, run = 0;
+  for (const a of (answers || [])) {
+    if (a.is_correct) { run++; if (run > best) best = run; }
+    else run = 0;
+  }
+  return best;
+}
+
 function temperColor(acc) {
   if (acc >= 0.85) return "var(--blue)";
   if (acc >= 0.7) return "var(--violet)";
@@ -411,9 +423,13 @@ async function renderHome() {
   $("s-acc").textContent = stats.answers.length
     ? Math.round(ok / stats.answers.length * 100) + "%"
     : "—";
-  $("s-streak").textContent = stats.sessions.length
-    ? Math.max(...stats.sessions.map(s => s.best_streak || 0))
-    : 0;
+  // найкраща серія = найдовший ланцюг правильних поспіль за всю історію
+  // відповідей (наскрізно через сесії), підстрахований дзеркалом у Store
+  // на випадок кинутих сесій
+  $("s-streak").textContent = Math.max(
+    longestCorrectRun(stats.answers),
+    Store.getStreak().best
+  );
 
   const byCat = {};
   stats.answers.forEach(a => {
