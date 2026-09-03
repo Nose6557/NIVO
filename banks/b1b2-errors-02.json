@@ -1,0 +1,1109 @@
+{
+  "schema": 2,
+  "pack": "b1b2-errors-02",
+  "title": "Персональні помилки — партія 2",
+  "level": "B1-B2",
+  "topics": {
+    "art-the-known-page": {
+      "category": "articles",
+      "label": "the перед відомою секцією/сторінкою"
+    },
+    "art-a-new-countable": {
+      "category": "articles",
+      "label": "a/an перед новим злічуваним"
+    },
+    "art-no-det-stack": {
+      "category": "articles",
+      "label": "без the перед присвійником"
+    },
+    "syn-intro-comma": {
+      "category": "syntax",
+      "label": "кома після ввідного слова"
+    },
+    "syn-no-comma-thatclause": {
+      "category": "syntax",
+      "label": "без зайвої коми перед підрядним"
+    },
+    "syn-comma-splice2": {
+      "category": "syntax",
+      "label": "comma splice — не з'єднувати два речення комою"
+    },
+    "sp-proper-caps": {
+      "category": "spelling",
+      "label": "великі літери у власних назвах"
+    },
+    "sp-section-caps": {
+      "category": "spelling",
+      "label": "назви секцій — єдиний стиль регістру"
+    },
+    "sp-product-compound": {
+      "category": "spelling",
+      "label": "складені назви — одним словом"
+    },
+    "voc-take-screenshot": {
+      "category": "vocabulary",
+      "label": "take a screenshot, не make"
+    },
+    "voc-current-vs-actual": {
+      "category": "vocabulary",
+      "label": "current, не actual (хибний друг)"
+    },
+    "voc-than-then": {
+      "category": "vocabulary",
+      "label": "than для порівняння, then для послідовності"
+    },
+    "sp-queue": {
+      "category": "spelling",
+      "label": "правопис queue"
+    },
+    "sp-updated-typo": {
+      "category": "spelling",
+      "label": "правопис updated"
+    },
+    "sp-cyrillic-latin": {
+      "category": "spelling",
+      "label": "не змішувати кирилицю й латиницю"
+    },
+    "ten-will-base": {
+      "category": "tenses",
+      "label": "після will/'ll — базова форма"
+    },
+    "ten-future-will-be": {
+      "category": "tenses",
+      "label": "майбутня дія — will be"
+    },
+    "agr-team-requests": {
+      "category": "agreement",
+      "label": "-s у 3-й особі однини"
+    },
+    "prep-in-settings": {
+      "category": "prepositions",
+      "label": "in для розташування в інтерфейсі"
+    },
+    "prep-for-duration": {
+      "category": "prepositions",
+      "label": "for для тривалості"
+    },
+    "voc-fewer-less": {
+      "category": "vocabulary",
+      "label": "fewer зі злічуваними"
+    },
+    "agr-every-singular": {
+      "category": "agreement",
+      "label": "every/each + однина"
+    },
+    "ord-probably-placement": {
+      "category": "word order",
+      "label": "місце probably"
+    },
+    "ord-indirect-q2": {
+      "category": "word order",
+      "label": "непряме питання — прямий порядок"
+    },
+    "syn-subject-required": {
+      "category": "syntax",
+      "label": "підмет обов'язковий"
+    },
+    "syn-aux-do-question": {
+      "category": "syntax",
+      "label": "питальний порядок у другій частині питання"
+    },
+    "syn-passive-needed": {
+      "category": "syntax",
+      "label": "пасив, коли дію виконують над об'єктом"
+    },
+    "voc-no-vs-not": {
+      "category": "vocabulary",
+      "label": "not / no longer замість no"
+    },
+    "syn-tag-question": {
+      "category": "syntax",
+      "label": "хвостове питання — протилежна полярність"
+    }
+  },
+  "questions": [
+    {
+      "id": "art-the-known-page-01",
+      "topic": "art-the-known-page",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "Added ___ Account Access page for CPA users.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "— (без артикля)"
+      ],
+      "answer": "the",
+      "explain": "Це конкретна, названа сторінка, яку читач упізнає → the.\n✗ a / an — ставляться перед новим, незнайомим предметом в однині.\n✗ без артикля — тоді «page» звучало б як абстракція, а не конкретна сторінка інтерфейсу.\nТипова помилка українців: артикля немає в рідній мові, тож він просто випадає.",
+      "ua": "Додав сторінку Account Access для CPA-користувачів."
+    },
+    {
+      "id": "art-the-known-page-02",
+      "topic": "art-the-known-page",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "Please open ___ Statement Settings tab and check the toggle.",
+      "options": [
+        "the",
+        "a",
+        "an",
+        "—"
+      ],
+      "answer": "the",
+      "explain": "Вкладка одна й відома обом співрозмовникам → the.\n✗ a / an — для першої згадки незнайомого предмета.\n✗ без артикля — «tab» тут конкретний елемент інтерфейсу, не поняття.",
+      "ua": "Відкрий вкладку Statement Settings і перевір перемикач."
+    },
+    {
+      "id": "art-the-known-page-03",
+      "topic": "art-the-known-page",
+      "level": "B1",
+      "type": "fill",
+      "prompt": "I moved the button to ___ Member Dashboard yesterday.",
+      "answer": "the",
+      "accept": [
+        "the",
+        "The"
+      ],
+      "explain": "Дашборд конкретний і відомий → the перед назвою секції.\nЛогіка: ми говоримо не про «якийсь дашборд», а про той самий, що в продукті.",
+      "ua": "Учора переніс кнопку в Member Dashboard."
+    },
+    {
+      "id": "art-a-new-countable-01",
+      "topic": "art-a-new-countable",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "It's ___ improvement over the old flow.",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "—"
+      ],
+      "answer": "an",
+      "explain": "«improvement» — новий злічуваний іменник в однині, починається з голосного звуку [ɪ] → an.\n✗ a — перед голосним звуком не вживається.\n✗ the — тут не конкретне покращення, а оцінка «одне з покращень».\n✗ без артикля — «It is improvement» (калька без артикля) — типова помилка; правильно «It's an improvement».",
+      "ua": "Це покращення порівняно зі старим флоу."
+    },
+    {
+      "id": "art-a-new-countable-02",
+      "topic": "art-a-new-countable",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "We hit ___ issue with the queue yesterday.",
+      "options": [
+        "an",
+        "a",
+        "the",
+        "—"
+      ],
+      "answer": "an",
+      "explain": "«issue» починається з голосного звуку [ˈɪ] → an issue.\n✗ a — перед голосним звуком не ставиться.\n✗ the — issue згадується вперше, він ще не відомий читачеві.\n✗ без артикля — злічуваний іменник в однині потребує артикля.",
+      "ua": "Учора натрапили на проблему з чергою."
+    },
+    {
+      "id": "art-a-new-countable-03",
+      "topic": "art-a-new-countable",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "That would be ___ useful feature for CPA users.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "—"
+      ],
+      "answer": "a",
+      "explain": "Артикль обирається за ЗВУКОМ: «useful» читається [ˈjuːsfʊl] — приголосний звук [j] → a useful.\n✗ an — перед звуком [j] не ставиться (порівняй: a university, a user).\n✗ the — фіча ще гіпотетична, не конкретна.",
+      "ua": "Це була б корисна фіча для CPA-користувачів."
+    },
+    {
+      "id": "art-no-det-stack-01",
+      "topic": "art-no-det-stack",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "The error came from ___ email, not from mine.",
+      "options": [
+        "Bill's",
+        "the Bill's",
+        "a Bill's",
+        "the Bills"
+      ],
+      "answer": "Bill's",
+      "explain": "Присвійник 's уже робить іменник визначеним, тому the зайве.\n✗ the Bill's / a Bill's — не можна ставити два визначники поспіль (артикль + присвійник).\n✗ the Bills — це вже прізвище в множині, інший зміст.",
+      "ua": "Помилка прийшла з листа Білла, а не з мого."
+    },
+    {
+      "id": "art-no-det-stack-02",
+      "topic": "art-no-det-stack",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "Your report is done — ___ will be next.",
+      "options": [
+        "yours",
+        "the your one",
+        "the yours",
+        "your one"
+      ],
+      "answer": "yours",
+      "explain": "Присвійний займенник «yours» самодостатній — жодного артикля.\n✗ the your one / the yours — присвійник і артикль разом неможливі.\n✗ your one — розмовно припустимо, але стандарт — «yours».",
+      "ua": "Твій звіт готовий — твій буде наступним."
+    },
+    {
+      "id": "art-no-det-stack-03",
+      "topic": "art-no-det-stack",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "Let's merge ___ branch first.",
+      "options": [
+        "my",
+        "the my",
+        "mine",
+        "a my"
+      ],
+      "answer": "my",
+      "explain": "Перед іменником — присвійний прикметник «my», без артикля.\n✗ the my / a my — два визначники поспіль неможливі.\n✗ mine — вживається БЕЗ іменника (merge mine), а тут далі стоїть «branch».",
+      "ua": "Спершу змерджмо мою гілку."
+    },
+    {
+      "id": "syn-intro-comma-01",
+      "topic": "syn-intro-comma",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери коректний варіант із ввідним словом:",
+      "options": [
+        "Initially, in v2 we used a modal.",
+        "Initially in v2 we used a modal.",
+        "Initially in v2, we used a modal.",
+        "Initially: in v2 we used a modal."
+      ],
+      "answer": "Initially, in v2 we used a modal.",
+      "explain": "Після ввідного слова (Initially, Actually, So, Basically) ставиться кома.\n✗ без коми — ввідне слово зливається з реченням.\n✗ кома лише перед «we» — відділяє не те.\n✗ двокрапка — тут не перелік і не пояснення.",
+      "ua": "Спочатку, у v2, ми використовували модалку."
+    },
+    {
+      "id": "syn-intro-comma-02",
+      "topic": "syn-intro-comma",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери коректний варіант:",
+      "options": [
+        "Actually, this is a caching bug.",
+        "Actually this is a caching bug.",
+        "Actually this is a caching bug,",
+        "Actually; this is a caching bug."
+      ],
+      "answer": "Actually, this is a caching bug.",
+      "explain": "Ввідне «Actually» на початку речення відділяється комою.\n✗ без коми — стандартна пунктуація вимагає її після ввідного слова.\n✗ кома в кінці / крапка з комою — не на місці.",
+      "ua": "Насправді це баг кешування."
+    },
+    {
+      "id": "syn-no-comma-thatclause-01",
+      "topic": "syn-no-comma-thatclause",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери коректний варіант:",
+      "options": [
+        "It seems this is not a bug.",
+        "It seems, this is not a bug.",
+        "It seems this is not a bug,",
+        "It, seems this is not a bug."
+      ],
+      "answer": "It seems this is not a bug.",
+      "explain": "Після «It seems / I think / I guess» підрядне йде БЕЗ коми (на відміну від української).\n✗ «It seems, this…» — калька з української пунктуації, кома тут зайва.\n✗ решта варіантів — коми не на місці.",
+      "ua": "Здається, це не баг."
+    },
+    {
+      "id": "syn-no-comma-thatclause-02",
+      "topic": "syn-no-comma-thatclause",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери коректний варіант:",
+      "options": [
+        "I think we should ship it.",
+        "I think, we should ship it.",
+        "I think we should ship it,",
+        "I think: we should ship it."
+      ],
+      "answer": "I think we should ship it.",
+      "explain": "«I think» + підрядне речення — без коми в англійській.\n✗ «I think, we…» — типова калькована помилка.\n✗ двокрапка / кома в кінці — недоречні.",
+      "ua": "Гадаю, нам варто це випустити."
+    },
+    {
+      "id": "syn-comma-splice2-01",
+      "topic": "syn-comma-splice2",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери коректно поєднані речення:",
+      "options": [
+        "The logs were empty, so I checked the network tab.",
+        "The logs were empty, I checked the network tab.",
+        "The logs were empty I checked the network tab.",
+        "The logs were empty; so I checked the network tab,"
+      ],
+      "answer": "The logs were empty, so I checked the network tab.",
+      "explain": "Два незалежні речення поєднуються сполучником (so, and, but) або крапкою/крапкою з комою — але не лише комою.\n✗ «…empty, I checked…» — це comma splice, класична помилка.\n✗ без розділового знака — це run-on.\n✗ останній варіант — зайва кома в кінці.",
+      "ua": "Логи були порожні, тож я перевірив вкладку Network."
+    },
+    {
+      "id": "syn-comma-splice2-02",
+      "topic": "syn-comma-splice2",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери коректний варіант:",
+      "options": [
+        "It's not a bug; it's a config issue.",
+        "It's not a bug, it's a config issue.",
+        "It's not a bug it's a config issue.",
+        "It's not a bug: it's a config issue,"
+      ],
+      "answer": "It's not a bug; it's a config issue.",
+      "explain": "Два самостійні речення можна поєднати крапкою з комою.\n✗ «…a bug, it's…» — comma splice: сама лише кома між двома реченнями недопустима.\n✗ без знака — run-on.\n✗ двокрапка + кома в кінці — недоречно.",
+      "ua": "Це не баг — це проблема конфігурації."
+    },
+    {
+      "id": "sp-proper-caps-01",
+      "topic": "sp-proper-caps",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "We exported the frames from ___ into Storybook.",
+      "options": [
+        "Figma",
+        "figma",
+        "FIGMA",
+        "the figma"
+      ],
+      "answer": "Figma",
+      "explain": "Назви продуктів пишуться з великої літери: Figma.\n✗ figma / FIGMA — неправильний регістр.\n✗ the figma — артикль перед власною назвою продукту не потрібен.",
+      "ua": "Ми експортували фрейми з Figma у Storybook."
+    },
+    {
+      "id": "sp-proper-caps-02",
+      "topic": "sp-proper-caps",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "I asked ___ to summarize the thread.",
+      "options": [
+        "Claude",
+        "claude",
+        "CLAUDE",
+        "the Claude"
+      ],
+      "answer": "Claude",
+      "explain": "Ім'я/назва продукту — з великої: Claude.\n✗ claude / CLAUDE — хибний регістр.\n✗ the Claude — артикль перед власною назвою зайвий.",
+      "ua": "Я попросив Claude підсумувати тред."
+    },
+    {
+      "id": "sp-section-caps-01",
+      "topic": "sp-section-caps",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "The chart lives in ___.",
+      "options": [
+        "the Member Dashboard",
+        "Member dashboard",
+        "member Dashboard",
+        "a Member Dashboard"
+      ],
+      "answer": "the Member Dashboard",
+      "explain": "Складена назва секції — обидва слова з великої літери, а перед конкретною секцією — the.\n✗ «Member dashboard» / «member Dashboard» — непослідовний регістр.\n✗ «a Member Dashboard» — секція одна й відома, тому не a.",
+      "ua": "Графік розташований у Member Dashboard."
+    },
+    {
+      "id": "sp-section-caps-02",
+      "topic": "sp-section-caps",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "Change the toggle in ___.",
+      "options": [
+        "Issuer Settings",
+        "issuer settings",
+        "Issuer settings",
+        "the Issuer Setting"
+      ],
+      "answer": "Issuer Settings",
+      "explain": "Назва розділу інтерфейсу — обидва слова з великої, у множині як у продукті: Issuer Settings.\n✗ «issuer settings» / «Issuer settings» — хибний регістр.\n✗ «the Issuer Setting» — назва вживається як власна, без the й без однини.",
+      "ua": "Зміни перемикач в Issuer Settings."
+    },
+    {
+      "id": "sp-product-compound-01",
+      "topic": "sp-product-compound",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "The data flows from ___ into the warehouse.",
+      "options": [
+        "DataMine",
+        "Data Mine",
+        "Datamine",
+        "data mine"
+      ],
+      "answer": "DataMine",
+      "explain": "Власна складена назва пишеться одним словом і в єдиному стилі: DataMine.\n✗ «Data Mine» — розбито на два слова.\n✗ «Datamine» / «data mine» — хибний регістр.",
+      "ua": "Дані течуть із DataMine у сховище."
+    },
+    {
+      "id": "sp-product-compound-02",
+      "topic": "sp-product-compound",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "___ handles the real-time events.",
+      "options": [
+        "DataStream",
+        "Data Stream",
+        "Datastream",
+        "data stream"
+      ],
+      "answer": "DataStream",
+      "explain": "Так само, як DataMine, назва пишеться одним словом: DataStream.\n✗ «Data Stream» / «Datastream» / «data stream» — непослідовний стиль.",
+      "ua": "DataStream обробляє події в реальному часі."
+    },
+    {
+      "id": "voc-take-screenshot-01",
+      "topic": "voc-take-screenshot",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "Could you ___ a screenshot of the error?",
+      "options": [
+        "take",
+        "make",
+        "do",
+        "get"
+      ],
+      "answer": "take",
+      "explain": "Стала сполука: take a screenshot / take a photo.\n✗ make a screenshot — калька з української «зробити»; так не кажуть.\n✗ do a screenshot — теж неможливо.\n✗ get — розмовно трапляється, але стандарт — take.",
+      "ua": "Можеш зробити скріншот помилки?"
+    },
+    {
+      "id": "voc-take-screenshot-02",
+      "topic": "voc-take-screenshot",
+      "level": "B1",
+      "type": "fill",
+      "prompt": "I'll ___ a screenshot and attach it.",
+      "answer": "take",
+      "accept": [
+        "take"
+      ],
+      "explain": "Правильна сполука — take a screenshot.\n✗ make a screenshot — поширена калька; англійською не вживається.",
+      "ua": "Я зроблю скріншот і прикріплю його."
+    },
+    {
+      "id": "voc-current-vs-actual-01",
+      "topic": "voc-current-vs-actual",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "This is the ___ design, not the old one.",
+      "options": [
+        "current",
+        "actual",
+        "present",
+        "recent"
+      ],
+      "answer": "current",
+      "explain": "«Поточний» = current.\n✗ actual — хибний друг: означає «фактичний, справжній», а не «поточний».\n✗ present — можливо, але в продуктовому контексті природніше current.\n✗ recent — «нещодавній», інший відтінок.",
+      "ua": "Це поточний дизайн, а не старий."
+    },
+    {
+      "id": "voc-current-vs-actual-02",
+      "topic": "voc-current-vs-actual",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Let's review the ___ state of the branch.",
+      "options": [
+        "current",
+        "actual",
+        "actuality",
+        "nowadays"
+      ],
+      "answer": "current",
+      "explain": "«Поточний стан» → current state.\n✗ actual — «справжній/фактичний», не «поточний».\n✗ actuality / nowadays — не прикметники до state.",
+      "ua": "Погляньмо на поточний стан гілки."
+    },
+    {
+      "id": "voc-than-then-01",
+      "topic": "voc-than-then",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "Booleans are clearer ___ magic numbers here.",
+      "options": [
+        "than",
+        "then",
+        "that",
+        "as"
+      ],
+      "answer": "than",
+      "explain": "Порівняння (clearer …) вимагає than.\n✗ then — означає «потім/тоді», не для порівняння.\n✗ that / as — тут не підходять за структурою.",
+      "ua": "Булеві значення тут зрозуміліші за магічні числа."
+    },
+    {
+      "id": "voc-than-then-02",
+      "topic": "voc-than-then",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "Fix the migration first, ___ deploy.",
+      "options": [
+        "then",
+        "than",
+        "that",
+        "when"
+      ],
+      "answer": "then",
+      "explain": "Послідовність дій → then («потім»).\n✗ than — лише для порівняння.\n✗ that / when — не передають «а потім».",
+      "ua": "Спершу виправ міграцію, потім деплой."
+    },
+    {
+      "id": "sp-queue-01",
+      "topic": "sp-queue",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "The job is stuck in the ___.",
+      "options": [
+        "queue",
+        "queve",
+        "que",
+        "quee"
+      ],
+      "answer": "queue",
+      "explain": "Правильне написання — queue (літери q-u-e-u-e).\n✗ queve — типова одруківка (v замість u).\n✗ que / quee — усічені хибні форми.",
+      "ua": "Завдання застрягло в черзі."
+    },
+    {
+      "id": "sp-queue-02",
+      "topic": "sp-queue",
+      "level": "B1",
+      "type": "fill",
+      "prompt": "Add it to the retry ___.",
+      "answer": "queue",
+      "accept": [
+        "queue"
+      ],
+      "explain": "Пишемо queue, попри «зайві» голосні наприкінці.\n✗ queve / que — часті помилки написання.",
+      "ua": "Додай це в чергу повторних спроб."
+    },
+    {
+      "id": "sp-updated-typo-01",
+      "topic": "sp-updated-typo",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "___ the changelog for v2.",
+      "options": [
+        "Updated",
+        "Uodated",
+        "Updatet",
+        "Upated"
+      ],
+      "answer": "Updated",
+      "explain": "Правильно — Updated.\n✗ Uodated — одруківка: «o» замість «p» (сусідні клавіші).\n✗ Updatet / Upated — хибні форми.",
+      "ua": "Оновив чейнджлог для v2."
+    },
+    {
+      "id": "sp-updated-typo-02",
+      "topic": "sp-updated-typo",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "I ___ the dependencies today.",
+      "options": [
+        "updated",
+        "upated",
+        "updateed",
+        "updatd"
+      ],
+      "answer": "updated",
+      "explain": "Минулий час — updated (update + d).\n✗ upated / updatd — пропущені літери.\n✗ updateed — подвоєне e зайве.",
+      "ua": "Сьогодні я оновив залежності."
+    },
+    {
+      "id": "sp-cyrillic-latin-01",
+      "topic": "sp-cyrillic-latin",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "Set the row status to ___.",
+      "options": [
+        "Created",
+        "Creted",
+        "Craeted",
+        "Creaded"
+      ],
+      "answer": "Created",
+      "explain": "Правильно — Created.\nОкрема пастка: не встав кириличну «С» чи «а» замість латинських «C»/«a» — вони виглядають однаково, але для системи це різні символи. Перевіряй розкладку.\n✗ Creted / Craeted / Creaded — одруківки.",
+      "ua": "Постав статус рядка Created."
+    },
+    {
+      "id": "sp-cyrillic-latin-02",
+      "topic": "sp-cyrillic-latin",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "The token is now ___ to the clipboard.",
+      "options": [
+        "Copied",
+        "Copyed",
+        "Coppied",
+        "Copyied"
+      ],
+      "answer": "Copied",
+      "explain": "Правильно — Copied (copy → copied, y→i).\nІ знову: латинські літери, а не схожі кириличні «С»/«о».\n✗ Copyed / Coppied / Copyied — хибні форми.",
+      "ua": "Токен тепер скопійовано в буфер."
+    },
+    {
+      "id": "ten-will-base-01",
+      "topic": "ten-will-base",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "Maybe I'll ___ something new in the logs.",
+      "options": [
+        "find",
+        "found",
+        "finds",
+        "finding"
+      ],
+      "answer": "find",
+      "explain": "Після will / 'll — базова форма дієслова без закінчень.\n✗ found — це минулий час; після will так не можна.\n✗ finds — -s тут зайве.\n✗ finding — потрібна проста форма.",
+      "ua": "Можливо, я знайду щось нове в логах."
+    },
+    {
+      "id": "ten-will-base-02",
+      "topic": "ten-will-base",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "I'll ___ the toggle after lunch.",
+      "options": [
+        "add",
+        "added",
+        "adds",
+        "adding"
+      ],
+      "answer": "add",
+      "explain": "will + базова форма: I'll add.\n✗ added / adds / adding — після 'll вживається лише інфінітив без to.",
+      "ua": "Додам перемикач після обіду."
+    },
+    {
+      "id": "ten-future-will-be-01",
+      "topic": "ten-future-will-be",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "Yelizaveta ___ off for the next few days.",
+      "options": [
+        "will be",
+        "is",
+        "was",
+        "be"
+      ],
+      "answer": "will be",
+      "explain": "Ідеться про майбутню відсутність → will be off.\n✗ is off — означало б «відсутня зараз».\n✗ was off — минуле.\n✗ be off — без допоміжного дієслова граматично неповно.",
+      "ua": "Єлизавети не буде наступні кілька днів."
+    },
+    {
+      "id": "ten-future-will-be-02",
+      "topic": "ten-future-will-be",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "The migration ___ done by Friday.",
+      "options": [
+        "will be",
+        "is being",
+        "was",
+        "be"
+      ],
+      "answer": "will be",
+      "explain": "Майбутній результат до дедлайну → will be done.\n✗ is being done — процес зараз, не майбутнє.\n✗ was — минуле.\n✗ be — бракує допоміжного.",
+      "ua": "Міграцію буде завершено до п'ятниці."
+    },
+    {
+      "id": "agr-team-requests-01",
+      "topic": "agr-team-requests",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "We'll ship it if the marketing team ___ it.",
+      "options": [
+        "requests",
+        "request",
+        "are requesting",
+        "requested"
+      ],
+      "answer": "requests",
+      "explain": "«team» — збірний іменник, тут як єдине ціле → однина → requests.\n✗ request — форма множини/базова, не узгоджена.\n✗ are requesting — трактує team як множину людей; у нейтральному стилі краще однина.\n✗ requested — минулий час не пасує до майбутньої умови.",
+      "ua": "Ми випустимо це, якщо маркетинг-команда попросить."
+    },
+    {
+      "id": "agr-team-requests-02",
+      "topic": "agr-team-requests",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "The client ___ a CSV export, not JSON.",
+      "options": [
+        "needs",
+        "need",
+        "are needing",
+        "needed"
+      ],
+      "answer": "needs",
+      "explain": "Підмет 3-ї особи однини (the client) → needs.\n✗ need — без -s не узгоджено.\n✗ are needing — «need» зазвичай не в тривалому часі + число не те.\n✗ needed — минуле, а йдеться про поточну вимогу.",
+      "ua": "Клієнт хоче експорт у CSV, а не JSON."
+    },
+    {
+      "id": "prep-in-settings-01",
+      "topic": "prep-in-settings",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "The toggle is ___ Issuer Settings.",
+      "options": [
+        "in",
+        "from",
+        "on",
+        "at"
+      ],
+      "answer": "in",
+      "explain": "Розташування елемента всередині розділу → in Issuer Settings.\n✗ from — калька «з»; передає джерело, не місце.\n✗ on / at — не для «всередині секції».",
+      "ua": "Перемикач в Issuer Settings."
+    },
+    {
+      "id": "prep-in-settings-02",
+      "topic": "prep-in-settings",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "You'll find the field ___ the Member Dashboard.",
+      "options": [
+        "in",
+        "from",
+        "at",
+        "by"
+      ],
+      "answer": "in",
+      "explain": "Поле міститься всередині дашборду → in.\n✗ from — джерело, не місце.\n✗ at / by — недоречні для «всередині».",
+      "ua": "Поле знайдеш у Member Dashboard."
+    },
+    {
+      "id": "prep-for-duration-01",
+      "topic": "prep-for-duration",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "She's away ___ the next few days.",
+      "options": [
+        "for",
+        "—",
+        "on",
+        "by"
+      ],
+      "answer": "for",
+      "explain": "Тривалість позначається for: for the next few days.\n✗ без прийменника — «away the next few days» калька, бракує for.\n✗ on / by — не для тривалості.",
+      "ua": "Її не буде наступні кілька днів."
+    },
+    {
+      "id": "prep-for-duration-02",
+      "topic": "prep-for-duration",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "The banner stays up ___ two weeks.",
+      "options": [
+        "for",
+        "during",
+        "on",
+        "by"
+      ],
+      "answer": "for",
+      "explain": "for + відрізок часу (for two weeks).\n✗ during — з подією/періодом-назвою (during the sprint), не з тривалістю в одиницях.\n✗ on / by — інші значення.",
+      "ua": "Банер висить два тижні."
+    },
+    {
+      "id": "voc-fewer-less-01",
+      "topic": "voc-fewer-less",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "The new flow has ___ screens.",
+      "options": [
+        "fewer",
+        "less",
+        "lesser",
+        "few"
+      ],
+      "answer": "fewer",
+      "explain": "Зі злічуваними в множині (screens) → fewer.\n✗ less — лише з незлічуваними (less time, less noise).\n✗ lesser — «менш важливий», інше значення.\n✗ few — без «-er» це не порівняння.",
+      "ua": "У новому флоу менше екранів."
+    },
+    {
+      "id": "voc-fewer-less-02",
+      "topic": "voc-fewer-less",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "We got ___ bug reports this week.",
+      "options": [
+        "fewer",
+        "less",
+        "lesser",
+        "little"
+      ],
+      "answer": "fewer",
+      "explain": "reports — злічувані → fewer.\n✗ less / little — для незлічуваних.\n✗ lesser — не про кількість.",
+      "ua": "Цього тижня менше баг-репортів."
+    },
+    {
+      "id": "agr-every-singular-01",
+      "topic": "agr-every-singular",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "___ in the grid must align.",
+      "options": [
+        "Every column",
+        "Every columns",
+        "Every columns in",
+        "All column"
+      ],
+      "answer": "Every column",
+      "explain": "Після every — іменник в однині: every column.\n✗ every columns — every не поєднується з множиною.\n✗ «All column» — після all потрібна множина (all columns).",
+      "ua": "Кожен стовпець у сітці має бути вирівняний."
+    },
+    {
+      "id": "agr-every-singular-02",
+      "topic": "agr-every-singular",
+      "level": "B1",
+      "type": "mcq",
+      "prompt": "___ needs a unique key.",
+      "options": [
+        "Each item",
+        "Each items",
+        "Every items",
+        "Each of item"
+      ],
+      "answer": "Each item",
+      "explain": "Після each — іменник в однині: each item.\n✗ each items / every items — множина після each/every неможлива.\n✗ each of item — потрібно each of the items.",
+      "ua": "Кожен елемент потребує унікального ключа."
+    },
+    {
+      "id": "ord-probably-placement-01",
+      "topic": "ord-probably-placement",
+      "level": "B2",
+      "type": "order",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "It",
+        "will",
+        "probably",
+        "look",
+        "like",
+        "the",
+        "old",
+        "modal"
+      ],
+      "answer": "It will probably look like the old modal",
+      "explain": "Прислівник probably ставиться після допоміжного дієслова (will), між ним і смисловим: will probably look.\nПорівняй: «Probably it will look…» теж можливо, але стандартне, нейтральне місце — саме після will.",
+      "ua": "Це, ймовірно, виглядатиме як стара модалка."
+    },
+    {
+      "id": "ord-probably-placement-02",
+      "topic": "ord-probably-placement",
+      "level": "B2",
+      "type": "order",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "team",
+        "has",
+        "probably",
+        "seen",
+        "this",
+        "already"
+      ],
+      "answer": "The team has probably seen this already",
+      "explain": "probably стоїть після допоміжного have/has: has probably seen.\nЗагальне правило: прислівники ймовірності — між допоміжним і смисловим дієсловом.",
+      "ua": "Команда, напевно, це вже бачила."
+    },
+    {
+      "id": "ord-indirect-q2-01",
+      "topic": "ord-indirect-q2",
+      "level": "B2",
+      "type": "order",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "ask",
+        "Nicole",
+        "how",
+        "to",
+        "act",
+        "on",
+        "that",
+        "call"
+      ],
+      "answer": "ask Nicole how to act on that call",
+      "explain": "У вбудованому питанні (how to…) порядок прямий, без інверсії й без should/do.\n✗ «how to act should we…» — інверсія у вбудованому питанні неможлива.",
+      "ua": "спитай Ніколь, як діяти на тому дзвінку."
+    },
+    {
+      "id": "ord-indirect-q2-02",
+      "topic": "ord-indirect-q2",
+      "level": "B2",
+      "type": "order",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Let",
+        "me",
+        "check",
+        "where",
+        "the",
+        "token",
+        "is",
+        "stored"
+      ],
+      "answer": "Let me check where the token is stored",
+      "explain": "Вбудоване питання «where the token IS stored» має прямий порядок (підмет → дієслово), а не «where is the token stored».",
+      "ua": "Дай перевірю, де зберігається токен."
+    },
+    {
+      "id": "syn-subject-required-01",
+      "topic": "syn-subject-required",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "___ removed that empty column.",
+      "options": [
+        "I've",
+        "Removed",
+        "Have removed",
+        "Been removed"
+      ],
+      "answer": "I've",
+      "explain": "В англійському реченні підмет обов'язковий, навіть коли з контексту зрозуміло, хто діє.\n✗ «Removed that…» — пропущений підмет (типова калька зі стилю нотаток).\n✗ Have removed / Been removed — теж без підмета.",
+      "ua": "Я прибрав той порожній стовпець."
+    },
+    {
+      "id": "syn-subject-required-02",
+      "topic": "syn-subject-required",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "___ looks good to me — ship it.",
+      "options": [
+        "It",
+        "Looks",
+        "Is",
+        "Seems"
+      ],
+      "answer": "It",
+      "explain": "Потрібен формальний підмет it: «It looks good».\n✗ «Looks good…» без підмета — неповне речення.\n✗ Is / Seems — теж бракує підмета.",
+      "ua": "Як на мене, виглядає добре — випускай."
+    },
+    {
+      "id": "syn-aux-do-question-01",
+      "topic": "syn-aux-do-question",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Is this for onboarding, or ___ conversion?",
+      "options": [
+        "is the goal",
+        "the goal is",
+        "does the goal",
+        "goal is"
+      ],
+      "answer": "is the goal",
+      "explain": "У другій частині альтернативного питання зберігається питальний порядок (інверсія): «or is the goal conversion?».\n✗ «or the goal is conversion?» — стверджувальний порядок у питанні неправильний.\n✗ does the goal — тут дієслово be, do не потрібне.",
+      "ua": "Це для онбордингу, чи мета — конверсія?"
+    },
+    {
+      "id": "syn-aux-do-question-02",
+      "topic": "syn-aux-do-question",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Do we cache this, or ___ it every time?",
+      "options": [
+        "do we fetch",
+        "we fetch",
+        "fetch we",
+        "we do fetch"
+      ],
+      "answer": "do we fetch",
+      "explain": "У другій частині питання допоміжне do не можна опускати: «or do we fetch it…».\n✗ «or we fetch it?» — пропущене do руйнує питальний порядок.\n✗ fetch we / we do fetch — хибний порядок.",
+      "ua": "Ми це кешуємо чи щоразу тягнемо заново?"
+    },
+    {
+      "id": "syn-passive-needed-01",
+      "topic": "syn-passive-needed",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "They requested this connector to ___.",
+      "options": [
+        "be installed",
+        "install",
+        "installing",
+        "be install"
+      ],
+      "answer": "be installed",
+      "explain": "Конектор — об'єкт дії, його встановлюють → пасив to be installed.\n✗ to install — означало б, що конектор сам щось встановлює.\n✗ installing / be install — хибні форми.",
+      "ua": "Вони попросили встановити цей конектор."
+    },
+    {
+      "id": "syn-passive-needed-02",
+      "topic": "syn-passive-needed",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "The report needs to ___ before Friday.",
+      "options": [
+        "be sent",
+        "send",
+        "being sent",
+        "be send"
+      ],
+      "answer": "be sent",
+      "explain": "Звіт — об'єкт: його надсилають → to be sent.\n✗ to send — звіт не надсилає сам себе.\n✗ being sent / be send — неправильні форми після needs to.",
+      "ua": "Звіт треба надіслати до п'ятниці."
+    },
+    {
+      "id": "voc-no-vs-not-01",
+      "topic": "voc-no-vs-not",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "This feature is ___ relevant anymore.",
+      "options": [
+        "no longer",
+        "no",
+        "not longer",
+        "none"
+      ],
+      "answer": "no longer",
+      "explain": "Перед прикметником заперечення виражають через not або no longer, а не через «no».\n✗ «is no relevant» — калька; «no» так не вживається перед прикметником.\n✗ not longer / none — хибні форми.",
+      "ua": "Ця функція більше не актуальна."
+    },
+    {
+      "id": "voc-no-vs-not-02",
+      "topic": "voc-no-vs-not",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "The endpoint is ___ used in v2.",
+      "options": [
+        "not",
+        "no",
+        "non",
+        "none"
+      ],
+      "answer": "not",
+      "explain": "Перед дієприкметником used заперечення — not.\n✗ «is no used» — неможливо.\n✗ non / none — не для цієї конструкції.",
+      "ua": "Цей ендпоінт не використовується у v2."
+    },
+    {
+      "id": "syn-tag-question-01",
+      "topic": "syn-tag-question",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "It's not used, ___?",
+      "options": [
+        "is it",
+        "isn't it",
+        "is not it",
+        "it is"
+      ],
+      "answer": "is it",
+      "explain": "Після заперечного головного речення хвостик — стверджувальний: …, is it?\n✗ isn't it — після вже заперечного речення дає подвійне заперечення.\n✗ is not it / it is — хибна форма хвостика.",
+      "ua": "Воно ж не використовується, чи не так?"
+    },
+    {
+      "id": "syn-tag-question-02",
+      "topic": "syn-tag-question",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "You've merged it, ___?",
+      "options": [
+        "haven't you",
+        "have you",
+        "don't you",
+        "you haven't"
+      ],
+      "answer": "haven't you",
+      "explain": "Після стверджувального речення хвостик — заперечний: …, haven't you?\n✗ have you — та сама полярність, що й головне речення.\n✗ don't you — не той допоміжний (тут have).\n✗ you haven't — порушений порядок хвостика.",
+      "ua": "Ти ж це змерджив, чи не так?"
+    }
+  ]
+}

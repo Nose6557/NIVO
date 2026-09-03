@@ -1,0 +1,1404 @@
+{
+  "schema": 2,
+  "pack": "vocab-01",
+  "title": "Лексика — партія 1",
+  "level": "C1",
+  "topics": {
+    "vw-rehabilitation": {
+      "category": "vocabulary",
+      "label": "rehabilitation — реабілітація"
+    },
+    "vw-expelled": {
+      "category": "vocabulary",
+      "label": "expelled — виключений"
+    },
+    "vw-liability": {
+      "category": "vocabulary",
+      "label": "liability — відповідальність"
+    },
+    "vw-guts": {
+      "category": "vocabulary",
+      "label": "guts — відвага"
+    },
+    "vw-thwart": {
+      "category": "vocabulary",
+      "label": "to thwart — зірвати"
+    },
+    "vw-awake": {
+      "category": "vocabulary",
+      "label": "to awake — прокинутися"
+    },
+    "vw-foundation": {
+      "category": "vocabulary",
+      "label": "foundation — основа"
+    },
+    "vw-advising": {
+      "category": "vocabulary",
+      "label": "advising — консультування"
+    },
+    "vw-superficial": {
+      "category": "vocabulary",
+      "label": "superficial — поверхневий"
+    },
+    "vw-frivolity": {
+      "category": "vocabulary",
+      "label": "frivolity — легковажність"
+    },
+    "vw-bonds": {
+      "category": "vocabulary",
+      "label": "bonds — узи"
+    },
+    "vw-weakling": {
+      "category": "vocabulary",
+      "label": "weakling — слабак"
+    },
+    "vw-rack": {
+      "category": "vocabulary",
+      "label": "rack — стійка"
+    },
+    "vw-noggin": {
+      "category": "vocabulary",
+      "label": "noggin — довбешка"
+    },
+    "vw-rack-that-noggin": {
+      "category": "vocabulary",
+      "label": "rack that noggin — напружити довбешку"
+    },
+    "vw-indeed": {
+      "category": "vocabulary",
+      "label": "indeed — саме так"
+    },
+    "vw-fruition": {
+      "category": "vocabulary",
+      "label": "fruition — здійснення"
+    },
+    "vw-spill": {
+      "category": "vocabulary",
+      "label": "to spill — викласти"
+    },
+    "vw-squeal": {
+      "category": "vocabulary",
+      "label": "to squeal — настукати"
+    },
+    "vw-coward": {
+      "category": "vocabulary",
+      "label": "coward — боягуз"
+    },
+    "vw-fess-up": {
+      "category": "vocabulary",
+      "label": "to fess up — зізнатися"
+    },
+    "vw-crap": {
+      "category": "vocabulary",
+      "label": "crap — лайно"
+    },
+    "vw-snoop": {
+      "category": "vocabulary",
+      "label": "to snoop — винюхувати"
+    },
+    "vw-corporal": {
+      "category": "vocabulary",
+      "label": "corporal — тілесний"
+    },
+    "vw-bruise": {
+      "category": "vocabulary",
+      "label": "bruise — синець"
+    },
+    "vw-anxious": {
+      "category": "vocabulary",
+      "label": "anxious — тривожний"
+    },
+    "vw-persuade": {
+      "category": "vocabulary",
+      "label": "to persuade — переконати"
+    },
+    "vw-worn-out": {
+      "category": "vocabulary",
+      "label": "worn out — виснажений"
+    },
+    "vw-condescending": {
+      "category": "vocabulary",
+      "label": "condescending — зверхній"
+    },
+    "vw-attitude": {
+      "category": "vocabulary",
+      "label": "attitude — ставлення"
+    },
+    "vw-nook": {
+      "category": "vocabulary",
+      "label": "nook — закуток"
+    },
+    "vw-cranny": {
+      "category": "vocabulary",
+      "label": "cranny — щілина"
+    },
+    "vw-treat": {
+      "category": "vocabulary",
+      "label": "to treat — пригостити"
+    },
+    "vw-how-dare": {
+      "category": "vocabulary",
+      "label": "how dare — як ти смієш"
+    },
+    "vw-bear": {
+      "category": "vocabulary",
+      "label": "to bear — терпіти"
+    },
+    "vw-confess": {
+      "category": "vocabulary",
+      "label": "to confess — зізнатися"
+    },
+    "vw-yearning": {
+      "category": "vocabulary",
+      "label": "yearning — прагнення"
+    },
+    "vw-obediently": {
+      "category": "vocabulary",
+      "label": "obediently — покірно"
+    },
+    "vw-eavesdropping": {
+      "category": "vocabulary",
+      "label": "eavesdropping — підслуховування"
+    },
+    "vw-thug": {
+      "category": "vocabulary",
+      "label": "thug — головоріз"
+    },
+    "vw-pensive": {
+      "category": "vocabulary",
+      "label": "pensive — задумливий"
+    }
+  },
+  "questions": [
+    {
+      "id": "vw-rehabilitation-e2u",
+      "topic": "vw-rehabilitation",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «rehabilitation»",
+      "options": [
+        "реабілітація",
+        "реставрація",
+        "репутація",
+        "резолюція"
+      ],
+      "answer": "реабілітація",
+      "explain": "Реабілітація — відновлення здоров'я, статусу чи прав після хвороби, травми чи покарання. Medical rehabilitation — медична реабілітація."
+    },
+    {
+      "id": "vw-rehabilitation-u2e",
+      "topic": "vw-rehabilitation",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «реабілітація»",
+      "options": [
+        "rehabilitation",
+        "renovation",
+        "relocation",
+        "resignation"
+      ],
+      "answer": "rehabilitation",
+      "explain": "Реабілітація — відновлення здоров'я, статусу чи прав після хвороби, травми чи покарання. Medical rehabilitation — медична реабілітація."
+    },
+    {
+      "id": "vw-expelled-e2u",
+      "topic": "vw-expelled",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «expelled»",
+      "options": [
+        "виключений",
+        "звільнений",
+        "переведений",
+        "нагороджений"
+      ],
+      "answer": "виключений",
+      "explain": "Expelled — виключений з навчального закладу за порушення; у виші частіше «відрахований». He was expelled for cheating."
+    },
+    {
+      "id": "vw-expelled-u2e",
+      "topic": "vw-expelled",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «виключений»",
+      "options": [
+        "expelled",
+        "expected",
+        "expanded",
+        "exhaled"
+      ],
+      "answer": "expelled",
+      "explain": "Expelled — виключений з навчального закладу за порушення; у виші частіше «відрахований». He was expelled for cheating."
+    },
+    {
+      "id": "vw-liability-e2u",
+      "topic": "vw-liability",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «liability»",
+      "options": [
+        "відповідальність",
+        "лояльність",
+        "легітимність",
+        "ліквідність"
+      ],
+      "answer": "відповідальність",
+      "explain": "Liability — юридична відповідальність або зобов'язання; розмовно — «тягар». Legal liability for damages."
+    },
+    {
+      "id": "vw-liability-u2e",
+      "topic": "vw-liability",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «відповідальність»",
+      "options": [
+        "liability",
+        "reliability",
+        "legibility",
+        "durability"
+      ],
+      "answer": "liability",
+      "explain": "Liability — юридична відповідальність або зобов'язання; розмовно — «тягар». Legal liability for damages."
+    },
+    {
+      "id": "vw-guts-e2u",
+      "topic": "vw-guts",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «guts»",
+      "options": [
+        "відвага",
+        "відрада",
+        "заздрість",
+        "недбалість"
+      ],
+      "answer": "відвага",
+      "explain": "Guts (розм.) — сміливість, рішучість щось зробити. It takes guts to admit a mistake."
+    },
+    {
+      "id": "vw-guts-u2e",
+      "topic": "vw-guts",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «відвага»",
+      "options": [
+        "guts",
+        "gusts",
+        "gutters",
+        "gadgets"
+      ],
+      "answer": "guts",
+      "explain": "Guts (розм.) — сміливість, рішучість щось зробити. It takes guts to admit a mistake."
+    },
+    {
+      "id": "vw-thwart-e2u",
+      "topic": "vw-thwart",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «to thwart»",
+      "options": [
+        "зірвати",
+        "зіграти",
+        "зібрати",
+        "змолоти"
+      ],
+      "answer": "зірвати",
+      "explain": "To thwart — завадити, зірвати чиїсь плани. They thwarted the escape — вони зірвали втечу."
+    },
+    {
+      "id": "vw-thwart-u2e",
+      "topic": "vw-thwart",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «зірвати»",
+      "options": [
+        "thwart",
+        "thrash",
+        "thaw",
+        "thrive"
+      ],
+      "answer": "thwart",
+      "explain": "To thwart — завадити, зірвати чиїсь плани. They thwarted the escape — вони зірвали втечу."
+    },
+    {
+      "id": "vw-awake-e2u",
+      "topic": "vw-awake",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «to awake»",
+      "options": [
+        "прокинутися",
+        "прокрутити",
+        "прокласти",
+        "промовити"
+      ],
+      "answer": "прокинутися",
+      "explain": "To awake — прокинутися зі сну (минулий час — awoke). She awoke at dawn — вона прокинулася на світанку."
+    },
+    {
+      "id": "vw-awake-u2e",
+      "topic": "vw-awake",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «прокинутися»",
+      "options": [
+        "awake",
+        "await",
+        "amaze",
+        "annoy"
+      ],
+      "answer": "awake",
+      "explain": "To awake — прокинутися зі сну (минулий час — awoke). She awoke at dawn — вона прокинулася на світанку."
+    },
+    {
+      "id": "vw-foundation-e2u",
+      "topic": "vw-foundation",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «foundation»",
+      "options": [
+        "основа",
+        "оздоба",
+        "огорожа",
+        "оселя"
+      ],
+      "answer": "основа",
+      "explain": "Foundation — основа, підґрунтя чогось; також фундамент будівлі. The foundation of a theory — основа теорії."
+    },
+    {
+      "id": "vw-foundation-u2e",
+      "topic": "vw-foundation",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «основа»",
+      "options": [
+        "foundation",
+        "fountain",
+        "furniture",
+        "fraction"
+      ],
+      "answer": "foundation",
+      "explain": "Foundation — основа, підґрунтя чогось; також фундамент будівлі. The foundation of a theory — основа теорії."
+    },
+    {
+      "id": "vw-advising-e2u",
+      "topic": "vw-advising",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «advising»",
+      "options": [
+        "консультування",
+        "очікування",
+        "обладнання",
+        "оздоблення"
+      ],
+      "answer": "консультування",
+      "explain": "Advising — консультування, надання порад. Academic advising — консультування студентів."
+    },
+    {
+      "id": "vw-advising-u2e",
+      "topic": "vw-advising",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «консультування»",
+      "options": [
+        "advising",
+        "advancing",
+        "adjusting",
+        "arriving"
+      ],
+      "answer": "advising",
+      "explain": "Advising — консультування, надання порад. Academic advising — консультування студентів."
+    },
+    {
+      "id": "vw-superficial-e2u",
+      "topic": "vw-superficial",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «superficial»",
+      "options": [
+        "поверхневий",
+        "показовий",
+        "прихильний",
+        "порожнистий"
+      ],
+      "answer": "поверхневий",
+      "explain": "Superficial — поверхневий, неглибокий (про знання, рану чи людину). A superficial analysis — поверхневий аналіз."
+    },
+    {
+      "id": "vw-superficial-u2e",
+      "topic": "vw-superficial",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «поверхневий»",
+      "options": [
+        "superficial",
+        "superstitious",
+        "supervisory",
+        "superlative"
+      ],
+      "answer": "superficial",
+      "explain": "Superficial — поверхневий, неглибокий (про знання, рану чи людину). A superficial analysis — поверхневий аналіз."
+    },
+    {
+      "id": "vw-frivolity-e2u",
+      "topic": "vw-frivolity",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «frivolity»",
+      "options": [
+        "легковажність",
+        "легкодухість",
+        "лагідність",
+        "ламкість"
+      ],
+      "answer": "легковажність",
+      "explain": "Frivolity — легковажність, несерйозність. Youthful frivolity — юнацька легковажність."
+    },
+    {
+      "id": "vw-frivolity-u2e",
+      "topic": "vw-frivolity",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «легковажність»",
+      "options": [
+        "frivolity",
+        "fragility",
+        "formality",
+        "fatality"
+      ],
+      "answer": "frivolity",
+      "explain": "Frivolity — легковажність, несерйозність. Youthful frivolity — юнацька легковажність."
+    },
+    {
+      "id": "vw-bonds-e2u",
+      "topic": "vw-bonds",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «bonds»",
+      "options": [
+        "узи",
+        "ухвали",
+        "уламки",
+        "устрій"
+      ],
+      "answer": "узи",
+      "explain": "Bonds — узи, тісні зв'язки між людьми. Bonds of friendship — узи дружби."
+    },
+    {
+      "id": "vw-bonds-u2e",
+      "topic": "vw-bonds",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «узи»",
+      "options": [
+        "bonds",
+        "bands",
+        "barrels",
+        "burdens"
+      ],
+      "answer": "bonds",
+      "explain": "Bonds — узи, тісні зв'язки між людьми. Bonds of friendship — узи дружби."
+    },
+    {
+      "id": "vw-weakling-e2u",
+      "topic": "vw-weakling",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «weakling»",
+      "options": [
+        "слабак",
+        "служка",
+        "скнара",
+        "гуляка"
+      ],
+      "answer": "слабак",
+      "explain": "Weakling — слабак, фізично чи морально слабка людина. Don't be such a weakling — не будь таким слабаком."
+    },
+    {
+      "id": "vw-weakling-u2e",
+      "topic": "vw-weakling",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «слабак»",
+      "options": [
+        "weakling",
+        "weakness",
+        "wanderer",
+        "wrestler"
+      ],
+      "answer": "weakling",
+      "explain": "Weakling — слабак, фізично чи морально слабка людина. Don't be such a weakling — не будь таким слабаком."
+    },
+    {
+      "id": "vw-rack-e2u",
+      "topic": "vw-rack",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «rack»",
+      "options": [
+        "стійка",
+        "стрічка",
+        "стеля",
+        "спиця"
+      ],
+      "answer": "стійка",
+      "explain": "Rack — стійка чи полиця для зберігання (a spice rack). Не плутати з дієсловом to rack — напружувати."
+    },
+    {
+      "id": "vw-rack-u2e",
+      "topic": "vw-rack",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «стійка»",
+      "options": [
+        "rack",
+        "rock",
+        "rake",
+        "rank"
+      ],
+      "answer": "rack",
+      "explain": "Rack — стійка чи полиця для зберігання (a spice rack). Не плутати з дієсловом to rack — напружувати."
+    },
+    {
+      "id": "vw-noggin-e2u",
+      "topic": "vw-noggin",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «noggin»",
+      "options": [
+        "довбешка",
+        "дровина",
+        "домовина",
+        "друзка"
+      ],
+      "answer": "довбешка",
+      "explain": "Noggin (розм.) — голова, «довбешка». Use your noggin — поворуши мізками."
+    },
+    {
+      "id": "vw-noggin-u2e",
+      "topic": "vw-noggin",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «довбешка»",
+      "options": [
+        "noggin",
+        "napkin",
+        "nugget",
+        "nozzle"
+      ],
+      "answer": "noggin",
+      "explain": "Noggin (розм.) — голова, «довбешка». Use your noggin — поворуши мізками."
+    },
+    {
+      "id": "vw-rack-that-noggin-e2u",
+      "topic": "vw-rack-that-noggin",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «rack that noggin»",
+      "options": [
+        "напружити довбешку",
+        "набити гулю",
+        "прикусити язика",
+        "розвісити вуха"
+      ],
+      "answer": "напружити довбешку",
+      "explain": "Rack that noggin (розм.) — добряче поміркувати, «напружити мізки». Rack that noggin and figure it out."
+    },
+    {
+      "id": "vw-rack-that-noggin-u2e",
+      "topic": "vw-rack-that-noggin",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «напружити довбешку»",
+      "options": [
+        "rack that noggin",
+        "kick the bucket",
+        "hit the sack",
+        "spill the beans"
+      ],
+      "answer": "rack that noggin",
+      "explain": "Rack that noggin (розм.) — добряче поміркувати, «напружити мізки». Rack that noggin and figure it out."
+    },
+    {
+      "id": "vw-indeed-e2u",
+      "topic": "vw-indeed",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «indeed»",
+      "options": [
+        "саме так",
+        "наче",
+        "навряд",
+        "нарешті"
+      ],
+      "answer": "саме так",
+      "explain": "Indeed — справді, саме так (підсилення чи згода). It was, indeed, a mistake — це справді була помилка."
+    },
+    {
+      "id": "vw-indeed-u2e",
+      "topic": "vw-indeed",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «саме так»",
+      "options": [
+        "indeed",
+        "instead",
+        "inward",
+        "indoors"
+      ],
+      "answer": "indeed",
+      "explain": "Indeed — справді, саме так (підсилення чи згода). It was, indeed, a mistake — це справді була помилка."
+    },
+    {
+      "id": "vw-fruition-e2u",
+      "topic": "vw-fruition",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «fruition»",
+      "options": [
+        "здійснення",
+        "здобич",
+        "згасання",
+        "змагання"
+      ],
+      "answer": "здійснення",
+      "explain": "Fruition — здійснення, втілення в життя. The plan came to fruition — план втілився в життя."
+    },
+    {
+      "id": "vw-fruition-u2e",
+      "topic": "vw-fruition",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «здійснення»",
+      "options": [
+        "fruition",
+        "friction",
+        "fragment",
+        "fusion"
+      ],
+      "answer": "fruition",
+      "explain": "Fruition — здійснення, втілення в життя. The plan came to fruition — план втілився в життя."
+    },
+    {
+      "id": "vw-spill-e2u",
+      "topic": "vw-spill",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «to spill»",
+      "options": [
+        "викласти",
+        "виміряти",
+        "вимкнути",
+        "виринути"
+      ],
+      "answer": "викласти",
+      "explain": "To spill (розм.) — виказати таємницю, викласти інформацію («spill the beans»). Come on, spill! — ну ж бо, викладай!"
+    },
+    {
+      "id": "vw-spill-u2e",
+      "topic": "vw-spill",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «викласти»",
+      "options": [
+        "spill",
+        "spell",
+        "split",
+        "swill"
+      ],
+      "answer": "spill",
+      "explain": "To spill (розм.) — виказати таємницю, викласти інформацію («spill the beans»). Come on, spill! — ну ж бо, викладай!"
+    },
+    {
+      "id": "vw-squeal-e2u",
+      "topic": "vw-squeal",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «to squeal»",
+      "options": [
+        "настукати",
+        "насупитися",
+        "нагодувати",
+        "намокнути"
+      ],
+      "answer": "настукати",
+      "explain": "To squeal (розм.) — настукати, донести на когось. He squealed to the cops — він настукав поліції."
+    },
+    {
+      "id": "vw-squeal-u2e",
+      "topic": "vw-squeal",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «настукати»",
+      "options": [
+        "squeal",
+        "squeak",
+        "squint",
+        "squeeze"
+      ],
+      "answer": "squeal",
+      "explain": "To squeal (розм.) — настукати, донести на когось. He squealed to the cops — він настукав поліції."
+    },
+    {
+      "id": "vw-coward-e2u",
+      "topic": "vw-coward",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «coward»",
+      "options": [
+        "боягуз",
+        "бовдур",
+        "багатій",
+        "буркотун"
+      ],
+      "answer": "боягуз",
+      "explain": "Coward — боягуз, легкодуха людина. Don't be a coward — не будь боягузом."
+    },
+    {
+      "id": "vw-coward-u2e",
+      "topic": "vw-coward",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «боягуз»",
+      "options": [
+        "coward",
+        "cowherd",
+        "chowder",
+        "clown"
+      ],
+      "answer": "coward",
+      "explain": "Coward — боягуз, легкодуха людина. Don't be a coward — не будь боягузом."
+    },
+    {
+      "id": "vw-fess-up-e2u",
+      "topic": "vw-fess-up",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «to fess up»",
+      "options": [
+        "зізнатися",
+        "зіпсувати",
+        "зчепитися",
+        "зметикувати"
+      ],
+      "answer": "зізнатися",
+      "explain": "Fess up (розм.) — зізнатися, визнати провину. Come on, fess up! — ну ж бо, зізнавайся!"
+    },
+    {
+      "id": "vw-fess-up-u2e",
+      "topic": "vw-fess-up",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «зізнатися»",
+      "options": [
+        "fess up",
+        "mess up",
+        "mix up",
+        "back up"
+      ],
+      "answer": "fess up",
+      "explain": "Fess up (розм.) — зізнатися, визнати провину. Come on, fess up! — ну ж бо, зізнавайся!"
+    },
+    {
+      "id": "vw-crap-e2u",
+      "topic": "vw-crap",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «crap»",
+      "options": [
+        "лайно",
+        "лахміття",
+        "лушпиння",
+        "болото"
+      ],
+      "answer": "лайно",
+      "explain": "Crap (груб.) — лайно; також «дурниця», «мотлох». That's a load of crap — це повна маячня."
+    },
+    {
+      "id": "vw-crap-u2e",
+      "topic": "vw-crap",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «лайно»",
+      "options": [
+        "crap",
+        "crab",
+        "cramp",
+        "crate"
+      ],
+      "answer": "crap",
+      "explain": "Crap (груб.) — лайно; також «дурниця», «мотлох». That's a load of crap — це повна маячня."
+    },
+    {
+      "id": "vw-snoop-e2u",
+      "topic": "vw-snoop",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «to snoop»",
+      "options": [
+        "винюхувати",
+        "вимахувати",
+        "виспівувати",
+        "витанцьовувати"
+      ],
+      "answer": "винюхувати",
+      "explain": "To snoop — винюхувати, підглядати за чужими справами. Stop snooping around — годі тут винюхувати."
+    },
+    {
+      "id": "vw-snoop-u2e",
+      "topic": "vw-snoop",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «винюхувати»",
+      "options": [
+        "snoop",
+        "scoop",
+        "snore",
+        "snap"
+      ],
+      "answer": "snoop",
+      "explain": "To snoop — винюхувати, підглядати за чужими справами. Stop snooping around — годі тут винюхувати."
+    },
+    {
+      "id": "vw-corporal-e2u",
+      "topic": "vw-corporal",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «corporal»",
+      "options": [
+        "тілесний",
+        "тимчасовий",
+        "тутешній",
+        "терпкий"
+      ],
+      "answer": "тілесний",
+      "explain": "Corporal — тілесний, який стосується тіла. Corporal punishment — тілесне покарання. (Іменник corporal — «капрал».)"
+    },
+    {
+      "id": "vw-corporal-u2e",
+      "topic": "vw-corporal",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «тілесний»",
+      "options": [
+        "corporal",
+        "corporate",
+        "colonial",
+        "cordial"
+      ],
+      "answer": "corporal",
+      "explain": "Corporal — тілесний, який стосується тіла. Corporal punishment — тілесне покарання. (Іменник corporal — «капрал».)"
+    },
+    {
+      "id": "vw-bruise-e2u",
+      "topic": "vw-bruise",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «bruise»",
+      "options": [
+        "синець",
+        "синиця",
+        "сироп",
+        "снаряд"
+      ],
+      "answer": "синець",
+      "explain": "Bruise — синець, забите місце на шкірі. Covered in bruises — весь у синцях."
+    },
+    {
+      "id": "vw-bruise-u2e",
+      "topic": "vw-bruise",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «синець»",
+      "options": [
+        "bruise",
+        "breeze",
+        "bristle",
+        "brooch"
+      ],
+      "answer": "bruise",
+      "explain": "Bruise — синець, забите місце на шкірі. Covered in bruises — весь у синцях."
+    },
+    {
+      "id": "vw-anxious-e2u",
+      "topic": "vw-anxious",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «anxious»",
+      "options": [
+        "тривожний",
+        "тьмяний",
+        "тямущий",
+        "тлінний"
+      ],
+      "answer": "тривожний",
+      "explain": "Anxious — тривожний, стривожений або нетерплячий. Anxious about the exam — тривожиться через іспит."
+    },
+    {
+      "id": "vw-anxious-u2e",
+      "topic": "vw-anxious",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «тривожний»",
+      "options": [
+        "anxious",
+        "ancient",
+        "awkward",
+        "obvious"
+      ],
+      "answer": "anxious",
+      "explain": "Anxious — тривожний, стривожений або нетерплячий. Anxious about the exam — тривожиться через іспит."
+    },
+    {
+      "id": "vw-persuade-e2u",
+      "topic": "vw-persuade",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «to persuade»",
+      "options": [
+        "переконати",
+        "перекласти",
+        "переплисти",
+        "перемолоти"
+      ],
+      "answer": "переконати",
+      "explain": "To persuade — переконати когось зробити щось. He persuaded me to stay — він переконав мене залишитися."
+    },
+    {
+      "id": "vw-persuade-u2e",
+      "topic": "vw-persuade",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «переконати»",
+      "options": [
+        "persuade",
+        "pervade",
+        "persist",
+        "perceive"
+      ],
+      "answer": "persuade",
+      "explain": "To persuade — переконати когось зробити щось. He persuaded me to stay — він переконав мене залишитися."
+    },
+    {
+      "id": "vw-worn-out-e2u",
+      "topic": "vw-worn-out",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «worn out»",
+      "options": [
+        "виснажений",
+        "охайний",
+        "заможний",
+        "врівноважений"
+      ],
+      "answer": "виснажений",
+      "explain": "Worn out — виснажений, знесилений; також «зношений» (про річ). I'm worn out — я геть виснажений."
+    },
+    {
+      "id": "vw-worn-out-u2e",
+      "topic": "vw-worn-out",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «виснажений»",
+      "options": [
+        "worn out",
+        "worked up",
+        "carried away",
+        "locked out"
+      ],
+      "answer": "worn out",
+      "explain": "Worn out — виснажений, знесилений; також «зношений» (про річ). I'm worn out — я геть виснажений."
+    },
+    {
+      "id": "vw-condescending-e2u",
+      "topic": "vw-condescending",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «condescending»",
+      "options": [
+        "зверхній",
+        "звабливий",
+        "зворушливий",
+        "звивистий"
+      ],
+      "answer": "зверхній",
+      "explain": "Condescending — зверхній, поблажливо-погордливий. A condescending tone — зверхній тон."
+    },
+    {
+      "id": "vw-condescending-u2e",
+      "topic": "vw-condescending",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «зверхній»",
+      "options": [
+        "condescending",
+        "descending",
+        "condensing",
+        "consenting"
+      ],
+      "answer": "condescending",
+      "explain": "Condescending — зверхній, поблажливо-погордливий. A condescending tone — зверхній тон."
+    },
+    {
+      "id": "vw-attitude-e2u",
+      "topic": "vw-attitude",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «attitude»",
+      "options": [
+        "ставлення",
+        "скупчення",
+        "старанність",
+        "співчуття"
+      ],
+      "answer": "ставлення",
+      "explain": "Attitude — ставлення, позиція; розмовно — «характер», «норов». A positive attitude — позитивне ставлення."
+    },
+    {
+      "id": "vw-attitude-u2e",
+      "topic": "vw-attitude",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «ставлення»",
+      "options": [
+        "attitude",
+        "altitude",
+        "aptitude",
+        "gratitude"
+      ],
+      "answer": "attitude",
+      "explain": "Attitude — ставлення, позиція; розмовно — «характер», «норов». A positive attitude — позитивне ставлення."
+    },
+    {
+      "id": "vw-nook-e2u",
+      "topic": "vw-nook",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «nook»",
+      "options": [
+        "закуток",
+        "замок",
+        "зачіска",
+        "зашморг"
+      ],
+      "answer": "закуток",
+      "explain": "Nook — затишний закуток, куточок. A cozy reading nook — затишний куточок для читання."
+    },
+    {
+      "id": "vw-nook-u2e",
+      "topic": "vw-nook",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «закуток»",
+      "options": [
+        "nook",
+        "hook",
+        "knock",
+        "nudge"
+      ],
+      "answer": "nook",
+      "explain": "Nook — затишний закуток, куточок. A cozy reading nook — затишний куточок для читання."
+    },
+    {
+      "id": "vw-cranny-e2u",
+      "topic": "vw-cranny",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «cranny»",
+      "options": [
+        "щілина",
+        "галявина",
+        "торбина",
+        "хвіртка"
+      ],
+      "answer": "щілина",
+      "explain": "Cranny — вузька щілина, тріщина. Every nook and cranny — кожен закуток і щілина."
+    },
+    {
+      "id": "vw-cranny-u2e",
+      "topic": "vw-cranny",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «щілина»",
+      "options": [
+        "cranny",
+        "granny",
+        "canopy",
+        "county"
+      ],
+      "answer": "cranny",
+      "explain": "Cranny — вузька щілина, тріщина. Every nook and cranny — кожен закуток і щілина."
+    },
+    {
+      "id": "vw-treat-e2u",
+      "topic": "vw-treat",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «to treat»",
+      "options": [
+        "пригостити",
+        "привітати",
+        "пригнітити",
+        "приборкати"
+      ],
+      "answer": "пригостити",
+      "explain": "To treat — пригостити, почастувати; також «поводитися» чи «лікувати». I'll treat you to lunch — я пригощу тебе обідом."
+    },
+    {
+      "id": "vw-treat-u2e",
+      "topic": "vw-treat",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «пригостити»",
+      "options": [
+        "treat",
+        "tread",
+        "trace",
+        "trim"
+      ],
+      "answer": "treat",
+      "explain": "To treat — пригостити, почастувати; також «поводитися» чи «лікувати». I'll treat you to lunch — я пригощу тебе обідом."
+    },
+    {
+      "id": "vw-how-dare-e2u",
+      "topic": "vw-how-dare",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «how dare»",
+      "options": [
+        "як ти смієш",
+        "як пощастило",
+        "хто б казав",
+        "ось тобі й на"
+      ],
+      "answer": "як ти смієш",
+      "explain": "How dare — «як ти смієш» — обурення чужою зухвалістю. How dare you say that! — як ти смієш таке казати!"
+    },
+    {
+      "id": "vw-how-dare-u2e",
+      "topic": "vw-how-dare",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «як ти смієш»",
+      "options": [
+        "how dare",
+        "how come",
+        "who cares",
+        "so what"
+      ],
+      "answer": "how dare",
+      "explain": "How dare — «як ти смієш» — обурення чужою зухвалістю. How dare you say that! — як ти смієш таке казати!"
+    },
+    {
+      "id": "vw-bear-e2u",
+      "topic": "vw-bear",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «to bear»",
+      "options": [
+        "терпіти",
+        "теревенити",
+        "торгувати",
+        "тесати"
+      ],
+      "answer": "терпіти",
+      "explain": "To bear — терпіти, зносити (тягар, біль). I can't bear it — я не можу цього терпіти. (Також «нести».)"
+    },
+    {
+      "id": "vw-bear-u2e",
+      "topic": "vw-bear",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «терпіти»",
+      "options": [
+        "bear",
+        "bare",
+        "bury",
+        "bend"
+      ],
+      "answer": "bear",
+      "explain": "To bear — терпіти, зносити (тягар, біль). I can't bear it — я не можу цього терпіти. (Також «нести».)"
+    },
+    {
+      "id": "vw-confess-e2u",
+      "topic": "vw-confess",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «to confess»",
+      "options": [
+        "зізнатися",
+        "зупинитися",
+        "зодягнутися",
+        "зіщулитися"
+      ],
+      "answer": "зізнатися",
+      "explain": "To confess — зізнатися, визнати провину чи почуття. He confessed to the crime — він зізнався у злочині."
+    },
+    {
+      "id": "vw-confess-u2e",
+      "topic": "vw-confess",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «зізнатися»",
+      "options": [
+        "confess",
+        "conceal",
+        "convey",
+        "consume"
+      ],
+      "answer": "confess",
+      "explain": "To confess — зізнатися, визнати провину чи почуття. He confessed to the crime — він зізнався у злочині."
+    },
+    {
+      "id": "vw-yearning-e2u",
+      "topic": "vw-yearning",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «yearning»",
+      "options": [
+        "прагнення",
+        "пряжа",
+        "прибуток",
+        "прикраса"
+      ],
+      "answer": "прагнення",
+      "explain": "Yearning — сильне прагнення, туга за чимось. A yearning for freedom — прагнення свободи."
+    },
+    {
+      "id": "vw-yearning-u2e",
+      "topic": "vw-yearning",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «прагнення»",
+      "options": [
+        "yearning",
+        "earning",
+        "warning",
+        "yielding"
+      ],
+      "answer": "yearning",
+      "explain": "Yearning — сильне прагнення, туга за чимось. A yearning for freedom — прагнення свободи."
+    },
+    {
+      "id": "vw-obediently-e2u",
+      "topic": "vw-obediently",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «obediently»",
+      "options": [
+        "покірно",
+        "поквапно",
+        "похмуро",
+        "показово"
+      ],
+      "answer": "покірно",
+      "explain": "Obediently — покірно, слухняно. She nodded obediently — вона покірно кивнула."
+    },
+    {
+      "id": "vw-obediently-u2e",
+      "topic": "vw-obediently",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «покірно»",
+      "options": [
+        "obediently",
+        "obviously",
+        "urgently",
+        "openly"
+      ],
+      "answer": "obediently",
+      "explain": "Obediently — покірно, слухняно. She nodded obediently — вона покірно кивнула."
+    },
+    {
+      "id": "vw-eavesdropping-e2u",
+      "topic": "vw-eavesdropping",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «eavesdropping»",
+      "options": [
+        "підслуховування",
+        "підсумовування",
+        "підкреслення",
+        "підживлення"
+      ],
+      "answer": "підслуховування",
+      "explain": "Eavesdropping — підслуховування чужих розмов. Caught eavesdropping — спіймали на підслуховуванні."
+    },
+    {
+      "id": "vw-eavesdropping-u2e",
+      "topic": "vw-eavesdropping",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «підслуховування»",
+      "options": [
+        "eavesdropping",
+        "dropping",
+        "sightseeing",
+        "housekeeping"
+      ],
+      "answer": "eavesdropping",
+      "explain": "Eavesdropping — підслуховування чужих розмов. Caught eavesdropping — спіймали на підслуховуванні."
+    },
+    {
+      "id": "vw-thug-e2u",
+      "topic": "vw-thug",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери переклад: «thug»",
+      "options": [
+        "головоріз",
+        "гультяй",
+        "гончар",
+        "гризун"
+      ],
+      "answer": "головоріз",
+      "explain": "Thug — головоріз, бандит, жорстокий злочинець. A gang of thugs — банда головорізів."
+    },
+    {
+      "id": "vw-thug-u2e",
+      "topic": "vw-thug",
+      "level": "B2",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «головоріз»",
+      "options": [
+        "thug",
+        "thumb",
+        "thud",
+        "thigh"
+      ],
+      "answer": "thug",
+      "explain": "Thug — головоріз, бандит, жорстокий злочинець. A gang of thugs — банда головорізів."
+    },
+    {
+      "id": "vw-pensive-e2u",
+      "topic": "vw-pensive",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери переклад: «pensive»",
+      "options": [
+        "задумливий",
+        "задерикуватий",
+        "заздрісний",
+        "запальний"
+      ],
+      "answer": "задумливий",
+      "explain": "Pensive — задумливий, у глибоких роздумах. A pensive mood — задумливий настрій."
+    },
+    {
+      "id": "vw-pensive-u2e",
+      "topic": "vw-pensive",
+      "level": "C1",
+      "type": "mcq",
+      "prompt": "Обери англійський відповідник: «задумливий»",
+      "options": [
+        "pensive",
+        "expensive",
+        "pending",
+        "passive"
+      ],
+      "answer": "pensive",
+      "explain": "Pensive — задумливий, у глибоких роздумах. A pensive mood — задумливий настрій."
+    }
+  ]
+}
