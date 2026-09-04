@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "updated": "2026-09-03",
+  "updated": "2026-09-04",
   "questionLevels": [
     "A1",
     "A2",
@@ -25,6 +25,10 @@
     {
       "id": "C1",
       "label": "C1"
+    },
+    {
+      "id": "C2",
+      "label": "C2"
     }
   ],
   "categories": {
@@ -103,6 +107,11 @@
       "file": "vocab-01.json",
       "level": "C1",
       "title": "Лексика — партія 1"
+    },
+    {
+      "file": "c2-01.json",
+      "level": "C2",
+      "title": "Пак C2 — вищий рівень"
     }
   ]
 }

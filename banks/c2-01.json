@@ -1,0 +1,618 @@
+{
+  "schema": 2,
+  "pack": "c2-01",
+  "title": "Пак C2 — вищий рівень",
+  "level": "C2",
+  "topics": {
+    "c2-syn-ellipsis-so-neither": {
+      "category": "syntax",
+      "label": "Еліпсис: so/neither + інверсія"
+    },
+    "c2-syn-fronting-though": {
+      "category": "syntax",
+      "label": "Винесення предикатива: Adj + though"
+    },
+    "c2-syn-albeit": {
+      "category": "syntax",
+      "label": "albeit + прикметник/прислівник"
+    },
+    "c2-syn-let-alone": {
+      "category": "syntax",
+      "label": "let alone — тим паче не"
+    },
+    "c2-syn-not-least": {
+      "category": "syntax",
+      "label": "not least — і насамперед"
+    },
+    "c2-syn-be-that-as-it-may": {
+      "category": "syntax",
+      "label": "Be that as it may"
+    },
+    "c2-syn-absolute-participle": {
+      "category": "syntax",
+      "label": "Абсолютні звороти"
+    },
+    "c2-syn-relative-quantifier": {
+      "category": "syntax",
+      "label": "Quantifier + of whom / to which"
+    },
+    "c2-syn-were-it-not-for": {
+      "category": "conditionals",
+      "label": "Безсполучникова умова: Were it not for"
+    },
+    "c2-syn-lest": {
+      "category": "syntax",
+      "label": "lest — щоб не"
+    },
+    "c2-syn-cleft-all": {
+      "category": "syntax",
+      "label": "Клефт з All: All we did was…"
+    },
+    "c2-mod-perfect-passive": {
+      "category": "tenses",
+      "label": "Перфектний модал у пасиві"
+    },
+    "c2-mod-may-well": {
+      "category": "tenses",
+      "label": "might as well / may well"
+    },
+    "c2-reg-formal-inversion": {
+      "category": "register",
+      "label": "Should you / Were you — формальний регістр"
+    },
+    "c2-reg-litotes": {
+      "category": "register",
+      "label": "Літота: применшення через заперечення"
+    },
+    "c2-voc-coll-scrutiny": {
+      "category": "vocabulary",
+      "label": "Колокації зі scrutiny"
+    },
+    "c2-voc-imply-infer": {
+      "category": "vocabulary",
+      "label": "imply vs infer"
+    }
+  },
+  "questions": [
+    {
+      "id": "c2-syn-ellipsis-so-neither-01",
+      "topic": "c2-syn-ellipsis-so-neither",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "— I've never seen that error. — ___",
+      "options": [
+        "Neither have I",
+        "Neither I have",
+        "So have I",
+        "Nor I have"
+      ],
+      "answer": "Neither have I",
+      "explain": "Після neither/nor іде ІНВЕРСІЯ: допоміжне перед підметом — neither have I.\n✗ Neither I have / Nor I have — прямий порядок після neither неможливий.\n✗ So have I — so вживається на підтвердження СТВЕРДНОГО речення; тут головне речення заперечне.",
+      "ua": "— Я ніколи не бачив такої помилки. — Я теж ні."
+    },
+    {
+      "id": "c2-syn-ellipsis-so-neither-02",
+      "topic": "c2-syn-ellipsis-so-neither",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "They cut the scope, and ___ we.",
+      "options": [
+        "so did",
+        "so do",
+        "did so",
+        "so had"
+      ],
+      "answer": "so did",
+      "explain": "Еліпсис підхоплює час головного речення (cut — минулий) і вимагає інверсії: and so did we.\n✗ so do — теперішній час, не узгоджено.\n✗ did so — це «зробив так», а не «ми теж».\n✗ so had — Past Perfect тут безпідставний.",
+      "ua": "Вони скоротили обсяг, і ми теж."
+    },
+    {
+      "id": "c2-syn-fronting-though-01",
+      "topic": "c2-syn-fronting-though",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "___ though the idea was, we shelved it.",
+      "options": [
+        "Clever",
+        "Cleverly",
+        "Clever as if",
+        "How clever"
+      ],
+      "answer": "Clever",
+      "explain": "У поступовій конструкції прикметник виноситься наперед: Clever though the idea was = Although the idea was clever.\n✗ Cleverly — прислівник, а тут потрібен предикатив до was.\n✗ Clever as if / How clever — хибні сполучники для цієї конструкції.",
+      "ua": "Хоч ідея й була розумна, ми її відклали."
+    },
+    {
+      "id": "c2-syn-fronting-though-02",
+      "topic": "c2-syn-fronting-though",
+      "level": "C2",
+      "type": "order",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Brilliant",
+        "though",
+        "the",
+        "demo",
+        "was",
+        "the",
+        "pricing",
+        "killed",
+        "it"
+      ],
+      "answer": "Brilliant though the demo was the pricing killed it",
+      "explain": "Схема винесення: [прикметник] + though + підмет + дієслово. Brilliant though the demo was…\nЗначення тотожне Although the demo was brilliant, але регістр вищий і наголос падає на прикметник.",
+      "ua": "Хоч демо й було блискуче, ціна все зіпсувала."
+    },
+    {
+      "id": "c2-syn-albeit-01",
+      "topic": "c2-syn-albeit",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "The workaround holds, ___ slowly.",
+      "options": [
+        "albeit",
+        "although",
+        "despite",
+        "however"
+      ],
+      "answer": "albeit",
+      "explain": "albeit вводить коротку поступку БЕЗ підмета й дієслова: albeit slowly.\n✗ although — потребує повного підрядного (although it is slow).\n✗ despite — потребує іменника чи -ing (despite the delay).\n✗ however — вводить окреме речення, а не хвіст фрази.",
+      "ua": "Обхідний шлях працює, хоч і повільно."
+    },
+    {
+      "id": "c2-syn-albeit-02",
+      "topic": "c2-syn-albeit",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "She signed off, ___ with reservations.",
+      "options": [
+        "albeit",
+        "nevertheless",
+        "whereas",
+        "in spite"
+      ],
+      "answer": "albeit",
+      "explain": "albeit + прийменникова фраза — стисла поступка: albeit with reservations.\n✗ nevertheless — прислівник, з'єднує самостійні речення.\n✗ whereas — вводить протиставлення з повним підрядним.\n✗ in spite — вимагає of + іменник.",
+      "ua": "Вона погодилася, хоч і з застереженнями."
+    },
+    {
+      "id": "c2-syn-let-alone-01",
+      "topic": "c2-syn-let-alone",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "He can't write a unit test, ___ ship a feature.",
+      "options": [
+        "let alone",
+        "let along",
+        "much fewer",
+        "not to say"
+      ],
+      "answer": "let alone",
+      "explain": "let alone додає ще менш імовірний варіант після заперечення: не може X, тим паче Y.\n✗ let along — не існує, поширена одруківка.\n✗ much fewer — про кількість злічуваних, не для цієї конструкції.\n✗ not to say — «щоб не сказати», інша функція.",
+      "ua": "Він тесту не напише, тим паче не випустить фічу."
+    },
+    {
+      "id": "c2-syn-let-alone-02",
+      "topic": "c2-syn-let-alone",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "She barely skims the docs, ___ the changelog.",
+      "options": [
+        "let alone",
+        "leave alone",
+        "apart from",
+        "besides"
+      ],
+      "answer": "let alone",
+      "explain": "Після заперечного/обмежувального barely природно йде let alone.\n✗ leave alone — «дай спокій», буквальне значення.\n✗ apart from / besides — «окрім», додають, а не підсилюють заперечення.",
+      "ua": "Вона й документацію ледве переглядає, не те що чейнджлог."
+    },
+    {
+      "id": "c2-syn-not-least-01",
+      "topic": "c2-syn-not-least",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "The rollout slipped for several reasons, ___ the missing migration.",
+      "options": [
+        "not least",
+        "not last",
+        "least of all",
+        "no less"
+      ],
+      "answer": "not least",
+      "explain": "not least виділяє найвагоміший пункт зі списку: «і насамперед».\n✗ least of all — протилежне значення: «і найменше з усього».\n✗ not last — не ідіома.\n✗ no less — виражає подив («аж»), інший відтінок.",
+      "ua": "Реліз посунувся з кількох причин, і насамперед — через відсутню міграцію."
+    },
+    {
+      "id": "c2-syn-not-least-02",
+      "topic": "c2-syn-not-least",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "Many people helped, ___ the QA team.",
+      "options": [
+        "not least",
+        "least of all",
+        "not the least",
+        "lesser"
+      ],
+      "answer": "not least",
+      "explain": "Стала форма — not least (без артикля).\n✗ not the least — означає «ані трохи», інший зміст.\n✗ least of all — «найменше за всіх», протилежне.\n✗ lesser — прикметник «менш значний».",
+      "ua": "Багато хто допоміг, і насамперед команда QA."
+    },
+    {
+      "id": "c2-syn-be-that-as-it-may-01",
+      "topic": "c2-syn-be-that-as-it-may",
+      "level": "C2",
+      "type": "fill",
+      "prompt": "Be that as it ___, the deadline stands.",
+      "answer": "may",
+      "accept": [
+        "may"
+      ],
+      "explain": "Застигла формула поступки: Be that as it may = «як би там не було».\nЗмінювати в ній нічого не можна — саме may, не might і не will.",
+      "ua": "Як би там не було, дедлайн лишається."
+    },
+    {
+      "id": "c2-syn-be-that-as-it-may-02",
+      "topic": "c2-syn-be-that-as-it-may",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "___, we still need the migration today.",
+      "options": [
+        "Be that as it may",
+        "Be that as it will",
+        "Being that as may",
+        "That being as it may"
+      ],
+      "answer": "Be that as it may",
+      "explain": "Формула незмінна: Be that as it may.\n✗ решта варіантів — спотворення застиглого вислову; жоден не вживається.",
+      "ua": "Як би там не було, міграція потрібна сьогодні."
+    },
+    {
+      "id": "c2-syn-absolute-participle-01",
+      "topic": "c2-syn-absolute-participle",
+      "level": "C2",
+      "type": "fill",
+      "prompt": "All things ___, the migration went smoothly.",
+      "answer": "considered",
+      "accept": [
+        "considered"
+      ],
+      "explain": "Абсолютний зворот-кліше: All things considered = «зважаючи на все».\nДієприкметник пасивний, бо речі «зважені», а не «зважують».",
+      "ua": "Зважаючи на все, міграція пройшла гладко."
+    },
+    {
+      "id": "c2-syn-absolute-participle-02",
+      "topic": "c2-syn-absolute-participle",
+      "level": "C2",
+      "type": "fill",
+      "prompt": "Weather ___, we'll deploy on Friday.",
+      "answer": "permitting",
+      "accept": [
+        "permitting"
+      ],
+      "explain": "Абсолютний зворот з активним дієприкметником: Weather permitting = «якщо дозволить погода».\nПідмет звороту (weather) свій, відмінний від підмета речення.",
+      "ua": "Якщо дозволить погода, розгорнемо в п'ятницю."
+    },
+    {
+      "id": "c2-syn-relative-quantifier-01",
+      "topic": "c2-syn-relative-quantifier",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "We hired six engineers, three of ___ had no SQL background.",
+      "options": [
+        "whom",
+        "who",
+        "which",
+        "that"
+      ],
+      "answer": "whom",
+      "explain": "Після прийменника of вживається whom (люди), а не who: three of whom.\n✗ who — після прийменника неможливе.\n✗ which — для предметів, не для людей.\n✗ that — після прийменника й після коми в неозначальному підрядному не вживається.",
+      "ua": "Ми найняли шістьох інженерів, троє з яких не знали SQL."
+    },
+    {
+      "id": "c2-syn-relative-quantifier-02",
+      "topic": "c2-syn-relative-quantifier",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "We measured the extent to ___ the cache helps.",
+      "options": [
+        "which",
+        "what",
+        "that",
+        "whom"
+      ],
+      "answer": "which",
+      "explain": "Стала книжна сполука: the extent to which.\n✗ what — не вживається як відносний займенник після іменника.\n✗ that — не ставиться після прийменника.\n✗ whom — лише про людей.",
+      "ua": "Ми виміряли, наскільки допомагає кеш."
+    },
+    {
+      "id": "c2-syn-were-it-not-for-01",
+      "topic": "c2-syn-were-it-not-for",
+      "level": "C2",
+      "type": "fill",
+      "prompt": "Had it not been ___ your review, we'd have shipped the bug.",
+      "answer": "for",
+      "accept": [
+        "for"
+      ],
+      "explain": "Формула нереальної умови в минулому: Had it not been FOR + іменник = «якби не …».\nПрийменник for обов'язковий, він вводить причину.",
+      "ua": "Якби не твій рев'ю, ми б випустили баг."
+    },
+    {
+      "id": "c2-syn-were-it-not-for-02",
+      "topic": "c2-syn-were-it-not-for",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "___ it not for the cache, the page would crawl.",
+      "options": [
+        "Were",
+        "Was",
+        "Had",
+        "If"
+      ],
+      "answer": "Were",
+      "explain": "Теперішня нереальна умова без if: Were it not for … (інверсія з were).\n✗ Was — в умовному способі вживається were для всіх осіб.\n✗ Had — вимагало б повної форми Had it not been for.\n✗ If — тоді потрібен прямий порядок: If it were not for.",
+      "ua": "Якби не кеш, сторінка ледве повзла б."
+    },
+    {
+      "id": "c2-syn-lest-01",
+      "topic": "c2-syn-lest",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "Document the edge cases now, ___ you forget them.",
+      "options": [
+        "lest",
+        "unless",
+        "in case of",
+        "least"
+      ],
+      "answer": "lest",
+      "explain": "lest вводить мету-застереження: «щоб не».\n✗ unless — «якщо не», умова, а не побоювання.\n✗ in case of — потребує іменника (in case of failure).\n✗ least — прикметник, не сполучник.",
+      "ua": "Задокументуй крайні випадки зараз, щоб не забути їх."
+    },
+    {
+      "id": "c2-syn-lest-02",
+      "topic": "c2-syn-lest",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "He said nothing ___ he should offend the client.",
+      "options": [
+        "lest",
+        "unless",
+        "despite",
+        "whereas"
+      ],
+      "answer": "lest",
+      "explain": "Книжна конструкція lest + should: побоювання небажаного наслідку.\n✗ unless — «якщо не», інша логіка.\n✗ despite — потребує іменника/-ing.\n✗ whereas — протиставлення.",
+      "ua": "Він промовчав, щоб не образити клієнта."
+    },
+    {
+      "id": "c2-syn-cleft-all-01",
+      "topic": "c2-syn-cleft-all",
+      "level": "C2",
+      "type": "order",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "All",
+        "we",
+        "did",
+        "was",
+        "rename",
+        "the",
+        "column"
+      ],
+      "answer": "All we did was rename the column",
+      "explain": "Клефт-конструкція для применшення: All + підмет + did + was + інфінітив БЕЗ to.\nПорівняй: We only renamed the column → All we did was rename the column.",
+      "ua": "Усе, що ми зробили, — перейменували стовпець."
+    },
+    {
+      "id": "c2-syn-cleft-all-02",
+      "topic": "c2-syn-cleft-all",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "All I ___ was restart the worker.",
+      "options": [
+        "did",
+        "have",
+        "do was",
+        "done"
+      ],
+      "answer": "did",
+      "explain": "У клефті з All дієслово do узгоджується з часом розповіді: All I did was restart.\nПісля was — інфінітив без to (restart, не to restart).\n✗ have / done — не дають потрібної форми.\n✗ do was — дублює was.",
+      "ua": "Усе, що я зробив, — перезапустив воркер."
+    },
+    {
+      "id": "c2-mod-perfect-passive-01",
+      "topic": "c2-mod-perfect-passive",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "The migration ought to ___ before the release.",
+      "options": [
+        "have been run",
+        "have run",
+        "be run",
+        "had been run"
+      ],
+      "answer": "have been run",
+      "explain": "Докір про невиконане в минулому + пасив (міграцію запускають): ought to have been run.\n✗ have run — активний стан: ніби міграція сама щось запустила.\n✗ be run — теперішній/майбутній, без докору про минуле.\n✗ had been run — після ought to вживається have, не had.",
+      "ua": "Міграцію слід було запустити до релізу."
+    },
+    {
+      "id": "c2-mod-perfect-passive-02",
+      "topic": "c2-mod-perfect-passive",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "It needn't ___ manually — the script handles it.",
+      "options": [
+        "have been done",
+        "have done",
+        "been done",
+        "had been done"
+      ],
+      "answer": "have been done",
+      "explain": "needn't have been done = «не треба було робити (а зробили)» + пасив.\n✗ have done — активний стан.\n✗ been done — бракує have.\n✗ had been done — після needn't йде have.",
+      "ua": "Це не треба було робити вручну — скрипт це вміє."
+    },
+    {
+      "id": "c2-mod-may-well-01",
+      "topic": "c2-mod-may-well",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "The build is broken anyway — we ___ as well revert.",
+      "options": [
+        "might",
+        "must",
+        "shall",
+        "ought"
+      ],
+      "answer": "might",
+      "explain": "might as well = «то вже краще / однаково варто», коли кращих варіантів немає.\n✗ must as well / shall as well — таких сполук немає.\n✗ ought — вимагає to (ought to revert) і не вживається з as well.",
+      "ua": "Білд усе одно зламаний — можна й відкотити."
+    },
+    {
+      "id": "c2-mod-may-well-02",
+      "topic": "c2-mod-may-well",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "That ___ well be the root cause.",
+      "options": [
+        "may",
+        "must",
+        "shall",
+        "would"
+      ],
+      "answer": "may",
+      "explain": "may well = «цілком можливо, що»: висока ймовірність.\n✗ must well / shall well — не вживаються.\n✗ would well — не передає ймовірності.",
+      "ua": "Це цілком може бути першопричиною."
+    },
+    {
+      "id": "c2-reg-formal-inversion-01",
+      "topic": "c2-reg-formal-inversion",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "___ you require additional access, contact IT.",
+      "options": [
+        "Should",
+        "Would",
+        "Might",
+        "Could"
+      ],
+      "answer": "Should",
+      "explain": "Should + підмет на початку = формальна заміна if you require (ділове листування).\n✗ Would / Might / Could — в інверсії умови на початку речення так не вживаються.",
+      "ua": "Якщо вам знадобиться додатковий доступ, зверніться до IT."
+    },
+    {
+      "id": "c2-reg-formal-inversion-02",
+      "topic": "c2-reg-formal-inversion",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "___ you to reconsider, we would reopen the ticket.",
+      "options": [
+        "Were",
+        "Was",
+        "Had",
+        "Should"
+      ],
+      "answer": "Were",
+      "explain": "Were + підмет + to-інфінітив — формальна гіпотеза про майбутнє: Were you to reconsider…\n✗ Was — умовний спосіб вимагає were.\n✗ Had — вимагає дієприкметника (Had you reconsidered).\n✗ Should — поєднується з базовою формою, не з to-інфінітивом.",
+      "ua": "Якби ви передумали, ми б знову відкрили тікет."
+    },
+    {
+      "id": "c2-reg-litotes-01",
+      "topic": "c2-reg-litotes",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "Latency spikes are ___ in this setup — we see them weekly.",
+      "options": [
+        "not uncommon",
+        "not common",
+        "uncommon",
+        "no common"
+      ],
+      "answer": "not uncommon",
+      "explain": "Літота: подвійне заперечення not uncommon = «доволі поширені», стримано й формально.\n✗ not common / uncommon — прямо протилежний зміст, суперечить «щотижня».\n✗ no common — граматично неможливо перед прикметником.",
+      "ua": "Стрибки затримки тут не рідкість — ми бачимо їх щотижня."
+    },
+    {
+      "id": "c2-reg-litotes-02",
+      "topic": "c2-reg-litotes",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "The proposal is not ___ merit, though it needs work.",
+      "options": [
+        "without",
+        "with",
+        "of",
+        "lacking"
+      ],
+      "answer": "without",
+      "explain": "not without merit = «не позбавлений сенсу» — ще одна літота ділового регістру.\n✗ not with merit — не вживається.\n✗ not of merit / not lacking merit — руйнують ідіому.",
+      "ua": "Пропозиція не позбавлена сенсу, хоч і потребує доопрацювання."
+    },
+    {
+      "id": "c2-voc-coll-scrutiny-01",
+      "topic": "c2-voc-coll-scrutiny",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "The vendor's benchmarks don't ___ scrutiny.",
+      "options": [
+        "withstand",
+        "resist",
+        "support",
+        "endure"
+      ],
+      "answer": "withstand",
+      "explain": "Стала колокація: withstand scrutiny = «витримувати прискіпливу перевірку».\n✗ resist — «чинити опір», не про перевірку.\n✗ support — «підтримувати».\n✗ endure — про страждання й тривалість, не про перевірку.",
+      "ua": "Бенчмарки вендора не витримують прискіпливої перевірки."
+    },
+    {
+      "id": "c2-voc-coll-scrutiny-02",
+      "topic": "c2-voc-coll-scrutiny",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "The contract came under close ___ from legal.",
+      "options": [
+        "scrutiny",
+        "scrutinize",
+        "scrutinous",
+        "scrutinizing"
+      ],
+      "answer": "scrutiny",
+      "explain": "Після under close потрібен ІМЕННИК: under close scrutiny.\n✗ scrutinize — дієслово.\n✗ scrutinous — такого прикметника не існує.\n✗ scrutinizing — дієприкметник, не пасує після close в цій сполуці.",
+      "ua": "Договір потрапив під пильну перевірку юристів."
+    },
+    {
+      "id": "c2-voc-imply-infer-01",
+      "topic": "c2-voc-imply-infer",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "The logs ___ a race condition, though nobody stated it outright.",
+      "options": [
+        "imply",
+        "infer",
+        "impose",
+        "impart"
+      ],
+      "answer": "imply",
+      "explain": "imply — натякати, містити в собі (робить ДЖЕРЕЛО: логи, слова, дані).\n✗ infer — робить ЧИТАЧ: виснувати з даних. Напрямок протилежний.\n✗ impose — накладати.\n✗ impart — передавати (знання).",
+      "ua": "Логи натякають на стан гонки, хоч прямо цього ніхто не казав."
+    },
+    {
+      "id": "c2-voc-imply-infer-02",
+      "topic": "c2-voc-imply-infer",
+      "level": "C2",
+      "type": "mcq",
+      "prompt": "From the trace we can ___ that the lock was held too long.",
+      "options": [
+        "infer",
+        "imply",
+        "confer",
+        "refer"
+      ],
+      "answer": "infer",
+      "explain": "infer — робити висновок зі свідчень (діє СПОСТЕРІГАЧ).\n✗ imply — навпаки, натякає джерело, а не той, хто читає.\n✗ confer — радитися / надавати.\n✗ refer — посилатися.",
+      "ua": "Із трасування можна виснувати, що блокування тримали задовго."
+    }
+  ]
+}
