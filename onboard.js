@@ -85,9 +85,14 @@
   // Рівні, на яких у банку досить MCQ, щоб питання не повторювались.
   function testableLevels() {
     const n = {};
-    bank.forEach(q => { if (q.type === "mcq" && q.level) n[q.level] = (n[q.level] || 0) + 1; });
+    bank.forEach(q => { if (testable(q) && q.level) n[q.level] = (n[q.level] || 0) + 1; });
     return ORDER.filter(lv => (n[lv] || 0) >= 6);
   }
+
+  // Тест міряє рівень, тому бере лише ті питання, якими рівень вимірюється.
+  // Питання з паку "scored": false (лексика на впізнавання) легші за свій
+  // рівень і завищували б результат тесту так само, як і адаптив.
+  function testable(q) { return q.type === "mcq" && q.scored !== false; }
 
   let test = null;
   let fromMenu = false;      // тест запущено з налаштувань, а не з онбордингу
@@ -109,7 +114,7 @@
     for (let d = 0; d <= ORDER.length; d++) {
       for (const lv of [ORDER[want - d], ORDER[want + d]]) {
         if (!lv) continue;
-        const pool = bank.filter(q => q.type === "mcq" && q.level === lv && !test.used[q.id]);
+        const pool = bank.filter(q => testable(q) && q.level === lv && !test.used[q.id]);
         if (pool.length) return pool[Math.floor(Math.random() * pool.length)];
       }
     }

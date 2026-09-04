@@ -105,12 +105,20 @@ async function loadBank() {
         continue;
       }
       const lvl = q.level || pack.level || meta.level || null;
-      if (lvl) LEVEL_BY_ID[q.id] = lvl;
+
+      // Пак може бути позначений "scored": false — його питання лишаються
+      // в грі, але рівень ними НЕ вимірюється. Лексика на впізнавання значно
+      // легша за граматичну продукцію: якби вона годувала level.js, точність
+      // на рівні була б завищена, і адаптив підіймав би рівень безпідставно.
+      const scored = pack.scored !== false;
+      if (lvl && scored) LEVEL_BY_ID[q.id] = lvl;
+
       BANK.push({
         ...q,
         category: topic.category,
         item: topic.label,
-        level: lvl
+        level: lvl,
+        scored
       });
     }
   }
@@ -152,47 +160,21 @@ function levelPool() {
   return BANK;
 }
 
-/* Скільки останніх відповідей вважаємо «нещодавніми». Ширше вікно —
-   сильніша ротація, але й довша пауза перед поверненням теми. */
-const RECENT_WINDOW = SESSION_LEN * 4;
-const RECENT_STRENGTH = 1.2;
-
-/* question_id -> 0..1: наскільки свіжо гравець бачив це питання.
-   1 — щойно, ~0 — на краю вікна, немає ключа — давно або ніколи.
-   Годує штраф за повтор у buildQueue/buildWeakQueue. */
-function recencyMap(answers) {
-  const recent = (answers || [])
-    .slice()
-    .sort((a, b) => String(a.answered_at || "").localeCompare(String(b.answered_at || "")))
-    .slice(-RECENT_WINDOW);
-  const m = {};
-  recent.forEach((a, i) => {
-    const freshness = (i + 1) / recent.length;   // найдавніше → ~0, найсвіжіше → 1
-    if (!(a.question_id in m) || freshness > m[a.question_id]) m[a.question_id] = freshness;
-  });
-  return m;
-}
-
-function buildQueue(weak, answers) {
-  // Пріоритет тим питанням, де частка помилок вища, мінус штраф за те,
-  // що питання нещодавно вже траплялось. Без штрафу слабка тема з 1–2
-  // питаннями показує те саме щосесії.
+function buildQueue(weak) {
+  // Пріоритет тим питанням, де частка помилок вища.
   const errRate = {};
   (weak || []).forEach(w => {
     if (w.attempts > 0) errRate[w.item_key] = w.errors / w.attempts;
   });
-  const seen = recencyMap(answers);
   const scored = levelPool().map(q => ({
     q,
-    weight: (errRate[q.topic] !== undefined ? errRate[q.topic] : 0.35)
-          + Math.random() * 0.5
-          - (seen[q.id] || 0) * RECENT_STRENGTH
+    weight: (errRate[q.topic] !== undefined ? errRate[q.topic] : 0.35) + Math.random() * 0.5
   }));
   scored.sort((a, b) => b.weight - a.weight);
   return scored.slice(0, SESSION_LEN).map(s => s.q);
 }
 
-function buildWeakQueue(weak, answers) {
+function buildWeakQueue(weak) {
   // Робота над помилками рівнем не обмежується: помилка лишається помилкою,
   // навіть якщо тема з рівня, який ти вже переріс.
   const problem = (weak || [])
@@ -200,19 +182,13 @@ function buildWeakQueue(weak, answers) {
     .map(w => w.item_key);
   const pool = BANK.filter(q => problem.includes(q.topic));
   if (pool.length < 5) return null;
-  // Спершу — те, чого давно (або ще жодного разу) не бачив; жереб розриває нічиї.
-  const seen = recencyMap(answers);
-  return pool
-    .map(q => ({ q, k: (seen[q.id] || 0) + Math.random() * 0.3 }))
-    .sort((a, b) => a.k - b.k)
-    .slice(0, SESSION_LEN)
-    .map(s => s.q);
+  return shuffle(pool).slice(0, SESSION_LEN);
 }
 
 /* ---------- запуск сесії ---------- */
 async function startSession(weakOnly) {
   const stats = await Store.getStats();
-  let q = weakOnly ? buildWeakQueue(stats.weak, stats.answers) : buildQueue(stats.weak, stats.answers);
+  let q = weakOnly ? buildWeakQueue(stats.weak) : buildQueue(stats.weak);
   if (!q) {
     alert("Поки замало даних про слабкі місця — зіграй кілька звичайних сесій.");
     return;

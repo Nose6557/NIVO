@@ -21,7 +21,7 @@
     FAST_DOWN: 0.35,
 
     KEY: "nivo.level",
-    VERSION: 3,
+    VERSION: 4,
 
     // Довіра до джерела: слабша гіпотеза виправляється швидше.
     // Зниження всюди вимагає на одне підтвердження більше за підвищення —
@@ -66,13 +66,21 @@
         };
       }
 
+      // Зміна версії означає, що змінився САМ набір питань, які годують метрику
+      // (v4: пакети "scored": false більше не рахуються). Старий seen рахував
+      // іншу популяцію відповідей і тепер завищений: реальних оцінюваних
+      // відповідей стало менше, ніж записано в seen, і умова непересічних вікон
+      // ніколи б не виконалась — рівень замерз би назавжди.
+      // null = перебазувати при першому compute. Сам рівень зберігаємо.
+      const rebase = s.v !== CFG.VERSION;
+
       return {
         v: CFG.VERSION,
         level: valid(s.level) ? s.level : null,
         source: s.source && CFG.TRUST[s.source] ? s.source : (valid(s.level) ? CFG.DEFAULT_SOURCE : null),
-        up: Number(s.up) || 0,
-        down: Number(s.down) || 0,
-        seen: s.seen === null ? null : (Number(s.seen) || 0),
+        up: rebase ? 0 : (Number(s.up) || 0),
+        down: rebase ? 0 : (Number(s.down) || 0),
+        seen: (rebase || s.seen === null) ? null : (Number(s.seen) || 0),
         locked: !!s.locked
       };
     } catch (e) { return blank(); }
