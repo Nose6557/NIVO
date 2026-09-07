@@ -63,6 +63,8 @@
   function renderSelf() {
     const body = $("onboard-body");
     if (!body) return;
+    const scr = $("screen-onboard");
+    if (scr) scr.classList.remove("testing");
     body.innerHTML = `
       <div class="ob-head">
         <h1>Наскільки добре ти знаєш англійську?</h1>
@@ -132,17 +134,25 @@
   function renderTestQuestion(q) {
     const body = $("onboard-body");
     if (!body) return;
+    const scr = $("screen-onboard");
+    if (scr) scr.classList.add("testing");
     const pct = Math.round(test.i / TEST_LEN * 100);
+    // Та сама розмітка, що й в основній грі (#screen-play): смуга прогресу,
+    // мета-рядок, картка з промптом і .opt-варіантами. Різниця лише в тому,
+    // що під час виміру правильну відповідь не підсвічуємо.
     body.innerHTML = `
-      <div class="ob-head">
-        <p class="note dim">Питання ${test.i + 1} з ${TEST_LEN}</p>
-        <div class="ob-rail"><div class="ob-fill" style="width:${pct}%"></div></div>
+      <div class="play-top">
+        <div class="progress-rail"><div class="progress-fill" style="width:${pct}%"></div></div>
+        <div class="play-meta">
+          <span class="mono" id="qcount">${test.i + 1} / ${TEST_LEN}</span>
+          <button class="btn ghost small" id="ob-skip-test">${fromMenu ? "Скасувати" : "Пропустити тест"}</button>
+        </div>
       </div>
-      <p class="ob-prompt">${esc(q.prompt)}</p>
-      <div class="ob-list">
+      <div class="card">
+        <p class="cat-tag mono">Тест рівня</p>
+        <p class="q-prompt">${esc(q.prompt)}</p>
         ${shuffle(q.options.slice()).map(o => `<button class="opt ob-answer" data-opt="${esc(o)}">${esc(o)}</button>`).join("")}
-      </div>
-      <button class="link-btn" id="ob-skip-test">${fromMenu ? "Скасувати" : "Пропустити тест"}</button>`;
+      </div>`;
 
     // Під час тесту правильну відповідь НЕ показуємо: інакше це навчання,
     // а не вимір — людина калібрується по ходу і результат зміщується.
@@ -176,6 +186,8 @@
   /* ---------- крок 3: підтвердження ---------- */
 
   function finish(level, source) {
+    const scr = $("screen-onboard");
+    if (scr) scr.classList.remove("testing");
     if (source === "placement") Level.setPlacement(level); else Level.setSelf(level);
     if (window.Store && Store.saveLevel) Store.saveLevel(level, source, false);
 

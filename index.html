@@ -120,10 +120,19 @@
               <button class="theme-switch" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Перемкнути світлу тему"></button>
             </div>
             <div class="level-row">
-              <span>Рівень <b id="menu-level">—</b></span>
+              <span>Мій рівень</span>
               <button class="lock-switch" id="level-lock" type="button" role="switch" aria-checked="false" aria-label="Зафіксувати рівень"></button>
             </div>
+            <div class="level-picker" id="level-picker" role="group" aria-label="Обрати рівень">
+              <button type="button" data-lv="A1">A1</button>
+              <button type="button" data-lv="A2">A2</button>
+              <button type="button" data-lv="B1">B1</button>
+              <button type="button" data-lv="B2">B2</button>
+              <button type="button" data-lv="C1">C1</button>
+              <button type="button" data-lv="C2">C2</button>
+            </div>
             <p class="note dim menu-hint" id="lock-hint">Коли зафіксовано, рівень не змінюється сам.</p>
+            <p class="note dim level-est" id="level-est"></p>
             <button class="btn ghost small" id="btn-retest">Пройти тест рівня</button>
             <button class="btn ghost small" id="btn-signout">Вийти</button>
           </div>

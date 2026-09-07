@@ -41,9 +41,15 @@ html[data-theme="light"]{
 
 *{box-sizing:border-box;margin:0;padding:0}
 
+/* Резервуємо місце під вертикальний скролбар завжди — інакше поява/зникнення
+   смуги між екранами (короткий екран → без смуги, довгий → зі смугою) зсуває
+   всю компоновку по горизонталі. */
+html{scrollbar-gutter:stable}
+
 button{
   appearance:none; -webkit-appearance:none;
   font:inherit; color:inherit; background:none; border:0;
+  touch-action:manipulation;   /* без 300мс паузи й дабл-тап зуму на тачскрині */
 }
 
 body{
@@ -151,10 +157,10 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .avatar-menu{position:relative}
 .avatar-btn{
   position:relative;
-  width:36px; height:36px; border-radius:50%; cursor:pointer;
+  width:44px; height:44px; border-radius:50%; cursor:pointer;
   background:var(--iron-3); border:1px solid var(--iron-3);
   display:flex; align-items:center; justify-content:center;
-  font-family:'Unbounded',sans-serif; font-weight:700; font-size:12px; color:var(--straw-fg);
+  font-family:'Unbounded',sans-serif; font-weight:700; font-size:13px; color:var(--straw-fg);
 }
 .avatar-btn:hover{border-color:var(--ash)}
 .avatar-btn:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
@@ -176,28 +182,29 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 
 .avatar-dropdown{
   position:absolute; top:calc(100% + 12px); right:0; z-index:20;
-  width:220px; background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r);
+  width:320px; max-width:calc(100vw - 24px);
+  background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r);
   padding:16px;
-  display:flex; flex-direction:column; gap:8px;
+  display:flex; flex-direction:column; gap:10px;
 }
 .avatar-dropdown[hidden]{display:none}
 .avatar-dropdown .who{display:block}
-.avatar-dropdown .btn{width:100%}
+.avatar-dropdown .btn{width:100%; min-height:44px}
 
 .theme-row{
   display:flex; align-items:center; justify-content:space-between;
-  font-size:14px; color:var(--chalk);
+  min-height:44px; font-size:14px; color:var(--chalk);
 }
 .theme-switch{
-  position:relative; width:40px; height:22px; border-radius:99px; flex-shrink:0;
+  position:relative; width:48px; height:28px; border-radius:99px; flex-shrink:0;
   background:var(--iron-3); border:1px solid var(--iron-3); cursor:pointer;
 }
 .theme-switch::after{
-  content:""; position:absolute; top:2px; left:2px; width:16px; height:16px;
+  content:""; position:absolute; top:2px; left:2px; width:22px; height:22px;
   border-radius:50%; background:var(--ash); transition:.15s;
 }
 .theme-switch[aria-checked="true"]{background:var(--straw); border-color:var(--straw)}
-.theme-switch[aria-checked="true"]::after{transform:translateX(18px); background:#1a1408}
+.theme-switch[aria-checked="true"]::after{transform:translateX(20px); background:#1a1408}
 .theme-switch:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
 
 /* ——— шапка ——— */
@@ -335,6 +342,11 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
    margin:auto на flex-елементі центрує, але не обрізає верх, якщо контент вищий. */
 #screen-onboard.active{display:flex; flex-direction:column; min-height:100vh}
 #screen-onboard .shell{margin:auto}
+/* Крок «тест рівня» — це той самий екран, що й основна гра: контент згори,
+   без вертикального центрування, інакше ширина картки й варіантів стрибає
+   від питання до питання разом зі зміною висоти контенту. */
+#screen-onboard.testing.active{display:block; min-height:0}
+#screen-onboard.testing .shell{margin:0 auto}
 .ob-head{margin-bottom:28px; text-align:center}
 .ob-head h1{font-size:24px; margin-bottom:10px}
 .ob-list{display:flex; flex-direction:column; gap:10px; margin-bottom:20px}
@@ -345,9 +357,6 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 }
 .ob-opt:hover{border-color:var(--straw)}
 .ob-opt:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
-.ob-prompt{font-size:18px; line-height:1.5; margin-bottom:20px; text-align:center}
-.ob-rail{height:3px; background:var(--iron-3); border-radius:2px; overflow:hidden; margin-top:12px}
-.ob-fill{height:100%; background:var(--straw); transition:width .25s}
 .ob-level{
   font-family:'Unbounded',sans-serif; font-weight:900; font-size:44px;
   color:var(--straw); line-height:1; margin-bottom:12px
@@ -410,21 +419,39 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 /* ---------- рівень у меню акаунта ---------- */
 .level-row{
   display:flex; align-items:center; justify-content:space-between;
-  font-size:14px; color:var(--chalk);
+  min-height:44px; font-size:14px; color:var(--chalk);
 }
 .level-row b{color:var(--straw); font-weight:600}
 .lock-switch{
-  position:relative; width:40px; height:22px; border-radius:99px; flex-shrink:0;
+  position:relative; width:48px; height:28px; border-radius:99px; flex-shrink:0;
   background:var(--iron-3); border:1px solid var(--iron-3); cursor:pointer;
 }
 .lock-switch::after{
-  content:""; position:absolute; top:2px; left:2px; width:16px; height:16px;
+  content:""; position:absolute; top:2px; left:2px; width:22px; height:22px;
   border-radius:50%; background:var(--ash); transition:.15s;
 }
 .lock-switch[aria-checked="true"]{background:var(--straw); border-color:var(--straw)}
-.lock-switch[aria-checked="true"]::after{transform:translateX(18px); background:#1a1408}
+.lock-switch[aria-checked="true"]::after{transform:translateX(20px); background:#1a1408}
 .lock-switch:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
 .menu-hint{font-size:12px; line-height:1.4}
+
+/* Сегментований вибір рівня: 3×2, великі кнопки під палець. */
+.level-picker{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+.level-picker button{
+  min-height:48px; padding:0; border:1px solid var(--iron-3); border-radius:var(--r);
+  background:var(--iron); color:var(--ash); cursor:pointer;
+  font-family:'Unbounded',sans-serif; font-weight:700; font-size:14px; letter-spacing:.02em;
+  transition:border-color .12s, color .12s, background .12s;
+}
+.level-picker button:hover{border-color:var(--ash); color:var(--chalk)}
+.level-picker button.active{background:var(--straw); border-color:var(--straw); color:#1a1408}
+.level-picker button:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
+
+/* рядок «що думає додаток» */
+.level-est{font-size:12px; line-height:1.4; margin:0}
+.level-est:empty{display:none}
+.level-est b{color:var(--straw-fg); font-weight:600}
+.level-est.agree b{color:var(--ok-fg)}
 
 /* переклад речення у фідбеку */
 .ua-wrap   { margin-top: 8px; }

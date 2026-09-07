@@ -29,6 +29,10 @@
     TRUST: {
       self:      { window: 15, min: 15, confirmUp: 1, confirmDown: 2 },
       placement: { window: 20, min: 20, confirmUp: 2, confirmDown: 3 },
+      // Ручний вибір — гіпотеза не слабша за placement: людина свідомо
+      // назвала рівень. Тримається в TRUST, щоб пережити перезавантаження
+      // й коректно ожити після зняття фіксації.
+      manual:    { window: 20, min: 20, confirmUp: 2, confirmDown: 3 },
       adaptive:  { window: 30, min: 30, confirmUp: 2, confirmDown: 3 }
     },
 
@@ -134,6 +138,28 @@
     return s;
   }
 
+  /** Користувач сам обрав рівень зі списку й одразу його зафіксував.
+      По суті — placement без тесту: далі рівень стоїть, поки фіксацію не знято. */
+  function setManual(lv) {
+    if (!valid(lv)) return readState();
+    const next = { v: CFG.VERSION, level: lv, source: "manual", up: 0, down: 0, seen: null, locked: true };
+    writeState(next);
+    return next;
+  }
+
+  // Чесна оцінка рівня «на показ»: один щабель від поточного за свіжою
+  // точністю, без лічильників підтверджень і без запису стану. Коли рівень
+  // зафіксовано, це єдиний спосіб побачити, що додаток думає насправді.
+  // Далі, ніж на щабель, оцінити нічим — питання поза поточним рівнем
+  // гравцю не даються, вимірювати немає на чому.
+  function readEstimate(level, acc) {
+    if (acc == null) return level;
+    const i = idx(level);
+    if (acc >= CFG.UP && i < ORDER.length - 1) return ORDER[i + 1];
+    if (acc <= CFG.DOWN && i > 0) return ORDER[i - 1];
+    return level;
+  }
+
   function current() { return readState(); }
 
   function reset() { writeState(blank()); }
@@ -143,15 +169,18 @@
   /**
    * @param {Array}  answers    рядки answers (question_id, is_correct, answered_at)
    * @param {Object} levelById  мапа id питання -> "A1".."C2"
-   * @returns {{level, source, accuracy, counted, needed, changed}}
+   * @returns {{level, source, accuracy, counted, needed, changed, estimate, estimateReady}}
    *   changed === null | { from, to, dir: "up"|"down" }
+   *   estimate — рівень, який додаток оцінює за реальними відповідями
+   *              (== level, коли не зафіксовано; може розходитись, коли зафіксовано)
+   *   estimateReady — чи набралося свіжих відповідей, щоб оцінці можна було вірити
    */
   function compute(answers, levelById) {
     const prev = readState();
 
     // Рівень ще не заданий — онбординг його поставить. Нічого не рахуємо.
     if (!prev.level) {
-      return { level: null, source: null, accuracy: null, counted: 0, needed: null, changed: null };
+      return { level: null, source: null, accuracy: null, counted: 0, needed: null, changed: null, estimate: null, estimateReady: false };
     }
 
     const t = trustOf(prev.source);
@@ -164,7 +193,8 @@
     if (rows.length < t.min) {
       return {
         level: prev.level, source: prev.source, accuracy: null,
-        counted: rows.length, needed: t.min - rows.length, changed: null
+        counted: rows.length, needed: t.min - rows.length, changed: null,
+        estimate: prev.level, estimateReady: false
       };
     }
 
@@ -176,19 +206,31 @@
     // інакше рівень змінився б від старої історії, без жодної нової сесії.
     if (prev.seen === null) {
       writeState({ ...prev, seen: rows.length });
-      return { level: prev.level, source: prev.source, accuracy: acc, counted: rows.length, needed: t.window, changed: null };
+      return {
+        level: prev.level, source: prev.source, accuracy: acc,
+        counted: rows.length, needed: t.window, changed: null,
+        estimate: prev.level, estimateReady: false
+      };
     }
 
     // Вікна для підтверджень мають не перекриватися, інакше "два підтвердження
     // поспіль" — це та сама вибірка двічі, і рівень починає скакати від шуму.
     // Оцінюємо лише коли вікно оновилося повністю.
     if (rows.length - prev.seen < t.window) {
-      return { level: prev.level, source: prev.source, accuracy: acc, counted: rows.length, needed: 0, changed: null };
+      return {
+        level: prev.level, source: prev.source, accuracy: acc,
+        counted: rows.length, needed: 0, changed: null,
+        estimate: readEstimate(prev.level, acc), estimateReady: true
+      };
     }
 
     if (prev.locked) {
       writeState({ ...prev, seen: rows.length });
-      return { level: prev.level, source: prev.source, accuracy: acc, counted: rows.length, needed: 0, changed: null };
+      return {
+        level: prev.level, source: prev.source, accuracy: acc,
+        counted: rows.length, needed: 0, changed: null,
+        estimate: readEstimate(prev.level, acc), estimateReady: true
+      };
     }
 
     const i = idx(prev.level);
@@ -225,9 +267,15 @@
 
     writeState(next);
 
+    // acc порахована на питаннях СТАРОГО рівня. Якщо рівень щойно змінився,
+    // подавати її в readEstimate для нового рівня не можна — це різні
+    // популяції. Оцінка = сам новий рівень, поки не набереться свіжих
+    // відповідей уже на ньому.
     return {
       level: next.level, source: next.source, accuracy: acc,
-      counted: rows.length, needed: 0, changed
+      counted: rows.length, needed: 0, changed,
+      estimate: changed ? next.level : readEstimate(next.level, acc),
+      estimateReady: !changed
     };
   }
 
@@ -240,7 +288,7 @@
 
   window.Level = {
     compute, progressToNext, reset, hydrate,
-    setSelf, setPlacement, setLocked, current,
+    setSelf, setPlacement, setManual, setLocked, current,
     ORDER, CFG
   };
 })();

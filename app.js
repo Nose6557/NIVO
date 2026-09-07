@@ -18,6 +18,7 @@ const SESSION_LEN = 15;
 
 let BANK = [];
 let LAST_WEAK = [];        // слабкі теми з останнього рендера — годують тост зниження
+let LAST_ANSWERS = [];     // відповіді з останнього рендера — годують меню рівня
 const LEVEL_BY_ID = {};   // id питання -> "B1"|"B2", годує level.js
 let queue = [];
 let idx = 0;
@@ -465,7 +466,8 @@ async function renderHome() {
   $("avatar-initial").textContent = email ? email[0].toUpperCase() : "?";
 
   LAST_WEAK = stats.weak || [];
-  renderLevelBadge(stats.answers);
+  LAST_ANSWERS = stats.answers || [];
+  renderLevelBadge(LAST_ANSWERS);
   renderLevelMenu();
 }
 
@@ -488,9 +490,14 @@ function renderLevelBadge(answers) {
   el.textContent = st.level;
   el.dataset.level = st.level;
 
-  btn.title = st.accuracy == null
-    ? `Рівень ${st.level} — ще ${st.needed} питань до першої перевірки`
-    : `Рівень ${st.level} — ${Math.round(st.accuracy * 100)}% на питаннях цього рівня`;
+  const locked = Level.current().locked;
+  if (locked && st.estimateReady && st.estimate && st.estimate !== st.level) {
+    btn.title = `Обрано ${st.level} · додаток оцінює ${st.estimate}`;
+  } else if (st.accuracy == null) {
+    btn.title = `Рівень ${st.level} — ще ${st.needed} питань до першої перевірки`;
+  } else {
+    btn.title = `Рівень ${st.level} — ${Math.round(st.accuracy * 100)}% на питаннях цього рівня`;
+  }
 
   if (st.changed) {
     Store.saveLevel(st.level, st.source, false);
@@ -647,24 +654,59 @@ $("level-lock").onclick = async () => {
   const st = Level.setLocked(on);
   if (st.level) await Store.saveLevel(st.level, st.source, on);
   renderLevelMenu();
+  renderLevelBadge(LAST_ANSWERS);
 };
 
-/* Рівень і перемикач фіксації в меню акаунта. */
+/* Ручний вибір рівня зі списку — одразу фіксує його. */
+$("level-picker").addEventListener("click", async (e) => {
+  const b = e.target.closest("button[data-lv]");
+  if (!b || !window.Level) return;
+  const cur = Level.current();
+  if (b.dataset.lv === cur.level && cur.locked) return;   // вже стоїть
+  const st = Level.setManual(b.dataset.lv);
+  await Store.saveLevel(st.level, st.source, st.locked);
+  renderLevelMenu();
+  renderLevelBadge(LAST_ANSWERS);
+});
+
+/* Меню рівня: сегментований вибір, перемикач фіксації і чесна оцінка додатка. */
 function renderLevelMenu() {
   if (!window.Level) return;
-  const st = Level.current();
-  const lab = $("menu-level");
+  const cur = Level.current();
+  const st = Level.compute(LAST_ANSWERS, LEVEL_BY_ID);
+
+  const picker = $("level-picker");
   const sw = $("level-lock");
   const hint = $("lock-hint");
-  if (lab) lab.textContent = st.level || "—";
+  const estEl = $("level-est");
+
+  if (picker) picker.querySelectorAll("button").forEach(b =>
+    b.classList.toggle("active", b.dataset.lv === cur.level));
+
   if (sw) {
-    sw.setAttribute("aria-checked", st.locked ? "true" : "false");
-    sw.disabled = !st.level;
+    sw.setAttribute("aria-checked", cur.locked ? "true" : "false");
+    sw.disabled = !cur.level;
   }
+
   if (hint) {
-    hint.textContent = st.locked
+    hint.textContent = cur.locked
       ? "Рівень зафіксовано — сам не змінюватиметься."
-      : "Коли зафіксовано, рівень не змінюється сам.";
+      : "Без фіксації рівень підлаштовується під твої відповіді.";
+  }
+
+  if (estEl) {
+    estEl.classList.remove("agree");
+    if (!cur.level) {
+      estEl.textContent = "";
+    } else if (!st.estimateReady || !st.estimate) {
+      estEl.textContent = "Ще мало свіжих відповідей, щоб оцінити рівень.";
+    } else if (st.estimate === cur.level) {
+      estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — ти на своєму рівні.`;
+      estEl.classList.add("agree");
+    } else {
+      const higher = Level.ORDER.indexOf(st.estimate) > Level.ORDER.indexOf(cur.level);
+      estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
+    }
   }
 }
 
