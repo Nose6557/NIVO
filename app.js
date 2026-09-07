@@ -657,16 +657,27 @@ $("level-lock").onclick = async () => {
   renderLevelBadge(LAST_ANSWERS);
 };
 
-/* Ручний вибір рівня зі списку. Доступний, лише поки рівень не зафіксовано. */
+/* Ручний вибір рівня зі списку — одразу фіксує його. */
 $("level-picker").addEventListener("click", async (e) => {
   const b = e.target.closest("button[data-lv]");
-  if (!b || b.disabled || !window.Level) return;
-  if (b.dataset.lv === Level.current().level) return;   // вже стоїть
+  if (!b || !window.Level) return;
+  const cur = Level.current();
+  if (b.dataset.lv === cur.level && cur.locked) return;   // вже стоїть
   const st = Level.setManual(b.dataset.lv);
   await Store.saveLevel(st.level, st.source, st.locked);
   renderLevelMenu();
   renderLevelBadge(LAST_ANSWERS);
 });
+
+/* Клік по «Підвищити/Змінити до X» — застосовує оцінку додатка одним рухом. */
+$("btn-apply-est").onclick = async () => {
+  const lv = $("btn-apply-est").dataset.lv;
+  if (!lv || !window.Level) return;
+  const st = Level.setManual(lv);
+  await Store.saveLevel(st.level, st.source, st.locked);
+  renderLevelMenu();
+  renderLevelBadge(LAST_ANSWERS);
+};
 
 /* Меню рівня: сегментований вибір, перемикач фіксації і чесна оцінка додатка. */
 function renderLevelMenu() {
@@ -679,12 +690,8 @@ function renderLevelMenu() {
   const hint = $("lock-hint");
   const estEl = $("level-est");
 
-  // Зафіксований рівень не редагується: кнопки вимикаємо, обраний лишається
-  // яскравим (див. CSS), решта — приглушені.
-  if (picker) picker.querySelectorAll("button").forEach(b => {
-    b.classList.toggle("active", b.dataset.lv === cur.level);
-    b.disabled = cur.locked;
-  });
+  if (picker) picker.querySelectorAll("button").forEach(b =>
+    b.classList.toggle("active", b.dataset.lv === cur.level));
 
   if (sw) {
     sw.setAttribute("aria-checked", cur.locked ? "true" : "false");
@@ -693,12 +700,14 @@ function renderLevelMenu() {
 
   if (hint) {
     hint.textContent = cur.locked
-      ? "Рівень зафіксовано — вимкни, щоб обрати інший."
+      ? "Рівень зафіксовано — сам не змінюватиметься."
       : "Без фіксації рівень підлаштовується під твої відповіді.";
   }
 
+  const applyEl = $("btn-apply-est");
   if (estEl) {
     estEl.classList.remove("agree");
+    let apply = null;   // рівень, який пропонуємо застосувати (null = ховаємо дію)
     if (!cur.level) {
       estEl.textContent = "";
     } else if (!st.estimateReady || !st.estimate) {
@@ -709,6 +718,14 @@ function renderLevelMenu() {
     } else {
       const higher = Level.ORDER.indexOf(st.estimate) > Level.ORDER.indexOf(cur.level);
       estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
+      apply = { lv: st.estimate, higher };
+    }
+    if (applyEl) {
+      applyEl.hidden = !apply;
+      if (apply) {
+        applyEl.dataset.lv = apply.lv;
+        applyEl.textContent = apply.higher ? `Підвищити до ${apply.lv}` : `Змінити на ${apply.lv}`;
+      }
     }
   }
 }

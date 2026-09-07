@@ -107,7 +107,7 @@
           <div class="avatar-dropdown" id="avatar-dropdown" hidden>
             <p class="who" id="who"></p>
             <div class="level-row">
-              <span>Зафіксувати рівень</span>
+              <span>Мій рівень</span>
               <button class="lock-switch" id="level-lock" type="button" role="switch" aria-checked="false" aria-label="Зафіксувати рівень"></button>
             </div>
             <div class="level-picker" id="level-picker" role="group" aria-label="Обрати рівень">
@@ -120,8 +120,11 @@
             </div>
             <p class="note dim menu-hint" id="lock-hint">Коли зафіксовано, рівень не змінюється сам.</p>
             <p class="note dim level-est" id="level-est"></p>
-            <button class="btn ghost small" id="btn-retest">Пройти тест рівня</button>
-            <button class="btn ghost small" id="btn-signout">Вийти</button>
+            <button class="link-btn est-apply" id="btn-apply-est" type="button" hidden></button>
+            <div class="menu-foot">
+              <button class="btn ghost small strong" id="btn-retest">Пройти тест рівня</button>
+              <button class="link-btn" id="btn-signout" type="button">Вийти</button>
+            </div>
           </div>
         </div>
       </div>
