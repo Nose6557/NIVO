@@ -413,9 +413,12 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   font-family:'Unbounded',sans-serif; font-weight:700; font-size:14px; letter-spacing:.02em;
   transition:border-color .12s, color .12s, background .12s;
 }
-.level-picker button:hover{border-color:var(--ash); color:var(--chalk)}
+.level-picker button:hover:not(:disabled){border-color:var(--ash); color:var(--chalk)}
 .level-picker button.active{background:var(--straw); border-color:var(--straw); color:#1a1408}
 .level-picker button:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
+/* Зафіксовано: кнопки неактивні, але обраний рівень лишається чітко видним. */
+.level-picker button:disabled{cursor:default; opacity:.4}
+.level-picker button.active:disabled{opacity:1}
 
 /* рядок «що думає додаток» */
 .level-est{font-size:12px; line-height:1.4; margin:0}

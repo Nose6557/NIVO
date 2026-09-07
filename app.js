@@ -657,12 +657,11 @@ $("level-lock").onclick = async () => {
   renderLevelBadge(LAST_ANSWERS);
 };
 
-/* Ручний вибір рівня зі списку — одразу фіксує його. */
+/* Ручний вибір рівня зі списку. Доступний, лише поки рівень не зафіксовано. */
 $("level-picker").addEventListener("click", async (e) => {
   const b = e.target.closest("button[data-lv]");
-  if (!b || !window.Level) return;
-  const cur = Level.current();
-  if (b.dataset.lv === cur.level && cur.locked) return;   // вже стоїть
+  if (!b || b.disabled || !window.Level) return;
+  if (b.dataset.lv === Level.current().level) return;   // вже стоїть
   const st = Level.setManual(b.dataset.lv);
   await Store.saveLevel(st.level, st.source, st.locked);
   renderLevelMenu();
@@ -680,8 +679,12 @@ function renderLevelMenu() {
   const hint = $("lock-hint");
   const estEl = $("level-est");
 
-  if (picker) picker.querySelectorAll("button").forEach(b =>
-    b.classList.toggle("active", b.dataset.lv === cur.level));
+  // Зафіксований рівень не редагується: кнопки вимикаємо, обраний лишається
+  // яскравим (див. CSS), решта — приглушені.
+  if (picker) picker.querySelectorAll("button").forEach(b => {
+    b.classList.toggle("active", b.dataset.lv === cur.level);
+    b.disabled = cur.locked;
+  });
 
   if (sw) {
     sw.setAttribute("aria-checked", cur.locked ? "true" : "false");
@@ -690,7 +693,7 @@ function renderLevelMenu() {
 
   if (hint) {
     hint.textContent = cur.locked
-      ? "Рівень зафіксовано — сам не змінюватиметься."
+      ? "Рівень зафіксовано — вимкни, щоб обрати інший."
       : "Без фіксації рівень підлаштовується під твої відповіді.";
   }
 
