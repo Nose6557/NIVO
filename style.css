@@ -30,7 +30,7 @@
   --lvl-c1: var(--blue);    --lvl-c1-rgb: 63,127,181;
   --lvl-c2: var(--blue);    --lvl-c2-rgb: 63,127,181;
 
-  --r: 4px;
+  --r: 24px;
   --shell: 1080px;
 }
 
