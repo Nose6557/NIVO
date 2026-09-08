@@ -706,19 +706,23 @@ function renderLevelMenu() {
 
   const applyEl = $("btn-apply-est");
   if (estEl) {
-    estEl.classList.remove("agree");
     let apply = null;   // рівень, який пропонуємо застосувати (null = ховаємо дію)
     if (!cur.level) {
       estEl.textContent = "";
+      estEl.removeAttribute("data-level");
     } else if (!st.estimateReady || !st.estimate) {
       estEl.textContent = "Ще мало свіжих відповідей, щоб оцінити рівень.";
-    } else if (st.estimate === cur.level) {
-      estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — ти на своєму рівні.`;
-      estEl.classList.add("agree");
+      estEl.removeAttribute("data-level");
     } else {
-      const higher = Level.ORDER.indexOf(st.estimate) > Level.ORDER.indexOf(cur.level);
-      estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
-      apply = { lv: st.estimate, higher };
+      // Літеру рівня фарбуємо в його колір щабля (див. [data-level] у CSS).
+      estEl.dataset.level = st.estimate;
+      if (st.estimate === cur.level) {
+        estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — ти на своєму рівні.`;
+      } else {
+        const higher = Level.ORDER.indexOf(st.estimate) > Level.ORDER.indexOf(cur.level);
+        estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
+        apply = { lv: st.estimate, higher };
+      }
     }
     if (applyEl) {
       applyEl.hidden = !apply;
