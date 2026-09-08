@@ -238,10 +238,34 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r);
   padding:16px;
   display:flex; flex-direction:column; gap:10px;
+  transform-origin:top right;
 }
 .avatar-dropdown[hidden]{display:none}
+/* JS перемикає лише [hidden] (display:none ↔ flex) — анімація грає на появі. */
+.avatar-dropdown:not([hidden]){animation:avatar-menu-in .18s cubic-bezier(.4,0,.2,1)}
+@keyframes avatar-menu-in{
+  from{opacity:0; transform:translateY(-8px) scale(.96)}
+  to{opacity:1; transform:translateY(0) scale(1)}
+}
 .avatar-dropdown .who{display:block}
 .avatar-dropdown .btn{width:100%; min-height:44px}
+
+@media (prefers-reduced-motion:reduce){
+  .avatar-dropdown:not([hidden]),
+  body:has(#avatar-dropdown:not([hidden])) #screen-home::after{animation:none}
+}
+
+/* Затемнення контенту, поки відкрите меню аватара (як у модалок).
+   Оверлей — псевдоелемент #screen-home (z-index:1, свій контекст накладання):
+   z-index:5 кладе його над контентом .shell, але під .topbar (z-index:10),
+   тож шапка з аватаром і дропдаун лишаються поверх затемнення. */
+body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
+  content:"";
+  position:fixed; inset:0; z-index:5;
+  background:rgba(0,0,0,.5);
+  animation:avatar-overlay-in .18s ease;
+}
+@keyframes avatar-overlay-in{from{opacity:0}to{opacity:1}}
 
 /* ——— шапка ——— */
 .hero{display:flex; flex-direction:column; align-items:center; text-align:center;}
@@ -468,7 +492,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .menu-hint{font-size:12px; line-height:1.4}
 
 /* Сегментований вибір рівня: 3×2, великі кнопки під палець. */
-.level-picker{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+.level-picker{display:grid; grid-template-columns:repeat(3,1fr); gap:4px}
 .level-picker button{
   min-height:48px; padding:0; border:1px solid var(--iron-3); border-radius:var(--r);
   background:var(--iron); color:var(--ash); cursor:pointer;
@@ -495,7 +519,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .est-apply:hover{color:#e8b352}
 
 /* футер меню: дію відділяємо лінією, вихід приглушений */
-.menu-foot{display:flex; flex-direction:column; gap:10px; margin-top:4px; padding-top:12px; border-top:1px solid var(--iron-3)}
+.menu-foot{display:flex; flex-direction:column; gap:10px; margin-top:4px; padding-top:12px}
 .menu-foot .link-btn{align-self:center; min-height:36px; font-size:13px}
 
 /* переклад речення у фідбеку */
