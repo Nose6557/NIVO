@@ -99,9 +99,8 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   border:1px solid var(--iron-3);
   border-radius:var(--r);
   padding:24px;
-  display:flex; flex-direction:column; gap:16px;
+  display:flex; flex-direction:column; gap:24px;
 }
-.panel > .segmented{margin-bottom:8px}
 .panel > .field{margin-bottom:0}
 .panel > .link-btn{margin-top:0; margin-bottom:0}
 .panel > .note{margin-bottom:0}
