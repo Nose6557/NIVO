@@ -567,8 +567,12 @@ let authMode = "in";
 
 document.querySelectorAll("[data-authtab]").forEach(t => {
   t.onclick = () => {
-    document.querySelectorAll("[data-authtab]").forEach(x => x.classList.remove("active"));
+    document.querySelectorAll("[data-authtab]").forEach(x => {
+      x.classList.remove("active");
+      x.setAttribute("aria-selected", "false");
+    });
     t.classList.add("active");
+    t.setAttribute("aria-selected", "true");
     authMode = t.dataset.authtab;
     $("auth-submit").textContent = authMode === "in" ? "Увійти" : "Створити акаунт";
     $("auth-msg").textContent = "";

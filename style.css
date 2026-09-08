@@ -101,19 +101,42 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   padding:24px;
   display:flex; flex-direction:column; gap:16px;
 }
-.panel > .tabs{margin-bottom:0}
+.panel > .segmented{margin-bottom:8px}
 .panel > .field{margin-bottom:0}
 .panel > .link-btn{margin-top:0; margin-bottom:0}
 .panel > .note{margin-bottom:0}
 .panel > .note:empty{display:none}
 
-.tabs{display:flex; gap:4px; margin-bottom:24px; border-bottom:1px solid var(--iron-3)}
-.tab{
-  background:none; border:0; color:var(--ash); cursor:pointer;
-  font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.1em;
-  text-transform:uppercase; padding:8px 12px; border-bottom:2px solid transparent;
+/* ——— segmented control (iOS) ——— */
+.segmented{
+  position:relative;
+  display:grid; grid-template-columns:1fr 1fr;
+  padding:2px;
+  background:var(--iron);
+  border-radius:10px;
+  font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif;
+  isolation:isolate;
 }
-.tab.active{color:var(--chalk); border-bottom-color:var(--straw)}
+.seg-thumb{
+  position:absolute; z-index:0;
+  top:2px; left:2px;
+  width:calc(50% - 2px); height:calc(100% - 4px);
+  background:var(--iron-3);
+  border-radius:8px;
+  box-shadow:0 1px 3px rgba(0,0,0,.45), 0 0 0 .5px rgba(0,0,0,.25);
+  transition:transform .25s cubic-bezier(.4,0,.2,1);
+}
+.segmented:has(.seg:last-of-type.active) .seg-thumb{transform:translateX(100%)}
+.seg{
+  position:relative; z-index:1;
+  background:none; border:0; cursor:pointer;
+  padding:7px 12px; min-height:34px;
+  font-size:14px; font-weight:500; letter-spacing:-.01em;
+  color:color-mix(in srgb, var(--ash), var(--chalk) 26%);
+  transition:color .2s ease;
+}
+.seg.active{color:var(--chalk); font-weight:600}
+.seg:focus-visible{outline:2px solid var(--straw); outline-offset:2px; border-radius:8px}
 
 /* ——— текстові поля: стиль iOS ——— */
 .field{display:block; margin-bottom:16px}
@@ -126,7 +149,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .field input{
   width:100%;
   -webkit-appearance:none; appearance:none;
-  background:var(--iron-3);
+  background:var(--iron);
   border:1px solid transparent;
   border-radius:12px;
   color:var(--chalk);
@@ -137,7 +160,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   transition:border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
 }
 .field input::placeholder{color:var(--ash); opacity:.55}
-.field input:hover{background:color-mix(in srgb, var(--iron-3) 88%, var(--chalk))}
+.field input:hover{background:var(--iron-3)}
 .field input:focus{
   outline:none;
   background:var(--iron);
@@ -147,7 +170,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .field input:-webkit-autofill,
 .field input:-webkit-autofill:focus{
   -webkit-text-fill-color:var(--chalk);
-  -webkit-box-shadow:0 0 0 100px var(--iron-3) inset;
+  -webkit-box-shadow:0 0 0 100px var(--iron) inset;
   caret-color:var(--chalk);
 }
 

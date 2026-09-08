@@ -32,9 +32,10 @@
     </div>
 
     <div class="panel">
-      <div class="tabs">
-        <button class="tab active" data-authtab="in">Вхід</button>
-        <button class="tab" data-authtab="up">Реєстрація</button>
+      <div class="segmented" role="tablist" aria-label="Вхід або реєстрація">
+        <span class="seg-thumb" aria-hidden="true"></span>
+        <button class="seg active" data-authtab="in" role="tab" aria-selected="true">Вхід</button>
+        <button class="seg" data-authtab="up" role="tab" aria-selected="false">Реєстрація</button>
       </div>
       <label class="field">
         <span>Email</span>
