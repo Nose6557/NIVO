@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "updated": "2026-09-04",
+  "updated": "2026-09-05",
   "questionLevels": [
     "A1",
     "A2",
@@ -10,6 +10,10 @@
     "C2"
   ],
   "levels": [
+    {
+      "id": "A1",
+      "label": "A1"
+    },
     {
       "id": "B1-B2",
       "label": "B1 → B2"
@@ -112,6 +116,16 @@
       "file": "c2-01.json",
       "level": "C2",
       "title": "Пак C2 — вищий рівень"
+    },
+    {
+      "file": "a1-01.json",
+      "level": "A1",
+      "title": "Пак A1 — початковий рівень"
+    },
+    {
+      "file": "a2-02.json",
+      "level": "A2",
+      "title": "Пак A2 — партія 2"
     }
   ]
 }
