@@ -389,7 +389,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   .stat-block{grid-template-columns:1fr 1fr}
   .tbar{grid-template-columns:112px 1fr 48px; gap:12px}
   .tbar-name{font-size:12px}
-  .shell{padding:24px 24px 48px}
+  .shell{padding:24px 16px 48px}
   .card{padding:24px}
 }
 
