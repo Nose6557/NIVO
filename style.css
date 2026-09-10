@@ -2,19 +2,19 @@
 :root{
   color-scheme: dark;
 
-  --iron:        #14161b;
-  --iron-2:      #1c1f26;
-  --iron-3:      #262a33;
-  --ash:         #8d93a1;
-  --chalk:       #eceae4;
+  --iron:        #1c1c1e;
+  --iron-2:      #2c2c2e;
+  --iron-3:      #3a3a3c;
+  --ash:         #8e8e93;
+  --chalk:       #d1d1d6;
 
-  --straw:       #d9a441;   /* початок */
-  --bronze:      #b4632c;
-  --violet:      #6f5a9e;
-  --blue:        #3f7fb5;   /* майстерність */
+  --straw:       #34c759;   /* початок */
+  --bronze:      #ff8d28;
+  --violet:      #6155f5;
+  --blue:        #0088ff;   /* майстерність */
 
-  --ok:          #5fa87c;
-  --no:          #c25a5a;
+  --ok:          #34c759;
+  --no:          #ff383c;
 
   /* насиченіші варіанти для тексту, коли фонового кольору недостатньо для контрасту */
   --straw-fg:    var(--straw);
@@ -22,13 +22,13 @@
   --no-fg:       #d97070;
 
   /* Кольоровий код рівнів CEFR — одне джерело правди для бейджа, святкування
-     підвищення й салюту. A1–A2 солома, B1 бронза, B2 фіолет, C1–C2 синь. */
-  --lvl-a1: var(--straw);   --lvl-a1-rgb: 217,164,65;
-  --lvl-a2: var(--straw);   --lvl-a2-rgb: 217,164,65;
-  --lvl-b1: var(--bronze);  --lvl-b1-rgb: 180,99,44;
-  --lvl-b2: var(--violet);  --lvl-b2-rgb: 111,90,158;
-  --lvl-c1: var(--blue);    --lvl-c1-rgb: 63,127,181;
-  --lvl-c2: var(--blue);    --lvl-c2-rgb: 63,127,181;
+     підвищення й салюту. A1–A2 straw, B1–B2 blue, C1–C2 violet. */
+  --lvl-a1: var(--straw);   --lvl-a1-rgb: 52,199,89;
+  --lvl-a2: var(--straw);   --lvl-a2-rgb: 52,199,89;
+  --lvl-b1: var(--blue);    --lvl-b1-rgb: 0,136,255;
+  --lvl-b2: var(--blue);    --lvl-b2-rgb: 0,136,255;
+  --lvl-c1: var(--violet);  --lvl-c1-rgb: 97,85,245;
+  --lvl-c2: var(--violet);  --lvl-c2-rgb: 97,85,245;
 
   --r: 24px;
   --shell: 1080px;
@@ -164,7 +164,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   outline:none;
   background:var(--iron);
   border-color:var(--straw);
-  box-shadow:0 0 0 4px rgba(217,164,65,.15);
+  box-shadow:0 0 0 4px rgba(52,199,89,.15);
 }
 .field input:-webkit-autofill,
 .field input:-webkit-autofill:focus{
@@ -181,8 +181,8 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   padding:12px 24px; line-height:20px; border:1px solid transparent; transition:.15s;
 }
 .btn:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
-.btn.primary{background:var(--straw); color:#1a1408; width:100%}
-.btn.primary:hover{background:#e8b352}
+.btn.primary{background:var(--straw); color:#1c1c1e; width:100%}
+.btn.primary:hover{background:#30d158}
 .btn.primary.big{width:auto}
 .btn.ghost{background:none; border-color:var(--iron-3); color:var(--ash); width:100%}
 .btn.ghost:hover{color:var(--chalk); border-color:var(--ash)}
@@ -313,8 +313,8 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 .opt:hover:not(:disabled){border-color:var(--ash)}
 .opt:focus-visible{outline:2px solid var(--straw); outline-offset:1px}
 .opt:disabled{cursor:default}
-.opt.right{border-color:var(--ok); background:rgba(95,168,124,.1)}
-.opt.wrong{border-color:var(--no); background:rgba(194,90,90,.1)}
+.opt.right{border-color:var(--ok); background:rgba(52,199,89,.1)}
+.opt.wrong{border-color:var(--no); background:rgba(255,56,60,.1)}
 
 .fill-input{
   width:100%; background:var(--iron); border:1px solid var(--iron-3); border-radius:var(--r);
@@ -361,7 +361,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 /* ——— модалка експорту ——— */
 .modal-overlay{
   position:fixed; inset:0; z-index:50;
-  background:rgba(10,11,14,.72);
+  background:rgba(20,20,22,.72);
   display:flex; align-items:center; justify-content:center;
   padding:24px;
 }
@@ -426,7 +426,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 /* ---------- підвищення рівня ---------- */
 .level-up{
   position:fixed; inset:0; z-index:50; display:flex; align-items:center; justify-content:center;
-  background:rgba(20,22,27,.88); padding:24px
+  background:rgba(28,28,30,.88); padding:24px
 }
 .level-up[hidden]{display:none}
 .level-up-fx{
@@ -487,7 +487,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   border-radius:50%; background:var(--ash); transition:.15s;
 }
 .lock-switch[aria-checked="true"]{background:var(--straw); border-color:var(--straw)}
-.lock-switch[aria-checked="true"]::after{transform:translateX(20px); background:#1a1408}
+.lock-switch[aria-checked="true"]::after{transform:translateX(20px); background:#1c1c1e}
 .lock-switch:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
 .menu-hint{font-size:12px; line-height:16px}
 
@@ -500,7 +500,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   transition:border-color .12s, color .12s, background .12s;
 }
 .level-picker button:hover{border-color:var(--ash); color:var(--chalk)}
-.level-picker button.active{background:var(--straw); border-color:var(--straw); color:#1a1408}
+.level-picker button.active{background:var(--straw); border-color:var(--straw); color:#1c1c1e}
 .level-picker button:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
 
 /* рядок «що думає додаток» */
@@ -516,7 +516,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 /* дія-резолвер: підтягнути рівень до оцінки додатка */
 .est-apply{align-self:flex-start; margin-top:-4px; font-size:13px; color:var(--straw-fg)}
 .est-apply[hidden]{display:none}
-.est-apply:hover{color:#e8b352}
+.est-apply:hover{color:#30d158}
 
 /* футер меню: дію відділяємо лінією, вихід приглушений */
 .menu-foot{display:flex; flex-direction:column; gap:10px; margin-top:4px; padding-top:12px}
