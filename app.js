@@ -483,12 +483,16 @@ function renderLevelBadge(answers) {
   if (!st.level) {
     el.hidden = true;
     btn.removeAttribute("title");
+    btn.removeAttribute("data-level");
     return;
   }
 
   el.hidden = false;
   el.textContent = st.level;
   el.dataset.level = st.level;
+  // Той самий data-level на кнопці — фарбує літеру аватара в колір рівня
+  // (CSS: .avatar-btn{color:var(--level-color, ...)}).
+  btn.dataset.level = st.level;
 
   const locked = Level.current().locked;
   if (locked && st.estimateReady && st.estimate && st.estimate !== st.level) {

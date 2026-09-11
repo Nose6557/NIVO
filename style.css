@@ -38,13 +38,14 @@
   --ok-fg:       var(--ok);
   --no-fg:       #d97070;
 
-  /* Кольоровий код рівнів CEFR — одне джерело правди для бейджа, святкування
-     підвищення й салюту. A1–A2 green, B1–B2 blue, C1–C2 indigo. */
-  --lvl-a1: var(--green);   --lvl-a1-rgb: 52,199,89;
-  --lvl-a2: var(--green);   --lvl-a2-rgb: 52,199,89;
-  --lvl-b1: var(--blue);    --lvl-b1-rgb: 0,136,255;
-  --lvl-b2: var(--blue);    --lvl-b2-rgb: 0,136,255;
-  --lvl-c1: var(--indigo);  --lvl-c1-rgb: 97,85,245;
+  /* Кольоровий код рівнів CEFR — одне джерело правди для бейджа, аватара,
+     святкування підвищення й салюту. Кожен щабель — свій колір системної
+     палітри: A1 orange, A2 yellow, B1 green, B2 cyan, C1 blue, C2 indigo. */
+  --lvl-a1: var(--orange);  --lvl-a1-rgb: 255,141,40;
+  --lvl-a2: var(--yellow);  --lvl-a2-rgb: 255,204,0;
+  --lvl-b1: var(--green);   --lvl-b1-rgb: 52,199,89;
+  --lvl-b2: var(--cyan);    --lvl-b2-rgb: 0,192,232;
+  --lvl-c1: var(--blue);    --lvl-c1-rgb: 0,136,255;
   --lvl-c2: var(--indigo);  --lvl-c2-rgb: 97,85,245;
 
   --r: 24px;
@@ -230,7 +231,10 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   width:44px; height:44px; border-radius:50%; cursor:pointer;
   background:var(--border); border:1px solid var(--border);
   display:flex; align-items:center; justify-content:center;
-  font-family:'Unbounded',sans-serif; font-weight:700; font-size:13px; color:var(--green-fg);
+  font-family:'Unbounded',sans-serif; font-weight:700; font-size:13px;
+  /* Літера фарбується в колір рівня власника — data-level ставить #avatar-btn
+     (renderLevelBadge у app.js), поки рівень невідомий, лишається приглушеною. */
+  color:var(--level-color, var(--text-muted));
 }
 .avatar-btn:hover{border-color:var(--text-muted)}
 .avatar-btn:focus-visible{outline:2px solid var(--green); outline-offset:2px}
@@ -456,7 +460,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   position:relative; z-index:2;
   /* колір щабля: обводка й сяйво заголовка беруться з кольорового коду рівнів
      (--level-color / --level-rgb, які виставляє [data-level] на #level-up). */
-  --edge:var(--level-color, var(--green));
+  --edge:var(--level-color, var(--orange));
   --glow:var(--level-rgb, 217,164,65);
   background:var(--surface); border:1px solid var(--edge); border-radius:var(--r);
   padding:40px 32px; text-align:center; max-width:380px; width:100%;
@@ -528,7 +532,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 /* Літера рівня — у своєму кольорі щабля, трохи висвітленому до --text,
    щоб дрібний текст лишався читабельним на темному тлі. */
 .level-est b{
-  color:color-mix(in srgb, var(--level-color, var(--green)) 82%, var(--text));
+  color:color-mix(in srgb, var(--level-color, var(--orange)) 82%, var(--text));
   font-weight:600;
 }
 

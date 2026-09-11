@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <rect width="512" height="512" rx="112" fill="#1c1c1e"/>
-  <!-- три висхідні рівні: A1 -> B1 -> C1 -->
+  <!-- три висхідні рівні: A2 -> B2 -> C2 -->
   <g>
-    <rect x="99"  y="270" width="86" height="143" rx="18" fill="#34c759"/>
-    <rect x="213" y="200" width="86" height="213" rx="18" fill="#0088ff"/>
+    <rect x="99"  y="270" width="86" height="143" rx="18" fill="#ffcc00"/>
+    <rect x="213" y="200" width="86" height="213" rx="18" fill="#00c0e8"/>
     <rect x="327" y="130" width="86" height="283" rx="18" fill="#6155f5"/>
   </g>
 </svg>
