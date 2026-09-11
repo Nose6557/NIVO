@@ -416,10 +416,10 @@ function longestCorrectRun(answers) {
 }
 
 function temperColor(acc) {
-  if (acc >= 0.85) return "var(--blue)";
-  if (acc >= 0.7) return "var(--indigo)";
-  if (acc >= 0.5) return "var(--orange)";
-  return "var(--green)";
+  if (acc >= 0.85) return "var(--indigo)";
+  if (acc >= 0.7) return "var(--blue)";
+  if (acc >= 0.5) return "var(--cyan)";
+  return "var(--teal)";
 }
 
 async function renderHome() {
