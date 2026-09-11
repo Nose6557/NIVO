@@ -17,18 +17,18 @@
   --text-muted:  var(--gray-400);
   --text:        var(--gray-200);
 
-  --red:         #ff383c;
-  --orange:      #ff8d28;
-  --yellow:      #ffcc00;
-  --green:       #34c759;
-  --mint:        #00c8b3;
-  --teal:        #00c3d0;
-  --cyan:        #00c0e8;
-  --blue:        #0088ff;
-  --indigo:      #6155f5;
-  --purple:      #cb30e0;
-  --pink:        #ff2d55;
-  --brown:       #ac7f5e;
+  --red:         #ff4245;
+  --orange:      #ff9230;
+  --yellow:      #ffd600;
+  --green:       #30d158;
+  --mint:        #00dac3;
+  --teal:        #00d2e0;
+  --cyan:        #3cd3fe;
+  --blue:        #0091ff;
+  --indigo:      #6d7cff;
+  --purple:      #db34f2;
+  --pink:        #ff375f;
+  --brown:       #b78a66;
 
   --ok:          var(--green);
   --no:          var(--red);
