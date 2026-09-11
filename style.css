@@ -8,27 +8,28 @@
   --ash:         #8e8e93;
   --chalk:       #d1d1d6;
 
-  --straw:       #34c759;   /* початок */
-  --bronze:      #ff8d28;
-  --violet:      #6155f5;
-  --blue:        #0088ff;   /* майстерність */
+  --green:       #34c759;
+  --orange:      #ff8d28;
+  --indigo:      #6155f5;
+  --blue:        #0088ff;   
+  --red:         #ff383c;
 
-  --ok:          #34c759;
-  --no:          #ff383c;
+  --ok:          var(--green);
+  --no:          var(--red);
 
   /* насиченіші варіанти для тексту, коли фонового кольору недостатньо для контрасту */
-  --straw-fg:    var(--straw);
+  --green-fg:    var(--green);
   --ok-fg:       var(--ok);
   --no-fg:       #d97070;
 
   /* Кольоровий код рівнів CEFR — одне джерело правди для бейджа, святкування
-     підвищення й салюту. A1–A2 straw, B1–B2 blue, C1–C2 violet. */
-  --lvl-a1: var(--straw);   --lvl-a1-rgb: 52,199,89;
-  --lvl-a2: var(--straw);   --lvl-a2-rgb: 52,199,89;
+     підвищення й салюту. A1–A2 green, B1–B2 blue, C1–C2 indigo. */
+  --lvl-a1: var(--green);   --lvl-a1-rgb: 52,199,89;
+  --lvl-a2: var(--green);   --lvl-a2-rgb: 52,199,89;
   --lvl-b1: var(--blue);    --lvl-b1-rgb: 0,136,255;
   --lvl-b2: var(--blue);    --lvl-b2-rgb: 0,136,255;
-  --lvl-c1: var(--violet);  --lvl-c1-rgb: 97,85,245;
-  --lvl-c2: var(--violet);  --lvl-c2-rgb: 97,85,245;
+  --lvl-c1: var(--indigo);  --lvl-c1-rgb: 97,85,245;
+  --lvl-c2: var(--indigo);  --lvl-c2-rgb: 97,85,245;
 
   --r: 24px;
   --shell: 1080px;
@@ -83,7 +84,7 @@ body{
 /* ——— типографіка ——— */
 h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.02em}
 .mono{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.06em; text-transform:uppercase}
-.eyebrow{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--straw-fg); margin-bottom:16px}
+.eyebrow{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--green-fg); margin-bottom:16px}
 .note{font-size:12px; color:var(--ash); margin-bottom:8px}
 .note.dim{font-size:14px}
 
@@ -135,7 +136,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   transition:color .2s ease;
 }
 .seg.active{color:var(--chalk); font-weight:600}
-.seg:focus-visible{outline:2px solid var(--straw); outline-offset:2px; border-radius:8px}
+.seg:focus-visible{outline:2px solid var(--green); outline-offset:2px; border-radius:8px}
 
 /* ——— текстові поля: стиль iOS ——— */
 .field{display:block; margin-bottom:16px}
@@ -152,7 +153,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   border:1px solid transparent;
   border-radius:12px;
   color:var(--chalk);
-  caret-color:var(--straw);
+  caret-color:var(--green);
   padding:13px 14px; min-height:46px;
   font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif;
   font-size:17px; letter-spacing:-.01em; line-height:24px;
@@ -163,7 +164,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .field input:focus{
   outline:none;
   background:var(--iron);
-  border-color:var(--straw);
+  border-color:var(--green);
   box-shadow:0 0 0 4px rgba(52,199,89,.15);
 }
 .field input:-webkit-autofill,
@@ -180,8 +181,8 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:16px;
   padding:12px 24px; line-height:20px; border:1px solid transparent; transition:.15s;
 }
-.btn:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
-.btn.primary{background:var(--straw); color:#1c1c1e; width:100%}
+.btn:focus-visible{outline:2px solid var(--green); outline-offset:2px}
+.btn.primary{background:var(--green); color:#1c1c1e; width:100%}
 .btn.primary:hover{background:#30d158}
 .btn.primary.big{width:auto}
 .btn.ghost{background:none; border-color:var(--iron-3); color:var(--ash); width:100%}
@@ -213,10 +214,10 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   width:44px; height:44px; border-radius:50%; cursor:pointer;
   background:var(--iron-3); border:1px solid var(--iron-3);
   display:flex; align-items:center; justify-content:center;
-  font-family:'Unbounded',sans-serif; font-weight:700; font-size:13px; color:var(--straw-fg);
+  font-family:'Unbounded',sans-serif; font-weight:700; font-size:13px; color:var(--green-fg);
 }
 .avatar-btn:hover{border-color:var(--ash)}
-.avatar-btn:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
+.avatar-btn:focus-visible{outline:2px solid var(--green); outline-offset:2px}
 /* Бейдж рівня на аватарі. Обгортка шириною з аватар центрує бейдж по горизонталі. */
 .level-badge-wrap{
   position:absolute; left:0; right:0; bottom:-5px;
@@ -228,7 +229,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   display:flex; align-items:center; justify-content:center;
   border-radius:99px; border:2px solid var(--iron);
   font-family:'Unbounded',sans-serif; font-weight:700; font-size:8px; letter-spacing:.03em;
-  color:var(--iron); background:var(--level-color, var(--bronze));
+  color:var(--iron); background:var(--level-color, var(--orange));
 }
 .level-badge[hidden]{display:none}
 
@@ -295,10 +296,10 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 /* ——— гра ——— */
 .play-top{padding:0px 0 16px}
 .progress-rail{height:4px; background:var(--iron-3); border-radius:99px; overflow:hidden}
-.progress-fill{height:100%; width:0; background:var(--straw); transition:width .35s ease}
+.progress-fill{height:100%; width:0; background:var(--green); transition:width .35s ease}
 .play-meta{display:flex; justify-content:space-between; align-items:center; margin-top:16px; color:var(--ash)}
 #qcount{width:70px}
-.streak{color:var(--straw-fg)}
+.streak{color:var(--green-fg)}
 
 .card{background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r); padding:32px}
 .cat-tag{color:var(--ash); margin-bottom:16px}
@@ -311,7 +312,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   font-family:inherit; font-size:16px; transition:.13s;
 }
 .opt:hover:not(:disabled){border-color:var(--ash)}
-.opt:focus-visible{outline:2px solid var(--straw); outline-offset:1px}
+.opt:focus-visible{outline:2px solid var(--green); outline-offset:1px}
 .opt:disabled{cursor:default}
 .opt.right{border-color:var(--ok); background:rgba(52,199,89,.1)}
 .opt.wrong{border-color:var(--no); background:rgba(255,56,60,.1)}
@@ -320,7 +321,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   width:100%; background:var(--iron); border:1px solid var(--iron-3); border-radius:var(--r);
   color:var(--chalk); padding:12px 16px; font-family:inherit; font-size:16px;
 }
-.fill-input:focus{outline:2px solid var(--straw); outline-offset:1px}
+.fill-input:focus{outline:2px solid var(--green); outline-offset:1px}
 
 .tokens{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px}
 .token{
@@ -356,7 +357,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   border-radius:var(--r); color:var(--chalk); padding:12px;
   font-family:inherit; font-size:16px;
 }
-.export-box:focus{outline:2px solid var(--straw); outline-offset:1px; border-color:transparent}
+.export-box:focus{outline:2px solid var(--green); outline-offset:1px; border-color:transparent}
 
 /* ——— модалка експорту ——— */
 .modal-overlay{
@@ -415,11 +416,11 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   color:var(--chalk); font:inherit; font-size:15px; line-height:20px;
   padding:16px 18px; text-align:left; cursor:pointer; transition:border-color .15s
 }
-.ob-opt:hover{border-color:var(--straw)}
-.ob-opt:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
+.ob-opt:hover{border-color:var(--green)}
+.ob-opt:focus-visible{outline:2px solid var(--green); outline-offset:2px}
 .ob-level{
   font-family:'Unbounded',sans-serif; font-weight:900; font-size:44px;
-  color:var(--straw); line-height:44px; margin-bottom:12px
+  color:var(--green); line-height:44px; margin-bottom:12px
 }
 #ob-go{display:flex; width:fit-content; margin:0 auto; font-size:14px}
 
@@ -437,7 +438,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   position:relative; z-index:2;
   /* колір щабля: обводка й сяйво заголовка беруться з кольорового коду рівнів
      (--level-color / --level-rgb, які виставляє [data-level] на #level-up). */
-  --edge:var(--level-color, var(--straw));
+  --edge:var(--level-color, var(--green));
   --glow:var(--level-rgb, 217,164,65);
   background:var(--iron-2); border:1px solid var(--edge); border-radius:var(--r);
   padding:40px 32px; text-align:center; max-width:380px; width:100%;
@@ -477,7 +478,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   display:flex; align-items:center; justify-content:space-between;
   min-height:44px; font-size:14px; color:var(--chalk);
 }
-.level-row b{color:var(--straw); font-weight:600}
+.level-row b{color:var(--green); font-weight:600}
 .lock-switch{
   position:relative; width:48px; height:28px; border-radius:99px; flex-shrink:0;
   background:var(--iron-3); border:1px solid var(--iron-3); cursor:pointer;
@@ -486,9 +487,9 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   content:""; position:absolute; top:2px; left:2px; width:22px; height:22px;
   border-radius:50%; background:var(--ash); transition:.15s;
 }
-.lock-switch[aria-checked="true"]{background:var(--straw); border-color:var(--straw)}
+.lock-switch[aria-checked="true"]{background:var(--green); border-color:var(--green)}
 .lock-switch[aria-checked="true"]::after{transform:translateX(20px); background:#1c1c1e}
-.lock-switch:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
+.lock-switch:focus-visible{outline:2px solid var(--green); outline-offset:2px}
 .menu-hint{font-size:12px; line-height:16px}
 
 /* Сегментований вибір рівня: 3×2, великі кнопки під палець. */
@@ -500,8 +501,8 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   transition:border-color .12s, color .12s, background .12s;
 }
 .level-picker button:hover{border-color:var(--ash); color:var(--chalk)}
-.level-picker button.active{background:var(--straw); border-color:var(--straw); color:#1c1c1e}
-.level-picker button:focus-visible{outline:2px solid var(--straw); outline-offset:2px}
+.level-picker button.active{background:var(--green); border-color:var(--green); color:#1c1c1e}
+.level-picker button:focus-visible{outline:2px solid var(--green); outline-offset:2px}
 
 /* рядок «що думає додаток» */
 .level-est{font-size:12px; line-height:16px; margin:0}
@@ -509,12 +510,12 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 /* Літера рівня — у своєму кольорі щабля, трохи висвітленому до --chalk,
    щоб дрібний текст лишався читабельним на темному тлі. */
 .level-est b{
-  color:color-mix(in srgb, var(--level-color, var(--straw)) 82%, var(--chalk));
+  color:color-mix(in srgb, var(--level-color, var(--green)) 82%, var(--chalk));
   font-weight:600;
 }
 
 /* дія-резолвер: підтягнути рівень до оцінки додатка */
-.est-apply{align-self:flex-start; margin-top:-4px; font-size:13px; color:var(--straw-fg)}
+.est-apply{align-self:flex-start; margin-top:-4px; font-size:13px; color:var(--green-fg)}
 .est-apply[hidden]{display:none}
 .est-apply:hover{color:#30d158}
 
