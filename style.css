@@ -2,11 +2,20 @@
 :root{
   color-scheme: dark;
 
-  --iron:        #1c1c1e;
-  --iron-2:      #2c2c2e;
-  --iron-3:      #3a3a3c;
-  --ash:         #8e8e93;
-  --chalk:       #d1d1d6;
+  /* нейтральна шкала — примітиви; решта CSS звертається лише до семантичних
+     токенів нижче, а не до --gray-* напряму (виняток — де колір навмисно
+     «випадає» з ролі, напр. темний текст на кольоровому чіпі) */
+  --gray-900:    #1c1c1e;
+  --gray-800:    #2c2c2e;
+  --gray-700:    #3a3a3c;
+  --gray-400:    #8e8e93;
+  --gray-200:    #d1d1d6;
+
+  --bg:          var(--gray-900);
+  --surface:     var(--gray-800);
+  --border:      var(--gray-700);
+  --text-muted:  var(--gray-400);
+  --text:        var(--gray-200);
 
   --green:       #34c759;
   --orange:      #ff8d28;
@@ -58,8 +67,8 @@ button{
 }
 
 body{
-  background:var(--iron);
-  color:var(--chalk);
+  background:var(--bg);
+  color:var(--text);
   font-family:'IBM Plex Sans',system-ui,sans-serif;
   font-size:16px;
   line-height:24px;
@@ -68,11 +77,11 @@ body{
 }
 
 /* ——— скролбар ——— */
-*{scrollbar-width:thin; scrollbar-color:var(--iron-3) transparent}
+*{scrollbar-width:thin; scrollbar-color:var(--border) transparent}
 ::-webkit-scrollbar{width:12px; height:12px}
 ::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:var(--iron-3); border-radius:99px; border:2px solid var(--iron)}
-::-webkit-scrollbar-thumb:hover{background:var(--ash)}
+::-webkit-scrollbar-thumb{background:var(--border); border-radius:99px; border:2px solid var(--bg)}
+::-webkit-scrollbar-thumb:hover{background:var(--text-muted)}
 ::-webkit-scrollbar-corner{background:transparent}
 
 .screen{display:none; position:relative; z-index:1}
@@ -85,19 +94,19 @@ body{
 h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.02em}
 .mono{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.06em; text-transform:uppercase}
 .eyebrow{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--green-fg); margin-bottom:16px}
-.note{font-size:12px; color:var(--ash); margin-bottom:8px}
+.note{font-size:12px; color:var(--text-muted); margin-bottom:8px}
 .note.dim{font-size:14px}
 
 /* ——— логотип ——— */
 .mark{text-align:center; padding:56px 0 36px}
 .mark-glyph{width:64px; height:64px; vertical-align:middle}
 .wordmark{font-size:clamp(36px,7vw,56px); font-weight:900; line-height:60px; margin:8px 0}
-.tagline{color:var(--ash); font-size:16px}
+.tagline{color:var(--text-muted); font-size:16px}
 
 /* ——— панелі ——— */
 .panel{
-  background:var(--iron-2);
-  border:1px solid var(--iron-3);
+  background:var(--surface);
+  border:1px solid var(--border);
   border-radius:var(--r);
   padding:24px;
   display:flex; flex-direction:column; gap:24px;
@@ -112,7 +121,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   position:relative;
   display:grid; grid-template-columns:1fr 1fr;
   padding:2px;
-  background:var(--iron);
+  background:var(--bg);
   border-radius:10px;
   font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif;
   isolation:isolate;
@@ -121,7 +130,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   position:absolute; z-index:0;
   top:2px; left:2px;
   width:calc(50% - 2px); height:calc(100% - 4px);
-  background:var(--iron-3);
+  background:var(--border);
   border-radius:8px;
   box-shadow:0 1px 3px rgba(0,0,0,.45), 0 0 0 .5px rgba(0,0,0,.25);
   transition:transform .25s cubic-bezier(.4,0,.2,1);
@@ -132,10 +141,10 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   background:none; border:0; cursor:pointer;
   padding:7px 12px; min-height:34px;
   font-size:14px; font-weight:500; letter-spacing:-.01em;
-  color:color-mix(in srgb, var(--ash), var(--chalk) 26%);
+  color:color-mix(in srgb, var(--text-muted), var(--text) 26%);
   transition:color .2s ease;
 }
-.seg.active{color:var(--chalk); font-weight:600}
+.seg.active{color:var(--text); font-weight:600}
 .seg:focus-visible{outline:2px solid var(--green); outline-offset:2px; border-radius:8px}
 
 /* ——— текстові поля: стиль iOS ——— */
@@ -144,34 +153,34 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   display:block;
   font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif;
   font-size:13px; font-weight:400; letter-spacing:-.01em;
-  color:var(--ash); margin:0 0 6px 4px;
+  color:var(--text-muted); margin:0 0 6px 4px;
 }
 .field input{
   width:100%;
   -webkit-appearance:none; appearance:none;
-  background:var(--iron);
+  background:var(--bg);
   border:1px solid transparent;
   border-radius:12px;
-  color:var(--chalk);
+  color:var(--text);
   caret-color:var(--green);
   padding:13px 14px; min-height:46px;
   font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif;
   font-size:17px; letter-spacing:-.01em; line-height:24px;
   transition:border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
 }
-.field input::placeholder{color:var(--ash); opacity:.55}
-.field input:hover{background:var(--iron-3)}
+.field input::placeholder{color:var(--text-muted); opacity:.55}
+.field input:hover{background:var(--border)}
 .field input:focus{
   outline:none;
-  background:var(--iron);
+  background:var(--bg);
   border-color:var(--green);
   box-shadow:0 0 0 4px rgba(52,199,89,.15);
 }
 .field input:-webkit-autofill,
 .field input:-webkit-autofill:focus{
-  -webkit-text-fill-color:var(--chalk);
-  -webkit-box-shadow:0 0 0 100px var(--iron) inset;
-  caret-color:var(--chalk);
+  -webkit-text-fill-color:var(--text);
+  -webkit-box-shadow:0 0 0 100px var(--bg) inset;
+  caret-color:var(--text);
 }
 
 /* ——— кнопки ——— */
@@ -182,41 +191,41 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   padding:12px 24px; line-height:20px; border:1px solid transparent; transition:.15s;
 }
 .btn:focus-visible{outline:2px solid var(--green); outline-offset:2px}
-.btn.primary{background:var(--green); color:#1c1c1e; width:100%}
+.btn.primary{background:var(--green); color:var(--gray-900); width:100%}
 .btn.primary:hover{background:#30d158}
 .btn.primary.big{width:auto}
-.btn.ghost{background:none; border-color:var(--iron-3); color:var(--ash); width:100%}
-.btn.ghost:hover{color:var(--chalk); border-color:var(--ash)}
+.btn.ghost{background:none; border-color:var(--border); color:var(--text-muted); width:100%}
+.btn.ghost:hover{color:var(--text); border-color:var(--text-muted)}
 .btn.small{width:auto; padding:8px 16px; font-size:12px; margin:0}
 
 .link-btn{
   display:block; width:100%; text-align:center;
   cursor:pointer; padding:0;
-  font-size:14px; color:var(--ash); text-decoration:underline;
+  font-size:14px; color:var(--text-muted); text-decoration:underline;
 }
-.link-btn:hover{color:var(--chalk)}
+.link-btn:hover{color:var(--text)}
 
 /* ——— верхня панель ——— */
 .topbar{
   display:flex; justify-content:space-between; align-items:center;
-  padding:8px 16px; border-bottom:1px solid var(--iron-3);
-  position:sticky; top:0; z-index:10; background:var(--iron);
+  padding:8px 16px; border-bottom:1px solid var(--border);
+  position:sticky; top:0; z-index:10; background:var(--bg);
 }
 .brand-sm{display:flex; align-items:center; font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px}
 .brand-sm .mark-glyph{width:24px; height:24px; margin-right:4px}
 .topbar-right{display:flex; align-items:center; gap:16px}
-.who{font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:var(--ash); word-break:break-all}
+.who{font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:var(--text-muted); word-break:break-all}
 
 /* ——— аватар і дропдаун ——— */
 .avatar-menu{position:relative}
 .avatar-btn{
   position:relative;
   width:44px; height:44px; border-radius:50%; cursor:pointer;
-  background:var(--iron-3); border:1px solid var(--iron-3);
+  background:var(--border); border:1px solid var(--border);
   display:flex; align-items:center; justify-content:center;
   font-family:'Unbounded',sans-serif; font-weight:700; font-size:13px; color:var(--green-fg);
 }
-.avatar-btn:hover{border-color:var(--ash)}
+.avatar-btn:hover{border-color:var(--text-muted)}
 .avatar-btn:focus-visible{outline:2px solid var(--green); outline-offset:2px}
 /* Бейдж рівня на аватарі. Обгортка шириною з аватар центрує бейдж по горизонталі. */
 .level-badge-wrap{
@@ -227,16 +236,18 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .level-badge{
   min-width:16px; height:12px; padding:0 1px; box-sizing:content-box;
   display:flex; align-items:center; justify-content:center;
-  border-radius:99px; border:2px solid var(--iron);
+  border-radius:99px; border:2px solid var(--bg);
   font-family:'Unbounded',sans-serif; font-weight:700; font-size:8px; letter-spacing:.03em;
-  color:var(--iron); background:var(--level-color, var(--orange));
+  /* найтемніший сірий напряму: тут це не «фон», а темний текст на яскравому
+     чіпі — випадково той самий колір, що й --bg, а не той самий сенс */
+  color:var(--gray-900); background:var(--level-color, var(--orange));
 }
 .level-badge[hidden]{display:none}
 
 .avatar-dropdown{
   position:absolute; top:calc(100% + 12px); right:0; z-index:20;
   width:320px; max-width:calc(100vw - 24px);
-  background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r);
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--r);
   padding:16px;
   display:flex; flex-direction:column; gap:10px;
   transform-origin:top right;
@@ -271,14 +282,14 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 /* ——— шапка ——— */
 .hero{display:flex; flex-direction:column; align-items:center; text-align:center;}
 .hero-title{font-size:clamp(32px,4.4vw,44px); line-height:48px; margin-bottom:20px}
-.hero-text{color:var(--ash); font-size:16px; max-width:44ch; margin:0 auto 32px}
+.hero-text{color:var(--text-muted); font-size:16px; max-width:44ch; margin:0 auto 32px}
 .hero-actions{display:flex; gap:12px; width:100%; max-width:640px; margin-bottom:44px}
 .hero-actions .btn{flex:1; width:auto; margin-top:0}
 
-.stat-block{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--iron-3); border:1px solid var(--iron-3); border-radius:var(--r); overflow:hidden; width:100%; max-width:640px}
-.stat{background:var(--iron-2); padding:20px 16px; display:flex; flex-direction:column; align-items:center; gap:4px}
+.stat-block{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--r); overflow:hidden; width:100%; max-width:640px}
+.stat{background:var(--surface); padding:20px 16px; display:flex; flex-direction:column; align-items:center; gap:4px}
 .stat-num{font-family:'Unbounded',sans-serif; font-size:28px; font-weight:700}
-.stat-lab{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--ash)}
+.stat-lab{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted)}
 
 /* ——— шкала рівнів (сигнатурний елемент) ——— */
 .temper{padding:16px 0 16px; text-align:center}
@@ -288,55 +299,55 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 .temper-bars{display:flex; flex-direction:column; gap:16px; max-width:640px; margin:0 auto; text-align:left}
 
 .tbar{display:grid; grid-template-columns:152px 1fr 56px; align-items:center; gap:16px}
-.tbar-name{font-size:12px; color:var(--chalk)}
-.tbar-rail{height:8px; background:var(--iron-3); border-radius:99px; overflow:hidden; position:relative}
+.tbar-name{font-size:12px; color:var(--text)}
+.tbar-rail{height:8px; background:var(--border); border-radius:99px; overflow:hidden; position:relative}
 .tbar-fill{height:100%; border-radius:99px; transition:width .5s ease}
-.tbar-val{font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:var(--ash); text-align:right}
+.tbar-val{font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:var(--text-muted); text-align:right}
 
 /* ——— гра ——— */
 .play-top{padding:0px 0 16px}
-.progress-rail{height:4px; background:var(--iron-3); border-radius:99px; overflow:hidden}
+.progress-rail{height:4px; background:var(--border); border-radius:99px; overflow:hidden}
 .progress-fill{height:100%; width:0; background:var(--green); transition:width .35s ease}
-.play-meta{display:flex; justify-content:space-between; align-items:center; margin-top:16px; color:var(--ash)}
+.play-meta{display:flex; justify-content:space-between; align-items:center; margin-top:16px; color:var(--text-muted)}
 #qcount{width:70px}
 .streak{color:var(--green-fg)}
 
-.card{background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r); padding:32px}
-.cat-tag{color:var(--ash); margin-bottom:16px}
+.card{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:32px}
+.cat-tag{color:var(--text-muted); margin-bottom:16px}
 .q-prompt{font-size:20px; line-height:32px; margin-bottom:24px}
 
 .opt{
   display:block; width:100%; text-align:left; cursor:pointer;
-  background:var(--iron); border:1px solid var(--iron-3); border-radius:var(--r);
-  color:var(--chalk); padding:12px 16px; margin-bottom:8px;
+  background:var(--bg); border:1px solid var(--border); border-radius:var(--r);
+  color:var(--text); padding:12px 16px; margin-bottom:8px;
   font-family:inherit; font-size:16px; transition:.13s;
 }
-.opt:hover:not(:disabled){border-color:var(--ash)}
+.opt:hover:not(:disabled){border-color:var(--text-muted)}
 .opt:focus-visible{outline:2px solid var(--green); outline-offset:1px}
 .opt:disabled{cursor:default}
 .opt.right{border-color:var(--ok); background:rgba(52,199,89,.1)}
 .opt.wrong{border-color:var(--no); background:rgba(255,56,60,.1)}
 
 .fill-input{
-  width:100%; background:var(--iron); border:1px solid var(--iron-3); border-radius:var(--r);
-  color:var(--chalk); padding:12px 16px; font-family:inherit; font-size:16px;
+  width:100%; background:var(--bg); border:1px solid var(--border); border-radius:var(--r);
+  color:var(--text); padding:12px 16px; font-family:inherit; font-size:16px;
 }
 .fill-input:focus{outline:2px solid var(--green); outline-offset:1px}
 
 .tokens{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px}
 .token{
-  background:var(--iron); border:1px solid var(--iron-3); border-radius:var(--r);
-  color:var(--chalk); padding:8px 12px; cursor:pointer; font-family:inherit; font-size:16px;
+  background:var(--bg); border:1px solid var(--border); border-radius:var(--r);
+  color:var(--text); padding:8px 12px; cursor:pointer; font-family:inherit; font-size:16px;
 }
-.token:hover{border-color:var(--ash)}
+.token:hover{border-color:var(--text-muted)}
 .token.used{opacity:.3; cursor:default}
-.slot-rail{min-height:48px; background:var(--iron); border:1px dashed var(--iron-3); border-radius:var(--r); padding:8px; display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px}
+.slot-rail{min-height:48px; background:var(--bg); border:1px dashed var(--border); border-radius:var(--r); padding:8px; display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px}
 
 .feedback{margin-top:16px; padding-top:0px}
 .verdict{font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px}
 .verdict.ok{color:var(--ok-fg)}
 .verdict.no{color:var(--no-fg)}
-.explain{font-size:14px; color:var(--ash); line-height:24px; white-space:pre-line}
+.explain{font-size:14px; color:var(--text-muted); line-height:24px; white-space:pre-line}
 
 .feedback + .btn{margin-top:16px}
 
@@ -344,17 +355,17 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 .result{text-align:center}
 .result > *{margin:0}                 /* рівний вертикальний ритм дає gap панелі — 16px */
 .result-score{font-size:52px; line-height:56px}
-.result-line{color:var(--ash); font-size:16px}
+.result-line{color:var(--text-muted); font-size:16px}
 .res-breakdown{text-align:left; display:flex; flex-direction:column; gap:8px}
-.res-row{display:flex; justify-content:space-between; font-size:16px; padding:8px 0; border-bottom:1px solid var(--iron-3)}
-.res-row span:last-child{font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:var(--ash)}
+.res-row{display:flex; justify-content:space-between; font-size:16px; padding:8px 0; border-bottom:1px solid var(--border)}
+.res-row span:last-child{font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:var(--text-muted)}
 
 .export-row{margin-top:16px; text-align:center}
 .export-row .btn{width:auto}
 .export-box{
   width:100%; height:192px; margin-top:16px; resize:vertical;
-  background:var(--iron); border:1px solid var(--iron-3);
-  border-radius:var(--r); color:var(--chalk); padding:12px;
+  background:var(--bg); border:1px solid var(--border);
+  border-radius:var(--r); color:var(--text); padding:12px;
   font-family:inherit; font-size:16px;
 }
 .export-box:focus{outline:2px solid var(--green); outline-offset:1px; border-color:transparent}
@@ -369,15 +380,15 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 .modal-overlay[hidden]{display:none}
 .modal{
   width:100%; max-width:920px;
-  background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r);
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--r);
   padding:16px; max-height:calc(100vh - 48px); overflow:auto;
 }
 .modal-head{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:4px}
 .modal-head h3{font-size:20px; line-height:24px}
 .modal-close{
-  color:var(--ash); font-size:24px; line-height:24px; padding:4px 8px; cursor:pointer; border-radius:var(--r);
+  color:var(--text-muted); font-size:24px; line-height:24px; padding:4px 8px; cursor:pointer; border-radius:var(--r);
 }
-.modal-close:hover{color:var(--chalk); background:var(--iron-3)}
+.modal-close:hover{color:var(--text); background:var(--border)}
 .modal .export-box{margin-top:16px; height:min(60vh,520px)}
 .modal-actions{display:flex; justify-content:flex-end; margin-top:16px}
 .modal-actions .btn{margin:0}
@@ -412,8 +423,8 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 .ob-head h1{font-size:24px; line-height:28px; margin-bottom:10px}
 .ob-list{display:flex; flex-direction:column; gap:10px; margin-bottom:20px}
 .ob-opt{
-  background:var(--iron-2); border:1px solid var(--iron-3); border-radius:var(--r);
-  color:var(--chalk); font:inherit; font-size:15px; line-height:20px;
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--r);
+  color:var(--text); font:inherit; font-size:15px; line-height:20px;
   padding:16px 18px; text-align:left; cursor:pointer; transition:border-color .15s
 }
 .ob-opt:hover{border-color:var(--green)}
@@ -440,7 +451,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
      (--level-color / --level-rgb, які виставляє [data-level] на #level-up). */
   --edge:var(--level-color, var(--green));
   --glow:var(--level-rgb, 217,164,65);
-  background:var(--iron-2); border:1px solid var(--edge); border-radius:var(--r);
+  background:var(--surface); border:1px solid var(--edge); border-radius:var(--r);
   padding:40px 32px; text-align:center; max-width:380px; width:100%;
   display:flex; flex-direction:column; gap:16px;
   animation:level-up-pop .5s cubic-bezier(.17,.89,.32,1.28) both
@@ -467,7 +478,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 /* ---------- зниження рівня: тихо ---------- */
 .level-toast{
   position:fixed; left:50%; bottom:24px; transform:translateX(-50%); z-index:40;
-  background:var(--iron-3); color:var(--chalk); border:1px solid var(--iron-3);
+  background:var(--border); color:var(--text); border:1px solid var(--border);
   border-radius:var(--r); padding:12px 18px; font-size:14px; line-height:20px;
   max-width:min(440px,calc(100vw - 32px)); text-align:center
 }
@@ -476,41 +487,41 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 /* ---------- рівень у меню акаунта ---------- */
 .level-row{
   display:flex; align-items:center; justify-content:space-between;
-  min-height:44px; font-size:14px; color:var(--chalk);
+  min-height:44px; font-size:14px; color:var(--text);
 }
 .level-row b{color:var(--green); font-weight:600}
 .lock-switch{
   position:relative; width:48px; height:28px; border-radius:99px; flex-shrink:0;
-  background:var(--iron-3); border:1px solid var(--iron-3); cursor:pointer;
+  background:var(--border); border:1px solid var(--border); cursor:pointer;
 }
 .lock-switch::after{
   content:""; position:absolute; top:2px; left:2px; width:22px; height:22px;
-  border-radius:50%; background:var(--ash); transition:.15s;
+  border-radius:50%; background:var(--text-muted); transition:.15s;
 }
 .lock-switch[aria-checked="true"]{background:var(--green); border-color:var(--green)}
-.lock-switch[aria-checked="true"]::after{transform:translateX(20px); background:#1c1c1e}
+.lock-switch[aria-checked="true"]::after{transform:translateX(20px); background:var(--gray-900)}
 .lock-switch:focus-visible{outline:2px solid var(--green); outline-offset:2px}
 .menu-hint{font-size:12px; line-height:16px}
 
 /* Сегментований вибір рівня: 3×2, великі кнопки під палець. */
 .level-picker{display:grid; grid-template-columns:repeat(3,1fr); gap:4px}
 .level-picker button{
-  min-height:48px; padding:0; border:1px solid var(--iron-3); border-radius:var(--r);
-  background:var(--iron); color:var(--ash); cursor:pointer;
+  min-height:48px; padding:0; border:1px solid var(--border); border-radius:var(--r);
+  background:var(--bg); color:var(--text-muted); cursor:pointer;
   font-family:'Unbounded',sans-serif; font-weight:700; font-size:14px; letter-spacing:.02em;
   transition:border-color .12s, color .12s, background .12s;
 }
-.level-picker button:hover{border-color:var(--ash); color:var(--chalk)}
-.level-picker button.active{background:var(--green); border-color:var(--green); color:#1c1c1e}
+.level-picker button:hover{border-color:var(--text-muted); color:var(--text)}
+.level-picker button.active{background:var(--green); border-color:var(--green); color:var(--gray-900)}
 .level-picker button:focus-visible{outline:2px solid var(--green); outline-offset:2px}
 
 /* рядок «що думає додаток» */
 .level-est{font-size:12px; line-height:16px; margin:0}
 .level-est:empty{display:none}
-/* Літера рівня — у своєму кольорі щабля, трохи висвітленому до --chalk,
+/* Літера рівня — у своєму кольорі щабля, трохи висвітленому до --text,
    щоб дрібний текст лишався читабельним на темному тлі. */
 .level-est b{
-  color:color-mix(in srgb, var(--level-color, var(--green)) 82%, var(--chalk));
+  color:color-mix(in srgb, var(--level-color, var(--green)) 82%, var(--text));
   font-weight:600;
 }
 
@@ -529,7 +540,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
              padding: 10px 8px; margin: -10px -8px; min-height: 44px;
              display: inline-flex; align-items: center;
              font: inherit; font-size: .85em; opacity: .7;
-             text-decoration: underline; color: var(--ash);
+             text-decoration: underline; color: var(--text-muted);
              -webkit-tap-highlight-color: transparent; }
 .ua-toggle:hover { opacity: 1; }
 .ua-text   { margin: 0; font-size: .9em; color: var(--ok-fg); }
