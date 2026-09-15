@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "updated": "2026-09-05",
+  "updated": "2026-09-15",
   "questionLevels": [
     "A1",
     "A2",
@@ -15,16 +15,16 @@
       "label": "A1"
     },
     {
+      "id": "A2",
+      "label": "A2"
+    },
+    {
       "id": "B1-B2",
       "label": "B1 → B2"
     },
     {
       "id": "B2",
       "label": "B2"
-    },
-    {
-      "id": "A2",
-      "label": "A2"
     },
     {
       "id": "C1",
@@ -126,6 +126,28 @@
       "file": "a2-02.json",
       "level": "A2",
       "title": "Пак A2 — партія 2"
+    },
+    {
+      "file": "c1-02.json",
+      "level": "C1",
+      "title": "Пак C1 — партія 2"
     }
-  ]
+  ],
+  "domains": {
+    "general": {
+      "label": "Загальна"
+    },
+    "it": {
+      "label": "IT"
+    },
+    "business": {
+      "label": "Робота і бізнес"
+    },
+    "travel": {
+      "label": "Подорожі"
+    },
+    "daily": {
+      "label": "Побут"
+    }
+  }
 }

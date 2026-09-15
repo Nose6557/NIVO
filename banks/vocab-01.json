@@ -184,7 +184,8 @@
         "резолюція"
       ],
       "answer": "реабілітація",
-      "explain": "Реабілітація — відновлення здоров'я, статусу чи прав після хвороби, травми чи покарання. Medical rehabilitation — медична реабілітація."
+      "explain": "Реабілітація — відновлення здоров'я, статусу чи прав після хвороби, травми чи покарання. Medical rehabilitation — медична реабілітація.",
+      "domain": "general"
     },
     {
       "id": "vw-rehabilitation-u2e",
@@ -199,7 +200,8 @@
         "resignation"
       ],
       "answer": "rehabilitation",
-      "explain": "Реабілітація — відновлення здоров'я, статусу чи прав після хвороби, травми чи покарання. Medical rehabilitation — медична реабілітація."
+      "explain": "Реабілітація — відновлення здоров'я, статусу чи прав після хвороби, травми чи покарання. Medical rehabilitation — медична реабілітація.",
+      "domain": "general"
     },
     {
       "id": "vw-expelled-e2u",
@@ -214,7 +216,8 @@
         "нагороджений"
       ],
       "answer": "виключений",
-      "explain": "Expelled — виключений з навчального закладу за порушення; у виші частіше «відрахований». He was expelled for cheating."
+      "explain": "Expelled — виключений з навчального закладу за порушення; у виші частіше «відрахований». He was expelled for cheating.",
+      "domain": "general"
     },
     {
       "id": "vw-expelled-u2e",
@@ -229,7 +232,8 @@
         "exhaled"
       ],
       "answer": "expelled",
-      "explain": "Expelled — виключений з навчального закладу за порушення; у виші частіше «відрахований». He was expelled for cheating."
+      "explain": "Expelled — виключений з навчального закладу за порушення; у виші частіше «відрахований». He was expelled for cheating.",
+      "domain": "general"
     },
     {
       "id": "vw-liability-e2u",
@@ -244,7 +248,8 @@
         "ліквідність"
       ],
       "answer": "відповідальність",
-      "explain": "Liability — юридична відповідальність або зобов'язання; розмовно — «тягар». Legal liability for damages."
+      "explain": "Liability — юридична відповідальність або зобов'язання; розмовно — «тягар». Legal liability for damages.",
+      "domain": "general"
     },
     {
       "id": "vw-liability-u2e",
@@ -259,7 +264,8 @@
         "durability"
       ],
       "answer": "liability",
-      "explain": "Liability — юридична відповідальність або зобов'язання; розмовно — «тягар». Legal liability for damages."
+      "explain": "Liability — юридична відповідальність або зобов'язання; розмовно — «тягар». Legal liability for damages.",
+      "domain": "general"
     },
     {
       "id": "vw-guts-e2u",
@@ -274,7 +280,8 @@
         "недбалість"
       ],
       "answer": "відвага",
-      "explain": "Guts (розм.) — сміливість, рішучість щось зробити. It takes guts to admit a mistake."
+      "explain": "Guts (розм.) — сміливість, рішучість щось зробити. It takes guts to admit a mistake.",
+      "domain": "general"
     },
     {
       "id": "vw-guts-u2e",
@@ -289,7 +296,8 @@
         "gadgets"
       ],
       "answer": "guts",
-      "explain": "Guts (розм.) — сміливість, рішучість щось зробити. It takes guts to admit a mistake."
+      "explain": "Guts (розм.) — сміливість, рішучість щось зробити. It takes guts to admit a mistake.",
+      "domain": "general"
     },
     {
       "id": "vw-thwart-e2u",
@@ -304,7 +312,8 @@
         "змолоти"
       ],
       "answer": "зірвати",
-      "explain": "To thwart — завадити, зірвати чиїсь плани. They thwarted the escape — вони зірвали втечу."
+      "explain": "To thwart — завадити, зірвати чиїсь плани. They thwarted the escape — вони зірвали втечу.",
+      "domain": "general"
     },
     {
       "id": "vw-thwart-u2e",
@@ -319,7 +328,8 @@
         "thrive"
       ],
       "answer": "thwart",
-      "explain": "To thwart — завадити, зірвати чиїсь плани. They thwarted the escape — вони зірвали втечу."
+      "explain": "To thwart — завадити, зірвати чиїсь плани. They thwarted the escape — вони зірвали втечу.",
+      "domain": "general"
     },
     {
       "id": "vw-awake-e2u",
@@ -334,7 +344,8 @@
         "промовити"
       ],
       "answer": "прокинутися",
-      "explain": "To awake — прокинутися зі сну (минулий час — awoke). She awoke at dawn — вона прокинулася на світанку."
+      "explain": "To awake — прокинутися зі сну (минулий час — awoke). She awoke at dawn — вона прокинулася на світанку.",
+      "domain": "general"
     },
     {
       "id": "vw-awake-u2e",
@@ -349,7 +360,8 @@
         "annoy"
       ],
       "answer": "awake",
-      "explain": "To awake — прокинутися зі сну (минулий час — awoke). She awoke at dawn — вона прокинулася на світанку."
+      "explain": "To awake — прокинутися зі сну (минулий час — awoke). She awoke at dawn — вона прокинулася на світанку.",
+      "domain": "general"
     },
     {
       "id": "vw-foundation-e2u",
@@ -364,7 +376,8 @@
         "оселя"
       ],
       "answer": "основа",
-      "explain": "Foundation — основа, підґрунтя чогось; також фундамент будівлі. The foundation of a theory — основа теорії."
+      "explain": "Foundation — основа, підґрунтя чогось; також фундамент будівлі. The foundation of a theory — основа теорії.",
+      "domain": "general"
     },
     {
       "id": "vw-foundation-u2e",
@@ -379,7 +392,8 @@
         "fraction"
       ],
       "answer": "foundation",
-      "explain": "Foundation — основа, підґрунтя чогось; також фундамент будівлі. The foundation of a theory — основа теорії."
+      "explain": "Foundation — основа, підґрунтя чогось; також фундамент будівлі. The foundation of a theory — основа теорії.",
+      "domain": "general"
     },
     {
       "id": "vw-advising-e2u",
@@ -394,7 +408,8 @@
         "оздоблення"
       ],
       "answer": "консультування",
-      "explain": "Advising — консультування, надання порад. Academic advising — консультування студентів."
+      "explain": "Advising — консультування, надання порад. Academic advising — консультування студентів.",
+      "domain": "general"
     },
     {
       "id": "vw-advising-u2e",
@@ -409,7 +424,8 @@
         "arriving"
       ],
       "answer": "advising",
-      "explain": "Advising — консультування, надання порад. Academic advising — консультування студентів."
+      "explain": "Advising — консультування, надання порад. Academic advising — консультування студентів.",
+      "domain": "general"
     },
     {
       "id": "vw-superficial-e2u",
@@ -424,7 +440,8 @@
         "порожнистий"
       ],
       "answer": "поверхневий",
-      "explain": "Superficial — поверхневий, неглибокий (про знання, рану чи людину). A superficial analysis — поверхневий аналіз."
+      "explain": "Superficial — поверхневий, неглибокий (про знання, рану чи людину). A superficial analysis — поверхневий аналіз.",
+      "domain": "general"
     },
     {
       "id": "vw-superficial-u2e",
@@ -439,7 +456,8 @@
         "superlative"
       ],
       "answer": "superficial",
-      "explain": "Superficial — поверхневий, неглибокий (про знання, рану чи людину). A superficial analysis — поверхневий аналіз."
+      "explain": "Superficial — поверхневий, неглибокий (про знання, рану чи людину). A superficial analysis — поверхневий аналіз.",
+      "domain": "general"
     },
     {
       "id": "vw-frivolity-e2u",
@@ -454,7 +472,8 @@
         "ламкість"
       ],
       "answer": "легковажність",
-      "explain": "Frivolity — легковажність, несерйозність. Youthful frivolity — юнацька легковажність."
+      "explain": "Frivolity — легковажність, несерйозність. Youthful frivolity — юнацька легковажність.",
+      "domain": "general"
     },
     {
       "id": "vw-frivolity-u2e",
@@ -469,7 +488,8 @@
         "fatality"
       ],
       "answer": "frivolity",
-      "explain": "Frivolity — легковажність, несерйозність. Youthful frivolity — юнацька легковажність."
+      "explain": "Frivolity — легковажність, несерйозність. Youthful frivolity — юнацька легковажність.",
+      "domain": "general"
     },
     {
       "id": "vw-bonds-e2u",
@@ -484,7 +504,8 @@
         "устрій"
       ],
       "answer": "узи",
-      "explain": "Bonds — узи, тісні зв'язки між людьми. Bonds of friendship — узи дружби."
+      "explain": "Bonds — узи, тісні зв'язки між людьми. Bonds of friendship — узи дружби.",
+      "domain": "general"
     },
     {
       "id": "vw-bonds-u2e",
@@ -499,7 +520,8 @@
         "burdens"
       ],
       "answer": "bonds",
-      "explain": "Bonds — узи, тісні зв'язки між людьми. Bonds of friendship — узи дружби."
+      "explain": "Bonds — узи, тісні зв'язки між людьми. Bonds of friendship — узи дружби.",
+      "domain": "general"
     },
     {
       "id": "vw-weakling-e2u",
@@ -514,7 +536,8 @@
         "гуляка"
       ],
       "answer": "слабак",
-      "explain": "Weakling — слабак, фізично чи морально слабка людина. Don't be such a weakling — не будь таким слабаком."
+      "explain": "Weakling — слабак, фізично чи морально слабка людина. Don't be such a weakling — не будь таким слабаком.",
+      "domain": "general"
     },
     {
       "id": "vw-weakling-u2e",
@@ -529,7 +552,8 @@
         "wrestler"
       ],
       "answer": "weakling",
-      "explain": "Weakling — слабак, фізично чи морально слабка людина. Don't be such a weakling — не будь таким слабаком."
+      "explain": "Weakling — слабак, фізично чи морально слабка людина. Don't be such a weakling — не будь таким слабаком.",
+      "domain": "general"
     },
     {
       "id": "vw-rack-e2u",
@@ -544,7 +568,8 @@
         "спиця"
       ],
       "answer": "стійка",
-      "explain": "Rack — стійка чи полиця для зберігання (a spice rack). Не плутати з дієсловом to rack — напружувати."
+      "explain": "Rack — стійка чи полиця для зберігання (a spice rack). Не плутати з дієсловом to rack — напружувати.",
+      "domain": "general"
     },
     {
       "id": "vw-rack-u2e",
@@ -559,7 +584,8 @@
         "rank"
       ],
       "answer": "rack",
-      "explain": "Rack — стійка чи полиця для зберігання (a spice rack). Не плутати з дієсловом to rack — напружувати."
+      "explain": "Rack — стійка чи полиця для зберігання (a spice rack). Не плутати з дієсловом to rack — напружувати.",
+      "domain": "general"
     },
     {
       "id": "vw-noggin-e2u",
@@ -574,7 +600,8 @@
         "друзка"
       ],
       "answer": "довбешка",
-      "explain": "Noggin (розм.) — голова, «довбешка». Use your noggin — поворуши мізками."
+      "explain": "Noggin (розм.) — голова, «довбешка». Use your noggin — поворуши мізками.",
+      "domain": "general"
     },
     {
       "id": "vw-noggin-u2e",
@@ -589,7 +616,8 @@
         "nozzle"
       ],
       "answer": "noggin",
-      "explain": "Noggin (розм.) — голова, «довбешка». Use your noggin — поворуши мізками."
+      "explain": "Noggin (розм.) — голова, «довбешка». Use your noggin — поворуши мізками.",
+      "domain": "general"
     },
     {
       "id": "vw-rack-that-noggin-e2u",
@@ -604,7 +632,8 @@
         "розвісити вуха"
       ],
       "answer": "напружити довбешку",
-      "explain": "Rack that noggin (розм.) — добряче поміркувати, «напружити мізки». Rack that noggin and figure it out."
+      "explain": "Rack that noggin (розм.) — добряче поміркувати, «напружити мізки». Rack that noggin and figure it out.",
+      "domain": "general"
     },
     {
       "id": "vw-rack-that-noggin-u2e",
@@ -619,7 +648,8 @@
         "spill the beans"
       ],
       "answer": "rack that noggin",
-      "explain": "Rack that noggin (розм.) — добряче поміркувати, «напружити мізки». Rack that noggin and figure it out."
+      "explain": "Rack that noggin (розм.) — добряче поміркувати, «напружити мізки». Rack that noggin and figure it out.",
+      "domain": "general"
     },
     {
       "id": "vw-indeed-e2u",
@@ -634,7 +664,8 @@
         "нарешті"
       ],
       "answer": "саме так",
-      "explain": "Indeed — справді, саме так (підсилення чи згода). It was, indeed, a mistake — це справді була помилка."
+      "explain": "Indeed — справді, саме так (підсилення чи згода). It was, indeed, a mistake — це справді була помилка.",
+      "domain": "general"
     },
     {
       "id": "vw-indeed-u2e",
@@ -649,7 +680,8 @@
         "indoors"
       ],
       "answer": "indeed",
-      "explain": "Indeed — справді, саме так (підсилення чи згода). It was, indeed, a mistake — це справді була помилка."
+      "explain": "Indeed — справді, саме так (підсилення чи згода). It was, indeed, a mistake — це справді була помилка.",
+      "domain": "general"
     },
     {
       "id": "vw-fruition-e2u",
@@ -664,7 +696,8 @@
         "змагання"
       ],
       "answer": "здійснення",
-      "explain": "Fruition — здійснення, втілення в життя. The plan came to fruition — план втілився в життя."
+      "explain": "Fruition — здійснення, втілення в життя. The plan came to fruition — план втілився в життя.",
+      "domain": "general"
     },
     {
       "id": "vw-fruition-u2e",
@@ -679,7 +712,8 @@
         "fusion"
       ],
       "answer": "fruition",
-      "explain": "Fruition — здійснення, втілення в життя. The plan came to fruition — план втілився в життя."
+      "explain": "Fruition — здійснення, втілення в життя. The plan came to fruition — план втілився в життя.",
+      "domain": "general"
     },
     {
       "id": "vw-spill-e2u",
@@ -694,7 +728,8 @@
         "виринути"
       ],
       "answer": "викласти",
-      "explain": "To spill (розм.) — виказати таємницю, викласти інформацію («spill the beans»). Come on, spill! — ну ж бо, викладай!"
+      "explain": "To spill (розм.) — виказати таємницю, викласти інформацію («spill the beans»). Come on, spill! — ну ж бо, викладай!",
+      "domain": "general"
     },
     {
       "id": "vw-spill-u2e",
@@ -709,7 +744,8 @@
         "swill"
       ],
       "answer": "spill",
-      "explain": "To spill (розм.) — виказати таємницю, викласти інформацію («spill the beans»). Come on, spill! — ну ж бо, викладай!"
+      "explain": "To spill (розм.) — виказати таємницю, викласти інформацію («spill the beans»). Come on, spill! — ну ж бо, викладай!",
+      "domain": "general"
     },
     {
       "id": "vw-squeal-e2u",
@@ -724,7 +760,8 @@
         "намокнути"
       ],
       "answer": "настукати",
-      "explain": "To squeal (розм.) — настукати, донести на когось. He squealed to the cops — він настукав поліції."
+      "explain": "To squeal (розм.) — настукати, донести на когось. He squealed to the cops — він настукав поліції.",
+      "domain": "general"
     },
     {
       "id": "vw-squeal-u2e",
@@ -739,7 +776,8 @@
         "squeeze"
       ],
       "answer": "squeal",
-      "explain": "To squeal (розм.) — настукати, донести на когось. He squealed to the cops — він настукав поліції."
+      "explain": "To squeal (розм.) — настукати, донести на когось. He squealed to the cops — він настукав поліції.",
+      "domain": "general"
     },
     {
       "id": "vw-coward-e2u",
@@ -754,7 +792,8 @@
         "буркотун"
       ],
       "answer": "боягуз",
-      "explain": "Coward — боягуз, легкодуха людина. Don't be a coward — не будь боягузом."
+      "explain": "Coward — боягуз, легкодуха людина. Don't be a coward — не будь боягузом.",
+      "domain": "general"
     },
     {
       "id": "vw-coward-u2e",
@@ -769,7 +808,8 @@
         "clown"
       ],
       "answer": "coward",
-      "explain": "Coward — боягуз, легкодуха людина. Don't be a coward — не будь боягузом."
+      "explain": "Coward — боягуз, легкодуха людина. Don't be a coward — не будь боягузом.",
+      "domain": "general"
     },
     {
       "id": "vw-fess-up-e2u",
@@ -784,7 +824,8 @@
         "зметикувати"
       ],
       "answer": "зізнатися",
-      "explain": "Fess up (розм.) — зізнатися, визнати провину. Come on, fess up! — ну ж бо, зізнавайся!"
+      "explain": "Fess up (розм.) — зізнатися, визнати провину. Come on, fess up! — ну ж бо, зізнавайся!",
+      "domain": "general"
     },
     {
       "id": "vw-fess-up-u2e",
@@ -799,7 +840,8 @@
         "back up"
       ],
       "answer": "fess up",
-      "explain": "Fess up (розм.) — зізнатися, визнати провину. Come on, fess up! — ну ж бо, зізнавайся!"
+      "explain": "Fess up (розм.) — зізнатися, визнати провину. Come on, fess up! — ну ж бо, зізнавайся!",
+      "domain": "general"
     },
     {
       "id": "vw-crap-e2u",
@@ -814,7 +856,8 @@
         "болото"
       ],
       "answer": "лайно",
-      "explain": "Crap (груб.) — лайно; також «дурниця», «мотлох». That's a load of crap — це повна маячня."
+      "explain": "Crap (груб.) — лайно; також «дурниця», «мотлох». That's a load of crap — це повна маячня.",
+      "domain": "general"
     },
     {
       "id": "vw-crap-u2e",
@@ -829,7 +872,8 @@
         "crate"
       ],
       "answer": "crap",
-      "explain": "Crap (груб.) — лайно; також «дурниця», «мотлох». That's a load of crap — це повна маячня."
+      "explain": "Crap (груб.) — лайно; також «дурниця», «мотлох». That's a load of crap — це повна маячня.",
+      "domain": "general"
     },
     {
       "id": "vw-snoop-e2u",
@@ -844,7 +888,8 @@
         "витанцьовувати"
       ],
       "answer": "винюхувати",
-      "explain": "To snoop — винюхувати, підглядати за чужими справами. Stop snooping around — годі тут винюхувати."
+      "explain": "To snoop — винюхувати, підглядати за чужими справами. Stop snooping around — годі тут винюхувати.",
+      "domain": "general"
     },
     {
       "id": "vw-snoop-u2e",
@@ -859,7 +904,8 @@
         "snap"
       ],
       "answer": "snoop",
-      "explain": "To snoop — винюхувати, підглядати за чужими справами. Stop snooping around — годі тут винюхувати."
+      "explain": "To snoop — винюхувати, підглядати за чужими справами. Stop snooping around — годі тут винюхувати.",
+      "domain": "general"
     },
     {
       "id": "vw-corporal-e2u",
@@ -874,7 +920,8 @@
         "терпкий"
       ],
       "answer": "тілесний",
-      "explain": "Corporal — тілесний, який стосується тіла. Corporal punishment — тілесне покарання. (Іменник corporal — «капрал».)"
+      "explain": "Corporal — тілесний, який стосується тіла. Corporal punishment — тілесне покарання. (Іменник corporal — «капрал».)",
+      "domain": "general"
     },
     {
       "id": "vw-corporal-u2e",
@@ -889,7 +936,8 @@
         "cordial"
       ],
       "answer": "corporal",
-      "explain": "Corporal — тілесний, який стосується тіла. Corporal punishment — тілесне покарання. (Іменник corporal — «капрал».)"
+      "explain": "Corporal — тілесний, який стосується тіла. Corporal punishment — тілесне покарання. (Іменник corporal — «капрал».)",
+      "domain": "general"
     },
     {
       "id": "vw-bruise-e2u",
@@ -904,7 +952,8 @@
         "снаряд"
       ],
       "answer": "синець",
-      "explain": "Bruise — синець, забите місце на шкірі. Covered in bruises — весь у синцях."
+      "explain": "Bruise — синець, забите місце на шкірі. Covered in bruises — весь у синцях.",
+      "domain": "general"
     },
     {
       "id": "vw-bruise-u2e",
@@ -919,7 +968,8 @@
         "brooch"
       ],
       "answer": "bruise",
-      "explain": "Bruise — синець, забите місце на шкірі. Covered in bruises — весь у синцях."
+      "explain": "Bruise — синець, забите місце на шкірі. Covered in bruises — весь у синцях.",
+      "domain": "general"
     },
     {
       "id": "vw-anxious-e2u",
@@ -934,7 +984,8 @@
         "тлінний"
       ],
       "answer": "тривожний",
-      "explain": "Anxious — тривожний, стривожений або нетерплячий. Anxious about the exam — тривожиться через іспит."
+      "explain": "Anxious — тривожний, стривожений або нетерплячий. Anxious about the exam — тривожиться через іспит.",
+      "domain": "general"
     },
     {
       "id": "vw-anxious-u2e",
@@ -949,7 +1000,8 @@
         "obvious"
       ],
       "answer": "anxious",
-      "explain": "Anxious — тривожний, стривожений або нетерплячий. Anxious about the exam — тривожиться через іспит."
+      "explain": "Anxious — тривожний, стривожений або нетерплячий. Anxious about the exam — тривожиться через іспит.",
+      "domain": "general"
     },
     {
       "id": "vw-persuade-e2u",
@@ -964,7 +1016,8 @@
         "перемолоти"
       ],
       "answer": "переконати",
-      "explain": "To persuade — переконати когось зробити щось. He persuaded me to stay — він переконав мене залишитися."
+      "explain": "To persuade — переконати когось зробити щось. He persuaded me to stay — він переконав мене залишитися.",
+      "domain": "general"
     },
     {
       "id": "vw-persuade-u2e",
@@ -979,7 +1032,8 @@
         "perceive"
       ],
       "answer": "persuade",
-      "explain": "To persuade — переконати когось зробити щось. He persuaded me to stay — він переконав мене залишитися."
+      "explain": "To persuade — переконати когось зробити щось. He persuaded me to stay — він переконав мене залишитися.",
+      "domain": "general"
     },
     {
       "id": "vw-worn-out-e2u",
@@ -994,7 +1048,8 @@
         "врівноважений"
       ],
       "answer": "виснажений",
-      "explain": "Worn out — виснажений, знесилений; також «зношений» (про річ). I'm worn out — я геть виснажений."
+      "explain": "Worn out — виснажений, знесилений; також «зношений» (про річ). I'm worn out — я геть виснажений.",
+      "domain": "general"
     },
     {
       "id": "vw-worn-out-u2e",
@@ -1009,7 +1064,8 @@
         "locked out"
       ],
       "answer": "worn out",
-      "explain": "Worn out — виснажений, знесилений; також «зношений» (про річ). I'm worn out — я геть виснажений."
+      "explain": "Worn out — виснажений, знесилений; також «зношений» (про річ). I'm worn out — я геть виснажений.",
+      "domain": "general"
     },
     {
       "id": "vw-condescending-e2u",
@@ -1024,7 +1080,8 @@
         "звивистий"
       ],
       "answer": "зверхній",
-      "explain": "Condescending — зверхній, поблажливо-погордливий. A condescending tone — зверхній тон."
+      "explain": "Condescending — зверхній, поблажливо-погордливий. A condescending tone — зверхній тон.",
+      "domain": "general"
     },
     {
       "id": "vw-condescending-u2e",
@@ -1039,7 +1096,8 @@
         "consenting"
       ],
       "answer": "condescending",
-      "explain": "Condescending — зверхній, поблажливо-погордливий. A condescending tone — зверхній тон."
+      "explain": "Condescending — зверхній, поблажливо-погордливий. A condescending tone — зверхній тон.",
+      "domain": "general"
     },
     {
       "id": "vw-attitude-e2u",
@@ -1054,7 +1112,8 @@
         "співчуття"
       ],
       "answer": "ставлення",
-      "explain": "Attitude — ставлення, позиція; розмовно — «характер», «норов». A positive attitude — позитивне ставлення."
+      "explain": "Attitude — ставлення, позиція; розмовно — «характер», «норов». A positive attitude — позитивне ставлення.",
+      "domain": "general"
     },
     {
       "id": "vw-attitude-u2e",
@@ -1069,7 +1128,8 @@
         "gratitude"
       ],
       "answer": "attitude",
-      "explain": "Attitude — ставлення, позиція; розмовно — «характер», «норов». A positive attitude — позитивне ставлення."
+      "explain": "Attitude — ставлення, позиція; розмовно — «характер», «норов». A positive attitude — позитивне ставлення.",
+      "domain": "general"
     },
     {
       "id": "vw-nook-e2u",
@@ -1084,7 +1144,8 @@
         "зашморг"
       ],
       "answer": "закуток",
-      "explain": "Nook — затишний закуток, куточок. A cozy reading nook — затишний куточок для читання."
+      "explain": "Nook — затишний закуток, куточок. A cozy reading nook — затишний куточок для читання.",
+      "domain": "general"
     },
     {
       "id": "vw-nook-u2e",
@@ -1099,7 +1160,8 @@
         "nudge"
       ],
       "answer": "nook",
-      "explain": "Nook — затишний закуток, куточок. A cozy reading nook — затишний куточок для читання."
+      "explain": "Nook — затишний закуток, куточок. A cozy reading nook — затишний куточок для читання.",
+      "domain": "general"
     },
     {
       "id": "vw-cranny-e2u",
@@ -1114,7 +1176,8 @@
         "хвіртка"
       ],
       "answer": "щілина",
-      "explain": "Cranny — вузька щілина, тріщина. Every nook and cranny — кожен закуток і щілина."
+      "explain": "Cranny — вузька щілина, тріщина. Every nook and cranny — кожен закуток і щілина.",
+      "domain": "general"
     },
     {
       "id": "vw-cranny-u2e",
@@ -1129,7 +1192,8 @@
         "county"
       ],
       "answer": "cranny",
-      "explain": "Cranny — вузька щілина, тріщина. Every nook and cranny — кожен закуток і щілина."
+      "explain": "Cranny — вузька щілина, тріщина. Every nook and cranny — кожен закуток і щілина.",
+      "domain": "general"
     },
     {
       "id": "vw-treat-e2u",
@@ -1144,7 +1208,8 @@
         "приборкати"
       ],
       "answer": "пригостити",
-      "explain": "To treat — пригостити, почастувати; також «поводитися» чи «лікувати». I'll treat you to lunch — я пригощу тебе обідом."
+      "explain": "To treat — пригостити, почастувати; також «поводитися» чи «лікувати». I'll treat you to lunch — я пригощу тебе обідом.",
+      "domain": "general"
     },
     {
       "id": "vw-treat-u2e",
@@ -1159,7 +1224,8 @@
         "trim"
       ],
       "answer": "treat",
-      "explain": "To treat — пригостити, почастувати; також «поводитися» чи «лікувати». I'll treat you to lunch — я пригощу тебе обідом."
+      "explain": "To treat — пригостити, почастувати; також «поводитися» чи «лікувати». I'll treat you to lunch — я пригощу тебе обідом.",
+      "domain": "general"
     },
     {
       "id": "vw-how-dare-e2u",
@@ -1174,7 +1240,8 @@
         "ось тобі й на"
       ],
       "answer": "як ти смієш",
-      "explain": "How dare — «як ти смієш» — обурення чужою зухвалістю. How dare you say that! — як ти смієш таке казати!"
+      "explain": "How dare — «як ти смієш» — обурення чужою зухвалістю. How dare you say that! — як ти смієш таке казати!",
+      "domain": "general"
     },
     {
       "id": "vw-how-dare-u2e",
@@ -1189,7 +1256,8 @@
         "so what"
       ],
       "answer": "how dare",
-      "explain": "How dare — «як ти смієш» — обурення чужою зухвалістю. How dare you say that! — як ти смієш таке казати!"
+      "explain": "How dare — «як ти смієш» — обурення чужою зухвалістю. How dare you say that! — як ти смієш таке казати!",
+      "domain": "general"
     },
     {
       "id": "vw-bear-e2u",
@@ -1204,7 +1272,8 @@
         "тесати"
       ],
       "answer": "терпіти",
-      "explain": "To bear — терпіти, зносити (тягар, біль). I can't bear it — я не можу цього терпіти. (Також «нести».)"
+      "explain": "To bear — терпіти, зносити (тягар, біль). I can't bear it — я не можу цього терпіти. (Також «нести».)",
+      "domain": "general"
     },
     {
       "id": "vw-bear-u2e",
@@ -1219,7 +1288,8 @@
         "bend"
       ],
       "answer": "bear",
-      "explain": "To bear — терпіти, зносити (тягар, біль). I can't bear it — я не можу цього терпіти. (Також «нести».)"
+      "explain": "To bear — терпіти, зносити (тягар, біль). I can't bear it — я не можу цього терпіти. (Також «нести».)",
+      "domain": "general"
     },
     {
       "id": "vw-confess-e2u",
@@ -1234,7 +1304,8 @@
         "зіщулитися"
       ],
       "answer": "зізнатися",
-      "explain": "To confess — зізнатися, визнати провину чи почуття. He confessed to the crime — він зізнався у злочині."
+      "explain": "To confess — зізнатися, визнати провину чи почуття. He confessed to the crime — він зізнався у злочині.",
+      "domain": "general"
     },
     {
       "id": "vw-confess-u2e",
@@ -1249,7 +1320,8 @@
         "consume"
       ],
       "answer": "confess",
-      "explain": "To confess — зізнатися, визнати провину чи почуття. He confessed to the crime — він зізнався у злочині."
+      "explain": "To confess — зізнатися, визнати провину чи почуття. He confessed to the crime — він зізнався у злочині.",
+      "domain": "general"
     },
     {
       "id": "vw-yearning-e2u",
@@ -1264,7 +1336,8 @@
         "прикраса"
       ],
       "answer": "прагнення",
-      "explain": "Yearning — сильне прагнення, туга за чимось. A yearning for freedom — прагнення свободи."
+      "explain": "Yearning — сильне прагнення, туга за чимось. A yearning for freedom — прагнення свободи.",
+      "domain": "general"
     },
     {
       "id": "vw-yearning-u2e",
@@ -1279,7 +1352,8 @@
         "yielding"
       ],
       "answer": "yearning",
-      "explain": "Yearning — сильне прагнення, туга за чимось. A yearning for freedom — прагнення свободи."
+      "explain": "Yearning — сильне прагнення, туга за чимось. A yearning for freedom — прагнення свободи.",
+      "domain": "general"
     },
     {
       "id": "vw-obediently-e2u",
@@ -1294,7 +1368,8 @@
         "показово"
       ],
       "answer": "покірно",
-      "explain": "Obediently — покірно, слухняно. She nodded obediently — вона покірно кивнула."
+      "explain": "Obediently — покірно, слухняно. She nodded obediently — вона покірно кивнула.",
+      "domain": "general"
     },
     {
       "id": "vw-obediently-u2e",
@@ -1309,7 +1384,8 @@
         "openly"
       ],
       "answer": "obediently",
-      "explain": "Obediently — покірно, слухняно. She nodded obediently — вона покірно кивнула."
+      "explain": "Obediently — покірно, слухняно. She nodded obediently — вона покірно кивнула.",
+      "domain": "general"
     },
     {
       "id": "vw-eavesdropping-e2u",
@@ -1324,7 +1400,8 @@
         "підживлення"
       ],
       "answer": "підслуховування",
-      "explain": "Eavesdropping — підслуховування чужих розмов. Caught eavesdropping — спіймали на підслуховуванні."
+      "explain": "Eavesdropping — підслуховування чужих розмов. Caught eavesdropping — спіймали на підслуховуванні.",
+      "domain": "general"
     },
     {
       "id": "vw-eavesdropping-u2e",
@@ -1339,7 +1416,8 @@
         "housekeeping"
       ],
       "answer": "eavesdropping",
-      "explain": "Eavesdropping — підслуховування чужих розмов. Caught eavesdropping — спіймали на підслуховуванні."
+      "explain": "Eavesdropping — підслуховування чужих розмов. Caught eavesdropping — спіймали на підслуховуванні.",
+      "domain": "general"
     },
     {
       "id": "vw-thug-e2u",
@@ -1354,7 +1432,8 @@
         "гризун"
       ],
       "answer": "головоріз",
-      "explain": "Thug — головоріз, бандит, жорстокий злочинець. A gang of thugs — банда головорізів."
+      "explain": "Thug — головоріз, бандит, жорстокий злочинець. A gang of thugs — банда головорізів.",
+      "domain": "general"
     },
     {
       "id": "vw-thug-u2e",
@@ -1369,7 +1448,8 @@
         "thigh"
       ],
       "answer": "thug",
-      "explain": "Thug — головоріз, бандит, жорстокий злочинець. A gang of thugs — банда головорізів."
+      "explain": "Thug — головоріз, бандит, жорстокий злочинець. A gang of thugs — банда головорізів.",
+      "domain": "general"
     },
     {
       "id": "vw-pensive-e2u",
@@ -1384,7 +1464,8 @@
         "запальний"
       ],
       "answer": "задумливий",
-      "explain": "Pensive — задумливий, у глибоких роздумах. A pensive mood — задумливий настрій."
+      "explain": "Pensive — задумливий, у глибоких роздумах. A pensive mood — задумливий настрій.",
+      "domain": "general"
     },
     {
       "id": "vw-pensive-u2e",
@@ -1399,7 +1480,8 @@
         "passive"
       ],
       "answer": "pensive",
-      "explain": "Pensive — задумливий, у глибоких роздумах. A pensive mood — задумливий настрій."
+      "explain": "Pensive — задумливий, у глибоких роздумах. A pensive mood — задумливий настрій.",
+      "domain": "general"
     }
   ]
 }
