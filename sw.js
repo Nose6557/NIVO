@@ -6,7 +6,7 @@
    - крос-домен (Supabase,   → не перехоплюємо, віддаємо браузеру
      jsDelivr, Umami, шрифти)
    Бампни CACHE при кожному релізі оболонки — старий кеш видалиться сам. */
-const CACHE = "nivo-v4";
+const CACHE = "nivo-v5";
 
 const SHELL = [
   ".",
