@@ -48,7 +48,7 @@
   --lvl-c1: var(--blue);    --lvl-c1-rgb: 0,136,255;
   --lvl-c2: var(--indigo);  --lvl-c2-rgb: 97,85,245;
 
-  --r: 24px;
+  --r: 32px;
   --shell: 1080px;
 }
 
