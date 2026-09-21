@@ -577,18 +577,19 @@
       "domain": "business",
       "prompt": "Склади коректне речення:",
       "tokens": [
-        "Approving",
-        "this",
-        "waiver",
-        "would",
+        "The",
+        "court's",
+        "ruling",
         "set",
         "a",
-        "dangerous",
-        "precedent"
+        "precedent",
+        "for",
+        "future",
+        "cases"
       ],
-      "answer": "Approving this waiver would set a dangerous precedent",
-      "explain": "Стала сполука: set a precedent — «створити прецедент».\nГерундій Approving виступає підметом, тому дієслово стоїть в однині — would set.",
-      "ua": "Схвалення цього винятку створило б небезпечний прецедент."
+      "answer": "The court's ruling set a precedent for future cases",
+      "explain": "Стала сполука: set a precedent — «створити прецедент».\nПідмет — The court's ruling, присудок — set (минулий час дорівнює базовій формі).",
+      "ua": "Рішення суду створило прецедент для майбутніх справ."
     },
     {
       "id": "c1-reg-hedging-02",

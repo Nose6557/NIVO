@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "updated": "2026-09-15",
+  "updated": "2026-09-21",
   "questionLevels": [
     "A1",
     "A2",
@@ -136,6 +136,11 @@
       "file": "c2-02.json",
       "level": "C2",
       "title": "Пак C2 — партія 2"
+    },
+    {
+      "file": "c1-03.json",
+      "level": "C1",
+      "title": "Пак C1 — партія 3"
     }
   ],
   "domains": {
