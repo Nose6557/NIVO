@@ -29,6 +29,47 @@ let qStart = 0;
 
 const $ = id => document.getElementById(id);
 
+// type: "" (нейтрально/завантаження), "error" або "success"
+function setMsg(el, text, type = "") {
+  el.textContent = text;
+  el.classList.remove("error", "success");
+  if (type) el.classList.add(type);
+}
+
+/* ---------- локалізація помилок авторизації ----------
+   Сирий англійський текст із Supabase у UI не потрапляє: усе, що не
+   збіглося з відомим паттерном, показуємо як «щось пішло не так». */
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function mapAuthError(err) {
+  const raw = (err && (err.message || err.error_description || String(err))) || "";
+  const code = err && (err.code || err.name);
+
+  if (code === "TypeError" || /network|fetch|Failed to fetch/i.test(raw)) {
+    return { message: "Забагато спроб або немає звʼязку. Спробуйте за хвилину." };
+  }
+  if (/rate.?limit|too many/i.test(raw) || err?.status === 429) {
+    return { message: "Забагато спроб або немає звʼязку. Спробуйте за хвилину." };
+  }
+  if (/invalid login credentials/i.test(raw)) {
+    return { message: "Невірний email або пароль.", fields: ["email", "pass"] };
+  }
+  if (/email not confirmed/i.test(raw)) {
+    return { message: "Підтвердіть email — лист уже в пошті." };
+  }
+  if (/user already registered|already been registered/i.test(raw)) {
+    return { message: "Акаунт із цим email уже існує. Увійдіть." };
+  }
+  const pw = raw.match(/password should be at least (\d+)/i);
+  if (pw) {
+    return { message: `Пароль має бути щонайменше ${pw[1]} символів.`, fields: ["pass"] };
+  }
+  if (/invalid email|unable to validate email/i.test(raw)) {
+    return { message: "Схоже, це не email.", fields: ["email"] };
+  }
+  return { message: "Щось пішло не так. Спробуйте ще раз." };
+}
+
 /* ---------- навігація між екранами ---------- */
 function show(name) {
   document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
@@ -569,6 +610,24 @@ async function buildExport() {
 /* ---------- обробники ---------- */
 let authMode = "in";
 
+// поле → елементи для підсвітки й тексту помилки
+const AUTH_FIELDS = {
+  email: { input: () => $("auth-email"), err: () => $("auth-email-err"), wrap: () => $("auth-email").closest(".field") },
+  pass:  { input: () => $("auth-pass"),  err: () => $("auth-pass-err"),  wrap: () => $("auth-pass").closest(".field") },
+};
+
+function setFieldError(name, text) {
+  const f = AUTH_FIELDS[name]; if (!f) return;
+  f.err().textContent = text || "";
+  f.wrap().classList.toggle("has-error", !!text);
+}
+function clearFieldErrors(names) {
+  (names || Object.keys(AUTH_FIELDS)).forEach(n => setFieldError(n, ""));
+}
+function markFields(names) {
+  Object.keys(AUTH_FIELDS).forEach(n => AUTH_FIELDS[n].wrap().classList.toggle("has-error", names.includes(n)));
+}
+
 document.querySelectorAll("[data-authtab]").forEach(t => {
   t.onclick = () => {
     document.querySelectorAll("[data-authtab]").forEach(x => {
@@ -579,68 +638,109 @@ document.querySelectorAll("[data-authtab]").forEach(t => {
     t.setAttribute("aria-selected", "true");
     authMode = t.dataset.authtab;
     $("auth-submit").textContent = authMode === "in" ? "Увійти" : "Створити акаунт";
-    $("auth-msg").textContent = "";
+    $("auth-pass").setAttribute("autocomplete", authMode === "in" ? "current-password" : "new-password");
+    setMsg($("auth-msg"), "");
+    clearFieldErrors();
   };
 });
+
+// blur email — валідуємо формат; input на email/pass — гасимо помилки й банер
+$("auth-email").addEventListener("blur", () => {
+  const v = $("auth-email").value.trim();
+  if (v && !EMAIL_RE.test(v)) setFieldError("email", "Схоже, це не email");
+});
+$("auth-email").addEventListener("input", () => {
+  setFieldError("email", "");
+  setMsg($("auth-msg"), "");
+  AUTH_FIELDS.pass.wrap().classList.remove("has-error");
+});
+$("auth-pass").addEventListener("input", () => {
+  setFieldError("pass", "");
+  setMsg($("auth-msg"), "");
+  AUTH_FIELDS.email.wrap().classList.remove("has-error");
+});
+
+// показати/сховати пароль
+$("auth-pw-toggle").onclick = () => {
+  const btn = $("auth-pw-toggle");
+  const inp = $("auth-pass");
+  const on = inp.type === "password";
+  inp.type = on ? "text" : "password";
+  btn.setAttribute("aria-pressed", on ? "true" : "false");
+  btn.setAttribute("aria-label", on ? "Сховати пароль" : "Показати пароль");
+};
 
 $("auth-submit").onclick = async () => {
   const email = $("auth-email").value.trim();
   const pass = $("auth-pass").value;
   const msg = $("auth-msg");
-  if (!email || !pass) { msg.textContent = "Заповніть обидва поля."; return; }
-  msg.textContent = "Хвилинку…";
+
+  clearFieldErrors();
+  setMsg(msg, "");
+
+  let bad = false;
+  if (!email) { setFieldError("email", "Введіть email"); bad = true; }
+  else if (!EMAIL_RE.test(email)) { setFieldError("email", "Схоже, це не email"); bad = true; }
+  if (!pass) { setFieldError("pass", "Введіть пароль"); bad = true; }
+  if (bad) return;
+
+  setMsg(msg, "Хвилинку…");
   try {
     if (authMode === "in") await Store.signIn(email, pass);
     else {
       const r = await Store.signUp(email, pass);
       if (!r.session) {
-        msg.textContent = "Акаунт створено. Підтвердьте пошту, потім увійдіть.";
+        setMsg(msg, "Акаунт створено. Підтвердьте пошту, потім увійдіть.", "success");
         return;
       }
     }
     await renderHome();
     show("home");
   } catch (e) {
-    msg.textContent = "Не вийшло: " + (e.message || "перевірте дані");
+    const m = mapAuthError(e);
+    setMsg(msg, m.message, "error");
+    if (m.fields) markFields(m.fields);
   }
 };
 
 $("auth-forgot").onclick = () => {
   $("forgot-email").value = $("auth-email").value.trim();
-  $("forgot-msg").textContent = "";
+  setMsg($("forgot-msg"), "");
   show("forgot");
 };
 
 $("forgot-back").onclick = () => {
-  $("auth-msg").textContent = "";
+  setMsg($("auth-msg"), "");
+  clearFieldErrors();
   show("auth");
 };
 
 $("forgot-submit").onclick = async () => {
   const email = $("forgot-email").value.trim();
   const msg = $("forgot-msg");
-  if (!email) { msg.textContent = "Вкажіть email."; return; }
-  msg.textContent = "Хвилинку…";
+  if (!email) { setMsg(msg, "Введіть email.", "error"); return; }
+  if (!EMAIL_RE.test(email)) { setMsg(msg, "Схоже, це не email.", "error"); return; }
+  setMsg(msg, "Хвилинку…");
   try {
     await Store.resetPasswordForEmail(email);
-    msg.textContent = "Перевірте пошту — надіслали посилання для скидання пароля.";
+    setMsg(msg, "Перевірте пошту — надіслали посилання для скидання пароля.", "success");
   } catch (e) {
-    msg.textContent = "Не вийшло: " + (e.message || "спробуйте пізніше");
+    setMsg(msg, mapAuthError(e).message, "error");
   }
 };
 
 $("newpass-submit").onclick = async () => {
   const pass = $("newpass-pass").value;
   const msg = $("newpass-msg");
-  if (!pass || pass.length < 6) { msg.textContent = "Мінімум 6 символів."; return; }
-  msg.textContent = "Хвилинку…";
+  if (!pass || pass.length < 6) { setMsg(msg, "Пароль має бути щонайменше 6 символів.", "error"); return; }
+  setMsg(msg, "Хвилинку…");
   try {
     await Store.updatePassword(pass);
-    msg.textContent = "Пароль оновлено.";
+    setMsg(msg, "Пароль оновлено.", "success");
     await renderHome();
     show("home");
   } catch (e) {
-    msg.textContent = "Не вийшло: " + (e.message || "спробуйте ще раз");
+    setMsg(msg, mapAuthError(e).message, "error");
   }
 };
 
@@ -744,7 +844,7 @@ function renderLevelMenu() {
 
 $("btn-signout").onclick = async () => {
   await Store.signOut();
-  $("auth-msg").textContent = "";
+  setMsg($("auth-msg"), "");
   show("auth");
 };
 
@@ -828,7 +928,7 @@ document.addEventListener("keydown", (e) => {
 
 /* ---------- старт ---------- */
 Store.onPasswordRecovery(() => {
-  $("newpass-msg").textContent = "";
+  setMsg($("newpass-msg"), "");
   $("newpass-pass").value = "";
   show("newpass");
 });

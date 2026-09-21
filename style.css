@@ -51,6 +51,7 @@
   --lvl-c2: var(--indigo);  --lvl-c2-rgb: 97,85,245;
 
   --r: 32px;
+  --r-form: 14px;    /* єдиний радіус для інпутів, табів і кнопок на формі */
   --shell: 1080px;
 }
 
@@ -106,6 +107,27 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .eyebrow{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--green-fg); margin-bottom:16px}
 .note{font-size:12px; color:var(--text-muted); margin-bottom:8px}
 .note.dim{font-size:14px}
+.note.error,.note.success{
+  display:flex; align-items:flex-start; gap:8px;
+  font-size:13px; line-height:1.4; padding:10px 12px; border-radius:12px;
+}
+.note.error{
+  color:var(--red);
+  background:color-mix(in srgb, var(--red) 14%, transparent);
+  border:1px solid color-mix(in srgb, var(--red) 36%, transparent);
+}
+.note.success{
+  color:var(--green);
+  background:color-mix(in srgb, var(--green) 14%, transparent);
+  border:1px solid color-mix(in srgb, var(--green) 36%, transparent);
+}
+.note.error::before,.note.success::before{
+  flex:none; width:16px; height:16px; margin-top:1px;
+  border-radius:50%; font-size:11px; line-height:16px; text-align:center; font-weight:700;
+  color:var(--gray-1000);
+}
+.note.error::before{content:"!"; background:var(--red)}
+.note.success::before{content:"✓"; background:var(--green)}
 
 /* ——— логотип ——— */
 .mark{text-align:center; padding:56px 0 36px}
@@ -130,7 +152,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   display:grid; grid-template-columns:1fr 1fr;
   padding:2px;
   background:var(--fill);
-  border-radius:10px;
+  border-radius:var(--r-form);
   font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif;
   isolation:isolate;
 }
@@ -139,7 +161,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   top:2px; left:2px;
   width:calc(50% - 2px); height:calc(100% - 4px);
   background:var(--border);
-  border-radius:8px;
+  border-radius:calc(var(--r-form) - 2px);
   box-shadow:0 1px 3px rgba(0,0,0,.45), 0 0 0 .5px rgba(0,0,0,.25);
   transition:transform .25s cubic-bezier(.4,0,.2,1);
 }
@@ -147,13 +169,18 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .seg{
   position:relative; z-index:1;
   background:none; border:0; cursor:pointer;
-  padding:7px 12px; min-height:34px;
+  padding:7px 12px; min-height:38px;
   font-size:14px; font-weight:500; letter-spacing:-.01em;
-  color:color-mix(in srgb, var(--text-muted), var(--text) 26%);
+  color:var(--text-muted);
   transition:color .2s ease;
 }
 .seg.active{color:var(--text); font-weight:600}
-.seg:focus-visible{outline:2px solid var(--green); outline-offset:2px; border-radius:8px}
+/* активний таб на світлішому фоні для контрасту з неактивним */
+.segmented:has(.seg:first-of-type.active) .seg-thumb,
+.segmented:has(.seg:last-of-type.active) .seg-thumb{
+  background:color-mix(in srgb, var(--border) 60%, var(--text) 8%);
+}
+.seg:focus-visible{outline:2px solid var(--green); outline-offset:2px; border-radius:calc(var(--r-form) - 2px)}
 
 /* ——— текстові поля: стиль iOS ——— */
 .field{display:block; margin-bottom:16px}
@@ -168,7 +195,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   -webkit-appearance:none; appearance:none;
   background:var(--fill);
   border:1px solid transparent;
-  border-radius:12px;
+  border-radius:var(--r-form);
   color:var(--text);
   caret-color:var(--green);
   padding:13px 14px; min-height:46px;
@@ -558,3 +585,91 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
              -webkit-tap-highlight-color: transparent; }
 .ua-toggle:hover { opacity: 1; }
 .ua-text   { margin: 0; font-size: .9em; color: var(--ok-fg); }
+
+/* ——— екран входу: компактніша шапка + перебудова стеку ——— */
+.auth-shell{
+  display:flex; flex-direction:column;
+  max-width:420px;
+  gap:20px;
+}
+#screen-auth .mark{padding:32px 0 0}
+#screen-auth .mark-glyph{width:44px; height:44px}
+#screen-auth .wordmark{
+  font-size:clamp(24px,4.5vw,36px);
+  margin:6px 0 8px;
+}
+#screen-auth .tagline{font-size:15px; line-height:1.35; padding:0 8px}
+
+/* ——— гостьовий вхід ——— */
+.guest-block{display:flex; flex-direction:column; gap:6px}
+.btn.guest{
+  width:100%;
+  background:none;
+  border:1px solid var(--text-muted);
+  color:var(--text);
+  font-weight:600;
+  border-radius:var(--r-form);
+}
+.btn.guest:hover{
+  background:color-mix(in srgb, var(--text-muted) 12%, transparent);
+  border-color:var(--text);
+}
+.guest-note{
+  font-size:13px; text-align:center; margin:0;
+  color:var(--text-muted);
+}
+
+/* ——— розділювач «або» ——— */
+.or-sep{
+  display:flex; align-items:center; gap:12px;
+  color:var(--text-muted); font-size:13px; letter-spacing:.02em;
+  margin:0;
+}
+.or-sep::before,
+.or-sep::after{
+  content:""; flex:1; height:1px; background:var(--border);
+}
+.or-sep span{padding:0 4px}
+
+/* ——— панель форми на екрані входу ——— */
+#screen-auth .panel{padding:20px; gap:16px}
+#screen-auth .panel .btn{border-radius:var(--r-form)}
+#screen-auth .panel .btn.primary{margin-top:4px}
+
+/* ——— обгортка інпута з іконкою (пароль) ——— */
+.field .input-wrap{position:relative}
+.field .input-wrap input{padding-right:48px}
+.pw-toggle{
+  position:absolute; top:50%; right:6px; transform:translateY(-50%);
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; padding:0;
+  background:none; border:0; color:var(--text-muted);
+  cursor:pointer; border-radius:10px;
+  transition:color .15s ease, background-color .15s ease;
+}
+.pw-toggle:hover{color:var(--text); background:color-mix(in srgb, var(--text-muted) 14%, transparent)}
+.pw-toggle:focus-visible{outline:2px solid var(--green); outline-offset:2px}
+.pw-toggle .pw-eye-off{display:none}
+.pw-toggle[aria-pressed="true"] .pw-eye{display:none}
+.pw-toggle[aria-pressed="true"] .pw-eye-off{display:inline}
+
+/* ——— помилка під полем ——— */
+.field-error{
+  min-height:0; margin:6px 4px 0;
+  font-size:13px; line-height:1.35; color:var(--no-fg);
+}
+.field-error:empty{display:none}
+.field.has-error input{
+  border-color:var(--no-fg);
+  box-shadow:0 0 0 4px color-mix(in srgb, var(--no-fg) 18%, transparent);
+}
+
+/* Мобільна перевірка (375×667):
+   висота стеку (шапка+гостьовий+«або»+таби+обидва поля) не має вимагати скрола. */
+@media (max-height:720px){
+  #screen-auth .mark{padding:16px 0 0}
+  #screen-auth .wordmark{font-size:24px; margin:4px 0 4px}
+  #screen-auth .tagline{font-size:14px}
+  .auth-shell{gap:14px}
+  #screen-auth .panel{padding:16px; gap:12px}
+}

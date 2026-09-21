@@ -25,31 +25,48 @@
 
 <!-- ЕКРАН: вхід -->
 <section id="screen-auth" class="screen active">
-  <div class="shell narrow">
+  <div class="shell narrow auth-shell">
+    <div class="mark">
+      <img class="mark-glyph" src="favicon/icon.svg" alt="">
+      <h1 class="wordmark">NIVO</h1>
+      <p class="tagline">Твої помилки стають твоїм планом навчання.</p>
+    </div>
+    <div class="guest-block">
+      <button class="btn guest" id="auth-skip">Спробувати без акаунта</button>
+      <p class="note dim guest-note">Без акаунта прогрес зберігається лише в цьому браузері.</p>
+    </div>
+    <div class="or-sep" aria-hidden="true"><span>або</span></div>
     <div class="panel">
-      <div class="mark">
-        <img class="mark-glyph" src="favicon/icon.svg" alt="">
-        <h1 class="wordmark">NIVO</h1>
-        <p class="tagline">Англійська від A1&nbsp;до&nbsp;С2. Помилки самі складаються у&nbsp;план навчання.</p>
-      </div>
       <div class="segmented" role="tablist" aria-label="Вхід або реєстрація">
         <span class="seg-thumb" aria-hidden="true"></span>
         <button class="seg active" data-authtab="in" role="tab" aria-selected="true">Вхід</button>
         <button class="seg" data-authtab="up" role="tab" aria-selected="false">Реєстрація</button>
       </div>
-      <label class="field">
-        <span>Email</span>
+      <label class="field" data-field="email">
+        <span>Електронна пошта</span>
         <input type="email" id="auth-email" autocomplete="email" placeholder="you@example.com">
+        <p class="field-error" id="auth-email-err" role="alert" aria-live="polite"></p>
       </label>
-      <label class="field">
+      <label class="field" data-field="pass">
         <span>Пароль</span>
-        <input type="password" id="auth-pass" autocomplete="current-password" placeholder="мінімум 6 символів">
+        <div class="input-wrap">
+          <input type="password" id="auth-pass" autocomplete="current-password" placeholder="мінімум 6 символів">
+          <button type="button" class="pw-toggle" id="auth-pw-toggle" aria-label="Показати пароль" aria-pressed="false">
+            <svg class="pw-eye" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+            <svg class="pw-eye-off" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-6.5 0-10-7-10-7a19.6 19.6 0 0 1 5.06-5.94M9.9 4.24A10.94 10.94 0 0 1 12 4c6.5 0 10 7 10 7a19.6 19.6 0 0 1-3.17 4.19M14.12 9.88a3 3 0 1 1-4.24 4.24"/>
+              <line x1="2" y1="2" x2="22" y2="22"/>
+            </svg>
+          </button>
+        </div>
+        <p class="field-error" id="auth-pass-err" role="alert" aria-live="polite"></p>
       </label>
+      <p class="note" id="auth-msg" role="alert" aria-live="polite"></p>
       <button class="btn primary" id="auth-submit">Увійти</button>
       <button class="link-btn" id="auth-forgot">Забули пароль?</button>
-      <p class="note" id="auth-msg"></p>
-      <button class="btn ghost" id="auth-skip">Спробувати без акаунта</button>
-      <p class="note dim" style="text-align:center">Без акаунта прогрес зберігається лише в цьому браузері.</p>
     </div>
   </div>
 </section>
@@ -68,7 +85,7 @@
         <input type="email" id="forgot-email" autocomplete="email" placeholder="you@example.com">
       </label>
       <button class="btn primary" id="forgot-submit">Надіслати посилання</button>
-      <p class="note" id="forgot-msg"></p>
+      <p class="note" id="forgot-msg" role="alert" aria-live="polite"></p>
       <button class="btn ghost small" id="forgot-back">Назад до входу</button>
     </div>
   </div>
@@ -88,7 +105,7 @@
         <input type="password" id="newpass-pass" autocomplete="new-password" placeholder="мінімум 6 символів">
       </label>
       <button class="btn primary" id="newpass-submit">Зберегти новий пароль</button>
-      <p class="note" id="newpass-msg"></p>
+      <p class="note" id="newpass-msg" role="alert" aria-live="polite"></p>
     </div>
   </div>
 </section>
