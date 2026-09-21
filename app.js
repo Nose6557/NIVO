@@ -8,7 +8,7 @@ let TOPICS = {};      // slug теми     -> { category, label }
 
 /* Змінюй, коли оновлюєш banks/ — інакше браузер може віддавати
    стару версію з кешу GitHub Pages. */
-const BANK_VERSION = "2026-09-15";
+const BANK_VERSION = "2026-09-21";
 
 /* переклад речення під поясненням */
 const UA_OPEN = new Set(["A1", "A2", "B1"]);   // на цих рівнях відкрито за замовчуванням
