@@ -217,7 +217,10 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .topbar{
   display:flex; justify-content:space-between; align-items:center;
   padding:8px 16px; border-bottom:1px solid var(--border);
-  position:sticky; top:0; z-index:10; background:var(--bg);
+  position:sticky; top:0; z-index:10;
+  background:color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
 }
 .brand-sm{display:flex; align-items:center; font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px}
 .brand-sm .mark-glyph{width:24px; height:24px; margin-right:4px}
