@@ -163,6 +163,12 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .panel > .note{margin-bottom:0}
 .panel > .note:empty{display:none}
 
+/* версія оболонки — тримай синхронно з CACHE у sw.js */
+.app-version{
+  position:fixed; left:50%; bottom:16px; transform:translateX(-50%);
+  text-align:center; font-size:11px; color:var(--text-muted); pointer-events:none;
+}
+
 /* ——— segmented control (iOS) ——— */
 .segmented{
   position:relative;
