@@ -371,7 +371,14 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 .tbar{display:grid; grid-template-columns:152px 1fr 56px; align-items:center; gap:16px}
 .tbar-name{font-size:12px; color:var(--text)}
 .tbar-rail{height:8px; background:var(--border); border-radius:99px; overflow:hidden; position:relative}
-.tbar-fill{height:100%; border-radius:99px; transition:width .5s ease}
+.tbar-fill{
+  height:100%; border-radius:99px;
+  transform-origin:left; transition:width .5s ease;
+  animation:progress-grow .5s cubic-bezier(.22,.8,.2,1) both;
+}
+@media (prefers-reduced-motion:reduce){
+  .tbar-fill{animation:none}
+}
 .tbar-val{font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:var(--text-muted); text-align:right}
 
 /* ——— гра ——— */
