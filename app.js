@@ -815,18 +815,24 @@ function renderLevelMenu() {
   const hint = $("lock-hint");
   const estEl = $("level-est");
 
-  if (picker) picker.querySelectorAll("button").forEach(b =>
-    b.classList.toggle("active", b.dataset.lv === cur.level));
+  // «Автоматичний рівень» — увімкнено, коли рівень НЕ зафіксовано (адаптив працює).
+  const auto = !cur.locked;
+
+  if (picker) {
+    picker.hidden = auto;
+    picker.querySelectorAll("button").forEach(b =>
+      b.classList.toggle("active", b.dataset.lv === cur.level));
+  }
 
   if (sw) {
-    sw.setAttribute("aria-checked", cur.locked ? "true" : "false");
+    sw.setAttribute("aria-checked", auto ? "true" : "false");
     sw.disabled = !cur.level;
   }
 
   if (hint) {
-    hint.textContent = cur.locked
-      ? "Рівень зафіксовано — сам не змінюватиметься."
-      : "Без фіксації рівень підлаштовується під твої відповіді.";
+    hint.textContent = auto
+      ? "Рівень підлаштовується під твої відповіді."
+      : "Обери рівень для запитань.";
   }
 
   const applyEl = $("btn-apply-est");

@@ -588,6 +588,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 
 /* Сегментований вибір рівня: 3×2, великі кнопки під палець. */
 .level-picker{display:grid; grid-template-columns:repeat(3,1fr); gap:4px}
+.level-picker[hidden]{display:none}
 .level-picker button{
   min-height:48px; padding:0; border:1px solid var(--border); border-radius:var(--r);
   background:var(--fill); color:var(--text-muted); cursor:pointer;
