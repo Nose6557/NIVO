@@ -486,6 +486,8 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   .tbar-name{font-size:12px}
   .shell{padding:24px 16px 48px}
   .card{padding:24px}
+  #screen-home .shell{padding-left:24px; padding-right:24px}
+  #screen-home .topbar{padding-left:24px; padding-right:24px}
 }
 
 @media (prefers-reduced-motion:reduce){
