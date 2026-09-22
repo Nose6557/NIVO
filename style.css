@@ -134,6 +134,24 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .wordmark{font-size:clamp(36px,7vw,56px); font-weight:900; line-height:1.07; margin:8px 0}
 .tagline{color:var(--text-muted); font-size:16px}
 
+/* три щаблі лого «виростають» знизу вгору при появі екрана входу */
+.mark-glyph .logo-bar{
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: logo-bar-rise .6s cubic-bezier(.22,.8,.2,1) backwards;
+}
+.mark-glyph .logo-bar-1{animation-delay:.05s}
+.mark-glyph .logo-bar-2{animation-delay:.15s}
+.mark-glyph .logo-bar-3{animation-delay:.25s}
+
+@keyframes logo-bar-rise{
+  from{transform:scaleY(0)}
+  to{transform:scaleY(1)}
+}
+@media (prefers-reduced-motion:reduce){
+  .mark-glyph .logo-bar{animation:none}
+}
+
 /* ——— панелі ——— */
 .panel{
   border-radius:var(--r);
@@ -347,7 +365,20 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 /* ——— гра ——— */
 .play-top{padding:0px 0 16px}
 .progress-rail{height:4px; background:var(--border); border-radius:99px; overflow:hidden}
-.progress-fill{height:100%; width:0; background:var(--green); transition:width .35s ease}
+.progress-fill{
+  height:100%; width:0; background:var(--green);
+  transform-origin:left; transition:width .35s ease;
+  animation:progress-grow .5s cubic-bezier(.22,.8,.2,1) both;
+}
+
+/* заповнення з'являється й «виростає» зліва направо замість миттєвої появи */
+@keyframes progress-grow{
+  from{transform:scaleX(0)}
+  to{transform:scaleX(1)}
+}
+@media (prefers-reduced-motion:reduce){
+  .progress-fill{animation:none}
+}
 .play-meta{display:flex; justify-content:space-between; align-items:center; margin-top:16px; color:var(--text-muted)}
 #qcount{width:70px}
 .streak{color:var(--green-fg)}
