@@ -36,6 +36,12 @@ function setMsg(el, text, type = "") {
   if (type) el.classList.add(type);
 }
 
+// поки триває запит, кнопка показує спінер замість підпису
+function setBtnLoading(btn, loading) {
+  btn.classList.toggle("loading", loading);
+  btn.disabled = loading;
+}
+
 /* ---------- локалізація помилок авторизації ----------
    Сирий англійський текст із Supabase у UI не потрапляє: усе, що не
    збіглося з відомим паттерном, показуємо як «щось пішло не так». */
@@ -674,6 +680,7 @@ $("auth-submit").onclick = async () => {
   const email = $("auth-email").value.trim();
   const pass = $("auth-pass").value;
   const msg = $("auth-msg");
+  const btn = $("auth-submit");
 
   clearFieldErrors();
   setMsg(msg, "");
@@ -684,7 +691,7 @@ $("auth-submit").onclick = async () => {
   if (!pass) { setFieldError("pass", "Введіть пароль"); bad = true; }
   if (bad) return;
 
-  setMsg(msg, "Хвилинку…");
+  setBtnLoading(btn, true);
   try {
     if (authMode === "in") await Store.signIn(email, pass);
     else {
@@ -700,6 +707,8 @@ $("auth-submit").onclick = async () => {
     const m = mapAuthError(e);
     setMsg(msg, m.message, "error");
     if (m.fields) markFields(m.fields);
+  } finally {
+    setBtnLoading(btn, false);
   }
 };
 
@@ -718,22 +727,28 @@ $("forgot-back").onclick = () => {
 $("forgot-submit").onclick = async () => {
   const email = $("forgot-email").value.trim();
   const msg = $("forgot-msg");
+  const btn = $("forgot-submit");
   if (!email) { setMsg(msg, "Введіть email.", "error"); return; }
   if (!EMAIL_RE.test(email)) { setMsg(msg, "Схоже, це не email.", "error"); return; }
-  setMsg(msg, "Хвилинку…");
+  setMsg(msg, "");
+  setBtnLoading(btn, true);
   try {
     await Store.resetPasswordForEmail(email);
     setMsg(msg, "Перевірте пошту — надіслали посилання для скидання пароля.", "success");
   } catch (e) {
     setMsg(msg, mapAuthError(e).message, "error");
+  } finally {
+    setBtnLoading(btn, false);
   }
 };
 
 $("newpass-submit").onclick = async () => {
   const pass = $("newpass-pass").value;
   const msg = $("newpass-msg");
+  const btn = $("newpass-submit");
   if (!pass || pass.length < 6) { setMsg(msg, "Пароль має бути щонайменше 6 символів.", "error"); return; }
-  setMsg(msg, "Хвилинку…");
+  setMsg(msg, "");
+  setBtnLoading(btn, true);
   try {
     await Store.updatePassword(pass);
     setMsg(msg, "Пароль оновлено.", "success");
@@ -741,6 +756,8 @@ $("newpass-submit").onclick = async () => {
     show("home");
   } catch (e) {
     setMsg(msg, mapAuthError(e).message, "error");
+  } finally {
+    setBtnLoading(btn, false);
   }
 };
 
