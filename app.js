@@ -469,6 +469,22 @@ function temperColor(acc) {
   return "var(--teal)";
 }
 
+const REDUCE_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Лічильник відсотка біжить синхронно зі смугою (.tbar-fill, той самий
+   тайминг progress-grow), а не з'являється миттю. */
+function animateCount(el, target, duration = 900) {
+  if (REDUCE_MOTION) { el.textContent = target + "%"; return; }
+  const start = performance.now();
+  function tick(now) {
+    const t = Math.min(1, (now - start) / duration);
+    const eased = 1 - Math.pow(1 - t, 3);   // easeOutCubic — той самий характер, що й у progress-grow
+    el.textContent = Math.round(target * eased) + "%";
+    if (t < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
 async function renderHome() {
   const stats = await Store.getStats();
 
@@ -499,13 +515,15 @@ async function renderHome() {
   Object.keys(CAT_UA).forEach(cat => {
     const d = byCat[cat];
     const acc = d && d.n ? d.ok / d.n : 0;
+    const pct = d ? Math.round(acc * 100) : null;
     const row = document.createElement("div");
     row.className = "tbar";
     row.innerHTML = `
       <div class="tbar-name">${CAT_UA[cat]}</div>
       <div class="tbar-rail"><div class="tbar-fill" style="width:${d ? Math.max(acc * 100, 4) : 0}%; background:${temperColor(acc)}"></div></div>
-      <div class="tbar-val">${d ? Math.round(acc * 100) + "%" : "—"}</div>`;
+      <div class="tbar-val">${pct === null ? "—" : "0%"}</div>`;
     bars.appendChild(row);
+    if (pct !== null) animateCount(row.querySelector(".tbar-val"), pct);
   });
 
   const email = Store.mode === "supabase" && Store.user ? Store.user.email : null;
