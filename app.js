@@ -6,9 +6,18 @@
 let CAT_UA = {};      // slug категорії -> українська назва
 let TOPICS = {};      // slug теми     -> { category, label }
 
-/* Змінюй, коли оновлюєш banks/ — інакше браузер може віддавати
-   стару версію з кешу GitHub Pages. */
-const BANK_VERSION = "2026-09-21";
+/* Бампається разом з NIVO_RELEASED у version.js — інакше браузер може
+   віддавати стару версію банків з кешу GitHub Pages. */
+const BANK_VERSION = NIVO_RELEASED;
+
+/* Футер .app-version: версія оболонки + мітка гілки на прев'ю-хостах Cloudflare Pages. */
+(function () {
+  const el = document.querySelector(".app-version");
+  if (!el) return;
+  let text = "NIVO · v" + NIVO_VERSION;
+  if (location.hostname.endsWith(".pages.dev")) text += " · work";
+  el.textContent = text;
+})();
 
 /* переклад речення під поясненням */
 const UA_OPEN = new Set(["A1", "A2", "B1"]);   // на цих рівнях відкрито за замовчуванням
