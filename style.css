@@ -624,11 +624,6 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   font-weight:600;
 }
 
-/* дія-резолвер: підтягнути рівень до оцінки додатка */
-.est-apply{align-self:flex-start; margin-top:-4px; font-size:13px; color:var(--green-fg)}
-.est-apply[hidden]{display:none}
-.est-apply:hover{color:#30d158}
-
 /* футер меню: дію відділяємо лінією, вихід приглушений */
 .menu-foot{display:flex; flex-direction:column; gap:10px; margin-top:4px; padding-top:12px}
 .menu-foot .link-btn{align-self:center; min-height:36px; font-size:13px}

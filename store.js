@@ -198,6 +198,10 @@
     // заливати до міграції, нічого не ламаючи.
     _levelCols: true,
 
+    // Колонка level_est додалася пізніше за решту. Якщо її ще немає, не можна
+    // глушити синхронізацію рівня цілком — вимикаємо тільки оцінку.
+    _estCol: true,
+
     _missingCol(error) {
       const s = ((error && (error.message || error.details || "")) + "").toLowerCase();
       return error && (error.code === "42703" || s.includes("column") || s.includes("schema cache"));
@@ -205,10 +209,18 @@
 
     async getProfile() {
       if (mode !== "supabase" || !sb || !user || !this._levelCols) return null;
+      const cols = this._estCol
+        ? "level,level_source,level_locked,level_est"
+        : "level,level_source,level_locked";
       const { data, error } = await sb.from("profiles")
-        .select("level,level_source,level_locked")
+        .select(cols)
         .eq("id", user.id).maybeSingle();
       if (error) {
+        if (this._missingCol(error) && this._estCol) {
+          this._estCol = false;
+          console.info("profiles: колонки level_est ще немає — оцінку тримаємо локально");
+          return this.getProfile();   // ще раз, уже без оцінки
+        }
         if (this._missingCol(error)) {
           this._levelCols = false;
           console.info("profiles: колонок рівня ще немає — рівень тримаємо локально");
@@ -218,7 +230,7 @@
       return data || null;
     },
 
-    async saveLevel(level, source, locked) {
+    async saveLevel(level, source, locked, est) {
       if (mode !== "supabase" || !sb || !user || !this._levelCols) return false;
       const row = {
         id: user.id,
@@ -227,15 +239,25 @@
         level_updated_at: new Date().toISOString()
       };
       if (typeof locked === "boolean") row.level_locked = locked;
+      // est передають не всі виклики: оцінка змінюється від відповідей,
+      // а не від дій у меню. undefined = "не чіпати колонку".
+      const withEst = this._estCol && (typeof est === "string" || est === null);
+      if (withEst) row.level_est = est;
+
       const { error } = await sb.from("profiles").upsert(row, { onConflict: "id" });
-      if (error) {
-        if (this._missingCol(error)) {
-          this._levelCols = false;
-          console.info("profiles: колонок рівня ще немає — рівень тримаємо локально");
-        } else console.warn("level upsert", error);
-        return false;
+      if (!error) return true;
+
+      if (this._missingCol(error) && withEst) {
+        this._estCol = false;
+        console.info("profiles: колонки level_est ще немає — оцінку тримаємо локально");
+        delete row.level_est;
+        return this.saveLevel(level, source, locked);   // рівень зберігаємо попри все
       }
-      return true;
+      if (this._missingCol(error)) {
+        this._levelCols = false;
+        console.info("profiles: колонок рівня ще немає — рівень тримаємо локально");
+      } else console.warn("level upsert", error);
+      return false;
     },
 
     /* ---------- читання статистики ---------- */

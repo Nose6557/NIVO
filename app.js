@@ -28,6 +28,7 @@ const SESSION_LEN = 15;
 let BANK = [];
 let LAST_WEAK = [];        // слабкі теми з останнього рендера — годують тост зниження
 let LAST_ANSWERS = [];     // відповіді з останнього рендера — годують меню рівня
+let SYNCED_EST = null;     // оцінка, вже записана в профіль — щоб не слати те саме двічі
 const LEVEL_BY_ID = {};   // id питання -> "B1"|"B2", годує level.js
 let queue = [];
 let idx = 0;
@@ -577,9 +578,15 @@ function renderLevelBadge(answers) {
     btn.title = `Рівень ${st.level} — ${Math.round(st.accuracy * 100)}% на питаннях цього рівня`;
   }
 
+  // Рівень зберігають дії в меню, а оцінку — ніщо: вона змінюється від
+  // відповідей. Тому синхронізуємо її саме тут, після кожного перерахунку.
   if (st.changed) {
-    Store.saveLevel(st.level, st.source, false);
+    SYNCED_EST = st.estimate;
+    Store.saveLevel(st.level, st.source, false, st.estimate);
     onLevelChanged(st.changed);
+  } else if (st.estimateReady && st.estimate && st.estimate !== SYNCED_EST) {
+    SYNCED_EST = st.estimate;
+    Store.saveLevel(st.level, st.source, locked, st.estimate);
   }
 }
 
@@ -821,16 +828,6 @@ $("level-picker").addEventListener("click", async (e) => {
   renderLevelBadge(LAST_ANSWERS);
 });
 
-/* Клік по «Підвищити/Змінити до X» — застосовує оцінку додатка одним рухом. */
-$("btn-apply-est").onclick = async () => {
-  const lv = $("btn-apply-est").dataset.lv;
-  if (!lv || !window.Level) return;
-  const st = Level.setManual(lv);
-  await Store.saveLevel(st.level, st.source, st.locked);
-  renderLevelMenu();
-  renderLevelBadge(LAST_ANSWERS);
-};
-
 /* Меню рівня: сегментований вибір, перемикач фіксації і чесна оцінка додатка. */
 function renderLevelMenu() {
   if (!window.Level) return;
@@ -862,9 +859,7 @@ function renderLevelMenu() {
       : "Обери рівень для запитань.";
   }
 
-  const applyEl = $("btn-apply-est");
   if (estEl) {
-    let apply = null;   // рівень, який пропонуємо застосувати (null = ховаємо дію)
     if (!cur.level) {
       estEl.textContent = "";
       estEl.removeAttribute("data-level");
@@ -878,15 +873,10 @@ function renderLevelMenu() {
         estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — ти на своєму рівні.`;
       } else {
         const higher = Level.ORDER.indexOf(st.estimate) > Level.ORDER.indexOf(cur.level);
-        estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
-        apply = { lv: st.estimate, higher };
-      }
-    }
-    if (applyEl) {
-      applyEl.hidden = !apply;
-      if (apply) {
-        applyEl.dataset.lv = apply.lv;
-        applyEl.textContent = apply.higher ? `Підвищити до ${apply.lv}` : `Змінити на ${apply.lv}`;
+        // «за обраний» — тільки коли рівень справді обрано вручну.
+        estEl.innerHTML = auto
+          ? `Оцінка додатка: <b>${st.estimate}</b>.`
+          : `Оцінка додатка: <b>${st.estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
       }
     }
   }
@@ -1019,9 +1009,14 @@ function needsOnboarding() {
 async function syncLevelFromProfile() {
   if (!window.Level || !Store.getProfile) return;
   const p = await Store.getProfile();
-  if (p && p.level) { Level.hydrate(p); return; }
+  if (p && p.level) {
+    Level.hydrate(p);
+    SYNCED_EST = p.level_est || null;   // те, що вже лежить на сервері
+    return;
+  }
   const local = Level.current();
   if (local && local.level) {
-    await Store.saveLevel(local.level, local.source || "adaptive", local.locked);
+    SYNCED_EST = local.est || null;
+    await Store.saveLevel(local.level, local.source || "adaptive", local.locked, local.est || null);
   }
 }
