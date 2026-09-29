@@ -57,6 +57,7 @@ stale-while-revalidate. Після першого завантаження пр�
 | `onboard.js` | самооцінка, тест рівня, екрани підвищення/зниження |
 | `store.js` | єдиний шар доступу до даних: Supabase або localStorage |
 | `config.js` | URL проєкту Supabase і publishable-ключ |
+| `version.js` | єдине джерело версії оболонки: `NIVO_VERSION`, `NIVO_RELEASED` |
 | `check.html` | валідатор банку — відкривається в браузері, нічого не збирає |
 | `sw.js` | service worker: офлайн-оболонка, константа `CACHE` |
 | `manifest.json` | PWA-маніфест |
@@ -69,8 +70,9 @@ stale-while-revalidate. Після першого завантаження пр�
 | `banks/index.json` | маніфест банку: список паків, категорії, рівні, домени |
 | `banks/*.json` | паки питань |
 
-Порядок підключення скриптів фіксований: `config.js` → `store.js` → `level.js` →
-`onboard.js` → `app.js`. `level.js` має йти до `app.js`, `onboard.js` — після `level.js`.
+Порядок підключення скриптів фіксований: `version.js` → `config.js` → `store.js` →
+`level.js` → `onboard.js` → `app.js`. `version.js` має бути першим (з нього беруться
+константи), `level.js` — до `app.js`, `onboard.js` — після `level.js`.
 
 ---
 
@@ -159,8 +161,8 @@ stale-while-revalidate. Після першого завантаження пр�
    Нові категорії й теми — теж туди або в сам пак.
 3. Відкрити `check.html` і домогтися **0 помилок**. Попередження можна лишати,
    але вони пояснюють, де банк перекошений.
-4. Бампнути `BANK_VERSION` в `app.js` — інакше GitHub Pages віддаватиме старі
-   json з кешу.
+4. Бампнути `NIVO_RELEASED` у `version.js` — з нього виводиться `BANK_VERSION`,
+   яким збиваються кеші банків. Інакше GitHub Pages віддаватиме старі json.
 
 ---
 
@@ -173,10 +175,28 @@ stale-while-revalidate. Після першого завантаження пр�
 3. Пройти живу сесію: онбординг, 15 питань, результат, меню рівня.
 4. Якщо змінилися колонки — виконати SQL у Supabase.
 
-Потім мердж у `main`. Якщо змінювався будь-який свій статичний файл — HTML, CSS, JS —
-бампнути `CACHE` у `sw.js`: старий кеш видалиться сам, інакше частина користувачів
-лишиться на попередній версії. Якщо змінювалися банки — бампнути `BANK_VERSION`
-в `app.js`.
+Потім мердж у `main`.
+
+Версія живе в одному місці — `version.js`:
+
+```js
+const NIVO_VERSION  = "7";            // версія оболонки → CACHE у sw.js, футер
+const NIVO_RELEASED = "2026-09-24";   // дата релізу     → BANK_VERSION в app.js
+```
+
+| Що змінилося | Що бампнути |
+|---|---|
+| Будь-який свій статичний файл: HTML, CSS, JS | `NIVO_VERSION` |
+| Тільки вміст `banks/` | `NIVO_RELEASED` |
+| І те, й те | обидва |
+
+`NIVO_VERSION` дає `CACHE = "nivo-v" + NIVO_VERSION` у `sw.js` — старий кеш видалиться
+сам, інакше частина користувачів лишиться на попередній версії оболонки. `NIVO_RELEASED`
+дає `BANK_VERSION`, яким `app.js` збиває кеш json-ів. Руками ці дві константи більше
+ніде не дублюються, тож правити треба тільки `version.js`.
+
+Номер видно у футері головної та екрана входу. На прев'ю-хостах `*.pages.dev` до нього
+дописується `· work` — зручний спосіб переконатися, що дивишся саме тестову збірку.
 
 ---
 
@@ -186,7 +206,7 @@ stale-while-revalidate. Після першого завантаження пр�
 
 | Таблиця | Колонки |
 |---|---|
-| `profiles` | `id`, `level`, `level_source`, `level_locked`, `level_updated_at` |
+| `profiles` | `id`, `level`, `level_source`, `level_locked`, `level_est`, `level_updated_at` |
 | `sessions` | `user_id`, `started_at`, `finished_at`, `total_questions`, `correct_count`, `best_streak` |
 | `answers` | `user_id`, `session_id`, `question_id`, `category`, `is_correct`, `response_ms`, `answered_at` |
 | `weak_items` | `user_id`, `item_key`, `category`, `attempts`, `errors`, `last_seen` — унікальний ключ `(user_id, item_key)` |
@@ -203,6 +223,18 @@ alter table profiles add column if not exists level_source     text;
 alter table profiles add column if not exists level_locked     boolean default false;
 alter table profiles add column if not exists level_updated_at timestamptz;
 ```
+
+**`level_est`** — оцінка рівня, яку додаток тримає окремо від самого рівня
+(див. [LEVELS.md](LEVELS.md)). Ця колонка з'явилася пізніше за решту, тож для баз,
+створених раніше, потрібна окрема міграція:
+
+```sql
+alter table profiles add column if not exists level_est text;
+```
+
+Без неї все працює, просто оцінка лишається локальною: `store.js` побачить помилку
+про невідому колонку, вимкне синхронізацію саме оцінки — не рівня цілком — і більше
+не смикатиме сервер.
 
 **Ключі.** У `config.js` лежать Project URL і **publishable**-ключ — вони призначені
 для клієнтського коду і публічні за визначенням. Секретний ключ (`sb_secret_...`)

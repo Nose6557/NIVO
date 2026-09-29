@@ -5,13 +5,15 @@
    - інші свої статики       → stale-while-revalidate (швидко + оновлюється у фоні)
    - крос-домен (Supabase,   → не перехоплюємо, віддаємо браузеру
      jsDelivr, Umami, шрифти)
-   Бампни CACHE при кожному релізі оболонки — старий кеш видалиться сам. */
-const CACHE = "nivo-v6";
+   Бампни NIVO_VERSION у version.js при кожному релізі оболонки — старий кеш видалиться сам. */
+importScripts("version.js");
+const CACHE = "nivo-v" + NIVO_VERSION;
 
 const SHELL = [
   ".",
   "index.html",
   "style.css",
+  "version.js",
   "app.js",
   "store.js",
   "config.js",

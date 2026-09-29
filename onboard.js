@@ -188,8 +188,11 @@
   function finish(level, source) {
     const scr = $("screen-onboard");
     if (scr) scr.classList.remove("testing");
-    if (source === "placement") Level.setPlacement(level); else Level.setSelf(level);
-    if (window.Store && Store.saveLevel) Store.saveLevel(level, source, false);
+    const st = source === "placement" ? Level.setPlacement(level) : Level.setSelf(level);
+    // Пишемо на сервер РІВНО той стан, що ліг локально. Жорсткий locked:false
+    // розсинхронізовував фіксацію (тест можна пройти й з меню, не знімаючи її),
+    // а незбережена оцінка після перезавантаження поверталася до старої.
+    if (window.Store && Store.saveLevel) Store.saveLevel(st.level, st.source, st.locked, st.est || null);
 
     const body = $("onboard-body");
     if (!body) return done(level);

@@ -9,7 +9,7 @@
 <link rel="icon" href="favicon/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="favicon/favicon-180.png">
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#1c1c1e">
+<meta name="theme-color" content="#000000">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -26,40 +26,64 @@
 <!-- ЕКРАН: вхід -->
 <section id="screen-auth" class="screen active">
   <div class="shell narrow">
-    <div class="mark">
-      <img class="mark-glyph" src="favicon/icon.svg" alt="">
-      <h1 class="wordmark">NIVO</h1>
-      <p class="tagline">Англійська від A1&nbsp;до&nbsp;С2. Помилки самі складаються у&nbsp;план навчання.</p>
-    </div>
-
     <div class="panel">
+      <div class="mark">
+        <svg class="mark-glyph" viewBox="0 0 512 512" role="img" aria-hidden="true">
+          <rect width="512" height="512" rx="112" fill="#1c1c1e"/>
+          <rect class="logo-bar logo-bar-1" x="99" y="270" width="86" height="143" rx="18" fill="#ffcc00"/>
+          <rect class="logo-bar logo-bar-2" x="213" y="200" width="86" height="213" rx="18" fill="#00c0e8"/>
+          <rect class="logo-bar logo-bar-3" x="327" y="130" width="86" height="283" rx="18" fill="#6155f5"/>
+        </svg>
+        <h1 class="wordmark">NIVO</h1>
+        <p class="tagline">Твої помилки стають твоїм планом навчання.</p>
+      </div>
       <div class="segmented" role="tablist" aria-label="Вхід або реєстрація">
         <span class="seg-thumb" aria-hidden="true"></span>
         <button class="seg active" data-authtab="in" role="tab" aria-selected="true">Вхід</button>
         <button class="seg" data-authtab="up" role="tab" aria-selected="false">Реєстрація</button>
       </div>
-      <label class="field">
-        <span>Email</span>
+      <label class="field" data-field="email">
+        <span>Електронна пошта</span>
         <input type="email" id="auth-email" autocomplete="email" placeholder="you@example.com">
+        <p class="field-error" id="auth-email-err" role="alert" aria-live="polite"></p>
       </label>
-      <label class="field">
+      <label class="field" data-field="pass">
         <span>Пароль</span>
-        <input type="password" id="auth-pass" autocomplete="current-password" placeholder="мінімум 6 символів">
+        <div class="input-wrap">
+          <input type="password" id="auth-pass" autocomplete="current-password" placeholder="мінімум 6 символів">
+          <button type="button" class="pw-toggle" id="auth-pw-toggle" aria-label="Показати пароль" aria-pressed="false">
+            <svg class="pw-eye" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+            <svg class="pw-eye-off" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-6.5 0-10-7-10-7a19.6 19.6 0 0 1 5.06-5.94M9.9 4.24A10.94 10.94 0 0 1 12 4c6.5 0 10 7 10 7a19.6 19.6 0 0 1-3.17 4.19M14.12 9.88a3 3 0 1 1-4.24 4.24"/>
+              <line x1="2" y1="2" x2="22" y2="22"/>
+            </svg>
+          </button>
+        </div>
+        <p class="field-error" id="auth-pass-err" role="alert" aria-live="polite"></p>
       </label>
+      <p class="note" id="auth-msg" role="alert" aria-live="polite"></p>
       <button class="btn primary" id="auth-submit">Увійти</button>
       <button class="link-btn" id="auth-forgot">Забули пароль?</button>
-      <p class="note" id="auth-msg"></p>
       <button class="btn ghost" id="auth-skip">Спробувати без акаунта</button>
       <p class="note dim" style="text-align:center">Без акаунта прогрес зберігається лише в цьому браузері.</p>
     </div>
   </div>
+  <p class="app-version">NIVO · v6</p>
 </section>
 
 <!-- ЕКРАН: відновлення пароля -->
 <section id="screen-forgot" class="screen">
   <div class="shell narrow">
     <div class="mark">
-      <img class="mark-glyph" src="favicon/icon.svg" alt="">
+      <svg class="mark-glyph" viewBox="0 0 512 512" role="img" aria-hidden="true">
+        <rect width="512" height="512" rx="112" fill="#1c1c1e"/>
+        <rect class="logo-bar logo-bar-1" x="99" y="270" width="86" height="143" rx="18" fill="#ffcc00"/>
+        <rect class="logo-bar logo-bar-2" x="213" y="200" width="86" height="213" rx="18" fill="#00c0e8"/>
+        <rect class="logo-bar logo-bar-3" x="327" y="130" width="86" height="283" rx="18" fill="#6155f5"/>
+      </svg>
       <h1 class="wordmark">NIVO</h1>
     </div>
     <div class="panel">
@@ -69,7 +93,7 @@
         <input type="email" id="forgot-email" autocomplete="email" placeholder="you@example.com">
       </label>
       <button class="btn primary" id="forgot-submit">Надіслати посилання</button>
-      <p class="note" id="forgot-msg"></p>
+      <p class="note" id="forgot-msg" role="alert" aria-live="polite"></p>
       <button class="btn ghost small" id="forgot-back">Назад до входу</button>
     </div>
   </div>
@@ -79,7 +103,12 @@
 <section id="screen-newpass" class="screen">
   <div class="shell narrow">
     <div class="mark">
-      <img class="mark-glyph" src="favicon/icon.svg" alt="">
+      <svg class="mark-glyph" viewBox="0 0 512 512" role="img" aria-hidden="true">
+        <rect width="512" height="512" rx="112" fill="#1c1c1e"/>
+        <rect class="logo-bar logo-bar-1" x="99" y="270" width="86" height="143" rx="18" fill="#ffcc00"/>
+        <rect class="logo-bar logo-bar-2" x="213" y="200" width="86" height="213" rx="18" fill="#00c0e8"/>
+        <rect class="logo-bar logo-bar-3" x="327" y="130" width="86" height="283" rx="18" fill="#6155f5"/>
+      </svg>
       <h1 class="wordmark">NIVO</h1>
     </div>
     <div class="panel">
@@ -89,7 +118,7 @@
         <input type="password" id="newpass-pass" autocomplete="new-password" placeholder="мінімум 6 символів">
       </label>
       <button class="btn primary" id="newpass-submit">Зберегти новий пароль</button>
-      <p class="note" id="newpass-msg"></p>
+      <p class="note" id="newpass-msg" role="alert" aria-live="polite"></p>
     </div>
   </div>
 </section>
@@ -109,10 +138,11 @@
           <div class="avatar-dropdown" id="avatar-dropdown" hidden>
             <p class="who" id="who"></p>
             <div class="level-row">
-              <span>Мій рівень</span>
-              <button class="lock-switch" id="level-lock" type="button" role="switch" aria-checked="false" aria-label="Зафіксувати рівень"></button>
+              <span>Автоматичний рівень</span>
+              <button class="lock-switch" id="level-lock" type="button" role="switch" aria-checked="true" aria-label="Автоматичний рівень"></button>
             </div>
-            <div class="level-picker" id="level-picker" role="group" aria-label="Обрати рівень">
+            <p class="note dim menu-hint" id="lock-hint">Рівень підлаштовується під твої відповіді.</p>
+            <div class="level-picker" id="level-picker" role="group" aria-label="Обрати рівень" hidden>
               <button type="button" data-lv="A1">A1</button>
               <button type="button" data-lv="A2">A2</button>
               <button type="button" data-lv="B1">B1</button>
@@ -120,9 +150,7 @@
               <button type="button" data-lv="C1">C1</button>
               <button type="button" data-lv="C2">C2</button>
             </div>
-            <p class="note dim menu-hint" id="lock-hint">Коли зафіксовано, рівень не змінюється сам.</p>
             <p class="note dim level-est" id="level-est"></p>
-            <button class="link-btn est-apply" id="btn-apply-est" type="button" hidden></button>
             <div class="menu-foot">
               <button class="btn ghost" id="btn-retest">Пройти тест рівня</button>
               <button class="link-btn" id="btn-signout" type="button">Вийти</button>
@@ -158,6 +186,8 @@
     <div class="export-row">
       <button class="btn ghost" id="btn-export">Експорт прогресу для аналізу</button>
     </div>
+
+    <p class="app-version inline">NIVO · v7</p>
   </div>
 </section>
 
@@ -235,6 +265,7 @@
 <div id="level-toast" class="level-toast" hidden role="status" aria-live="polite"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="version.js"></script>
 <script src="config.js"></script>
 <script src="store.js"></script>
 <script src="level.js"></script>

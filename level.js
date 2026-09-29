@@ -43,8 +43,11 @@
   const valid = lv => idx(lv) !== -1;
   const trustOf = src => CFG.TRUST[src] || CFG.TRUST.adaptive;
 
+  // est — остання оцінка, яку додаток зміг порахувати. Живе в стані навмисно:
+  // ручна зміна рівня скидає лічильники вимірювання, але не думку додатка.
+  // Інакше після перемикання оцінка зникала б до 20 нових відповідей.
   function blank() {
-    return { v: CFG.VERSION, level: null, source: null, up: 0, down: 0, seen: null, locked: false };
+    return { v: CFG.VERSION, level: null, source: null, up: 0, down: 0, seen: null, locked: false, est: null };
   }
 
   function readState() {
@@ -66,7 +69,8 @@
           up: 0,
           down: 0,
           seen: null,
-          locked: false
+          locked: false,
+          est: null
         };
       }
 
@@ -85,7 +89,9 @@
         up: rebase ? 0 : (Number(s.up) || 0),
         down: rebase ? 0 : (Number(s.down) || 0),
         seen: (rebase || s.seen === null) ? null : (Number(s.seen) || 0),
-        locked: !!s.locked
+        locked: !!s.locked,
+        // Оцінку переживає навіть зміна версії: це вимірювання, а не лічильник.
+        est: valid(s.est) ? s.est : null
       };
     } catch (e) { return blank(); }
   }
@@ -109,7 +115,10 @@
       // Набір питань "на рівні" змінився — старий лічильник несумісний.
       // null = перебазувати при першому compute, а не оцінювати одразу.
       seen: cur.level === profile.level ? cur.seen : null,
-      locked: !!profile.level_locked
+      locked: !!profile.level_locked,
+      // Оцінку теж синхронізуємо. Сервер виграє, локальна — запасний варіант
+      // (колонки level_est може ще не бути, тоді в профілі її просто немає).
+      est: valid(profile.level_est) ? profile.level_est : cur.est
     };
     writeState(next);
     return next;
@@ -123,17 +132,43 @@
 
   function seed(lv, source) {
     if (!valid(lv)) return readState();
+    const cur = readState();
     // seen: null — у користувача з історією вже можуть бути сотні відповідей
     // цього рівня; 0 означав би миттєву оцінку одразу після онбордингу.
-    const next = { v: CFG.VERSION, level: lv, source, up: 0, down: 0, seen: null, locked: readState().locked };
+    // est: placement — це і є свіже вимірювання додатка, воно стає оцінкою.
+    // Ручний вибір і самооцінка — заяви користувача, вони думку додатка
+    // не переписують: стара оцінка лишається, поки не набереться нова.
+    const next = {
+      v: CFG.VERSION, level: lv, source, up: 0, down: 0,
+      seen: null, locked: cur.locked,
+      est: source === "placement" ? lv : cur.est
+    };
     writeState(next);
     return next;
   }
 
-  /** Ручна фіксація рівня користувачем — адаптив більше не втручається. */
+  /** Ручна фіксація рівня користувачем — адаптив більше не втручається.
+
+      Знімаючи фіксацію, користувач віддає рівень додатку назад. Якщо рівень
+      обирали руками, а додаток тим часом виміряв інше — забираємо його оцінку
+      одразу. Інакше перемикач казав би "автоматичний", а в хедері назавжди
+      висів би обраний рівень: адаптив зрушив би його лише через ціле свіже
+      вікно відповідей уже на ньому.
+
+      Рівні, які поставив сам адаптив (і результат тесту), тут не чіпаємо:
+      їхній est — це ще не підтверджена гіпотеза, і підхоплювати її означало б
+      перестрибнути підтвердження, яких вимагає compute. Двічі клацнувши
+      перемикачем, можна було б підняти собі рівень без жодної відповіді. */
   function setLocked(on) {
     const s = readState();
     s.locked = !!on;
+    if (!s.locked && s.source === "manual" && valid(s.est) && s.est !== s.level) {
+      s.level = s.est;
+      s.source = "adaptive";   // значення тепер належить додатку, не людині
+      s.up = 0;
+      s.down = 0;
+      s.seen = null;           // міряти цей рівень починаємо з чистого аркуша
+    }
     writeState(s);
     return s;
   }
@@ -167,9 +202,10 @@
    * @param {Object} levelById  мапа id питання -> "A1".."C2"
    * @returns {{level, source, accuracy, counted, needed, changed, estimate, estimateReady}}
    *   changed === null | { from, to, dir: "up"|"down" }
-   *   estimate — рівень, який додаток оцінює за реальними відповідями
-   *              (== level, коли не зафіксовано; може розходитись, коли зафіксовано)
-   *   estimateReady — чи набралося свіжих відповідей, щоб оцінці можна було вірити
+   *   estimate — рівень, який додаток оцінює за реальними відповідями. Поки
+   *              свіжих даних на поточному рівні бракує, віддається остання
+   *              порахована оцінка (state.est), а не поточний рівень.
+   *   estimateReady — чи є що показувати: свіжа оцінка або збережена попередня
    */
   function compute(answers, levelById) {
     const prev = readState();
@@ -186,46 +222,57 @@
       .filter(a => a && a.question_id && levelById[a.question_id] === prev.level)
       .sort((a, b) => new Date(a.answered_at || 0) - new Date(b.answered_at || 0));
 
+    // Перебазування: рівень щойно заданий ззовні (онбординг, тест, профіль,
+    // міграція, ручний вибір). Точку відліку фіксуємо ОДРАЗУ, ще до порогу
+    // t.min: свіжим вимірюванням цього рівня вважаються тільки відповіді
+    // після перемикання. Якби анкер чекав t.min, першим вікном пішла б
+    // стара історія рівня — і рівень, і оцінка змінилися б без жодної
+    // нової відповіді.
+    if (prev.seen === null) {
+      prev.seen = rows.length;
+      writeState(prev);
+    }
+
+    // Скільки відповідей набралося ВЖЕ ПІСЛЯ перемикання. Тільки вони мають
+    // право рухати і рівень, і оцінку.
+    const fresh = rows.length - prev.seen;
+
+    // Даних на цьому рівні ще мало (типово — одразу після ручної зміни рівня).
+    // Оцінку не гасимо: показуємо останню, яку встигли порахувати.
     if (rows.length < t.min) {
       return {
         level: prev.level, source: prev.source, accuracy: null,
         counted: rows.length, needed: t.min - rows.length, changed: null,
-        estimate: prev.level, estimateReady: false
+        estimate: prev.est || prev.level, estimateReady: !!prev.est
       };
     }
 
     const win = rows.slice(-t.window);
     const acc = win.filter(a => a.is_correct).length / win.length;
 
-    // Перебазування: рівень щойно заданий ззовні (онбординг, тест, профіль,
-    // міграція). Фіксуємо точку відліку й чекаємо повне свіже вікно —
-    // інакше рівень змінився б від старої історії, без жодної нової сесії.
-    if (prev.seen === null) {
-      writeState({ ...prev, seen: rows.length });
-      return {
-        level: prev.level, source: prev.source, accuracy: acc,
-        counted: rows.length, needed: t.window, changed: null,
-        estimate: prev.level, estimateReady: false
-      };
-    }
-
     // Вікна для підтверджень мають не перекриватися, інакше "два підтвердження
     // поспіль" — це та сама вибірка двічі, і рівень починає скакати від шуму.
     // Оцінюємо лише коли вікно оновилося повністю.
-    if (rows.length - prev.seen < t.window) {
+    //
+    // Оцінку тут НЕ чіпаємо. readEstimate рахує щабель від ПОТОЧНОГО рівня,
+    // тож на старих відповідях вона просто підганялася б під щойно обраний
+    // рівень: обрав C1 — і додаток "погоджується" з C1, хоча нічого не міряв.
+    // Думка додатка лишається тією ж, поки не набереться повне свіже вікно.
+    if (fresh < t.window) {
       return {
         level: prev.level, source: prev.source, accuracy: acc,
-        counted: rows.length, needed: 0, changed: null,
-        estimate: readEstimate(prev.level, acc), estimateReady: true
+        counted: rows.length, needed: t.window - fresh, changed: null,
+        estimate: prev.est || prev.level, estimateReady: !!prev.est
       };
     }
 
     if (prev.locked) {
-      writeState({ ...prev, seen: rows.length });
+      const est = readEstimate(prev.level, acc);
+      writeState({ ...prev, seen: rows.length, est });
       return {
         level: prev.level, source: prev.source, accuracy: acc,
         counted: rows.length, needed: 0, changed: null,
-        estimate: readEstimate(prev.level, acc), estimateReady: true
+        estimate: est, estimateReady: true
       };
     }
 
@@ -237,7 +284,8 @@
       up:   acc >= CFG.UP   ? prev.up + 1   : 0,
       down: acc <= CFG.DOWN ? prev.down + 1 : 0,
       seen: rows.length,
-      locked: false
+      locked: false,
+      est: readEstimate(prev.level, acc)
     };
 
     let changed = null;
@@ -254,6 +302,8 @@
 
     if (changed) {
       next.level = changed.to;
+      // Рівень поїхав саме туди, куди показувала оцінка, — вони знову збіглися.
+      next.est = changed.to;
       next.source = "adaptive";   // будь-яка корекція робить значення підтвердженим
       next.up = 0;
       next.down = 0;
@@ -263,15 +313,13 @@
 
     writeState(next);
 
-    // acc порахована на питаннях СТАРОГО рівня. Якщо рівень щойно змінився,
-    // подавати її в readEstimate для нового рівня не можна — це різні
-    // популяції. Оцінка = сам новий рівень, поки не набереться свіжих
-    // відповідей уже на ньому.
+    // acc порахована на питаннях СТАРОГО рівня, тож для нового рівня її вже
+    // не перераховуємо: після зміни оцінка дорівнює самому новому рівню —
+    // додаток щойно туди тебе і перевів.
     return {
       level: next.level, source: next.source, accuracy: acc,
       counted: rows.length, needed: 0, changed,
-      estimate: changed ? next.level : readEstimate(next.level, acc),
-      estimateReady: !changed
+      estimate: next.est, estimateReady: true
     };
   }
 

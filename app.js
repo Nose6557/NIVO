@@ -6,9 +6,18 @@
 let CAT_UA = {};      // slug категорії -> українська назва
 let TOPICS = {};      // slug теми     -> { category, label }
 
-/* Змінюй, коли оновлюєш banks/ — інакше браузер може віддавати
-   стару версію з кешу GitHub Pages. */
-const BANK_VERSION = "2026-09-21";
+/* Бампається разом з NIVO_RELEASED у version.js — інакше браузер може
+   віддавати стару версію банків з кешу GitHub Pages. */
+const BANK_VERSION = NIVO_RELEASED;
+
+/* Футер .app-version: версія оболонки + мітка гілки на прев'ю-хостах Cloudflare Pages. */
+(function () {
+  const els = document.querySelectorAll(".app-version");
+  if (!els.length) return;
+  let text = "NIVO · v" + NIVO_VERSION;
+  if (location.hostname.endsWith(".pages.dev")) text += " · work";
+  els.forEach(el => { el.textContent = text; });
+})();
 
 /* переклад речення під поясненням */
 const UA_OPEN = new Set(["A1", "A2", "B1"]);   // на цих рівнях відкрито за замовчуванням
@@ -19,6 +28,7 @@ const SESSION_LEN = 15;
 let BANK = [];
 let LAST_WEAK = [];        // слабкі теми з останнього рендера — годують тост зниження
 let LAST_ANSWERS = [];     // відповіді з останнього рендера — годують меню рівня
+let SYNCED_EST = null;     // оцінка, вже записана в профіль — щоб не слати те саме двічі
 const LEVEL_BY_ID = {};   // id питання -> "B1"|"B2", годує level.js
 let queue = [];
 let idx = 0;
@@ -28,6 +38,53 @@ let streak = 0;
 let qStart = 0;
 
 const $ = id => document.getElementById(id);
+
+// type: "" (нейтрально/завантаження), "error" або "success"
+function setMsg(el, text, type = "") {
+  el.textContent = text;
+  el.classList.remove("error", "success");
+  if (type) el.classList.add(type);
+}
+
+// поки триває запит, кнопка показує спінер замість підпису
+function setBtnLoading(btn, loading) {
+  btn.classList.toggle("loading", loading);
+  btn.disabled = loading;
+}
+
+/* ---------- локалізація помилок авторизації ----------
+   Сирий англійський текст із Supabase у UI не потрапляє: усе, що не
+   збіглося з відомим паттерном, показуємо як «щось пішло не так». */
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function mapAuthError(err) {
+  const raw = (err && (err.message || err.error_description || String(err))) || "";
+  const code = err && (err.code || err.name);
+
+  if (code === "TypeError" || /network|fetch|Failed to fetch/i.test(raw)) {
+    return { message: "Забагато спроб або немає звʼязку. Спробуйте за хвилину." };
+  }
+  if (/rate.?limit|too many/i.test(raw) || err?.status === 429) {
+    return { message: "Забагато спроб або немає звʼязку. Спробуйте за хвилину." };
+  }
+  if (/invalid login credentials/i.test(raw)) {
+    return { message: "Невірний email або пароль.", fields: ["email", "pass"] };
+  }
+  if (/email not confirmed/i.test(raw)) {
+    return { message: "Підтвердіть email — лист уже в пошті." };
+  }
+  if (/user already registered|already been registered/i.test(raw)) {
+    return { message: "Акаунт із цим email уже існує. Увійдіть." };
+  }
+  const pw = raw.match(/password should be at least (\d+)/i);
+  if (pw) {
+    return { message: `Пароль має бути щонайменше ${pw[1]} символів.`, fields: ["pass"] };
+  }
+  if (/invalid email|unable to validate email/i.test(raw)) {
+    return { message: "Схоже, це не email.", fields: ["email"] };
+  }
+  return { message: "Щось пішло не так. Спробуйте ще раз." };
+}
 
 /* ---------- навігація між екранами ---------- */
 function show(name) {
@@ -422,6 +479,22 @@ function temperColor(acc) {
   return "var(--teal)";
 }
 
+const REDUCE_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Лічильник відсотка біжить синхронно зі смугою (.tbar-fill, той самий
+   тайминг progress-grow), а не з'являється миттю. */
+function animateCount(el, target, duration = 900) {
+  if (REDUCE_MOTION) { el.textContent = target + "%"; return; }
+  const start = performance.now();
+  function tick(now) {
+    const t = Math.min(1, (now - start) / duration);
+    const eased = 1 - Math.pow(1 - t, 3);   // easeOutCubic — той самий характер, що й у progress-grow
+    el.textContent = Math.round(target * eased) + "%";
+    if (t < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
 async function renderHome() {
   const stats = await Store.getStats();
 
@@ -452,13 +525,15 @@ async function renderHome() {
   Object.keys(CAT_UA).forEach(cat => {
     const d = byCat[cat];
     const acc = d && d.n ? d.ok / d.n : 0;
+    const pct = d ? Math.round(acc * 100) : null;
     const row = document.createElement("div");
     row.className = "tbar";
     row.innerHTML = `
       <div class="tbar-name">${CAT_UA[cat]}</div>
       <div class="tbar-rail"><div class="tbar-fill" style="width:${d ? Math.max(acc * 100, 4) : 0}%; background:${temperColor(acc)}"></div></div>
-      <div class="tbar-val">${d ? Math.round(acc * 100) + "%" : "—"}</div>`;
+      <div class="tbar-val">${pct === null ? "—" : "0%"}</div>`;
     bars.appendChild(row);
+    if (pct !== null) animateCount(row.querySelector(".tbar-val"), pct);
   });
 
   const email = Store.mode === "supabase" && Store.user ? Store.user.email : null;
@@ -503,9 +578,15 @@ function renderLevelBadge(answers) {
     btn.title = `Рівень ${st.level} — ${Math.round(st.accuracy * 100)}% на питаннях цього рівня`;
   }
 
+  // Рівень зберігають дії в меню, а оцінку — ніщо: вона змінюється від
+  // відповідей. Тому синхронізуємо її саме тут, після кожного перерахунку.
   if (st.changed) {
-    Store.saveLevel(st.level, st.source, false);
+    SYNCED_EST = st.estimate;
+    Store.saveLevel(st.level, st.source, false, st.estimate);
     onLevelChanged(st.changed);
+  } else if (st.estimateReady && st.estimate && st.estimate !== SYNCED_EST) {
+    SYNCED_EST = st.estimate;
+    Store.saveLevel(st.level, st.source, locked, st.estimate);
   }
 }
 
@@ -569,6 +650,24 @@ async function buildExport() {
 /* ---------- обробники ---------- */
 let authMode = "in";
 
+// поле → елементи для підсвітки й тексту помилки
+const AUTH_FIELDS = {
+  email: { input: () => $("auth-email"), err: () => $("auth-email-err"), wrap: () => $("auth-email").closest(".field") },
+  pass:  { input: () => $("auth-pass"),  err: () => $("auth-pass-err"),  wrap: () => $("auth-pass").closest(".field") },
+};
+
+function setFieldError(name, text) {
+  const f = AUTH_FIELDS[name]; if (!f) return;
+  f.err().textContent = text || "";
+  f.wrap().classList.toggle("has-error", !!text);
+}
+function clearFieldErrors(names) {
+  (names || Object.keys(AUTH_FIELDS)).forEach(n => setFieldError(n, ""));
+}
+function markFields(names) {
+  Object.keys(AUTH_FIELDS).forEach(n => AUTH_FIELDS[n].wrap().classList.toggle("has-error", names.includes(n)));
+}
+
 document.querySelectorAll("[data-authtab]").forEach(t => {
   t.onclick = () => {
     document.querySelectorAll("[data-authtab]").forEach(x => {
@@ -579,68 +678,120 @@ document.querySelectorAll("[data-authtab]").forEach(t => {
     t.setAttribute("aria-selected", "true");
     authMode = t.dataset.authtab;
     $("auth-submit").textContent = authMode === "in" ? "Увійти" : "Створити акаунт";
-    $("auth-msg").textContent = "";
+    $("auth-pass").setAttribute("autocomplete", authMode === "in" ? "current-password" : "new-password");
+    setMsg($("auth-msg"), "");
+    clearFieldErrors();
   };
 });
+
+// blur email — валідуємо формат; input на email/pass — гасимо помилки й банер
+$("auth-email").addEventListener("blur", () => {
+  const v = $("auth-email").value.trim();
+  if (v && !EMAIL_RE.test(v)) setFieldError("email", "Схоже, це не email");
+});
+$("auth-email").addEventListener("input", () => {
+  setFieldError("email", "");
+  setMsg($("auth-msg"), "");
+  AUTH_FIELDS.pass.wrap().classList.remove("has-error");
+});
+$("auth-pass").addEventListener("input", () => {
+  setFieldError("pass", "");
+  setMsg($("auth-msg"), "");
+  AUTH_FIELDS.email.wrap().classList.remove("has-error");
+});
+
+// показати/сховати пароль
+$("auth-pw-toggle").onclick = () => {
+  const btn = $("auth-pw-toggle");
+  const inp = $("auth-pass");
+  const on = inp.type === "password";
+  inp.type = on ? "text" : "password";
+  btn.setAttribute("aria-pressed", on ? "true" : "false");
+  btn.setAttribute("aria-label", on ? "Сховати пароль" : "Показати пароль");
+};
 
 $("auth-submit").onclick = async () => {
   const email = $("auth-email").value.trim();
   const pass = $("auth-pass").value;
   const msg = $("auth-msg");
-  if (!email || !pass) { msg.textContent = "Заповніть обидва поля."; return; }
-  msg.textContent = "Хвилинку…";
+  const btn = $("auth-submit");
+
+  clearFieldErrors();
+  setMsg(msg, "");
+
+  let bad = false;
+  if (!email) { setFieldError("email", "Введіть email"); bad = true; }
+  else if (!EMAIL_RE.test(email)) { setFieldError("email", "Схоже, це не email"); bad = true; }
+  if (!pass) { setFieldError("pass", "Введіть пароль"); bad = true; }
+  if (bad) return;
+
+  setBtnLoading(btn, true);
   try {
     if (authMode === "in") await Store.signIn(email, pass);
     else {
       const r = await Store.signUp(email, pass);
       if (!r.session) {
-        msg.textContent = "Акаунт створено. Підтвердьте пошту, потім увійдіть.";
+        setMsg(msg, "Акаунт створено. Підтвердьте пошту, потім увійдіть.", "success");
         return;
       }
     }
     await renderHome();
     show("home");
   } catch (e) {
-    msg.textContent = "Не вийшло: " + (e.message || "перевірте дані");
+    const m = mapAuthError(e);
+    setMsg(msg, m.message, "error");
+    if (m.fields) markFields(m.fields);
+  } finally {
+    setBtnLoading(btn, false);
   }
 };
 
 $("auth-forgot").onclick = () => {
   $("forgot-email").value = $("auth-email").value.trim();
-  $("forgot-msg").textContent = "";
+  setMsg($("forgot-msg"), "");
   show("forgot");
 };
 
 $("forgot-back").onclick = () => {
-  $("auth-msg").textContent = "";
+  setMsg($("auth-msg"), "");
+  clearFieldErrors();
   show("auth");
 };
 
 $("forgot-submit").onclick = async () => {
   const email = $("forgot-email").value.trim();
   const msg = $("forgot-msg");
-  if (!email) { msg.textContent = "Вкажіть email."; return; }
-  msg.textContent = "Хвилинку…";
+  const btn = $("forgot-submit");
+  if (!email) { setMsg(msg, "Введіть email.", "error"); return; }
+  if (!EMAIL_RE.test(email)) { setMsg(msg, "Схоже, це не email.", "error"); return; }
+  setMsg(msg, "");
+  setBtnLoading(btn, true);
   try {
     await Store.resetPasswordForEmail(email);
-    msg.textContent = "Перевірте пошту — надіслали посилання для скидання пароля.";
+    setMsg(msg, "Перевірте пошту — надіслали посилання для скидання пароля.", "success");
   } catch (e) {
-    msg.textContent = "Не вийшло: " + (e.message || "спробуйте пізніше");
+    setMsg(msg, mapAuthError(e).message, "error");
+  } finally {
+    setBtnLoading(btn, false);
   }
 };
 
 $("newpass-submit").onclick = async () => {
   const pass = $("newpass-pass").value;
   const msg = $("newpass-msg");
-  if (!pass || pass.length < 6) { msg.textContent = "Мінімум 6 символів."; return; }
-  msg.textContent = "Хвилинку…";
+  const btn = $("newpass-submit");
+  if (!pass || pass.length < 6) { setMsg(msg, "Пароль має бути щонайменше 6 символів.", "error"); return; }
+  setMsg(msg, "");
+  setBtnLoading(btn, true);
   try {
     await Store.updatePassword(pass);
-    msg.textContent = "Пароль оновлено.";
+    setMsg(msg, "Пароль оновлено.", "success");
     await renderHome();
     show("home");
   } catch (e) {
-    msg.textContent = "Не вийшло: " + (e.message || "спробуйте ще раз");
+    setMsg(msg, mapAuthError(e).message, "error");
+  } finally {
+    setBtnLoading(btn, false);
   }
 };
 
@@ -677,44 +828,40 @@ $("level-picker").addEventListener("click", async (e) => {
   renderLevelBadge(LAST_ANSWERS);
 });
 
-/* Клік по «Підвищити/Змінити до X» — застосовує оцінку додатка одним рухом. */
-$("btn-apply-est").onclick = async () => {
-  const lv = $("btn-apply-est").dataset.lv;
-  if (!lv || !window.Level) return;
-  const st = Level.setManual(lv);
-  await Store.saveLevel(st.level, st.source, st.locked);
-  renderLevelMenu();
-  renderLevelBadge(LAST_ANSWERS);
-};
-
 /* Меню рівня: сегментований вибір, перемикач фіксації і чесна оцінка додатка. */
 function renderLevelMenu() {
   if (!window.Level) return;
-  const cur = Level.current();
+  // Спершу compute — він може змінити рівень (адаптив). Читати стан до нього
+  // означало б малювати меню по вже застарілому рівню.
   const st = Level.compute(LAST_ANSWERS, LEVEL_BY_ID);
+  const cur = Level.current();
 
   const picker = $("level-picker");
   const sw = $("level-lock");
   const hint = $("lock-hint");
   const estEl = $("level-est");
 
-  if (picker) picker.querySelectorAll("button").forEach(b =>
-    b.classList.toggle("active", b.dataset.lv === cur.level));
+  // «Автоматичний рівень» — увімкнено, коли рівень НЕ зафіксовано (адаптив працює).
+  const auto = !cur.locked;
+
+  if (picker) {
+    picker.hidden = auto;
+    picker.querySelectorAll("button").forEach(b =>
+      b.classList.toggle("active", b.dataset.lv === cur.level));
+  }
 
   if (sw) {
-    sw.setAttribute("aria-checked", cur.locked ? "true" : "false");
+    sw.setAttribute("aria-checked", auto ? "true" : "false");
     sw.disabled = !cur.level;
   }
 
   if (hint) {
-    hint.textContent = cur.locked
-      ? "Рівень зафіксовано — сам не змінюватиметься."
-      : "Без фіксації рівень підлаштовується під твої відповіді.";
+    hint.textContent = auto
+      ? "Рівень підлаштовується під твої відповіді."
+      : "Обери рівень для запитань.";
   }
 
-  const applyEl = $("btn-apply-est");
   if (estEl) {
-    let apply = null;   // рівень, який пропонуємо застосувати (null = ховаємо дію)
     if (!cur.level) {
       estEl.textContent = "";
       estEl.removeAttribute("data-level");
@@ -728,15 +875,10 @@ function renderLevelMenu() {
         estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — ти на своєму рівні.`;
       } else {
         const higher = Level.ORDER.indexOf(st.estimate) > Level.ORDER.indexOf(cur.level);
-        estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
-        apply = { lv: st.estimate, higher };
-      }
-    }
-    if (applyEl) {
-      applyEl.hidden = !apply;
-      if (apply) {
-        applyEl.dataset.lv = apply.lv;
-        applyEl.textContent = apply.higher ? `Підвищити до ${apply.lv}` : `Змінити на ${apply.lv}`;
+        // «за обраний» — тільки коли рівень справді обрано вручну.
+        estEl.innerHTML = auto
+          ? `Оцінка додатка: <b>${st.estimate}</b>.`
+          : `Оцінка додатка: <b>${st.estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
       }
     }
   }
@@ -744,7 +886,7 @@ function renderLevelMenu() {
 
 $("btn-signout").onclick = async () => {
   await Store.signOut();
-  $("auth-msg").textContent = "";
+  setMsg($("auth-msg"), "");
   show("auth");
 };
 
@@ -828,7 +970,7 @@ document.addEventListener("keydown", (e) => {
 
 /* ---------- старт ---------- */
 Store.onPasswordRecovery(() => {
-  $("newpass-msg").textContent = "";
+  setMsg($("newpass-msg"), "");
   $("newpass-pass").value = "";
   show("newpass");
 });
@@ -869,9 +1011,14 @@ function needsOnboarding() {
 async function syncLevelFromProfile() {
   if (!window.Level || !Store.getProfile) return;
   const p = await Store.getProfile();
-  if (p && p.level) { Level.hydrate(p); return; }
+  if (p && p.level) {
+    Level.hydrate(p);
+    SYNCED_EST = p.level_est || null;   // те, що вже лежить на сервері
+    return;
+  }
   const local = Level.current();
   if (local && local.level) {
-    await Store.saveLevel(local.level, local.source || "adaptive", local.locked);
+    SYNCED_EST = local.est || null;
+    await Store.saveLevel(local.level, local.source || "adaptive", local.locked, local.est || null);
   }
 }
