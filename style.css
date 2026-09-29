@@ -104,7 +104,7 @@ body{
 h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.02em}
 .mono{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.06em; text-transform:uppercase}
 .eyebrow{font-family:'IBM Plex Sans',sans-serif; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--green-fg); margin-bottom:16px}
-.note{font-size:12px; color:var(--text-muted); margin-bottom:8px}
+.note{font-size:12px; color:var(--text-muted)}
 .note.dim{font-size:14px}
 .note.error,.note.success{
   display:flex; align-items:flex-start; gap:8px;
@@ -325,7 +325,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   width:320px; max-width:calc(100vw - 24px);
   background:var(--surface); border:1px solid var(--border); border-radius:var(--r);
   padding:16px;
-  display:flex; flex-direction:column; gap:10px;
+  display:flex; flex-direction:column; gap:24px;
   transform-origin:top right;
 }
 .avatar-dropdown[hidden]{display:none}
@@ -584,8 +584,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 
 /* ---------- рівень у меню акаунта ---------- */
 .level-row{
-  display:flex; align-items:center; justify-content:space-between;
-  min-height:44px; font-size:14px; color:var(--text);
+  display:flex; align-items:center; justify-content:space-between; font-size:14px; color:var(--text);
 }
 .level-row b{color:var(--green); font-weight:600}
 .lock-switch{
@@ -625,7 +624,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 }
 
 /* футер меню: дію відділяємо лінією, вихід приглушений */
-.menu-foot{display:flex; flex-direction:column; gap:10px; margin-top:4px; padding-top:12px}
+.menu-foot{display:flex; flex-direction:column; gap:10px;}
 .menu-foot .link-btn{align-self:center; min-height:36px; font-size:13px}
 
 /* переклад речення у фідбеку */

@@ -831,8 +831,10 @@ $("level-picker").addEventListener("click", async (e) => {
 /* Меню рівня: сегментований вибір, перемикач фіксації і чесна оцінка додатка. */
 function renderLevelMenu() {
   if (!window.Level) return;
-  const cur = Level.current();
+  // Спершу compute — він може змінити рівень (адаптив). Читати стан до нього
+  // означало б малювати меню по вже застарілому рівню.
   const st = Level.compute(LAST_ANSWERS, LEVEL_BY_ID);
+  const cur = Level.current();
 
   const picker = $("level-picker");
   const sw = $("level-lock");
