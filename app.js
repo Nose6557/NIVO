@@ -12,11 +12,11 @@ const BANK_VERSION = NIVO_RELEASED;
 
 /* Футер .app-version: версія оболонки + мітка гілки на прев'ю-хостах Cloudflare Pages. */
 (function () {
-  const el = document.querySelector(".app-version");
-  if (!el) return;
+  const els = document.querySelectorAll(".app-version");
+  if (!els.length) return;
   let text = "NIVO · v" + NIVO_VERSION;
   if (location.hostname.endsWith(".pages.dev")) text += " · work";
-  el.textContent = text;
+  els.forEach(el => { el.textContent = text; });
 })();
 
 /* переклад речення під поясненням */

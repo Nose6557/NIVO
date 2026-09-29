@@ -168,6 +168,9 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   position:fixed; left:50%; bottom:16px; transform:translateX(-50%);
   text-align:center; font-size:11px; color:var(--text-muted); pointer-events:none;
 }
+/* На головній екран прокручується — там футер стає звичайним блоком у кінці
+   контенту, інакше він висів би поверх кнопок. */
+.app-version.inline{position:static; transform:none; margin-top:24px}
 
 /* ——— segmented control (iOS) ——— */
 .segmented{
