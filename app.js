@@ -431,7 +431,13 @@ $("ua-toggle").addEventListener("click", () => {
 /* ---------- кінець сесії ---------- */
 async function finish() {
   $("prog").style.width = "100%";
-  await Store.saveSession(session, answersLog);
+  const btn = $("btn-next");
+  setBtnLoading(btn, true);
+  try {
+    await Store.saveSession(session, answersLog);
+  } finally {
+    setBtnLoading(btn, false);
+  }
 
   $("res-score").textContent = session.correct + " / " + session.total;
   const pct = Math.round(session.correct / session.total * 100);
