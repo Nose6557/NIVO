@@ -10,15 +10,6 @@ let TOPICS = {};      // slug теми     -> { category, label }
    віддавати стару версію банків з кешу GitHub Pages. */
 const BANK_VERSION = NIVO_RELEASED;
 
-/* Футер .app-version: версія оболонки + мітка гілки на прев'ю-хостах Cloudflare Pages. */
-(function () {
-  const els = document.querySelectorAll(".app-version");
-  if (!els.length) return;
-  let text = "NIVO · v" + NIVO_VERSION;
-  if (location.hostname.endsWith(".pages.dev")) text += " · work";
-  els.forEach(el => { el.textContent = text; });
-})();
-
 /* переклад речення під поясненням */
 const UA_OPEN = new Set(["A1", "A2", "B1"]);   // на цих рівнях відкрито за замовчуванням
 let UA_PREF = null;                             // null — дефолт рівня; true/false — вибір користувача

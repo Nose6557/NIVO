@@ -163,15 +163,6 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .panel > .note{margin-bottom:0}
 .panel > .note:empty{display:none}
 
-/* версія оболонки — тримай синхронно з CACHE у sw.js */
-.app-version{
-  position:fixed; left:50%; bottom:16px; transform:translateX(-50%);
-  text-align:center; font-size:11px; color:var(--text-muted); pointer-events:none;
-}
-/* На головній екран прокручується — там футер стає звичайним блоком у кінці
-   контенту, інакше він висів би поверх кнопок. */
-.app-version.inline{position:static; transform:none; margin-top:24px}
-
 /* ——— segmented control (iOS) ——— */
 .segmented{
   position:relative;
@@ -281,7 +272,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 /* ——— верхня панель ——— */
 .topbar{
   display:flex; justify-content:space-between; align-items:center;
-  padding:8px 16px; border-bottom:1px solid var(--border);
+  padding:8px 16px;
   position:sticky; top:0; z-index:10;
   background:color-mix(in srgb, var(--bg) 72%, transparent);
   backdrop-filter:blur(20px) saturate(180%);
