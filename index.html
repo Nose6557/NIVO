@@ -271,7 +271,10 @@
 <script>
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("sw.js").catch(() => {});
+      /* updateViaCache:"none" — інакше version.js при перевірці оновлення
+         береться з HTTP-кешу, і бамп NIVO_VERSION не доходить до тих,
+         у кого SW уже стоїть: sw.js побайтово не змінився. */
+      navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(() => {});
     });
   }
 </script>
