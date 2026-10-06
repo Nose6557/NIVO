@@ -1,0 +1,3 @@
+# Локальні налаштування Claude Code — у кожного свої.
+# .claude/launch.json навпаки відстежується: це спільний конфіг прев'ю-сервера.
+.claude/settings.local.json
