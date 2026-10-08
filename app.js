@@ -630,6 +630,23 @@ async function buildExport() {
   });
 
   lines.push("");
+  lines.push("ЗА РІВНЯМИ CEFR:");
+  const byLvl = {};
+  s.answers.forEach(a => {
+    const lv = LEVEL_BY_ID[a.question_id] || "—";
+    if (!byLvl[lv]) byLvl[lv] = { n: 0, ok: 0, ms: 0 };
+    byLvl[lv].n++;
+    if (a.is_correct) byLvl[lv].ok++;
+    byLvl[lv].ms += a.response_ms || 0;
+  });
+  const order = window.Level ? Level.ORDER : ["A1","A2","B1","B2","C1","C2"];
+  [...order, "—"].forEach(lv => {
+    const d = byLvl[lv]; if (!d) return;
+    const name = lv === "—" ? "Без рівня (лексика / видалені питання)" : lv;
+    lines.push(`- ${name}: ${d.ok}/${d.n} (${Math.round(d.ok / d.n * 100)}%), сер. час ${Math.round(d.ms / d.n / 100) / 10}с`);
+  });
+
+  lines.push("");
   lines.push("СЛАБКІ МІСЦЯ (помилки / спроби):");
   s.weak
     .filter(w => w.errors > 0)
