@@ -136,34 +136,31 @@
     if (!body) return;
     const scr = $("screen-onboard");
     if (scr) scr.classList.add("testing");
-    const pct = Math.round(test.i / TEST_LEN * 100);
-    // Та сама розмітка, що й в основній грі (#screen-play): смуга прогресу,
+    // Ті самі компоненти, що й в основній грі (ui/*.js): смуга прогресу,
     // мета-рядок, картка з промптом і .opt-варіантами. Різниця лише в тому,
     // що під час виміру правильну відповідь не підсвічуємо.
-    body.innerHTML = `
-      <div class="play-top">
-        <div class="progress-rail"><div class="progress-fill" style="width:${pct}%"></div></div>
-        <div class="play-meta">
-          <span class="mono" id="qcount">${test.i + 1} / ${TEST_LEN}</span>
-          <button class="btn ghost small" id="ob-skip-test">${fromMenu ? "Скасувати" : "Пропустити тест"}</button>
-        </div>
-      </div>
-      <div class="card">
-        <p class="cat-tag mono">Тест рівня</p>
-        <p class="q-prompt">${esc(q.prompt)}</p>
-        ${shuffle(q.options.slice()).map(o => `<button class="opt ob-answer" data-opt="${esc(o)}">${esc(o)}</button>`).join("")}
-      </div>`;
-
+    //
     // Під час тесту правильну відповідь НЕ показуємо: інакше це навчання,
     // а не вимір — людина калібрується по ходу і результат зміщується.
-    body.querySelectorAll(".ob-answer").forEach(b => {
-      b.onclick = () => {
-        body.querySelectorAll(".ob-answer").forEach(x => { x.disabled = true; });
-        answerTest(b.dataset.opt === q.answer);
-      };
-    });
-    const s = $("ob-skip-test");
-    if (s) s.onclick = () => { if (fromMenu) done(null); else renderSelf(); };
+    const options = shuffle(q.options.slice()).map(o => NivoUI.createAnswerOption({
+      text: o,
+      onClick: () => {
+        options.forEach(x => { x.disabled = true; });
+        answerTest(o === q.answer);
+      }
+    }));
+
+    body.innerHTML = "";
+    body.append(
+      NivoUI.createProgress({
+        // до цілого відсотка, як і раніше
+        value: Math.round(test.i / TEST_LEN * 100) / 100,
+        count: `${test.i + 1} / ${TEST_LEN}`,
+        actionLabel: fromMenu ? "Скасувати" : "Пропустити тест",
+        onAction: () => { if (fromMenu) done(null); else renderSelf(); }
+      }),
+      NivoUI.createQuestionCard({ category: "Тест рівня", prompt: q.prompt, children: options })
+    );
   }
 
   function answerTest(ok) {

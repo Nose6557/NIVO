@@ -209,31 +209,8 @@
 </section>
 
 <section id="screen-play" class="screen">
-  <div class="shell narrow">
-    <div class="play-top">
-      <div class="progress-rail"><div class="progress-fill" id="prog"></div></div>
-      <div class="play-meta">
-        <span class="mono" id="qcount">1 / 15</span>
-        <span class="mono streak" id="streak-live">0 правильних поспіль</span>
-        <button class="btn ghost small" id="btn-quit">Вийти</button>
-      </div>
-    </div>
-
-    <div class="card" id="qcard">
-      <p class="cat-tag mono" id="qcat"></p>
-      <p class="q-prompt" id="qprompt"></p>
-      <div id="qbody"></div>
-      <div class="feedback" id="feedback" hidden>
-        <p class="verdict" id="verdict"></p>
-        <p class="explain" id="explain"></p>
-        <div class="ua-wrap" id="ua-wrap" hidden>
-          <button type="button" class="ua-toggle" id="ua-toggle" aria-controls="ua-text" aria-expanded="false">Переклад</button>
-          <p class="ua-text" id="ua-text" hidden></p>
-        </div>
-      </div>
-      <button class="btn primary" id="btn-next" hidden>Далі</button>
-    </div>
-  </div>
+  <!-- смугу прогресу й картку питання збирає app.js з компонентів ui/*.js -->
+  <div class="shell narrow" id="play-body"></div>
 </section>
 
 <!-- ЕКРАН: підсумок -->
@@ -266,6 +243,17 @@
 <script src="config.js"></script>
 <script src="store.js"></script>
 <script src="level.js"></script>
+<script src="ui/answer-option.js"></script>
+<script src="ui/token.js"></script>
+<script src="ui/order-board.js"></script>
+<script src="ui/fill-input.js"></script>
+<script src="ui/progress.js"></script>
+<script src="ui/ua-toggle.js"></script>
+<script src="ui/feedback.js"></script>
+<script src="ui/question-card.js"></script>
+<script src="ui/level-badge.js"></script>
+<script src="ui/category-bar.js"></script>
+<script src="ui/result-row.js"></script>
 <script src="onboard.js"></script>
 <script src="app.js"></script>
 <script>

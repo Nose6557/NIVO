@@ -399,7 +399,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   .progress-fill{animation:none}
 }
 .play-meta{display:flex; justify-content:space-between; align-items:center; margin-top:16px; color:var(--text-muted)}
-#qcount{width:70px}
+.qcount{width:70px}
 .streak{color:var(--green-fg)}
 
 .card{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:32px}

@@ -1,0 +1,25 @@
+{
+  "name": "nivo",
+  "version": "1.0.0",
+  "description": "Гра-тренажер англійської під твій рівень з відстеженням прогресу. Інтерфейс і пояснення українською, завдання англійською.",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nose6557/NIVO.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nose6557/NIVO/issues"
+  },
+  "homepage": "https://github.com/Nose6557/NIVO#readme",
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.1",
+    "@storybook/addon-docs": "^10.6.1",
+    "@storybook/html-vite": "^10.6.1",
+    "storybook": "^10.6.1"
+  },
+  "private": true,
+  "type": "module"
+}
