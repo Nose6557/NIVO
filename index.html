@@ -71,7 +71,6 @@
       <p class="note dim" style="text-align:center">Без акаунта прогрес зберігається лише в цьому браузері.</p>
     </div>
   </div>
-  <p class="app-version">NIVO</p>
 </section>
 
 <!-- ЕКРАН: відновлення пароля -->
@@ -186,8 +185,6 @@
     <div class="export-row">
       <button class="btn ghost" id="btn-export">Експорт прогресу для аналізу</button>
     </div>
-
-    <p class="app-version inline">NIVO</p>
   </div>
 </section>
 
@@ -274,7 +271,10 @@
 <script>
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("sw.js").catch(() => {});
+      /* updateViaCache:"none" — інакше version.js при перевірці оновлення
+         береться з HTTP-кешу, і бамп NIVO_VERSION не доходить до тих,
+         у кого SW уже стоїть: sw.js побайтово не змінився. */
+      navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(() => {});
     });
   }
 </script>

@@ -10,15 +10,6 @@ let TOPICS = {};      // slug теми     -> { category, label }
    віддавати стару версію банків з кешу GitHub Pages. */
 const BANK_VERSION = NIVO_RELEASED;
 
-/* Футер .app-version: версія оболонки + мітка гілки на прев'ю-хостах Cloudflare Pages. */
-(function () {
-  const els = document.querySelectorAll(".app-version");
-  if (!els.length) return;
-  let text = "NIVO · v" + NIVO_VERSION;
-  if (location.hostname.endsWith(".pages.dev")) text += " · work";
-  els.forEach(el => { el.textContent = text; });
-})();
-
 /* переклад речення під поясненням */
 const UA_OPEN = new Set(["A1", "A2", "B1"]);   // на цих рівнях відкрито за замовчуванням
 let UA_PREF = null;                             // null — дефолт рівня; true/false — вибір користувача
@@ -431,7 +422,13 @@ $("ua-toggle").addEventListener("click", () => {
 /* ---------- кінець сесії ---------- */
 async function finish() {
   $("prog").style.width = "100%";
-  await Store.saveSession(session, answersLog);
+  const btn = $("btn-next");
+  setBtnLoading(btn, true);
+  try {
+    await Store.saveSession(session, answersLog);
+  } finally {
+    setBtnLoading(btn, false);
+  }
 
   $("res-score").textContent = session.correct + " / " + session.total;
   const pct = Math.round(session.correct / session.total * 100);
@@ -630,6 +627,23 @@ async function buildExport() {
   });
   Object.entries(byCat).forEach(([c, d]) => {
     lines.push(`- ${CAT_UA[c] || c}: ${d.ok}/${d.n} (${Math.round(d.ok / d.n * 100)}%), сер. час ${Math.round(d.ms / d.n / 100) / 10}с`);
+  });
+
+  lines.push("");
+  lines.push("ЗА РІВНЯМИ CEFR:");
+  const byLvl = {};
+  s.answers.forEach(a => {
+    const lv = LEVEL_BY_ID[a.question_id] || "—";
+    if (!byLvl[lv]) byLvl[lv] = { n: 0, ok: 0, ms: 0 };
+    byLvl[lv].n++;
+    if (a.is_correct) byLvl[lv].ok++;
+    byLvl[lv].ms += a.response_ms || 0;
+  });
+  const order = window.Level ? Level.ORDER : ["A1","A2","B1","B2","C1","C2"];
+  [...order, "—"].forEach(lv => {
+    const d = byLvl[lv]; if (!d) return;
+    const name = lv === "—" ? "Без рівня (лексика / видалені питання)" : lv;
+    lines.push(`- ${name}: ${d.ok}/${d.n} (${Math.round(d.ok / d.n * 100)}%), сер. час ${Math.round(d.ms / d.n / 100) / 10}с`);
   });
 
   lines.push("");
