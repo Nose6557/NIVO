@@ -1,6 +1,6 @@
 import "../ui/ua-toggle.js";
 import "../ui/feedback.js";
-import { frame, UI } from "./_frame.js";
+import { frame, UI } from "./frame.js";
 
 const EXPLAIN = "Present Perfect: дія завершилась, а результат важливий зараз. «Already» стоїть між have/has і третьою формою дієслова.";
 

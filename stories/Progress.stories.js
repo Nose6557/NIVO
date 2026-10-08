@@ -1,5 +1,5 @@
 import "../ui/progress.js";
-import { frame, UI } from "./_frame.js";
+import { frame, UI } from "./frame.js";
 
 export default {
   title: "Гра/Progress",

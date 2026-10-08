@@ -1,5 +1,5 @@
 import "../ui/token.js";
-import { UI } from "./_frame.js";
+import { UI } from "./frame.js";
 
 export default {
   title: "Гра/Token",

@@ -1,5 +1,5 @@
 import "../ui/level-badge.js";
-import { UI } from "./_frame.js";
+import { UI } from "./frame.js";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"];
 

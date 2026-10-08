@@ -5,7 +5,7 @@ import "../ui/fill-input.js";
 import "../ui/ua-toggle.js";
 import "../ui/feedback.js";
 import "../ui/question-card.js";
-import { frame, UI } from "./_frame.js";
+import { frame, UI } from "./frame.js";
 
 const EXPLAIN = "Present Perfect: дія завершилась, а результат важливий зараз.";
 

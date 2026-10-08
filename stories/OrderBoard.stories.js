@@ -1,6 +1,6 @@
 import "../ui/token.js";
 import "../ui/order-board.js";
-import { frame, UI } from "./_frame.js";
+import { frame, UI } from "./frame.js";
 
 const TOKENS = ["finished", "has", "she", "report", "already", "the"];
 
