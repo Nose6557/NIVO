@@ -4,7 +4,7 @@
   "description": "Гра-тренажер англійської під твій рівень з відстеженням прогресу. Інтерфейс і пояснення українською, завдання англійською.",
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build --disable-telemetry && cp _headers storybook-static/_headers"
   },
   "repository": {
     "type": "git",
