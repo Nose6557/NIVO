@@ -14,6 +14,8 @@ const SHELL = [
   "index.html",
   "style.css",
   "version.js",
+  "level.js",
+  "onboard.js",
   "app.js",
   "ui/answer-option.js",
   "ui/token.js",
