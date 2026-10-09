@@ -134,7 +134,7 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
 .wordmark{font-size:clamp(36px,7vw,56px); font-weight:900; line-height:1.07; margin:8px 0}
 .tagline{color:var(--text-muted); font-size:16px}
 
-/* три щаблі лого «виростають» знизу вгору при появі екрана входу */
+/* три щаблі лого «виростають» знизу вгору щоразу, коли з'являється екран із лого */
 .mark-glyph .logo-bar{
   transform-box: fill-box;
   transform-origin: bottom;
@@ -278,8 +278,10 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   backdrop-filter:blur(20px) saturate(180%);
   -webkit-backdrop-filter:blur(20px) saturate(180%);
 }
-.brand-sm{display:flex; align-items:center; font-family:'Unbounded',sans-serif; font-weight:700; font-size:16px}
-.brand-sm .mark-glyph{width:24px; height:24px; margin-right:4px}
+.brand-sm{display:flex; align-items:center; font-family:'Unbounded',sans-serif; font-weight:700; font-size:20px}
+/* Смужки стоять у полі значка нижче за центр, тому трохи підіймаємо його,
+   щоб значок оптично врівноважився з написом. */
+.brand-sm .mark-glyph{width:32px; height:32px; margin-right:4px; transform:translateY(-1px)}
 .topbar-right{display:flex; align-items:center; gap:16px}
 .who{font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:var(--text-muted); word-break:break-all}
 
@@ -511,8 +513,15 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
    від питання до питання разом зі зміною висоти контенту. */
 #screen-onboard.testing.active{display:block; min-height:0}
 #screen-onboard.testing .shell{margin:0 auto}
+/* Самооцінка — продовження екрана входу: та сама .panel, вміст теж від верху,
+   без вертикального центрування. */
+#screen-onboard.branded.active{display:block; min-height:0}
+#screen-onboard.branded .shell{margin:0 auto}
 .ob-head{margin-bottom:28px; text-align:center}
-.ob-head h1{font-size:24px; line-height:1.17; margin-bottom:10px}
+.ob-head h2{font-size:24px; line-height:1.17; margin-bottom:10px}
+.ob-head .tagline{max-width:44ch; margin:0 auto}
+/* У .panel відступи між блоками дає її gap. */
+.panel > .ob-head,.panel > .ob-list{margin-bottom:0}
 .ob-list{display:flex; flex-direction:column; gap:10px; margin-bottom:20px}
 .ob-opt{
   background:var(--surface); border:1px solid var(--border); border-radius:var(--r);
@@ -521,11 +530,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 }
 .ob-opt:hover{border-color:var(--green)}
 .ob-opt:focus-visible{outline:2px solid var(--green); outline-offset:2px}
-.ob-level{
-  font-family:'Unbounded',sans-serif; font-weight:900; font-size:44px;
-  color:var(--green); line-height:1; margin-bottom:12px
-}
-#ob-go{display:flex; width:fit-content; margin:0 auto; font-size:14px}
+#ob-test{display:flex; width:fit-content; margin:0 auto}
 
 /* ---------- підвищення рівня ---------- */
 .level-up{

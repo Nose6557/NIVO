@@ -64,16 +64,18 @@
     const body = $("onboard-body");
     if (!body) return;
     const scr = $("screen-onboard");
-    if (scr) scr.classList.remove("testing");
+    if (scr) { scr.classList.remove("testing"); scr.classList.add("branded"); }
     body.innerHTML = `
-      <div class="ob-head">
-        <h1>Наскільки добре ти знаєш англійську?</h1>
-        <p class="note dim">Це лише відправна точка. Застосунок сам підлаштується під тебе.</p>
-      </div>
-      <div class="ob-list">
-        ${SELF.map(s => `<button class="ob-opt" data-level="${s.level}">${esc(s.text)}</button>`).join("")}
-      </div>
-      <button class="btn ghost" id="ob-test">Краще пройти тест — 16 питань</button>`;
+      <div class="panel">
+        <div class="ob-head">
+          <h2>Наскільки добре ти знаєш англійську?</h2>
+          <p class="tagline">Це лише відправна точка. Застосунок сам підлаштується під тебе.</p>
+        </div>
+        <div class="ob-list">
+          ${SELF.map(s => `<button class="ob-opt" data-level="${s.level}">${esc(s.text)}</button>`).join("")}
+        </div>
+        <button class="btn primary big" id="ob-test">Краще пройти тест — 16 питань</button>
+      </div>`;
 
     body.querySelectorAll(".ob-opt").forEach(b => {
       b.onclick = () => finish(b.dataset.level, "self");
@@ -135,7 +137,7 @@
     const body = $("onboard-body");
     if (!body) return;
     const scr = $("screen-onboard");
-    if (scr) scr.classList.add("testing");
+    if (scr) { scr.classList.remove("branded"); scr.classList.add("testing"); }
     // Ті самі компоненти, що й в основній грі (ui/*.js): смуга прогресу,
     // мета-рядок, картка з промптом і .opt-варіантами. Різниця лише в тому,
     // що під час виміру правильну відповідь не підсвічуємо.
@@ -183,42 +185,53 @@
   /* ---------- крок 3: підтвердження ---------- */
 
   function finish(level, source) {
-    const scr = $("screen-onboard");
-    if (scr) scr.classList.remove("testing");
     const st = source === "placement" ? Level.setPlacement(level) : Level.setSelf(level);
     // Пишемо на сервер РІВНО той стан, що ліг локально. Жорсткий locked:false
     // розсинхронізовував фіксацію (тест можна пройти й з меню, не знімаючи її),
     // а незбережена оцінка після перезавантаження поверталася до старої.
     if (window.Store && Store.saveLevel) Store.saveLevel(st.level, st.source, st.locked, st.est || null);
 
-    const body = $("onboard-body");
-    if (!body) return done(level);
-    body.innerHTML = `
-      <div class="ob-head">
-        <div class="ob-level">${esc(level)}</div>
-        <h1>Почнемо з ${esc(level)}</h1>
-        <p class="note dim">Застосунок стежитиме за твоїми відповідями й сам підбере складність. Рівень може змінитись в обидва боки — це нормально.</p>
-      </div>
-      <button class="btn primary big" id="ob-go">Почати</button>`;
-    const g = $("ob-go");
-    if (g) g.onclick = () => done(level);
+    // Підтвердження — та сама картка, що й на підвищенні рівня: колір щабля й салют.
+    const shown = showLevelCard({
+      level,
+      title: `Почнемо з ${level}`,
+      sub: "Застосунок стежитиме за твоїми відповідями й сам підбере складність. Рівень може змінитись в обидва боки — це нормально.",
+      button: "Почати",
+      onClose: () => done(level)
+    });
+    if (!shown) done(level);
   }
 
   /* ---------- транзиції ---------- */
 
   /** Підвищення — рідка й значима подія, показуємо повноекранно. */
   function celebrate(changed) {
+    showLevelCard({
+      level: changed.to,
+      title: `Рівень ${changed.to}`,
+      sub: `Ти впевнено тягнеш ${changed.from}. Далі буде складніше — і цікавіше.`,
+      button: "Далі"
+    });
+  }
+
+  /** Повноекранна картка рівня (#level-up) із салютом. Повертає false, якщо розмітки немає. */
+  function showLevelCard({ level, title, sub, button, onClose }) {
     const el = $("level-up");
-    if (!el) return;
+    if (!el) return false;
     const t = $("level-up-title");
     const s = $("level-up-sub");
-    if (t) t.textContent = `Рівень ${changed.to}`;
-    if (s) s.textContent = `Ти впевнено тягнеш ${changed.from}. Далі буде складніше — і цікавіше.`;
-    el.dataset.level = changed.to;   // колір обводки/сяйва підбирає CSS за рівнем
+    if (t) t.textContent = title;
+    if (s) s.textContent = sub;
+    el.dataset.level = level;   // колір обводки/сяйва підбирає CSS за рівнем
     el.hidden = false;
-    fireworks($("level-up-fx"), LEVEL_HUE[changed.to]);
+    fireworks($("level-up-fx"), LEVEL_HUE[level]);
     const btn = $("level-up-close");
-    if (btn) { btn.onclick = () => { el.hidden = true; stopFireworks(); }; btn.focus(); }
+    if (btn) {
+      btn.textContent = button;
+      btn.onclick = () => { el.hidden = true; stopFireworks(); if (onClose) onClose(); };
+      btn.focus();
+    }
+    return true;
   }
 
   /* ---------- салют на підвищенні рівня ---------- */

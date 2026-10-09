@@ -29,7 +29,6 @@
     <div class="panel">
       <div class="mark">
         <svg class="mark-glyph" viewBox="0 0 512 512" role="img" aria-hidden="true">
-          <rect width="512" height="512" rx="112" fill="#1c1c1e"/>
           <rect class="logo-bar logo-bar-1" x="99" y="270" width="86" height="143" rx="18" fill="#ffcc00"/>
           <rect class="logo-bar logo-bar-2" x="213" y="200" width="86" height="213" rx="18" fill="#00c0e8"/>
           <rect class="logo-bar logo-bar-3" x="327" y="130" width="86" height="283" rx="18" fill="#6155f5"/>
@@ -76,24 +75,23 @@
 <!-- ЕКРАН: відновлення пароля -->
 <section id="screen-forgot" class="screen">
   <div class="shell narrow">
-    <div class="mark">
-      <svg class="mark-glyph" viewBox="0 0 512 512" role="img" aria-hidden="true">
-        <rect width="512" height="512" rx="112" fill="#1c1c1e"/>
-        <rect class="logo-bar logo-bar-1" x="99" y="270" width="86" height="143" rx="18" fill="#ffcc00"/>
-        <rect class="logo-bar logo-bar-2" x="213" y="200" width="86" height="213" rx="18" fill="#00c0e8"/>
-        <rect class="logo-bar logo-bar-3" x="327" y="130" width="86" height="283" rx="18" fill="#6155f5"/>
-      </svg>
-      <h1 class="wordmark">NIVO</h1>
-    </div>
     <div class="panel">
-      <p class="note dim">Введіть email — надішлемо посилання для скидання пароля.</p>
+      <div class="mark">
+        <svg class="mark-glyph" viewBox="0 0 512 512" role="img" aria-hidden="true">
+          <rect class="logo-bar logo-bar-1" x="99" y="270" width="86" height="143" rx="18" fill="#ffcc00"/>
+          <rect class="logo-bar logo-bar-2" x="213" y="200" width="86" height="213" rx="18" fill="#00c0e8"/>
+          <rect class="logo-bar logo-bar-3" x="327" y="130" width="86" height="283" rx="18" fill="#6155f5"/>
+        </svg>
+        <h1 class="wordmark">NIVO</h1>
+        <p class="tagline">Введіть email — надішлемо посилання для скидання пароля.</p>
+      </div>
       <label class="field">
         <span>Email</span>
         <input type="email" id="forgot-email" autocomplete="email" placeholder="you@example.com">
       </label>
       <button class="btn primary" id="forgot-submit">Надіслати посилання</button>
       <p class="note" id="forgot-msg" role="alert" aria-live="polite"></p>
-      <button class="btn ghost small" id="forgot-back">Назад до входу</button>
+      <button class="btn ghost" id="forgot-back">Назад до входу</button>
     </div>
   </div>
 </section>
@@ -101,17 +99,16 @@
 <!-- ЕКРАН: новий пароль -->
 <section id="screen-newpass" class="screen">
   <div class="shell narrow">
-    <div class="mark">
-      <svg class="mark-glyph" viewBox="0 0 512 512" role="img" aria-hidden="true">
-        <rect width="512" height="512" rx="112" fill="#1c1c1e"/>
-        <rect class="logo-bar logo-bar-1" x="99" y="270" width="86" height="143" rx="18" fill="#ffcc00"/>
-        <rect class="logo-bar logo-bar-2" x="213" y="200" width="86" height="213" rx="18" fill="#00c0e8"/>
-        <rect class="logo-bar logo-bar-3" x="327" y="130" width="86" height="283" rx="18" fill="#6155f5"/>
-      </svg>
-      <h1 class="wordmark">NIVO</h1>
-    </div>
     <div class="panel">
-      <p class="note dim">Встановіть новий пароль для акаунта.</p>
+      <div class="mark">
+        <svg class="mark-glyph" viewBox="0 0 512 512" role="img" aria-hidden="true">
+          <rect class="logo-bar logo-bar-1" x="99" y="270" width="86" height="143" rx="18" fill="#ffcc00"/>
+          <rect class="logo-bar logo-bar-2" x="213" y="200" width="86" height="213" rx="18" fill="#00c0e8"/>
+          <rect class="logo-bar logo-bar-3" x="327" y="130" width="86" height="283" rx="18" fill="#6155f5"/>
+        </svg>
+        <h1 class="wordmark">NIVO</h1>
+        <p class="tagline">Встановіть новий пароль для акаунта.</p>
+      </div>
       <label class="field">
         <span>Новий пароль</span>
         <input type="password" id="newpass-pass" autocomplete="new-password" placeholder="мінімум 6 символів">
@@ -125,7 +122,12 @@
 <!-- ЕКРАН: головна -->
 <section id="screen-home" class="screen">
   <header class="topbar">
-      <div class="brand-sm"><img class="mark-glyph" src="favicon/icon.svg" alt=""> NIVO</div>
+      <div class="brand-sm">
+        <svg class="mark-glyph" viewBox="0 0 512 512" role="img" aria-hidden="true">
+          <rect class="logo-bar logo-bar-1" x="99" y="270" width="86" height="143" rx="18" fill="#ffcc00"/>
+          <rect class="logo-bar logo-bar-2" x="213" y="200" width="86" height="213" rx="18" fill="#00c0e8"/>
+          <rect class="logo-bar logo-bar-3" x="327" y="130" width="86" height="283" rx="18" fill="#6155f5"/>
+        </svg> NIVO</div>
       <div class="topbar-right">
         <div class="avatar-menu">
           <button class="avatar-btn" id="avatar-btn" aria-haspopup="true" aria-expanded="false">
