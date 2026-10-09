@@ -1,0 +1,677 @@
+{
+  "schema": 2,
+  "pack": "c2-03",
+  "title": "Пак C2 — партія 3",
+  "level": "C2",
+  "topics": {
+    "c2-reg-reported-formal": {
+      "category": "register",
+      "label": "Непряма мова у формальному регістрі"
+    },
+    "c2-syn-subjunctive-formulaic": {
+      "category": "syntax",
+      "label": "Застиглі форми умовного способу: Suffice it to say, Come what may, So be it"
+    },
+    "c2-syn-emphatic-do": {
+      "category": "syntax",
+      "label": "Емфатичне do / did"
+    },
+    "c2-voc-whereas-whilst": {
+      "category": "vocabulary",
+      "label": "whereas / whilst / while: протиставлення"
+    },
+    "c2-voc-coll-bearing": {
+      "category": "vocabulary",
+      "label": "have a bearing on"
+    },
+    "c2-voc-coll-stake": {
+      "category": "vocabulary",
+      "label": "at stake / have a stake in"
+    },
+    "c2-voc-coll-scope": {
+      "category": "vocabulary",
+      "label": "beyond / within the scope of"
+    },
+    "c2-syn-inversion-so-adj": {
+      "category": "syntax",
+      "label": "So + прикметник + інверсія: So severe was…"
+    },
+    "c2-syn-however-adj": {
+      "category": "syntax",
+      "label": "However / No matter how + прикметник"
+    },
+    "c2-reg-would-have-thought": {
+      "category": "register",
+      "label": "Пом'якшення: I would have thought, One would think"
+    },
+    "c2-syn-only-to": {
+      "category": "syntax",
+      "label": "only to + інфінітив: несподіваний результат"
+    },
+    "c2-syn-locative-inversion": {
+      "category": "syntax",
+      "label": "Інверсія після обставини місця: Down came…, Here comes…"
+    }
+  },
+  "questions": [
+    {
+      "id": "c2-reg-reported-formal-01",
+      "topic": "c2-reg-reported-formal",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "The spokesperson ___ that the merger had been approved by both boards.",
+      "options": [
+        "confirmed",
+        "told",
+        "informed",
+        "said to"
+      ],
+      "answer": "confirmed",
+      "explain": "У формальній непрямій мові замість say вживають точніші дієслова: confirm, state, announce + that — без додатка-адресата.\n✗ told — tell вимагає адресата: told reporters that…\n✗ said to — після say to теж потрібен адресат: said to the press that…\n✗ informed — inform, як і tell, не вживається без того, кого інформують.",
+      "ua": "Речниця підтвердила, що злиття схвалили обидві ради директорів."
+    },
+    {
+      "id": "c2-reg-reported-formal-02",
+      "topic": "c2-reg-reported-formal",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "At last year's hearing, the CEO replied that no such decision ___ at that point.",
+      "options": [
+        "is taken",
+        "will be taken",
+        "had been taken",
+        "has been taken"
+      ],
+      "answer": "had been taken",
+      "explain": "Після дієслова мовлення в минулому час зсувається назад: Present Perfect прямої мови («has been taken») стає Past Perfect.\n✗ has been taken — Present Perfect не поєднується з минулим моментом at that point.\n✗ is taken — теперішній час суперечить і replied, і at that point.\n✗ will be taken — майбутнє в непрямій мові після replied перетворюється на would be taken.",
+      "ua": "На торішніх слуханнях генеральний директор відповів, що на той момент такого рішення не ухвалювали."
+    },
+    {
+      "id": "c2-reg-reported-formal-03",
+      "topic": "c2-reg-reported-formal",
+      "level": "C2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "chairman",
+        "enquired",
+        "whether",
+        "the",
+        "figures",
+        "had",
+        "been",
+        "audited"
+      ],
+      "answer": "The chairman enquired whether the figures had been audited",
+      "explain": "Формальне непряме запитання: enquire + whether + ПРЯМИЙ порядок слів (підмет перед дієсловом) і зсув часу — had been audited.\nЖодної інверсії й жодного допоміжного did: це вже не запитання, а підрядне речення.",
+      "ua": "Голова поцікавився, чи пройшли ці показники аудит."
+    },
+    {
+      "id": "c2-syn-subjunctive-formulaic-01",
+      "topic": "c2-syn-subjunctive-formulaic",
+      "level": "C2",
+      "type": "fill",
+      "domain": "general",
+      "prompt": "___ it to say that the launch did not go as planned.",
+      "answer": "Suffice",
+      "accept": [
+        "Suffice"
+      ],
+      "explain": "Застигла формула Suffice it to say (that)… — «досить сказати, що…». Дієслово стоїть у subjunctive, тому без -s і перед підметом it.\nФорма не змінюється: ні Suffices it, ні It suffices to say тут не є цією сталою формулою.",
+      "ua": "Досить сказати, що запуск пройшов не за планом."
+    },
+    {
+      "id": "c2-syn-subjunctive-formulaic-02",
+      "topic": "c2-syn-subjunctive-formulaic",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "We will honour the contract, come what ___.",
+      "options": [
+        "may",
+        "can",
+        "will",
+        "might"
+      ],
+      "answer": "may",
+      "explain": "Come what may — застигла форма умовного способу: «хоч би що сталося». Слова в ній не замінюються.\n✗ might — формула зафіксована саме з may, come what might не вживається.\n✗ will — у застиглому subjunctive майбутній час неможливий.\n✗ can — can означає здатність, а не «що б не трапилося»; такої сполуки немає.",
+      "ua": "Ми виконаємо контракт, хоч би що сталося."
+    },
+    {
+      "id": "c2-syn-subjunctive-formulaic-03",
+      "topic": "c2-syn-subjunctive-formulaic",
+      "level": "C2",
+      "type": "order",
+      "domain": "general",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "If",
+        "that",
+        "is",
+        "their",
+        "final",
+        "decision",
+        "so",
+        "be",
+        "it"
+      ],
+      "answer": "If that is their final decision so be it",
+      "explain": "So be it — застиглий subjunctive: «нехай буде так», вимушена згода з тим, чого не зміниш.\nДієслово be стоїть у базовій формі — не so is it і не so it is.",
+      "ua": "Якщо це їхнє остаточне рішення — що ж, хай буде так."
+    },
+    {
+      "id": "c2-syn-emphatic-do-01",
+      "topic": "c2-syn-emphatic-do",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I ___ lock the door — I remember turning the key twice.",
+      "options": [
+        "had",
+        "was",
+        "did",
+        "do"
+      ],
+      "answer": "did",
+      "explain": "Емфатичне did + базова форма дієслова підсилює ствердження про минуле, коли хтось у ньому сумнівається: I did lock.\n✗ was — після was потрібна форма на -ing або третя форма, а не lock.\n✗ had — Past Perfect вимагає третьої форми: had locked.\n✗ do — теперішній час описує звичку, а йдеться про конкретний минулий випадок (I remember turning).",
+      "ua": "Я таки замкнув двері — пам'ятаю, що двічі повернув ключ."
+    },
+    {
+      "id": "c2-syn-emphatic-do-02",
+      "topic": "c2-syn-emphatic-do",
+      "level": "C2",
+      "type": "fill",
+      "domain": "general",
+      "prompt": "She rarely complains, but when she ___ complain, people listen.",
+      "answer": "does",
+      "accept": [
+        "does"
+      ],
+      "explain": "Емфатичне do у Present Simple: does + базова форма (complain без -s) наголошує, що дія все ж відбувається.\nТретя особа однини й теперішній час (complains, listen) дають саме does, а не do чи did.",
+      "ua": "Вона рідко скаржиться, але коли вже скаржиться — до неї дослухаються."
+    },
+    {
+      "id": "c2-syn-emphatic-do-03",
+      "topic": "c2-syn-emphatic-do",
+      "level": "C2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "did",
+        "warn",
+        "the",
+        "client",
+        "about",
+        "the",
+        "hidden",
+        "costs"
+      ],
+      "answer": "We did warn the client about the hidden costs",
+      "explain": "Емфатичне did стоїть перед смисловим дієсловом у базовій формі: did warn, а не did warned.\nТак мовець наполягає: «ми ж таки попереджали», заперечуючи докір.",
+      "ua": "Ми ж попереджали клієнта про приховані витрати."
+    },
+    {
+      "id": "c2-voc-whereas-whilst-01",
+      "topic": "c2-voc-whereas-whilst",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "The Berlin office reports to the CFO, ___ the Warsaw team answers directly to the CEO.",
+      "options": [
+        "whereas",
+        "nevertheless",
+        "however",
+        "despite"
+      ],
+      "answer": "whereas",
+      "explain": "Whereas — сполучник, що з'єднує два речення й зіставляє два різні факти: «тоді як».\n✗ despite — прийменник, після нього йде іменник або -ing, а не ціле речення.\n✗ however — прислівник, а не сполучник: потребує крапки або крапки з комою перед собою.\n✗ nevertheless — теж прислівник; до того ж означає «попри це», а не зіставлення.",
+      "ua": "Берлінський офіс підпорядковується фінансовому директорові, тоді як варшавська команда — безпосередньо генеральному."
+    },
+    {
+      "id": "c2-voc-whereas-whilst-02",
+      "topic": "c2-voc-whereas-whilst",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "___ I accept that the deadline is tight, I do not think cutting tests is the answer.",
+      "options": [
+        "Whilst",
+        "Despite",
+        "Whereas",
+        "However"
+      ],
+      "answer": "Whilst",
+      "explain": "Whilst (як і while) може означати поступку — «хоча»: мовець визнає одне, але стверджує інше.\n✗ Whereas — лише зіставляє два різні предмети чи факти, значення «хоча» не має.\n✗ Despite — прийменник: було б Despite the tight deadline, без підмета й дієслова.\n✗ However — на початку речення це прислівник «проте», він не приєднує підрядне речення.",
+      "ua": "Хоч я й визнаю, що термін стислий, скорочувати тести — не вихід."
+    },
+    {
+      "id": "c2-voc-whereas-whilst-03",
+      "topic": "c2-voc-whereas-whilst",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "___ travelling through Peru, she kept a detailed journal.",
+      "options": [
+        "Meanwhile",
+        "While",
+        "Whereas",
+        "During"
+      ],
+      "answer": "While",
+      "explain": "While (whilst) + -ing — скорочене підрядне часу: «поки подорожувала». Це значення одночасності, а не протиставлення.\n✗ During — прийменник, після нього стоїть іменник: during her trip.\n✗ Whereas — тільки протиставляє, часового значення не має і з -ing не вживається.\n✗ Meanwhile — прислівник «тим часом», він не приєднує дієприкметниковий зворот.",
+      "ua": "Подорожуючи Перу, вона вела докладний щоденник."
+    },
+    {
+      "id": "c2-voc-coll-bearing-01",
+      "topic": "c2-voc-coll-bearing",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "The age of the codebase ___ little bearing on how often it fails.",
+      "options": [
+        "has",
+        "does",
+        "makes",
+        "takes"
+      ],
+      "answer": "has",
+      "explain": "Колокація have a bearing on — «впливати на, стосуватися». Дієслово тут завжди have.\n✗ makes — make поєднується з a difference, а не з bearing.\n✗ does — do a bearing не існує; do вживають із harm, damage.\n✗ takes — take bearing немає серед сталих сполук із цим значенням.",
+      "ua": "Вік кодової бази мало впливає на те, як часто вона дає збої."
+    },
+    {
+      "id": "c2-voc-coll-bearing-02",
+      "topic": "c2-voc-coll-bearing",
+      "level": "C2",
+      "type": "fill",
+      "domain": "business",
+      "prompt": "Exchange rates have a direct ___ (bear) on our pricing.",
+      "answer": "bearing",
+      "accept": [
+        "bearing"
+      ],
+      "explain": "Іменник bearing у сполуці have a (direct) bearing on — «безпосередньо впливати на».\nУтворюється від bear суфіксом -ing; після артикля та прикметника direct потрібен саме іменник.",
+      "ua": "Валютні курси безпосередньо впливають на наші ціни."
+    },
+    {
+      "id": "c2-voc-coll-bearing-03",
+      "topic": "c2-voc-coll-bearing",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "These findings have no bearing ___ the case.",
+      "options": [
+        "with",
+        "on",
+        "to",
+        "for"
+      ],
+      "answer": "on",
+      "explain": "Після bearing вживається прийменник on: have no bearing on something — «не мати стосунку до».\n✗ to — to вимагають relevance і relation (relevance to), але не bearing.\n✗ for — for поєднується з implications (implications for).\n✗ with — with буває після connection (connection with), а не після bearing.",
+      "ua": "Ці висновки не мають жодного стосунку до справи."
+    },
+    {
+      "id": "c2-voc-coll-stake-01",
+      "topic": "c2-voc-coll-stake",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "Parents naturally have a ___ in how their children's school is run.",
+      "options": [
+        "deposit",
+        "risk",
+        "bet",
+        "stake"
+      ],
+      "answer": "stake",
+      "explain": "Have a stake in something — бути особисто зацікавленим у результаті, бо він тебе стосується.\n✗ bet — ставка в парі; have a bet in не вживається.\n✗ risk — ризик не «мають у» чомусь: run a risk, be at risk.\n✗ deposit — завдаток або внесок у банку, значення зацікавленості не має.",
+      "ua": "Батькам, звісно, не байдуже, як керують школою їхніх дітей."
+    },
+    {
+      "id": "c2-voc-coll-stake-02",
+      "topic": "c2-voc-coll-stake",
+      "level": "C2",
+      "type": "fill",
+      "domain": "it",
+      "prompt": "There is too much ___ stake to rush this migration.",
+      "answer": "at",
+      "accept": [
+        "at"
+      ],
+      "explain": "At stake — «під загрозою, на кону». Прийменник у цій сполуці тільки at, артикля немає.\nToo much at stake — надто багато можна втратити.",
+      "ua": "На кону забагато, щоб поспішати з цією міграцією."
+    },
+    {
+      "id": "c2-voc-coll-stake-03",
+      "topic": "c2-voc-coll-stake",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "It is not just money that is ___ in this election; it is public trust.",
+      "options": [
+        "at stake",
+        "in stake",
+        "on the stake",
+        "at stakes"
+      ],
+      "answer": "at stake",
+      "explain": "At stake — стала сполука: прийменник at, іменник в однині й без артикля.\n✗ in stake — in вживається в іншій конструкції: have a stake IN something.\n✗ at stakes — множина тут неможлива; stakes буває у the stakes are high.\n✗ on the stake — такої сполуки немає; з артиклем stake означає «паля».",
+      "ua": "На цих виборах на кону не лише гроші, а й довіра суспільства."
+    },
+    {
+      "id": "c2-voc-coll-scope-01",
+      "topic": "c2-voc-coll-scope",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "Redesigning the payment flow is ___ the scope of this sprint; let's log it for the next one.",
+      "options": [
+        "over",
+        "above",
+        "across",
+        "beyond"
+      ],
+      "answer": "beyond",
+      "explain": "Beyond the scope of — «поза межами, не входить у завдання».\n✗ over — over the scope не вживається; over означає «понад» щодо кількості.\n✗ above — above буває у above my pay grade, але не зі scope.\n✗ across — across the scope означало б «у всьому обсязі», що суперечить другій частині речення.",
+      "ua": "Переробка платіжного сценарію не входить у цей спринт — занесімо її на наступний."
+    },
+    {
+      "id": "c2-voc-coll-scope-02",
+      "topic": "c2-voc-coll-scope",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "The request falls ___ the scope of the original agreement, so no extra fee applies.",
+      "options": [
+        "between",
+        "along",
+        "among",
+        "within"
+      ],
+      "answer": "within",
+      "explain": "Fall within the scope of — «підпадати під, належати до обсягу».\n✗ among — among вживають щодо кількох окремих предметів чи людей.\n✗ between — between потребує двох меж: between A and B.\n✗ along — along означає рух уздовж чогось і зі scope не поєднується.",
+      "ua": "Запит охоплено початковою угодою, тож додаткової плати немає."
+    },
+    {
+      "id": "c2-voc-coll-scope-03",
+      "topic": "c2-voc-coll-scope",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "Questions of funding are beyond the ___ of this inquiry.",
+      "options": [
+        "size",
+        "scale",
+        "span",
+        "scope"
+      ],
+      "answer": "scope",
+      "explain": "Scope — коло питань, які охоплює документ, проєкт чи розслідування; beyond the scope of — поза цим колом.\n✗ scale — масштаб, розмах явища, а не перелік того, що розглядають.\n✗ size — фізичний розмір; beyond the size of an inquiry не кажуть.\n✗ span — проміжок часу або відстань: attention span, life span.",
+      "ua": "Питання фінансування виходять за межі цього розслідування."
+    },
+    {
+      "id": "c2-syn-inversion-so-adj-01",
+      "topic": "c2-syn-inversion-so-adj",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "So severe ___ that the airport was closed for two days.",
+      "options": [
+        "did the storm",
+        "the storm was",
+        "had the storm",
+        "was the storm"
+      ],
+      "answer": "was the storm",
+      "explain": "Коли So + прикметник винесено на початок, далі йде інверсія: дієслово be перед підметом — So severe was the storm that…\n✗ the storm was — прямий порядок слів після винесеного So severe неможливий.\n✗ did the storm — do-інверсія потребує смислового дієслова, а тут присудок — be.\n✗ had the storm — had без третьої форми дієслова лишає речення без присудка.",
+      "ua": "Буря була така сильна, що аеропорт закрили на два дні."
+    },
+    {
+      "id": "c2-syn-inversion-so-adj-02",
+      "topic": "c2-syn-inversion-so-adj",
+      "level": "C2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "So",
+        "persuasive",
+        "was",
+        "her",
+        "argument",
+        "that",
+        "nobody",
+        "objected"
+      ],
+      "answer": "So persuasive was her argument that nobody objected",
+      "explain": "Схема: So + прикметник + be + підмет + that-речення наслідку.\nДієслово was стоїть ПЕРЕД підметом her argument — це емфатична, книжна версія Her argument was so persuasive that…",
+      "ua": "Її аргумент був такий переконливий, що ніхто не заперечив."
+    },
+    {
+      "id": "c2-syn-inversion-so-adj-03",
+      "topic": "c2-syn-inversion-so-adj",
+      "level": "C2",
+      "type": "fill",
+      "domain": "it",
+      "prompt": "So complex ___ (be) the dependencies that nobody dared to update them.",
+      "answer": "were",
+      "accept": [
+        "were"
+      ],
+      "explain": "Після винесеного So + прикметник дієслово be стоїть перед підметом і узгоджується з ним: the dependencies — множина, тому were.\nЧас минулий, бо далі dared.",
+      "ua": "Залежності були такі заплутані, що ніхто не наважувався їх оновлювати."
+    },
+    {
+      "id": "c2-syn-however-adj-01",
+      "topic": "c2-syn-however-adj",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "___ tempting the offer may seem, read the small print first.",
+      "options": [
+        "However",
+        "Although",
+        "Despite",
+        "Whatever"
+      ],
+      "answer": "However",
+      "explain": "However + прикметник/прислівник + підмет + дієслово — «хоч би яким…»: поступка з будь-яким ступенем ознаки.\n✗ Whatever — стоїть перед іменником (whatever offer), а не перед прикметником.\n✗ Although — вимагає прямого порядку: Although the offer may seem tempting.\n✗ Despite — прийменник, після нього іменник або -ing, а не речення.",
+      "ua": "Хоч би якою привабливою здавалася пропозиція, спершу прочитайте дрібний шрифт."
+    },
+    {
+      "id": "c2-syn-however-adj-02",
+      "topic": "c2-syn-however-adj",
+      "level": "C2",
+      "type": "fill",
+      "domain": "business",
+      "prompt": "No matter ___ carefully you plan a launch, something always goes wrong.",
+      "answer": "how",
+      "accept": [
+        "how"
+      ],
+      "explain": "No matter how + прикметник/прислівник — те саме, що however: «хоч би як ретельно».\nПеред прислівником carefully можливе лише how; what і which стоять перед іменниками.",
+      "ua": "Хоч би як ретельно ви планували запуск, щось завжди йде не так."
+    },
+    {
+      "id": "c2-syn-however-adj-03",
+      "topic": "c2-syn-however-adj",
+      "level": "C2",
+      "type": "order",
+      "domain": "it",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "However",
+        "hard",
+        "we",
+        "tried",
+        "we",
+        "could",
+        "not",
+        "reproduce",
+        "the",
+        "bug"
+      ],
+      "answer": "However hard we tried we could not reproduce the bug",
+      "explain": "However + прислівник (hard) + підмет + дієслово, далі головне речення.\nПрислівник стоїть одразу після However, а не в кінці: не However we tried hard.",
+      "ua": "Хоч би як ми старалися, відтворити баг не вдавалося."
+    },
+    {
+      "id": "c2-reg-would-have-thought-01",
+      "topic": "c2-reg-would-have-thought",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "I ___ that a week's notice was more than enough.",
+      "options": [
+        "would have thought",
+        "had better think",
+        "will have thought",
+        "would rather think"
+      ],
+      "answer": "would have thought",
+      "explain": "I would have thought (that)… — ввічливий спосіб висловити незгоду чи подив: думка звучить як припущення, а не закид.\n✗ will have thought — Future Perfect: дія, що завершиться в майбутньому; пом'якшення тут немає.\n✗ had better think — це порада або попередження, а не висловлення думки.\n✗ would rather think — would rather означає вподобання, і підрядне з that після нього так не будується.",
+      "ua": "Мені здавалося, що попередити за тиждень — більш ніж достатньо."
+    },
+    {
+      "id": "c2-reg-would-have-thought-02",
+      "topic": "c2-reg-would-have-thought",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "One ___ a company of that size would have a contingency plan.",
+      "options": [
+        "is thinking",
+        "will think",
+        "would think",
+        "has thought"
+      ],
+      "answer": "would think",
+      "explain": "One would think (that)… — безособове пом'якшення з відтінком іронії: «здавалося б», хоча насправді це не так.\n✗ will think — майбутній час звучить як прогноз, а не як стримана критика.\n✗ is thinking — think у значенні «вважати» не вживається в Continuous.\n✗ has thought — Present Perfect описує завершену дію й не узгоджується з would have далі.",
+      "ua": "Здавалося б, компанія такого розміру мала б мати план на випадок кризи."
+    },
+    {
+      "id": "c2-reg-would-have-thought-03",
+      "topic": "c2-reg-would-have-thought",
+      "level": "C2",
+      "type": "fill",
+      "domain": "general",
+      "prompt": "I would have ___ (think) the answer was obvious, but apparently not.",
+      "answer": "thought",
+      "accept": [
+        "thought"
+      ],
+      "explain": "I would have thought… — would have + третя форма дієслова: think → thought.\nТак мовець м'яко показує, що очікував іншого, не звинувачуючи співрозмовника прямо.",
+      "ua": "Я гадав, що відповідь очевидна, але, схоже, ні."
+    },
+    {
+      "id": "c2-syn-only-to-01",
+      "topic": "c2-syn-only-to",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "She queued for two hours, only ___ that the tickets had sold out.",
+      "options": [
+        "told",
+        "being told",
+        "to tell",
+        "to be told"
+      ],
+      "answer": "to be told",
+      "explain": "Only to + інфінітив називає несподіваний і неприємний результат попередньої дії. Їй сказали — тому інфінітив пасивний: to be told.\n✗ being told — конструкція вимагає інфінітива з to, а не форми на -ing.\n✗ told — без to це просто друга дієслівна форма, і речення розпадається.\n✗ to tell — активний інфінітив означав би, що казала вона сама.",
+      "ua": "Вона простояла в черзі дві години — і лише для того, щоб почути, що квитки розпродано."
+    },
+    {
+      "id": "c2-syn-only-to-02",
+      "topic": "c2-syn-only-to",
+      "level": "C2",
+      "type": "fill",
+      "domain": "travel",
+      "prompt": "He rushed to the airport, ___ to find that the flight had been cancelled.",
+      "answer": "only",
+      "accept": [
+        "only"
+      ],
+      "explain": "Only to find — стала рамка для розчарування: зусилля виявилися марними.\nБез only інфінітив to find означав би мету («щоб дізнатися»), а не несподіваний результат.",
+      "ua": "Він помчав до аеропорту — а рейс, як з'ясувалося, скасували."
+    },
+    {
+      "id": "c2-syn-only-to-03",
+      "topic": "c2-syn-only-to",
+      "level": "C2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "They",
+        "rebuilt",
+        "the",
+        "site",
+        "only",
+        "to",
+        "see",
+        "traffic",
+        "fall"
+      ],
+      "answer": "They rebuilt the site only to see traffic fall",
+      "explain": "Основна дія + only to + інфінітив: результат, протилежний очікуваному.\nПісля see йде додаток і базова форма дієслова без to: see traffic fall.",
+      "ua": "Вони переробили сайт — і лише побачили, як упав трафік."
+    },
+    {
+      "id": "c2-syn-locative-inversion-01",
+      "topic": "c2-syn-locative-inversion",
+      "level": "C2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "The lights dimmed, and onto the stage ___.",
+      "options": [
+        "walked the director",
+        "the director did walk",
+        "was walking by the director",
+        "did the director walk"
+      ],
+      "answer": "walked the director",
+      "explain": "Після обставини місця чи напрямку на початку речення ставлять смислове дієслово перед підметом — без допоміжного do: onto the stage walked the director.\n✗ did the director walk — do-інверсія буває після заперечних обставин (Never did…), а не після обставин місця.\n✗ the director did walk — це емфатичне did із прямим порядком, інверсії тут немає.\n✗ was walking by the director — by перетворює підмет на додаток, і речення лишається без підмета.",
+      "ua": "Світло пригасло, і на сцену вийшов режисер."
+    },
+    {
+      "id": "c2-syn-locative-inversion-02",
+      "topic": "c2-syn-locative-inversion",
+      "level": "C2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Down",
+        "came",
+        "the",
+        "rain",
+        "just",
+        "as",
+        "we",
+        "left"
+      ],
+      "answer": "Down came the rain just as we left",
+      "explain": "Прислівник напрямку (Down) на початку + дієслово руху + підмет: Down came the rain.\nДопоміжне did не потрібне; така інверсія додає оповіді жвавості.",
+      "ua": "Щойно ми вийшли, як линув дощ."
+    },
+    {
+      "id": "c2-syn-locative-inversion-03",
+      "topic": "c2-syn-locative-inversion",
+      "level": "C2",
+      "type": "fill",
+      "domain": "daily",
+      "prompt": "Here ___ (come) the bus — grab your bag!",
+      "answer": "comes",
+      "accept": [
+        "comes"
+      ],
+      "explain": "Після Here / There дієслово стоїть перед підметом-іменником: Here comes the bus. Present Simple, третя особа — comes.\nІз займенником інверсії немає: Here it comes.",
+      "ua": "А ось і автобус — хапай сумку!"
+    }
+  ]
+}
