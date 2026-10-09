@@ -67,6 +67,7 @@ stale-while-revalidate. Після першого завантаження пр�
 | `README.md` | цей файл |
 | `LEVELS.md` | як влаштована модель рівня |
 | `ROADMAP.md` | черга завдань |
+| `CLAUDE.md` | пам'ятка для Claude Code: правила правок, гілки, запуск |
 | `.gitignore` | `.DS_Store`, `node_modules`, `storybook-static` |
 | `stories/`, `.storybook/` | Storybook — вітрина компонентів з `ui/`, лише для розробки |
 | `package.json`, `package-lock.json` | залежності Storybook; сам застосунок збірки не має |
