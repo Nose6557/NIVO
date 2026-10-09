@@ -744,6 +744,10 @@ $("newpass-submit").onclick = async () => {
 
 $("auth-skip").onclick = async () => {
   Store.useGuest();
+  if (needsOnboarding()) {
+    Onboard.start(BANK, async () => { await renderHome(); show("home"); });
+    return;
+  }
   await renderHome();
   show("home");
 };
