@@ -55,6 +55,7 @@ stale-while-revalidate. Після першого завантаження пр�
 | `app.js` | логіка гри: завантаження банку, черга питань, рендер, підрахунок, меню рівня |
 | `level.js` | модель рівня A1–C2 — рахує, нічого не малює |
 | `onboard.js` | самооцінка, тест рівня, екрани підвищення/зниження |
+| `ui/*.js` | UI-компоненти: `create<Name>(props)` → `HTMLElement`, лежать у `window.NivoUI` |
 | `store.js` | єдиний шар доступу до даних: Supabase або localStorage |
 | `config.js` | URL проєкту Supabase і publishable-ключ |
 | `version.js` | єдине джерело версії оболонки: `NIVO_VERSION`, `NIVO_RELEASED` |
@@ -66,13 +67,18 @@ stale-while-revalidate. Після першого завантаження пр�
 | `README.md` | цей файл |
 | `LEVELS.md` | як влаштована модель рівня |
 | `ROADMAP.md` | черга завдань |
-| `.gitignore` | `.DS_Store` |
+| `CLAUDE.md` | пам'ятка для Claude Code: правила правок, гілки, запуск |
+| `.gitignore` | `.DS_Store`, `node_modules`, `storybook-static` |
+| `stories/`, `.storybook/` | Storybook — вітрина компонентів з `ui/`, лише для розробки |
+| `package.json`, `package-lock.json` | залежності Storybook; сам застосунок збірки не має |
 | `banks/index.json` | маніфест банку: список паків, категорії, рівні, домени |
 | `banks/*.json` | паки питань |
 
 Порядок підключення скриптів фіксований: `version.js` → `config.js` → `store.js` →
-`level.js` → `onboard.js` → `app.js`. `version.js` має бути першим (з нього беруться
-константи), `level.js` — до `app.js`, `onboard.js` — після `level.js`.
+`level.js` → `ui/*.js` → `onboard.js` → `app.js`. `version.js` має бути першим (з нього
+беруться константи), `level.js` — до `app.js`, `onboard.js` — після `level.js`, а `ui/*.js` —
+до `onboard.js` і `app.js`, бо обидва будують розмітку з компонентів. Усередині `ui/`
+`token.js` іде перед `order-board.js`, `ua-toggle.js` — перед `feedback.js`.
 
 ---
 
@@ -180,7 +186,7 @@ stale-while-revalidate. Після першого завантаження пр�
 Версія живе в одному місці — `version.js`:
 
 ```js
-const NIVO_VERSION  = "10";           // версія оболонки → CACHE у sw.js
+const NIVO_VERSION  = "12";           // версія оболонки → CACHE у sw.js
 const NIVO_RELEASED = "2026-09-24";   // дата релізу     → BANK_VERSION в app.js
 ```
 
@@ -264,3 +270,25 @@ python3 -m http.server 8000
 
 Локально ввімкнений service worker може віддавати стару оболонку — якщо зміни не
 видно, вимкни його в DevTools → Application → Service Workers → Unregister.
+
+### Storybook
+
+Вітрина всього інтерфейсу окремо від гри: компоненти з `ui/` у всіх станах, кнопки,
+поля, меню рівня, модалки й екрани цілком (група «Екрани»).
+Потрібен Node.js; на сам сайт не впливає, збірки в застосунку як не було, так і немає.
+
+```
+npm install
+npm run storybook
+```
+
+Відкриється `http://localhost:6006`. Stories лежать у `stories/<Name>.stories.js`,
+стилі — той самий `style.css`. У тулбарі є перемикач теми: він ставить `data-theme`
+на `<html>`, але тема поки одна — темна, тож це заготовка під світлу.
+
+Розмітку, що лежить в `index.html` (вхід, меню, модалки), stories не дублюють, а беруть
+із самого файлу: `pick(selector)` у `stories/markup.js` повертає копію справжнього вузла.
+Зміниш розмітку в `index.html` — story оновиться сама.
+
+Новий компонент: файл `ui/<name>.js`, який додає `create<Name>` у `window.NivoUI`,
+рядок `<script>` в `index.html`, запис у `SHELL` в `sw.js` і story поруч з іншими.

@@ -38,7 +38,7 @@
   /* насиченіші варіанти для тексту, коли фонового кольору недостатньо для контрасту */
   --green-fg:    var(--green);
   --ok-fg:       var(--ok);
-  --no-fg:       #d97070;
+  --no-fg:       var(--no);
 
   /* Кольоровий код рівнів CEFR — одне джерело правди для бейджа, аватара,
      святкування підвищення й салюту. Кожен щабель — свій колір системної
@@ -399,7 +399,7 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   .progress-fill{animation:none}
 }
 .play-meta{display:flex; justify-content:space-between; align-items:center; margin-top:16px; color:var(--text-muted)}
-#qcount{width:70px}
+.qcount{width:70px}
 .streak{color:var(--green-fg)}
 
 .card{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:32px}

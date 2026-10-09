@@ -257,20 +257,40 @@ async function startSession(weakOnly) {
   renderQuestion();
 }
 
+/* ---------- екран гри ----------
+   Розмітку збираємо з компонентів ui/*.js один раз; далі renderQuestion()
+   і grade() лише оновлюють її на місці. */
+const playProgress = NivoUI.createProgress({
+  count: "1 / " + SESSION_LEN,
+  streak: "0 правильних поспіль",
+  actionLabel: "Вийти",
+  onAction: quitSession
+});
+const qBody = document.createElement("div");
+const feedback = NivoUI.createFeedback({ onUaToggle: open => { UA_PREF = open; } });
+feedback.hidden = true;
+const btnNext = document.createElement("button");
+btnNext.className = "btn primary";
+btnNext.textContent = "Далі";
+btnNext.hidden = true;
+const qCard = NivoUI.createQuestionCard({ children: [qBody, feedback, btnNext] });
+$("play-body").append(playProgress, qCard);
+
 /* ---------- рендер питання ---------- */
 function renderQuestion() {
   const q = queue[idx];
   qStart = Date.now();
 
-  $("prog").style.width = (idx / queue.length * 100) + "%";
-  $("qcount").textContent = (idx + 1) + " / " + queue.length;
-  $("streak-live").textContent = streak + " правильних поспіль";
-  $("qcat").textContent = CAT_UA[q.category] || q.category;
-  $("qprompt").textContent = q.prompt;
-  $("feedback").hidden = true;
-  $("btn-next").hidden = true;
+  playProgress.update({
+    value: idx / queue.length,
+    count: (idx + 1) + " / " + queue.length,
+    streak: streak + " правильних поспіль"
+  });
+  qCard.update({ category: CAT_UA[q.category] || q.category, prompt: q.prompt });
+  feedback.hidden = true;
+  btnNext.hidden = true;
 
-  const body = $("qbody");
+  const body = qBody;
   body.innerHTML = "";
 
   if (q.type === "mcq") renderMCQ(q, body);
@@ -280,90 +300,53 @@ function renderQuestion() {
 
 function renderMCQ(q, body) {
   shuffle(q.options).forEach(opt => {
-    const b = document.createElement("button");
-    b.className = "opt";
-    b.textContent = opt;
-    b.onclick = () => {
-      const correct = opt === q.answer;
-      body.querySelectorAll(".opt").forEach(x => {
-        x.disabled = true;
-        if (x.textContent === q.answer) x.classList.add("right");
-        else if (x === b) x.classList.add("wrong");
-      });
-      grade(q, correct);
-    };
-    body.appendChild(b);
+    body.appendChild(NivoUI.createAnswerOption({
+      text: opt,
+      onClick: b => {
+        const correct = opt === q.answer;
+        body.querySelectorAll(".opt").forEach(x => {
+          x.disabled = true;
+          if (x.textContent === q.answer) x.classList.add("right");
+          else if (x === b) x.classList.add("wrong");
+        });
+        grade(q, correct);
+      }
+    }));
   });
 }
 
 function renderFill(q, body) {
-  const inp = document.createElement("input");
-  inp.className = "fill-input";
-  inp.placeholder = "введіть слово і натисніть Enter";
-  inp.autocomplete = "off";
   const check = () => {
     const val = inp.value.trim().toLowerCase();
     if (!val) return;
     const ok = (q.accept || [q.answer]).some(a => a.toLowerCase() === val);
     inp.disabled = true;
-    $("btn-next").onclick = goNext;
+    btnNext.onclick = goNext;
     grade(q, ok);
   };
-  inp.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); check(); } });
+  const inp = NivoUI.createFillInput({ onSubmit: check });
   body.appendChild(inp);
   inp.focus();
 
-  const btn = $("btn-next");
+  const btn = btnNext;
   btn.hidden = false;
   btn.textContent = "Перевірити";
   btn.onclick = check;
 }
 
 function renderOrder(q, body) {
-  const rail = document.createElement("div");
-  rail.className = "slot-rail";
-  body.appendChild(rail);
-
-  const pool = document.createElement("div");
-  pool.className = "tokens";
-  body.appendChild(pool);
-
-  const picked = [];
-
-  shuffle(q.tokens).forEach(t => {
-    const b = document.createElement("button");
-    b.className = "token";
-    b.textContent = t;
-    b.onclick = () => {
-      if (b.classList.contains("used")) return;
-      b.classList.add("used");
-      picked.push(t);
-      const s = document.createElement("button");
-      s.className = "token";
-      s.textContent = t;
-      s.onclick = () => {
-        const i = picked.lastIndexOf(t);
-        if (i > -1) picked.splice(i, 1);
-        s.remove();
-        b.classList.remove("used");
-      };
-      rail.appendChild(s);
-    };
-    pool.appendChild(b);
-  });
+  const board = NivoUI.createOrderBoard({ tokens: shuffle(q.tokens) });
+  body.appendChild(board);
 
   const check = () => {
-    const built = picked.join(" ");
+    const built = board.getValue();
     const ok = built.toLowerCase() === q.answer.toLowerCase();
-    rail.style.borderStyle = "solid";
-    rail.style.borderColor = ok ? "var(--ok)" : "var(--no)";
-    pool.querySelectorAll(".token").forEach(t => t.onclick = null);
-    rail.querySelectorAll(".token").forEach(t => t.onclick = null);
-    $("btn-next").onclick = goNext;
+    board.lock(ok);
+    btnNext.onclick = goNext;
     grade(q, ok);
   };
 
-  const btn = $("btn-next");
+  const btn = btnNext;
   btn.hidden = false;
   btn.textContent = "Перевірити";
   btn.onclick = check;
@@ -390,39 +373,23 @@ function grade(q, correct) {
   const st = Store.getStreak();
   Store.setStreak(streak, Math.max(st.best, streak));
 
-  const v = $("verdict");
-  v.textContent = correct ? "Правильно" : "Правильна відповідь: " + q.answer;
-  v.className = "verdict " + (correct ? "ok" : "no");
-  $("explain").textContent = q.explain;
-  renderUa(q);
-  $("feedback").hidden = false;
-  $("btn-next").hidden = false;
-  $("btn-next").textContent = (idx + 1 >= queue.length) ? "Завершити" : "Далі";
-  $("btn-next").focus();
+  feedback.update({
+    correct,
+    answer: q.answer,
+    explain: q.explain,
+    ua: q.ua,
+    uaOpen: (UA_PREF === null) ? UA_OPEN.has(q.level) : UA_PREF
+  });
+  feedback.hidden = false;
+  btnNext.hidden = false;
+  btnNext.textContent = (idx + 1 >= queue.length) ? "Завершити" : "Далі";
+  btnNext.focus();
 }
-
-function renderUa(q) {
-  const wrap = $("ua-wrap");
-  if (!q.ua) { wrap.hidden = true; return; }
-  const open = (UA_PREF === null) ? UA_OPEN.has(q.level) : UA_PREF;
-  $("ua-text").textContent = q.ua;
-  $("ua-text").hidden = !open;
-  $("ua-toggle").textContent = open ? "Сховати переклад" : "Переклад";
-  $("ua-toggle").setAttribute("aria-expanded", String(open));
-  wrap.hidden = false;
-}
-
-$("ua-toggle").addEventListener("click", () => {
-  UA_PREF = $("ua-text").hidden;   // згорнуто → розгортаємо, і навпаки
-  $("ua-text").hidden = !UA_PREF;
-  $("ua-toggle").textContent = UA_PREF ? "Сховати переклад" : "Переклад";
-  $("ua-toggle").setAttribute("aria-expanded", String(UA_PREF));
-});
 
 /* ---------- кінець сесії ---------- */
 async function finish() {
-  $("prog").style.width = "100%";
-  const btn = $("btn-next");
+  playProgress.update({ value: 1 });
+  const btn = btnNext;
   setBtnLoading(btn, true);
   try {
     await Store.saveSession(session, answersLog);
@@ -449,10 +416,7 @@ async function finish() {
   const box = $("res-breakdown");
   box.innerHTML = "";
   Object.entries(byCat).forEach(([cat, d]) => {
-    const row = document.createElement("div");
-    row.className = "res-row";
-    row.innerHTML = `<span>${CAT_UA[cat] || cat}</span><span>${d.ok}/${d.n}</span>`;
-    box.appendChild(row);
+    box.appendChild(NivoUI.createResultRow({ label: CAT_UA[cat] || cat, value: `${d.ok}/${d.n}` }));
   });
 
   show("result");
@@ -467,29 +431,6 @@ function longestCorrectRun(answers) {
     else run = 0;
   }
   return best;
-}
-
-function temperColor(acc) {
-  if (acc >= 0.85) return "var(--indigo)";
-  if (acc >= 0.7) return "var(--blue)";
-  if (acc >= 0.5) return "var(--cyan)";
-  return "var(--teal)";
-}
-
-const REDUCE_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-/* Лічильник відсотка біжить синхронно зі смугою (.tbar-fill, той самий
-   тайминг progress-grow), а не з'являється миттю. */
-function animateCount(el, target, duration = 900) {
-  if (REDUCE_MOTION) { el.textContent = target + "%"; return; }
-  const start = performance.now();
-  function tick(now) {
-    const t = Math.min(1, (now - start) / duration);
-    const eased = 1 - Math.pow(1 - t, 3);   // easeOutCubic — той самий характер, що й у progress-grow
-    el.textContent = Math.round(target * eased) + "%";
-    if (t < 1) requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
 }
 
 async function renderHome() {
@@ -521,16 +462,10 @@ async function renderHome() {
   bars.innerHTML = "";
   Object.keys(CAT_UA).forEach(cat => {
     const d = byCat[cat];
-    const acc = d && d.n ? d.ok / d.n : 0;
-    const pct = d ? Math.round(acc * 100) : null;
-    const row = document.createElement("div");
-    row.className = "tbar";
-    row.innerHTML = `
-      <div class="tbar-name">${CAT_UA[cat]}</div>
-      <div class="tbar-rail"><div class="tbar-fill" style="width:${d ? Math.max(acc * 100, 4) : 0}%; background:${temperColor(acc)}"></div></div>
-      <div class="tbar-val">${pct === null ? "—" : "0%"}</div>`;
-    bars.appendChild(row);
-    if (pct !== null) animateCount(row.querySelector(".tbar-val"), pct);
+    bars.appendChild(NivoUI.createCategoryBar({
+      name: CAT_UA[cat],
+      accuracy: d ? (d.n ? d.ok / d.n : 0) : null
+    }));
   });
 
   const email = Store.mode === "supabase" && Store.user ? Store.user.email : null;
@@ -553,15 +488,13 @@ function renderLevelBadge(answers) {
 
   // Рівень ще не визначено — бейджа просто немає.
   if (!st.level) {
-    el.hidden = true;
+    NivoUI.updateLevelBadge(el, null);
     btn.removeAttribute("title");
     btn.removeAttribute("data-level");
     return;
   }
 
-  el.hidden = false;
-  el.textContent = st.level;
-  el.dataset.level = st.level;
+  NivoUI.updateLevelBadge(el, st.level);
   // Той самий data-level на кнопці — фарбує літеру аватара в колір рівня
   // (CSS: .avatar-btn{color:var(--level-color, ...)}).
   btn.dataset.level = st.level;
@@ -933,16 +866,16 @@ function goNext() {
   if (idx >= queue.length) finish();
   else renderQuestion();
 }
-$("btn-next").onclick = goNext;
+btnNext.onclick = goNext;
 
-$("btn-quit").onclick = async () => {
+async function quitSession() {
   if (answersLog.length) {
     session.total = answersLog.length;
     await Store.saveSession(session, answersLog);
   }
   await renderHome();
   show("home");
-};
+}
 
 $("btn-again").onclick = () => startSession(false);
 $("btn-home").onclick = async () => { await renderHome(); show("home"); };
