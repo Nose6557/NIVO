@@ -7,8 +7,6 @@
 
 ## Зараз
 
-- [ ] **Виконати SQL-міграцію `ok_streak` у Supabase** — SQL у README, розділ «Supabase»
-
 ---
 
 ## Далі
