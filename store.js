@@ -51,6 +51,18 @@
     try { localStorage.setItem(LS_STREAK, JSON.stringify({ current, best })); } catch {}
   }
 
+  /* Id питань двох останніх завершених сесій — щоб повторення слабкої теми
+     не показувало те саме питання слово в слово. Живе на пристрої; якщо
+     сховище недоступне, просто нічого не виключаємо. */
+  const LS_RECENT = "nivo_recent_qids";
+  const RECENT_SESSIONS = 2;
+  function readRecent() {
+    try {
+      const d = JSON.parse(localStorage.getItem(LS_RECENT) || "[]");
+      return Array.isArray(d) ? d.filter(Array.isArray).slice(-RECENT_SESSIONS) : [];
+    } catch { return []; }
+  }
+
   /* ---------- авторизація ---------- */
   const Store = {
     get mode() { return mode; },
@@ -59,6 +71,13 @@
     /* серія правильних поспіль */
     getStreak() { return readStreak(); },
     setStreak(current, best) { writeStreak(current, best); },
+
+    /* питання двох останніх завершених сесій */
+    getRecentQids() { return new Set(readRecent().flat()); },
+    pushRecentQids(ids) {
+      const next = [...readRecent(), ids].slice(-RECENT_SESSIONS);
+      try { localStorage.setItem(LS_RECENT, JSON.stringify(next)); } catch {}
+    },
 
     async init() {
       if (!sb) return null;
@@ -160,10 +179,17 @@
           if (!d.weak[k]) d.weak[k] = { item_key: k, category: a.category, attempts: 0, errors: 0 };
           d.weak[k].attempts++;
           if (!a.is_correct) d.weak[k].errors++;
+          // правильні поспіль у темі: дві — і тема більше не слабка
+          d.weak[k].ok_streak = a.is_correct ? (d.weak[k].ok_streak || 0) + 1 : 0;
+          d.weak[k].last_seen = new Date().toISOString();
         });
         writeLocal(d);
       }
     },
+
+    // Колонка ok_streak додалася пізніше. Поки міграцію не виконано, пишемо
+    // рядки без неї — решта лічильників не має від цього страждати.
+    _okStreakCol: true,
 
     async _bumpWeak(answers) {
       // читаємо наявні записи, оновлюємо лічильники, пишемо назад
@@ -176,17 +202,28 @@
       const rows = keys.map(k => {
         const mine = answers.filter(a => a.item_key === k);
         const prev = map[k] || { attempts: 0, errors: 0 };
+        // відповіді сесії йдуть по черзі: правильна +1, помилка обнуляє
+        const okStreak = mine.reduce((n, a) => a.is_correct ? n + 1 : 0, prev.ok_streak || 0);
         return {
           user_id: user.id,
           item_key: k,
           category: mine[0].category,
           attempts: prev.attempts + mine.length,
           errors: prev.errors + mine.filter(a => !a.is_correct).length,
+          ok_streak: okStreak,
           last_seen: new Date().toISOString()
         };
       });
-      const { error } = await sb.from("weak_items")
-        .upsert(rows, { onConflict: "user_id,item_key" });
+      const put = withStreak => sb.from("weak_items").upsert(
+        withStreak ? rows : rows.map(({ ok_streak, ...r }) => r),
+        { onConflict: "user_id,item_key" }
+      );
+      let { error } = await put(this._okStreakCol);
+      if (error && this._okStreakCol && this._missingCol(error)) {
+        this._okStreakCol = false;
+        console.warn("weak_items: колонки ok_streak ще немає — пишемо без неї, потрібна міграція з README");
+        ({ error } = await put(false));
+      }
       if (error) console.warn("weak upsert", error);
     },
 

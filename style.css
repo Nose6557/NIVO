@@ -414,6 +414,12 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   color:var(--orange); white-space:nowrap;
 }
 .probe-tag[hidden]{display:none}
+/* Позначка «Повторення»: питання повернулося зі слабкої теми. */
+.review-tag{
+  margin-left:8px; padding:2px 8px; border:1px solid var(--border); border-radius:99px;
+  color:var(--text); white-space:nowrap;
+}
+.review-tag[hidden]{display:none}
 .q-prompt{font-size:20px; line-height:1.6; margin-bottom:24px}
 
 .opt{
