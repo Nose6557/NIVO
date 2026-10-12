@@ -31,6 +31,9 @@ function menu({ email, level, auto, estimate, open }) {
   const est = el.querySelector(".level-est");
   if (!level) {
     est.textContent = "";
+  } else if (auto) {
+    est.dataset.level = level;
+    est.innerHTML = `Поточний рівень: <b>${level}</b>`;
   } else if (!estimate) {
     est.textContent = "Ще мало свіжих відповідей, щоб оцінити рівень.";
   } else {
@@ -39,9 +42,7 @@ function menu({ email, level, auto, estimate, open }) {
       est.innerHTML = `Оцінка додатка: <b>${estimate}</b> — ти на своєму рівні.`;
     } else {
       const higher = LEVELS.indexOf(estimate) > LEVELS.indexOf(level);
-      est.innerHTML = auto
-        ? `Оцінка додатка: <b>${estimate}</b>.`
-        : `Оцінка додатка: <b>${estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
+      est.innerHTML = `Оцінка додатка: <b>${estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
     }
   }
 
@@ -70,9 +71,7 @@ export default {
 };
 
 export const Closed = { args: { open: false } };
-export const AutoOnLevel = {};
-export const AutoEstimateDiffers = { args: { estimate: "C1" } };
-export const AutoNoEstimate = { args: { estimate: null } };
+export const Auto = {};
 export const ManualPicker = { args: { auto: false } };
 export const ManualEstimateLower = { args: { auto: false, level: "C1", estimate: "B2" } };
 export const ManualEstimateHigher = { args: { auto: false, level: "B1", estimate: "B2" } };

@@ -500,7 +500,11 @@ function renderLevelBadge(answers) {
   btn.dataset.level = st.level;
 
   const locked = Level.current().locked;
-  if (locked && st.estimateReady && st.estimate && st.estimate !== st.level) {
+  if (!locked) {
+    // Авто: лише рівень. Оцінка тут дорівнює рівню, а відсоток поточної
+    // перевірки — проміжний результат, який не показуємо.
+    btn.title = `Рівень ${st.level}`;
+  } else if (st.estimateReady && st.estimate && st.estimate !== st.level) {
     btn.title = `Обрано ${st.level} · додаток оцінює ${st.estimate}`;
   } else if (st.accuracy == null) {
     btn.title = `Рівень ${st.level} — ще ${st.needed} питань до першої перевірки`;
@@ -814,6 +818,11 @@ function renderLevelMenu() {
     if (!cur.level) {
       estEl.textContent = "";
       estEl.removeAttribute("data-level");
+    } else if (auto) {
+      // В авто-режимі рівень і оцінка — одне значення, тож показуємо рівно те,
+      // що на аватарі. Проміжний результат перевірки тут не світимо.
+      estEl.dataset.level = cur.level;
+      estEl.innerHTML = `Поточний рівень: <b>${cur.level}</b>`;
     } else if (!st.estimateReady || !st.estimate) {
       estEl.textContent = "Ще мало свіжих відповідей, щоб оцінити рівень.";
       estEl.removeAttribute("data-level");
@@ -824,10 +833,7 @@ function renderLevelMenu() {
         estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — ти на своєму рівні.`;
       } else {
         const higher = Level.ORDER.indexOf(st.estimate) > Level.ORDER.indexOf(cur.level);
-        // «за обраний» — тільки коли рівень справді обрано вручну.
-        estEl.innerHTML = auto
-          ? `Оцінка додатка: <b>${st.estimate}</b>.`
-          : `Оцінка додатка: <b>${st.estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
+        estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
       }
     }
   }
