@@ -334,14 +334,19 @@
 
   /** Зниження — тихе перекалібрування. Говоримо про контент, не про статус. */
   function notifyDown(changed, weakLabel) {
+    toast(weakLabel
+      ? `Підбираємо завдання простіше — попрацюємо над темою «${weakLabel}»`
+      : "Трохи спростимо завдання, щоб закріпити основу");
+  }
+
+  /** Тихий тост унизу екрана (#level-toast), сам зникає за 5 с. */
+  function toast(text) {
     const el = $("level-toast");
     if (!el) return;
-    el.textContent = weakLabel
-      ? `Підбираємо завдання простіше — попрацюємо над темою «${weakLabel}»`
-      : "Трохи спростимо завдання, щоб закріпити основу";
+    el.textContent = text;
     el.hidden = false;
-    clearTimeout(notifyDown._t);
-    notifyDown._t = setTimeout(() => { el.hidden = true; }, 5000);
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => { el.hidden = true; }, 5000);
   }
 
   function shuffle(a) {
@@ -352,5 +357,5 @@
     return a;
   }
 
-  window.Onboard = { start, retest, celebrate, notifyDown, SELF, TEST_LEN };
+  window.Onboard = { start, retest, celebrate, notifyDown, toast, SELF, TEST_LEN };
 })();

@@ -406,6 +406,12 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 
 .card{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:32px}
 .cat-tag{color:var(--text-muted); margin-bottom:16px}
+/* Мітка проби («Перевірка рівня») поруч із категорією. */
+.probe-tag{
+  margin-left:8px; padding:2px 8px; border:1px solid var(--border); border-radius:99px;
+  color:var(--orange); white-space:nowrap;
+}
+.probe-tag[hidden]{display:none}
 .q-prompt{font-size:20px; line-height:1.6; margin-bottom:24px}
 
 .opt{
@@ -611,6 +617,12 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
 .level-picker button:hover{border-color:var(--text-muted); color:var(--text)}
 .level-picker button.active{background:var(--green); border-color:var(--green); color:var(--gray-900)}
 .level-picker button:focus-visible{outline:2px solid var(--green); outline-offset:2px}
+/* Оцінка додатка в ручному режимі: точка в куті кнопки. Обраний рівень — заливка. */
+.level-picker button{position:relative}
+.level-picker button.est::after{
+  content:""; position:absolute; top:6px; right:6px; width:6px; height:6px;
+  border-radius:50%; background:var(--orange);
+}
 
 /* рядок «що думає додаток» */
 .level-est{font-size:12px; line-height:16px; margin:0}
