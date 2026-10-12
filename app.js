@@ -682,8 +682,7 @@ $("auth-submit").onclick = async () => {
         return;
       }
     }
-    await renderHome();
-    show("home");
+    await enterAccount();
   } catch (e) {
     const m = mapAuthError(e);
     setMsg(msg, m.message, "error");
@@ -733,8 +732,7 @@ $("newpass-submit").onclick = async () => {
   try {
     await Store.updatePassword(pass);
     setMsg(msg, "Пароль оновлено.", "success");
-    await renderHome();
-    show("home");
+    await enterAccount();
   } catch (e) {
     setMsg(msg, mapAuthError(e).message, "error");
   } finally {
@@ -837,6 +835,12 @@ function renderLevelMenu() {
 
 $("btn-signout").onclick = async () => {
   await Store.signOut();
+  // Рівень належить акаунту, а не браузеру. Якби він лишався, наступна людина
+  // на цьому пристрої отримала б його в гостьовому режимі без самооцінки —
+  // і записала б у власний профіль, щойно створить акаунт.
+  if (window.Level) Level.reset();
+  SYNCED_EST = null;
+  closeAvatarMenu();
   setMsg($("auth-msg"), "");
   show("auth");
 };
@@ -940,17 +944,24 @@ Store.onPasswordRecovery(() => {
   }
   const u = await Store.init();
   if (u) {
-    await syncLevelFromProfile();
-    if (needsOnboarding()) {
-      Onboard.start(BANK, async () => { await renderHome(); show("home"); });
-    } else {
-      await renderHome();
-      show("home");
-    }
+    await enterAccount();
   } else {
     show("auth");
   }
 })();
+
+/* Вхід в акаунт: рівень береться з профілю; якщо його немає ніде — онбординг.
+   Після виходу рівень у браузері очищено, тож без цього кроку вхід без
+   перезавантаження сторінки лишав би людину взагалі без рівня. */
+async function enterAccount() {
+  await syncLevelFromProfile();
+  if (needsOnboarding()) {
+    Onboard.start(BANK, async () => { await renderHome(); show("home"); });
+    return;
+  }
+  await renderHome();
+  show("home");
+}
 
 function needsOnboarding() {
   return !!window.Onboard && !!window.Level && !Level.current().level;
