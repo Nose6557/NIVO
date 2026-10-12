@@ -22,6 +22,7 @@ let LAST_ANSWERS = [];     // відповіді з останнього рен�
 let SYNCED_EST = null;     // оцінка, вже записана в профіль — щоб не слати те саме двічі
 const LEVEL_BY_ID = {};   // id питання -> "B1"|"B2", годує level.js
 let queue = [];
+let PROBES = new Set();    // id проб у поточній сесії — картка показує на них мітку
 let idx = 0;
 let session = null;
 let answersLog = [];
@@ -215,12 +216,30 @@ function buildQueue(weak) {
   (weak || []).forEach(w => {
     if (w.attempts > 0) errRate[w.item_key] = w.errors / w.attempts;
   });
-  const scored = levelPool().map(q => ({
-    q,
-    weight: (errRate[q.topic] !== undefined ? errRate[q.topic] : 0.35) + Math.random() * 0.5
-  }));
-  scored.sort((a, b) => b.weight - a.weight);
-  return scored.slice(0, SESSION_LEN).map(s => s.q);
+  const top = (pool, n) => pool
+    .map(q => ({
+      q,
+      weight: (errRate[q.topic] !== undefined ? errRate[q.topic] : 0.35) + Math.random() * 0.5
+    }))
+    .sort((a, b) => b.weight - a.weight)
+    .slice(0, n)
+    .map(s => s.q);
+
+  // Проби: у ручному режимі, коли оцінка додатка ≠ обраному рівню, сесія
+  // обраного рівня не дає жодної відповіді рівня оцінки — міряти її нічим.
+  // Тому кілька завдань беремо саме з рівня оцінки. Лише з паків, що годують
+  // метрику: питання "scored": false оцінку не рухає і як проба марне.
+  PROBES = new Set();
+  const pl = window.Level ? Level.probeLevel() : null;
+  const probes = pl
+    ? top(BANK.filter(q => q.level === pl && q.scored), Level.CFG.PROBES)
+    : [];
+  probes.forEach(q => PROBES.add(q.id));
+
+  const rest = top(levelPool().filter(q => !PROBES.has(q.id)), SESSION_LEN - probes.length);
+  // Проби розкидаємо по сесії, а не ставимо блоком на початку.
+  probes.forEach(q => rest.splice(Math.floor(Math.random() * (rest.length + 1)), 0, q));
+  return rest;
 }
 
 function buildWeakQueue(weak) {
@@ -237,6 +256,7 @@ function buildWeakQueue(weak) {
 /* ---------- запуск сесії ---------- */
 async function startSession(weakOnly) {
   const stats = await Store.getStats();
+  if (weakOnly) PROBES = new Set();   // у роботі над помилками проб немає
   let q = weakOnly ? buildWeakQueue(stats.weak) : buildQueue(stats.weak);
   if (!q) {
     alert("Поки замало даних про слабкі місця — зіграй кілька звичайних сесій.");
@@ -286,7 +306,11 @@ function renderQuestion() {
     count: (idx + 1) + " / " + queue.length,
     streak: streak + " правильних поспіль"
   });
-  qCard.update({ category: CAT_UA[q.category] || q.category, prompt: q.prompt });
+  qCard.update({
+    category: CAT_UA[q.category] || q.category,
+    prompt: q.prompt,
+    badge: PROBES.has(q.id) ? "Перевірка рівня" : ""
+  });
   feedback.hidden = true;
   btnNext.hidden = true;
 
@@ -500,21 +524,22 @@ function renderLevelBadge(answers) {
   btn.dataset.level = st.level;
 
   const locked = Level.current().locked;
-  if (locked && st.estimateReady && st.estimate && st.estimate !== st.level) {
-    btn.title = `Обрано ${st.level} · додаток оцінює ${st.estimate}`;
-  } else if (st.accuracy == null) {
-    btn.title = `Рівень ${st.level} — ще ${st.needed} питань до першої перевірки`;
-  } else {
-    btn.title = `Рівень ${st.level} — ${Math.round(st.accuracy * 100)}% на питаннях цього рівня`;
-  }
+  // Авто: лише рівень — оцінка тут дорівнює рівню, а відсоток поточної
+  // перевірки є проміжним результатом, який не показуємо.
+  // Ручний: обраний рівень і оцінка додатка, навіть коли вони збігаються.
+  btn.title = locked
+    ? `Обрано ${st.level} · оцінка додатка ${st.estimate}`
+    : `Рівень ${st.level}`;
 
   // Рівень зберігають дії в меню, а оцінку — ніщо: вона змінюється від
   // відповідей. Тому синхронізуємо її саме тут, після кожного перерахунку.
+  // У ручному режимі зміна оцінки тиха: ні привітання, ні тосту — її видно
+  // в меню, а рішення про рівень лишається за людиною.
   if (st.changed) {
     SYNCED_EST = st.estimate;
     Store.saveLevel(st.level, st.source, false, st.estimate);
     onLevelChanged(st.changed);
-  } else if (st.estimateReady && st.estimate && st.estimate !== SYNCED_EST) {
+  } else if (st.estimate && st.estimate !== SYNCED_EST) {
     SYNCED_EST = st.estimate;
     Store.saveLevel(st.level, st.source, locked, st.estimate);
   }
@@ -682,8 +707,7 @@ $("auth-submit").onclick = async () => {
         return;
       }
     }
-    await renderHome();
-    show("home");
+    await enterAccount();
   } catch (e) {
     const m = mapAuthError(e);
     setMsg(msg, m.message, "error");
@@ -733,8 +757,7 @@ $("newpass-submit").onclick = async () => {
   try {
     await Store.updatePassword(pass);
     setMsg(msg, "Пароль оновлено.", "success");
-    await renderHome();
-    show("home");
+    await enterAccount();
   } catch (e) {
     setMsg(msg, mapAuthError(e).message, "error");
   } finally {
@@ -744,6 +767,10 @@ $("newpass-submit").onclick = async () => {
 
 $("auth-skip").onclick = async () => {
   Store.useGuest();
+  if (needsOnboarding()) {
+    Onboard.start(BANK, async () => { await renderHome(); show("home"); });
+    return;
+  }
   await renderHome();
   show("home");
 };
@@ -758,24 +785,33 @@ $("level-lock").onclick = async () => {
   if (!window.Level) return;
   const on = !Level.current().locked;
   const st = Level.setLocked(on);
-  if (st.level) await Store.saveLevel(st.level, st.source, on);
+  if (st.level) {
+    SYNCED_EST = st.est;
+    await Store.saveLevel(st.level, st.source, on, st.est);
+  }
   renderLevelMenu();
   renderLevelBadge(LAST_ANSWERS);
+  // Ручний → авто з іншою оцінкою: рівень стає оцінкою. Лише тост — інакше
+  // екран привітання можна було б отримати двома кліками перемикача.
+  if (st.switched && window.Onboard) {
+    Onboard.toast(`Рівень змінено на ${st.switched.to} — за оцінкою додатка`);
+  }
 };
 
-/* Ручний вибір рівня зі списку — одразу фіксує його. */
+/* Ручний вибір рівня зі списку: міняє лише рівень завдань, оцінку не чіпає. */
 $("level-picker").addEventListener("click", async (e) => {
   const b = e.target.closest("button[data-lv]");
   if (!b || !window.Level) return;
   const cur = Level.current();
   if (b.dataset.lv === cur.level && cur.locked) return;   // вже стоїть
   const st = Level.setManual(b.dataset.lv);
-  await Store.saveLevel(st.level, st.source, st.locked);
+  await Store.saveLevel(st.level, st.source, st.locked, st.est);
   renderLevelMenu();
   renderLevelBadge(LAST_ANSWERS);
 });
 
-/* Меню рівня: сегментований вибір, перемикач фіксації і чесна оцінка додатка. */
+/* Меню рівня: перемикач режиму, список рівнів і рядок під ним —
+   поточний рівень в авто, оцінка додатка в ручному. */
 function renderLevelMenu() {
   if (!window.Level) return;
   // Спершу compute — він може змінити рівень (адаптив). Читати стан до нього
@@ -793,8 +829,13 @@ function renderLevelMenu() {
 
   if (picker) {
     picker.hidden = auto;
-    picker.querySelectorAll("button").forEach(b =>
-      b.classList.toggle("active", b.dataset.lv === cur.level));
+    picker.querySelectorAll("button").forEach(b => {
+      b.classList.toggle("active", b.dataset.lv === cur.level);
+      // Обраний — заливка, оцінка — точка. Коли вони збігаються, точки немає.
+      const est = b.dataset.lv === st.estimate && st.estimate !== cur.level;
+      b.classList.toggle("est", est);
+      if (est) b.title = "Оцінка додатка"; else b.removeAttribute("title");
+    });
   }
 
   if (sw) {
@@ -812,27 +853,31 @@ function renderLevelMenu() {
     if (!cur.level) {
       estEl.textContent = "";
       estEl.removeAttribute("data-level");
-    } else if (!st.estimateReady || !st.estimate) {
-      estEl.textContent = "Ще мало свіжих відповідей, щоб оцінити рівень.";
-      estEl.removeAttribute("data-level");
+    } else if (auto) {
+      // В авто-режимі рівень і оцінка — одне значення, тож показуємо рівно те,
+      // що на аватарі. Проміжний результат перевірки тут не світимо.
+      estEl.dataset.level = cur.level;
+      estEl.innerHTML = `Поточний рівень: <b>${cur.level}</b>`;
     } else {
       // Літеру рівня фарбуємо в його колір щабля (див. [data-level] у CSS).
+      // Нижчу оцінку в ручному режимі кажемо прямо: рішення тут за людиною,
+      // і їй потрібна чесна інформація.
       estEl.dataset.level = st.estimate;
-      if (st.estimate === cur.level) {
-        estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — ти на своєму рівні.`;
-      } else {
-        const higher = Level.ORDER.indexOf(st.estimate) > Level.ORDER.indexOf(cur.level);
-        // «за обраний» — тільки коли рівень справді обрано вручну.
-        estEl.innerHTML = auto
-          ? `Оцінка додатка: <b>${st.estimate}</b>.`
-          : `Оцінка додатка: <b>${st.estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
-      }
+      const d = Level.ORDER.indexOf(st.estimate) - Level.ORDER.indexOf(cur.level);
+      const rel = d === 0 ? "збігається з обраним" : (d > 0 ? "вище за обраний" : "нижче за обраний");
+      estEl.innerHTML = `Оцінка додатка: <b>${st.estimate}</b> — ${rel}.`;
     }
   }
 }
 
 $("btn-signout").onclick = async () => {
   await Store.signOut();
+  // Рівень належить акаунту, а не браузеру. Якби він лишався, наступна людина
+  // на цьому пристрої отримала б його в гостьовому режимі без самооцінки —
+  // і записала б у власний профіль, щойно створить акаунт.
+  if (window.Level) Level.reset();
+  SYNCED_EST = null;
+  closeAvatarMenu();
   setMsg($("auth-msg"), "");
   show("auth");
 };
@@ -936,17 +981,24 @@ Store.onPasswordRecovery(() => {
   }
   const u = await Store.init();
   if (u) {
-    await syncLevelFromProfile();
-    if (needsOnboarding()) {
-      Onboard.start(BANK, async () => { await renderHome(); show("home"); });
-    } else {
-      await renderHome();
-      show("home");
-    }
+    await enterAccount();
   } else {
     show("auth");
   }
 })();
+
+/* Вхід в акаунт: рівень береться з профілю; якщо його немає ніде — онбординг.
+   Після виходу рівень у браузері очищено, тож без цього кроку вхід без
+   перезавантаження сторінки лишав би людину взагалі без рівня. */
+async function enterAccount() {
+  await syncLevelFromProfile();
+  if (needsOnboarding()) {
+    Onboard.start(BANK, async () => { await renderHome(); show("home"); });
+    return;
+  }
+  await renderHome();
+  show("home");
+}
 
 function needsOnboarding() {
   return !!window.Onboard && !!window.Level && !Level.current().level;
@@ -967,5 +1019,7 @@ async function syncLevelFromProfile() {
   if (local && local.level) {
     SYNCED_EST = local.est || null;
     await Store.saveLevel(local.level, local.source || "adaptive", local.locked, local.est || null);
+    return;
   }
+  SYNCED_EST = null;   // рівня немає ніде — оцінки на сервері теж
 }

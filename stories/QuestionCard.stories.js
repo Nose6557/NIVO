@@ -106,6 +106,15 @@ export const OrderAnswered = {
   )
 };
 
+/* Проба в ручному режимі: завдання рівня оцінки з міткою поруч із категорією. */
+export const Probe = {
+  render: () => card(
+    { category: "Часи", badge: "Перевірка рівня", prompt: "By the time we arrived, the film ___." },
+    [body(...["had already started", "has already started", "already started", "was already starting"]
+      .map(text => UI().createAnswerOption({ text })))]
+  )
+};
+
 /* Тест рівня: варіанти лежать просто в картці, фідбеку немає. */
 export const PlacementTest = {
   render: () => card(

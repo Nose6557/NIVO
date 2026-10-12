@@ -14,11 +14,18 @@ function menu({ email, level, auto, estimate, open }) {
   el.querySelector("#who").textContent = email || "гостьовий режим";
   el.querySelector("#avatar-initial").textContent = email ? email[0].toUpperCase() : "?";
   UI().updateLevelBadge(el.querySelector(".level-badge"), level);
-  if (level) btn.dataset.level = level;
+  if (level) {
+    btn.dataset.level = level;
+    btn.title = auto ? `Рівень ${level}` : `Обрано ${level} · оцінка додатка ${estimate || level}`;
+  }
 
   const picker = el.querySelector(".level-picker");
   picker.hidden = auto;
-  picker.querySelectorAll("button").forEach(b => b.classList.toggle("active", b.dataset.lv === level));
+  picker.querySelectorAll("button").forEach(b => {
+    b.classList.toggle("active", b.dataset.lv === level);
+    // обраний — заливка, оцінка — точка; коли збігаються, точки немає
+    b.classList.toggle("est", !auto && !!estimate && b.dataset.lv === estimate && estimate !== level);
+  });
 
   const sw = el.querySelector(".lock-switch");
   sw.setAttribute("aria-checked", auto ? "true" : "false");
@@ -31,18 +38,16 @@ function menu({ email, level, auto, estimate, open }) {
   const est = el.querySelector(".level-est");
   if (!level) {
     est.textContent = "";
-  } else if (!estimate) {
-    est.textContent = "Ще мало свіжих відповідей, щоб оцінити рівень.";
+  } else if (auto) {
+    est.dataset.level = level;
+    est.innerHTML = `Поточний рівень: <b>${level}</b>`;
   } else {
-    est.dataset.level = estimate;
-    if (estimate === level) {
-      est.innerHTML = `Оцінка додатка: <b>${estimate}</b> — ти на своєму рівні.`;
-    } else {
-      const higher = LEVELS.indexOf(estimate) > LEVELS.indexOf(level);
-      est.innerHTML = auto
-        ? `Оцінка додатка: <b>${estimate}</b>.`
-        : `Оцінка додатка: <b>${estimate}</b> — це ${higher ? "вище" : "нижче"} за обраний.`;
-    }
+    // оцінка є завжди, коли є рівень; без аргументу вона дорівнює обраному
+    const e = estimate || level;
+    est.dataset.level = e;
+    const d = LEVELS.indexOf(e) - LEVELS.indexOf(level);
+    const rel = d === 0 ? "збігається з обраним" : (d > 0 ? "вище за обраний" : "нижче за обраний");
+    est.innerHTML = `Оцінка додатка: <b>${e}</b> — ${rel}.`;
   }
 
   dd.hidden = !open;
@@ -70,11 +75,10 @@ export default {
 };
 
 export const Closed = { args: { open: false } };
-export const AutoOnLevel = {};
-export const AutoEstimateDiffers = { args: { estimate: "C1" } };
-export const AutoNoEstimate = { args: { estimate: null } };
-export const ManualPicker = { args: { auto: false } };
-export const ManualEstimateLower = { args: { auto: false, level: "C1", estimate: "B2" } };
-export const ManualEstimateHigher = { args: { auto: false, level: "B1", estimate: "B2" } };
+export const Auto = {};
+export const ManualEstimateSame = { args: { auto: false } };
+export const ManualEstimateHigher = { args: { auto: false, level: "B2", estimate: "C1" } };
+export const ManualEstimateLower = { args: { auto: false, level: "B2", estimate: "B1" } };
+export const ManualEstimateFar = { args: { auto: false, level: "A2", estimate: "C1" } };
 export const Guest = { args: { email: null } };
 export const NoLevelYet = { args: { level: null, estimate: null } };

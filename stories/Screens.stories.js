@@ -12,7 +12,7 @@ import "../ui/category-bar.js";
 import "../ui/result-row.js";
 import "../onboard.js";
 import { UI } from "./frame.js";
-import { screen, setMsg } from "./markup.js";
+import { pick, screen, setMsg } from "./markup.js";
 
 /* Екрани цілком: розмітка з index.html + компоненти з ui/, заповнені
    прикладом даних. Логіки застосунку тут немає — кнопки нікуди не ведуть. */
@@ -179,8 +179,13 @@ export const OnboardTest = {
   play: async () => window.Onboard.retest(TEST_BANK, () => {})
 };
 
+/* Підтвердження рівня — та сама картка #level-up, що й на підвищенні. */
 export const OnboardConfirmed = {
-  render: () => screen("onboard"),
+  render: () => {
+    const wrap = document.createElement("div");
+    wrap.append(screen("onboard"), pick("#level-up"));
+    return wrap;
+  },
   play: async ({ canvasElement }) => {
     window.Onboard.start(TEST_BANK, () => {});
     canvasElement.querySelector('.ob-opt[data-level="B1"]').click();
