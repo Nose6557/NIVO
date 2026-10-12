@@ -15,6 +15,7 @@ const UA_OPEN = new Set(["A1", "A2", "B1"]);   // на цих рівнях ві�
 let UA_PREF = null;                             // null — дефолт рівня; true/false — вибір користувача
 
 const SESSION_LEN = 15;
+const WEAK_SLOTS = 3;      // гарантовані місця для слабких тем у звичайній сесії
 
 let BANK = [];
 let LAST_WEAK = [];        // слабкі теми з останнього рендера — годують тост зниження
@@ -23,6 +24,7 @@ let SYNCED_EST = null;     // оцінка, вже записана в проф�
 const LEVEL_BY_ID = {};   // id питання -> "B1"|"B2", годує level.js
 let queue = [];
 let PROBES = new Set();    // id проб у поточній сесії — картка показує на них мітку
+let WEAK_IDS = new Set();  // id повторень слабких тем у поточній сесії — мітка «Повторення»
 let idx = 0;
 let session = null;
 let answersLog = [];
@@ -210,6 +212,36 @@ function levelPool() {
   return BANK;
 }
 
+/* Слабка тема — єдине визначення на весь код: помилок більше 30% щонайменше
+   з двох спроб, і тему ще не закрито двома правильними поспіль. */
+function isWeak(w) {
+  return w.attempts >= 2 && w.errors / w.attempts > 0.3 && (w.ok_streak ?? 0) < 2;
+}
+
+/* Гарантовані повторення: до WEAK_SLOTS слабких тем з будь-якого рівня,
+   по одному питанню з кожної. Беремо теми з найвищою часткою помилок
+   (рівні — випадково), а питання — не з двох останніх сесій, якщо тема
+   має інші. taken — id, уже зайняті пробами. */
+function pickWeak(weak, taken) {
+  const recent = Store.getRecentQids();
+  const topics = shuffle((weak || []).filter(isWeak))
+    .sort((a, b) => b.errors / b.attempts - a.errors / a.attempts);
+  const picked = [];
+  for (const w of topics) {
+    if (picked.length >= WEAK_SLOTS) break;
+    const pool = BANK.filter(q => q.topic === w.item_key && !taken.has(q.id));
+    if (!pool.length) continue;          // теми вже немає в банку
+    const fresh = pool.filter(q => !recent.has(q.id));
+    const from = fresh.length ? fresh : pool;
+    picked.push({ w, q: from[Math.floor(Math.random() * from.length)] });
+  }
+  if (topics.length) {
+    console.info(`повторення: ${picked.length} із ${topics.length} слабких тем — ` +
+      picked.map(p => `${p.w.item_key} (${p.w.errors}/${p.w.attempts}) → ${p.q.id}`).join(", "));
+  }
+  return picked.map(p => p.q);
+}
+
 function buildQueue(weak) {
   // Пріоритет тим питанням, де частка помилок вища.
   const errRate = {};
@@ -236,18 +268,24 @@ function buildQueue(weak) {
     : [];
   probes.forEach(q => PROBES.add(q.id));
 
-  const rest = top(levelPool().filter(q => !PROBES.has(q.id)), SESSION_LEN - probes.length);
-  // Проби розкидаємо по сесії, а не ставимо блоком на початку.
-  probes.forEach(q => rest.splice(Math.floor(Math.random() * (rest.length + 1)), 0, q));
+  // Слабкі теми повертаються гарантовано, а не лише через вагу: вага працює
+  // тільки в межах пулу рівня, а тема могла лишитися на рівні, який ти переріс.
+  const review = pickWeak(weak, PROBES);
+  WEAK_IDS = new Set(review.map(q => q.id));
+
+  const rest = top(
+    levelPool().filter(q => !PROBES.has(q.id) && !WEAK_IDS.has(q.id)),
+    SESSION_LEN - probes.length - review.length
+  );
+  // Проби й повторення розкидаємо по сесії, а не ставимо блоком на початку.
+  [...probes, ...review].forEach(q => rest.splice(Math.floor(Math.random() * (rest.length + 1)), 0, q));
   return rest;
 }
 
 function buildWeakQueue(weak) {
   // Робота над помилками рівнем не обмежується: помилка лишається помилкою,
   // навіть якщо тема з рівня, який ти вже переріс.
-  const problem = (weak || [])
-    .filter(w => w.attempts >= 2 && w.errors / w.attempts > 0.3)
-    .map(w => w.item_key);
+  const problem = (weak || []).filter(isWeak).map(w => w.item_key);
   const pool = BANK.filter(q => problem.includes(q.topic));
   if (pool.length < 5) return null;
   return shuffle(pool).slice(0, SESSION_LEN);
@@ -256,7 +294,7 @@ function buildWeakQueue(weak) {
 /* ---------- запуск сесії ---------- */
 async function startSession(weakOnly) {
   const stats = await Store.getStats();
-  if (weakOnly) PROBES = new Set();   // у роботі над помилками проб немає
+  if (weakOnly) { PROBES = new Set(); WEAK_IDS = new Set(); }   // у роботі над помилками ні проб, ні міток
   let q = weakOnly ? buildWeakQueue(stats.weak) : buildQueue(stats.weak);
   if (!q) {
     alert("Поки замало даних про слабкі місця — зіграй кілька звичайних сесій.");
@@ -309,10 +347,15 @@ function renderQuestion() {
   qCard.update({
     category: CAT_UA[q.category] || q.category,
     prompt: q.prompt,
-    badge: PROBES.has(q.id) ? "Перевірка рівня" : ""
+    badge: PROBES.has(q.id) ? "Перевірка рівня" : "",
+    review: WEAK_IDS.has(q.id)
   });
   feedback.hidden = true;
   btnNext.hidden = true;
+  // renderFill / renderOrder вішають на кнопку свою перевірку й повертають
+  // goNext лише після відповіді. Якщо з такого питання вийшли, не відповівши,
+  // стара перевірка лишалась би на кнопці й у наступній сесії.
+  btnNext.onclick = goNext;
 
   const body = qBody;
   body.innerHTML = "";
@@ -420,6 +463,7 @@ async function finish() {
   } finally {
     setBtnLoading(btn, false);
   }
+  Store.pushRecentQids(queue.map(q => q.id));
 
   $("res-score").textContent = session.correct + " / " + session.total;
   const pct = Math.round(session.correct / session.total * 100);

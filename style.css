@@ -244,6 +244,8 @@ h1,h2,h3{font-family:'Unbounded',sans-serif; font-weight:700; letter-spacing:-.0
   --spin-color: var(--text);
 }
 .btn:focus-visible{outline:2px solid var(--green); outline-offset:2px}
+/* display:inline-flex вище перебиває атрибут hidden — без цього «Далі» видно до відповіді. */
+.btn[hidden]{display:none}
 .btn.primary{background:var(--green); color:var(--gray-900); width:100%; --spin-color: var(--gray-900)}
 .btn.primary:hover{background:#30d158}
 .btn.primary.big{width:auto}
@@ -412,6 +414,12 @@ body:has(#avatar-dropdown:not([hidden])) #screen-home::after{
   color:var(--orange); white-space:nowrap;
 }
 .probe-tag[hidden]{display:none}
+/* Позначка «Повторення»: питання повернулося зі слабкої теми. */
+.review-tag{
+  margin-left:8px; padding:2px 8px; border:1px solid var(--border); border-radius:99px;
+  color:var(--text); white-space:nowrap;
+}
+.review-tag[hidden]{display:none}
 .q-prompt{font-size:20px; line-height:1.6; margin-bottom:24px}
 
 .opt{

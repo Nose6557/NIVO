@@ -115,6 +115,15 @@ export const Probe = {
   )
 };
 
+/* Повторення: питання зі слабкої теми, гарантоване місце у звичайній сесії. */
+export const Review = {
+  render: () => card(
+    { category: "Умовні речення", review: true, prompt: "If I ___ more time, I would travel more." },
+    [body(...["had", "have", "will have", "would have"]
+      .map(text => UI().createAnswerOption({ text })))]
+  )
+};
+
 /* Тест рівня: варіанти лежать просто в картці, фідбеку немає. */
 export const PlacementTest = {
   render: () => card(
