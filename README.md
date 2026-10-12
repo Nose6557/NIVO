@@ -189,7 +189,7 @@ stale-while-revalidate. Після першого завантаження пр�
 Версія живе в одному місці — `version.js`:
 
 ```js
-const NIVO_VERSION  = "17";           // версія оболонки → CACHE у sw.js
+const NIVO_VERSION  = "18";           // версія оболонки → CACHE у sw.js
 const NIVO_RELEASED = "2026-10-09";   // дата релізу     → BANK_VERSION в app.js
 ```
 

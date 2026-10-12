@@ -313,6 +313,10 @@ function renderQuestion() {
   });
   feedback.hidden = true;
   btnNext.hidden = true;
+  // renderFill / renderOrder вішають на кнопку свою перевірку й повертають
+  // goNext лише після відповіді. Якщо з такого питання вийшли, не відповівши,
+  // стара перевірка лишалась би на кнопці й у наступній сесії.
+  btnNext.onclick = goNext;
 
   const body = qBody;
   body.innerHTML = "";
