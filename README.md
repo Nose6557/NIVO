@@ -66,6 +66,7 @@ stale-while-revalidate. Після першого завантаження пр�
 | `favicon/` | іконки: `icon.svg`, `favicon-16/32/180`, `icon-192/512`, `icon-maskable-512` |
 | `README.md` | цей файл |
 | `LEVELS.md` | як влаштована модель рівня |
+| `LEVEL-SPEC.md` | специфікація рівня й оцінки: історії, критерії, звірка з кодом |
 | `ROADMAP.md` | черга завдань |
 | `CLAUDE.md` | пам'ятка для Claude Code: правила правок, гілки, запуск |
 | `.gitignore` | `.DS_Store`, `node_modules`, `storybook-static` |
