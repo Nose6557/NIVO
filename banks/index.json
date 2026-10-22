@@ -161,6 +161,11 @@
       "file": "a2-04.json",
       "level": "A2",
       "title": "Пак A2 — партія 4"
+    },
+    {
+      "file": "b1-01.json",
+      "level": "B1-B2",
+      "title": "Пак B1 — глибина тем"
     }
   ],
   "domains": {

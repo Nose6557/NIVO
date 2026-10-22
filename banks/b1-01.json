@@ -1,0 +1,1844 @@
+{
+  "schema": 2,
+  "pack": "b1-01",
+  "title": "Пак B1 — глибина тем",
+  "level": "B1-B2",
+  "topics": {
+    "art-a-an-sound": {
+      "category": "articles",
+      "label": "a/an за звуком"
+    },
+    "art-zero-abstract": {
+      "category": "articles",
+      "label": "Нульовий артикль з абстрактними"
+    },
+    "art-the-superlative": {
+      "category": "articles",
+      "label": "the з найвищим ступенем"
+    },
+    "art-zero-plural": {
+      "category": "articles",
+      "label": "Нульовий артикль з множиною"
+    },
+    "art-first-mention": {
+      "category": "articles",
+      "label": "Перша vs повторна згадка"
+    },
+    "art-a-one": {
+      "category": "articles",
+      "label": "a one — неможлива комбінація"
+    },
+    "ten-past-simple": {
+      "category": "tenses",
+      "label": "Past Simple"
+    },
+    "ten-past-perfect": {
+      "category": "tenses",
+      "label": "Past Perfect"
+    },
+    "ten-future-arrangements": {
+      "category": "tenses",
+      "label": "Плани в майбутньому"
+    },
+    "ten-used-to": {
+      "category": "tenses",
+      "label": "used to"
+    },
+    "ten-for-since": {
+      "category": "tenses",
+      "label": "for / since"
+    },
+    "ten-irregular-past": {
+      "category": "tenses",
+      "label": "Неправильні дієслова"
+    },
+    "ten-will-base": {
+      "category": "tenses",
+      "label": "після will/'ll — базова форма"
+    },
+    "ten-future-will-be": {
+      "category": "tenses",
+      "label": "майбутня дія — will be"
+    },
+    "prep-responsible-for": {
+      "category": "prepositions",
+      "label": "responsible for"
+    },
+    "prep-interested-in": {
+      "category": "prepositions",
+      "label": "interested in"
+    },
+    "prep-consist-of": {
+      "category": "prepositions",
+      "label": "consist of"
+    },
+    "prep-good-at": {
+      "category": "prepositions",
+      "label": "good at"
+    },
+    "prep-from-to-dates": {
+      "category": "prepositions",
+      "label": "from … to … — діапазон"
+    },
+    "prep-available-to": {
+      "category": "prepositions",
+      "label": "available to"
+    },
+    "prep-access-to": {
+      "category": "prepositions",
+      "label": "access to"
+    },
+    "prep-on-surface": {
+      "category": "prepositions",
+      "label": "on — про поверхню й екрани"
+    },
+    "prep-by-doing": {
+      "category": "prepositions",
+      "label": "by + -ing — спосіб дії"
+    },
+    "prep-set-to": {
+      "category": "prepositions",
+      "label": "set something to"
+    },
+    "prep-in-settings": {
+      "category": "prepositions",
+      "label": "in для розташування в інтерфейсі"
+    },
+    "prep-for-duration": {
+      "category": "prepositions",
+      "label": "for для тривалості"
+    },
+    "phr-put-off": {
+      "category": "phrasal verbs",
+      "label": "put off"
+    },
+    "phr-run-out-of": {
+      "category": "phrasal verbs",
+      "label": "run out of"
+    },
+    "phr-figure-out": {
+      "category": "phrasal verbs",
+      "label": "figure out"
+    },
+    "phr-point-out": {
+      "category": "phrasal verbs",
+      "label": "point out"
+    },
+    "cond-first": {
+      "category": "conditionals",
+      "label": "Перший тип умовного"
+    },
+    "cond-unless": {
+      "category": "conditionals",
+      "label": "unless"
+    },
+    "cond-second": {
+      "category": "conditionals",
+      "label": "Другий тип умовного"
+    },
+    "voc-make-do": {
+      "category": "vocabulary",
+      "label": "make / do"
+    },
+    "voc-borrow-lend": {
+      "category": "vocabulary",
+      "label": "borrow / lend"
+    },
+    "voc-advice-uncountable": {
+      "category": "vocabulary",
+      "label": "advice — незлічуване"
+    },
+    "voc-coll-deadline": {
+      "category": "vocabulary",
+      "label": "meet a deadline"
+    },
+    "voc-coll-responsibility": {
+      "category": "vocabulary",
+      "label": "take responsibility"
+    },
+    "voc-enable-unable": {
+      "category": "vocabulary",
+      "label": "enable / unable"
+    },
+    "voc-have-session": {
+      "category": "vocabulary",
+      "label": "have a meeting / session"
+    },
+    "voc-object-pronouns": {
+      "category": "vocabulary",
+      "label": "Об'єктні займенники"
+    },
+    "voc-take-screenshot": {
+      "category": "vocabulary",
+      "label": "take a screenshot, не make"
+    },
+    "voc-current-vs-actual": {
+      "category": "vocabulary",
+      "label": "current, не actual (хибний друг)"
+    },
+    "voc-than-then": {
+      "category": "vocabulary",
+      "label": "than для порівняння, then для послідовності"
+    },
+    "voc-fewer-less": {
+      "category": "vocabulary",
+      "label": "fewer зі злічуваними"
+    },
+    "ord-indirect-questions": {
+      "category": "word order",
+      "label": "Непрямі питання"
+    },
+    "ord-adverb-placement": {
+      "category": "word order",
+      "label": "Місце прислівника"
+    },
+    "ord-reported-speech": {
+      "category": "word order",
+      "label": "Непряма мова"
+    },
+    "ord-passive": {
+      "category": "word order",
+      "label": "Пасивний стан"
+    },
+    "ord-noun-modifier": {
+      "category": "word order",
+      "label": "Означення перед іменником"
+    },
+    "agr-plural-roles": {
+      "category": "agreement",
+      "label": "Множина назв ролей"
+    },
+    "agr-team-requests": {
+      "category": "agreement",
+      "label": "-s у 3-й особі однини"
+    },
+    "agr-every-singular": {
+      "category": "agreement",
+      "label": "every/each + однина"
+    },
+    "syn-because-of": {
+      "category": "syntax",
+      "label": "because / because of"
+    },
+    "sp-capitalization": {
+      "category": "spelling",
+      "label": "Великі літери в назвах"
+    },
+    "sp-proper-caps": {
+      "category": "spelling",
+      "label": "великі літери у власних назвах"
+    },
+    "sp-section-caps": {
+      "category": "spelling",
+      "label": "назви секцій — єдиний стиль регістру"
+    },
+    "sp-product-compound": {
+      "category": "spelling",
+      "label": "складені назви — одним словом"
+    },
+    "sp-queue": {
+      "category": "spelling",
+      "label": "правопис queue"
+    },
+    "sp-updated-typo": {
+      "category": "spelling",
+      "label": "правопис updated"
+    },
+    "sp-cyrillic-latin": {
+      "category": "spelling",
+      "label": "не змішувати кирилицю й латиницю"
+    }
+  },
+  "questions": [
+    {
+      "id": "art-a-an-sound-02",
+      "topic": "art-a-an-sound",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We waited for ___ hour at the border.",
+      "options": [
+        "an",
+        "a",
+        "the an",
+        "—"
+      ],
+      "answer": "an",
+      "explain": "Вибір a / an залежить від ЗВУКА, а не літери. У hour h не читається, слово починається з голосного [aʊ] — an hour.\n✗ a — тільки перед приголосним звуком.\n✗ the an — два артиклі разом неможливі.\n✗ — (нічого) — злічуваний іменник в однині без артикля тут неможливий.",
+      "ua": "Ми чекали на кордоні годину."
+    },
+    {
+      "id": "art-a-an-sound-03",
+      "topic": "art-a-an-sound",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "She has ___ university degree in economics.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "—"
+      ],
+      "answer": "a",
+      "explain": "University пишеться з голосної, але звучить з [j]: [ˌjuːnɪˈvɜːsəti]. Звук приголосний — тому a.\n✗ an — орієнтується на літеру, а не на звук.\n✗ the — диплом згадано вперше.\n✗ — (нічого) — degree злічуване, потрібен артикль.",
+      "ua": "У неї університетський диплом з економіки."
+    },
+    {
+      "id": "art-zero-abstract-02",
+      "topic": "art-zero-abstract",
+      "level": "B1",
+      "type": "order",
+      "domain": "general",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Honesty",
+        "is",
+        "more",
+        "important",
+        "than",
+        "money"
+      ],
+      "answer": "Honesty is more important than money",
+      "explain": "Абстрактні іменники в загальному значенні — без артикля: honesty, money.\nThe honesty означало б конкретну чесність конкретної людини.",
+      "ua": "Чесність важливіша за гроші."
+    },
+    {
+      "id": "art-zero-abstract-03",
+      "topic": "art-zero-abstract",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "My grandmother always says that ___ health comes first.",
+      "options": [
+        "—",
+        "the",
+        "a",
+        "an"
+      ],
+      "answer": "—",
+      "explain": "Health у загальному значенні — абстрактний незлічуваний іменник, артикль не потрібен.\n✗ the — тільки про конкретне: the health of the team.\n✗ a / an — з незлічуваними не вживаються.",
+      "ua": "Моя бабуся завжди каже, що здоров'я — понад усе."
+    },
+    {
+      "id": "art-the-superlative-02",
+      "topic": "art-the-superlative",
+      "level": "B1",
+      "type": "fill",
+      "domain": "travel",
+      "prompt": "It was ___ most beautiful beach we had ever seen.",
+      "answer": "the",
+      "accept": [
+        "the"
+      ],
+      "explain": "Найвищий ступінь завжди з the: the most beautiful.\nЗвороти на кшталт we had ever seen підкреслюють, що порівнюють з усім досвідом.",
+      "ua": "Це був найгарніший пляж, який ми будь-коли бачили."
+    },
+    {
+      "id": "art-the-superlative-03",
+      "topic": "art-the-superlative",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "This",
+        "was",
+        "the",
+        "worst",
+        "quarter",
+        "in",
+        "the",
+        "company's",
+        "history"
+      ],
+      "answer": "This was the worst quarter in the company's history",
+      "explain": "Найвищий ступінь (the worst) вимагає the.\nThe company's — присвійний відмінок, перед ним теж the, бо компанія конкретна.",
+      "ua": "Це був найгірший квартал в історії компанії."
+    },
+    {
+      "id": "art-zero-plural-02",
+      "topic": "art-zero-plural",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "___ cats sleep for about fifteen hours a day.",
+      "options": [
+        "—",
+        "The",
+        "A",
+        "Some of"
+      ],
+      "answer": "—",
+      "explain": "Узагальнення про всіх котів — множина без артикля: Cats sleep…\n✗ The cats — тоді мова про конкретних котів.\n✗ A — з множиною неможливе.\n✗ Some of — потребує the: some of the cats, і змінює зміст.",
+      "ua": "Коти сплять приблизно п'ятнадцять годин на добу."
+    },
+    {
+      "id": "art-zero-plural-03",
+      "topic": "art-zero-plural",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Clients",
+        "expect",
+        "fast",
+        "answers"
+      ],
+      "answer": "Clients expect fast answers",
+      "explain": "Узагальнення — множина без артикля: clients, answers.\nThe clients означало б конкретних клієнтів.",
+      "ua": "Клієнти очікують швидких відповідей."
+    },
+    {
+      "id": "art-first-mention-03",
+      "topic": "art-first-mention",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We rented ___ car in Lisbon. ___ car had no air conditioning.",
+      "options": [
+        "a / The",
+        "the / A",
+        "a / A",
+        "the / The"
+      ],
+      "answer": "a / The",
+      "explain": "Перша згадка — a car, повторна — the car, бо вона вже відома.\n✗ the / A — порядок навпаки.\n✗ a / A — друга згадка вже не нова.\n✗ the / The — перша згадка ще не відома слухачу.",
+      "ua": "Ми орендували машину в Лісабоні. У машині не було кондиціонера."
+    },
+    {
+      "id": "art-a-one-03",
+      "topic": "art-a-one",
+      "level": "B1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "only",
+        "have",
+        "one",
+        "sister"
+      ],
+      "answer": "I only have one sister",
+      "explain": "One — коли важить саме кількість: одна, а не дві.\nA one разом не вживаються.",
+      "ua": "У мене лише одна сестра."
+    },
+    {
+      "id": "ten-past-simple-02",
+      "topic": "ten-past-simple",
+      "level": "B1",
+      "type": "fill",
+      "domain": "travel",
+      "prompt": "Last year we ___ (fly) to Japan for the first time.",
+      "answer": "flew",
+      "accept": [
+        "flew"
+      ],
+      "explain": "Last year — завершений момент у минулому, Past Simple.\nFly — неправильне дієслово: fly → flew → flown.",
+      "ua": "Минулого року ми вперше полетіли до Японії."
+    },
+    {
+      "id": "ten-past-simple-03",
+      "topic": "ten-past-simple",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "When ___ you move to this flat?",
+      "options": [
+        "did",
+        "have",
+        "were",
+        "do"
+      ],
+      "answer": "did",
+      "explain": "Питання про конкретний момент у минулому (When) — Past Simple: did you move.\n✗ have — Present Perfect із when не вживається.\n✗ were — be не поєднується з базовою формою move.\n✗ do — теперішній час.",
+      "ua": "Коли ти переїхав у цю квартиру?"
+    },
+    {
+      "id": "ten-past-perfect-02",
+      "topic": "ten-past-perfect",
+      "level": "B1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "When",
+        "we",
+        "arrived",
+        "the",
+        "train",
+        "had",
+        "already",
+        "left"
+      ],
+      "answer": "When we arrived the train had already left",
+      "explain": "Дія, що сталася раніше за іншу минулу, — Past Perfect: had left.\nArrived — пізніша дія, Past Simple.",
+      "ua": "Коли ми прийшли, потяг уже поїхав."
+    },
+    {
+      "id": "ten-past-perfect-03",
+      "topic": "ten-past-perfect",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I didn't recognise her because she ___ her hair.",
+      "options": [
+        "had cut",
+        "has cut",
+        "cut",
+        "was cutting"
+      ],
+      "answer": "had cut",
+      "explain": "Стрижка була раніше, ніж я її не впізнав, — Past Perfect: had cut.\n✗ has cut — Present Perfect не поєднується з розповіддю в минулому.\n✗ cut — губиться порядок подій.\n✗ was cutting — означало б, що стриглася саме в той момент.",
+      "ua": "Я її не впізнав, бо вона підстриглася."
+    },
+    {
+      "id": "ten-future-arrangements-02",
+      "topic": "ten-future-arrangements",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We ___ to Krakow on Friday — the tickets are booked.",
+      "options": [
+        "are going",
+        "go",
+        "will going",
+        "going"
+      ],
+      "answer": "are going",
+      "explain": "Домовленість на певний час (квитки куплено) — Present Continuous: are going.\n✗ go — Present Simple для розкладів, а не особистих планів.\n✗ will going — після will тільки базова форма.\n✗ going — без be неповна форма.",
+      "ua": "У п'ятницю ми їдемо до Кракова — квитки вже заброньовані."
+    },
+    {
+      "id": "ten-future-arrangements-03",
+      "topic": "ten-future-arrangements",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "am",
+        "having",
+        "lunch",
+        "with",
+        "a",
+        "client",
+        "tomorrow"
+      ],
+      "answer": "I am having lunch with a client tomorrow",
+      "explain": "Особиста домовленість на конкретний час — Present Continuous: am having.\nHave lunch у значенні «обідати» допускає -ing.",
+      "ua": "Завтра я обідаю з клієнтом."
+    },
+    {
+      "id": "ten-used-to-02",
+      "topic": "ten-used-to",
+      "level": "B1",
+      "type": "fill",
+      "domain": "daily",
+      "prompt": "I ___ to play football every weekend when I was a kid.",
+      "answer": "used",
+      "accept": [
+        "used"
+      ],
+      "explain": "Звичка в минулому, якої вже немає, — used to + базова форма.\nУ ствердному реченні — used, з d.",
+      "ua": "Коли я був дитиною, я щовихідних грав у футбол."
+    },
+    {
+      "id": "ten-used-to-03",
+      "topic": "ten-used-to",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "There ___ a cinema here, but now it's a supermarket.",
+      "options": [
+        "used to be",
+        "use to be",
+        "was used to be",
+        "used to being"
+      ],
+      "answer": "used to be",
+      "explain": "Стан у минулому, якого вже немає, — used to + базова форма.\n✗ use to be — у ствердному реченні тільки used.\n✗ was used to be — be used to означає «звик», і після нього -ing.\n✗ used to being — після used to у значенні звички в минулому -ing не ставиться.",
+      "ua": "Тут колись був кінотеатр, а тепер супермаркет."
+    },
+    {
+      "id": "ten-for-since-02",
+      "topic": "ten-for-since",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "She has been a vegetarian ___ she was sixteen.",
+      "options": [
+        "since",
+        "for",
+        "from",
+        "ago"
+      ],
+      "answer": "since",
+      "explain": "Since — з моменту в минулому; після нього може бути ціле речення: since she was sixteen.\n✗ for — для тривалості: for ten years.\n✗ from — у Present Perfect так не кажуть.\n✗ ago — з Past Simple.",
+      "ua": "Вона вегетаріанка з шістнадцяти років."
+    },
+    {
+      "id": "ten-for-since-03",
+      "topic": "ten-for-since",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "have",
+        "worked",
+        "together",
+        "for",
+        "almost",
+        "five",
+        "years"
+      ],
+      "answer": "We have worked together for almost five years",
+      "explain": "For — тривалість: for five years.\nPresent Perfect, бо співпраця триває досі.",
+      "ua": "Ми працюємо разом майже п'ять років."
+    },
+    {
+      "id": "ten-irregular-past-03",
+      "topic": "ten-irregular-past",
+      "level": "B1",
+      "type": "fill",
+      "domain": "daily",
+      "prompt": "My son ___ (break) his arm last winter.",
+      "answer": "broke",
+      "accept": [
+        "broke"
+      ],
+      "explain": "Break — неправильне дієслово: break → broke → broken.\nLast winter — Past Simple.",
+      "ua": "Мій син зламав руку минулої зими."
+    },
+    {
+      "id": "ten-will-base-03",
+      "topic": "ten-will-base",
+      "level": "B1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "will",
+        "call",
+        "you",
+        "when",
+        "we",
+        "land"
+      ],
+      "answer": "I will call you when we land",
+      "explain": "Після will — базова форма без to: will call.\nПісля when про майбутнє — Present Simple: when we land.",
+      "ua": "Я тобі подзвоню, коли ми приземлимося."
+    },
+    {
+      "id": "ten-future-will-be-03",
+      "topic": "ten-future-will-be",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Tomorrow ___ sunny and warm.",
+      "options": [
+        "it will be",
+        "will be",
+        "it will",
+        "it be"
+      ],
+      "answer": "it will be",
+      "explain": "Майбутній стан — will be. Підмет it обов'язковий: it will be sunny.\n✗ will be — без підмета речення неповне.\n✗ it will — бракує be перед прикметником.\n✗ it be — без will немає майбутнього.",
+      "ua": "Завтра буде сонячно й тепло."
+    },
+    {
+      "id": "prep-responsible-for-02",
+      "topic": "prep-responsible-for",
+      "level": "B1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Parents",
+        "are",
+        "responsible",
+        "for",
+        "their",
+        "children"
+      ],
+      "answer": "Parents are responsible for their children",
+      "explain": "Responsible завжди з for: responsible for something / someone.",
+      "ua": "Батьки відповідають за своїх дітей."
+    },
+    {
+      "id": "prep-responsible-for-03",
+      "topic": "prep-responsible-for",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "Which department is responsible ___ hiring new staff?",
+      "options": [
+        "for",
+        "of",
+        "about",
+        "to"
+      ],
+      "answer": "for",
+      "explain": "Responsible for — відповідальний за щось.\n✗ of / about — поширена калька з української.\n✗ to — responsible to означає «підзвітний комусь».",
+      "ua": "Який відділ відповідає за найм нових працівників?"
+    },
+    {
+      "id": "prep-interested-in-02",
+      "topic": "prep-interested-in",
+      "level": "B1",
+      "type": "fill",
+      "domain": "daily",
+      "prompt": "My daughter is very interested ___ space.",
+      "answer": "in",
+      "accept": [
+        "in"
+      ],
+      "explain": "Interested завжди з in: interested in space, interested in learning.",
+      "ua": "Моя донька дуже цікавиться космосом."
+    },
+    {
+      "id": "prep-interested-in-03",
+      "topic": "prep-interested-in",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Are",
+        "you",
+        "interested",
+        "in",
+        "working",
+        "abroad"
+      ],
+      "answer": "Are you interested in working abroad",
+      "explain": "Interested in + іменник або -ing: interested in working.\nПісля прийменника in дієслово тільки з -ing.",
+      "ua": "Тобі цікаво попрацювати за кордоном?"
+    },
+    {
+      "id": "prep-consist-of-02",
+      "topic": "prep-consist-of",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "A typical Ukrainian breakfast consists ___ eggs, bread and tea.",
+      "options": [
+        "of",
+        "from",
+        "in",
+        "with"
+      ],
+      "answer": "of",
+      "explain": "Consist of — складатися з.\n✗ from — калька з «складатися з».\n✗ in / with — з consist у цьому значенні не вживаються.",
+      "ua": "Типовий український сніданок складається з яєць, хліба й чаю."
+    },
+    {
+      "id": "prep-consist-of-03",
+      "topic": "prep-consist-of",
+      "level": "B1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "tour",
+        "consists",
+        "of",
+        "three",
+        "short",
+        "walks"
+      ],
+      "answer": "The tour consists of three short walks",
+      "explain": "Consist of + те, з чого складається.\nConsist не вживається в Continuous: consists, а не is consisting.",
+      "ua": "Екскурсія складається з трьох коротких прогулянок."
+    },
+    {
+      "id": "prep-good-at-02",
+      "topic": "prep-good-at",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "My brother is good ___ fixing things.",
+      "options": [
+        "at",
+        "in",
+        "on",
+        "for"
+      ],
+      "answer": "at",
+      "explain": "Good at — добре вміти щось робити: good at fixing.\n✗ in — калька з «добрий у».\n✗ on — не вживається.\n✗ for — good for означає «корисний для».",
+      "ua": "Мій брат добре лагодить речі."
+    },
+    {
+      "id": "prep-good-at-03",
+      "topic": "prep-good-at",
+      "level": "B1",
+      "type": "order",
+      "domain": "general",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "am",
+        "not",
+        "very",
+        "good",
+        "at",
+        "maths"
+      ],
+      "answer": "I am not very good at maths",
+      "explain": "Good at + іменник або -ing.\nНе good in maths.",
+      "ua": "Я не дуже добре знаюся на математиці."
+    },
+    {
+      "id": "prep-from-to-dates-02",
+      "topic": "prep-from-to-dates",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "The office is open ___ Monday ___ Friday.",
+      "options": [
+        "from / to",
+        "since / to",
+        "from / till to",
+        "at / to"
+      ],
+      "answer": "from / to",
+      "explain": "Діапазон — from … to …: from Monday to Friday.\n✗ since / to — since не вводить діапазон.\n✗ from / till to — подвійний прийменник.\n✗ at / to — at не означає початку діапазону.",
+      "ua": "Офіс працює з понеділка до п'ятниці."
+    },
+    {
+      "id": "prep-from-to-dates-03",
+      "topic": "prep-from-to-dates",
+      "level": "B1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "are",
+        "staying",
+        "from",
+        "the",
+        "third",
+        "to",
+        "the",
+        "tenth",
+        "of",
+        "June"
+      ],
+      "answer": "We are staying from the third to the tenth of June",
+      "explain": "Діапазон дат — from … to …\nДати з порядковими числівниками: the third, the tenth.",
+      "ua": "Ми будемо там з третього по десяте червня."
+    },
+    {
+      "id": "prep-available-to-03",
+      "topic": "prep-available-to",
+      "level": "B1",
+      "type": "order",
+      "domain": "general",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "library",
+        "is",
+        "available",
+        "to",
+        "all",
+        "students"
+      ],
+      "answer": "The library is available to all students",
+      "explain": "Available to + людина: available to all students.\nAvailable for — частіше про час або мету.",
+      "ua": "Бібліотека доступна для всіх студентів."
+    },
+    {
+      "id": "prep-access-to-03",
+      "topic": "prep-access-to",
+      "level": "B1",
+      "type": "order",
+      "domain": "it",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Only",
+        "admins",
+        "have",
+        "access",
+        "to",
+        "these",
+        "files"
+      ],
+      "answer": "Only admins have access to these files",
+      "explain": "Access завжди з to: access to something.\nHave access to — мати доступ до.",
+      "ua": "Доступ до цих файлів є лише в адміністраторів."
+    },
+    {
+      "id": "prep-on-surface-03",
+      "topic": "prep-on-surface",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "There is a map of the city ___ the wall in your room.",
+      "options": [
+        "on",
+        "in",
+        "at",
+        "over"
+      ],
+      "answer": "on",
+      "explain": "On — на поверхні: on the wall.\n✗ in the wall — всередині стіни.\n✗ at the wall — біля стіни.\n✗ over — над чимось, без дотику.",
+      "ua": "На стіні у вашій кімнаті висить мапа міста."
+    },
+    {
+      "id": "prep-by-doing-03",
+      "topic": "prep-by-doing",
+      "level": "B1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "learned",
+        "English",
+        "by",
+        "watching",
+        "films"
+      ],
+      "answer": "I learned English by watching films",
+      "explain": "By + -ing — спосіб, яким щось зробили: by watching.\nПісля by дієслово тільки з -ing.",
+      "ua": "Я вивчив англійську, дивлячись фільми."
+    },
+    {
+      "id": "prep-set-to-03",
+      "topic": "prep-set-to",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "Go to Settings and set the language ___ English.",
+      "options": [
+        "to",
+        "on",
+        "in",
+        "at"
+      ],
+      "answer": "to",
+      "explain": "Set something to — встановити значення: set the language to English.\n✗ on / in / at — не вводять нове значення параметра.",
+      "ua": "Зайди в налаштування й встанови англійську мову."
+    },
+    {
+      "id": "prep-in-settings-03",
+      "topic": "prep-in-settings",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "You can change the language ___ the app settings.",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "inside of"
+      ],
+      "answer": "in",
+      "explain": "Розділ інтерфейсу як простір — in: in the settings, in the menu.\n✗ on — для поверхонь і сторінок.\n✗ at — для точки.\n✗ inside of — розмовне й надлишкове.",
+      "ua": "Змінити мову можна в налаштуваннях застосунку."
+    },
+    {
+      "id": "prep-for-duration-03",
+      "topic": "prep-for-duration",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We stayed in Rome ___ a week.",
+      "options": [
+        "for",
+        "during",
+        "since",
+        "while"
+      ],
+      "answer": "for",
+      "explain": "Скільки тривало — for + проміжок: for a week.\n✗ during — «під час чогось»: during the holidays.\n✗ since — з моменту, а не тривалість.\n✗ while — сполучник, після нього речення.",
+      "ua": "Ми пробули в Римі тиждень."
+    },
+    {
+      "id": "phr-put-off-02",
+      "topic": "phr-put-off",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Stop ___ your homework and start now!",
+      "options": [
+        "putting off",
+        "putting out",
+        "putting on",
+        "putting up"
+      ],
+      "answer": "putting off",
+      "explain": "Put off — відкладати на потім.\n✗ put out — гасити.\n✗ put on — вдягати.\n✗ put up — вішати або приймати в гості.",
+      "ua": "Годі відкладати домашнє завдання — починай зараз!"
+    },
+    {
+      "id": "phr-put-off-03",
+      "topic": "phr-put-off",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "meeting",
+        "was",
+        "put",
+        "off",
+        "until",
+        "next",
+        "week"
+      ],
+      "answer": "The meeting was put off until next week",
+      "explain": "Put off — відкласти. У пасиві: was put off.\nUntil — до якого часу відклали.",
+      "ua": "Нараду перенесли на наступний тиждень."
+    },
+    {
+      "id": "phr-run-out-of-02",
+      "topic": "phr-run-out-of",
+      "level": "B1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "ran",
+        "out",
+        "of",
+        "petrol",
+        "on",
+        "the",
+        "motorway"
+      ],
+      "answer": "We ran out of petrol on the motorway",
+      "explain": "Run out of — закінчитися (про запаси). Минулий час — ran.\nOf обов'язкове перед тим, що закінчилось.",
+      "ua": "У нас закінчився бензин на автомагістралі."
+    },
+    {
+      "id": "phr-run-out-of-03",
+      "topic": "phr-run-out-of",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "We've ___ milk — can you buy some?",
+      "options": [
+        "run out of",
+        "run out",
+        "ran out of",
+        "run off"
+      ],
+      "answer": "run out of",
+      "explain": "Present Perfect: have + 3-я форма. Run → ran → run, отже have run out of.\n✗ run out — без of не можна додати, що саме закінчилось.\n✗ ran out of — 2-а форма після have неможлива.\n✗ run off — «втекти».",
+      "ua": "У нас закінчилося молоко — купиш?"
+    },
+    {
+      "id": "phr-figure-out-02",
+      "topic": "phr-figure-out",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I can't ___ how this coffee machine works.",
+      "options": [
+        "figure out",
+        "figure up",
+        "find",
+        "figure on"
+      ],
+      "answer": "figure out",
+      "explain": "Figure out — розібратися, зрозуміти, як щось влаштовано.\n✗ figure up — такого фразового дієслова в цьому значенні немає.\n✗ find — «знайти», не «розібратися».\n✗ figure on — «розраховувати на щось».",
+      "ua": "Не можу розібратися, як працює ця кавоварка."
+    },
+    {
+      "id": "phr-figure-out-03",
+      "topic": "phr-figure-out",
+      "level": "B1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "finally",
+        "figured",
+        "out",
+        "the",
+        "bus",
+        "timetable"
+      ],
+      "answer": "We finally figured out the bus timetable",
+      "explain": "Figure out — розібратися в чомусь. Минулий час — figured out.",
+      "ua": "Ми нарешті розібралися з розкладом автобусів."
+    },
+    {
+      "id": "phr-point-out-03",
+      "topic": "phr-point-out",
+      "level": "B1",
+      "type": "order",
+      "domain": "general",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "My",
+        "teacher",
+        "pointed",
+        "out",
+        "a",
+        "few",
+        "mistakes",
+        "in",
+        "my",
+        "essay"
+      ],
+      "answer": "My teacher pointed out a few mistakes in my essay",
+      "explain": "Point out — звернути увагу на щось, вказати.\nДодаток стоїть після out: pointed out a few mistakes.",
+      "ua": "Мій учитель вказав на кілька помилок у моєму есе."
+    },
+    {
+      "id": "cond-first-02",
+      "topic": "cond-first",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "If it ___ tomorrow, we'll stay in the hotel.",
+      "options": [
+        "rains",
+        "will rain",
+        "rained",
+        "rain"
+      ],
+      "answer": "rains",
+      "explain": "Перший тип умови: if + Present Simple, головне — will.\n✗ will rain — will після if у цьому типі не ставимо.\n✗ rained — це другий тип, нереальна умова.\n✗ rain — бракує -s для it.",
+      "ua": "Якщо завтра буде дощ, ми лишимося в готелі."
+    },
+    {
+      "id": "cond-first-03",
+      "topic": "cond-first",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "If",
+        "you",
+        "send",
+        "it",
+        "today",
+        "they",
+        "will",
+        "sign",
+        "it",
+        "tomorrow"
+      ],
+      "answer": "If you send it today they will sign it tomorrow",
+      "explain": "Перший тип: if + Present Simple → will + базова форма.\nРеальна умова в майбутньому.",
+      "ua": "Якщо ти надішлеш це сьогодні, завтра вони це підпишуть."
+    },
+    {
+      "id": "cond-unless-02",
+      "topic": "cond-unless",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "You won't get on the plane ___ you have a valid passport.",
+      "options": [
+        "unless",
+        "if",
+        "until",
+        "when"
+      ],
+      "answer": "unless",
+      "explain": "Unless = if not: тебе не пустять, якщо не матимеш паспорта.\n✗ if — зміст стає протилежним.\n✗ until — означає «доки не», про час.\n✗ when — без заперечення значення не те.",
+      "ua": "Тебе не пустять у літак, якщо в тебе не буде дійсного паспорта."
+    },
+    {
+      "id": "cond-unless-03",
+      "topic": "cond-unless",
+      "level": "B1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "will",
+        "be",
+        "late",
+        "unless",
+        "we",
+        "leave",
+        "now"
+      ],
+      "answer": "We will be late unless we leave now",
+      "explain": "Unless = if not. Після unless — ствердна форма: unless we leave.\nНе unless we don't leave.",
+      "ua": "Ми запізнимося, якщо не вийдемо зараз."
+    },
+    {
+      "id": "cond-second-03",
+      "topic": "cond-second",
+      "level": "B1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "If",
+        "I",
+        "had",
+        "a",
+        "bigger",
+        "flat",
+        "I",
+        "would",
+        "get",
+        "a",
+        "dog"
+      ],
+      "answer": "If I had a bigger flat I would get a dog",
+      "explain": "Другий тип — нереальна ситуація зараз: if + Past Simple, would + базова форма.\nHad — не минуле, а нереальність.",
+      "ua": "Якби в мене була більша квартира, я завів би собаку."
+    },
+    {
+      "id": "voc-make-do-03",
+      "topic": "voc-make-do",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Can you ___ me a favour?",
+      "options": [
+        "do",
+        "make",
+        "give",
+        "take"
+      ],
+      "answer": "do",
+      "explain": "Стала сполука — do someone a favour.\n✗ make — make a favour неправильно.\n✗ give / take — з favour у цьому значенні не вживаються.",
+      "ua": "Можеш зробити мені послугу?"
+    },
+    {
+      "id": "voc-borrow-lend-02",
+      "topic": "voc-borrow-lend",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Can I ___ your umbrella? I'll give it back tomorrow.",
+      "options": [
+        "borrow",
+        "lend",
+        "rent",
+        "take you"
+      ],
+      "answer": "borrow",
+      "explain": "Borrow — брати на час (я беру). Lend — давати на час (ти даєш).\n✗ lend — означало б, що я даю тобі.\n✗ rent — орендувати за гроші.\n✗ take you — неправильна конструкція.",
+      "ua": "Можна позичити твою парасольку? Поверну завтра."
+    },
+    {
+      "id": "voc-borrow-lend-03",
+      "topic": "voc-borrow-lend",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "bank",
+        "lent",
+        "us",
+        "money",
+        "for",
+        "the",
+        "new",
+        "office"
+      ],
+      "answer": "The bank lent us money for the new office",
+      "explain": "Lend — давати на час. Минулий час — lent.\nLend + кому + що: lent us money.",
+      "ua": "Банк позичив нам гроші на новий офіс."
+    },
+    {
+      "id": "voc-advice-uncountable-02",
+      "topic": "voc-advice-uncountable",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "My friend gave me some good ___.",
+      "options": [
+        "advice",
+        "advices",
+        "an advice",
+        "advise"
+      ],
+      "answer": "advice",
+      "explain": "Advice — незлічуваний іменник: some advice, a piece of advice.\n✗ advices / an advice — множини й a немає.\n✗ advise — дієслово «радити».",
+      "ua": "Мій друг дав мені добру пораду."
+    },
+    {
+      "id": "voc-advice-uncountable-03",
+      "topic": "voc-advice-uncountable",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Can",
+        "I",
+        "ask",
+        "you",
+        "for",
+        "some",
+        "advice"
+      ],
+      "answer": "Can I ask you for some advice",
+      "explain": "Advice незлічуване — some advice, без a і без -s.",
+      "ua": "Можна попросити в тебе поради?"
+    },
+    {
+      "id": "voc-coll-deadline-02",
+      "topic": "voc-coll-deadline",
+      "level": "B1",
+      "type": "fill",
+      "domain": "general",
+      "prompt": "If we don't hurry, we'll ___ the deadline.",
+      "answer": "miss",
+      "accept": [
+        "miss"
+      ],
+      "explain": "Пропустити дедлайн — miss a deadline.\nПротилежне — meet a deadline.",
+      "ua": "Якщо не поквапимося, пропустимо дедлайн."
+    },
+    {
+      "id": "voc-coll-deadline-03",
+      "topic": "voc-coll-deadline",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "need",
+        "more",
+        "people",
+        "to",
+        "meet",
+        "this",
+        "deadline"
+      ],
+      "answer": "We need more people to meet this deadline",
+      "explain": "Встигнути до дедлайну — meet a deadline.\nНе do і не make the deadline.",
+      "ua": "Нам потрібно більше людей, щоб встигнути до цього дедлайну."
+    },
+    {
+      "id": "voc-coll-responsibility-02",
+      "topic": "voc-coll-responsibility",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Teenagers should ___ responsibility for their own decisions.",
+      "options": [
+        "take",
+        "make",
+        "do",
+        "get"
+      ],
+      "answer": "take",
+      "explain": "Стала сполука — take responsibility for.\n✗ make / do / get — з responsibility у цьому значенні не вживаються.",
+      "ua": "Підлітки мають брати відповідальність за власні рішення."
+    },
+    {
+      "id": "voc-coll-responsibility-03",
+      "topic": "voc-coll-responsibility",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Nobody",
+        "wanted",
+        "to",
+        "take",
+        "responsibility",
+        "for",
+        "the",
+        "delay"
+      ],
+      "answer": "Nobody wanted to take responsibility for the delay",
+      "explain": "Take responsibility for — взяти відповідальність за.",
+      "ua": "Ніхто не хотів брати відповідальність за затримку."
+    },
+    {
+      "id": "voc-enable-unable-03",
+      "topic": "voc-enable-unable",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We were ___ to find a hotel near the station.",
+      "options": [
+        "unable",
+        "enable",
+        "disable",
+        "unabled"
+      ],
+      "answer": "unable",
+      "explain": "Unable to — не змогти: we were unable to find.\n✗ enable — дієслово «уможливити».\n✗ disable — дієслово «вимкнути».\n✗ unabled — такого слова немає.",
+      "ua": "Ми не змогли знайти готель біля вокзалу."
+    },
+    {
+      "id": "voc-have-session-03",
+      "topic": "voc-have-session",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "We ___ a long conversation about our plans.",
+      "options": [
+        "had",
+        "made",
+        "did",
+        "took"
+      ],
+      "answer": "had",
+      "explain": "Розмови, зустрічі, сесії — have: have a conversation.\n✗ made / did / took — з conversation не вживаються.",
+      "ua": "Ми довго розмовляли про наші плани."
+    },
+    {
+      "id": "voc-object-pronouns-03",
+      "topic": "voc-object-pronouns",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "These cookies are for my kids. I baked them for ___.",
+      "options": [
+        "them",
+        "they",
+        "their",
+        "theirs"
+      ],
+      "answer": "them",
+      "explain": "Після прийменника for — об'єктний займенник: for them.\n✗ they — тільки підмет.\n✗ their — тільки перед іменником.\n✗ theirs — «їхній» без іменника.",
+      "ua": "Це печиво для моїх дітей. Я спекла його для них."
+    },
+    {
+      "id": "voc-take-screenshot-03",
+      "topic": "voc-take-screenshot",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "Wait, I'll ___ a photo of the error on the screen.",
+      "options": [
+        "take",
+        "make",
+        "do",
+        "shoot of"
+      ],
+      "answer": "take",
+      "explain": "Фото і скриншоти — take: take a photo, take a screenshot.\n✗ make — поширена калька з «зробити фото».\n✗ do — не вживається.\n✗ shoot of — неправильна конструкція.",
+      "ua": "Зачекай, я сфотографую помилку на екрані."
+    },
+    {
+      "id": "voc-current-vs-actual-03",
+      "topic": "voc-current-vs-actual",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "What is your ___ salary?",
+      "options": [
+        "current",
+        "actual",
+        "actually",
+        "present-day"
+      ],
+      "answer": "current",
+      "explain": "Current — нинішній, поточний.\n✗ actual — «справжній, фактичний», хибний друг перекладача.\n✗ actually — прислівник.\n✗ present-day — про епоху, а не про зарплату.",
+      "ua": "Яка у вас поточна зарплата?"
+    },
+    {
+      "id": "voc-than-then-03",
+      "topic": "voc-than-then",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Wash your hands, ___ sit down at the table.",
+      "options": [
+        "then",
+        "than",
+        "that",
+        "them"
+      ],
+      "answer": "then",
+      "explain": "Then — «потім», послідовність дій.\n✗ than — тільки в порівнянні: bigger than.\n✗ that / them — не означають послідовності.",
+      "ua": "Помий руки, а потім сідай до столу."
+    },
+    {
+      "id": "voc-fewer-less-03",
+      "topic": "voc-fewer-less",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I'm trying to drink ___ coffee these days.",
+      "options": [
+        "less",
+        "fewer",
+        "lesser",
+        "littler"
+      ],
+      "answer": "less",
+      "explain": "Coffee тут незлічуване — less.\nFewer — зі злічуваними в множині: fewer cups.\n✗ lesser — «менш важливий».\n✗ littler — у значенні кількості не вживається.",
+      "ua": "Останнім часом я намагаюся пити менше кави."
+    },
+    {
+      "id": "ord-indirect-questions-02",
+      "topic": "ord-indirect-questions",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Do you know what time ___?",
+      "options": [
+        "the museum opens",
+        "does the museum open",
+        "opens the museum",
+        "the museum does open"
+      ],
+      "answer": "the museum opens",
+      "explain": "У непрямому питанні — прямий порядок слів і без do: what time the museum opens.\n✗ does the museum open — порядок прямого питання.\n✗ opens the museum — дієслово перед підметом.\n✗ the museum does open — does тут зайве.",
+      "ua": "Ви не знаєте, о котрій відкривається музей?"
+    },
+    {
+      "id": "ord-indirect-questions-03",
+      "topic": "ord-indirect-questions",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "wonder",
+        "why",
+        "he",
+        "left",
+        "the",
+        "company"
+      ],
+      "answer": "I wonder why he left the company",
+      "explain": "Непряме питання: why + підмет + дієслово, без did.\nНе why did he leave.",
+      "ua": "Цікаво, чому він пішов з компанії."
+    },
+    {
+      "id": "ord-adverb-placement-02",
+      "topic": "ord-adverb-placement",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I ___ breakfast on weekdays.",
+      "options": [
+        "rarely eat",
+        "eat rarely",
+        "rarely am eat",
+        "rarely eats"
+      ],
+      "answer": "rarely eat",
+      "explain": "Прислівник частоти — перед смисловим дієсловом: rarely eat.\n✗ eat rarely — розриває дієслово і додаток.\n✗ rarely am eat — be тут зайве.\n✗ rarely eats — з I без -s.",
+      "ua": "У будні я рідко снідаю."
+    },
+    {
+      "id": "ord-adverb-placement-03",
+      "topic": "ord-adverb-placement",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "have",
+        "already",
+        "sent",
+        "the",
+        "invoice"
+      ],
+      "answer": "I have already sent the invoice",
+      "explain": "Already в Present Perfect стоїть між have і дієсловом: have already sent.",
+      "ua": "Я вже надіслав рахунок."
+    },
+    {
+      "id": "ord-reported-speech-02",
+      "topic": "ord-reported-speech",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "She asked me where ___.",
+      "options": [
+        "I lived",
+        "did I live",
+        "do I live",
+        "I do live"
+      ],
+      "answer": "I lived",
+      "explain": "Непряме питання в минулому: прямий порядок і зсув часу — where I lived.\n✗ did I live / do I live — порядок прямого питання.\n✗ I do live — do тут зайве, і час не зсунуто.",
+      "ua": "Вона запитала, де я живу."
+    },
+    {
+      "id": "ord-reported-speech-03",
+      "topic": "ord-reported-speech",
+      "level": "B1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "guide",
+        "told",
+        "us",
+        "that",
+        "the",
+        "castle",
+        "was",
+        "closed"
+      ],
+      "answer": "The guide told us that the castle was closed",
+      "explain": "Непряма мова після told: told us that + зсув часу (is → was).\nПісля tell одразу йде людина: told us.",
+      "ua": "Гід сказав нам, що замок зачинено."
+    },
+    {
+      "id": "ord-passive-02",
+      "topic": "ord-passive",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "This bridge ___ in 1890.",
+      "options": [
+        "was built",
+        "built",
+        "was build",
+        "has built"
+      ],
+      "answer": "was built",
+      "explain": "Міст сам себе не будував — пасив: was + 3-я форма: was built.\n✗ built — активний стан, вийшло б, що міст щось збудував.\n✗ was build — потрібна 3-я форма built.\n✗ has built — активний Present Perfect.",
+      "ua": "Цей міст збудували в 1890 році."
+    },
+    {
+      "id": "ord-passive-03",
+      "topic": "ord-passive",
+      "level": "B1",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "All",
+        "orders",
+        "are",
+        "delivered",
+        "within",
+        "two",
+        "days"
+      ],
+      "answer": "All orders are delivered within two days",
+      "explain": "Пасив у теперішньому: are + 3-я форма: are delivered.\nХто доставляє — неважливо.",
+      "ua": "Усі замовлення доставляються протягом двох днів."
+    },
+    {
+      "id": "ord-noun-modifier-03",
+      "topic": "ord-noun-modifier",
+      "level": "B1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "bought",
+        "two",
+        "return",
+        "tickets"
+      ],
+      "answer": "We bought two return tickets",
+      "explain": "Іменник-означення стоїть перед головним іменником: return tickets.\nМножина тільки в головного: tickets, а не returns tickets.",
+      "ua": "Ми купили два квитки туди й назад."
+    },
+    {
+      "id": "agr-plural-roles-03",
+      "topic": "agr-plural-roles",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "All ___ must wear a badge in the building.",
+      "options": [
+        "visitors",
+        "visitor",
+        "visitor's",
+        "visitors'"
+      ],
+      "answer": "visitors",
+      "explain": "Після all — множина: all visitors.\n✗ visitor — однина після all неможлива.\n✗ visitor's / visitors' — присвійні форми, а не множина.",
+      "ua": "Усі відвідувачі мають носити бейдж у будівлі."
+    },
+    {
+      "id": "agr-team-requests-03",
+      "topic": "agr-team-requests",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "Our family ___ a lot of time outdoors.",
+      "options": [
+        "spends",
+        "spend",
+        "spending",
+        "are spends"
+      ],
+      "answer": "spends",
+      "explain": "Family як одне ціле — 3-я особа однини: spends.\n✗ spend — без -s у Present Simple для it.\n✗ spending — без be неповна форма.\n✗ are spends — подвійне дієслово.",
+      "ua": "Наша родина проводить багато часу на природі."
+    },
+    {
+      "id": "agr-every-singular-03",
+      "topic": "agr-every-singular",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Every student ___ a laptop.",
+      "options": [
+        "has",
+        "have",
+        "are having",
+        "haves"
+      ],
+      "answer": "has",
+      "explain": "Після every іменник в однині, і дієслово теж в однині: every student has.\n✗ have — для множини.\n✗ are having — подвійна множина й Continuous.\n✗ haves — неправильна форма.",
+      "ua": "У кожного студента є ноутбук."
+    },
+    {
+      "id": "syn-because-of-03",
+      "topic": "syn-because-of",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "The flight was cancelled ___ the storm.",
+      "options": [
+        "because of",
+        "because",
+        "so",
+        "due"
+      ],
+      "answer": "because of",
+      "explain": "Перед іменником — because of: because of the storm.\n✗ because — потребує речення: because there was a storm.\n✗ so — вводить наслідок.\n✗ due — без to неповне: due to.",
+      "ua": "Рейс скасували через шторм."
+    },
+    {
+      "id": "sp-capitalization-03",
+      "topic": "sp-capitalization",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We met at the airport on ___ morning.",
+      "options": [
+        "Sunday",
+        "sunday",
+        "SUNDAY",
+        "sunDay"
+      ],
+      "answer": "Sunday",
+      "explain": "Дні тижня в англійській пишуться з великої літери: Sunday.\n✗ sunday — поширена помилка під впливом української.\n✗ SUNDAY / sunDay — неправильний регістр.",
+      "ua": "Ми зустрілися в аеропорту в неділю зранку."
+    },
+    {
+      "id": "sp-proper-caps-03",
+      "topic": "sp-proper-caps",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "I'll send you the link on ___.",
+      "options": [
+        "WhatsApp",
+        "whatsapp",
+        "Whatsapp",
+        "whats app"
+      ],
+      "answer": "WhatsApp",
+      "explain": "Назви продуктів пишуться так, як їх пише сам бренд: WhatsApp.\n✗ whatsapp / Whatsapp / whats app — неправильний регістр або пробіл.",
+      "ua": "Я надішлю тобі посилання у WhatsApp."
+    },
+    {
+      "id": "sp-section-caps-03",
+      "topic": "sp-section-caps",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "You can find this option under ___.",
+      "options": [
+        "Privacy Settings",
+        "privacy settings",
+        "Privacy settings",
+        "PRIVACY settings"
+      ],
+      "answer": "Privacy Settings",
+      "explain": "Назви розділів інтерфейсу пишемо так, як вони виглядають на екрані: зазвичай кожне слово з великої — Privacy Settings.\n✗ privacy settings — так це звичайні слова, а не назва розділу.\n✗ Privacy settings / PRIVACY settings — змішаний стиль.",
+      "ua": "Цей параметр можна знайти в розділі Privacy Settings."
+    },
+    {
+      "id": "sp-product-compound-03",
+      "topic": "sp-product-compound",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "I watched the tutorial on ___.",
+      "options": [
+        "YouTube",
+        "You Tube",
+        "Youtube",
+        "you tube"
+      ],
+      "answer": "YouTube",
+      "explain": "Складена назва бренду — одним словом, з великої літери в обох частинах: YouTube.\n✗ You Tube / you tube — з пробілом.\n✗ Youtube — друга частина теж з великої.",
+      "ua": "Я подивився навчальне відео на YouTube."
+    },
+    {
+      "id": "sp-queue-03",
+      "topic": "sp-queue",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "There was a long ___ at passport control.",
+      "options": [
+        "queue",
+        "que",
+        "queu",
+        "cue"
+      ],
+      "answer": "queue",
+      "explain": "Черга — queue: q-u-e-u-e.\n✗ que / queu — пропущені літери.\n✗ cue — інше слово: «підказка, сигнал».",
+      "ua": "На паспортному контролі була довга черга."
+    },
+    {
+      "id": "sp-updated-typo-03",
+      "topic": "sp-updated-typo",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "The app was ___ last night.",
+      "options": [
+        "updated",
+        "upated",
+        "updatet",
+        "up-dated"
+      ],
+      "answer": "updated",
+      "explain": "Update → updated: одне d у корені, -ed у кінці.\n✗ upated — пропущене d.\n✗ updatet — закінчення -ed, не -et.\n✗ up-dated — пишеться разом.",
+      "ua": "Застосунок оновили вчора ввечері."
+    },
+    {
+      "id": "sp-cyrillic-latin-03",
+      "topic": "sp-cyrillic-latin",
+      "level": "B1",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "Your order has been ___.",
+      "options": [
+        "cancelled",
+        "canceld",
+        "canselled",
+        "cancellled"
+      ],
+      "answer": "cancelled",
+      "explain": "Британський правопис — cancelled, з подвоєним l (американський — canceled).\nІ пастка розкладки: кириличні «с», «а», «е» виглядають як латинські, але для пошуку й системи це інші символи.\n✗ canceld — пропущене e.\n✗ canselled — s замість c.\n✗ cancellled — потрійне l.",
+      "ua": "Ваше замовлення скасовано."
+    }
+  ]
+}
