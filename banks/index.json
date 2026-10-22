@@ -171,6 +171,11 @@
       "file": "b2-02.json",
       "level": "B2",
       "title": "Пак B2 — глибина тем"
+    },
+    {
+      "file": "a1-03.json",
+      "level": "A1",
+      "title": "Пак A1 — нові теми"
     }
   ],
   "domains": {
