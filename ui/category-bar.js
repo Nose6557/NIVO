@@ -6,11 +6,12 @@
 
   const REDUCE_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* Кольори смужок логотипа (жовта, блакитна, фіолетова), вершина шкали — колір успіху (--ok). */
   function temperColor(acc) {
-    if (acc >= 0.85) return "var(--indigo)";
-    if (acc >= 0.7) return "var(--blue)";
-    if (acc >= 0.5) return "var(--cyan)";
-    return "var(--teal)";
+    if (acc >= 0.85) return "var(--ok)";
+    if (acc >= 0.7) return "#6155f5";
+    if (acc >= 0.5) return "#00c0e8";
+    return "#ffcc00";
   }
 
   /* Лічильник відсотка біжить синхронно зі смугою (.tbar-fill, той самий
@@ -27,9 +28,10 @@
     requestAnimationFrame(tick);
   }
 
-  /** @param {{name:string, accuracy?:number|null}} props
-      accuracy — частка 0…1; null — у категорії ще немає відповідей. */
-  UI.createCategoryBar = function ({ name, accuracy = null } = {}) {
+  /** @param {{name:string, accuracy?:number|null, value?:string}} props
+      accuracy — частка 0…1; null — у категорії ще немає відповідей.
+      value — готовий підпис праворуч (напр. «4/5») замість відсотка. */
+  UI.createCategoryBar = function ({ name, accuracy = null, value } = {}) {
     const has = accuracy !== null;
     const acc = has ? accuracy : 0;
 
@@ -52,10 +54,11 @@
 
     const val = document.createElement("div");
     val.className = "tbar-val";
-    val.textContent = has ? "0%" : "—";
     el.appendChild(val);
 
-    if (has) animateCount(val, Math.round(acc * 100));
+    if (value !== undefined) val.textContent = value;
+    else if (has) { val.textContent = "0%"; animateCount(val, Math.round(acc * 100)); }
+    else val.textContent = "—";
     return el;
   };
 })();

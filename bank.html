@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nivo — банк питань</title>
+<link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="favicon/favicon-180.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  .bk{max-width:960px; margin:0 auto; padding:24px 16px 80px}
+  .bk h1{font-size:26px; margin-bottom:4px}
+  .bk .sub{color:var(--text-muted); font-size:14px; margin-bottom:20px}
+  .bk .sub a{color:var(--text-muted)}
+
+  .bar{position:sticky; top:0; z-index:5; background:var(--bg);
+       padding:10px 0 12px; border-bottom:1px solid var(--border); margin-bottom:16px}
+  .bar .search{width:100%; box-sizing:border-box; font:inherit; font-size:15px;
+       color:var(--text); background:var(--fill); border:1px solid var(--border);
+       border-radius:12px; padding:10px 12px; margin-bottom:8px}
+  .bar .search:focus{outline:none; border-color:var(--text-muted)}
+  .filters{display:flex; flex-wrap:wrap; gap:6px}
+  .filters select{font:inherit; font-size:13px; color:var(--text); background:var(--fill);
+       border:1px solid var(--border); border-radius:10px; padding:6px 8px; max-width:100%}
+  .filters select.on{border-color:var(--text-muted)}
+  @media (min-width:641px){ .filters select{max-width:300px} }
+  .opts{display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:8px;
+        font-size:13px; color:var(--text-muted)}
+  .opts label{display:flex; align-items:center; gap:6px; cursor:pointer}
+  .opts .count{margin-left:auto; color:var(--text); font-variant-numeric:tabular-nums}
+  .opts button{font:inherit; font-size:13px; color:var(--text-muted); background:none;
+       border:1px solid var(--border); border-radius:10px; padding:4px 10px; cursor:pointer}
+
+  .group{margin-bottom:22px}
+  .group-h{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; margin:0 0 8px}
+  .group-h h2{font-size:16px; font-weight:600}
+  .group-h .slug{font-size:12px; color:var(--text-muted)}
+  .group-h .n{font-size:12px; color:var(--text-muted); margin-left:auto}
+  .group-h .n.thin{color:var(--no)}
+
+  .q{border:1px solid var(--border); border-radius:16px; padding:12px 14px; margin-bottom:8px;
+     background:var(--fill)}
+  .q-meta{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-bottom:8px; font-size:12px}
+  .tag{display:inline-block; font-size:12px; font-weight:400; padding:2px 8px; border-radius:20px; background:var(--border);
+       color:var(--text-muted); white-space:nowrap}
+  .tag.lvl{color:#000; font-weight:600}
+  .tag.lvl.A1{background:var(--lvl-a1)} .tag.lvl.A2{background:var(--lvl-a2)}
+  .tag.lvl.B1{background:var(--lvl-b1)} .tag.lvl.B2{background:var(--lvl-b2)}
+  .tag.lvl.C1{background:var(--lvl-c1)} .tag.lvl.C2{background:var(--lvl-c2)}
+  .tag.unscored{background:none; border:1px dashed var(--border)}
+  .tag.link{cursor:pointer}
+  .tag.link:hover{color:var(--text)}
+  .q-id{margin-left:auto; color:var(--text-muted); font-family:'IBM Plex Mono',ui-monospace,monospace;
+        font-size:12px; text-decoration:none}
+  .q-id:hover{color:var(--text)}
+  .q-prompt{font-size:16px; line-height:1.45; margin-bottom:8px; overflow-wrap:anywhere}
+  .gap{display:inline-block; min-width:2.2em; border-bottom:2px solid var(--text-muted); color:transparent}
+  .q-opts{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px}
+  .bk-opt{font-size:14px; padding:4px 10px; border-radius:10px; border:1px solid var(--border);
+       color:var(--text-muted); overflow-wrap:anywhere}
+  .bk-opt.ok{border-color:var(--ok); color:var(--ok-fg)}
+  .q-ans{font-size:14px; margin-bottom:8px; overflow-wrap:anywhere}
+  .q-ans b{color:var(--ok-fg); font-weight:600}
+  .q-ans .acc{color:var(--text-muted)}
+  .q-explain{font-size:14px; line-height:1.5; color:var(--text-muted); white-space:pre-line;
+             border-top:1px solid var(--border); padding-top:8px; overflow-wrap:anywhere}
+  .q-ua{font-size:14px; color:var(--text-muted); font-style:italic; margin-top:6px}
+  .hide-explain .q-explain, .hide-explain .q-ua{display:none}
+  .hide-answers .bk-opt.ok{border-color:var(--border); color:var(--text-muted)}
+  .hide-answers .q-ans{display:none}
+  @media (max-width:640px){
+    .bar{position:static}
+    .filters{display:grid; grid-template-columns:1fr 1fr}
+    .filters select{width:100%; min-width:0}
+    .q{padding:10px 12px}
+  }
+  mark{background:rgba(255,214,0,.25); color:inherit; border-radius:3px; padding:0 1px}
+  .empty{color:var(--text-muted); padding:30px 0; text-align:center}
+  .more{display:block; margin:16px auto; font:inherit; font-size:14px; color:var(--text);
+        background:var(--surface); border:0; border-radius:12px; padding:10px 18px; cursor:pointer}
+</style>
+</head>
+<body>
+<div class="bk">
+  <h1>Банк питань</h1>
+  <div class="sub">Перегляд усіх питань з <code>banks/</code>. Перевірка помилок — у <a href="check.html">check.html</a>.</div>
+
+  <div class="bar">
+    <input class="search" id="q" type="search" placeholder="Пошук по тексту або id" autocomplete="off">
+    <div class="filters">
+      <select id="f-level"></select>
+      <select id="f-type"></select>
+      <select id="f-cat"></select>
+      <select id="f-topic"></select>
+      <select id="f-domain"></select>
+      <select id="f-pack"></select>
+    </div>
+    <div class="opts">
+      <label><input type="checkbox" id="o-group" checked> За темами</label>
+      <label><input type="checkbox" id="o-explain" checked> Пояснення</label>
+      <label><input type="checkbox" id="o-answers" checked> Відповіді</label>
+      <button id="reset" type="button">Скинути</button>
+      <span class="count" id="count"></span>
+    </div>
+  </div>
+
+  <div id="out">Завантаження…</div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const LEVELS = ["A1","A2","B1","B2","C1","C2"];
+const TYPE_UA = { mcq: "вибір", fill: "вписати", order: "порядок слів" };
+const PAGE = 150;   // скільки карток малювати за раз — 1000 карток гальмують телефон
+
+let ALL = [], TOPICS = {}, CATS = {}, DOMAINS = {}, PACKS = [];
+let shown = PAGE;
+
+/* ---------- завантаження ---------- */
+async function getJSON(url) {
+  const r = await fetch(url + "?t=" + Date.now());   // без кешу: сторінка має бачити свіжий банк
+  if (!r.ok) throw new Error(url + ": " + r.status);
+  return r.json();
+}
+
+async function load() {
+  const index = await getJSON("banks/index.json");
+  CATS = index.categories || {};
+  DOMAINS = index.domains || {};
+  for (const meta of index.packs || []) {
+    const pack = await getJSON("banks/" + meta.file);
+    PACKS.push({ file: meta.file, title: meta.title || pack.title || meta.file });
+    Object.assign(TOPICS, pack.topics || {});
+    for (const q of pack.questions || []) {
+      const t = TOPICS[q.topic] || {};
+      ALL.push({
+        ...q,
+        _pack: meta.file,
+        _level: q.level || pack.level || meta.level || "—",
+        _cat: t.category || "—",
+        _topicLabel: t.label || q.topic,
+        _scored: pack.scored !== false,
+        _hay: [q.id, q.prompt, q.answer, (q.options || []).join(" "), (q.accept || []).join(" "),
+               q.explain, q.ua, t.label, q.topic].join(" \u0001 ").toLowerCase()
+      });
+    }
+  }
+}
+
+/* ---------- фільтри ---------- */
+const F = {
+  level:  { el: "f-level",  all: "Усі рівні",    key: q => q._level },
+  type:   { el: "f-type",   all: "Усі типи",     key: q => q.type },
+  cat:    { el: "f-cat",    all: "Усі категорії", key: q => q._cat },
+  topic:  { el: "f-topic",  all: "Усі теми",     key: q => q.topic },
+  domain: { el: "f-domain", all: "Усі сфери",    key: q => q.domain || "—" },
+  pack:   { el: "f-pack",   all: "Усі паки",     key: q => q._pack },
+};
+
+function label(name, v) {
+  if (name === "type")   return TYPE_UA[v] ? `${v} — ${TYPE_UA[v]}` : v;
+  if (name === "cat")    return (CATS[v] && CATS[v].label) || v;
+  if (name === "topic")  return (TOPICS[v] && TOPICS[v].label) ? `${TOPICS[v].label} · ${v}` : v;
+  if (name === "domain") return (DOMAINS[v] && DOMAINS[v].label) || v;
+  if (name === "pack")   { const p = PACKS.find(p => p.file === v); return p ? `${p.title} · ${v}` : v; }
+  return v;
+}
+
+function sortValues(name, vals) {
+  if (name === "level") return vals.sort((a, b) => LEVELS.indexOf(a) - LEVELS.indexOf(b));
+  if (name === "pack")  return PACKS.map(p => p.file).filter(f => vals.includes(f));
+  return vals.sort((a, b) => label(name, a).localeCompare(label(name, b), "uk"));
+}
+
+// Кожен список показує лише значення, що лишаються при інших активних фільтрах,
+// з кількістю питань — так видно, куди можна звузити, а куди вже порожньо.
+function fillSelects() {
+  const st = state();
+  for (const [name, f] of Object.entries(F)) {
+    const others = ALL.filter(q => matches(q, st, name));
+    const counts = {};
+    others.forEach(q => { const v = f.key(q); counts[v] = (counts[v] || 0) + 1; });
+    const cur = st[name];
+    if (cur && !counts[cur]) counts[cur] = 0;
+    const vals = sortValues(name, Object.keys(counts));
+    const sel = $(f.el);
+    sel.innerHTML = `<option value="">${f.all} (${others.length})</option>` +
+      vals.map(v => `<option value="${esc(v)}"${v === cur ? " selected" : ""}>${esc(label(name, v))} (${counts[v]})</option>`).join("");
+    sel.classList.toggle("on", !!cur);
+  }
+}
+
+function state() {
+  const s = {};
+  for (const [name, f] of Object.entries(F)) s[name] = $(f.el).dataset.value || "";
+  s.q = $("q").value.trim().toLowerCase();
+  return s;
+}
+
+function matches(q, st, except) {
+  for (const [name, f] of Object.entries(F)) {
+    if (name === except || !st[name]) continue;
+    if (f.key(q) !== st[name]) return false;
+  }
+  if (st.q && !q._hay.includes(st.q)) return false;
+  return true;
+}
+
+/* ---------- адреса сторінки ---------- */
+function readURL() {
+  const u = new URLSearchParams(location.search);
+  for (const [name, f] of Object.entries(F)) $(f.el).dataset.value = u.get(name) || "";
+  $("q").value = u.get("q") || "";
+  if (u.get("group") === "0") $("o-group").checked = false;
+  if (u.get("explain") === "0") $("o-explain").checked = false;
+  if (u.get("answers") === "0") $("o-answers").checked = false;
+}
+
+function writeURL() {
+  const u = new URLSearchParams();
+  const st = state();
+  for (const name of Object.keys(F)) if (st[name]) u.set(name, st[name]);
+  if ($("q").value.trim()) u.set("q", $("q").value.trim());
+  if (!$("o-group").checked) u.set("group", "0");
+  if (!$("o-explain").checked) u.set("explain", "0");
+  if (!$("o-answers").checked) u.set("answers", "0");
+  const s = u.toString();
+  history.replaceState(null, "", s ? "?" + s : location.pathname);
+}
+
+/* ---------- малювання ---------- */
+function hl(text, q) {
+  const s = esc(text);
+  if (!q) return s;
+  const i = s.toLowerCase().indexOf(esc(q));
+  if (i < 0) return s;
+  const n = esc(q).length;
+  return s.slice(0, i) + "<mark>" + s.slice(i, i + n) + "</mark>" + s.slice(i + n);
+}
+
+function promptHTML(q, st) {
+  return hl(q.prompt, st.q).replace(/_{2,}/g, '<span class="gap">___</span>');
+}
+
+function card(q, st) {
+  const lvl = LEVELS.includes(q._level) ? q._level : "";
+  let body = `<div class="q-prompt">${promptHTML(q, st)}</div>`;
+
+  if (q.type === "mcq") {
+    body += `<div class="q-opts">` + (q.options || []).map(o =>
+      `<span class="bk-opt${o === q.answer ? " ok" : ""}">${hl(o, st.q)}</span>`).join("") + `</div>`;
+  } else if (q.type === "fill") {
+    const extra = (q.accept || []).filter(a => a !== q.answer);
+    body += `<div class="q-ans">Відповідь: <b>${hl(q.answer, st.q)}</b>` +
+      (extra.length ? ` <span class="acc">· також приймається: ${extra.map(a => esc(a)).join(", ")}</span>` : "") + `</div>`;
+  } else if (q.type === "order") {
+    body += `<div class="q-opts">` + (q.tokens || []).map(t => `<span class="bk-opt">${esc(t)}</span>`).join("") + `</div>`;
+    body += `<div class="q-ans">Відповідь: <b>${hl(q.answer, st.q)}</b></div>`;
+  }
+  if (q.explain) body += `<div class="q-explain">${hl(q.explain, st.q)}</div>`;
+  if (q.ua) body += `<div class="q-ua">${hl(q.ua, st.q)}</div>`;
+
+  const dom = q.domain ? ((DOMAINS[q.domain] && DOMAINS[q.domain].label) || q.domain) : "";
+  const meta =
+    (lvl ? `<span class="tag lvl ${lvl} link" data-f="level" data-v="${lvl}">${lvl}</span>` : "") +
+    `<span class="tag link" data-f="type" data-v="${esc(q.type)}">${esc(TYPE_UA[q.type] || q.type)}</span>` +
+    (dom ? `<span class="tag link" data-f="domain" data-v="${esc(q.domain)}">${esc(dom)}</span>` : "") +
+    (!$("o-group").checked ? `<span class="tag link" data-f="topic" data-v="${esc(q.topic)}">${esc(q._topicLabel)}</span>` : "") +
+    (q._scored ? "" : `<span class="tag unscored" title="Пак позначений scored: false — рівень цим питанням не вимірюється">не в оцінці рівня</span>`) +
+    `<a class="q-id" href="?q=${encodeURIComponent(q.id)}" title="Посилання на це питання">${esc(q.id)}</a>`;
+
+  return `<div class="q"><div class="q-meta">${meta}</div>${body}</div>`;
+}
+
+function render(resetPage) {
+  if (resetPage) shown = PAGE;
+  writeURL();
+  fillSelects();
+  const st = state();
+  const list = ALL.filter(q => matches(q, st));
+  $("count").textContent = `${list.length} з ${ALL.length}`;
+
+  const out = $("out");
+  out.classList.toggle("hide-explain", !$("o-explain").checked);
+  out.classList.toggle("hide-answers", !$("o-answers").checked);
+  if (!list.length) { out.innerHTML = `<div class="empty">Нічого не знайдено.</div>`; return; }
+
+  const slice = list.slice(0, shown);
+  let html = "";
+  if ($("o-group").checked) {
+    // Повна кількість питань теми в банку, а не лише відфільтрованих —
+    // щоб одразу бачити тонкі теми (менше трьох питань).
+    const total = {};
+    ALL.forEach(q => { total[q.topic] = (total[q.topic] || 0) + 1; });
+    const groups = new Map();
+    slice.forEach(q => { if (!groups.has(q.topic)) groups.set(q.topic, []); groups.get(q.topic).push(q); });
+    for (const [topic, qs] of groups) {
+      const t = TOPICS[topic] || {};
+      const n = total[topic];
+      html += `<section class="group"><div class="group-h">` +
+        `<h2>${esc(t.label || topic)}</h2>` +
+        `<span class="tag link" data-f="cat" data-v="${esc(t.category || "")}">${esc(label("cat", t.category || "—"))}</span>` +
+        `<a class="slug" href="?topic=${encodeURIComponent(topic)}">${esc(topic)}</a>` +
+        `<span class="n${n < 3 ? " thin" : ""}">${n} ${n === 1 ? "питання" : n < 5 ? "питання" : "питань"} у темі</span>` +
+        `</div>` + qs.map(q => card(q, st)).join("") + `</section>`;
+    }
+  } else {
+    html = slice.map(q => card(q, st)).join("");
+  }
+  if (list.length > shown)
+    html += `<button class="more" id="more" type="button">Показати ще (${Math.min(PAGE, list.length - shown)} з ${list.length - shown})</button>`;
+  out.innerHTML = html;
+}
+
+/* ---------- події ---------- */
+function setFilter(name, v) {
+  $(F[name].el).dataset.value = v;
+  render(true);
+  window.scrollTo({ top: 0 });
+}
+
+for (const [name, f] of Object.entries(F))
+  $(f.el).addEventListener("change", e => setFilter(name, e.target.value));
+
+let timer;
+$("q").addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(() => render(true), 150); });
+["o-group", "o-explain", "o-answers"].forEach(id => $(id).addEventListener("change", () => render(false)));
+
+$("reset").addEventListener("click", () => {
+  for (const f of Object.values(F)) $(f.el).dataset.value = "";
+  $("q").value = "";
+  render(true);
+});
+
+$("out").addEventListener("click", e => {
+  const tag = e.target.closest("[data-f]");
+  if (tag && tag.dataset.v) { setFilter(tag.dataset.f, tag.dataset.v); return; }
+  if (e.target.id === "more") { shown += PAGE; render(false); }
+});
+
+window.addEventListener("popstate", () => { readURL(); render(true); });
+
+/* ---------- старт ---------- */
+readURL();
+load()
+  .then(() => render(true))
+  .catch(e => { $("out").innerHTML = `<div class="empty">Не вдалося завантажити банк: ${esc(e.message)}</div>`; });
+</script>
+</body>
+</html>
