@@ -1,0 +1,1340 @@
+{
+  "schema": 2,
+  "pack": "a2-04",
+  "title": "Пак A2 — партія 4",
+  "level": "A2",
+  "topics": {
+    "a2-art-a-an": {
+      "category": "articles",
+      "label": "a / an на початковому рівні"
+    },
+    "a2-art-the-superlative": {
+      "category": "articles",
+      "label": "the з найвищим ступенем"
+    },
+    "a2-art-second-mention": {
+      "category": "articles",
+      "label": "the при повторній згадці"
+    },
+    "a2-art-no-article-general": {
+      "category": "articles",
+      "label": "Без артикля про загальне"
+    },
+    "a2-ten-present-3rd": {
+      "category": "tenses",
+      "label": "Present Simple: -s у 3-й особі"
+    },
+    "a2-ten-present-cont": {
+      "category": "tenses",
+      "label": "Present Continuous: зараз"
+    },
+    "a2-ten-past-irregular": {
+      "category": "tenses",
+      "label": "Past Simple: неправильні дієслова"
+    },
+    "a2-ten-past-negative": {
+      "category": "tenses",
+      "label": "Past Simple: заперечення"
+    },
+    "a2-ten-past-cont-while": {
+      "category": "tenses",
+      "label": "Past Continuous із while"
+    },
+    "a2-ten-present-perfect-ever": {
+      "category": "tenses",
+      "label": "Present Perfect: ever / never"
+    },
+    "a2-ten-present-perfect-yet": {
+      "category": "tenses",
+      "label": "Present Perfect: yet"
+    },
+    "a2-ten-present-perfect-howlong": {
+      "category": "tenses",
+      "label": "Present Perfect: How long"
+    },
+    "a2-ten-going-to": {
+      "category": "tenses",
+      "label": "be going to — план"
+    },
+    "a2-ten-will-decision": {
+      "category": "tenses",
+      "label": "will — рішення в момент мовлення"
+    },
+    "a2-ten-was-were": {
+      "category": "tenses",
+      "label": "was / were"
+    },
+    "a2-ten-perfect-ago": {
+      "category": "vocabulary",
+      "label": "ago — з минулим часом"
+    },
+    "a2-adv-frequency-pos": {
+      "category": "word order",
+      "label": "Місце прислівників частоти"
+    },
+    "a2-adv-frequency-verb": {
+      "category": "word order",
+      "label": "always/usually перед смисловим дієсловом"
+    },
+    "a2-adv-manner-ly": {
+      "category": "word order",
+      "label": "Прислівники способу на -ly"
+    },
+    "a2-comp-er-than": {
+      "category": "vocabulary",
+      "label": "Вищий ступінь: -er than"
+    },
+    "a2-comp-as-as": {
+      "category": "vocabulary",
+      "label": "as … as"
+    },
+    "a2-comp-too-enough": {
+      "category": "vocabulary",
+      "label": "too / enough"
+    },
+    "a2-comp-superlative": {
+      "category": "vocabulary",
+      "label": "Найвищий ступінь: the -est"
+    },
+    "a2-comp-irregular": {
+      "category": "vocabulary",
+      "label": "good — better — the best"
+    },
+    "a2-agr-there-is-are": {
+      "category": "agreement",
+      "label": "there is / there are"
+    },
+    "a2-agr-plural-irregular": {
+      "category": "agreement",
+      "label": "Неправильна множина"
+    },
+    "a2-agr-uncountable-verb": {
+      "category": "agreement",
+      "label": "Незлічувані — дієслово в однині"
+    },
+    "a2-agr-money-time": {
+      "category": "agreement",
+      "label": "Гроші й час як єдине ціле"
+    },
+    "a2-voc-much-many": {
+      "category": "vocabulary",
+      "label": "much / many"
+    },
+    "a2-voc-some-any": {
+      "category": "vocabulary",
+      "label": "some / any"
+    },
+    "a2-voc-some-offer": {
+      "category": "vocabulary",
+      "label": "some з проханням"
+    },
+    "a2-voc-a-lot-of": {
+      "category": "vocabulary",
+      "label": "a lot of"
+    },
+    "a2-syn-modal-bare": {
+      "category": "syntax",
+      "label": "Модальне дієслово + інфінітив без to"
+    },
+    "a2-syn-want-to": {
+      "category": "syntax",
+      "label": "want / need + to"
+    },
+    "a2-syn-enjoy-ing": {
+      "category": "syntax",
+      "label": "enjoy / like + -ing"
+    },
+    "a2-syn-purpose-to": {
+      "category": "syntax",
+      "label": "to + дієслово для мети"
+    },
+    "a2-syn-question-do": {
+      "category": "syntax",
+      "label": "Питання з do / does"
+    },
+    "a2-syn-question-does": {
+      "category": "syntax",
+      "label": "Питання: does + базова форма"
+    },
+    "a2-syn-question-order": {
+      "category": "syntax",
+      "label": "Порядок слів у спеціальному питанні"
+    },
+    "a2-syn-short-answers": {
+      "category": "syntax",
+      "label": "Короткі відповіді"
+    },
+    "a2-syn-because-so": {
+      "category": "syntax",
+      "label": "because / so"
+    },
+    "a2-syn-lets": {
+      "category": "syntax",
+      "label": "Let's + базова форма"
+    },
+    "a2-pre-time-on": {
+      "category": "prepositions",
+      "label": "on з днями"
+    },
+    "a2-pre-time-in": {
+      "category": "prepositions",
+      "label": "in з місяцями"
+    },
+    "a2-pre-time-at": {
+      "category": "prepositions",
+      "label": "at із годиною"
+    },
+    "a2-pre-arrive-at": {
+      "category": "prepositions",
+      "label": "arrive at / in"
+    },
+    "a2-pre-place-next-to": {
+      "category": "prepositions",
+      "label": "between / next to"
+    },
+    "a2-pre-transport-by": {
+      "category": "prepositions",
+      "label": "by + транспорт"
+    },
+    "a2-pre-go-to": {
+      "category": "prepositions",
+      "label": "go to + місце"
+    },
+    "a2-voc-possessive-s": {
+      "category": "vocabulary",
+      "label": "Присвійний відмінок з 's"
+    },
+    "a2-voc-object-pronoun": {
+      "category": "vocabulary",
+      "label": "Об'єктні займенники"
+    },
+    "a2-voc-say-tell": {
+      "category": "vocabulary",
+      "label": "say / tell"
+    },
+    "a2-voc-make-do": {
+      "category": "vocabulary",
+      "label": "make / do"
+    },
+    "a2-voc-watch-see-look": {
+      "category": "vocabulary",
+      "label": "watch / see / look at"
+    },
+    "a2-mod-should": {
+      "category": "tenses",
+      "label": "should — порада"
+    },
+    "a2-mod-have-to": {
+      "category": "tenses",
+      "label": "have to — необхідність"
+    },
+    "a2-mod-mustnt": {
+      "category": "tenses",
+      "label": "mustn't — заборона"
+    },
+    "a2-mod-could-past": {
+      "category": "tenses",
+      "label": "could — уміння в минулому"
+    },
+    "a2-wf-ed-ing": {
+      "category": "word formation",
+      "label": "-ed / -ing: bored / boring"
+    },
+    "a2-wf-ed-person": {
+      "category": "word formation",
+      "label": "-ed про людину"
+    }
+  },
+  "questions": [
+    {
+      "id": "a2-art-a-an-03",
+      "topic": "a2-art-a-an",
+      "level": "A2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "She",
+        "works",
+        "as",
+        "an",
+        "architect"
+      ],
+      "answer": "She works as an architect",
+      "explain": "Професія після work as — з артиклем a / an.\nArchitect починається з голосного звука, тому an.",
+      "ua": "Вона працює архітекторкою."
+    },
+    {
+      "id": "a2-art-the-superlative-03",
+      "topic": "a2-art-the-superlative",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Mum makes ___ best pancakes in the world.",
+      "options": [
+        "the",
+        "a",
+        "—",
+        "an"
+      ],
+      "answer": "the",
+      "explain": "Найвищий ступінь завжди з the: the best.\n✗ a / an — з найвищим ступенем не вживаються.\n✗ — (нічого) — без the найвищий ступінь неправильний.",
+      "ua": "Мама пече найкращі млинці у світі."
+    },
+    {
+      "id": "a2-art-second-mention-03",
+      "topic": "a2-art-second-mention",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We saw a castle and a lake. ___ castle was very old.",
+      "options": [
+        "The",
+        "A",
+        "An",
+        "—"
+      ],
+      "answer": "The",
+      "explain": "Замок уже згадали — тепер він відомий, тому the.\n✗ A / An — для першої згадки.\n✗ — (нічого) — злічуваний іменник в однині без артикля неможливий.",
+      "ua": "Ми побачили замок і озеро. Замок був дуже старий."
+    },
+    {
+      "id": "a2-art-no-article-general-03",
+      "topic": "a2-art-no-article-general",
+      "level": "A2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "don't",
+        "like",
+        "coffee",
+        "in",
+        "the",
+        "evening"
+      ],
+      "answer": "I don't like coffee in the evening",
+      "explain": "Про напої та їжу взагалі — без артикля: I don't like coffee.\nThe coffee — тільки про конкретну каву.",
+      "ua": "Я не люблю каву ввечері."
+    },
+    {
+      "id": "a2-ten-present-3rd-03",
+      "topic": "a2-ten-present-3rd",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "The app ___ every time I open it.",
+      "options": [
+        "crashes",
+        "crash",
+        "crashs",
+        "is crash"
+      ],
+      "answer": "crashes",
+      "explain": "The app = it, Present Simple — з -s. Після -sh додаємо -es: crashes.\n✗ crash — без закінчення в 3-й особі.\n✗ crashs — після -sh потрібне -es.\n✗ is crash — be з базовою формою не утворює часу.",
+      "ua": "Застосунок вилітає щоразу, коли я його відкриваю."
+    },
+    {
+      "id": "a2-ten-present-cont-03",
+      "topic": "a2-ten-present-cont",
+      "level": "A2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "are",
+        "working",
+        "on",
+        "a",
+        "new",
+        "project",
+        "this",
+        "week"
+      ],
+      "answer": "We are working on a new project this week",
+      "explain": "Тимчасова дія в цей період (this week) — Present Continuous: are working.\nWork on — працювати над чимось.",
+      "ua": "Цього тижня ми працюємо над новим проєктом."
+    },
+    {
+      "id": "a2-ten-past-irregular-03",
+      "topic": "a2-ten-past-irregular",
+      "level": "A2",
+      "type": "fill",
+      "domain": "daily",
+      "prompt": "Yesterday I ___ (write) a long letter to my aunt.",
+      "answer": "wrote",
+      "accept": [
+        "wrote"
+      ],
+      "explain": "Yesterday — Past Simple. Write — неправильне дієслово: write → wrote → written.",
+      "ua": "Учора я написав довгого листа своїй тітці."
+    },
+    {
+      "id": "a2-ten-past-negative-03",
+      "topic": "a2-ten-past-negative",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We ___ the museum because it was closed.",
+      "options": [
+        "didn't visit",
+        "didn't visited",
+        "not visited",
+        "don't visit"
+      ],
+      "answer": "didn't visit",
+      "explain": "Заперечення в Past Simple: didn't + базова форма.\n✗ didn't visited — минуле вже показує did, -ed зайве.\n✗ not visited — без did заперечення не утворюється.\n✗ don't visit — теперішній час, а мова про минуле.",
+      "ua": "Ми не відвідали музей, бо він був зачинений."
+    },
+    {
+      "id": "a2-ten-past-cont-while-03",
+      "topic": "a2-ten-past-cont-while",
+      "level": "A2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "While",
+        "we",
+        "were",
+        "walking",
+        "it",
+        "started",
+        "to",
+        "rain"
+      ],
+      "answer": "While we were walking it started to rain",
+      "explain": "Тривала дія — while + Past Continuous: were walking.\nКоротка дія, що її перервала, — Past Simple: started.",
+      "ua": "Поки ми гуляли, почався дощ."
+    },
+    {
+      "id": "a2-ten-present-perfect-ever-03",
+      "topic": "a2-ten-present-perfect-ever",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "Have you ever ___ a presentation in English?",
+      "options": [
+        "given",
+        "gave",
+        "give",
+        "giving"
+      ],
+      "answer": "given",
+      "explain": "Present Perfect: have + 3-я форма. Give → gave → given.\n✗ gave — 2-а форма, для Past Simple.\n✗ give / giving — після have у цьому часі неможливі.",
+      "ua": "Ти коли-небудь робив презентацію англійською?"
+    },
+    {
+      "id": "a2-ten-present-perfect-yet-03",
+      "topic": "a2-ten-present-perfect-yet",
+      "level": "A2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "haven't",
+        "cleaned",
+        "my",
+        "room",
+        "yet"
+      ],
+      "answer": "I haven't cleaned my room yet",
+      "explain": "Заперечення в Present Perfect — haven't + 3-я форма.\nYet стоїть у кінці речення.",
+      "ua": "Я ще не прибрав свою кімнату."
+    },
+    {
+      "id": "a2-ten-present-perfect-howlong-03",
+      "topic": "a2-ten-present-perfect-howlong",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "We have known each other ___ ten years.",
+      "options": [
+        "for",
+        "since",
+        "ago",
+        "from"
+      ],
+      "answer": "for",
+      "explain": "Тривалість — for: for ten years.\n✗ since — ставиться перед моментом початку: since 2015.\n✗ ago — з Past Simple.\n✗ from — у Present Perfect так не кажуть без to.",
+      "ua": "Ми знайомі вже десять років."
+    },
+    {
+      "id": "a2-ten-going-to-03",
+      "topic": "a2-ten-going-to",
+      "level": "A2",
+      "type": "fill",
+      "domain": "daily",
+      "prompt": "We are ___ to buy a new car next year.",
+      "answer": "going",
+      "accept": [
+        "going"
+      ],
+      "explain": "План, про який уже вирішили, — be going to + базова форма.\nWe are going to buy.",
+      "ua": "Наступного року ми збираємося купити нову машину."
+    },
+    {
+      "id": "a2-ten-will-decision-03",
+      "topic": "a2-ten-will-decision",
+      "level": "A2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "think",
+        "I",
+        "will",
+        "take",
+        "the",
+        "blue",
+        "one"
+      ],
+      "answer": "I think I will take the blue one",
+      "explain": "Рішення в момент вибору — will + базова форма.\nI think часто стоїть перед таким рішенням.",
+      "ua": "Мабуть, я візьму синій."
+    },
+    {
+      "id": "a2-ten-was-were-03",
+      "topic": "a2-ten-was-were",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "___ you at home last night?",
+      "options": [
+        "Were",
+        "Was",
+        "Did",
+        "Are"
+      ],
+      "answer": "Were",
+      "explain": "З you у минулому — were, навіть коли мова про одну людину.\n✗ Was — для I, he, she, it.\n✗ Did — be не утворює питання з did.\n✗ Are — теперішній час, а last night — минуле.",
+      "ua": "Ти був удома вчора ввечері?"
+    },
+    {
+      "id": "a2-ten-perfect-ago-03",
+      "topic": "a2-ten-perfect-ago",
+      "level": "A2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "She",
+        "started",
+        "this",
+        "job",
+        "a",
+        "month",
+        "ago"
+      ],
+      "answer": "She started this job a month ago",
+      "explain": "Ago — після проміжку часу і з Past Simple: a month ago.\nНе з Present Perfect.",
+      "ua": "Вона почала цю роботу місяць тому."
+    },
+    {
+      "id": "a2-adv-frequency-pos-03",
+      "topic": "a2-adv-frequency-pos",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "The trains here ___ on time.",
+      "options": [
+        "are usually",
+        "usually are",
+        "are usual",
+        "usual are"
+      ],
+      "answer": "are usually",
+      "explain": "Прислівник частоти стоїть після be: are usually.\n✗ usually are — перед be не ставимо.\n✗ are usual / usual are — потрібен прислівник usually, а не прикметник usual.",
+      "ua": "Потяги тут зазвичай приходять вчасно."
+    },
+    {
+      "id": "a2-adv-frequency-verb-03",
+      "topic": "a2-adv-frequency-verb",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "My parents ___ to the cinema.",
+      "options": [
+        "never go",
+        "go never",
+        "never goes",
+        "are never go"
+      ],
+      "answer": "never go",
+      "explain": "Прислівник частоти — перед смисловим дієсловом: never go.\n✗ go never — після дієслова не ставимо.\n✗ never goes — my parents = they, без -s.\n✗ are never go — be тут зайве.",
+      "ua": "Мої батьки ніколи не ходять у кіно."
+    },
+    {
+      "id": "a2-adv-manner-ly-03",
+      "topic": "a2-adv-manner-ly",
+      "level": "A2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "He",
+        "answered",
+        "the",
+        "questions",
+        "quickly"
+      ],
+      "answer": "He answered the questions quickly",
+      "explain": "Прислівник способу (як?) зазвичай стоїть після додатка: answered the questions quickly.\nQuick → quickly.",
+      "ua": "Він швидко відповів на запитання."
+    },
+    {
+      "id": "a2-comp-er-than-03",
+      "topic": "a2-comp-er-than",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Hotels in the centre are ___ than hotels outside the city.",
+      "options": [
+        "more expensive",
+        "expensiver",
+        "most expensive",
+        "more expensiver"
+      ],
+      "answer": "more expensive",
+      "explain": "Довгий прикметник — more + прикметник: more expensive.\n✗ expensiver — -er тільки для коротких.\n✗ most expensive — найвищий ступінь, а з than потрібен вищий.\n✗ more expensiver — подвійне порівняння.",
+      "ua": "Готелі в центрі дорожчі, ніж готелі за містом."
+    },
+    {
+      "id": "a2-comp-as-as-03",
+      "topic": "a2-comp-as-as",
+      "level": "A2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "My",
+        "son",
+        "is",
+        "as",
+        "tall",
+        "as",
+        "me"
+      ],
+      "answer": "My son is as tall as me",
+      "explain": "Рівність — as + прикметник + as.\nУ розмовній мові після as — об'єктний займенник: as me.",
+      "ua": "Мій син такий самий високий, як я."
+    },
+    {
+      "id": "a2-comp-too-enough-03",
+      "topic": "a2-comp-too-enough",
+      "level": "A2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "box",
+        "is",
+        "too",
+        "heavy",
+        "to",
+        "carry"
+      ],
+      "answer": "The box is too heavy to carry",
+      "explain": "Too + прикметник + to + дієслово: занадто важка, щоб нести.\nToo стоїть ПЕРЕД прикметником.",
+      "ua": "Коробка занадто важка, щоб її нести."
+    },
+    {
+      "id": "a2-comp-superlative-03",
+      "topic": "a2-comp-superlative",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "This is the ___ phone in the shop.",
+      "options": [
+        "most expensive",
+        "expensivest",
+        "more expensive",
+        "expensive most"
+      ],
+      "answer": "most expensive",
+      "explain": "Найвищий ступінь довгого прикметника — the most + прикметник.\n✗ expensivest — -est тільки для коротких.\n✗ more expensive — вищий ступінь, а після the і in the shop потрібен найвищий.\n✗ expensive most — неправильний порядок.",
+      "ua": "Це найдорожчий телефон у магазині."
+    },
+    {
+      "id": "a2-comp-irregular-03",
+      "topic": "a2-comp-irregular",
+      "level": "A2",
+      "type": "fill",
+      "domain": "travel",
+      "prompt": "The weather is ___ (bad) today than yesterday.",
+      "answer": "worse",
+      "accept": [
+        "worse"
+      ],
+      "explain": "Bad — неправильний прикметник: bad → worse → the worst.\nПісля than — вищий ступінь: worse.",
+      "ua": "Сьогодні погода гірша, ніж учора."
+    },
+    {
+      "id": "a2-agr-there-is-are-03",
+      "topic": "a2-agr-there-is-are",
+      "level": "A2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "There",
+        "are",
+        "three",
+        "bedrooms",
+        "in",
+        "our",
+        "flat"
+      ],
+      "answer": "There are three bedrooms in our flat",
+      "explain": "Множина (three bedrooms) — there are.\nМісце — в кінці речення.",
+      "ua": "У нашій квартирі три спальні."
+    },
+    {
+      "id": "a2-agr-plural-irregular-03",
+      "topic": "a2-agr-plural-irregular",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I brush my ___ twice a day.",
+      "options": [
+        "teeth",
+        "tooths",
+        "tooth",
+        "teeths"
+      ],
+      "answer": "teeth",
+      "explain": "Неправильна множина: tooth → teeth.\n✗ tooths / teeths — таких форм немає.\n✗ tooth — однина, а зуби чистимо всі.",
+      "ua": "Я чищу зуби двічі на день."
+    },
+    {
+      "id": "a2-agr-uncountable-verb-03",
+      "topic": "a2-agr-uncountable-verb",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Your luggage ___ too heavy.",
+      "options": [
+        "is",
+        "are",
+        "were",
+        "have"
+      ],
+      "answer": "is",
+      "explain": "Luggage — незлічуваний іменник, дієслово в однині: is.\n✗ are / were — для множини.\n✗ have — тут потрібне be.",
+      "ua": "Ваш багаж занадто важкий."
+    },
+    {
+      "id": "a2-agr-money-time-03",
+      "topic": "a2-agr-money-time",
+      "level": "A2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Five",
+        "hundred",
+        "euros",
+        "is",
+        "a",
+        "good",
+        "price"
+      ],
+      "answer": "Five hundred euros is a good price",
+      "explain": "Сума грошей як одне ціле — дієслово в однині: is.\nХоча euros — множина, мова про одну ціну.",
+      "ua": "П'ятсот євро — це хороша ціна."
+    },
+    {
+      "id": "a2-voc-much-many-03",
+      "topic": "a2-voc-much-many",
+      "level": "A2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "don't",
+        "have",
+        "much",
+        "time"
+      ],
+      "answer": "We don't have much time",
+      "explain": "Time — незлічуваний іменник, тому much.\nMuch частіше вживається в запереченнях і питаннях.",
+      "ua": "У нас небагато часу."
+    },
+    {
+      "id": "a2-voc-some-any-03",
+      "topic": "a2-voc-some-any",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "There are ___ new emails in your inbox.",
+      "options": [
+        "some",
+        "any",
+        "much",
+        "a"
+      ],
+      "answer": "some",
+      "explain": "У ствердному реченні — some.\n✗ any — у запереченнях і питаннях.\n✗ much — для незлічуваних.\n✗ a — з множиною неможливе.",
+      "ua": "У вашій скриньці є кілька нових листів."
+    },
+    {
+      "id": "a2-voc-some-offer-03",
+      "topic": "a2-voc-some-offer",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "Would you like ___ help with that?",
+      "options": [
+        "some",
+        "any",
+        "a",
+        "many"
+      ],
+      "answer": "some",
+      "explain": "У пропозиції — some, хоча речення питальне.\n✗ any — звучить як питання «чи потрібна взагалі хоч якась».\n✗ a — help незлічуване.\n✗ many — тільки для злічуваних.",
+      "ua": "Тобі допомогти з цим?"
+    },
+    {
+      "id": "a2-voc-a-lot-of-03",
+      "topic": "a2-voc-a-lot-of",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "There were ___ tourists in the old town.",
+      "options": [
+        "a lot of",
+        "a lot",
+        "much",
+        "lot of"
+      ],
+      "answer": "a lot of",
+      "explain": "Перед іменником — a lot of.\n✗ a lot — без of вживається тільки в кінці: I travel a lot.\n✗ much — для незлічуваних, а tourists злічувані.\n✗ lot of — без a неправильно.",
+      "ua": "У старому місті було багато туристів."
+    },
+    {
+      "id": "a2-syn-modal-bare-03",
+      "topic": "a2-syn-modal-bare",
+      "level": "A2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "You",
+        "should",
+        "book",
+        "a",
+        "hotel",
+        "early"
+      ],
+      "answer": "You should book a hotel early",
+      "explain": "Після модального should — базова форма без to: should book.",
+      "ua": "Тобі варто забронювати готель заздалегідь."
+    },
+    {
+      "id": "a2-syn-want-to-03",
+      "topic": "a2-syn-want-to",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "Do you want ___ the meeting to Friday?",
+      "options": [
+        "to move",
+        "move",
+        "moving",
+        "for move"
+      ],
+      "answer": "to move",
+      "explain": "Після want — to + базова форма: want to move.\n✗ move — без to неправильно.\n✗ moving — після want -ing не вживається.\n✗ for move — мету так не виражають.",
+      "ua": "Хочеш перенести нараду на п'ятницю?"
+    },
+    {
+      "id": "a2-syn-enjoy-ing-03",
+      "topic": "a2-syn-enjoy-ing",
+      "level": "A2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "enjoyed",
+        "walking",
+        "along",
+        "the",
+        "river"
+      ],
+      "answer": "We enjoyed walking along the river",
+      "explain": "Після enjoy — дієслово з -ing: enjoyed walking.\nEnjoy to walk — неправильно.",
+      "ua": "Нам сподобалося гуляти вздовж річки."
+    },
+    {
+      "id": "a2-syn-purpose-to-03",
+      "topic": "a2-syn-purpose-to",
+      "level": "A2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "opened",
+        "the",
+        "window",
+        "to",
+        "get",
+        "some",
+        "fresh",
+        "air"
+      ],
+      "answer": "I opened the window to get some fresh air",
+      "explain": "Мета — to + базова форма: to get.\nНе for get і не for getting.",
+      "ua": "Я відчинив вікно, щоб подихати свіжим повітрям."
+    },
+    {
+      "id": "a2-syn-question-do-03",
+      "topic": "a2-syn-question-do",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "___ they work from home on Fridays?",
+      "options": [
+        "Do",
+        "Does",
+        "Are",
+        "Is"
+      ],
+      "answer": "Do",
+      "explain": "They — множина, питання в Present Simple з Do.\n✗ Does — для he, she, it.\n✗ Are / Is — be не утворює питання з дієсловом work.",
+      "ua": "Вони працюють з дому по п'ятницях?"
+    },
+    {
+      "id": "a2-syn-question-does-03",
+      "topic": "a2-syn-question-does",
+      "level": "A2",
+      "type": "order",
+      "domain": "it",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "How",
+        "much",
+        "does",
+        "this",
+        "laptop",
+        "cost"
+      ],
+      "answer": "How much does this laptop cost",
+      "explain": "Питання в 3-й особі: does + підмет + базова форма.\nCost без -s: does … cost.",
+      "ua": "Скільки коштує цей ноутбук?"
+    },
+    {
+      "id": "a2-syn-question-order-03",
+      "topic": "a2-syn-question-order",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "When ___ for the exam?",
+      "options": [
+        "did you study",
+        "you studied",
+        "studied you",
+        "did you studied"
+      ],
+      "answer": "did you study",
+      "explain": "Питання в минулому: питальне слово + did + підмет + базова форма.\n✗ you studied — без did порядок розповідний.\n✗ studied you — так питання не будується.\n✗ did you studied — минуле вже показує did.",
+      "ua": "Коли ти готувався до іспиту?"
+    },
+    {
+      "id": "a2-syn-short-answers-03",
+      "topic": "a2-syn-short-answers",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "— Have you got your passport? — Yes, I ___.",
+      "options": [
+        "have",
+        "do",
+        "got",
+        "am"
+      ],
+      "answer": "have",
+      "explain": "Коротка відповідь повторює допоміжне дієслово з питання: Have …? — Yes, I have.\n✗ do — у питанні не було do.\n✗ got — коротка відповідь без have неможлива.\n✗ am — be не було в питанні.",
+      "ua": "— У тебе є паспорт? — Так, є."
+    },
+    {
+      "id": "a2-syn-because-so-03",
+      "topic": "a2-syn-because-so",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "The printer was broken, ___ I sent the file by email.",
+      "options": [
+        "so",
+        "because",
+        "but",
+        "or"
+      ],
+      "answer": "so",
+      "explain": "Друга частина — наслідок: принтер зламався → тому я надіслав файл. Наслідок вводить so.\n✗ because — вводить причину, а тут наслідок.\n✗ but — протиставлення.\n✗ or — вибір.",
+      "ua": "Принтер зламався, тож я надіслав файл поштою."
+    },
+    {
+      "id": "a2-syn-lets-03",
+      "topic": "a2-syn-lets",
+      "level": "A2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Let's",
+        "start",
+        "the",
+        "meeting",
+        "now"
+      ],
+      "answer": "Let's start the meeting now",
+      "explain": "Пропозиція — Let's + базова форма: Let's start.",
+      "ua": "Давайте почнемо нараду зараз."
+    },
+    {
+      "id": "a2-pre-time-on-03",
+      "topic": "a2-pre-time-on",
+      "level": "A2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "My",
+        "birthday",
+        "is",
+        "on",
+        "the",
+        "fifth",
+        "of",
+        "May"
+      ],
+      "answer": "My birthday is on the fifth of May",
+      "explain": "З датою — on: on the fifth of May.\nТільки з місяцем без числа — in May.",
+      "ua": "Мій день народження п'ятого травня."
+    },
+    {
+      "id": "a2-pre-time-in-03",
+      "topic": "a2-pre-time-in",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "She was born ___ 1995.",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "since"
+      ],
+      "answer": "in",
+      "explain": "З роками — in: in 1995.\n✗ on — з днями й датами.\n✗ at — з точним часом.\n✗ since — з Present Perfect, не з was born.",
+      "ua": "Вона народилася в 1995 році."
+    },
+    {
+      "id": "a2-pre-time-at-03",
+      "topic": "a2-pre-time-at",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I don't like going out ___ night.",
+      "options": [
+        "at",
+        "in",
+        "on",
+        "by"
+      ],
+      "answer": "at",
+      "explain": "Стала сполука — at night.\nАле in the morning, in the evening.\n✗ in / on / by — з night у цьому значенні не вживаються.",
+      "ua": "Я не люблю виходити вночі."
+    },
+    {
+      "id": "a2-pre-arrive-at-03",
+      "topic": "a2-pre-arrive-at",
+      "level": "A2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Our",
+        "train",
+        "arrives",
+        "at",
+        "the",
+        "station",
+        "at",
+        "noon"
+      ],
+      "answer": "Our train arrives at the station at noon",
+      "explain": "Arrive at — до конкретного місця: at the station.\nДругий at — з часом: at noon.",
+      "ua": "Наш потяг прибуває на вокзал опівдні."
+    },
+    {
+      "id": "a2-pre-place-next-to-03",
+      "topic": "a2-pre-place-next-to",
+      "level": "A2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "cinema",
+        "is",
+        "between",
+        "the",
+        "bank",
+        "and",
+        "the",
+        "post",
+        "office"
+      ],
+      "answer": "The cinema is between the bank and the post office",
+      "explain": "Between — між двома об'єктами, з'єднаними and: between the bank and the post office.",
+      "ua": "Кінотеатр між банком і поштою."
+    },
+    {
+      "id": "a2-pre-transport-by-03",
+      "topic": "a2-pre-transport-by",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "It takes ten minutes to get there ___ foot.",
+      "options": [
+        "on",
+        "by",
+        "with",
+        "in"
+      ],
+      "answer": "on",
+      "explain": "Пішки — on foot. Це виняток: інший транспорт — by car, by bus.\n✗ by foot — поширена помилка.\n✗ with / in — з foot у цьому значенні не вживаються.",
+      "ua": "Туди десять хвилин пішки."
+    },
+    {
+      "id": "a2-pre-go-to-03",
+      "topic": "a2-pre-go-to",
+      "level": "A2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "go",
+        "to",
+        "work",
+        "by",
+        "car"
+      ],
+      "answer": "I go to work by car",
+      "explain": "Go to + місце: go to work.\nАле go home — без to.",
+      "ua": "Я їжджу на роботу машиною."
+    },
+    {
+      "id": "a2-voc-possessive-s-03",
+      "topic": "a2-voc-possessive-s",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "This is ___ room.",
+      "options": [
+        "the children's",
+        "the childrens'",
+        "the children",
+        "the childs'"
+      ],
+      "answer": "the children's",
+      "explain": "Неправильна множина без -s (children) отримує 's: the children's room.\n✗ childrens' — такого слова немає.\n✗ the children — без 's немає значення «чия».\n✗ childs' — множина від child — children.",
+      "ua": "Це дитяча кімната."
+    },
+    {
+      "id": "a2-voc-object-pronoun-03",
+      "topic": "a2-voc-object-pronoun",
+      "level": "A2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Please",
+        "send",
+        "them",
+        "the",
+        "contract",
+        "today"
+      ],
+      "answer": "Please send them the contract today",
+      "explain": "Після дієслова — об'єктний займенник: send them.\nThey — тільки підмет.",
+      "ua": "Будь ласка, надішли їм договір сьогодні."
+    },
+    {
+      "id": "a2-voc-say-tell-03",
+      "topic": "a2-voc-say-tell",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "She ___ that she was tired.",
+      "options": [
+        "said",
+        "told",
+        "talked",
+        "spoke"
+      ],
+      "answer": "said",
+      "explain": "Say — без людини одразу після нього: she said that.\n✗ told — після tell потрібна людина: told me that.\n✗ talked / spoke — не вводять чужі слова через that.",
+      "ua": "Вона сказала, що втомилася."
+    },
+    {
+      "id": "a2-voc-make-do-03",
+      "topic": "a2-voc-make-do",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "I ___ a mistake in the report.",
+      "options": [
+        "made",
+        "did",
+        "had",
+        "took"
+      ],
+      "answer": "made",
+      "explain": "Стала сполука — make a mistake.\n✗ did — do a mistake неправильно.\n✗ had / took — з mistake у цьому значенні не вживаються.",
+      "ua": "Я зробив помилку у звіті."
+    },
+    {
+      "id": "a2-voc-watch-see-look-03",
+      "topic": "a2-voc-watch-see-look",
+      "level": "A2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Did",
+        "you",
+        "see",
+        "the",
+        "sea",
+        "from",
+        "your",
+        "window"
+      ],
+      "answer": "Did you see the sea from your window",
+      "explain": "See — бачити, помітити, без at.\nWatch — довго дивитися на те, що рухається.",
+      "ua": "Ти бачив море зі свого вікна?"
+    },
+    {
+      "id": "a2-mod-should-03",
+      "topic": "a2-mod-should",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "Your password is weak. You ___ change it.",
+      "options": [
+        "should",
+        "should to",
+        "shoulds",
+        "are should"
+      ],
+      "answer": "should",
+      "explain": "Порада — should + базова форма.\n✗ should to — to після should не ставиться.\n✗ shoulds — модальні дієслова не мають -s.\n✗ are should — be з should не поєднується.",
+      "ua": "У тебе слабкий пароль. Тобі варто його змінити."
+    },
+    {
+      "id": "a2-mod-have-to-03",
+      "topic": "a2-mod-have-to",
+      "level": "A2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Do",
+        "you",
+        "have",
+        "to",
+        "get",
+        "up",
+        "early",
+        "tomorrow"
+      ],
+      "answer": "Do you have to get up early tomorrow",
+      "explain": "Питання з have to — через do: Do you have to …?\nHave to поводиться як звичайне дієслово.",
+      "ua": "Тобі завтра треба рано вставати?"
+    },
+    {
+      "id": "a2-mod-mustnt-03",
+      "topic": "a2-mod-mustnt",
+      "level": "A2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "You",
+        "mustn't",
+        "touch",
+        "the",
+        "hot",
+        "oven"
+      ],
+      "answer": "You mustn't touch the hot oven",
+      "explain": "Заборона — mustn't + базова форма.\nНе плутати з don't have to — «не обов'язково».",
+      "ua": "Не можна торкатися гарячої духовки."
+    },
+    {
+      "id": "a2-mod-could-past-03",
+      "topic": "a2-mod-could-past",
+      "level": "A2",
+      "type": "order",
+      "domain": "general",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "My",
+        "grandfather",
+        "could",
+        "speak",
+        "four",
+        "languages"
+      ],
+      "answer": "My grandfather could speak four languages",
+      "explain": "Уміння в минулому — could + базова форма: could speak.\nCould не змінюється за особами.",
+      "ua": "Мій дідусь умів розмовляти чотирма мовами."
+    },
+    {
+      "id": "a2-wf-ed-ing-03",
+      "topic": "a2-wf-ed-ing",
+      "level": "A2",
+      "type": "order",
+      "domain": "general",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "news",
+        "was",
+        "very",
+        "surprising"
+      ],
+      "answer": "The news was very surprising",
+      "explain": "Те, що викликає почуття, — прикметник на -ing: surprising.\nNews — однина, тому was.",
+      "ua": "Новина була дуже несподіваною."
+    },
+    {
+      "id": "a2-wf-ed-person-03",
+      "topic": "a2-wf-ed-person",
+      "level": "A2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "I'm ___ about tomorrow's interview.",
+      "options": [
+        "worried",
+        "worrying",
+        "worry",
+        "worries"
+      ],
+      "answer": "worried",
+      "explain": "Як почувається людина — -ed: I'm worried.\n✗ worrying — про те, що турбує: worrying news.\n✗ worry / worries — дієслово, після I'm неможливе.",
+      "ua": "Я хвилююся через завтрашню співбесіду."
+    }
+  ]
+}
