@@ -6,11 +6,12 @@
 
   const REDUCE_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* Кольори смужок логотипа (жовта, блакитна, фіолетова), вершина шкали — колір успіху (--ok). */
   function temperColor(acc) {
-    if (acc >= 0.85) return "var(--indigo)";
-    if (acc >= 0.7) return "var(--blue)";
-    if (acc >= 0.5) return "var(--cyan)";
-    return "var(--teal)";
+    if (acc >= 0.85) return "var(--ok)";
+    if (acc >= 0.7) return "#6155f5";
+    if (acc >= 0.5) return "#00c0e8";
+    return "#ffcc00";
   }
 
   /* Лічильник відсотка біжить синхронно зі смугою (.tbar-fill, той самий
