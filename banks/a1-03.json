@@ -1,0 +1,1145 @@
+{
+  "schema": 2,
+  "pack": "a1-03",
+  "title": "Пак A1 — нові теми",
+  "level": "A1",
+  "topics": {
+    "a1-pres-cont-now": {
+      "category": "tenses",
+      "label": "Present Continuous: що відбувається зараз"
+    },
+    "a1-past-be": {
+      "category": "tenses",
+      "label": "was / were"
+    },
+    "a1-past-regular": {
+      "category": "tenses",
+      "label": "Past Simple: правильні дієслова на -ed"
+    },
+    "a1-past-irregular": {
+      "category": "tenses",
+      "label": "Past Simple: went, had, saw"
+    },
+    "a1-object-pron": {
+      "category": "vocabulary",
+      "label": "me / him / her / us / them"
+    },
+    "a1-poss-s": {
+      "category": "vocabulary",
+      "label": "'s — чиє: Anna's bag"
+    },
+    "a1-prep-time": {
+      "category": "prepositions",
+      "label": "at / on / in з часом"
+    },
+    "a1-like-ing": {
+      "category": "syntax",
+      "label": "like / love / hate + -ing"
+    },
+    "a1-some-any": {
+      "category": "vocabulary",
+      "label": "some / any"
+    },
+    "a1-ordinal-dates": {
+      "category": "vocabulary",
+      "label": "first / second / third у датах"
+    },
+    "a1-telling-time": {
+      "category": "vocabulary",
+      "label": "Котра година: half past, quarter to"
+    },
+    "a1-family": {
+      "category": "vocabulary",
+      "label": "Родина: aunt, uncle, cousin"
+    },
+    "a1-question-when-how": {
+      "category": "syntax",
+      "label": "Питальні слова: when / how / why / who"
+    },
+    "a1-would-like": {
+      "category": "syntax",
+      "label": "would like — ввічливе бажання"
+    },
+    "a1-and-but-or": {
+      "category": "syntax",
+      "label": "and / but / or"
+    },
+    "a1-adj-before-noun": {
+      "category": "word order",
+      "label": "Прикметник перед іменником"
+    },
+    "a1-have-expressions": {
+      "category": "vocabulary",
+      "label": "have breakfast, have a shower"
+    },
+    "a1-prep-to-from": {
+      "category": "prepositions",
+      "label": "to / from: напрямок і походження"
+    },
+    "a1-can-request": {
+      "category": "syntax",
+      "label": "Can I / Can you — прохання"
+    },
+    "a1-contractions": {
+      "category": "spelling",
+      "label": "Скорочення: I'm, don't, it's"
+    }
+  },
+  "questions": [
+    {
+      "id": "a1-pres-cont-now-01",
+      "topic": "a1-pres-cont-now",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Shh! The baby ___.",
+      "options": [
+        "is sleeping",
+        "sleeps",
+        "sleeping",
+        "are sleeping"
+      ],
+      "answer": "is sleeping",
+      "explain": "Що відбувається просто зараз — am / is / are + -ing.\n✗ sleeps — так кажуть про звичку, а не про зараз.\n✗ sleeping — без is речення неповне.\n✗ are sleeping — the baby = it, тому is.",
+      "ua": "Тихо! Дитина спить."
+    },
+    {
+      "id": "a1-pres-cont-now-02",
+      "topic": "a1-pres-cont-now",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "am",
+        "cooking",
+        "dinner",
+        "now"
+      ],
+      "answer": "I am cooking dinner now",
+      "explain": "Зараз — am / is / are + дієслово з -ing.\nЗ I — am.",
+      "ua": "Я зараз готую вечерю."
+    },
+    {
+      "id": "a1-pres-cont-now-03",
+      "topic": "a1-pres-cont-now",
+      "level": "A1",
+      "type": "fill",
+      "domain": "travel",
+      "prompt": "Look! They ___ (dance) in the street.",
+      "answer": "are dancing",
+      "accept": [
+        "are dancing",
+        "'re dancing",
+        "’re dancing"
+      ],
+      "explain": "Look! показує, що дія відбувається просто зараз — are + -ing.\nDance → dancing: e зникає.",
+      "ua": "Дивись! Вони танцюють на вулиці."
+    },
+    {
+      "id": "a1-past-be-01",
+      "topic": "a1-past-be",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I ___ tired yesterday.",
+      "options": [
+        "was",
+        "were",
+        "am",
+        "be"
+      ],
+      "answer": "was",
+      "explain": "Минулий час від be: I / he / she / it — was.\n✗ were — для you, we, they.\n✗ am — теперішній час, а yesterday — минуле.\n✗ be — базова форма.",
+      "ua": "Учора я був утомлений."
+    },
+    {
+      "id": "a1-past-be-02",
+      "topic": "a1-past-be",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We ___ in Odesa last summer.",
+      "options": [
+        "were",
+        "was",
+        "are",
+        "did"
+      ],
+      "answer": "were",
+      "explain": "We / you / they у минулому — were.\n✗ was — для I, he, she, it.\n✗ are — теперішній час.\n✗ did — не замінює be.",
+      "ua": "Минулого літа ми були в Одесі."
+    },
+    {
+      "id": "a1-past-be-03",
+      "topic": "a1-past-be",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Where",
+        "were",
+        "you",
+        "last",
+        "night"
+      ],
+      "answer": "Where were you last night",
+      "explain": "Питання з be в минулому: were + підмет.\nWhere на початку.",
+      "ua": "Де ти був учора ввечері?"
+    },
+    {
+      "id": "a1-past-regular-01",
+      "topic": "a1-past-regular",
+      "level": "A1",
+      "type": "fill",
+      "domain": "daily",
+      "prompt": "Yesterday I ___ (watch) a good film.",
+      "answer": "watched",
+      "accept": [
+        "watched"
+      ],
+      "explain": "Правильне дієслово в минулому — + -ed: watch → watched.",
+      "ua": "Учора я подивився гарний фільм."
+    },
+    {
+      "id": "a1-past-regular-02",
+      "topic": "a1-past-regular",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "She ___ her grandmother last weekend.",
+      "options": [
+        "visited",
+        "visit",
+        "visits",
+        "visitted"
+      ],
+      "answer": "visited",
+      "explain": "Last weekend — минуле, + -ed: visited.\n✗ visit / visits — теперішній час.\n✗ visitted — t не подвоюється, наголос не на останньому складі.",
+      "ua": "Минулих вихідних вона провідала бабусю."
+    },
+    {
+      "id": "a1-past-regular-03",
+      "topic": "a1-past-regular",
+      "level": "A1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "walked",
+        "to",
+        "the",
+        "old",
+        "church"
+      ],
+      "answer": "We walked to the old church",
+      "explain": "Walk → walked: правильне дієслово + -ed.\nФорма однакова для всіх осіб.",
+      "ua": "Ми пішли пішки до старої церкви."
+    },
+    {
+      "id": "a1-past-irregular-01",
+      "topic": "a1-past-irregular",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Last year we ___ to Italy.",
+      "options": [
+        "went",
+        "goed",
+        "go",
+        "gone"
+      ],
+      "answer": "went",
+      "explain": "Go — неправильне дієслово: go → went.\n✗ goed — такої форми немає.\n✗ go — теперішній час.\n✗ gone — 3-я форма, без have не вживається.",
+      "ua": "Минулого року ми їздили до Італії."
+    },
+    {
+      "id": "a1-past-irregular-02",
+      "topic": "a1-past-irregular",
+      "level": "A1",
+      "type": "fill",
+      "domain": "daily",
+      "prompt": "I ___ (have) pizza for lunch yesterday.",
+      "answer": "had",
+      "accept": [
+        "had"
+      ],
+      "explain": "Have → had у минулому.\nYesterday — маркер Past Simple.",
+      "ua": "Учора я їв піцу на обід."
+    },
+    {
+      "id": "a1-past-irregular-03",
+      "topic": "a1-past-irregular",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "saw",
+        "your",
+        "brother",
+        "in",
+        "the",
+        "park"
+      ],
+      "answer": "I saw your brother in the park",
+      "explain": "See — неправильне дієслово: see → saw → seen.\nУ Past Simple форма saw однакова для всіх осіб: I saw, she saw.",
+      "ua": "Я бачив твого брата в парку."
+    },
+    {
+      "id": "a1-object-pron-01",
+      "topic": "a1-object-pron",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Where is Tom? I can't see ___.",
+      "options": [
+        "him",
+        "he",
+        "his",
+        "himself"
+      ],
+      "answer": "him",
+      "explain": "Після дієслова — об'єктний займенник: see him.\n✗ he — тільки підмет.\n✗ his — «його» перед іменником.\n✗ himself — «себе».",
+      "ua": "Де Том? Я його не бачу."
+    },
+    {
+      "id": "a1-object-pron-02",
+      "topic": "a1-object-pron",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Our friends are here. Let's say hello to ___.",
+      "options": [
+        "them",
+        "they",
+        "their",
+        "us"
+      ],
+      "answer": "them",
+      "explain": "Після to — об'єктний займенник: to them.\n✗ they — підмет.\n✗ their — «їхній» перед іменником.\n✗ us — «нам», а мова про друзів.",
+      "ua": "Наші друзі тут. Давай привітаємося з ними."
+    },
+    {
+      "id": "a1-object-pron-03",
+      "topic": "a1-object-pron",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Please",
+        "call",
+        "us",
+        "after",
+        "dinner"
+      ],
+      "answer": "Please call us after dinner",
+      "explain": "Після дієслова — об'єктний займенник: call us.\nWe — тільки підмет.",
+      "ua": "Будь ласка, подзвони нам після вечері."
+    },
+    {
+      "id": "a1-poss-s-01",
+      "topic": "a1-poss-s",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "This is ___ bike.",
+      "options": [
+        "Max's",
+        "Maxs",
+        "Max",
+        "of Max"
+      ],
+      "answer": "Max's",
+      "explain": "Чиє — ім'я + 's: Max's bike.\n✗ Maxs — без апострофа це множина.\n✗ Max — без 's немає значення «чий».\n✗ of Max — так про людей не кажуть.",
+      "ua": "Це велосипед Макса."
+    },
+    {
+      "id": "a1-poss-s-02",
+      "topic": "a1-poss-s",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "My",
+        "sister's",
+        "room",
+        "is",
+        "very",
+        "small"
+      ],
+      "answer": "My sister's room is very small",
+      "explain": "Чия кімната — sister's room.\nСпочатку власник з 's, потім річ.",
+      "ua": "Кімната моєї сестри дуже маленька."
+    },
+    {
+      "id": "a1-poss-s-03",
+      "topic": "a1-poss-s",
+      "level": "A1",
+      "type": "fill",
+      "domain": "daily",
+      "prompt": "Is this your ___ (dad) car?",
+      "answer": "dad's",
+      "accept": [
+        "dad's",
+        "dad’s"
+      ],
+      "explain": "Чия машина — dad's car: до слова dad додаємо 's.\nСпочатку власник, потім річ.",
+      "ua": "Це машина твого тата?"
+    },
+    {
+      "id": "a1-prep-time-01",
+      "topic": "a1-prep-time",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I get up ___ seven o'clock.",
+      "options": [
+        "at",
+        "on",
+        "in",
+        "to"
+      ],
+      "answer": "at",
+      "explain": "З годиною — at: at seven o'clock.\n✗ on — з днями.\n✗ in — з місяцями й частинами дня.\n✗ to — не вживається з годиною.",
+      "ua": "Я встаю о сьомій."
+    },
+    {
+      "id": "a1-prep-time-02",
+      "topic": "a1-prep-time",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "We don't work ___ Sunday.",
+      "options": [
+        "on",
+        "at",
+        "in",
+        "by"
+      ],
+      "answer": "on",
+      "explain": "З днями тижня — on: on Sunday.\n✗ at — з годиною.\n✗ in — з місяцями.\n✗ by — «до якогось часу».",
+      "ua": "Ми не працюємо в неділю."
+    },
+    {
+      "id": "a1-prep-time-03",
+      "topic": "a1-prep-time",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "read",
+        "books",
+        "in",
+        "the",
+        "evening"
+      ],
+      "answer": "I read books in the evening",
+      "explain": "З частинами дня — in: in the evening, in the morning.\nАле at night.",
+      "ua": "Увечері я читаю книжки."
+    },
+    {
+      "id": "a1-like-ing-01",
+      "topic": "a1-like-ing",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I love ___ to music.",
+      "options": [
+        "listening",
+        "listen",
+        "listens",
+        "listened"
+      ],
+      "answer": "listening",
+      "explain": "Після love / like / hate про те, що подобається робити, — -ing: love listening.\n✗ listen / listens / listened — інші форми тут неможливі.",
+      "ua": "Я дуже люблю слухати музику."
+    },
+    {
+      "id": "a1-like-ing-02",
+      "topic": "a1-like-ing",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "My",
+        "brother",
+        "hates",
+        "getting",
+        "up",
+        "early"
+      ],
+      "answer": "My brother hates getting up early",
+      "explain": "Hate + -ing: hates getting up.\nMy brother = he, тому hates з -s.",
+      "ua": "Мій брат ненавидить рано вставати."
+    },
+    {
+      "id": "a1-like-ing-03",
+      "topic": "a1-like-ing",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Do you like ___ by train?",
+      "options": [
+        "travelling",
+        "travel",
+        "travels",
+        "travelled"
+      ],
+      "answer": "travelling",
+      "explain": "Like + -ing — коли кажемо, що подобається робити: like travelling.\nУ британському правописі l подвоюється.\n✗ travel / travels / travelled — після like ці форми тут неможливі.",
+      "ua": "Тобі подобається подорожувати потягом?"
+    },
+    {
+      "id": "a1-some-any-01",
+      "topic": "a1-some-any",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I have ___ apples in my bag.",
+      "options": [
+        "some",
+        "any",
+        "a",
+        "much"
+      ],
+      "answer": "some",
+      "explain": "У ствердному реченні — some.\n✗ any — у запереченнях і питаннях.\n✗ a — тільки з одним предметом.\n✗ much — з незлічуваними.",
+      "ua": "У мене в сумці є кілька яблук."
+    },
+    {
+      "id": "a1-some-any-02",
+      "topic": "a1-some-any",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "We don't have ___ eggs.",
+      "options": [
+        "any",
+        "some",
+        "a",
+        "an"
+      ],
+      "answer": "any",
+      "explain": "У запереченні — any: don't have any.\n✗ some — у ствердних реченнях.\n✗ a / an — з множиною не вживаються.",
+      "ua": "У нас немає яєць."
+    },
+    {
+      "id": "a1-some-any-03",
+      "topic": "a1-some-any",
+      "level": "A1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Are",
+        "there",
+        "any",
+        "shops",
+        "near",
+        "here"
+      ],
+      "answer": "Are there any shops near here",
+      "explain": "У питаннях — any: Are there any shops?\nУ ствердних реченнях — some: There are some shops.",
+      "ua": "Тут поблизу є крамниці?"
+    },
+    {
+      "id": "a1-ordinal-dates-01",
+      "topic": "a1-ordinal-dates",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "My birthday is on the ___ of March.",
+      "options": [
+        "third",
+        "three",
+        "threeth",
+        "thirdth"
+      ],
+      "answer": "third",
+      "explain": "У датах — порядкові числівники: the third.\n✗ three — кількісний.\n✗ threeth / thirdth — таких форм немає.",
+      "ua": "Мій день народження третього березня."
+    },
+    {
+      "id": "a1-ordinal-dates-02",
+      "topic": "a1-ordinal-dates",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Our room is on the ___ floor.",
+      "options": [
+        "second",
+        "two",
+        "twoth",
+        "secondth"
+      ],
+      "answer": "second",
+      "explain": "Котрий поверх — порядковий числівник: the second floor.\n✗ two — кількісний.\n✗ twoth / secondth — таких форм немає.",
+      "ua": "Наша кімната на другому поверсі."
+    },
+    {
+      "id": "a1-ordinal-dates-03",
+      "topic": "a1-ordinal-dates",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "This",
+        "is",
+        "my",
+        "first",
+        "time",
+        "in",
+        "London"
+      ],
+      "answer": "This is my first time in London",
+      "explain": "First — порядковий числівник від one.\nMy first time — мій перший раз.",
+      "ua": "Я вперше в Лондоні."
+    },
+    {
+      "id": "a1-telling-time-01",
+      "topic": "a1-telling-time",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "It's 7:30. It's ___ seven.",
+      "options": [
+        "half past",
+        "half to",
+        "thirty past to",
+        "half of"
+      ],
+      "answer": "half past",
+      "explain": "7:30 — half past seven: половина після сьомої.\n✗ half to / half of — так не кажуть.\n✗ thirty past to — неправильна конструкція.",
+      "ua": "Зараз пів на восьму."
+    },
+    {
+      "id": "a1-telling-time-02",
+      "topic": "a1-telling-time",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "It's 8:45. It's a quarter ___ nine.",
+      "options": [
+        "to",
+        "past",
+        "for",
+        "at"
+      ],
+      "answer": "to",
+      "explain": "8:45 — за чверть дев'ята: a quarter to nine.\n✗ past — після години: 9:15 = a quarter past nine.\n✗ for / at — так не кажуть.",
+      "ua": "Зараз за чверть дев'ята."
+    },
+    {
+      "id": "a1-telling-time-03",
+      "topic": "a1-telling-time",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "What",
+        "time",
+        "is",
+        "it",
+        "now"
+      ],
+      "answer": "What time is it now",
+      "explain": "Котра година? — What time is it?\nNow можна додати в кінці.",
+      "ua": "Котра зараз година?"
+    },
+    {
+      "id": "a1-family-01",
+      "topic": "a1-family",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "My mother's sister is my ___.",
+      "options": [
+        "aunt",
+        "uncle",
+        "cousin",
+        "niece"
+      ],
+      "answer": "aunt",
+      "explain": "Сестра мами — тітка: aunt.\n✗ uncle — дядько.\n✗ cousin — двоюрідний брат чи сестра.\n✗ niece — племінниця.",
+      "ua": "Сестра моєї мами — моя тітка."
+    },
+    {
+      "id": "a1-family-02",
+      "topic": "a1-family",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "My uncle's son is my ___.",
+      "options": [
+        "cousin",
+        "nephew",
+        "brother",
+        "grandson"
+      ],
+      "answer": "cousin",
+      "explain": "Син дядька — двоюрідний брат: cousin.\n✗ nephew — племінник.\n✗ brother — рідний брат.\n✗ grandson — онук.",
+      "ua": "Син мого дядька — мій двоюрідний брат."
+    },
+    {
+      "id": "a1-family-03",
+      "topic": "a1-family",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "have",
+        "two",
+        "cousins",
+        "and",
+        "one",
+        "nephew"
+      ],
+      "answer": "I have two cousins and one nephew",
+      "explain": "Cousins — двоюрідні брати чи сестри, nephew — племінник.\nПісля two — множина.",
+      "ua": "У мене двоє двоюрідних братів і один племінник."
+    },
+    {
+      "id": "a1-question-when-how-01",
+      "topic": "a1-question-when-how",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "___ is your birthday? — In May.",
+      "options": [
+        "When",
+        "Where",
+        "Who",
+        "Why"
+      ],
+      "answer": "When",
+      "explain": "Відповідь — час (In May), тому When.\n✗ Where — про місце.\n✗ Who — про людину.\n✗ Why — про причину.",
+      "ua": "Коли в тебе день народження? — У травні."
+    },
+    {
+      "id": "a1-question-when-how-02",
+      "topic": "a1-question-when-how",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "___ do you go to work? — By bus.",
+      "options": [
+        "How",
+        "What",
+        "When",
+        "Who"
+      ],
+      "answer": "How",
+      "explain": "Відповідь — спосіб (By bus), тому How.\n✗ What — «що».\n✗ When — про час.\n✗ Who — про людину.",
+      "ua": "Як ти їздиш на роботу? — Автобусом."
+    },
+    {
+      "id": "a1-question-when-how-03",
+      "topic": "a1-question-when-how",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Why",
+        "are",
+        "you",
+        "so",
+        "happy",
+        "today"
+      ],
+      "answer": "Why are you so happy today",
+      "explain": "Why — про причину. Порядок: Why + are + підмет.",
+      "ua": "Чому ти сьогодні такий щасливий?"
+    },
+    {
+      "id": "a1-would-like-01",
+      "topic": "a1-would-like",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "I'd like ___ coffee, please.",
+      "options": [
+        "a",
+        "an",
+        "to",
+        "much"
+      ],
+      "answer": "a",
+      "explain": "Замовляємо одну чашку — a coffee.\n✗ an — перед голосним звуком.\n✗ to — після would like перед іменником не ставиться.\n✗ much — з одною чашкою не вживається.",
+      "ua": "Мені каву, будь ласка."
+    },
+    {
+      "id": "a1-would-like-02",
+      "topic": "a1-would-like",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Would you like ___ with us?",
+      "options": [
+        "to come",
+        "come",
+        "coming",
+        "comes"
+      ],
+      "answer": "to come",
+      "explain": "Would like + to + базова форма: would like to come.\n✗ come — без to неправильно.\n✗ coming / comes — після would like не вживаються.",
+      "ua": "Хочеш піти з нами?"
+    },
+    {
+      "id": "a1-would-like-03",
+      "topic": "a1-would-like",
+      "level": "A1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "would",
+        "like",
+        "a",
+        "room",
+        "for",
+        "two",
+        "nights"
+      ],
+      "answer": "I would like a room for two nights",
+      "explain": "Would like — ввічливе «я хотів би».\nПісля нього — іменник або to + дієслово.",
+      "ua": "Я хотів би номер на дві ночі."
+    },
+    {
+      "id": "a1-and-but-or-01",
+      "topic": "a1-and-but-or",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I like tea, ___ I don't like coffee.",
+      "options": [
+        "but",
+        "and",
+        "or",
+        "so"
+      ],
+      "answer": "but",
+      "explain": "Протиставлення — but.\n✗ and — просто додає, без протиставлення.\n✗ or — вибір.\n✗ so — наслідок.",
+      "ua": "Я люблю чай, але не люблю каву."
+    },
+    {
+      "id": "a1-and-but-or-02",
+      "topic": "a1-and-but-or",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Do you want tea ___ coffee?",
+      "options": [
+        "or",
+        "and",
+        "but",
+        "so"
+      ],
+      "answer": "or",
+      "explain": "Вибір між двома — or.\n✗ and — обидва.\n✗ but — протиставлення.\n✗ so — наслідок.",
+      "ua": "Ти хочеш чай чи каву?"
+    },
+    {
+      "id": "a1-and-but-or-03",
+      "topic": "a1-and-but-or",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "My",
+        "sister",
+        "is",
+        "tall",
+        "and",
+        "my",
+        "brother",
+        "is",
+        "short"
+      ],
+      "answer": "My sister is tall and my brother is short",
+      "explain": "And з'єднує два речення без протиставлення.",
+      "ua": "Моя сестра висока, а мій брат низький."
+    },
+    {
+      "id": "a1-adj-before-noun-01",
+      "topic": "a1-adj-before-noun",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I have a ___.",
+      "options": [
+        "new phone",
+        "phone new",
+        "new a phone",
+        "phone a new"
+      ],
+      "answer": "new phone",
+      "explain": "Прикметник стоїть ПЕРЕД іменником: a new phone.\n✗ phone new — прикметник після іменника не ставиться.\n✗ new a phone / phone a new — артикль стоїть перед прикметником.",
+      "ua": "У мене новий телефон."
+    },
+    {
+      "id": "a1-adj-before-noun-02",
+      "topic": "a1-adj-before-noun",
+      "level": "A1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "stayed",
+        "in",
+        "a",
+        "small",
+        "hotel"
+      ],
+      "answer": "We stayed in a small hotel",
+      "explain": "Артикль — прикметник — іменник: a small hotel.",
+      "ua": "Ми жили в маленькому готелі."
+    },
+    {
+      "id": "a1-adj-before-noun-03",
+      "topic": "a1-adj-before-noun",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "She",
+        "has",
+        "long",
+        "black",
+        "hair"
+      ],
+      "answer": "She has long black hair",
+      "explain": "Кілька прикметників — усі перед іменником: long black hair.\nHair — незлічуване, без a.",
+      "ua": "У неї довге чорне волосся."
+    },
+    {
+      "id": "a1-have-expressions-01",
+      "topic": "a1-have-expressions",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I usually ___ breakfast at eight.",
+      "options": [
+        "have",
+        "eat a",
+        "make a",
+        "take"
+      ],
+      "answer": "have",
+      "explain": "Снідати — have breakfast, без артикля.\n✗ eat a / make a — артикль перед breakfast зайвий.\n✗ take — з breakfast не вживається.",
+      "ua": "Зазвичай я снідаю о восьмій."
+    },
+    {
+      "id": "a1-have-expressions-02",
+      "topic": "a1-have-expressions",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I ___ a shower every morning.",
+      "options": [
+        "have",
+        "do",
+        "make",
+        "go"
+      ],
+      "answer": "have",
+      "explain": "Прийняти душ — have a shower (американською take a shower).\n✗ do / make / go — з shower не вживаються.",
+      "ua": "Я щоранку приймаю душ."
+    },
+    {
+      "id": "a1-have-expressions-03",
+      "topic": "a1-have-expressions",
+      "level": "A1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Let's",
+        "have",
+        "lunch",
+        "near",
+        "the",
+        "river"
+      ],
+      "answer": "Let's have lunch near the river",
+      "explain": "Обідати — have lunch, без артикля.\nLet's + базова форма.",
+      "ua": "Давай пообідаємо біля річки."
+    },
+    {
+      "id": "a1-prep-to-from-01",
+      "topic": "a1-prep-to-from",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I'm ___ Ukraine.",
+      "options": [
+        "from",
+        "of",
+        "to",
+        "in"
+      ],
+      "answer": "from",
+      "explain": "Звідки людина — from: I'm from Ukraine.\n✗ of — калька.\n✗ to — напрямок.\n✗ in — «в Україні», а не «з України».",
+      "ua": "Я з України."
+    },
+    {
+      "id": "a1-prep-to-from-02",
+      "topic": "a1-prep-to-from",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "This bus goes ___ the airport.",
+      "options": [
+        "to",
+        "at",
+        "in",
+        "from to"
+      ],
+      "answer": "to",
+      "explain": "Куди — to: goes to the airport.\n✗ at / in — місце, а не напрямок.\n✗ from to — бракує початкової точки.",
+      "ua": "Цей автобус їде до аеропорту."
+    },
+    {
+      "id": "a1-prep-to-from-03",
+      "topic": "a1-prep-to-from",
+      "level": "A1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "train",
+        "from",
+        "Kyiv",
+        "arrives",
+        "at",
+        "noon"
+      ],
+      "answer": "The train from Kyiv arrives at noon",
+      "explain": "From — звідки: the train from Kyiv.\nAt — з точним часом.",
+      "ua": "Потяг з Києва прибуває опівдні."
+    },
+    {
+      "id": "a1-can-request-01",
+      "topic": "a1-can-request",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "___ I pay by card?",
+      "options": [
+        "Can",
+        "Do",
+        "Am",
+        "Does"
+      ],
+      "answer": "Can",
+      "explain": "Прохання про дозвіл — Can I …?\n✗ Do / Does — питають про звичку, а не дозвіл.\n✗ Am — не поєднується з pay.",
+      "ua": "Можна оплатити карткою?"
+    },
+    {
+      "id": "a1-can-request-02",
+      "topic": "a1-can-request",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Can you ___ me, please?",
+      "options": [
+        "help",
+        "to help",
+        "helping",
+        "helps"
+      ],
+      "answer": "help",
+      "explain": "Після can — базова форма без to: can you help.\n✗ to help / helping / helps — після can не вживаються.",
+      "ua": "Можеш мені допомогти, будь ласка?"
+    },
+    {
+      "id": "a1-can-request-03",
+      "topic": "a1-can-request",
+      "level": "A1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Can",
+        "you",
+        "open",
+        "the",
+        "window",
+        "please"
+      ],
+      "answer": "Can you open the window please",
+      "explain": "Прохання — Can you + базова форма?\nPlease — у кінці.",
+      "ua": "Відчини, будь ласка, вікно."
+    },
+    {
+      "id": "a1-contractions-01",
+      "topic": "a1-contractions",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "___ cold today.",
+      "options": [
+        "It's",
+        "Its",
+        "It",
+        "Its'"
+      ],
+      "answer": "It's",
+      "explain": "It's = it is: It's cold.\n✗ Its — «його / її» про предмет: its colour.\n✗ It — бракує дієслова.\n✗ Its' — такої форми немає.",
+      "ua": "Сьогодні холодно."
+    },
+    {
+      "id": "a1-contractions-02",
+      "topic": "a1-contractions",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I ___ know his name.",
+      "options": [
+        "don't",
+        "dont",
+        "do'nt",
+        "doesn't"
+      ],
+      "answer": "don't",
+      "explain": "Don't = do not. Апостроф стоїть на місці пропущеної o: don't.\n✗ dont — без апострофа.\n✗ do'nt — апостроф не на тому місці.\n✗ doesn't — для he, she, it.",
+      "ua": "Я не знаю, як його звати."
+    },
+    {
+      "id": "a1-contractions-03",
+      "topic": "a1-contractions",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "___ late! Hurry up!",
+      "options": [
+        "We're",
+        "Were",
+        "We'are",
+        "Wer'e"
+      ],
+      "answer": "We're",
+      "explain": "We're = we are.\n✗ Were — минулий час від be, інше слово.\n✗ We'are / Wer'e — неправильне скорочення.",
+      "ua": "Ми запізнюємося! Швидше!"
+    }
+  ]
+}
