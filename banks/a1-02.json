@@ -1,0 +1,477 @@
+{
+  "schema": 2,
+  "pack": "a1-02",
+  "title": "Пак A1 — партія 2",
+  "level": "A1",
+  "topics": {
+    "a1-be-forms": {
+      "category": "agreement",
+      "label": "to be: am / is / are"
+    },
+    "a1-be-required": {
+      "category": "syntax",
+      "label": "Дієслово to be пропускати не можна"
+    },
+    "a1-be-negative": {
+      "category": "agreement",
+      "label": "Заперечення з to be"
+    },
+    "a1-age-be": {
+      "category": "vocabulary",
+      "label": "Вік: I am 25"
+    },
+    "a1-have-got": {
+      "category": "vocabulary",
+      "label": "have got — мати"
+    },
+    "a1-art-a-an-basic": {
+      "category": "articles",
+      "label": "a / an перед новим предметом"
+    },
+    "a1-plural-s": {
+      "category": "agreement",
+      "label": "Множина: -s"
+    },
+    "a1-adj-no-plural": {
+      "category": "agreement",
+      "label": "Прикметник не змінюється"
+    },
+    "a1-this-that": {
+      "category": "vocabulary",
+      "label": "this / that / these / those"
+    },
+    "a1-poss-adj": {
+      "category": "vocabulary",
+      "label": "my / your / his / her"
+    },
+    "a1-it-for-things": {
+      "category": "vocabulary",
+      "label": "it для предметів"
+    },
+    "a1-pres-simple-3rd": {
+      "category": "tenses",
+      "label": "Present Simple: -s у 3-й особі"
+    },
+    "a1-pres-simple-neg": {
+      "category": "tenses",
+      "label": "Заперечення: don't / doesn't"
+    },
+    "a1-question-do": {
+      "category": "syntax",
+      "label": "Питання з do / does"
+    },
+    "a1-question-word": {
+      "category": "syntax",
+      "label": "Питальні слова: what / where"
+    },
+    "a1-there-is-are": {
+      "category": "syntax",
+      "label": "there is / there are"
+    },
+    "a1-can-ability": {
+      "category": "tenses",
+      "label": "can — уміння"
+    },
+    "a1-prep-place": {
+      "category": "prepositions",
+      "label": "in / on / under"
+    },
+    "a1-how-many": {
+      "category": "vocabulary",
+      "label": "How many + множина"
+    },
+    "a1-imperative": {
+      "category": "syntax",
+      "label": "Наказовий спосіб"
+    },
+    "a1-word-order-svo": {
+      "category": "word order",
+      "label": "Порядок слів: підмет — присудок — додаток"
+    },
+    "a1-caps-days": {
+      "category": "spelling",
+      "label": "Великі літери: дні, місяці, мови"
+    }
+  },
+  "questions": [
+    {
+      "id": "a1-be-forms-03",
+      "topic": "a1-be-forms",
+      "level": "A1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "are",
+        "in",
+        "London",
+        "now"
+      ],
+      "answer": "We are in London now",
+      "explain": "З «we» вживається are: we are.\nПорядок: підмет — дієслово be — місце — час.",
+      "ua": "Ми зараз у Лондоні."
+    },
+    {
+      "id": "a1-be-required-03",
+      "topic": "a1-be-required",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "My room ___ very small.",
+      "options": [
+        "is",
+        "—",
+        "are",
+        "be"
+      ],
+      "answer": "is",
+      "explain": "В українській «Моя кімната маленька» дієслова немає, в англійській be обов'язкове.\n✗ — (нічого) — речення без дієслова неправильне.\n✗ are — для множини.\n✗ be — базова форма, після підмета так не вживається.",
+      "ua": "Моя кімната дуже маленька."
+    },
+    {
+      "id": "a1-be-negative-03",
+      "topic": "a1-be-negative",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "am",
+        "not",
+        "hungry",
+        "now"
+      ],
+      "answer": "I am not hungry now",
+      "explain": "Заперечення з be: not стоїть одразу після am / is / are.\nЗ I скорочення amn't немає — тільки I'm not або I am not.",
+      "ua": "Я зараз не голодний."
+    },
+    {
+      "id": "a1-age-be-03",
+      "topic": "a1-age-be",
+      "level": "A1",
+      "type": "fill",
+      "domain": "daily",
+      "prompt": "My daughter ___ six years old today.",
+      "answer": "is",
+      "accept": [
+        "is"
+      ],
+      "explain": "Вік в англійській виражається через be: she is six.\nНе «has six years», як в інших мовах.",
+      "ua": "Моїй доньці шість років."
+    },
+    {
+      "id": "a1-have-got-03",
+      "topic": "a1-have-got",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "We ___ a big garden.",
+      "options": [
+        "have got",
+        "has got",
+        "are got",
+        "is got"
+      ],
+      "answer": "have got",
+      "explain": "З we, I, you, they — have got.\n✗ has got — тільки для he, she, it.\n✗ are got / is got — be з got не утворює значення «мати».",
+      "ua": "У нас великий сад."
+    },
+    {
+      "id": "a1-art-a-an-basic-03",
+      "topic": "a1-art-a-an-basic",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "I need ___ umbrella today.",
+      "options": [
+        "an",
+        "a",
+        "some",
+        "many"
+      ],
+      "answer": "an",
+      "explain": "Umbrella починається з голосного звука [ʌ], тому an.\n✗ a — тільки перед приголосним звуком: a bag, a hat.\n✗ some / many — з одним злічуваним предметом в однині не вживаються.",
+      "ua": "Мені сьогодні потрібна парасолька."
+    },
+    {
+      "id": "a1-plural-s-03",
+      "topic": "a1-plural-s",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I buy two ___ every day.",
+      "options": [
+        "apples",
+        "apple",
+        "appls",
+        "applees"
+      ],
+      "answer": "apples",
+      "explain": "Після two — множина: apple → apples.\n✗ apple — однина після числа неможлива.\n✗ appls / applees — таких форм немає.",
+      "ua": "Я щодня купую два яблука."
+    },
+    {
+      "id": "a1-adj-no-plural-03",
+      "topic": "a1-adj-no-plural",
+      "level": "A1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "These",
+        "are",
+        "old",
+        "houses"
+      ],
+      "answer": "These are old houses",
+      "explain": "Прикметник в англійській не має множини: old houses, а не olds houses.\nМножину показує тільки іменник.",
+      "ua": "Це старі будинки."
+    },
+    {
+      "id": "a1-this-that-03",
+      "topic": "a1-this-that",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Look at ___ mountains over there!",
+      "options": [
+        "those",
+        "these",
+        "this",
+        "that"
+      ],
+      "answer": "those",
+      "explain": "Over there — далеко, mountains — множина: those.\n✗ these — для того, що поруч.\n✗ this / that — для однини.",
+      "ua": "Подивися на ті гори он там!"
+    },
+    {
+      "id": "a1-poss-adj-03",
+      "topic": "a1-poss-adj",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "We love ___ new flat.",
+      "options": [
+        "our",
+        "we",
+        "us",
+        "ours"
+      ],
+      "answer": "our",
+      "explain": "Перед іменником ставимо присвійний займенник: our flat.\n✗ we — займенник-підмет.\n✗ us — після дієслова або прийменника.\n✗ ours — вживається без іменника: The flat is ours.",
+      "ua": "Ми любимо нашу нову квартиру."
+    },
+    {
+      "id": "a1-it-for-things-03",
+      "topic": "a1-it-for-things",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I have a new phone. ___ is black.",
+      "options": [
+        "It",
+        "He",
+        "She",
+        "They"
+      ],
+      "answer": "It",
+      "explain": "Про предмет в однині кажемо it.\n✗ He — в українській «він», бо телефон чоловічого роду, але в англійській предмети роду не мають.\n✗ She — так само тільки про людей.\n✗ They — для множини.",
+      "ua": "У мене новий телефон. Він чорний."
+    },
+    {
+      "id": "a1-pres-simple-3rd-03",
+      "topic": "a1-pres-simple-3rd",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "My",
+        "father",
+        "drinks",
+        "coffee",
+        "every",
+        "morning"
+      ],
+      "answer": "My father drinks coffee every morning",
+      "explain": "My father = he, тому в Present Simple до дієслова додаємо -s: drinks.\nЧас (every morning) зазвичай стоїть у кінці.",
+      "ua": "Мій тато щоранку п'є каву."
+    },
+    {
+      "id": "a1-pres-simple-neg-03",
+      "topic": "a1-pres-simple-neg",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "She",
+        "doesn't",
+        "eat",
+        "meat"
+      ],
+      "answer": "She doesn't eat meat",
+      "explain": "Заперечення в 3-й особі: doesn't + базова форма.\nПісля doesn't закінчення -s уже немає: eat, а не eats.",
+      "ua": "Вона не їсть м'яса."
+    },
+    {
+      "id": "a1-question-do-03",
+      "topic": "a1-question-do",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "___ your friends live in Lviv?",
+      "options": [
+        "Do",
+        "Does",
+        "Are",
+        "Is"
+      ],
+      "answer": "Do",
+      "explain": "Your friends — множина (they), тому питання з Do.\n✗ Does — для he, she, it.\n✗ Are / Is — be не утворює питання з дієсловом live.",
+      "ua": "Твої друзі живуть у Львові?"
+    },
+    {
+      "id": "a1-question-word-03",
+      "topic": "a1-question-word",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "___ is your name?",
+      "options": [
+        "What",
+        "Where",
+        "Who",
+        "How"
+      ],
+      "answer": "What",
+      "explain": "Про ім'я питаємо What: What is your name?\n✗ Where — «де».\n✗ Who — «хто», питає про людину, а не про ім'я.\n✗ How — «як», не питає про назву.",
+      "ua": "Як тебе звати?"
+    },
+    {
+      "id": "a1-there-is-are-03",
+      "topic": "a1-there-is-are",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "There ___ a hotel near the station.",
+      "options": [
+        "is",
+        "are",
+        "be",
+        "has"
+      ],
+      "answer": "is",
+      "explain": "A hotel — однина, тому there is.\n✗ are — для множини: there are two hotels.\n✗ be — базова форма.\n✗ has — there has у значенні «є» не вживається.",
+      "ua": "Біля вокзалу є готель."
+    },
+    {
+      "id": "a1-can-ability-03",
+      "topic": "a1-can-ability",
+      "level": "A1",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "My",
+        "son",
+        "can",
+        "play",
+        "the",
+        "guitar"
+      ],
+      "answer": "My son can play the guitar",
+      "explain": "Після can — базова форма без to: can play.\nCan не змінюється за особами: he can, she can.",
+      "ua": "Мій син уміє грати на гітарі."
+    },
+    {
+      "id": "a1-prep-place-03",
+      "topic": "a1-prep-place",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "The picture is ___ the wall.",
+      "options": [
+        "on",
+        "in",
+        "under",
+        "at"
+      ],
+      "answer": "on",
+      "explain": "Картина висить на поверхні стіни — on the wall.\n✗ in — всередині чогось.\n✗ under — під.\n✗ at the wall — «біля стіни», не «на стіні».",
+      "ua": "Картина на стіні."
+    },
+    {
+      "id": "a1-how-many-03",
+      "topic": "a1-how-many",
+      "level": "A1",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "How",
+        "many",
+        "bags",
+        "do",
+        "you",
+        "have"
+      ],
+      "answer": "How many bags do you have",
+      "explain": "Схема: How many + іменник у множині + do + підмет + дієслово.\nІменник після How many завжди в множині: bags.",
+      "ua": "Скільки в тебе сумок?"
+    },
+    {
+      "id": "a1-imperative-03",
+      "topic": "a1-imperative",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "___ your passport, please.",
+      "options": [
+        "Show",
+        "Shows",
+        "To show",
+        "Showing"
+      ],
+      "answer": "Show",
+      "explain": "Наказовий спосіб — базова форма без підмета: Show.\n✗ Shows — форма 3-ї особи.\n✗ To show / Showing — не утворюють прохання.",
+      "ua": "Покажіть ваш паспорт, будь ласка."
+    },
+    {
+      "id": "a1-word-order-svo-03",
+      "topic": "a1-word-order-svo",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Обери правильне речення:",
+      "options": [
+        "We watch films on Friday.",
+        "We films watch on Friday.",
+        "Watch we films on Friday.",
+        "We watch on Friday films."
+      ],
+      "answer": "We watch films on Friday.",
+      "explain": "Базовий порядок: підмет — дієслово — додаток — час.\n✗ We films watch — додаток не стоїть перед дієсловом.\n✗ Watch we films — так не будується розповідне речення.\n✗ We watch on Friday films — час не розриває дієслово і додаток.",
+      "ua": "Ми дивимося фільми в п'ятницю."
+    },
+    {
+      "id": "a1-caps-days-03",
+      "topic": "a1-caps-days",
+      "level": "A1",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We fly to ___ in May.",
+      "options": [
+        "France",
+        "france",
+        "the France",
+        "the france"
+      ],
+      "answer": "France",
+      "explain": "Назви країн пишуться з великої літери і без артикля: France.\nТак само з великої — дні, місяці й мови: May, Monday, English.\n✗ france — мала літера.\n✗ the France / the france — артикль перед назвою країни не потрібен.",
+      "ua": "У травні ми летимо до Франції."
+    }
+  ]
+}
