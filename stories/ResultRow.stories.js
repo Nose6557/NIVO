@@ -1,3 +1,4 @@
+import "../ui/category-bar.js";
 import "../ui/result-row.js";
 import { frame, UI } from "./frame.js";
 

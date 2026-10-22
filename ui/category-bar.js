@@ -27,9 +27,10 @@
     requestAnimationFrame(tick);
   }
 
-  /** @param {{name:string, accuracy?:number|null}} props
-      accuracy — частка 0…1; null — у категорії ще немає відповідей. */
-  UI.createCategoryBar = function ({ name, accuracy = null } = {}) {
+  /** @param {{name:string, accuracy?:number|null, value?:string}} props
+      accuracy — частка 0…1; null — у категорії ще немає відповідей.
+      value — готовий підпис праворуч (напр. «4/5») замість відсотка. */
+  UI.createCategoryBar = function ({ name, accuracy = null, value } = {}) {
     const has = accuracy !== null;
     const acc = has ? accuracy : 0;
 
@@ -52,10 +53,11 @@
 
     const val = document.createElement("div");
     val.className = "tbar-val";
-    val.textContent = has ? "0%" : "—";
     el.appendChild(val);
 
-    if (has) animateCount(val, Math.round(acc * 100));
+    if (value !== undefined) val.textContent = value;
+    else if (has) { val.textContent = "0%"; animateCount(val, Math.round(acc * 100)); }
+    else val.textContent = "—";
     return el;
   };
 })();
