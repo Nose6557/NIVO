@@ -156,6 +156,11 @@
       "file": "a2-03.json",
       "level": "A2",
       "title": "Пак A2 — партія 3"
+    },
+    {
+      "file": "a2-04.json",
+      "level": "A2",
+      "title": "Пак A2 — партія 4"
     }
   ],
   "domains": {
