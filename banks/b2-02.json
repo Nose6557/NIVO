@@ -1,0 +1,1680 @@
+{
+  "schema": 2,
+  "pack": "b2-02",
+  "title": "Пак B2 — глибина тем",
+  "level": "B2",
+  "topics": {
+    "ten-present-perfect-cont": {
+      "category": "tenses",
+      "label": "Present Perfect Continuous"
+    },
+    "ten-future-perfect": {
+      "category": "tenses",
+      "label": "Future Perfect"
+    },
+    "ten-passive-perfect": {
+      "category": "tenses",
+      "label": "Present Perfect Passive"
+    },
+    "ten-future-continuous": {
+      "category": "tenses",
+      "label": "Future Continuous"
+    },
+    "ten-past-perfect-cont": {
+      "category": "tenses",
+      "label": "Past Perfect Continuous"
+    },
+    "prep-in-on-time": {
+      "category": "prepositions",
+      "label": "in time / on time"
+    },
+    "prep-agree": {
+      "category": "prepositions",
+      "label": "agree with / to / on"
+    },
+    "prep-blame-accuse": {
+      "category": "prepositions",
+      "label": "blame for / accuse of"
+    },
+    "phr-come-up-with": {
+      "category": "phrasal verbs",
+      "label": "come up with"
+    },
+    "phr-look-into": {
+      "category": "phrasal verbs",
+      "label": "look into"
+    },
+    "phr-bring-up": {
+      "category": "phrasal verbs",
+      "label": "bring up"
+    },
+    "phr-put-up-with": {
+      "category": "phrasal verbs",
+      "label": "put up with"
+    },
+    "cond-third": {
+      "category": "conditionals",
+      "label": "Третій тип умовного"
+    },
+    "cond-wish": {
+      "category": "conditionals",
+      "label": "wish + Past Simple"
+    },
+    "cond-mixed": {
+      "category": "conditionals",
+      "label": "Змішаний кондиціонал"
+    },
+    "cond-inversion": {
+      "category": "conditionals",
+      "label": "Інверсія замість if"
+    },
+    "voc-achieve": {
+      "category": "vocabulary",
+      "label": "achieve / reach / gain"
+    },
+    "voc-affect-effect": {
+      "category": "vocabulary",
+      "label": "affect / effect"
+    },
+    "voc-convince-persuade": {
+      "category": "vocabulary",
+      "label": "convince / persuade"
+    },
+    "voc-raise-rise": {
+      "category": "vocabulary",
+      "label": "raise / rise"
+    },
+    "voc-although-despite": {
+      "category": "vocabulary",
+      "label": "although / despite"
+    },
+    "voc-source-of-truth": {
+      "category": "vocabulary",
+      "label": "source of truth"
+    },
+    "voc-missing-missed": {
+      "category": "vocabulary",
+      "label": "missing / missed"
+    },
+    "voc-avoid-prevent": {
+      "category": "vocabulary",
+      "label": "avoid / prevent"
+    },
+    "voc-economic-economical": {
+      "category": "vocabulary",
+      "label": "economic / economical"
+    },
+    "voc-no-vs-not": {
+      "category": "vocabulary",
+      "label": "not / no longer замість no"
+    },
+    "idm-same-page": {
+      "category": "idioms",
+      "label": "on the same page"
+    },
+    "idm-cut-corners": {
+      "category": "idioms",
+      "label": "cut corners"
+    },
+    "idm-drawing-board": {
+      "category": "idioms",
+      "label": "back to the drawing board"
+    },
+    "idm-in-the-loop": {
+      "category": "idioms",
+      "label": "in the loop"
+    },
+    "idm-touch-base": {
+      "category": "idioms",
+      "label": "touch base"
+    },
+    "idm-bite-the-bullet": {
+      "category": "idioms",
+      "label": "bite the bullet"
+    },
+    "ord-adjective-order": {
+      "category": "word order",
+      "label": "Порядок прикметників"
+    },
+    "ord-also-placement": {
+      "category": "word order",
+      "label": "Місце also"
+    },
+    "ord-neither-nor": {
+      "category": "word order",
+      "label": "Neither … nor"
+    },
+    "ord-inversion-negative": {
+      "category": "word order",
+      "label": "Інверсія після заперечень"
+    },
+    "ord-probably-placement": {
+      "category": "word order",
+      "label": "місце probably"
+    },
+    "ord-indirect-q2": {
+      "category": "word order",
+      "label": "непряме питання — прямий порядок"
+    },
+    "syn-in-case": {
+      "category": "syntax",
+      "label": "in case of"
+    },
+    "syn-parenthetical": {
+      "category": "syntax",
+      "label": "Коми навколо вставних"
+    },
+    "syn-participle-clause": {
+      "category": "syntax",
+      "label": "Дієприслівникові звороти"
+    },
+    "syn-cleft": {
+      "category": "syntax",
+      "label": "Розщеплені речення"
+    },
+    "syn-intro-comma": {
+      "category": "syntax",
+      "label": "кома після ввідного слова"
+    },
+    "syn-no-comma-thatclause": {
+      "category": "syntax",
+      "label": "без зайвої коми перед підрядним"
+    },
+    "syn-comma-splice2": {
+      "category": "syntax",
+      "label": "comma splice — не з'єднувати два речення комою"
+    },
+    "syn-subject-required": {
+      "category": "syntax",
+      "label": "підмет обов'язковий"
+    },
+    "syn-aux-do-question": {
+      "category": "syntax",
+      "label": "питальний порядок у другій частині питання"
+    },
+    "syn-passive-needed": {
+      "category": "syntax",
+      "label": "пасив, коли дію виконують над об'єктом"
+    },
+    "syn-tag-question": {
+      "category": "syntax",
+      "label": "хвостове питання — протилежна полярність"
+    },
+    "reg-abbreviations": {
+      "category": "register",
+      "label": "Скорочення в переписці"
+    },
+    "reg-acknowledgement": {
+      "category": "register",
+      "label": "Підтвердження отриманого"
+    },
+    "reg-style-conventions": {
+      "category": "register",
+      "label": "Умовності оформлення"
+    },
+    "wf-noun-suffixes": {
+      "category": "word formation",
+      "label": "Абстрактні іменники"
+    },
+    "wf-negative-prefixes": {
+      "category": "word formation",
+      "label": "Заперечні префікси"
+    },
+    "art-zero-institutions": {
+      "category": "articles",
+      "label": "Нульовий артикль з установами"
+    },
+    "agr-collective-nouns": {
+      "category": "agreement",
+      "label": "Збірні іменники"
+    },
+    "sp-hyphenation": {
+      "category": "spelling",
+      "label": "Дефіс у складених означеннях"
+    }
+  },
+  "questions": [
+    {
+      "id": "ten-present-perfect-cont-02",
+      "topic": "ten-present-perfect-cont",
+      "level": "B2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "have",
+        "been",
+        "waiting",
+        "for",
+        "you",
+        "for",
+        "forty",
+        "minutes"
+      ],
+      "answer": "I have been waiting for you for forty minutes",
+      "explain": "Дія почалася в минулому, триває досі, і важить тривалість — Present Perfect Continuous: have been + -ing.\nFor forty minutes — скільки вже триває.",
+      "ua": "Я чекаю на тебе вже сорок хвилин."
+    },
+    {
+      "id": "ten-present-perfect-cont-03",
+      "topic": "ten-present-perfect-cont",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Your hands are dirty. What ___?",
+      "options": [
+        "have you been doing",
+        "have you done",
+        "did you do",
+        "are you doing"
+      ],
+      "answer": "have you been doing",
+      "explain": "Видно наслідок тривалої дії, що щойно скінчилася, — Present Perfect Continuous.\n✗ have you done — питає про результат, а не про процес.\n✗ did you do — питає про завершений момент у минулому.\n✗ are you doing — про те, що відбувається просто зараз.",
+      "ua": "У тебе брудні руки. Що ти робив?"
+    },
+    {
+      "id": "ten-future-perfect-02",
+      "topic": "ten-future-perfect",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "By the time you arrive, we ___ dinner.",
+      "options": [
+        "will have finished",
+        "will finish",
+        "finish",
+        "will be finished"
+      ],
+      "answer": "will have finished",
+      "explain": "Дія завершиться ДО певного моменту в майбутньому — Future Perfect: will have + 3-я форма.\nBy the time — головний маркер цього часу.\n✗ will finish — без значення «вже до того моменту».\n✗ finish — теперішній час.\n✗ will be finished — пасив або стан, а не дія «ми закінчимо».",
+      "ua": "Поки ти приїдеш, ми вже повечеряємо."
+    },
+    {
+      "id": "ten-future-perfect-03",
+      "topic": "ten-future-perfect",
+      "level": "B2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "By",
+        "next",
+        "spring",
+        "she",
+        "will",
+        "have",
+        "worked",
+        "here",
+        "for",
+        "ten",
+        "years"
+      ],
+      "answer": "By next spring she will have worked here for ten years",
+      "explain": "Future Perfect з for: до певного моменту в майбутньому набереться певна тривалість.\nBy next spring — точка відліку.",
+      "ua": "До наступної весни вона пропрацює тут десять років."
+    },
+    {
+      "id": "ten-passive-perfect-03",
+      "topic": "ten-passive-perfect",
+      "level": "B2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Our",
+        "flight",
+        "has",
+        "been",
+        "cancelled"
+      ],
+      "answer": "Our flight has been cancelled",
+      "explain": "Present Perfect у пасиві: has been + 3-я форма.\nХто скасував — неважливо, важить результат зараз.",
+      "ua": "Наш рейс скасовано."
+    },
+    {
+      "id": "ten-future-continuous-03",
+      "topic": "ten-future-continuous",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "This time tomorrow we ___ on a beach in Greece.",
+      "options": [
+        "will be lying",
+        "will lie",
+        "are lying",
+        "will have lain"
+      ],
+      "answer": "will be lying",
+      "explain": "Дія, що триватиме в конкретний момент у майбутньому (this time tomorrow), — Future Continuous: will be + -ing.\n✗ will lie — проста дія, без значення процесу в момент.\n✗ are lying — теперішній процес.\n✗ will have lain — завершеність до моменту, а не процес у ньому.",
+      "ua": "Завтра в цей час ми лежатимемо на пляжі в Греції."
+    },
+    {
+      "id": "ten-past-perfect-cont-03",
+      "topic": "ten-past-perfect-cont",
+      "level": "B2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "ground",
+        "was",
+        "wet",
+        "because",
+        "it",
+        "had",
+        "been",
+        "raining",
+        "all",
+        "night"
+      ],
+      "answer": "The ground was wet because it had been raining all night",
+      "explain": "Тривала дія до моменту в минулому, наслідок якої видно тоді, — Past Perfect Continuous: had been raining.",
+      "ua": "Земля була мокра, бо всю ніч ішов дощ."
+    },
+    {
+      "id": "prep-in-on-time-02",
+      "topic": "prep-in-on-time",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We got to the station just ___ time to catch the last train.",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "by"
+      ],
+      "answer": "in",
+      "explain": "In time — встигнути, не запізнитися на щось: just in time to catch.\n✗ on time — точно за розкладом, без значення «встигли».\n✗ at / by time — таких сполук немає.",
+      "ua": "Ми дісталися вокзалу якраз вчасно, щоб встигнути на останній потяг."
+    },
+    {
+      "id": "prep-in-on-time-03",
+      "topic": "prep-in-on-time",
+      "level": "B2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "project",
+        "was",
+        "delivered",
+        "on",
+        "time",
+        "and",
+        "within",
+        "budget"
+      ],
+      "answer": "The project was delivered on time and within budget",
+      "explain": "On time — точно в запланований строк.\nWithin budget — у межах бюджету.",
+      "ua": "Проєкт здали вчасно й у межах бюджету."
+    },
+    {
+      "id": "prep-agree-02",
+      "topic": "prep-agree",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "Both sides finally agreed ___ a price.",
+      "options": [
+        "on",
+        "with",
+        "to",
+        "about of"
+      ],
+      "answer": "on",
+      "explain": "Agree on — дійти згоди щодо спільного рішення: agree on a price.\n✗ with — погоджуватися з людиною або думкою.\n✗ to — погодитися на чиюсь пропозицію: agree to the terms.\n✗ about of — неправильна конструкція.",
+      "ua": "Сторони нарешті домовилися про ціну."
+    },
+    {
+      "id": "prep-agree-03",
+      "topic": "prep-agree",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "The landlord agreed ___ lower the rent.",
+      "options": [
+        "to",
+        "with",
+        "on",
+        "for"
+      ],
+      "answer": "to",
+      "explain": "Agree to + дієслово — погодитися щось зробити: agreed to lower.\n✗ with — з людиною або думкою.\n✗ on — щодо спільного рішення, після нього іменник.\n✗ for — не вживається.",
+      "ua": "Орендодавець погодився знизити оренду."
+    },
+    {
+      "id": "prep-blame-accuse-03",
+      "topic": "prep-blame-accuse",
+      "level": "B2",
+      "type": "fill",
+      "domain": "general",
+      "prompt": "She was accused ___ stealing money from the company.",
+      "answer": "of",
+      "accept": [
+        "of"
+      ],
+      "explain": "Accuse someone of something — звинуватити в чомусь.\nBlame someone for something — вважати винним за щось.",
+      "ua": "Її звинуватили в крадіжці грошей у компанії."
+    },
+    {
+      "id": "phr-come-up-with-02",
+      "topic": "phr-come-up-with",
+      "level": "B2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Who",
+        "came",
+        "up",
+        "with",
+        "this",
+        "crazy",
+        "idea"
+      ],
+      "answer": "Who came up with this crazy idea",
+      "explain": "Come up with — придумати, запропонувати. Минулий час — came up with.\nУсі три частини стоять разом перед додатком.",
+      "ua": "Хто вигадав цю божевільну ідею?"
+    },
+    {
+      "id": "phr-come-up-with-03",
+      "topic": "phr-come-up-with",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "We have to ___ a solution before the client calls.",
+      "options": [
+        "come up with",
+        "come up",
+        "come across",
+        "come over"
+      ],
+      "answer": "come up with",
+      "explain": "Come up with + рішення / ідея — придумати.\n✗ come up — «виникнути»: A problem came up.\n✗ come across — випадково натрапити.\n✗ come over — зайти в гості.",
+      "ua": "Ми маємо знайти рішення, поки не подзвонив клієнт."
+    },
+    {
+      "id": "phr-look-into-02",
+      "topic": "phr-look-into",
+      "level": "B2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "airline",
+        "promised",
+        "to",
+        "look",
+        "into",
+        "my",
+        "complaint"
+      ],
+      "answer": "The airline promised to look into my complaint",
+      "explain": "Look into — розібратися, з'ясувати.\nPromise to + базова форма.",
+      "ua": "Авіакомпанія пообіцяла розглянути мою скаргу."
+    },
+    {
+      "id": "phr-look-into-03",
+      "topic": "phr-look-into",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "The police are ___ the robbery.",
+      "options": [
+        "looking into",
+        "looking after",
+        "looking up",
+        "looking forward"
+      ],
+      "answer": "looking into",
+      "explain": "Look into — розслідувати, з'ясовувати.\n✗ look after — доглядати.\n✗ look up — шукати в довіднику.\n✗ look forward — чекати з нетерпінням, і потребує to.",
+      "ua": "Поліція розслідує пограбування."
+    },
+    {
+      "id": "phr-bring-up-02",
+      "topic": "phr-bring-up",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Please don't ___ politics at dinner.",
+      "options": [
+        "bring up",
+        "bring about",
+        "bring back",
+        "bring in"
+      ],
+      "answer": "bring up",
+      "explain": "Bring up — порушити тему.\n✗ bring about — спричинити.\n✗ bring back — повернути.\n✗ bring in — запровадити або принести всередину.",
+      "ua": "Будь ласка, не заводь мову про політику за вечерею."
+    },
+    {
+      "id": "phr-bring-up-03",
+      "topic": "phr-bring-up",
+      "level": "B2",
+      "type": "order",
+      "domain": "general",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "She",
+        "was",
+        "brought",
+        "up",
+        "by",
+        "her",
+        "grandparents"
+      ],
+      "answer": "She was brought up by her grandparents",
+      "explain": "Bring up має і друге значення — виховувати. У пасиві: was brought up.",
+      "ua": "Її виховали бабуся й дідусь."
+    },
+    {
+      "id": "phr-put-up-with-03",
+      "topic": "phr-put-up-with",
+      "level": "B2",
+      "type": "fill",
+      "domain": "daily",
+      "prompt": "I can't put up ___ his rudeness any longer.",
+      "answer": "with",
+      "accept": [
+        "with"
+      ],
+      "explain": "Put up with — терпіти, миритися. Усі три частини обов'язкові.",
+      "ua": "Я більше не можу терпіти його грубість."
+    },
+    {
+      "id": "cond-third-02",
+      "topic": "cond-third",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "If we ___ the map, we wouldn't have got lost.",
+      "options": [
+        "had checked",
+        "checked",
+        "would have checked",
+        "have checked"
+      ],
+      "answer": "had checked",
+      "explain": "Третій тип — нереальне минуле: if + Past Perfect, would have + 3-я форма.\n✗ checked — другий тип, про теперішнє.\n✗ would have checked — would після if у цьому типі не ставимо.\n✗ have checked — Present Perfect не утворює умови.",
+      "ua": "Якби ми перевірили мапу, то не заблукали б."
+    },
+    {
+      "id": "cond-third-03",
+      "topic": "cond-third",
+      "level": "B2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "If",
+        "I",
+        "had",
+        "known",
+        "you",
+        "were",
+        "ill",
+        "I",
+        "would",
+        "have",
+        "visited",
+        "you"
+      ],
+      "answer": "If I had known you were ill I would have visited you",
+      "explain": "Третій тип: if + had + 3-я форма → would have + 3-я форма.\nОбидві частини — про минуле, якого вже не змінити.",
+      "ua": "Якби я знав, що ти хворієш, то провідав би тебе."
+    },
+    {
+      "id": "cond-wish-02",
+      "topic": "cond-wish",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I wish I ___ speak French.",
+      "options": [
+        "could",
+        "can",
+        "would",
+        "will"
+      ],
+      "answer": "could",
+      "explain": "Шкодуємо про вміння зараз — wish + could.\n✗ can — після wish теперішня форма неможлива.\n✗ would — wish + would про себе не вживається.\n✗ will — майбутнє після wish неможливе.",
+      "ua": "Шкода, що я не розмовляю французькою."
+    },
+    {
+      "id": "cond-wish-03",
+      "topic": "cond-wish",
+      "level": "B2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "wish",
+        "we",
+        "had",
+        "more",
+        "time",
+        "in",
+        "Paris"
+      ],
+      "answer": "I wish we had more time in Paris",
+      "explain": "Шкодуємо про теперішнє — wish + Past Simple: had.\nМинула форма тут означає нереальність, а не минулий час.",
+      "ua": "Шкода, що в нас так мало часу в Парижі."
+    },
+    {
+      "id": "cond-mixed-03",
+      "topic": "cond-mixed",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "If I hadn't lost my passport, I ___ in Spain now.",
+      "options": [
+        "would be",
+        "would have been",
+        "will be",
+        "am"
+      ],
+      "answer": "would be",
+      "explain": "Змішаний тип: умова в минулому (hadn't lost) → наслідок зараз (now): would + базова форма.\n✗ would have been — наслідок у минулому, а now вказує на теперішнє.\n✗ will be / am — реальні форми, а ситуація нереальна.",
+      "ua": "Якби я не загубив паспорт, то зараз був би в Іспанії."
+    },
+    {
+      "id": "cond-inversion-03",
+      "topic": "cond-inversion",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "___ I known about the problem, I would have told you.",
+      "options": [
+        "Had",
+        "If had",
+        "Have",
+        "Did"
+      ],
+      "answer": "Had",
+      "explain": "Інверсія замість if у третьому типі: Had + підмет + 3-я форма = If I had known.\n✗ If had — або if, або інверсія.\n✗ Have / Did — не утворюють умови.",
+      "ua": "Якби я знав про проблему, то сказав би тобі."
+    },
+    {
+      "id": "voc-achieve-02",
+      "topic": "voc-achieve",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "She finally ___ her dream of becoming a doctor.",
+      "options": [
+        "achieved",
+        "reached of",
+        "gained",
+        "won"
+      ],
+      "answer": "achieved",
+      "explain": "Achieve a dream / a goal — здійснити мрію, досягти мети.\n✗ reached of — reach без of.\n✗ gained — gain про вагу, досвід, популярність.\n✗ won — перемогти в змаганні, не про мрію.",
+      "ua": "Вона нарешті здійснила свою мрію стати лікаркою."
+    },
+    {
+      "id": "voc-achieve-03",
+      "topic": "voc-achieve",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I've ___ five kilos since the holidays.",
+      "options": [
+        "gained",
+        "achieved",
+        "reached",
+        "won"
+      ],
+      "answer": "gained",
+      "explain": "Набрати вагу — gain weight / gain kilos.\n✗ achieved — про мету, успіх.\n✗ reached — досягти точки: reach 80 kilos.\n✗ won — перемогти.",
+      "ua": "Я набрав п'ять кілограмів після свят."
+    },
+    {
+      "id": "voc-affect-effect-02",
+      "topic": "voc-affect-effect",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "Lack of sleep has a negative ___ on memory.",
+      "options": [
+        "effect",
+        "affect",
+        "affection",
+        "effective"
+      ],
+      "answer": "effect",
+      "explain": "Після a negative потрібен іменник — effect (вплив).\n✗ affect — дієслово «впливати».\n✗ affection — «прихильність, ніжність».\n✗ effective — прикметник.",
+      "ua": "Недосипання негативно впливає на пам'ять."
+    },
+    {
+      "id": "voc-affect-effect-03",
+      "topic": "voc-affect-effect",
+      "level": "B2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "strike",
+        "affected",
+        "hundreds",
+        "of",
+        "flights"
+      ],
+      "answer": "The strike affected hundreds of flights",
+      "explain": "Affect — дієслово «впливати на». Після нього — без прийменника: affected flights.",
+      "ua": "Страйк зачепив сотні рейсів."
+    },
+    {
+      "id": "voc-convince-persuade-02",
+      "topic": "voc-convince-persuade",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "My friends ___ me to go to the concert with them.",
+      "options": [
+        "persuaded",
+        "convinced that",
+        "argued",
+        "proved"
+      ],
+      "answer": "persuaded",
+      "explain": "Persuade someone to do — вмовити когось щось зробити.\n✗ convinced that — після that іде речення, а не to go.\n✗ argued — «сперечалися» або «стверджували».\n✗ proved — «довели», без схеми someone to do.",
+      "ua": "Друзі вмовили мене піти з ними на концерт."
+    },
+    {
+      "id": "voc-convince-persuade-03",
+      "topic": "voc-convince-persuade",
+      "level": "B2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "I",
+        "am",
+        "convinced",
+        "that",
+        "this",
+        "plan",
+        "will",
+        "work"
+      ],
+      "answer": "I am convinced that this plan will work",
+      "explain": "Be convinced that — бути переконаним, що.\nConvince — про переконання в думці, persuade — про вмовляння до дії.",
+      "ua": "Я переконаний, що цей план спрацює."
+    },
+    {
+      "id": "voc-raise-rise-02",
+      "topic": "voc-raise-rise",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "The company decided to ___ prices next month.",
+      "options": [
+        "raise",
+        "rise",
+        "arise",
+        "rose"
+      ],
+      "answer": "raise",
+      "explain": "Raise — підняти щось (є додаток: prices).\n✗ rise — підніматися самому, без додатка.\n✗ arise — виникати.\n✗ rose — минула форма від rise.",
+      "ua": "Компанія вирішила підвищити ціни наступного місяця."
+    },
+    {
+      "id": "voc-raise-rise-03",
+      "topic": "voc-raise-rise",
+      "level": "B2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "sun",
+        "rises",
+        "at",
+        "six",
+        "in",
+        "summer"
+      ],
+      "answer": "The sun rises at six in summer",
+      "explain": "Rise — підніматися самому, без додатка. 3-я особа — rises.",
+      "ua": "Улітку сонце сходить о шостій."
+    },
+    {
+      "id": "voc-although-despite-02",
+      "topic": "voc-although-despite",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "___ it was raining, we went for a walk.",
+      "options": [
+        "Although",
+        "Despite",
+        "In spite",
+        "Despite of"
+      ],
+      "answer": "Although",
+      "explain": "Although + речення (підмет і дієслово): although it was raining.\n✗ Despite — після нього іменник або -ing.\n✗ In spite — без of неповне.\n✗ Despite of — of зайве.",
+      "ua": "Хоча йшов дощ, ми пішли на прогулянку."
+    },
+    {
+      "id": "voc-although-despite-03",
+      "topic": "voc-although-despite",
+      "level": "B2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Despite",
+        "being",
+        "tired",
+        "she",
+        "finished",
+        "the",
+        "book"
+      ],
+      "answer": "Despite being tired she finished the book",
+      "explain": "Despite + -ing або іменник: despite being tired.\nПісля despite не буває повного речення з підметом.",
+      "ua": "Попри втому, вона дочитала книжку."
+    },
+    {
+      "id": "voc-source-of-truth-02",
+      "topic": "voc-source-of-truth",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "it",
+      "prompt": "Treat the database, not the spreadsheet, as the ___ of truth.",
+      "options": [
+        "source",
+        "base",
+        "root",
+        "origin"
+      ],
+      "answer": "source",
+      "explain": "Single source of truth — єдине джерело, якому довіряють як основному.\n✗ base / root / origin — у цій сталій сполуці не вживаються.",
+      "ua": "Вважайте базу даних, а не таблицю, джерелом правди."
+    },
+    {
+      "id": "voc-source-of-truth-03",
+      "topic": "voc-source-of-truth",
+      "level": "B2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "contract",
+        "is",
+        "our",
+        "single",
+        "source",
+        "of",
+        "truth"
+      ],
+      "answer": "The contract is our single source of truth",
+      "explain": "Single source of truth — головне джерело даних, з яким звіряють усе інше.",
+      "ua": "Договір — наше єдине джерело правди."
+    },
+    {
+      "id": "voc-missing-missed-03",
+      "topic": "voc-missing-missed",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Two of my bags are ___ after the flight.",
+      "options": [
+        "missing",
+        "missed",
+        "lost of",
+        "miss"
+      ],
+      "answer": "missing",
+      "explain": "Missing — прикметник «відсутній, зниклий».\n✗ missed — дієприкметник: «пропущений» (рейс, дзвінок).\n✗ lost of — of зайве.\n✗ miss — дієслово.",
+      "ua": "Після рейсу двох моїх сумок немає."
+    },
+    {
+      "id": "voc-avoid-prevent-03",
+      "topic": "voc-avoid-prevent",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "Wear sunscreen to ___ sunburn.",
+      "options": [
+        "prevent",
+        "avoid from",
+        "protect",
+        "stop of"
+      ],
+      "answer": "prevent",
+      "explain": "Prevent something — запобігти: prevent sunburn.\n✗ avoid from — avoid без from.\n✗ protect — потребує from: protect your skin from the sun.\n✗ stop of — of зайве.",
+      "ua": "Користуйся сонцезахисним кремом, щоб не обгоріти."
+    },
+    {
+      "id": "voc-economic-economical-03",
+      "topic": "voc-economic-economical",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "A small car is more ___ for city driving.",
+      "options": [
+        "economical",
+        "economic",
+        "economy",
+        "economist"
+      ],
+      "answer": "economical",
+      "explain": "Economical — ощадливий, вигідний.\n✗ economic — стосовно економіки: economic growth.\n✗ economy — іменник.\n✗ economist — людина-фахівець.",
+      "ua": "Невелика машина вигідніша для їзди містом."
+    },
+    {
+      "id": "voc-no-vs-not-03",
+      "topic": "voc-no-vs-not",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "We ___ live in Kharkiv — we moved to Lviv last year.",
+      "options": [
+        "no longer",
+        "no",
+        "not more",
+        "don't longer"
+      ],
+      "answer": "no longer",
+      "explain": "No longer — «більше не»: we no longer live.\n✗ no — не заперечує дієслово.\n✗ not more — калька з української.\n✗ don't longer — неправильна конструкція; можна don't … any longer.",
+      "ua": "Ми більше не живемо в Харкові — торік переїхали до Львова."
+    },
+    {
+      "id": "idm-same-page-02",
+      "topic": "idm-same-page",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "After the call, the whole team was finally ___.",
+      "options": [
+        "on the same page",
+        "on the same side",
+        "at the same page",
+        "in the same book"
+      ],
+      "answer": "on the same page",
+      "explain": "On the same page — однаково розуміти ситуацію, бути «на одній хвилі».\n✗ on the same side — «на одному боці», про суперечку.\n✗ at the same page / in the same book — таких ідіом немає.",
+      "ua": "Після дзвінка вся команда нарешті однаково розуміла задачу."
+    },
+    {
+      "id": "idm-same-page-03",
+      "topic": "idm-same-page",
+      "level": "B2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Let's",
+        "make",
+        "sure",
+        "we",
+        "are",
+        "on",
+        "the",
+        "same",
+        "page"
+      ],
+      "answer": "Let's make sure we are on the same page",
+      "explain": "On the same page — однаково розуміти щось.\nMake sure we are — переконатися, що ми…",
+      "ua": "Давай переконаємося, що ми однаково це розуміємо."
+    },
+    {
+      "id": "idm-cut-corners-02",
+      "topic": "idm-cut-corners",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "The builders ___, and now the roof leaks.",
+      "options": [
+        "cut corners",
+        "cut costs",
+        "cut in",
+        "turned corners"
+      ],
+      "answer": "cut corners",
+      "explain": "Cut corners — халтурити, робити абияк, щоб зекономити час чи гроші.\n✗ cut costs — скоротити витрати, без значення халтури.\n✗ cut in — перебивати.\n✗ turned corners — дослівно повертати за ріг.",
+      "ua": "Будівельники схалтурили, і тепер дах протікає."
+    },
+    {
+      "id": "idm-cut-corners-03",
+      "topic": "idm-cut-corners",
+      "level": "B2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "never",
+        "cut",
+        "corners",
+        "on",
+        "safety"
+      ],
+      "answer": "We never cut corners on safety",
+      "explain": "Cut corners on something — економити на чомусь, жертвуючи якістю.",
+      "ua": "Ми ніколи не економимо на безпеці."
+    },
+    {
+      "id": "idm-drawing-board-02",
+      "topic": "idm-drawing-board",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "The test failed, so it's back to the drawing ___.",
+      "options": [
+        "board",
+        "table",
+        "room",
+        "paper"
+      ],
+      "answer": "board",
+      "explain": "Back to the drawing board — почати все спочатку, бо попередня спроба провалилась.\n✗ table / room / paper — в ідіомі не вживаються.",
+      "ua": "Тест провалився, тож починаємо все спочатку."
+    },
+    {
+      "id": "idm-drawing-board-03",
+      "topic": "idm-drawing-board",
+      "level": "B2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "The",
+        "recipe",
+        "didn't",
+        "work",
+        "so",
+        "I",
+        "went",
+        "back",
+        "to",
+        "the",
+        "drawing",
+        "board"
+      ],
+      "answer": "The recipe didn't work so I went back to the drawing board",
+      "explain": "Go back to the drawing board — почати заново.",
+      "ua": "Рецепт не вдався, тож я почав усе спочатку."
+    },
+    {
+      "id": "idm-in-the-loop-02",
+      "topic": "idm-in-the-loop",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "Please keep the client ___ while we fix the issue.",
+      "options": [
+        "in the loop",
+        "on the loop",
+        "in a loop",
+        "into the loop"
+      ],
+      "answer": "in the loop",
+      "explain": "Keep someone in the loop — тримати в курсі.\n✗ on the loop / into the loop — неправильний прийменник.\n✗ in a loop — «у циклі», інше значення.",
+      "ua": "Будь ласка, тримайте клієнта в курсі, поки ми виправляємо проблему."
+    },
+    {
+      "id": "idm-in-the-loop-03",
+      "topic": "idm-in-the-loop",
+      "level": "B2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Nobody",
+        "kept",
+        "me",
+        "in",
+        "the",
+        "loop",
+        "about",
+        "the",
+        "party"
+      ],
+      "answer": "Nobody kept me in the loop about the party",
+      "explain": "Keep someone in the loop — тримати когось у курсі.\nНепряма заперечна форма: nobody kept me.",
+      "ua": "Ніхто не тримав мене в курсі щодо вечірки."
+    },
+    {
+      "id": "idm-touch-base-02",
+      "topic": "idm-touch-base",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "I'll ___ with you after the meeting.",
+      "options": [
+        "touch base",
+        "touch bases",
+        "touch a base",
+        "take base"
+      ],
+      "answer": "touch base",
+      "explain": "Touch base with — коротко зв'язатися, звіритися.\n✗ touch bases / touch a base / take base — неправильні варіанти ідіоми.",
+      "ua": "Я зв'яжуся з тобою після наради."
+    },
+    {
+      "id": "idm-touch-base-03",
+      "topic": "idm-touch-base",
+      "level": "B2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Let's",
+        "touch",
+        "base",
+        "when",
+        "you",
+        "land",
+        "in",
+        "Berlin"
+      ],
+      "answer": "Let's touch base when you land in Berlin",
+      "explain": "Touch base — коротко зв'язатися.\nПісля when про майбутнє — Present Simple: when you land.",
+      "ua": "Давай зв'яжемося, коли приземлишся в Берліні."
+    },
+    {
+      "id": "idm-bite-the-bullet-02",
+      "topic": "idm-bite-the-bullet",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "I hate the dentist, but I'll have to ___ and make an appointment.",
+      "options": [
+        "bite the bullet",
+        "bite the dust",
+        "bite my tongue",
+        "break the ice"
+      ],
+      "answer": "bite the bullet",
+      "explain": "Bite the bullet — зціпити зуби і зробити неприємне.\n✗ bite the dust — зазнати поразки, «загнутися».\n✗ bite my tongue — стриматися й промовчати.\n✗ break the ice — розрядити атмосферу.",
+      "ua": "Я ненавиджу стоматолога, але доведеться зціпити зуби й записатися."
+    },
+    {
+      "id": "idm-bite-the-bullet-03",
+      "topic": "idm-bite-the-bullet",
+      "level": "B2",
+      "type": "order",
+      "domain": "business",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "finally",
+        "bit",
+        "the",
+        "bullet",
+        "and",
+        "hired",
+        "a",
+        "lawyer"
+      ],
+      "answer": "We finally bit the bullet and hired a lawyer",
+      "explain": "Bite the bullet — наважитися на неприємне. Минулий час — bit.",
+      "ua": "Ми нарешті наважилися й найняли юриста."
+    },
+    {
+      "id": "ord-adjective-order-02",
+      "topic": "ord-adjective-order",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We stayed in a ___ cottage.",
+      "options": [
+        "lovely old stone",
+        "stone old lovely",
+        "old lovely stone",
+        "lovely stone old"
+      ],
+      "answer": "lovely old stone",
+      "explain": "Порядок прикметників: думка → вік → матеріал: lovely old stone.\n✗ інші варіанти порушують цей порядок і звучать неприродно.",
+      "ua": "Ми зупинилися в чудовому старому кам'яному котеджі."
+    },
+    {
+      "id": "ord-adjective-order-03",
+      "topic": "ord-adjective-order",
+      "level": "B2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "She",
+        "bought",
+        "a",
+        "long",
+        "black",
+        "leather",
+        "coat"
+      ],
+      "answer": "She bought a long black leather coat",
+      "explain": "Порядок: розмір / довжина → колір → матеріал: long black leather.",
+      "ua": "Вона купила довге чорне шкіряне пальто."
+    },
+    {
+      "id": "ord-also-placement-03",
+      "topic": "ord-also-placement",
+      "level": "B2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "We",
+        "also",
+        "visited",
+        "the",
+        "old",
+        "castle"
+      ],
+      "answer": "We also visited the old castle",
+      "explain": "Also — перед смисловим дієсловом: also visited.\nПісля be — навпаки: We were also tired.",
+      "ua": "Ми також відвідали старий замок."
+    },
+    {
+      "id": "ord-neither-nor-03",
+      "topic": "ord-neither-nor",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "___ my sister nor my brother lives at home.",
+      "options": [
+        "Neither",
+        "Either",
+        "Both",
+        "Not"
+      ],
+      "answer": "Neither",
+      "explain": "Пара neither … nor — ні … ні.\n✗ Either — в парі з or.\n✗ Both — в парі з and.\n✗ Not — не утворює пари з nor.",
+      "ua": "Ні моя сестра, ні мій брат не живуть удома."
+    },
+    {
+      "id": "ord-inversion-negative-03",
+      "topic": "ord-inversion-negative",
+      "level": "B2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Rarely",
+        "have",
+        "I",
+        "seen",
+        "such",
+        "a",
+        "beautiful",
+        "sunset"
+      ],
+      "answer": "Rarely have I seen such a beautiful sunset",
+      "explain": "Rarely на початку речення — інверсія: have I seen.",
+      "ua": "Рідко я бачив такий гарний захід сонця."
+    },
+    {
+      "id": "ord-probably-placement-03",
+      "topic": "ord-probably-placement",
+      "level": "B2",
+      "type": "order",
+      "domain": "daily",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "She",
+        "probably",
+        "forgot",
+        "about",
+        "the",
+        "meeting"
+      ],
+      "answer": "She probably forgot about the meeting",
+      "explain": "Probably стоїть перед смисловим дієсловом: probably forgot.\nПісля will — will probably.",
+      "ua": "Вона, мабуть, забула про зустріч."
+    },
+    {
+      "id": "ord-indirect-q2-03",
+      "topic": "ord-indirect-q2",
+      "level": "B2",
+      "type": "order",
+      "domain": "travel",
+      "prompt": "Склади коректне речення:",
+      "tokens": [
+        "Can",
+        "you",
+        "tell",
+        "me",
+        "how",
+        "far",
+        "the",
+        "beach",
+        "is"
+      ],
+      "answer": "Can you tell me how far the beach is",
+      "explain": "Непряме питання — прямий порядок: how far the beach is.\nНе how far is the beach.",
+      "ua": "Скажіть, будь ласка, як далеко до пляжу?"
+    },
+    {
+      "id": "syn-in-case-03",
+      "topic": "syn-in-case",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Take an umbrella ___ it rains.",
+      "options": [
+        "in case",
+        "in case of",
+        "if case",
+        "for case"
+      ],
+      "answer": "in case",
+      "explain": "In case + речення — на випадок, якщо: in case it rains.\n✗ in case of — після нього іменник: in case of rain.\n✗ if case / for case — неправильні конструкції.",
+      "ua": "Візьми парасольку на випадок дощу."
+    },
+    {
+      "id": "syn-parenthetical-03",
+      "topic": "syn-parenthetical",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "Обери правильне оформлення:",
+      "options": [
+        "My neighbour, a retired teacher, helps kids with maths.",
+        "My neighbour a retired teacher, helps kids with maths.",
+        "My neighbour, a retired teacher helps kids with maths.",
+        "My neighbour a retired teacher helps, kids with maths."
+      ],
+      "answer": "My neighbour, a retired teacher, helps kids with maths.",
+      "explain": "Вставка (a retired teacher) виділяється комами з ОБОХ боків.\n✗ кома тільки після вставки або тільки перед нею — вставка «злипається» з реченням.\n✗ кома після helps розриває дієслово й додаток.",
+      "ua": "Мій сусід, вчитель на пенсії, допомагає дітям з математикою."
+    },
+    {
+      "id": "syn-participle-clause-03",
+      "topic": "syn-participle-clause",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "___ the city map, we found the museum easily.",
+      "options": [
+        "Using",
+        "Used",
+        "To using",
+        "We using"
+      ],
+      "answer": "Using",
+      "explain": "Дієприслівниковий зворот з тим самим підметом (we) — -ing: Using the map.\n✗ Used — пасивне значення: вийшло б, що використали нас.\n✗ To using / We using — неправильні конструкції.",
+      "ua": "Користуючись мапою міста, ми легко знайшли музей."
+    },
+    {
+      "id": "syn-cleft-03",
+      "topic": "syn-cleft",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "___ I love about this city is the food.",
+      "options": [
+        "What",
+        "That",
+        "Which",
+        "It"
+      ],
+      "answer": "What",
+      "explain": "Розщеплене речення з What: What I love … is …\n✗ That / Which — не вводять таку конструкцію на початку.\n✗ It — вимагає іншої схеми: It's the food that I love.",
+      "ua": "Що я люблю в цьому місті, так це їжу."
+    },
+    {
+      "id": "syn-intro-comma-03",
+      "topic": "syn-intro-comma",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "Обери коректний варіант:",
+      "options": [
+        "Unfortunately, the shop was closed.",
+        "Unfortunately the shop, was closed.",
+        "Unfortunately the shop was, closed.",
+        "Unfortunately: the shop was closed."
+      ],
+      "answer": "Unfortunately, the shop was closed.",
+      "explain": "Після ввідного слова на початку речення — кома.\n✗ кома між підметом і дієсловом або в середині присудка неможлива.\n✗ двокрапка після ввідного слова не ставиться.",
+      "ua": "На жаль, крамниця була зачинена."
+    },
+    {
+      "id": "syn-no-comma-thatclause-03",
+      "topic": "syn-no-comma-thatclause",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "Обери коректний варіант:",
+      "options": [
+        "She said that she was tired.",
+        "She said, that she was tired.",
+        "She said that, she was tired.",
+        "She, said that she was tired."
+      ],
+      "answer": "She said that she was tired.",
+      "explain": "Перед that-підрядним в англійській кома не ставиться, на відміну від української.\n✗ інші варіанти мають зайву кому.",
+      "ua": "Вона сказала, що втомилася."
+    },
+    {
+      "id": "syn-comma-splice2-03",
+      "topic": "syn-comma-splice2",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "Обери коректний варіант:",
+      "options": [
+        "It was late, so we took a taxi.",
+        "It was late, we took a taxi.",
+        "It was late we took a taxi.",
+        "It was late, and so, we took a taxi."
+      ],
+      "answer": "It was late, so we took a taxi.",
+      "explain": "Два повні речення з'єднує сполучник (so, and, but) або крапка з комою.\n✗ It was late, we took — comma splice: самої коми замало.\n✗ It was late we took — речення злиті без жодного розділення.\n✗ and so, — зайві коми.",
+      "ua": "Було пізно, тож ми взяли таксі."
+    },
+    {
+      "id": "syn-subject-required-03",
+      "topic": "syn-subject-required",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "___ is raining again.",
+      "options": [
+        "It",
+        "—",
+        "This",
+        "There"
+      ],
+      "answer": "It",
+      "explain": "В англійській підмет обов'язковий, навіть формальний: It is raining.\n✗ — (без підмета) — речення неправильне.\n✗ This — вказує на конкретний предмет.\n✗ There — з is raining не вживається.",
+      "ua": "Знову йде дощ."
+    },
+    {
+      "id": "syn-aux-do-question-03",
+      "topic": "syn-aux-do-question",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "Are we taking the train, or ___ by bus?",
+      "options": [
+        "are we going",
+        "we are going",
+        "we go",
+        "going"
+      ],
+      "answer": "are we going",
+      "explain": "Друга частина альтернативного питання теж має питальний порядок: are we going.\n✗ we are going / we go — розповідний порядок.\n✗ going — без допоміжного й підмета неповне.",
+      "ua": "Ми їдемо потягом чи автобусом?"
+    },
+    {
+      "id": "syn-passive-needed-03",
+      "topic": "syn-passive-needed",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "The windows need to ___ before winter.",
+      "options": [
+        "be cleaned",
+        "clean",
+        "cleaning",
+        "been cleaned"
+      ],
+      "answer": "be cleaned",
+      "explain": "Вікна не миють себе самі — пасивний інфінітив: to be cleaned.\n✗ clean — активне значення.\n✗ cleaning — після need to не вживається.\n✗ been cleaned — бракує be.",
+      "ua": "Вікна треба помити до зими."
+    },
+    {
+      "id": "syn-tag-question-03",
+      "topic": "syn-tag-question",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "She doesn't eat meat, ___?",
+      "options": [
+        "does she",
+        "doesn't she",
+        "is she",
+        "isn't it"
+      ],
+      "answer": "does she",
+      "explain": "Хвостове питання має протилежну полярність: заперечне речення → ствердний хвіст: does she.\n✗ doesn't she — та сама полярність.\n✗ is she / isn't it — дієслово в хвості має повторювати допоміжне з речення.",
+      "ua": "Вона ж не їсть м'яса, так?"
+    },
+    {
+      "id": "reg-abbreviations-03",
+      "topic": "reg-abbreviations",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "Обери варіант для листа клієнту:",
+      "options": [
+        "Please let me know as soon as possible.",
+        "Pls lmk asap.",
+        "Pls let me know asap.",
+        "Let me know ASAP pls."
+      ],
+      "answer": "Please let me know as soon as possible.",
+      "explain": "У діловому листі клієнту скорочення на кшталт pls, lmk, asap звучать недбало.\n✗ решта варіантів — стиль месенджера між колегами.",
+      "ua": "Будь ласка, дайте знати якнайшвидше."
+    },
+    {
+      "id": "reg-acknowledgement-03",
+      "topic": "reg-acknowledgement",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "— The meeting is moved to 3 p.m. — ___",
+      "options": [
+        "Noted, thanks.",
+        "Thanks for noted.",
+        "Noted for that.",
+        "I noticed."
+      ],
+      "answer": "Noted, thanks.",
+      "explain": "Noted — коротке підтвердження, що інформацію отримано.\n✗ Thanks for noted / Noted for that — неправильні конструкції.\n✗ I noticed — «я помітив», не підтвердження.",
+      "ua": "— Нараду перенесено на 15:00. — Прийнято, дякую."
+    },
+    {
+      "id": "reg-style-conventions-03",
+      "topic": "reg-style-conventions",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "business",
+      "prompt": "The report has ___ main sections.",
+      "options": [
+        "three",
+        "3",
+        "III",
+        "three (3)"
+      ],
+      "answer": "three",
+      "explain": "У тексті числа до десяти пишуть словами: three sections.\n✗ 3 — цифри доречні для 10 і більше, дат, сум.\n✗ III — римські цифри для розділів, не для кількості.\n✗ three (3) — дублювання доречне тільки в юридичних документах.",
+      "ua": "Звіт має три основні розділи."
+    },
+    {
+      "id": "wf-noun-suffixes-03",
+      "topic": "wf-noun-suffixes",
+      "level": "B2",
+      "type": "fill",
+      "domain": "general",
+      "prompt": "Her ___ (kind) surprised everyone.",
+      "answer": "kindness",
+      "accept": [
+        "kindness"
+      ],
+      "explain": "Абстрактний іменник від прикметника kind — суфікс -ness: kindness.",
+      "ua": "Її доброта всіх здивувала."
+    },
+    {
+      "id": "wf-negative-prefixes-03",
+      "topic": "wf-negative-prefixes",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "It's ___ to drive without a licence.",
+      "options": [
+        "illegal",
+        "unlegal",
+        "inlegal",
+        "dislegal"
+      ],
+      "answer": "illegal",
+      "explain": "Перед l префікс in- змінюється на il-: legal → illegal.\n✗ unlegal / inlegal / dislegal — таких слів немає.",
+      "ua": "Керувати без посвідчення незаконно."
+    },
+    {
+      "id": "art-zero-institutions-03",
+      "topic": "art-zero-institutions",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "daily",
+      "prompt": "My kids go to ___ school by bus.",
+      "options": [
+        "—",
+        "the",
+        "a",
+        "an"
+      ],
+      "answer": "—",
+      "explain": "Установа за прямим призначенням (діти навчаються) — без артикля: go to school.\n✗ the school — коли мова про будівлю: Mum went to the school to talk to a teacher.\n✗ a / an — змінюють зміст на «якусь школу».",
+      "ua": "Мої діти їздять до школи автобусом."
+    },
+    {
+      "id": "agr-collective-nouns-03",
+      "topic": "agr-collective-nouns",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "general",
+      "prompt": "The police ___ looking for the driver.",
+      "options": [
+        "are",
+        "is",
+        "has",
+        "was"
+      ],
+      "answer": "are",
+      "explain": "Police завжди вживається з дієсловом у множині: the police are.\n✗ is / was / has — форми однини.",
+      "ua": "Поліція шукає водія."
+    },
+    {
+      "id": "sp-hyphenation-03",
+      "topic": "sp-hyphenation",
+      "level": "B2",
+      "type": "mcq",
+      "domain": "travel",
+      "prompt": "We booked a ___ hotel near the beach.",
+      "options": [
+        "five-star",
+        "five star",
+        "fivestar",
+        "five-stars"
+      ],
+      "answer": "five-star",
+      "explain": "Складене означення перед іменником — через дефіс: a five-star hotel.\n✗ five star — без дефіса.\n✗ fivestar — разом.\n✗ five-stars — в означенні іменник у формі однини.",
+      "ua": "Ми забронювали п'ятизірковий готель біля пляжу."
+    }
+  ]
+}
