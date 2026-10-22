@@ -5,6 +5,8 @@ import "../style.css";
 const preview = {
   parameters: {
     layout: "centered",
+    // «Основи» (кольори, типографіка) — першими в бічному меню
+    options: { storySort: { order: ["Основи", "*"] } },
     controls: {
       matchers: {
         color: /(background|color)$/i,
