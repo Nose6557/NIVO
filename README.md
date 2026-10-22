@@ -65,6 +65,7 @@ stale-while-revalidate. Після першого завантаження пр�
 | `config.js` | URL проєкту Supabase і publishable-ключ |
 | `version.js` | єдине джерело версії оболонки: `NIVO_VERSION`, `NIVO_RELEASED` |
 | `check.html` | валідатор банку — відкривається в браузері, нічого не збирає |
+| `bank.html` | перегляд банку: усі питання з відповідями, поясненнями й перекладом; фільтри, пошук, посилання на питання через адресу |
 | `sw.js` | service worker: офлайн-оболонка, константа `CACHE` |
 | `manifest.json` | PWA-маніфест |
 | `_headers` | `X-Robots-Tag: noindex` для Cloudflare Pages |
